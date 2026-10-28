@@ -5,3 +5,5 @@ data/raw/
 *.log
 *.toc
 *.out
+# build output of the report source (final copy is committed at repo root)
+progress_report_src/progress_report_oct2026.pdf
