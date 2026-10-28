@@ -58,6 +58,18 @@ Numbering follows `references/`. Items marked ⚠ are where existing notes/lit r
    PEAD to individual trades.
 16–18: see `03_institutional_facts.md`.
 
+20. **Shankar R.L., Sankar & Kiran Kumar (2015)** NSE WP/16/2015 → EMFT 55(7) 1619–1633 (2019). 102 NSE SSF, 5-min data 2007–09;
+   weekly 3-regime SETAR (AR(6), delay 1, grid-search RSS). κ_L −39 bp, κ_H −10 bp (**both negative**), band 28 bp; band 30→28 bp
+   pre/post SLB (Apr 2008); liquid vs illiquid 27 vs 29 bp (weak); weekly variance widens band (κ_L moves 2× κ_H → short-sale
+   asymmetry); futures impact cost matters more than cash. Model-free percentile bounds agree. No ban/MWPL. Details: notes batch 6.
+21. **Nandan, Agrawal & Jindal (2015)** IJF 9(9) 23–35. 5 stocks, daily 2012–13, rupee mispricing, no costs; underpricing larger but
+   rarer; Wilcoxon significant for only 2/5 stocks; arbitrage directions stated backwards in text. Weak; cite only for asymmetry.
+- Related, not yet read: Saurav–Srivastava–Agarwalla (2026 SSRN, SSF basis around earnings & short-sale constraints — closest to H2/H7);
+  Jain–Agarwalla–Varma–Pandey (2018 JFM); Gagnon (2018 Fin. Review, SSF introductions loosen short constraints); Brennan–Schwartz (1990,
+  early-exit option); Roll–Schwartz–Subrahmanyam (2007 JF, liquidity & basis); Fung–Draper (1999 JFM, HK short-sale relaxation);
+  Vipul (2005 Vikalpa; 2008 JEMF); Miller (1977); Diamond–Verrecchia (1987); Danielsen–Sorescu (2001).
+
+
 ## Cross-cutting implications noted
 - Our planned data are DAILY; the 18 bp band is an intraday HFT object. Daily close / settlement (NSE uses last-30-min VWAP for both)
   measures a persistent component; calibration of c, c_s must say which arbitrageur.

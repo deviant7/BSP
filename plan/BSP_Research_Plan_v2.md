@@ -1,5 +1,8 @@
 # BSP — Research Plan v2 (revised 28 Oct 2026)
 
+*Earlier versions and everything cut or changed are kept in `plan/archive/` — see
+`plan/archive/REMOVED_ITEMS_REGISTER.md` before reintroducing anything.*
+
 *Builds on `BSP_Project_Document` (Sep 2026), whose goals stand. No calendar: phases are ordered by
 logical dependency only. [verify] = must be checked against a primary source; see
 `memory/07_fact_check.md` for the verification log.*
@@ -15,7 +18,7 @@ observable shock to almost every one of them:
 
 | Kind of limit | Indian instrument / shock | Main use in the thesis |
 |---|---|---|
-| **Short-sale constraints** | Naked overnight cash shorting barred; SLB thin; the only practical overnight short is via single-stock futures/options, which exist only for F&O stocks. **F&O inclusion/exclusion** creates/removes the channel permanently; the **F&O ban** removes it temporarily. | Ch 5 (ban), Ch 6 (F&O eligibility, cross-section) |
+| **Short-sale constraints** | Naked short selling barred; SEBI's framework makes only *F&O-segment securities* eligible for short selling and SLB; SLB thin; the practical overnight short is via single-stock futures/options, which exist only for F&O stocks. **F&O inclusion/exclusion** creates/removes the channel permanently; the **F&O ban** removes it temporarily. | Ch 5 (ban), Ch 6 (F&O eligibility, cross-section) |
 | **Trading costs** | Futures STT (sell side): 0.017→0.01% on 1 Jun 2013; 0.0125→0.02% on 1 Oct 2024; 0.02→0.05% on 1 Apr 2026 (options also raised) | Ch 4 (bands) |
 | **Arbitrage capital & funding** | Arbitrage mutual-fund AUM (AMFI monthly), incl. inflows after the 1 Apr 2023 debt-fund tax change (≈₹71k cr Apr 2023 → ≈₹1.99 lakh cr Oct 2024); money-market rate shocks (Aggarwal: MIBOR drives bands); peak-margin phase-in (25% Dec 2020 → 100% Sep 2021) | Ch 4 (bands over time) |
 | **Arbitrage risk** | Idiosyncratic / basis risk (IVOL) | Ch 3 (index), Ch 6 |
@@ -55,6 +58,13 @@ cash/short futures. Results to *derive* (they are conjectures until derived):
 3. **Anticipation** near 95% — band widens before the ban; bunching below 95%; small RD jump.
 4. **Hysteresis** — entry 95%, exit 80% (confirmed: NSE Clearing circ. 119/2025). Rollovers are not
    allowed in a ban, so expiries inside a ban force OI down.
+
+Facts the model must be able to reproduce (from Indian evidence): the band is centred *below* zero
+(Shankar et al. 2015: κ_L ≈ −39 bp, κ_H ≈ −10 bp at 5-min frequency; median mispricing negative also in
+Aggarwal 2015 and Nandan et al. 2014) — consistent with abundant cash-and-carry capacity and blocked reverse
+arbitrage; and volatility widens the lower bound about twice as much as the upper. The early-exit (early
+unwinding) option of Brennan–Schwartz (1990) should enter the ban analysis: in a ban, exit stays open while
+entry closes.
 
 ### 1.3 Cash-only stocks (for the F&O-eligibility chapter)
 A short Miller (1977)-style extension: with dispersed beliefs and binding short constraints, prices
@@ -103,8 +113,11 @@ band far from any plausible cost (H3); no effect of F&O entry (H6).
 ## 3. Phases
 
 **Phase 0 — Facts and feasibility.** Verify every rule, date and citation (done 28 Oct 2026, see
-`memory/07_fact_check.md`; remaining: Finance Act 2026 STT text, AMFI series, Google Scholar/SSRN re-check of
-the "ban unstudied" claim, read Nandan–Agrawal–Jindal 2015 and the 2015 NSE working paper on SSF mispricing bounds).
+`memory/07_fact_check.md` incl. §I; papers #20–21 read, `references/notes_batch6_new_india_ssf_papers.md`).
+Still to do: read Saurav–Srivastava–Agarwalla (2026, SSRN) and position H2/H7 against it; Gagnon (2018);
+Brennan–Schwartz (1990, early-exit option — feeds the ban model); confirm intraday-shorting practice for
+non-F&O stocks; check NSE archives for FutEq OI history (published daily before the reform) and monthly NPH
+(free-float) files.
 Check data availability (no outcomes computed): archives of combined OI/MWPL, ban lists, F&O and cash
 bhavcopies (with delivery), corporate actions, F&O eligibility lists over time, AMFI arbitrage-fund AUM,
 NSE XBRL results (EPS), Prowess access via the library. Fix project-document and literature-review errors.
@@ -153,6 +166,11 @@ basis; futures daily settle = last half-hour weighted average price).
 - 3-regime TVECM (Ters–Urban; test β = 1) as workhorse; ESTAR (Tse) as robustness. Pooled/panel
   threshold models for sub-periods with few daily observations.
 - **Costs (H3):** compare estimated θ+β0 with the bottom-up cost band; event windows around STT changes.
+- **Robustness for thresholds:** model-free percentile bounds (as in Shankar et al. 2015) alongside TVECM/ESTAR.
+- **Positioning:** Shankar et al. (2015/2019) estimate SETAR bands for ~100 NSE SSF on 5-min data, 2007–09, and relate
+  them to liquidity and volatility; our contribution is daily, 2015–2026, the full set of dated shocks (costs, capital,
+  limits, ban) and causal designs. Saurav–Srivastava–Agarwalla (2026) study the basis around earnings — Ch 5/6 must
+  be positioned against it once read.
 - **Capital (H4):** let thresholds/adjustment speeds depend on arbitrage-fund AUM, funding rates, and
   margin regimes (smooth-transition with an observed transition variable — Prof. Chaubal's area).
 - **Reforms (H9):** 1 Oct 2025 package (heterogeneous intensity), 3 Nov 2025 tightening; the 2024
@@ -166,8 +184,8 @@ basis; futures daily settle = last half-hour weighted average price).
 2. RD at 95% with McCrary — supporting; anticipation predicted in advance.
 3. Hysteresis design in [80, 95) — only if the 80% exit is confirmed.
 4. Mechanical variation: quarterly MWPL recalculation dates (post Oct 2025); 1 Oct 2025 predicted
-   Δutilisation (numerator: notional → FutEq, from pre-reform options share — use NSE's published FutEq
-   if available, else reconstruct; denominator: 20% FF → min(15% FF, 65×ADDV in shares), floor 10%,
+   Δutilisation (numerator: notional → FutEq, from pre-reform options share — NSE already published
+   market-level FutEq OI daily before the reform (NSE Clearing FAQ, Oct 2025), so reconstruct only if the archive is short; denominator: 20% FF → min(15% FF, 65×ADDV in shares), floor 10%,
    quarterly windows per NSE Clearing SOP). Pre-2025 MWPL was 20% FF only (the old "30× volume" leg ended
    in 2006), so pre-2025 free-float changes are robustness only (often news-driven).
    *COVID MWPL halving (23 Mar–26 Nov 2020):* MWPL cut to 50% for stocks with ≥15% avg high–low range or
@@ -182,7 +200,9 @@ basis; futures daily settle = last half-hour weighted average price).
   MQSOS ≥ ₹25 lakh; MWPL ≥ ₹500 cr; ADDV ≥ ₹10 cr) and SEBI circ. 2024/116 of 30 Aug 2024 (₹75 lakh;
   ₹1,500 cr; ₹35 cr; exit after 3 consecutive months failing). Quarterly entries/exits continue (e.g., 8 added
   1 Apr 2026, 6 added 28 Oct 2026). Precedent: Danielsen–Sorescu (2001), option introductions relax short
-  constraints.
+  constraints; Gagnon (2018), SSF listings on OneChicago lowered lending-market utilisation and fees. In India,
+  F&O inclusion opens three channels at once (SSF/options, formal short-selling eligibility, SLB eligibility) —
+  the design measures their joint effect.
 - **SYY-style test (H5):** double sorts constraint × anomaly (VW), FM as complement; anomalies rebuilt from
   public data (momentum, reversal, MAX, IVOL, illiquidity, turnover; accounting ones only if EPS/XBRL works).
   The internship 45-signal library only if its use is cleared under the internship agreement.

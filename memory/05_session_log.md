@@ -58,8 +58,16 @@
   80% exit confirmed (NSE Clearing 119/2025, saved as references/19). New facts: COVID MWPL halving 2020; STT 0.05% from 1 Apr 2026;
   closing auction for F&O stocks from 3 Aug 2026 (basis measurement break); ban penalty schedule; two Indian SSF-mispricing papers to read.
 
+- **Second pass (28 Oct 2026):** archived plan v1/v2.0/v2.1 in `plan/archive/` + REMOVED_ITEMS_REGISTER.md (user: keep all past
+  plans and deletions). Closed open checks (§I of 07_fact_check): STT 2026 confirmed by NSE circular; FutEq ban test from 1 Oct 2025
+  confirmed by NSE Clearing FAQ (saved as references/22); MWPL was monthly pre-reform; FutEq OI published pre-reform; short-selling
+  eligibility formally limited to F&O securities; AMFI arbitrage series from mid-2018. Read in full: #20 Shankar–Sankar–Kiran Kumar
+  2015 (SETAR bands, both bounds negative, 28 bp; no ban) and #21 Nandan–Agrawal–Jindal 2015 (weak) → notes_batch6. Found closest
+  competitor: Saurav–Srivastava–Agarwalla (2026 SSRN) on SSF basis around earnings & short-sale constraints — to read.
+
 ## Open threads
-- Next steps per plan v2 §10: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
+- Read Saurav et al. (2026), Gagnon (2018), Brennan–Schwartz (1990); then corrected model.
+- Next steps per plan v2 §12: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
 - Guide's response on the revised framework (she has seen only the project doc).
 - Fix project doc (short-selling line, "relaxations", timeline with theory stage).
 - Fix lit-review / notes / reference-index errors (listed in 04) — awaiting user go-ahead.

@@ -23,6 +23,9 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 ## Current master plan
 - `plan/BSP_Research_Plan_v2.md` — how the project proceeds (supersedes the project doc's §7 methods ordering and §12 timeline;
   the doc's goals stand). The guide has seen only the project document. **No time pressure — ignore timelines.**
+- `plan/archive/` — every earlier plan version (v1 = project doc, v2.0, v2.1) + `REMOVED_ITEMS_REGISTER.md` listing every item
+  dropped/demoted/changed, why, and how to reintroduce it. **User wants all past plans and deletions kept; update the register
+  whenever the plan changes.**
 
 ## File map (repo root)
 - `BSP_Project_Document.docx` / `.pdf` — the detailed study plan (Sep 2026); identical content. The user's master plan.
@@ -32,7 +35,8 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 - `BSP_Progress_Report.pdf` + `progress_report_src/` — 4-pp progress note to the guide (Sep 28 2026).
 - `Claude outputs/` — byte-identical duplicates (NB: `Claude outputs/BSP_Model_A_Constrained_Arbitrage.pdf` is actually the 3-pp guide version).
 - `references/` — 21 PDFs (`1_…` to `18_…`), plus `19_nse_clearing_circ119_2025_mwpl_sop.pdf` (primary source for new MWPL,
-  80% exit, ban penalties), `00_reference_index.md`, `notes_batch1..5_*.md`.
+  80% exit, ban penalties), `20_…` Shankar–Sankar–Kiran Kumar 2015 NSE WP (SSF SETAR bands), `21_…` Nandan–Agrawal–Jindal 2015,
+  `22_…` NSE Clearing FAQ (Oct 2025), `00_reference_index.md`, `notes_batch1..6_*.md` (batch 6 = papers 19–22 + related work).
 - `Very old conversation.txt`, `Recent Conversation.txt` — logs of earlier chat sessions (project origin → models).
 - Not in repo (referenced in old chats): original `BSP Proposal.docx` sent to the guide; earlier assistant memory notes.
 

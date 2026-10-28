@@ -107,3 +107,16 @@ Primary PDFs in `references/` (SEBI 2024/132, SEBI 2025/79, SEBI PR 22/2024, all
 4. New dated shocks: STT 1 Apr 2026; COVID MWPL halving 23 Mar–26 Nov 2020; CAS 3 Aug 2026 (measurement break).
 5. MF short-selling statement corrected.
 6. Read the two newly found Indian papers.
+
+## I. Open checks closed (28 Oct 2026, second pass)
+| Item | Status | Evidence |
+|---|---|---|
+| Futures STT 0.05%, options premium 0.15%, exercise 0.15% from 1 Apr 2026 | ✔P | NSE circular FATAX73524 (Finance Act 2026, Presidential assent 30 Mar 2026); I-T Dept FAQ: delivery/other STT unchanged |
+| FutEq-based ban test from 1 Oct 2025 (vs secondary claims of 6/8 Dec 2025) | ✔P | NSE Clearing FAQ updated 13 Oct 2025 (`references/22_…pdf`): ban under "new mechanism" on FutEq; limits effective trade date 1 Oct 2025. December dates in broker blogs remain unexplained — check the daily ban files Oct–Dec 2025 in the data |
+| MWPL recomputation frequency before Oct 2025 | ✔P NEW | NSE Clearing FAQ: quarterly now, "in contrary to the erstwhile **monthly** basis" (monthly NPH files) |
+| Market-level FutEq OI published before the reform | ✔P NEW | FAQ: symbol-wise FutEq OI disseminated daily ("Combined Delta Equivalent Open Interest across exchanges"); client-level method NCL/CMPT/65087 (14 Nov 2024) |
+| Short-selling eligibility | ✔S NEW / ✎ | SEBI framework (2007; Master Circular 16 Oct 2023, Annexure 3; restated 5 Jan 2024): "**securities traded in F&O segment shall be eligible for short selling**"; SLB-eligible list likewise. Practice for intraday shorts in non-F&O stocks is broker-dependent (unresolved). → "intraday cash shorting allowed" must be qualified: formally for F&O securities. SEBI to set up a working group (2026) to review short selling/SLB (Multibagg, Jul 2026) |
+| AMFI arbitrage-fund series | ✔S | AMFI discloses arbitrage-fund flows/AUM separately from mid-2018 (Cafemutual); e.g., Oct 2018 AUM ₹59,538 cr; Sep 2017 ₹55,921 cr (pre-categorisation figure). Monthly series feasible from 2018 |
+| "Ban essentially unstudied" | ✔ (stronger, still provisional) | Web + Semantic Scholar search (API rate-limited) found no study of ban effects. Closest: Shankar et al. (2015/2019) — bands, no ban; Saurav, Srivastava & Agarwalla (2026, SSRN) — basis around earnings & short-sale constraints (must read; may use ban/OI) |
+| Slivka et al. published version | NEW | *Indian Journal of Finance* 6(1) 11–18 (2012) (cited by Nandan et al. 2015) |
+| NSE "60% MWPL" alert | ? | One secondary source mentions an NSE alert at 60% utilisation — unverified |

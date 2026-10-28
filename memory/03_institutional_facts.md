@@ -42,9 +42,14 @@ gross-OI monitoring discontinued; entity check vs base position using 2 PM SPAN 
 - Stock derivatives physically settled (phased Jul 2018 / Apr–Oct 2019); stock options European from 27 Jan 2011.
 - STT futures: 0.01% from 1 Jun 2013; 0.02% from 1 Oct 2024; 0.05% from 1 Apr 2026 (Budget 2026).
 - Closing Auction Session for F&O stocks from 3 Aug 2026.
+- Pre-Oct-2025 MWPL was recomputed **monthly** (NPH files = monthly non-promoter holding → free-float data source); now quarterly.
+- Market-level FutEq OI published daily before the reform ("Combined Delta Equivalent OI" report); `combineoi` gains FutEq field from 1 Oct 2025.
+- STT 1 Apr 2026 confirmed by NSE circular FATAX73524 (primary).
+- NSE Clearing FAQ (13 Oct 2025) saved as `references/22_…pdf`.
 
 ## Short selling in India (as framed in the project)
-- Intraday cash shorting allowed; naked short selling prohibited (SEBI 20 Dec 2007); SLB / institutional shorting from 21 Apr 2008
+- **Eligibility: "securities traded in F&O segment shall be eligible for short selling"** (SEBI framework; Master Circular 16 Oct 2023 Annex 3). Intraday shorting of non-F&O stocks: broker-dependent, unresolved.
+- Intraday cash shorting allowed (F&O-eligible stocks); naked short selling prohibited (SEBI 20 Dec 2007); SLB / institutional shorting from 21 Apr 2008
   but thin → persistent short exposure via SSF. MFs are legally *permitted* to short/SLB (MF Regs amended 2007; Slivka's "barred"
   is wrong/outdated), but arbitrage funds in practice run long-cash/short-futures.
 - Settlement: cash T+1 (fully from 27 Jan 2023); stock F&O physically settled (all from Oct 2019 expiry).
