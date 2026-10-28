@@ -27,15 +27,27 @@
 **NSE MWPL web page (ref 18 html)**: mostly navigation; states 95% ban entry and "trade only to decrease positions"; links to
 combined-OI zip and securities-in-ban CSV + archives. Cites NSCC/F&O/C&S/365 (26 Aug 2004) for penalties.
 
-## NOT verified by any repo primary source (need NSE/SEBI circular before using)
-- Ban **exit when OI < 80% of MWPL** (widely known rule; believed correct).
-- Historical MWPL leg "**30 × average daily traded quantity in previous month**" (lower of 20% FF or 30× volume). The 2024 Master
-  Circular as quoted only states 20% FF — status/timing of the volume leg unknown.
+**NSE Clearing circular 119/2025 (8 Sep 2025; `references/19_…pdf`)** — SOP for new MWPL, effective 1 Oct 2025:
+MWPL = lower of 15% FF and 65× market-wide ADDV **in quantity terms**, floor 10% FF; recomputed quarterly on prior 3 months
+(e.g., MWPL from 1 Oct 2025 uses 16 Jun–15 Sep 2025), valid 3 calendar months, published by 20th of last month of quarter;
+ban if EoD FutEq OI > 95% MWPL (from next day); **exit when combined FutEq OI ≤ 80% of MWPL ("in line with existing practice")**;
+gross-OI monitoring discontinued; entity check vs base position using 2 PM SPAN delta; penalty 1% of violation value
+(min ₹5,000, max ₹1 lakh per entity/stock/day).
+
+## Resolved by web check (28 Oct 2026) — full log in `07_fact_check.md`
+- 80% exit: CONFIRMED (above).
+- "30× volume" leg: from SEBI/DNPD/Cir-26/2004 (16 Jul 2004); replaced by 20% FF in SEBI/DNPD/Cir-31/2006 (22 Sep 2006).
+  → 2015–Sep 2025 MWPL = 20% FF, except the COVID halving (23 Mar–26 Nov 2020) for volatile/high-utilisation stocks.
+- Rollover not allowed during ban (broker FAQs citing SEBI).
+- Stock derivatives physically settled (phased Jul 2018 / Apr–Oct 2019); stock options European from 27 Jan 2011.
+- STT futures: 0.01% from 1 Jun 2013; 0.02% from 1 Oct 2024; 0.05% from 1 Apr 2026 (Budget 2026).
+- Closing Auction Session for F&O stocks from 3 Aug 2026.
 
 ## Short selling in India (as framed in the project)
-- Intraday cash shorting allowed; naked overnight shorting prohibited; SLB exists (since Apr 2008) but thin → persistent short
-  exposure via SSF. Arbitrage mutual funds cannot short (Slivka) → forward (cash-and-carry) arbitrage only.
-- Settlement: cash T+1 now (T+2 in 2013); SSF cash-settled... (NB: Indian SSF moved to physical settlement in 2018–19 — verify if used).
+- Intraday cash shorting allowed; naked short selling prohibited (SEBI 20 Dec 2007); SLB / institutional shorting from 21 Apr 2008
+  but thin → persistent short exposure via SSF. MFs are legally *permitted* to short/SLB (MF Regs amended 2007; Slivka's "barred"
+  is wrong/outdated), but arbitrage funds in practice run long-cash/short-futures.
+- Settlement: cash T+1 (fully from 27 Jan 2023); stock F&O physically settled (all from Oct 2019 expiry).
 
 ## Data files (from project doc §8)
 sec_bhavdata_full (delivery), UDiFF bhavcopy (ISIN-keyed, 2024+), F&O bhavcopy (settle/OI), combined OI/MWPL (with FutEq post-2025),

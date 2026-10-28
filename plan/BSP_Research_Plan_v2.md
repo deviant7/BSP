@@ -16,8 +16,8 @@ observable shock to almost every one of them:
 | Kind of limit | Indian instrument / shock | Main use in the thesis |
 |---|---|---|
 | **Short-sale constraints** | Naked overnight cash shorting barred; SLB thin; the only practical overnight short is via single-stock futures/options, which exist only for F&O stocks. **F&O inclusion/exclusion** creates/removes the channel permanently; the **F&O ban** removes it temporarily. | Ch 5 (ban), Ch 6 (F&O eligibility, cross-section) |
-| **Trading costs** | STT/stamp-duty changes on dated budget days (e.g., futures STT cut 2013, raised Oct 2024 [verify]) | Ch 4 (bands) |
-| **Arbitrage capital & funding** | Arbitrage mutual-fund AUM (AMFI monthly) incl. tax-driven inflows; money-market rate shocks (Aggarwal: MIBOR drives bands); margin-rule changes (peak margin 2020–21 [verify]) | Ch 4 (bands over time) |
+| **Trading costs** | Futures STT (sell side): 0.017→0.01% on 1 Jun 2013; 0.0125→0.02% on 1 Oct 2024; 0.02→0.05% on 1 Apr 2026 (options also raised) | Ch 4 (bands) |
+| **Arbitrage capital & funding** | Arbitrage mutual-fund AUM (AMFI monthly), incl. inflows after the 1 Apr 2023 debt-fund tax change (≈₹71k cr Apr 2023 → ≈₹1.99 lakh cr Oct 2024); money-market rate shocks (Aggarwal: MIBOR drives bands); peak-margin phase-in (25% Dec 2020 → 100% Sep 2021) | Ch 4 (bands over time) |
 | **Arbitrage risk** | Idiosyncratic / basis risk (IVOL) | Ch 3 (index), Ch 6 |
 | **Position limits** | MWPL, entity limits, 2025 reforms | Ch 4, Ch 5 |
 
@@ -53,7 +53,8 @@ cash/short futures. Results to *derive* (they are conjectures until derived):
 2. **Spillover to cash** — new speculative demand moves to the cash market; basis *level* can fall.
    Net level effect ambiguous, with sign conditions on observables.
 3. **Anticipation** near 95% — band widens before the ban; bunching below 95%; small RD jump.
-4. **Hysteresis** — entry 95%, exit 80% [verify].
+4. **Hysteresis** — entry 95%, exit 80% (confirmed: NSE Clearing circ. 119/2025). Rollovers are not
+   allowed in a ban, so expiries inside a ban force OI down.
 
 ### 1.3 Cash-only stocks (for the F&O-eligibility chapter)
 A short Miller (1977)-style extension: with dispersed beliefs and binding short constraints, prices
@@ -101,7 +102,9 @@ band far from any plausible cost (H3); no effect of F&O entry (H6).
 
 ## 3. Phases
 
-**Phase 0 — Facts and feasibility.** Verify every rule, date and citation (see `memory/07_fact_check.md`).
+**Phase 0 — Facts and feasibility.** Verify every rule, date and citation (done 28 Oct 2026, see
+`memory/07_fact_check.md`; remaining: Finance Act 2026 STT text, AMFI series, Google Scholar/SSRN re-check of
+the "ban unstudied" claim, read Nandan–Agrawal–Jindal 2015 and the 2015 NSE working paper on SSF mispricing bounds).
 Check data availability (no outcomes computed): archives of combined OI/MWPL, ban lists, F&O and cash
 bhavcopies (with delivery), corporate actions, F&O eligibility lists over time, AMFI arbitrage-fund AUM,
 NSE XBRL results (EPS), Prowess access via the library. Fix project-document and literature-review errors.
@@ -115,7 +118,11 @@ conditions, inference, primary vs secondary outcomes, falsifiers. Git-tagged. Gu
 **Phase 3 — Blind data build.** Panel 2015–2026 for all listed stocks (cash) and F&O stocks (futures,
 options, OI, ban). While blind: data-quality reports, treatment-side descriptives, outcome distributions
 alone; no outcome-by-treatment output. Pipeline validated by replicating Nandan et al. (2014) Nifty
-futures basis.
+futures basis. Known breaks to handle: physical settlement of stock derivatives (some stocks from Jul 2018;
+all from the Oct 2019 expiry); T+1 (25 Feb 2022 → 27 Jan 2023); UDiFF files (old CM bhavcopy dropped
+8 Jul 2024); COVID 2020; lot-size changes; eligibility revisions (2018; 30 Aug 2024); and the **closing
+auction for F&O stocks from 3 Aug 2026** (spot close no longer a 30-min VWAP → measurement break in the
+basis; futures daily settle = last half-hour weighted average price).
 
 **Phase 4 — Measurement (Ch 3).** **Phase 5 — Bands over time (Ch 4).** **Phase 6 — Ban (Ch 5).**
 **Phase 7 — F&O eligibility and cross-section (Ch 6).** **Phase 8 — Policy, writing, replication package.**
@@ -160,14 +167,22 @@ futures basis.
 3. Hysteresis design in [80, 95) — only if the 80% exit is confirmed.
 4. Mechanical variation: quarterly MWPL recalculation dates (post Oct 2025); 1 Oct 2025 predicted
    Δutilisation (numerator: notional → FutEq, from pre-reform options share — use NSE's published FutEq
-   if available, else reconstruct; denominator: 20% FF → min(15% FF, 65×ADDV), floor 10%). Pre-2025
-   free-float changes only as robustness (often news-driven).
+   if available, else reconstruct; denominator: 20% FF → min(15% FF, 65×ADDV in shares), floor 10%,
+   quarterly windows per NSE Clearing SOP). Pre-2025 MWPL was 20% FF only (the old "30× volume" leg ended
+   in 2006), so pre-2025 free-float changes are robustness only (often news-driven).
+   *COVID MWPL halving (23 Mar–26 Nov 2020):* MWPL cut to 50% for stocks with ≥15% avg high–low range or
+   ≥40% avg utilisation over 5 sessions — a rule-based, dated shock to the limit (criteria partly endogenous,
+   so use near-threshold comparisons).
 
 ## 7. F&O eligibility and the cross-section (Ch 6)
 
 - **F&O inclusion/exclusion as staggered events (H6, H2):** ~2,000 listed stocks; Callaway–Sant'Anna /
   Sun–Abraham DiD on drift, price delay, overpricing proxies; matched non-F&O controls. Eligibility is
-  rule-based (market cap, turnover, MWPL criteria) [verify], which also allows an RD on the criteria.
+  rule-based, which also allows an RD on the criteria: 2018 framework (top 500 by mcap and traded value;
+  MQSOS ≥ ₹25 lakh; MWPL ≥ ₹500 cr; ADDV ≥ ₹10 cr) and SEBI circ. 2024/116 of 30 Aug 2024 (₹75 lakh;
+  ₹1,500 cr; ₹35 cr; exit after 3 consecutive months failing). Quarterly entries/exits continue (e.g., 8 added
+  1 Apr 2026, 6 added 28 Oct 2026). Precedent: Danielsen–Sorescu (2001), option introductions relax short
+  constraints.
 - **SYY-style test (H5):** double sorts constraint × anomaly (VW), FM as complement; anomalies rebuilt from
   public data (momentum, reversal, MAX, IVOL, illiquidity, turnover; accounting ones only if EPS/XBRL works).
   The internship 45-signal library only if its use is cleared under the internship agreement.

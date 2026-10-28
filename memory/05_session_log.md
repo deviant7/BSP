@@ -48,6 +48,16 @@
     DiD over ~2,000 stocks (power fix). Internship 45-signal library only if cleared under the agreement.
   - Pipeline validation: replicate Nandan et al. (2014) Nifty futures basis.
 
+- **User note (28 Oct 2026): the project is limits to arbitrage in Indian equities broadly — the ban is an important focus but
+  not the whole project.** Plan v2 revised accordingly: §0 maps each kind of limit (short-sale, costs, capital/funding, arbitrage
+  risk, position limits) to an Indian shock; one model with each limit as a parameter; new chapters: Ch 4 bands over time
+  (costs/capital/reforms), Ch 5 ban, Ch 6 F&O eligibility + cross-section; hypotheses renumbered H1–H9; §10 lists trimmed items
+  (PCP → optional, per-day TAR, latent-factor index, 45-signal FM chapter, OSF, CS-DiD for 2025 reforms, pre-2025 FF instrument).
+- **Internet fact-check of all claims done** → `memory/07_fact_check.md`. Key corrections: "30× volume" MWPL leg ended 2006
+  (pre-2025 MWPL = 20% FF); ADDV in quantity terms; MFs may short (Slivka outdated); "Korea/Taiwan position-limit studies" unsupported;
+  80% exit confirmed (NSE Clearing 119/2025, saved as references/19). New facts: COVID MWPL halving 2020; STT 0.05% from 1 Apr 2026;
+  closing auction for F&O stocks from 3 Aug 2026 (basis measurement break); ban penalty schedule; two Indian SSF-mispricing papers to read.
+
 ## Open threads
 - Next steps per plan v2 §10: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
 - Guide's response on the revised framework (she has seen only the project doc).
