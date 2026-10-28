@@ -165,6 +165,12 @@
   known TAR (−30/+15 → −29.1/+15.2) but NOT the cost band on model-simulated basis (inventory-dependent thresholds → −10/0 bp):
   fixed thresholds = average edges, not costs; PAP §5b adds state-dependent thresholds (lagged OI/MWPL) and edge *changes* for H3.
 
+- **Nifty check done:** daily Nifty 50 close + trailing div yield (NSE ind_close_all; 2,908 days, 9 missing in 2015–16; three
+  Apr-2023 files write dates month-first). Nov–Mar contracts: Nifty futures implied repo (incl. trailing yield) vs 3M interbank:
+  monthly corr 0.47, mean gap +0.67 pp (≈ bias from full-year yield in low-dividend season); from 2021 implied ≈ 2 pp above →
+  index-futures premium (economic, not data error). Report updated (data section + new subsection on F&O events, free float,
+  results dates; plan step 1 now = AMFI + XBRL EPS). Report is 26 pp; no em dashes.
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report

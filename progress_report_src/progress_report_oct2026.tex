@@ -205,6 +205,8 @@ F\&O bhavcopy (daily) & Futures prices, traded value, contracts, open interest; 
 Cash bhavcopy and delivery file (daily) & Prices, traded value and quantity, delivery quantity & 2015 to 2026 \\
 Corporate actions & Dividends, splits and bonus issues with ex-dates & 2014 to 2026 \\
 Interest rates & Three-month interbank rate (monthly) & 2011 to 2026 \\
+Results filings & Release date and time of quarterly results, with links to the XBRL filings & 2014 to 2026 \\
+Index values (daily) & Nifty 50 close and dividend yield & 2015 to 2026 \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -271,6 +273,22 @@ Figure~\ref{fig:util} shows how utilisation is distributed near the 95\% thresho
 smoothly through 95\%, with no visible pile-up just below it. A formal density test comes before any regression
 discontinuity analysis.
 
+\subsection{F\&O entry and exit, free float and results dates}
+\begin{itemize}
+\item \emph{F\&O membership.} A stock is counted as in the F\&O segment on a day if stock futures on it are listed that day.
+From 2015 to 2026 there were 239 entries and 171 exits; 162 of the exits are eligibility exits after which the stock kept
+trading in the cash market. Symbol changes (for example Zomato to Eternal) are linked through the ISIN so that they are not
+counted as an exit and an entry. The largest batches match the regulatory record: 45 entries on 29 November 2024 after the
+August 2024 revision of the criteria, and 34 exits on 28 June 2019 under the 2018 framework. An independent daily
+membership file for 2016 to 2025 agrees with this definition on every stock-day.
+\item \emph{Free float.} Before October 2025 the MWPL was 20\% of free float, so the free float of every F\&O stock follows
+directly from the MWPL. Rebuilding the October 2025 limits from pre-reform data reproduces NSE's figures exactly for all 85
+stocks whose new limit is 15\% of free float, which confirms both the formula and the free-float figures.
+\item \emph{Results dates.} The release time of each quarterly result is known to the second. 63\% of results are released
+after the market closes, so the event day is the next trading day in those cases. There are 7,910 results announcements for
+stocks while they are in the F\&O segment, about four per stock per year.
+\end{itemize}
+
 \subsection{The mispricing measure}
 For each stock and day the basis is computed from the volume-weighted average prices of the near-month future and of the
 stock, net of dividends going ex before expiry and of the cost of carry at the three-month interbank rate. The older F\&O files
@@ -287,9 +305,11 @@ On the remaining \basisN\ stock-days with at least five contracts traded, the me
 the 10th and 90th percentiles are \basisPten\ and \basisPninety\ basis points. The basis shrinks toward expiry, and its
 distribution is stable across the change in NSE's file format in July 2024. About 0.7\% of stock-days lie more than 200 basis
 points from zero. These come mainly from stocks under heavy selling pressure (for example during business or credit distress),
-not from data errors, so they are kept and handled with the estimation methods. A comparison of the index futures basis with
-money market rates is still to be done, because it needs index dividends: the implied rate on Nifty futures is lowest every
-July to September, when most index dividends are paid. As noted above, no mispricing measure has yet been related to bans,
+not from data errors, so they are kept and handled with the estimation methods. As a check on the cost-of-carry inputs, I compared the financing rate implied by Nifty futures with the three-month
+interbank rate, using the index's published dividend yield and contracts expiring between November and March, when few
+index dividends are paid. The two move together (monthly correlation 0.47) with an average gap of 0.7 percentage points,
+about the bias expected from using the full-year dividend yield in a low-dividend season. From 2021 the implied rate is
+higher, which suggests a premium in index futures over this period. As noted above, no mispricing measure has yet been related to bans,
 reforms or other treatments.
 
 \section{Pre-specified tests}\label{sec:tests}
@@ -316,8 +336,7 @@ post-reform period, which has only 44 ban spells; results for that period will b
 \section{Plan from here}\label{sec:plan}
 The steps below are in order of dependence.
 \begin{enumerate}
-\item Finish the price data: add the list of F\&O entries and exits, the free-float history, the announcement dates for
-results and the dividends of the Nifty index, and compare the index futures basis with money market rates.
+\item Complete the remaining inputs: arbitrage fund assets and earnings per share from the XBRL filings.
 \item Fix the test plan in writing, including sample filters, variable definitions and specifications, before any outcome is
 related to a treatment.
 \item Estimate the no-arbitrage band with three-regime threshold error-correction models and smooth-transition models, and
