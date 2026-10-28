@@ -11,7 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ACC = "#1F3A5F"
-REFORMS = {"2020-03-23": "MWPL halving\n(COVID)", "2025-10-01": "new MWPL\nformula"}
+REFORMS = {"2020-03-20": "MWPL halving\n(COVID)", "2025-10-01": "new MWPL\nformula"}
 
 
 def spells(ban, tdays):
@@ -78,12 +78,20 @@ def main(proc, figdir):
     chg = P[(P["mwpl_ratio"] - 1).abs() > 1e-9]
     w(f"\nMWPL changes: {len(chg)} stock-day changes; by month of year: "
       + ", ".join(f"{m}:{n}" for m, n in chg.groupby(chg['date'].dt.month).size().items()))
-    for d, lab in REFORMS.items():
-        d = pd.Timestamp(d)
-        if d in idx:
-            r = P.loc[P["date"] == d, "mwpl_ratio"].dropna()
-            w(f"MWPL ratio on {d.date()} ({lab.replace(chr(10), ' ')}): n={len(r)}, "
-              f"quantiles 10/50/90 = {r.quantile(.1):.3f}/{r.median():.3f}/{r.quantile(.9):.3f}; share < 1: {np.mean(r < 0.999):.2f}")
+    cov = P[(P["date"] >= "2020-03-16") & (P["date"] <= "2020-04-30") & ((P["mwpl_ratio"] - 1).abs() > 1e-9)]
+    halved = cov[(cov["mwpl_ratio"] > 0.49) & (cov["mwpl_ratio"] < 0.51)]
+    w(f"COVID MWPL halving (files 20 Mar - 30 Apr 2020): {halved['symbol'].nunique()} stocks halved; by file date: "
+      + ", ".join(f"{d.date()}:{n}" for d, n in halved.groupby('date').size().items()))
+    r = P.loc[P["date"] == pd.Timestamp("2025-10-01"), "mwpl_ratio"].dropna()
+    w(f"MWPL ratio on 2025-10-01 (new formula): n={len(r)}, quantiles 10/50/90 = "
+      f"{r.quantile(.1):.3f}/{r.median():.3f}/{r.quantile(.9):.3f}; share at floor (0.5): {np.mean((r > 0.49) & (r < 0.51)):.2f}; "
+      f"share at 15% FF (0.75): {np.mean((r > 0.74) & (r < 0.76)):.2f}")
+    pre = sp[(sp["start"] >= "2015-01-01") & (sp["start"] < reform)]["days"]; post = sp[sp["start"] >= reform]["days"]
+    w(f"Spell length 2015 - Sep 2025: n={len(pre)}, median {pre.median():.0f}, mean {pre.mean():.1f}; "
+      f"from Oct 2025: n={len(post)}, median {post.median():.0f}, mean {post.mean():.1f}")
+    m15 = B[B["date"] >= "2015-01-01"]
+    w(f"Main sample 2015-2026: ban stock-days {len(m15)}, stocks ever banned {m15['symbol'].nunique()}, "
+      f"spells {len(sp[sp['start'] >= '2015-01-01'])}")
 
     # utilisation near the threshold, days not in ban (running variable for an RD)
     inban = set(map(tuple, B[["date", "symbol"]].astype(str).values))

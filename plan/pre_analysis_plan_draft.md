@@ -58,7 +58,9 @@ Two-way clustered SEs (stock, date); wild-cluster bootstrap where events are few
 Holm correction; secondary hypotheses reported unadjusted and labelled exploratory.
 
 ## 7. Power (to fill from descriptives)
-Ban spells 2015–2026: [TBD]; stocks ever banned: [TBD]; stock-days in [0.85, 0.95): [TBD]; F&O inclusions/exclusions: [TBD].
+Ban spells 2015–2026: 1,789 (1,745 before Oct 2025; 44 after); ban stock-days 9,414; stocks ever banned: 141;
+not-in-ban stock-days with utilisation in (0.90, 0.95]: 2,441 pre-reform, 139 post; F&O inclusions/exclusions: [TBD].
+Post-reform ban events are few (44 spells) → reform-period ban analyses are low-powered; state this in advance.
 
 ## 8. Falsifiers (from the model)
 No upper/lower asymmetry in bans; no change in futures activity during bans; band unrelated to dated cost shocks; F&O inclusion

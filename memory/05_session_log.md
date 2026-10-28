@@ -90,6 +90,19 @@
   flags match next-day ban lists (2010–2020 partial run). Known gap: 13 combineoi files 1–19 Jun 2012 corrupt at source
   (re-download byte-identical); pre-sample only.
 
+- **Ban/MWPL panel built (data/processed/, 2010-02 → 2026-10-27; 4,120 days, 473 symbols).** Extra fixes: NSE bundled
+  several days' CSVs into the 1–2 Jul 2025 zips (now all members read; 30 Jun & 2 Jul 2025 recovered); 1 Oct 2015 data sits in
+  the 2 Oct 2015 file (reassigned); precision bug from float_format caught and fixed (MWPL is 9 digits). Flag vs next-day ban list:
+  11,753/11,771 agree (99.85%); residuals = NSE misdated files 2014, corrupt Jun 2012 files, 23 Mar 2020, 23 Jan 2024 IRCTC.
+  Universe = futures bhavcopy STF symbols exactly (145 on 1 Jan 2015; 166 on 1 Jan 2016).
+- **Treatment-side facts (data/processed/descriptives.txt; figs in reports/figs):** main sample 2015–2026: 1,789 ban spells,
+  9,414 ban stock-days, 141 stocks; spells median 4 days (mean 5.2) up to Sep 2025 vs median 9 (mean 9.3, n=44) from Oct 2025;
+  entry rule (util > 95% day before) holds in 99.2% of spells, exit rule (util ≤ 80% on last day) in 99.5% → 80% exit confirmed in
+  data. MWPL changes cluster in Feb/May/Aug/Nov (quarterly free-float updates). COVID halving: 61 stocks halved in files dated
+  20–27 Mar 2020 (28 on 20 Mar, i.e. effective 23 Mar), 70 doubled back in the 26 Nov 2020 file. 1 Oct 2025: all 208 stocks' MWPL
+  fell; median ratio 0.73; 17% at the floor (0.5), 48% at 15% FF (0.75). Ban stock-days peak 2017 (1,586) and 2024 (1,656).
+  Utilisation density smooth through 95% pre-reform (no visible bunching; formal test pending).
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
