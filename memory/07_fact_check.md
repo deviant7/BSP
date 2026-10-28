@@ -120,3 +120,12 @@ Primary PDFs in `references/` (SEBI 2024/132, SEBI 2025/79, SEBI PR 22/2024, all
 | "Ban essentially unstudied" | ✔ (stronger, still provisional) | Web + Semantic Scholar search (API rate-limited) found no study of ban effects. Closest: Shankar et al. (2015/2019) — bands, no ban; Saurav, Srivastava & Agarwalla (2026, SSRN) — basis around earnings & short-sale constraints (must read; may use ban/OI) |
 | Slivka et al. published version | NEW | *Indian Journal of Finance* 6(1) 11–18 (2012) (cited by Nandan et al. 2015) |
 | NSE "60% MWPL" alert | ? | One secondary source mentions an NSE alert at 60% utilisation — unverified |
+
+## J. Third pass (28 Oct 2026, while writing Model C)
+| Item | Status | Evidence |
+|---|---|---|
+| Futures STT 0.01% → 0.0125%, options 0.05% → 0.0625%, from 1 Apr 2023 (Finance Act 2023) | ✔P NEW | NSE circular FATAX56235; same date as debt-fund tax change (confound) |
+| Full futures-STT path: 0.017→0.01% (1 Jun 2013) → 0.0125% (1 Apr 2023) → 0.02% (1 Oct 2024) → 0.05% (1 Apr 2026) | ✔P/✔S | NSE circulars + news |
+| Cash delivery STT 0.1% on buy and sell; physically settled derivatives 0.1% | ✔S | Zerodha, ClearTax, Business Standard 2018 |
+| NSE: futures not traded in last half hour → settlement = theoretical price F = S·e^{rt} | ✔P (NSE page via search) | nseindia.com equity-derivatives settlement-price page → settlement-basis ≈ 0 mechanically on no-trade days |
+| Full texts of Saurav–Srivastava–Agarwalla (2026), Gagnon (2018), Brennan–Schwartz (1990) | ? | Blocked (SSRN/Wiley/JSTOR 403). Abstracts only. Need IITB library download |

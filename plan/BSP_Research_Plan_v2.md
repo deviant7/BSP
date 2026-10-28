@@ -123,7 +123,11 @@ bhavcopies (with delivery), corporate actions, F&O eligibility lists over time, 
 NSE XBRL results (EPS), Prowess access via the library. Fix project-document and literature-review errors.
 
 **Phase 1 — Theory + simulation** (§1). Deliverables: full model (LaTeX), 3-page guide version, one-page
-result→hypothesis→test map.
+result→hypothesis→test map. *Status 28 Oct 2026:* full Model C drafted (`BSP_Model_C_Constrained_Arbitrage_India.pdf`,
+source + numerical checks in `models_src/modelC/`), with the hypothesis map inside (§11). Pending: user review, 3-page guide
+version, full estimator-on-simulated-data exercise (TVECM/RD/event study), and reading Brennan–Schwartz, Saurav et al., Gagnon.
+New design point from the model: MWPL is not a valid excluded instrument for ban status (Prop. 9); measured basis must use
+trade-based prices because NSE uses a theoretical settlement price on no-trade days (Prop. 7).
 
 **Phase 2 — Pre-analysis plan.** Samples, outcomes, treatments, specifications, expected signs + reversal
 conditions, inference, primary vs secondary outcomes, falsifiers. Git-tagged. Guide signs off on 1 + 2.

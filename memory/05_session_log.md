@@ -65,8 +65,15 @@
   2015 (SETAR bands, both bounds negative, 28 bp; no ban) and #21 Nandan–Agrawal–Jindal 2015 (weak) → notes_batch6. Found closest
   competitor: Saurav–Srivastava–Agarwalla (2026 SSRN) on SSF basis around earnings & short-sale constraints — to read.
 
+- **Model C written (28 Oct 2026, "go ahead")**: tried to obtain Saurav et al. 2026, Gagnon 2018, Brennan–Schwartz 1990 — all
+  paywalled/blocked (abstracts only; user to fetch via IITB library). Verified STT 2023 step and NSE theoretical-settlement rule.
+  Installed TeX Live + numpy/matplotlib in container. Wrote `models_src/modelC/` (tex, verify script, figs) and
+  `BSP_Model_C_Constrained_Arbitrage_India.pdf` (15 pp, 11 propositions, H1–H9 map with falsifiers). All numerical checks pass
+  after correcting the level-effect proposition (first version failed: mean-zero spillover cannot shift the mean).
+
 ## Open threads
-- Read Saurav et al. (2026), Gagnon (2018), Brennan–Schwartz (1990); then corrected model.
+- User to review Model C; then 3-pp guide version + note to Prof. Chaubal. Get full texts of Saurav et al. (2026), Gagnon (2018),
+  Brennan–Schwartz (1990) via IITB library and check Model C against them. Estimator-on-simulated-data exercise.
 - Next steps per plan v2 §12: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
 - Guide's response on the revised framework (she has seen only the project doc).
 - Fix project doc (short-selling line, "relaxations", timeline with theory stage).

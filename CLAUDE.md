@@ -30,7 +30,9 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 ## File map (repo root)
 - `BSP_Project_Document.docx` / `.pdf` — the detailed study plan (Sep 2026); identical content. The user's master plan.
 - `BSP_Literature_Review.pdf` + `litreview_src/` — 29-pp math-level review (LaTeX, compiles).
-- `BSP_Model_A_Constrained_Arbitrage.pdf`, `BSP_Model_B_Band_of_Inaction.pdf` + `models_src/` — the two candidate models (full).
+- **`BSP_Model_C_Constrained_Arbitrage_India.pdf` + `models_src/modelC/` — CURRENT theoretical framework (replaces A & B);
+  `verify_modelC.py` checks every closed form numerically.**
+- `BSP_Model_A_Constrained_Arbitrage.pdf`, `BSP_Model_B_Band_of_Inaction.pdf` + `models_src/` — the two earlier candidate models (superseded; kept).
 - `BSP_Model_A_for_guide.pdf`, `BSP_Model_B_for_guide.pdf` — 3-pp plain-language versions sent/for guide.
 - `BSP_Progress_Report.pdf` + `progress_report_src/` — 4-pp progress note to the guide (Sep 28 2026).
 - `Claude outputs/` — byte-identical duplicates (NB: `Claude outputs/BSP_Model_A_Constrained_Arbitrage.pdf` is actually the 3-pp guide version).

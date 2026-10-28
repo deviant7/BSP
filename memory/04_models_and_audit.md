@@ -34,3 +34,31 @@ Prop "bridge": inner random walk + outer mean reversion = 3-regime TAR/TVECM. Pr
   DSSW idiosyncratic caveat; GV's Loewenstein–Willard caveat omitted.
 - Reference index: Nandan journal, Ters–Urban venue/year, lottery-India journal wrong.
 - Batch-5 notes attribute 80%/30× rules to NSE html that does not contain them.
+
+## Model C — Constrained arbitrage under India's limits (CURRENT; replaces A & B) — 28 Oct 2026
+Files: `models_src/modelC/ModelC_constrained_arbitrage_india.tex` (15 pp) → `BSP_Model_C_Constrained_Arbitrage_India.pdf`;
+`models_src/modelC/verify_modelC.py` (brute-force checks of every closed form + simulations; output in `verify_output.txt`; figs/).
+Not yet shown to the guide; no 3-pp guide version yet.
+- Environment: outside demand in cash (D_S − ψ_S s) and futures (D_F − ψ_F f); arbitrage a = long cash/short futures.
+  Clearing m = (u − a)/Φ, 1/Φ = 1/ψ_F + 1/ψ_S, u = Φ(D_F/ψ_F − D_S/ψ_S). Arbitrage objective a m − (γ/2)a² − c₊a⁺ − c₋a⁻, γ = ασ².
+  c₊ = τ₊ + (r_A − r_b)(T−t); c₋ = τ₋ + (ℓ_s + r_b − r_L)(T−t). Each Indian limit is a parameter (table in §2.4).
+- P1 band [−c₋, c₊]; passthrough 1/Φ inside, γ/(γΦ+1) outside. P2: costs set edges (STT shifts one-for-one), capital/risk set
+  passthrough, edges affine in maturity, band centred below zero if c₋ > c₊; upper edge < 0 if (r_b − r_A)(T−t) > τ₊
+  (tax-advantaged arbitrage capital) — explains Indian negative-centred band (Shankar et al.). Confound: 1 Apr 2023 tax change + STT rise.
+- P3 inventory: no-trade region [γa₋₁ − c_u, γa₋₁ + c₊] moves with inventory → thresholds depend on lagged OI.
+- Ban = reduce-only (B1: 0 ≤ a_t ≤ a_{t−1}) + blocked new exposure (B2: new-exposure shock ε^n maps to −λε^n, λ = χψ_F/ψ_S).
+  Lemma: same u → m(ban) ≥ m(normal). P4 one-sided: no ceiling (slope 1/Φ), floor m = γa − c_u while inventory, floor wears out
+  (expiry in ban removes inventory; no rollover). P5 sign reversal of response to new-exposure demand. P6 level effect ambiguous:
+  ≥0 with closing-only pressure, <0 with enough new-demand inflow (sign condition = order-flow composition).
+  P7: ΔOI = −Volume in ban (contract-level); volume falls/spreads widen; NSE theoretical settlement on no-trade days makes the
+  settlement basis ≈ 0 mechanically (measurement trap).
+- P8 anticipation: effective entry cost c₊ + π(ω)ℓ (Assumption: exit costlier in ban) → smooth pre-ban widening; McCrary sign not
+  predicted. Cor: hysteresis comparison in [0.80, 0.95). P9: MWPL is NOT a valid excluded instrument for ban status (moves π(ω) and
+  caps) → denominator designs identify total-regime effects.
+- P10 bad-news drift larger in ban (share ρ of informed selling via short futures blocked); pre-EA negative basis (Saurav et al.)
+  should vanish in bans. P11 Miller: overpricing (√δ − √(Q/k))² with no shorting; price non-decreasing in short cost → F&O inclusion.
+- §9 heterogeneity → smooth transition/TVECM lens; §10 calibration: costs tens of bp (cash delivery STT 0.1% each side), not 3 bp.
+- Hypothesis map H1–H9 with falsifiers (§11). Limitations §12 (B2 split is the key modelling choice).
+- Numerical results (illustrative params): reversion slope above p80 −0.18 → −0.13 in ban, below p20 −0.12 → −0.16; level effect
+  +4.9 bp (no new inflow) vs −3.1/−10.8/−26.0 bp with 1/2/4 bp/day new inflow. A first version of the level check FAILED because
+  mean-zero spillover shocks cannot move the mean — the proposition was corrected to depend on the *inflow* of new demand.
