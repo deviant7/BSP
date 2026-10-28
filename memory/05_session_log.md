@@ -24,10 +24,33 @@
      DiD using predicted ΔMWPL from pre-reform FF & ADDV; (d) TVECM bands pre/post as the dynamics lens.
      Demote: constraint index → descriptive; PCP → robustness if option data adequate; PEAD → only if EPS via Prowess/library;
      45-signal FM → drop/appendix (also check internship NDA/IP on the signal library). Policy chapter short.
-  5. Timeline risk: Stage I ends ~Nov 2026; aim by then for corrected model + PAP + dataset + descriptives.
+  5. (Timeline advice given here was WITHDRAWN — see user correction below.)
+- **User corrections (28 Oct 2026):**
+  - Prof. Chaubal has NOT been sent the progress report or Models A/B. She knows only the project document.
+    → A/B can be replaced freely; next thing she sees should be the corrected theory framework.
+  - **Ignore the timeline entirely.** No time pressure; work at our own pace. Never plan around Stage I/II deadlines.
+  - User agrees with most recommendations but thinks the project-document *goals* are good → keep them.
+- Wrote `plan/BSP_Research_Plan_v2.md` (the master plan going forward). Key content:
+  - Keep all six doc goals; order = theory → PAP → blind data build → validation → tests.
+  - Theory: one model "ban as a reduce-only market-wide freeze": one-sided arbitrage in ban (positive-basis
+    deviations persist, negative revert via unwinding of long-cash/short-futures inventory), spot spillover
+    (level effect can be negative), anticipation/bunching below 95%, hysteresis (95/80). Keep A's static band
+    (Props 1–2); replace A Props 3–6; B demoted to econometrics appendix with fixes. Simulate model and run
+    all estimators on simulated data.
+  - Hypotheses revised: H1 index (frictions only), H2 PEAD asymmetric (bad news in ban), H3 estimated vs
+    cost-implied band, H4 heterogeneous 1 Oct 2025 effects (no "relaxation"), H5 two-sided, H6 mechanical
+    variation; new H7 (one-sided correction) and H8 (spillover to cash).
+  - Designs: near-miss ban-entry event study; RD (supporting); hysteresis design; quarterly MWPL
+    recalculation dates; 1 Oct 2025 predicted-Δutilisation intensity (FutEq numerator + new denominator).
+  - Measurement: basis + relative implied repo; put–call–futures parity; SUE (if EPS via NSE XBRL/Prowess)
+    and EAR (price-only); constraint index from frictions only, crowding index separate, validated vs bands.
+  - Cross-section: SYY double sorts + FM; public anomaly set; F&O inclusion/exclusion events as staggered
+    DiD over ~2,000 stocks (power fix). Internship 45-signal library only if cleared under the agreement.
+  - Pipeline validation: replicate Nandan et al. (2014) Nifty futures basis.
 
 ## Open threads
-- Guide's response on model choice / the re-scoped plan.
+- Next steps per plan v2 §10: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
+- Guide's response on the revised framework (she has seen only the project doc).
 - Fix project doc (short-selling line, "relaxations", timeline with theory stage).
 - Fix lit-review / notes / reference-index errors (listed in 04) — awaiting user go-ahead.
 - Verify 80% ban-exit rule and historical 30× volume MWPL leg from NSE circulars.

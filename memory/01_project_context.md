@@ -40,8 +40,11 @@ bands, FM, robustness, writing.
   conclusions are theory-derived (guards against confirmation bias/overfitting).
 - Response so far: deep literature review (29 pp, math), then two candidate models (A: constrained arbitrage with MWPL cap, KKT;
   B: impulse-control band of inaction, b=(6Kσ²/θ)^{1/4}, "bridge" to TAR/TVECM). Both "deliver" six requirements = H1–H6.
-  Final model choice deferred to guide. Progress report + 3-pp guide versions written Sep 28.
+  Progress report + 3-pp guide versions written Sep 28 — **but NONE of these were sent to the guide**;
+  she knows only the project document.
 - No data downloaded, no empirical work yet.
+- **Plan going forward: `plan/BSP_Research_Plan_v2.md`** (keeps the doc's goals; theory→PAP→blind data→tests).
+- **No timeline constraints** (user, 28 Oct 2026): ignore Stage I/II weeks; order work by logic, not dates.
 
 ## Corrections already folded into review/models (but NOT into the Word doc)
 - Short selling: intraday cash shorting allowed; naked overnight shorting barred; SLB thin → SSF is the practical channel.

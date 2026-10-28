@@ -19,6 +19,10 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 5. `memory/05_session_log.md` — chronological log of what was done, decided, and what is open.
 6. `memory/06_user_working_style.md` — how the user likes to work.
 
+## Current master plan
+- `plan/BSP_Research_Plan_v2.md` — how the project proceeds (supersedes the project doc's §7 methods ordering and §12 timeline;
+  the doc's goals stand). The guide has seen only the project document. **No time pressure — ignore timelines.**
+
 ## File map (repo root)
 - `BSP_Project_Document.docx` / `.pdf` — the detailed study plan (Sep 2026); identical content. The user's master plan.
 - `BSP_Literature_Review.pdf` + `litreview_src/` — 29-pp math-level review (LaTeX, compiles).
