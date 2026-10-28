@@ -103,6 +103,15 @@
   fell; median ratio 0.73; 17% at the floor (0.5), 48% at 15% FF (0.75). Ban stock-days peak 2017 (1,586) and 2024 (1,656).
   Utilisation density smooth through 95% pre-reform (no visible bunching; formal test pending).
 
+- **Prices/basis (in progress):** price download 2015→2026 running (resumable). Known source gap: F&O bhavcopy 30 Mar 2021
+  missing at NSE (all URLs 404). Rates: FRED INDIR3TIB01STM (3M interbank, monthly, from Nov 2011) + IRSTCI01INM156N (call money);
+  FRED needs curl (Python connection dropped). Corporate actions: NSE API works without cookies; 28,251 records 2014–2026;
+  dividend regex must require the word 'dividend' ('sub-division' = split). `build_basis.py`: futures VWAP needs lot size —
+  legacy files lack it → gcd of OI/ΔOI per contract, snapped to a multiple using value/(contracts×mid) because lots change
+  mid-contract (splits/revisions; raw gcd failed for ~2.5%); after fix 99.7% of VWAPs inside [low, high]. Test run 2015–2023:
+  near-month usable stock-days 363k; basis median ≈ 0–9 bp/yr, p10–p90 ≈ −40 to +30 bp; |m| shrinks toward expiry; theoretical-
+  settlement days ~0% for near-month (2.4% of next-month rows have zero contracts). No ban linkage done (blind).
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
