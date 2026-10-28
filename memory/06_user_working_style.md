@@ -11,3 +11,10 @@
 - **Keep all previous plans and everything deleted (28 Oct 2026)**: archive each plan version in `plan/archive/` and log every cut/change
   in `plan/archive/REMOVED_ITEMS_REGISTER.md` (why + how to reintroduce). Items may be brought back later.
 - Scope: the project is limits to arbitrage in Indian equities broadly; the F&O ban is an important focus but not the whole project.
+- **Guide-facing documents (28 Oct 2026): NO internal references.** Prof. Chaubal knows only the project document. Never mention
+  Models A/B/C labels, "audit", memory files, plan versions, phases, internal file paths, "not yet read" notes, or our past mistakes
+  in anything she will see. Write as a self-contained academic document. (Internal honesty notes live in memory/, not in her PDF.)
+- **Progress report plan:** ONE PDF to the guide, which will include the 3-page plain-language theory version. The user wants MORE
+  progress (beyond theory) before building it — e.g., data built and first descriptive facts.
+- User spelled the guide's name "Aditi Chawla" once (voice typing); records say Prof. Aditi Chaubal — confirm spelling before
+  putting it on the report.

@@ -1,0 +1,7 @@
+# raw downloads are re-creatable from the scripts in data_pipeline/
+data/raw/
+# LaTeX build files
+*.aux
+*.log
+*.toc
+*.out

@@ -16,7 +16,7 @@
 \setstretch{1.2}
 \sectionfont{\color{accent}}\subsectionfont{\color{accent}}
 \pagestyle{fancy}\fancyhf{}
-\rhead{\small\itshape Model C: Constrained Arbitrage under India's Limits}\lhead{\small BS Project --- Theoretical Framework}
+\rhead{\small\itshape Constrained Arbitrage under India's Limits}\lhead{\small BS Project --- Theoretical Framework}
 \cfoot{\thepage}\renewcommand{\headrulewidth}{0.4pt}
 
 \newcommand{\E}{\mathbb{E}}
@@ -32,7 +32,7 @@
 \newtheorem*{test}{Empirical content}
 
 \title{\vspace{-1.2cm}\color{accent}\bfseries Constrained Arbitrage under India's Limits:\\ A Model of the Basis, the F\&O Ban and Short-Sale Constraints\\[0.25cm]
-\large\mdseries\color{black} Theoretical framework for the BS Project --- \emph{Model C} (replaces candidate Models A and B)}
+\large\mdseries\color{black} Theoretical framework for the BS Project}
 \author{Prince Kumar (23B3032), BS Economics, IIT Bombay\\ \small Guide: Prof.\ Aditi Chaubal \quad\textbar\quad EC~495 / EC~497}
 \date{Draft, October 2026}
 
@@ -45,7 +45,7 @@
 trading costs, the cost of shorting, arbitrage capital, arbitrage risk, position limits and the F\&O ban. Each limit is a
 parameter of the same model, so every empirical hypothesis is derived from one framework. The core is a
 mean--variance arbitrage sector that trades the futures--cash basis against outside traders in both markets. Three
-features are new relative to the earlier candidate models. (i) The F\&O ban is modelled as it actually operates: a
+features matter for the Indian setting. (i) The F\&O ban is modelled as it actually operates: a
 \emph{reduce-only} rule for every participant, not a freeze on the arbitrageur alone. (ii) Arbitrage inventory is a state
 variable, so the no-trade region moves with existing positions. (iii) Demand that is blocked from the futures market
 can spill into the cash market. The model's sharpest prediction is that the ban turns two-sided arbitrage into
@@ -61,18 +61,14 @@ propositions to hypotheses, each with the result that would contradict it.
 \newpage
 
 %=====================================================================
-\section{Purpose and what changed}
-%=====================================================================
-Prof.\ Chaubal's suggestion was to fix a theoretical framework before any empirical work, so that the hypotheses are
-derived rather than fitted. Two earlier candidate models (A: constrained arbitrage; B: band of inaction) were drafted
-but not circulated. An audit found that both treated the ban as a freeze on the arbitrageur alone and built their
-conclusions into assumptions (B assumed the cost of correcting the basis goes to infinity at 95\% utilisation). Model A
-also contained a false proof (its Prop.~5) and an invalid exclusion restriction (its Prop.~6). Model~C keeps what was
-correct --- Model A's static band (its Props.~1--2) and Model B's reading of a threshold model as a band of inaction ---
-and rebuilds the rest. Three design rules guide it:
+\section{Purpose}
+The aim is to fix a theoretical framework before the empirical work, so that the hypotheses are derived rather than
+fitted. The model builds on the limits-to-arbitrage literature (Shleifer and Vishny, 1997; Gromb and Vayanos, 2010) and
+on the econometrics of no-arbitrage bands (Dwyer, Locke and Yu, 1996; Tse, 2001; Ters and Urban, 2020). Three design
+rules guide it:
 \begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
 \item \textbf{Institutions as they are.} The ban, the short-selling framework, settlement prices and costs are modelled
-from the primary sources (SEBI 2025/79; NSE Clearing circular 119/2025 and FAQ of October 2025).
+from the primary sources (SEBI circular 2025/79; NSE Clearing circular 119/2025 and its FAQ of October 2025).
 \item \textbf{Predictions that can fail.} Wherever the sign of an effect depends on the environment, the model says on
 what, and the empirical work tests that condition rather than a one-sided sign.
 \item \textbf{Daily horizon.} The data are daily, so the relevant arbitrageur carries positions overnight
@@ -410,8 +406,7 @@ selling by non-holders.
 \begin{remark}
 Outside a ban the same mechanism predicts that informed pessimists push the futures price \emph{below} carry before bad
 news, since their short futures cannot be met by reverse arbitrage. A recent working paper (Saurav, Srivastava and
-Agarwalla, 2026) reports a negative basis before earnings announcements in Indian stock futures; we have read only its
-abstract. The model adds that this pre-announcement signal should \emph{vanish} for stocks in a ban, while drift after
+Agarwalla, 2026) reports a negative basis before earnings announcements in Indian stock futures. The model adds that this pre-announcement signal should \emph{vanish} for stocks in a ban, while drift after
 bad news should grow.
 \end{remark}
 
@@ -452,17 +447,17 @@ smooth, increasing function of $|m_{t-1}-\text{centre}|$ --- the exponential/log
 and is well approximated by a three-regime threshold model whose thresholds are quantiles of $G$ (Dwyer, Locke and Yu,
 1996; Ters and Urban, 2020). Proposition~\ref{prop:inv} adds that the thresholds move with inventory, and
 Proposition~\ref{prop:onesided} that in a ban the upper regime's adjustment speed falls toward zero while the lower regime's
-remains. Model~B's band-of-inaction derivation, with its obstacle condition corrected, is kept as the interpretation of a
-single arbitrageur's threshold (appendix of the thesis), not as an exact equivalence with the estimator.
+remains. A band-of-inaction (impulse-control) derivation gives the same reading for a single arbitrageur: the threshold is
+the point at which correcting the deviation becomes worth its cost.
 
 %=====================================================================
 \section{Calibration and horizon}\label{sec:cal}
 %=====================================================================
 For an overnight carrier, the round-trip cost of a cash-and-carry trade includes STT on the cash purchase and sale
 (0.1\% each), STT on the futures sale (0.01--0.05\% depending on the period) or 0.1\% on physical delivery, stamp duty,
-exchange and clearing fees, brokerage and impact. That is tens of basis points, not the 3 bp used in Model~A (which came
-from a one-second estimate). Arbitrage funds that roll rather than deliver spread these costs over several expiries, which
-lowers the effective $\tau_+$ per month. Phase~3 will compute a bottom-up cost band for each period; the simulations here
+exchange and clearing fees, brokerage and impact. That is tens of basis points, far wider than the bands of a few
+basis points estimated from one-second data (Aggarwal, 2015), which describe intraday market makers. Arbitrage funds that roll rather than deliver spread these costs over several expiries, which
+lowers the effective $\tau_+$ per month. The empirical work will compute a bottom-up cost band for each period; the simulations here
 use round illustrative numbers ($c_+=15$, $c_u=10$, $c_-=60$ bp) and are not estimates.
 
 %=====================================================================
@@ -494,8 +489,7 @@ its sign follows the composition of order flow (closing versus new demand) as th
 %=====================================================================
 \begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
 \item Partial equilibrium with linear outside demand and a myopic, mean--variance arbitrage sector; dynamic hedging and
-the option to unwind early (Brennan and Schwartz, 1990) enter only through the inventory structure. The full text of
-Brennan--Schwartz has not yet been read.
+the option to unwind early (Brennan and Schwartz, 1990) enter only through the inventory structure.
 \item The split of outside demand into closing and new-exposure parts (B2) is the crucial modelling choice behind
 Props.~\ref{prop:flip}--\ref{prop:level}. Its empirical counterpart (order flow that opens versus closes positions) is only
 partly observable from public data (changes in OI against volume).
@@ -508,8 +502,8 @@ partly observable from public data (changes in OI against volume).
 %=====================================================================
 \section{Numerical verification and illustration}\label{app:num}
 %=====================================================================
-The script \texttt{models\_src/modelC/verify\_modelC.py} solves each equilibrium by brute force (bisection on the
-best-response fixed point) and compares it with the closed forms. All checks pass: the static band (Prop.~\ref{prop:band}),
+A Python script solves each equilibrium by brute force (bisection on the best-response fixed point) and compares it
+with the closed forms. All checks pass: the static band (Prop.~\ref{prop:band}),
 the inventory step in normal times and in a ban (Props.~\ref{prop:inv}--\ref{prop:onesided}), the floor
 $\gamma a_t-c_u$ and the full passthrough above it, Lemma~\ref{lem:weak}, the monotonicity and sign change in
 Proposition~\ref{prop:level}, and the Miller closed forms (Prop.~\ref{prop:miller}).
@@ -547,14 +541,14 @@ upward pressure passes through fully.}
 \small
 \begin{description}[leftmargin=1.2em,itemsep=0pt,font=\normalfont]
 \item Aggarwal, N. (2015). Limits to arbitrage: The case of single stock futures and spot prices. IGIDR WP-2015-010.
-\item Brennan, M. and E. Schwartz (1990). Arbitrage in stock index futures. \emph{Journal of Business} 63(1), S7--S31. [not yet read in full]
+\item Brennan, M. and E. Schwartz (1990). Arbitrage in stock index futures. \emph{Journal of Business} 63(1), S7--S31.
 \item Diamond, D. and R. Verrecchia (1987). Constraints on short-selling and asset price adjustment to private information. \emph{Journal of Financial Economics} 18, 277--311.
 \item Dwyer, G., P. Locke and W. Yu (1996). Index arbitrage and nonlinear dynamics between the S\&P 500 futures and cash. \emph{Review of Financial Studies} 9(1), 301--332.
 \item Gromb, D. and D. Vayanos (2010). Limits of arbitrage. \emph{Annual Review of Financial Economics} 2, 251--275.
 \item Miller, E. (1977). Risk, uncertainty, and divergence of opinion. \emph{Journal of Finance} 32(4), 1151--1168.
 \item Nandan, T., P. Agrawal and S. Bhargava (2014). Mispricing in CNX Nifty futures: An empirical investigation. \emph{Asia-Pacific Journal of Management Research and Innovation} 10(4), 413--422.
 \item NSE Clearing (2025). Circular 119/2025, 8 September 2025; FAQ on position limits, limit monitoring and securities in ban period, updated 13 October 2025.
-\item Saurav, S., P. Srivastava and S. K. Agarwalla (2026). Decoupled: Disagreement, short-sale constraints, and law-of-one-price violations around earnings announcements. SSRN working paper. [abstract only]
+\item Saurav, S., P. Srivastava and S. K. Agarwalla (2026). Decoupled: Disagreement, short-sale constraints, and law-of-one-price violations around earnings announcements. SSRN working paper.
 \item SEBI (2025). Measures for enhancing trading convenience and strengthening risk monitoring in equity derivatives. Circular SEBI/HO/MRD/TPD-1/P/CIR/2025/79, 29 May 2025.
 \item Shankar, R.L., G. Sankar and K. Kiran Kumar (2015). Mispricing in single stock futures: Empirical examination of Indian markets. NSE Working Paper WP/16/2015; \emph{Emerging Markets Finance and Trade} 55(7), 1619--1633 (2019).
 \item Shleifer, A. and R. Vishny (1997). The limits of arbitrage. \emph{Journal of Finance} 52(1), 35--55.
