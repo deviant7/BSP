@@ -83,6 +83,13 @@
   prices (futures rows, options summary, cash EQ/BE/BZ, MTO delivery) for 2015–2026 (running; resumable).
   Raw data in data/raw (git-ignored). Draft pre-analysis plan written: `plan/pre_analysis_plan_draft.md` (blind; to be tagged pap-v1).
 
+- **Data error checks (28 Oct 2026):** panel builder fixed for (i) 107 combineoi files with 2-digit-year dates (were silently
+  dropped), (ii) NSE misdated files (combineoi_02112012 holds 5 Nov data; combineoi_02102015 holds 1 Oct; secban 19 Feb 2014 says
+  19 Mar; secban 25 Aug 2014 says 26 Aug) → dates now taken from file names and inner-date mismatches dropped, (iii) trailing
+  commas in secban symbols, (iv) a date-format bug in the flag-vs-ban-list check. After fixes: 99.5% of 'No Fresh Positions'
+  flags match next-day ban lists (2010–2020 partial run). Known gap: 13 combineoi files 1–19 Jun 2012 corrupt at source
+  (re-download byte-identical); pre-sample only.
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
