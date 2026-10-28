@@ -171,6 +171,9 @@
   index-futures premium (economic, not data error). Report updated (data section + new subsection on F&O events, free float,
   results dates; plan step 1 now = AMFI + XBRL EPS). Report is 26 pp; no em dashes.
 
+- **User asked to remove §7 'Points on which I would value your guidance' from the report** (done; summary line adjusted; the
+  removed text is kept in `progress_report_src/removed_guidance_questions.tex`; the user will raise the questions personally).
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
