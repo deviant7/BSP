@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\makeatletter
+\providecommand{\UseTaggingSocket}[1]{}
+\providecommand{\UseInstance}[3]{}
+\makeatother
+
+\usepackage{amsmath,amssymb,booktabs,xcolor,enumitem,fancyhdr}
+\usepackage[a4paper,margin=0.85in]{geometry}
+
+\definecolor{owblue}{RGB}{20,40,90}
+\definecolor{owgray}{RGB}{92,92,92}
+\definecolor{owgreen}{RGB}{20,110,60}
+\definecolor{owred}{RGB}{150,30,30}
+
+\usepackage[colorlinks=true,linkcolor=owblue,urlcolor=owblue]{hyperref}
+
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -.2ex}{1.8ex \@plus.2ex}%
+  {\normalfont\large\bfseries\color{owblue}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-2.6ex \@plus -1ex \@minus -.2ex}{1.2ex \@plus.2ex}%
+  {\normalfont\normalsize\bfseries\color{owblue}}}
+\makeatother
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small\color{owgray}Model B --- Band of Inaction}
+\rhead{\small\color{owgray}BS Project · Limits to Arbitrage}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\keybox}[1]{\par\vspace{4pt}\begin{center}%
+\fcolorbox{owgray!45}{owblue!5}{\begin{minipage}{0.955\linewidth}%
+\vspace{3pt}\small #1\vspace{3pt}\end{minipage}}\end{center}\vspace{2pt}}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=3pt}
+\newcommand{\dd}{\mathrm{d}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{owblue} Model B --- Waiting Until It Is Worth Fixing}\\[4pt]
+{\normalsize A second model of the band, built to match the statistics}\\[6pt]
+{\footnotesize Prince Kumar · Roll No.\ 23B3032 · BS Economics, IIT Bombay}\\[2pt]
+{\footnotesize Guide: Prof.\ Aditi Chaubal · BS Project (EC 495 / EC 497) · September 2026}
+\end{center}
+\vspace{-4pt}
+{\color{owgray}\hrule height 0.6pt}
+\vspace{10pt}
+
+\noindent This is the second of the two models. It reaches the same ``no-trade band'' as Model A but from a different starting point. Instead of modelling the trader's risk and money in detail, I just say that fixing a mispricing costs something, so a sensible trader waits until the gap is big enough to be worth fixing and acts only at the edges. That ``wait until it's worth it'' rule is itself a band. The reason I built this version is that the band it produces is exactly the threshold statistical model I plan to fit to the data.
+
+\keybox{\textbf{Main result.} If correcting a gap costs money, the best rule is to leave the price alone inside a band and only step in at the edges. This gives the same lop-sided band as Model A, and --- importantly --- its shape is exactly the three-regime threshold model I will estimate. So the theory and the statistics are the same object: when I fit the threshold model, I am directly measuring the band the theory describes.}
+
+\section{The set-up}
+Let $z$ be the log basis --- the gap between the futures and its fair value, in log terms. When nobody is arbitraging it, order flow pushes it around like a random walk,
+\[
+\dd z_t = \sigma\,\dd W_t ,
+\]
+where $\sigma$ is how volatile the gap is. This is the ``no correction'' starting point: left alone, the gap neither shrinks nor gets pinned to zero.
+
+Correcting the gap is costly. I use the standard set-up for this kind of problem:
+\begin{itemize}
+\item acting (putting on the trade to reset the gap) costs a fixed amount $K$ on the upper side, and $K+K_s$ on the lower side, where $K_s$ is the extra cost of shorting;
+\item leaving a gap open is not free either --- holding an open position against a gap of size $z$ costs $\theta z^2$ per period (capital tied up, financing, mark-to-market risk), so bigger gaps are more painful to sit on;
+\item future costs are discounted at rate $\rho$.
+\end{itemize}
+The trader picks when to act to keep his total cost down.
+
+\section{Solving it: the band}
+This is an impulse-control problem. The answer is a barrier rule: do nothing while $z$ is inside a band $[C_1,C_2]$, and act the moment $z$ reaches an edge. Inside the band the trader's cost function $V(z)$ satisfies
+\[
+\rho\,V(z) \;=\; \tfrac{\sigma^2}{2}\,V''(z) + \theta z^2 ,
+\]
+whose solution is $V(z)=A_{+}e^{\eta z}+A_{-}e^{-\eta z}+\tfrac{\theta}{\rho}z^2+\tfrac{\theta\sigma^2}{\rho^2}$ with $\eta=\sqrt{2\rho}/\sigma$. Each edge is fixed by two conditions: value-matching (at the edge the trader is just indifferent between acting, which costs him $K_j$, and waiting) and smooth-pasting ($V'(C_j)=0$, the condition that picks the best edge). Solving these for the symmetric case and keeping the leading term gives a clean formula for the half-width of the band:
+\[
+\boxed{\;b \;=\; \Big(\ \underbrace{6}_{\text{constant}}\ \cdot\ \underbrace{K}_{\text{cost of acting}}\ \cdot\ \underbrace{\sigma^2}_{\text{how volatile}}\ /\ \underbrace{\theta}_{\text{cost of waiting}}\ \Big)^{1/4}\;}
+\]
+In words: the band is wider when acting is expensive ($K$ large) and when the gap is volatile ($\sigma^2$ large), and narrower when sitting on an open gap is painful ($\theta$ large). With the higher short-side cost $K+K_s$, the lower edge is further out than the upper edge, so the band is lop-sided in the same direction as Model A.
+
+\section{Comparative statics}
+The signs are easy to read off the formula:
+\begin{center}
+\small
+\begin{tabular}{p{6.5cm} c p{5.5cm}}
+\toprule
+\textbf{If this goes up\ldots} & \textbf{\ldots the band} & \textbf{why} \\
+\midrule
+cost of acting, $K$ & wider & less worth fixing small gaps \\
+volatility of the gap, $\sigma$ & wider & the gap could move against you \\
+cost of sitting on a gap, $\theta$ & narrower & more painful to wait, so act sooner \\
+extra short cost, $K_s$ & wider on the short side only & shorting is dearer \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{What the ban does}
+The position cap enters through the cost of acting. As a stock's open interest climbs toward the MWPL, the correcting trade gets harder to put on, so the effective cost of acting rises and the band widens. At the ban it is impossible to open the position at all. In the model the ``fix it'' barrier disappears: with no edge to push the gap back, $z$ is just the random walk again, with no tendency to return. So the gap drifts freely until the ban lifts. This is the same conclusion as Model A --- correction switches off --- seen from the cost side rather than the shadow-price side.
+
+\section{The bridge to the statistics}
+This is the reason I built this version. Look at the gap through time. Inside the band nobody acts, so it moves as a random walk:
+\[
+z_t = z_{t-1} + \varepsilon_t \qquad (C_1 < z_{t-1} < C_2).
+\]
+Once it reaches an edge it gets pushed back, which shows up as mean reversion. Put together, the observed gap follows a three-regime threshold model:
+\[
+\boxed{\;\Delta z_t=
+\begin{cases}
+\ \alpha_-\,(z_{t-1}-C_1)+\varepsilon_t, & z_{t-1}\le C_1 \quad (\text{correct upward}),\\[2pt]
+\ \varepsilon_t, & C_1<z_{t-1}<C_2 \quad (\text{do nothing}),\\[2pt]
+\ \alpha_+\,(z_{t-1}-C_2)+\varepsilon_t, & z_{t-1}\ge C_2 \quad (\text{correct downward}),
+\end{cases}\quad \alpha_-,\alpha_+<0.\;}
+\]
+This is exactly the three-regime threshold model (the kind I plan to estimate, following Ters \& Urban 2020). The thresholds it fits are the band edges $C_1,C_2$ from the theory, and the near-zero middle term is the do-nothing region. So estimating the model is the same as measuring the band. Reading a ban off the data then means finding a stretch where the outer terms go to zero and the band widens.
+
+\section{What it predicts, and where it fits}
+Model B predicts the same list as Model A:
+\begin{itemize}
+\item the gap is bigger and lasts longer where limits are tighter, and it is lop-sided;
+\item the ban makes the band jump wider and stops correction;
+\item drift after earnings is deeper for constrained stocks;
+\item signals earn more in constrained stocks;
+\item the effect can be identified from outside changes in the position limit.
+\end{itemize}
+
+\keybox{\textbf{Where this model fits.} Model B is the ``matches the statistics'' side of the project. Its band is the exact threshold model I will fit to the data, so the theory and the estimation are one object. Model A (the other note) explains the trader's behaviour behind that band and what the ban does to him. The two give the same predictions from different directions, which is the point of doing the theory first.}
+
+\end{document}

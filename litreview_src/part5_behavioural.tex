@@ -1,0 +1,57 @@
+\part{The Behavioural / Retail Demand Side}
+\label{part:behavioural}
+
+The arbitrage core (Parts~I--IV) is the \emph{supply} side of price correction --- who fixes mispricings, and what stops them. This part is the \emph{demand} side --- who \emph{creates} the mispricing pressure, and why it concentrates in exactly the stocks with the widest bands. In DSSW's language (\S\ref{sec:dssw}) this is the noise-trader block; in our project it is the concluding policy chapter, which argues that retail crowding is a leading reason single stocks hit the 95\% MWPL trigger in the first place. It requires no new firm-level retail data (which public sources cannot provide) --- it borrows the identified results below.
+
+% =====================================================================
+\section{Kumar (2009): who gambles, and in which stocks}
+\label{sec:kumar}
+Kumar shows individual investors' propensity to gamble spills into their portfolios: they over-weight \emph{lottery-type stocks}. A lottery stock is cheap, volatile, and positively skewed --- a small outlay with a small chance of a large payoff. Operationally, Kumar flags a stock as lottery-type when it is simultaneously
+\begin{equation}
+\text{low price}, \qquad \text{high idiosyncratic volatility } \sigma(\hat\varepsilon_i), \qquad \text{high idiosyncratic skewness } \mathrm{skew}(\hat\varepsilon_i), \label{eq:lottery}
+\end{equation}
+where $\hat\varepsilon_i$ are residuals from a factor model (e.g.\ Fama--French). He documents that lottery demand rises among younger, poorer, less-educated investors and in economic downturns, and that lottery stocks subsequently \emph{under-perform} --- over-demand pushes prices up and expected returns down.
+
+\begin{takeaway}
+Equation~\eqref{eq:lottery} identifies \emph{which} stocks retail crowds into: low-priced, high-IVOL, high-skew names. These are the same characteristics that, in Part~I, produce wide no-arbitrage bands (high idiosyncratic risk $\Rightarrow$ large $\sigma_A^2(1-\rho^2)$ in \eqref{eq:gv-price}). Demand and constraint therefore line up on the same stocks --- the mechanism behind hypothesis H3 (bands widest for small, high-IVOL, retail-heavy names) and the demand-side reason such names approach the MWPL trigger.
+\end{takeaway}
+
+% =====================================================================
+\section{Sehgal, Vasishth \& Deisting (2024): the lottery factor in India}
+\label{sec:lottery-india}
+This paper confirms Kumar's mechanism for India (Dec 2001--Mar 2021) and builds a tradable factor. Following Bali, Cakici \& Whitelaw (2011), the key lottery proxy is \emph{MAX}: the average of the $k$ largest daily returns of a stock in a month,
+\begin{equation}
+\mathrm{MAX}^{(k)}_{i,t} = \frac{1}{k}\sum_{\ell=1}^{k}\,R^{(\ell)}_{i,t}, \label{eq:max}
+\end{equation}
+where $R^{(1)}_{i,t}\ge R^{(2)}_{i,t}\ge\cdots$ are the ranked daily returns within month $t$ (typically $k=1$ to $5$). Sorting on MAX (alongside skewness, tail risk, and IVOL) and forming a long-low/short-high portfolio yields a \emph{lottery factor}; augmenting the Fama--French five-factor model with it,
+\begin{equation}
+r_{i,t}-r_{f,t} = \alpha_i + \beta_i^{\text{MKT}}\mathrm{MKT}_t + \beta_i^{\text{SMB}}\mathrm{SMB}_t + \beta_i^{\text{HML}}\mathrm{HML}_t + \beta_i^{\text{RMW}}\mathrm{RMW}_t + \beta_i^{\text{CMA}}\mathrm{CMA}_t + \beta_i^{\text{LOT}}\mathrm{LOT}_t + \varepsilon_{i,t}, \label{eq:ff6}
+\end{equation}
+produces a better-performing (six-factor) benchmark. They find MAX predicts returns beyond other risk measures, and that lottery behaviour in India is \emph{mainly retail-driven} and tied to probability mis-weighting and overreaction to attention-grabbing events.
+
+\begin{takeaway}
+The Indian lottery effect already exists in the literature, so we \emph{cite rather than re-derive} it. It supplies the demand-side counterpart to our supply-side story and shares its toolkit (MAX, IVOL, skew) with our constraint index. It also warns against re-treading crowded ground --- our contribution is the constraint/ban mechanism, not the lottery factor.
+\end{takeaway}
+
+% =====================================================================
+\section{Barber \& Odean (2000, 2013): retail investors as net noise}
+\label{sec:barber-odean}
+The two Barber--Odean references establish that retail investors, in aggregate, trade too much and lose. In ``Trading Is Hazardous to Your Wealth'' (2000), using $66{,}465$ US discount-brokerage households (1991--96), they show net returns fall with turnover: the highest-turnover quintile earns an annual net return of $\approx 11.4\%$ against a market return of $\approx 17.9\%$, a gap driven by trading costs and overconfident over-trading. The survey ``The Behavior of Individual Investors'' (2013) synthesises the field: individual investors under-perform, hold under-diversified portfolios, exhibit the disposition effect (selling winners, holding losers), and buy attention-grabbing / past-return stocks --- i.e.\ they behave as DSSW noise traders.
+
+\begin{takeaway}
+This is the micro-foundation for treating heavy retail activity as noise-trader demand rather than informed order flow, licensing the DSSW interpretation of retail crowding in the policy chapter. It is US evidence; we use it for framing, not identification.
+\end{takeaway}
+
+% =====================================================================
+\section{SEBI (2024): the aggregate retail-loss study}
+\label{sec:sebi-loss}
+SEBI's study of individual traders in equity F\&O (FY22--FY24) is the authoritative, account-level evidence that public data cannot reproduce:
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+\item $93\%$ of over 1 crore individual F\&O traders lost money over FY22--24; average loss $\approx \rupee 2$ lakh per trader; only $1\%$ earned more than $\rupee 1$ lakh.
+\item In FY24, proprietary traders and FPIs booked gross profits of $\approx \rupee 33{,}000$ cr and $\approx \rupee 28{,}000$ cr respectively, while individuals lost $\approx \rupee 61{,}000$ cr; $96\%$--$97\%$ of the prop/FPI profits came from \emph{algorithmic} trading.
+\item The base skews young and less wealthy: under-30 traders rose from $31\%$ (FY23) to $43\%$ (FY24); $\approx 72\%$ from beyond the top-30 cities; $>75\%$ declared income below $\rupee 5$ lakh; and $>75\%$ of loss-makers kept trading.
+\end{itemize}
+
+\begin{takeaway}
+This is the empirical face of DSSW's relative-returns result (\S\ref{sec:dssw}): noise traders (retail) transfer wealth to sophisticated players (algorithmic prop/FPI desks) precisely by bearing the risk they create. It is the authoritative welfare number, which is exactly why the project does \emph{not} attempt to re-estimate retail welfare from public aggregates (we would produce a worse version of a number the regulator already owns). It motivates \emph{why} SEBI is tightening the very constraints we study --- closing the loop between the demand side and the policy relevance of Project~1.
+\end{takeaway}

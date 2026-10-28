@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F3A5F}
+\usepackage[colorlinks=true,linkcolor=accent,citecolor=accent,urlcolor=accent]{hyperref}
+\usepackage{sectsty}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------- header/footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small\itshape Limits to Arbitrage --- Literature Review}
+\lhead{\small BS Project (EC 495/497)}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- section styling ----------
+\partfont{\color{accent}}
+\sectionfont{\color{accent}}
+\subsectionfont{\color{accent}}
+
+% ---------- math shortcuts ----------
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\1}{\mathbf{1}}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\rupee}{\ensuremath{\mathrm{Rs}\,}}
+\newtheorem*{takeaway}{Takeaway for our project}
+
+% ---------- title ----------
+\title{\vspace{-1.2cm}\color{accent}\bfseries Limits to Arbitrage in the Indian Equity Market\\[0.3cm]
+\large\mdseries\color{black} A Mathematically Detailed Literature Review\\
+\normalsize\itshape Theory, measurement, and evidence --- assembled to underpin a formal model of the project}
+\author{Prince Kumar \quad(Roll No.\ 23B3032)\\ \small BS Economics, IIT Bombay \\[0.2cm]
+\small Project guide: Prof.\ Aditi Chaubal \quad\textbar\quad Courses: EC~495 (Stage~I) / EC~497 (Stage~II)}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent This document is a deep, equation-level review of the twenty-one references assembled for the BS Project on \emph{limits to arbitrage in the Indian equity market}. Its purpose is deliberately narrow and deliberately demanding: to reconstruct, in full mathematical detail, the theoretical models, the mispricing-measurement definitions, and the econometric estimators that these papers contain, so that they can serve as the raw material for the next stage of the project --- a self-contained theoretical/mathematical model of what the project sets out to establish, built \emph{before} any empirical work in order to guard against confirmation bias and data-snooping. Each paper is treated in its own right (question, formal model with derivations, data and method, results) and then mapped explicitly onto our research design. The review is organised into six parts: (I) the theory of limited arbitrage; (II) how mispricing is measured; (III) the econometrics of the no-arbitrage band; (IV) evidence from the Indian market and the institutional mechanism we exploit; (V) the behavioural/retail demand side; and (VI) a synthesis that states precisely what a theoretical model of our project must reproduce. Throughout, the recurring object is the \emph{no-arbitrage band} --- the interval of mispricing inside which arbitrage does not pay --- and the recurring theme is that India's mechanical F\&O ``ban'' on single-stock derivatives is a rare, dated, exogenous shock to the width of that band.
+\end{abstract}
+
+\vspace{0.4cm}
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{\small
+\textbf{Our problem statement (restated for reference).}
+Standard theory says a mispriced security is traded back to fair value almost at once. In practice, price errors in Indian stocks survive for days or weeks. The project asks: \emph{how strongly do arbitrage constraints bind in Indian equities, and how much of the observed, persistent mispricing can be attributed to them?} The identifying variation is India's Market-Wide Position Limit (MWPL) ``F\&O ban'': once market-wide open interest in a single stock crosses 95\% of its MWPL, no fresh derivative positions may be opened. Because single-stock futures are the primary arbitrage channel in India (intraday cash short-selling is allowed, but naked overnight shorting is barred and the securities-lending market is thin), the ban is a sharp, mechanical, repeated contraction of arbitrage capacity.}}
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ---------- how to read ----------
+\section*{How to read this document}
+\addcontentsline{toc}{section}{How to read this document}
+Every paper is written up so that a reader who has never opened it can follow both \emph{what it does} and \emph{the mathematics of how}. Sections follow a common template: the question and contribution; the formal model or measurement definition, with derivations; data and method; results; and a boxed \textit{Takeaway for our project}. Notation is kept consistent across papers wherever possible --- in particular $F$ and $S$ (or $P$) denote futures and spot prices, $z$ or $b$ the basis/mispricing, $c$ a per-unit friction, and $u$ a non-fundamental demand shock. Cross-references between papers are frequent and deliberate: the value of the review is in how the strands fit together, which Part~VI makes explicit. A consolidated reference list appears at the end.
+
+\input{part1_theory}
+\input{part2_measurement}
+\input{part3_econometrics}
+\input{part4_india}
+\input{part5_behavioural}
+\input{part6_synthesis}
+
+\input{references}
+
+\end{document}

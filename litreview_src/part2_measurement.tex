@@ -1,0 +1,110 @@
+\part{Measuring Mispricing}
+\label{part:measurement}
+
+Part~I established \emph{that} a wedge exists. To test anything we must \emph{measure} it. This part sets out the three mispricing measures the project will construct, each of which is a way of pricing ``the same payoff twice'' and reading the gap: the cost-of-carry futures basis, put--call-parity deviations, and post-earnings-announcement drift. It closes with Stambaugh--Yu--Yuan's composite anomaly score, which is both a mispricing measure and the template for our cross-sectional test.
+
+% =====================================================================
+\section{The cost-of-carry basis}
+\label{sec:basis}
+Every futures--spot paper in the bibliography (Dwyer et al.; Nandan et al.; Tse; Aggarwal; Roy \& Chakraborty) rests on the same no-arbitrage identity. For a stock with spot price $S_t$, continuously-compounded interest rate $r$, dividend yield $\delta$, and time to expiry $\tau=T-t$, the frictionless fair futures price is
+\begin{equation}
+F_t^{\ast} = S_t\, e^{(r-\delta)\tau}. \label{eq:coc}
+\end{equation}
+The \emph{mispricing} (or basis error) is the deviation of the observed futures price $F_t$ from \eqref{eq:coc}. Two equivalent normalisations appear in the literature:
+\begin{align}
+z_t &= \frac{F_t - S_t\,e^{(r-\delta)\tau}}{S_t} && \text{(proportional; Aggarwal)}, \label{eq:basis-prop}\\
+z_t &= f_t - \big(s_t + (r-\delta)\tau\big),\qquad f_t=\ln F_t,\ s_t=\ln S_t && \text{(log; Dwyer, Tse)}. \label{eq:basis-log}
+\end{align}
+The log form makes the econometrics clean: if $f_t$ and $s_t$ are each $I(1)$, then \eqref{eq:coc} implies they are \emph{cointegrated with unit coefficient}, and $z_t$ --- the error-correction term --- is stationary. That single fact is what licenses the threshold error-correction models of Part~III. Positive $z_t$ (futures rich / stock cheap) is corrected by \emph{cash-and-carry} arbitrage (buy spot, sell futures); negative $z_t$ (futures cheap / stock rich) requires \emph{reverse cash-and-carry} (short spot, buy futures) --- the leg that India's constraints make expensive, which is why the observed basis is asymmetric (Part~IV).
+
+\begin{takeaway}
+Equation~\eqref{eq:basis-prop} is our primary mispricing measure (Chapter~2 of the thesis). It is computable for every F\&O stock every day from public settlement data, and its sign lines up mechanically with the constrained leg. This is the empirical counterpart of the GV wedge in \eqref{eq:gv-asym}.
+\end{takeaway}
+
+% =====================================================================
+\section{Ofek, Richardson \& Whitelaw (2004): Put--Call-Parity Deviations}
+\label{sec:ofek}
+
+\subsection*{Question and contribution}
+A second way to price a stock twice is through its options. Put--call parity (PCP) ties the stock price to a synthetic stock built from a call, a put and a bond. If shorting the stock is costly, the arbitrage that enforces PCP breaks on one side only. Ofek--Richardson--Whitelaw (ORW) measure PCP violations across the whole US single-name option universe, tie them directly to a market-based measure of shorting cost (the rebate-rate spread), and show the violations \emph{predict} future stock returns --- the cleanest available demonstration that short-sale constraints sustain over-pricing.
+
+\subsection*{The measurement}
+For European options on a non-dividend stock with strike $K$, maturity $T$, call $C$ and put $P$, PCP is the identity
+\begin{equation}
+S = \mathrm{PV}(K) + C - P, \qquad \mathrm{PV}(K)=K e^{-rT}. \label{eq:pcp-eu}
+\end{equation}
+US single-name options are American; early exercise makes the put worth more, so parity becomes an inequality with an early-exercise premium $\mathrm{EEP}\ge 0$:
+\begin{equation}
+S \;\ge\; \mathrm{PV}(K) + C - P + \mathrm{EEP}. \label{eq:pcp-am}
+\end{equation}
+Define the \emph{option-implied stock value} and the proportional deviation
+\begin{equation}
+S^{\ast} \equiv \mathrm{PV}(K) + C - P + \mathrm{EEP}, \qquad \text{deviation} = \frac{S - S^{\ast}}{S}. \label{eq:pcp-dev}
+\end{equation}
+A positive deviation ($S>S^\ast$) means the stock is expensive relative to its options --- exactly the situation a short-seller would exploit if shorting were free. ORW proxy the difficulty of shorting by the \emph{rebate-rate spread}: the gap between the normal (``cold'') rebate rate on short-sale cash collateral and the (lower) rate on a hard-to-borrow stock. A larger spread $=$ costlier/more-binding short constraint.
+
+\subsection*{Results}
+Three findings, all of which we expect --- amplified --- in India:
+\begin{enumerate}[leftmargin=1.4em,itemsep=2pt]
+\item \textbf{Asymmetry.} After accounting for shorting costs, $13.6\%$ of stocks lie \emph{above} the upper no-arbitrage bound (over-priced) versus only $4.4\%$ below the lower bound; the mean deviation among violators is $2.71\%$. Violations point in the direction the short-sale constraint predicts --- the empirical image of GV's one-sided wedge \eqref{eq:gv-asym}.
+\item \textbf{Dose--response.} Both the probability and the size of violations rise with the rebate-rate spread; a one-standard-deviation fall in the rebate spread widens the deviation by $\approx 0.67\%$, robust to option/equity liquidity and transaction costs.
+\item \textbf{Predictability.} Larger PCP violations (high implied over-pricing) forecast \emph{lower} future stock returns; long-industry/short-flagged-stock portfolios earn cumulative abnormal returns as high as $\sim 65\%$ over the sample --- mispricing that persists because it cannot be arbitraged.
+\end{enumerate}
+
+\begin{takeaway}
+ORW gives us the second mispricing measure \eqref{eq:pcp-dev} (Chapter~2) and a discipline: restrict PCP tests to near-the-money strikes, where Indian single-stock option quotes are reliable. Their asymmetry and predictability results are hypotheses H1--H2 in a US mirror; India's near-absolute overnight short constraint means we expect the over-pricing side to be \emph{more} constrained than ORW found. The rebate-rate spread has no clean Indian analogue (SLB is thin and lightly used), which is precisely why we substitute the futures basis and the MWPL ban as our constraint signals.
+\end{takeaway}
+
+% =====================================================================
+\section{Post-Earnings-Announcement Drift (Harshita, Singh \& Yadav, 2018)}
+\label{sec:pead}
+
+\subsection*{Question and contribution}
+The third mispricing measure is dynamic rather than cross-sectional. Post-earnings-announcement drift (PEAD) is the tendency of a stock's price to keep drifting in the direction of an earnings surprise for weeks after the announcement --- a violation of semi-strong efficiency, because the information is already public. Harshita et al.\ document robust PEAD in India (2002--2017), which validates it as a usable mispricing signal for our setting.
+
+\subsection*{The measurement}
+The surprise is captured by \emph{standardised unexpected earnings} (SUE). With a seasonal-random-walk earnings expectation,
+\begin{equation}
+\mathrm{SUE}_{i,q} = \frac{X_{i,q} - X_{i,q-4}}{\sigma_{i,q}}, \label{eq:sue}
+\end{equation}
+where $X_{i,q}$ is firm $i$'s earnings in quarter $q$, $X_{i,q-4}$ the same quarter a year earlier, and $\sigma_{i,q}$ the standard deviation of the surprise over a trailing window. Stocks are sorted into SUE deciles; the drift is the post-event cumulative abnormal return
+\begin{equation}
+\mathrm{CAR}_i(t_1,t_2) = \sum_{t=t_1}^{t_2}\big(R_{i,t} - R_{i,t}^{\text{benchmark}}\big), \label{eq:car}
+\end{equation}
+measured over, e.g., $[+1,+60]$ trading days after the announcement. PEAD is present if CAR is monotone and increasing in the SUE decile. Harshita et al.\ confirm statistically significant drift, robust across sub-periods and after controlling for beta, market capitalisation, price-to-book, illiquidity and idiosyncratic volatility, using cross-sectional Fama--MacBeth regressions (see \S\ref{sec:syy} for the estimator).
+
+\begin{takeaway}
+PEAD is our third mispricing measure (Chapter~2) and the one with the sharpest identification: earnings dates are exogenous and precisely timed. Hypothesis H2 is that drift is \emph{larger} for constrained stocks and \emph{largest on days a stock is in the ban}, because the trades that would close the gap (often on the short side) are exactly the ones the ban blocks. That the Indian PEAD paper already controls for idiosyncratic volatility tells us our constraint index must add \emph{incremental} explanatory power beyond IVOL to be a contribution.
+\end{takeaway}
+
+% =====================================================================
+\section{Stambaugh, Yu \& Yuan (2015): A Composite Mispricing Score}
+\label{sec:syy}
+
+\subsection*{Question and contribution}
+Stambaugh--Yu--Yuan (SYY) resolve the ``idiosyncratic volatility puzzle'' (why high-IVOL stocks earn low average returns) with a mechanism we reuse wholesale: \emph{arbitrage asymmetry}. Shorting is harder than buying, so over-pricing is corrected less than under-pricing. Combined with a proxy for mispricing, this predicts that IVOL --- which measures how risky arbitrage is --- should relate \emph{negatively} to returns among over-priced stocks and \emph{positively} among under-priced ones, with the negative side stronger. Their construction of the mispricing proxy and their IVOL/arbitrage-risk logic are the blueprint for our Chapter~5.
+
+\subsection*{The composite mispricing measure}
+No single anomaly cleanly measures mispricing, so SYY \emph{average across anomalies}. For each of $11$ return anomalies that survive Fama--French three-factor adjustment, they rank every stock into a percentile
+\begin{equation}
+\mathrm{rank}_{i,j,t}\in\{1,\dots,100\}, \qquad \text{higher} = \text{more over-priced by anomaly } j,
+\end{equation}
+and define the stock's mispricing score as the average rank across the anomalies it is scored on:
+\begin{equation}
+M_{i,t} = \frac{1}{J_{i,t}}\sum_{j=1}^{J_{i,t}} \mathrm{rank}_{i,j,t}. \label{eq:syy-M}
+\end{equation}
+A high $M$ flags relative over-pricing. The eleven anomalies span financial distress (failure probability and Ohlson's O-score), net stock issuance, composite equity issuance, total accruals, net operating assets, momentum, gross profitability, asset growth, return on assets, and investment-to-assets. Idiosyncratic volatility is measured as the standard deviation of residuals from a Fama--French three-factor regression over a trailing month:
+\begin{equation}
+r_{i,t} - r_{f,t} = \alpha_i + \beta_i^{\text{MKT}}\mathrm{MKT}_t + \beta_i^{\text{SMB}}\mathrm{SMB}_t + \beta_i^{\text{HML}}\mathrm{HML}_t + \varepsilon_{i,t},\qquad \mathrm{IVOL}_{i}=\mathrm{sd}(\hat\varepsilon_i). \label{eq:ivol}
+\end{equation}
+
+\subsection*{The result and the estimator}
+Double-sorting on $M$ and IVOL, SYY find the IVOL--return relation is significantly negative among the most over-priced stocks, positive among the most under-priced, and stronger on the over-priced side --- and that these effects strengthen with the Baker--Wurgler investor-sentiment index in the predicted directions. Their cross-sectional workhorse is the \emph{Fama--MacBeth} two-pass regression: in each month $t$, run the cross-sectional regression
+\begin{equation}
+r_{i,t+1} = \gamma_{0,t} + \gamma_{1,t}\,\mathrm{IVOL}_{i,t} + \gamma_{2,t}'\,\mathbf{X}_{i,t} + u_{i,t+1}, \label{eq:fm}
+\end{equation}
+then average the slopes over time, $\hat\gamma_k=\frac1T\sum_t\hat\gamma_{k,t}$, with $t$-statistics from the time series of $\{\hat\gamma_{k,t}\}$ (Newey--West corrected). The sign and significance of $\hat\gamma_1$ within mispricing groups is the test.
+
+\begin{takeaway}
+SYY hands us three tools. (1) The composite score \eqref{eq:syy-M} is exactly how we will turn our $\sim$45-signal library into a single mispricing sort. (2) The Fama--MacBeth regression \eqref{eq:fm} is our Chapter~5 estimator; our twist is to interact IVOL / signal returns with the \emph{constraint index}, testing H5 (signals pay more where constraints bind). (3) The arbitrage-asymmetry logic makes a sharp Indian prediction: with the short side near-shut, the over-pricing/negative-basis persistence should be even stronger than in the US --- tying SYY back to the one-sided GV wedge \eqref{eq:gv-asym} and to the negative Indian basis of Part~IV.
+\end{takeaway}

@@ -1,0 +1,164 @@
+Hey, Claude. You have seen what I worked on. What I what I work on in general. Uh, I am a fourth year student in IIT Bombay doing a major in economics and a minor in... doesn't matter so far. Doesn't matter for this, uh, thing that we are going to do. You know what I have worked on for my intern? That was a quantitative research intern at a trading firm. I had worked on building trading strategies for my mid frequency trading desk. Uh, I have key interest in finance and especially securities markets. And, uh, I am... I work in the Indian, uh, market. Given this background, In our college, we have this project called the BSP. The BS project. That has to be in our majors domain, and I can choose any codomain. So I'm thinking of choosing a financial leaning domain, something around markets. maybe around market sufficiency. Efficiency, not sufficiency. Can you research on this? Also gathered all contexts from my previous work so that you know what I'd like to work on. And do a deep research on it, understand what a B. S. T. level is. B. S. P. And then give me a bunch of good ideas for a BS project. It has to be a research type project for 4th year student level
+
+
+Pulled your context together — the F&O long-short pipeline, the iron condor work, the merger arb, the WorldQuant stuff. Here's what I found and what I'd propose.
+
+## What the BSP actually is
+
+At the Econ department it's a two-stage thesis: **EC 495 (Stage I, 6 credits, Sem 7)** and **EC 497 (Stage II, 12 credits, Sem 8)** — 18 credits total, department core, both semesters. That's thesis scale, not term-paper scale. Stage I is essentially: nail the question, build the dataset, get preliminary results. Stage II is identification, robustness, writing.
+
+The bar at this level isn't "did you find a profitable strategy." It's **do you have a credible identification strategy for a causal or well-posed empirical claim.** A backtest with a Sharpe ratio gets you a B. A clean natural experiment with a DiD and a falsification test gets you an A and possibly a working paper.
+
+## The framing trap to avoid
+
+Do **not** write "Is the Indian stock market weak-form efficient?" It's been done a hundred times with runs tests and ADF, it's unfalsifiable in practice (joint hypothesis problem), and no examiner will be impressed.
+
+The good news: 2024–26 handed you the richest set of exogenous shocks Indian market microstructure has ever seen. SEBI's derivatives overhaul gives you real natural experiments where efficiency is the *outcome variable*, not the thesis statement.
+
+## Seven ideas, roughly ranked
+
+**1. The expiry-day migration as a DiD on price efficiency** ⭐
+On 1 Sep 2025, NSE moved its entire F&O segment to Tuesday and BSE moved to Thursday. Same economy, same firms, two different expiry days. Compare intraday efficiency measures (variance ratios, 1-min return autocorrelation, Amihud illiquidity, strike-pinning frequency) for Nifty vs Sensex-linked names, before/after. Nobody has a full year of post-period data yet — you do, as of now. Highest novelty-per-unit-effort on this list.
+
+**2. F&O ban period as a limits-to-arbitrage shock** ⭐⭐
+My favourite. When a stock crosses 95% MWPL it enters the ban period and only position-reducing trades are allowed — a sharp, repeated, mechanically-triggered contraction in arbitrage capacity. Test whether futures-cash basis mispricing widens, whether PEAD deepens, whether the value/quality spread decays slower. Hundreds of events, free daily data from NSE, and it's a *uniquely Indian institution* — genuine contribution to the Shleifer-Vishny limits-to-arbitrage literature. Use the 95% threshold for an RD design and you have a very strong paper.
+
+**3. Retail exit and noise-trader theory**
+Minimum notional was raised to ~₹15 lakh from the ₹5–7 lakh range, effective November 2024, plus upfront premium collection from 1 Feb 2025. This is an exogenous purge of small retail. DeLong-Shleifer-Summers-Waldmann says removing noise traders should improve efficiency; the liquidity-provision view says the opposite. Cross-sectional DiD using pre-reform retail F&O share as treatment intensity. You get to adjudicate between two canonical models.
+
+**4. Losing weekly expiries and informed trading in options**
+Weekly expiries were retained only for Nifty 50, while Bank Nifty, Fin Nifty and Midcap Nifty were restricted to monthly and quarterly cycles after SEBI's November 2024 directive. Easley-O'Hara-Srinivas says options are where informed traders go. Do Bank Nifty constituents become slower to incorporate information relative to Nifty non-financials? Clean treatment/control split.
+
+**5. Staggered T+0 rollout**
+T+0 was rolled out to the top 500 stocks in phases. Staggered adoption by market-cap tranche → staggered DiD, but you must use Callaway–Sant'Anna or Sun–Abraham estimators (two-way FE is biased here). Demonstrating you know that is itself a signal of sophistication. Outcomes: spreads, cash-futures arbitrage speed, short-horizon reversal.
+
+**6. Anomalies: risk premium or mispricing?**
+Reuses your existing F&O long-short infrastructure directly. Engelberg-McLean-Pontiff test: if anomaly returns concentrate disproportionately on earnings announcement days, it's expectation errors, not risk. Run it on your 45-signal library. Lowest marginal cost for you, and it converts a backtest into a real research question.
+
+**7. Do index inclusion effects still exist?**
+Nifty semi-annual rebalances, tests the downward-sloping demand curve hypothesis, and you can ask whether the effect has decayed as passive AUM grew. Solid, safe fallback — very feasible data-wise, slightly less exciting.
+
+## Supervisors
+
+**Radeef Chundakkadan** (Monetary Policy, Financial Markets) is the most natural fit. **Puja Padhi** (Financial and Monetary Economics) and **Aditi Chaubal** (nonlinear time series) also work. **Tara Shankar Shaw** if you lean toward the corporate-governance/empirical-corporate side. For codomain, IEOR or SJMSOM gives you a co-supervisor with microstructure or execution knowledge.
+
+## The one real constraint
+
+Ideas 1 and 5 need intraday data. NSE daily bhavcopy, F&O bhavcopy with OI, and the daily ban-period list are all free — ideas 2, 3, 6, 7 are fully feasible on public data. Minute-level data is the bottleneck; check what the library has (Prowess, Refinitiv) and whether your internship firm would let you use historical data for academic work. **Settle this before you commit to a topic in Stage I** — a great question you can't get data for is worth less than a good question you can.
+
+If I were you I'd go with #2, keep #6 as the extension chapter, and pitch both to Chundakkadan. A deeper investigation could map the existing literature on Indian market microstructure and limits-to-arbitrage across journals and working papers, to check exactly where the gap sits before you commit.
+
+
+It has to be a project which can have multiple dimensions that I can explore, not only answering just a single question that can be answered using a single statistical technique. Uh, it has to be something broader that can require more work so that I can work on it for longer. So it needs to be a deeper question that can be solved using publicly available data and lies in the financial domain.
+
+
+Fair — you want a research *program*, not a paper. Here are three umbrellas, each decomposable into chapters that use genuinely different techniques and can absorb two semesters.
+
+## Program A: Limits to Arbitrage in Indian Equities — Measurement, Sources, Consequences
+
+The organising question: **why do mispricings persist in India, and what does that tell us about who the marginal investor is?** India is unusual — no true cash short-selling, a thin SLB market, hard position caps, and an F&O ban mechanism. That's a distinct arbitrage environment from the US, so almost every US result is worth re-asking.
+
+- **Ch 1 — Construct an Indian arbitrage-constraint index.** Combine F&O ban days, MWPL utilisation, futures basis dispersion, idiosyncratic volatility, ownership breadth from quarterly shareholding patterns, delivery percentage. Methodological contribution in its own right; PCA or a latent-factor approach.
+- **Ch 2 — Validate it.** Does the index predict the magnitude and half-life of known mispricings (cash-futures basis violations, PEAD, closed-end fund style discounts)?
+- **Ch 3 — Cross-section of anomaly returns.** Fama-MacBeth: do your 45 signals earn more in high-constraint names? This is the direct Stambaugh-Yu-Yuan test, and it reuses your existing pipeline wholesale.
+- **Ch 4 — Causal identification.** The 95% MWPL threshold as a regression discontinuity; the 2024–26 SEBI reforms as DiD shocks to constraint intensity.
+- **Ch 5 — Asset pricing implications.** Is the constraint priced? Does a mimicking factor improve the Indian factor model?
+
+Techniques span: index construction, panel FE, Fama-MacBeth, RD, DiD, GRS tests. That's a thesis with genuine range.
+
+## Program B: The Retail Transformation of Indian Markets, 2019–2026
+
+Organising question: **India added tens of millions of retail participants in five years. What did that do to prices, and did SEBI's response help?**
+
+- **Ch 1 — Measurement.** Build a firm-quarter panel of retail intensity from shareholding patterns, plus a daily market-level series from participant-wise OI (Client vs FII vs Pro vs DII) and delivery percentages.
+- **Ch 2 — Descriptive facts.** Where did retail concentrate — small caps, lottery-like stocks, high-IV names? Test Kumar's gambling-preference hypothesis on Indian data.
+- **Ch 3 — Efficiency effects.** Does retail intensity predict return autocorrelation, reversal magnitude, post-announcement drift? Noise traders vs liquidity providers.
+- **Ch 4 — The reform shocks.** Lot size hike (Nov 2024), upfront premium collection (Feb 2025), expiry rationalisation — DiD with treatment intensity from Ch 1.
+- **Ch 5 — Welfare.** Estimate the wealth transfer from Client to Pro/FII using participant-wise OI. SEBI's own studies found over 90% of retail F&O traders lost money, totalling ₹1.81 trillion over three years — you can produce an independent, method-transparent estimate. That chapter alone gets attention.
+
+Very strong fit for an *Economics* department: it's a household-finance and policy-evaluation thesis, not just a markets thesis.
+
+## Program C: Price Discovery Across India's Market Structure
+
+Organising question: **where does information enter the Indian market — cash, futures, or options — and how has the reform wave redistributed it?** Chapters on segment-level information shares (VECM, Hasbrouck/Gonzalo-Granger on daily and settlement data), cross-sectional determinants, the expiry migration as a shock, and the cash-futures basis as an information channel. Intellectually the cleanest, but the honest weakness is that it really wants intraday data. Keep as a fallback.
+
+## What I'd pick
+
+**Program A, with Chapter 5 of Program B bolted on as the policy chapter.** Reasons: it's fully feasible on public data, it reuses infrastructure you've already built (so Stage I is about the *question*, not about plumbing), it has a defensible economics core rather than being a trading study in disguise, and the F&O ban mechanism gives you an identification strategy no US paper can replicate.
+
+## Public data inventory — all free
+
+- NSE daily bhavcopy (cash + F&O with OI and settlement prices → implied vols are computable)
+- **Daily participant-wise OI** (FII/DII/Pro/Client, long and short, split across index futures, stock futures, index and stock options) — published every evening under F&O daily reports. Genuinely underused in academic work.
+- Security-wise delivery position (MTO file) — delivery % as a speculation proxy
+- Daily F&O ban list and MWPL utilisation
+- Quarterly shareholding patterns from exchange filings (promoter/FII/DII/retail buckets)
+- Bulk and block deals, insider-trading disclosures, corporate announcements with timestamps
+- India VIX, index constituent histories, AMFI monthly, NSDL/CDSL FPI data
+
+## Staging
+
+**Stage I (EC 495):** literature, dataset construction, the constraint index, descriptive validation, one preliminary result. **Stage II (EC 497):** causal chapters, asset-pricing tests, robustness, writing.
+
+The one thing to decide early: your sample start. If you go back to 2012 you get more power but a very different market; 2019 onward gets you the retail era cleanly. I'd build 2015-onward and use pre-2019 as a placebo period.
+
+
+Deeply investigate both program A and program B. I need them to be valid research projects because I will be working on these for a long time. So these should give me a good, uh, outcome given that I put in the required work. So evaluate both of them on their Capacity to be a real research project with a realizable outcome. Given the data that we have at end as well as the research that we have at hand about these two topics and the context of the Indian securities market. Subdo a deep evaluation of both of these projects and give a report after that. Not a report, just a summary. Of what you found, and what do you think? But do this very carefully and deeply.
+
+
+Did the digging. Here's the honest evaluation — and they don't come out equal.
+
+## Program A: Limits to Arbitrage
+
+**Literature check.** I searched for academic work treating India's F&O ban period as an arbitrage-constraint shock and found essentially nothing. There's a large international limits-to-arbitrage literature (Shleifer-Vishny, Gromb-Vayanos, Ofek-Richardson-Whitelaw on put-call parity under short-sale constraints, Stambaugh-Yu-Yuan on the anomaly cross-section), and separate work on position limits in Korea and Taiwan — but the Indian MWPL mechanism is essentially unstudied. That's a genuine gap, not a "nobody's written it in the last two years" gap.
+
+**Data.** Fully sufficient on public sources. NSE publishes the daily ban-period list as a downloadable CSV, and the trigger and release rules are mechanical — entry at 95% of MWPL, release below 80%. MWPL itself is set as either 20% of free-float equity capital excluding promoter holdings, or 30 times the previous month's average volume. Combined with F&O bhavcopy OI, you can reconstruct utilisation daily.
+
+**The problem you must solve.** A stock enters the ban *because* speculative interest crowded into it — which is precisely when mispricing is likely anyway. Naive "ban → wider basis" is reverse causality. And the RD at 95% is weaker than it looks: the running variable is manipulable and anticipated, so a McCrary density test will almost certainly show bunching.
+
+**The fix, and it's the crux of whether this project works.** MWPL is recomputed periodically off free-float and *prior-month* average volume. So the denominator moves for reasons unrelated to today's speculative pressure — the same open interest can be in-ban or not depending on last month's volume. That gives you variation in ban status that is plausibly orthogonal to current mispricing. Build your identification around denominator shifts, not around the threshold crossing. If you can make that work, you have a real paper. If you can't, you have a correlational study.
+
+**Second complication.** The mechanism changed mid-sample twice: from October 2025, risk-reducing trades became permitted during the ban, and from December 2025, open interest moved to a delta-based future-equivalent measure with intraday MWPL monitoring rather than day-end checks. That's annoying — but it's also two more clean policy shocks to the *intensity* of the constraint. Turn the bug into a chapter.
+
+**Where it's weakest.** Only ~220 F&O stocks. Chapter 5 (is the constraint a priced factor?) will be underpowered — GRS tests on that cross-section over a decade won't give you much. Demote it to a robustness section. Also, put-call parity measures need reliable option prices, and closing settlement prices for OTM strikes in Indian single-stock options are stale and thin. Restrict to near-ATM and the futures basis.
+
+## Program B: The Retail Transformation
+
+I want to like this one — it's the better *economics* question. But it has a measurement problem I think is close to disqualifying.
+
+**Crowdedness.** Very high, and at low quality. The searches returned a large volume of descriptive papers in minor journals — "retail vs institutional investors in India," "the retail investing paradox," and so on — mostly correlational, using aggregate SEBI/NSE/AMFI series. Being the twentieth such paper is a bad position, and being distinguishable requires exactly the identification the data won't support.
+
+**The measurement problem.** Participant-wise OI is published daily and splits FII/DII/Pro/Client across index futures, stock futures, and index and stock options — but it is a **market-level aggregate**, not per-stock. You cannot construct a firm-level daily retail intensity from it. Your only firm-level retail measure is the quarterly shareholding pattern (individual shareholders up to ₹2 lakh nominal capital), which measures *ownership*, not *trading*. The retail F&O phenomenon is overwhelmingly non-ownership speculation. Your treatment variable would not measure the thing your treatment acts on.
+
+**The DiD problem is worse.** Nearly all the 2024-26 reforms are *index* derivative reforms — lot size notional, weekly expiry consolidation, upfront premium collection. Index-level treatment means N of one or two. No cross-section means no difference-in-differences, which leaves you with time-series event studies over a window that also contains large FII flow reversals, global rate moves, and the Jane Street shock. Attribution becomes hand-waving.
+
+**The welfare chapter is a trap.** SEBI's estimates rest on account-level regulatory data you will never see. Producing a worse version of a number the regulator already published, using public aggregates, is not a contribution — it's a comparison you lose.
+
+## Verdict
+
+**Program A, clearly.** Not because the question is more interesting — B's is — but because A is the one where the data can actually carry the identification. Research projects fail on the gap between the question and the evidence, and B's gap is structural and unfixable with public data.
+
+Concretely, the shape I'd take to a supervisor:
+
+1. **Ch 1 — Construct and validate an Indian arbitrage-constraint measure.** Ban days, MWPL utilisation, futures basis dispersion, idiosyncratic volatility, ownership breadth, delivery percentage.
+2. **Ch 2 — Causal core.** Ban status instrumented via MWPL denominator revisions; outcomes are basis violations, PEAD magnitude, reversal speed.
+3. **Ch 3 — Regime shifts.** October 2025 and December 2025 rule changes as variation in constraint intensity.
+4. **Ch 4 — Cross-section.** Do your 45 signals earn more where constraints bind? Fama-MacBeth, with honest power caveats.
+5. **Ch 5 — Policy discussion**, borrowing the framing from Program B without needing its data.
+
+## The one structural piece of advice
+
+Build it so **Chapter 1 is the deliverable that survives a null result.** If every causal test comes back insignificant, you still have a validated, novel, publicly-reproducible measure of arbitrage constraints for Indian equities — that is publishable and citable on its own. Theses fail when the entire value is contingent on the sign of one coefficient. Make your Stage I output an asset, not a bet.
+
+And run the McCrary test in the first month. If the density around 95% is catastrophically discontinuous and the denominator instrument is weak, you want to know that in September, not in February.
+
+
+Create a proposal doc including these two as projects.
+expand on problem statement, literature, methodology, data sources, and expected results.
+
+but keep it brief and in simple language so that the aim of the project is quite understandable. use jargon when its needed only.
+
+This will be sent to the prof aditi chaubal.
+
+
+Proposal Doc generated

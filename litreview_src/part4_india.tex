@@ -1,0 +1,84 @@
+\part{Evidence from the Indian Market and the Institutional Mechanism}
+\label{part:india}
+
+This part grounds the theory and econometrics in Indian data and, crucially, documents the institutional mechanism the project exploits. It answers: what do Indian mispricings actually look like (magnitude, sign, asymmetry)? and what exactly is the MWPL ``F\&O ban,'' how is it triggered, and why is it a clean, exogenous shock to arbitrage capacity?
+
+% =====================================================================
+\section{Aggarwal (2015): the closest precedent and its results}
+\label{sec:aggarwal}
+Using the estimator of \S\ref{sec:aggarwal-method} on 141 NSE single-stock futures/spot pairs at one-second frequency (Mar--Aug 2013), Aggarwal reports:
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt]
+\item \textbf{Asymmetric bands.} The average upper threshold is $\approx +3$ basis points; the average lower threshold is $\approx -15$ basis points. The no-arbitrage band is thus $\approx 18$ bps wide and \emph{strongly asymmetric}: the market tolerates much larger negative mispricing (spot rich / futures cheap) before correction, because reverse cash-and-carry requires shorting the stock, which is constrained. This is \eqref{eq:gv-asym} made visible in Indian data.
+\item \textbf{Cross-sectional variation.} Band width and asymmetry both increase as stock liquidity falls (from the most- to least-liquid quartile) --- consistent with liquidity/transaction costs setting the wedge.
+\item \textbf{Commonality.} By the PCA of \eqref{eq:pca}, the first principal component explains $\approx 17\%$ of the cross-sectional variation in bandwidths (first three PCs $\approx 37\%$): there is a systematic arbitrage-constraint factor.
+\item \textbf{Funding liquidity drives the common factor.} Regressing $\mathrm{PC1}_t$ on candidate determinants, the single strongest is funding liquidity (proxied by MIBOR), with $R^2\approx 18\%$. In a natural experiment --- the RBI's mid-July 2013 liquidity tightening (overnight MIBOR jumped from $7.88\%$ to $9.23\%$) --- the systematic band component spiked, an ``unintended consequence of an action by the regulator.''
+\end{itemize}
+
+\begin{takeaway}
+Aggarwal is the paper we most directly build on, and the gap is precise. She \emph{measures} Indian no-arbitrage bands and links their common component to \emph{funding liquidity}; she does \emph{not} use the F\&O ban / MWPL mechanism, and she establishes no causal effect of a \emph{constraint shock} on the band. Our contribution $=$ her band-measurement method $+$ the MWPL ban and the 2024--26 rule changes as the exogenous mover of the band $+$ a decade-long ($2015$--$2026$), daily, all-F\&O-stocks panel in place of her six-month, 141-stock, intraday sample. Her $-15/+3$ bp asymmetry is the number our estimates must first reproduce, then explain.
+\end{takeaway}
+
+% =====================================================================
+\section{Nandan et al.\ (2014), Roy \& Chakraborty (2023), Slivka et al.\ (2011)}
+\label{sec:india-basis}
+
+\paragraph{Nandan, Agrawal \& Bhargava (2014) --- the basis is persistently negative.} Using the cost-of-carry model \eqref{eq:coc} on Nifty index futures (daily, 2003--2012; $2{,}382$ observations after filtering expiry days; $r=$ 30-day MIBOR), they find mean mispricing of $-\rupee 8.19$, with $71\%$ of observations \emph{negative} (futures under-priced) versus $29\%$ positive, and the negative side larger in magnitude ($-\rupee 13.99$ vs $+\rupee 6.04$). Non-parametric tests (Kolmogorov--Smirnov for non-normality; Mann--Whitney across the sign of the basis; Kruskal--Wallis across days-to-expiry) confirm the mispricing is significant, rises with days-to-expiry, and \emph{attenuated over the decade} (mean $\to -\rupee 0.23$ by 2012). The persistent negativity is the index-level signature of the short-side constraint --- and the time trend tells us the pre-2015 market behaves differently, justifying a regime-aware sample.
+
+\paragraph{Roy \& Chakraborty (2023) --- cointegration and price discovery.} Using Johansen cointegration and lead--lag/causality tests on NSE single-stock futures and their underlying, they confirm that spot and futures are cointegrated (the law of one price holds in the \emph{long run}) with short-run deviations and a price-discovery role for the futures segment. This is the empirical warrant for the cointegration assumption underlying the TVECM of \S\ref{sec:tvecm}: the basis is a stationary error-correction term to which prices eventually return.
+
+\paragraph{Slivka, Shah \& Wu (2011) --- the band is about twice as wide as in mature markets.} This practitioner study finds that the zero-arbitrage band for single-stock-vs-futures arbitrage in India is ``typically at least twice that occurring in mature global markets,'' attributing the width to high brokerage/exchange/regulatory fees and the securities-transaction tax, an under-developed securities-lending market, and execution frictions. It reports that real arbitrage is confined almost entirely to \emph{intraday single-stock-vs-futures} trades, with index-basket arbitrage largely absent.
+
+\begin{takeaway}
+Three usable facts: (i) the Indian basis is persistently negative and asymmetric (Nandan) --- our sign predictions are grounded; (ii) spot and futures are cointegrated (Roy--Chakraborty) --- the TVECM is valid; (iii) Indian bands run $\approx 2\times$ mature-market width (Slivka) --- a concrete magnitude our estimates should match, and confirmation that single-stock futures (not index baskets, not cash short-sales) are the arbitrage channel to study.
+\end{takeaway}
+
+% =====================================================================
+\section{The institutional mechanism: MWPL, the F\&O ban, and the 2024--26 reforms}
+\label{sec:institution}
+
+\subsection*{A correction on Indian short-selling (and why it strengthens the design)}
+It is often said loosely that ``there is no short selling in India.'' The precise position matters for our identification and is this: \emph{intraday} short selling in the cash market is freely available; \emph{naked overnight} short selling is prohibited; and the Securities Lending and Borrowing (SLB) market that would support covered overnight shorts is thin and lightly used. The consequence is that the practical way to take a persistent short/negative-basis arbitrage position is through \emph{single-stock futures} --- which is exactly the instrument the MWPL ban restricts. Far from weakening the project, this sharpens it: the binding constraint sits on the very channel arbitrageurs must use, so a ban on fresh futures positions is a direct contraction of arbitrage capacity, not a peripheral one.
+
+\subsection*{The ban mechanism}
+Each F\&O stock has a \emph{Market-Wide Position Limit} (MWPL). When market-wide open interest in that stock crosses $95\%$ of its MWPL, the stock enters the \emph{ban period}: only position-\emph{reducing} trades are allowed, no fresh positions. The stock exits the ban when open interest falls back below $80\%$. NSE publishes the securities-in-ban list and each stock's MWPL and \%-utilisation \emph{daily}. The definition of MWPL changed with the 2025 reform:
+\begin{align}
+\text{Pre-reform (to 30 Sep 2025):}\quad & \mathrm{MWPL} = 20\%\ \text{of free-float shares} \ \ (\text{or } 30\times \text{prior-month avg.\ volume}), \label{eq:mwpl-old}\\
+\text{From 1 Oct 2025:}\quad & \mathrm{MWPL} = \min\!\big(15\%\ \text{free float},\ 65\times \mathrm{ADDV}\big),\ \text{floor } 10\%\ \text{free float}, \label{eq:mwpl-new}
+\end{align}
+where ADDV is the \emph{Average Daily Delivery Value} in the cash market, and the new MWPL is \emph{recomputed quarterly} on a rolling three-month ADDV. Simultaneously, open interest itself was redefined from notional to \emph{future-equivalent (FutEq)}: each position is counted in delta-adjusted terms,
+\begin{equation}
+\text{FutEq OI} = \Big|\textstyle\sum_{\text{positions}} \Delta_{\text{position}}\times \text{notional}\Big|, \qquad \Delta_{\text{long fut}}=+1,\ \Delta_{\text{option}}\in[-1,+1], \label{eq:futeq}
+\end{equation}
+and the ban-period rule was recast so that any trade after entry must reduce \emph{end-of-day FutEq delta} (a passive increase from price moves is not a breach; a sign flip does not count as reduction).
+
+\subsection*{The reform timeline (dated, market-wide shocks)}
+The 2024--26 overhaul provides a dense sequence of exogenous, precisely dated changes to the constraints the project studies. Table~\ref{tab:reforms} collects them from the two SEBI circulars.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.52\textwidth} p{0.20\textwidth} c@{}}
+\toprule
+\textbf{Reform} & \textbf{Effective} & \textbf{Source} \\
+\midrule
+Index contract size raised to \rupee15--20 lakh (from \rupee5--10 lakh) & 20 Nov 2024 & SEBI 2024/132 \\
+Weekly expiries limited to one benchmark index per exchange & 20 Nov 2024 & SEBI 2024/132 \\
+Additional 2\% ELM on short options on expiry day & 20 Nov 2024 & SEBI 2024/132 \\
+Upfront collection of option premium from buyers & 1 Feb 2025 & SEBI 2024/132 \\
+Calendar-spread margin benefit removed on expiry day & 1 Feb 2025 & SEBI 2024/132 \\
+Intraday monitoring of index position limits ($\ge 4$ snapshots) & 1 Apr 2025 & SEBI 2024/132 \\
+Index-futures/options position limits (net \rupee1{,}500 cr / gross \rupee10{,}000 cr) & 1 Jul 2025 & SEBI 2025/79 \\
+FutEq (delta-based) OI in force & mid-2025 & SEBI 2025/79 \\
+\textbf{New MWPL formula \eqref{eq:mwpl-new} + delta-based ban-period rule} & \textbf{1 Oct 2025} & SEBI 2025/79 \\
+Individual entity single-stock position limits recalibrated to new MWPL & 1 Oct 2025 & SEBI 2025/79 \\
+Intraday MWPL monitoring for single stocks; $\ge 14$ constituents for non-benchmark indices & 3 Nov 2025 & SEBI 2025/79 \\
+Pre-open session extended to F\&O; index-option limits to normal enforcement & 6 Dec 2025 & SEBI 2025/79 \\
+\bottomrule
+\end{tabular}
+\caption{The 2024--26 SEBI derivatives reforms, with exact effective dates. One stated objective of the May 2025 circular is explicitly ``to reduce instances of spurious F\&O ban periods in single stocks'' --- i.e.\ SEBI is directly re-engineering the mechanism this project studies.}
+\label{tab:reforms}
+\end{table}
+
+\begin{takeaway}
+This section defines the project's identifying variation. The ban is \emph{mechanical} (a bright-line 95\% rule), \emph{dated} (published daily), and \emph{repeated} (hundreds of stock-episodes). Two features are decisive for causal inference (developed in Part~VI): (1) the MWPL \emph{denominator} in \eqref{eq:mwpl-old}--\eqref{eq:mwpl-new} moves for reasons unrelated to today's speculation --- free float changes with issuance, and post-reform the binding term is a \emph{quarterly-reset, trailing} delivery-value figure (ADDV) --- so the same open interest can be in- or out-of-ban depending on stale, exogenous inputs, giving an instrument for ban status; and (2) the dated reforms in Table~\ref{tab:reforms} are market-wide shocks to constraint \emph{intensity} that the Ters--Urban TVECM (\S\ref{sec:tvecm}) can read off in a pre/post design. The FutEq redefinition \eqref{eq:futeq} also tells us the post-2025 constraint variable must be built in delta terms, which requires option deltas from settlement-implied volatilities.
+\end{takeaway}

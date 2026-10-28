@@ -1,0 +1,87 @@
+\part{The Econometrics of the No-Arbitrage Band}
+\label{part:econometrics}
+
+Part~I says a band exists; Part~II measures the deviation $z_t$ that lives inside it. This part is the machinery that \emph{estimates the band itself} --- the width of the interval in which $z_t$ does not mean-revert because it is smaller than the round-trip friction. The unifying idea is \emph{non-linear, regime-dependent} adjustment: $z_t$ behaves like a (near) random walk inside the band and mean-reverts sharply outside it. We build up from the cointegration foundation to the estimator the project will actually use, Ters--Urban's three-regime threshold VECM.
+
+% =====================================================================
+\section{Foundation: threshold cointegration}
+\label{sec:threshold-coint}
+From \eqref{eq:basis-log}, log-futures $f_t$ and log-spot $s_t$ are cointegrated with unit vector, so the basis $z_t = f_t - s_t - (r-\delta)\tau$ is stationary and is the \emph{error-correction term}. Balke \& Fomby (1997) formalise the case where adjustment back to equilibrium happens \emph{only} once the deviation is large enough --- \emph{threshold cointegration}. In their band-TAR the equilibrium error follows
+\begin{equation}
+\Delta z_t = \begin{cases} \alpha_{\text{out}}\,(z_{t-1}-\gamma_{\text{u}}) + \varepsilon_t, & z_{t-1} \ge \gamma_{\text{u}},\\[3pt] \phantom{\alpha_{\text{out}}(}\varepsilon_t, & \gamma_{\ell} < z_{t-1} < \gamma_{\text{u}} \quad(\text{no-arbitrage band}),\\[3pt] \alpha_{\text{out}}\,(z_{t-1}-\gamma_{\ell}) + \varepsilon_t, & z_{t-1} \le \gamma_{\ell}, \end{cases} \label{eq:bandtar}
+\end{equation}
+with $\alpha_{\text{out}}<0$ (mean reversion outside) and \emph{no} error-correction term inside $(\gamma_\ell,\gamma_{\text{u}})$. The band $[\gamma_\ell,\gamma_{\text{u}}]$ is the object of interest, and its half-width is an estimate of the round-trip arbitrage cost. Everything below is a version of \eqref{eq:bandtar}: univariate (TAR), smooth (STAR), or bivariate (TVECM).
+
+% =====================================================================
+\section{The threshold autoregression: Yadav--Pope--Paudyal and Dwyer et al.\ (1996)}
+\label{sec:tar}
+Yadav, Pope \& Paudyal (1994) proposed, and Dwyer, Locke \& Yu (1996) developed, the \emph{self-exciting three-regime TAR} for the futures--cash basis. Regimes are switched by the lagged basis $z_{t-d}$ relative to two thresholds $C_1<C_2$:
+\begin{equation}
+z_t = \phi_0^{(j)} + \sum_{k=1}^{p}\phi_k^{(j)}\,z_{t-k} + \varepsilon_t^{(j)}, \qquad
+j = \begin{cases} 1 & z_{t-d}\le C_1 \ (\text{lower}),\\ 2 & C_1<z_{t-d}<C_2 \ (\text{middle}),\\ 3 & z_{t-d}\ge C_2 \ (\text{upper}), \end{cases} \label{eq:tar}
+\end{equation}
+with $\varepsilon^{(j)}\sim(0,\sigma_j^2)$ i.i.d.\ The \emph{delay} $d$ sets how quickly arbitrageurs react; $p$ is the lag order. Inside the middle regime $z_t$ is (near) non-stationary --- $\sum_k \phi_k^{(2)}\approx 1$, no correction --- while in the outer regimes it is stationary, $\sum_k\phi_k^{(1,3)}<1$, so deviations decay. The estimated band width is
+\begin{equation}
+\text{bw} = C_2 - C_1 .
+\end{equation}
+Dwyer et al.\ motivate \eqref{eq:tar} from the cost-of-carry model with non-zero transaction costs on minute-by-minute S\&P~500 futures/cash (1982--1990), and generalise it to a bivariate \emph{threshold error-correction mechanism}: with $y_t=(f_t,s_t)'$,
+\begin{equation}
+\Delta y_t = \nu^{(j)} + \alpha^{(j)} z_{t-1} + \sum_{i=1}^{p}\Gamma_i^{(j)}\Delta y_{t-i} + \varepsilon_t, \label{eq:tecm}
+\end{equation}
+where the error-correction loadings $\alpha^{(j)}=(\alpha_f^{(j)},\alpha_s^{(j)})'$ are regime-specific: $\alpha^{(2)}\approx 0$ in the band, $\alpha^{(1,3)}\ne 0$ outside. The two-equation form lets futures and cash adjust at \emph{different speeds}, which also identifies \emph{which market moves first} (price discovery).
+
+\subsection*{Estimation}
+Given $(C_1,C_2,d,p)$ the model is linear within regimes, so it is estimated by OLS regime-by-regime. The thresholds and delay are chosen by a grid search that minimises the residual sum of squares / an information criterion, subject to a minimum fraction of observations in each regime (Aggarwal imposes $\ge 40\%$ in the no-arbitrage regime). Lag order $p$ is set by AIC. Because the objective is discontinuous in $(C_1,C_2,d)$, the search is over a grid rather than by gradient methods.
+
+\begin{takeaway}
+Equation \eqref{eq:tar} is the exact model Aggarwal (2015) applied to Indian single-stock futures (\S\ref{sec:aggarwal}); it is our baseline band estimator. Its regime structure operationalises the theory: the middle regime \emph{is} the GV/DSSW no-arbitrage band, and $C_1,C_2$ are the (possibly asymmetric) friction wedges of \eqref{eq:gv-asym}.
+\end{takeaway}
+
+% =====================================================================
+\section{Tse (2001): the smooth-transition (STAR) alternative}
+\label{sec:tse}
+A sharp threshold assumes every arbitrageur faces the \emph{same} cost. Tse (2001) argues that with heterogeneous arbitrageurs (different costs, capital, objectives) the \emph{aggregate} of many individual thresholds is smooth, not a step. He models the basis with a smooth-transition error-correction model in which the speed of adjustment rises \emph{continuously} with the size of the mispricing:
+\begin{equation}
+\Delta z_t = \big[\,\alpha_{\text{in}} + (\alpha_{\text{out}}-\alpha_{\text{in}})\,G(z_{t-d};\theta)\,\big]\,z_{t-1} + \sum_{i=1}^{p}\phi_i\,\Delta z_{t-i} + \varepsilon_t, \label{eq:star}
+\end{equation}
+where $G(\cdot)\in[0,1]$ is a transition function. Tse uses the \emph{exponential} form (ESTAR),
+\begin{equation}
+G(z_{t-d};\gamma,c) = 1 - \exp\!\big(-\gamma\,(z_{t-d}-c)^2\big), \qquad \gamma>0, \label{eq:estar}
+\end{equation}
+so that near equilibrium ($z_{t-d}\approx c$) $G\approx 0$ and there is little correction (the ``inside-band'' behaviour $\alpha_{\text{in}}\approx 0$), while for large deviations $G\to 1$ and adjustment occurs at the fast ``outside'' speed $\alpha_{\text{out}}<0$. The logistic form (LSTAR), $G=[1+\exp(-\gamma(z_{t-d}-c))]^{-1}$, allows \emph{asymmetric} adjustment for positive vs negative deviations --- directly relevant given the short-side asymmetry in India. Estimation is by nonlinear least squares / maximum likelihood, after a Teräsvirta LM test for the presence and shape (exponential vs logistic) of the non-linearity.
+
+\begin{takeaway}
+STAR is our robustness alternative to the ``abrupt'' TAR. If arbitrageurs are heterogeneous (they are --- proprietary desks, FPIs, and retail all face different costs), the smooth model fits better, and the LSTAR form gives a second, independent read on the band's asymmetry. Reporting both TAR and STAR guards against a knife-edge dependence on the threshold assumption.
+\end{takeaway}
+
+% =====================================================================
+\section{Aggarwal (2015): the estimator applied to India, plus PCA commonality}
+\label{sec:aggarwal-method}
+Aggarwal's estimator is \eqref{eq:tar} run \emph{per stock, per day} at one-second frequency on 141 NSE single-stock futures/spot pairs, with the proportional basis \eqref{eq:basis-prop}, delay $d$ selected from a grid $\{1,5,\dots,300\}$ seconds and lag by AIC. The novel second step is to ask whether the estimated daily bandwidths $\{\text{bw}_{i,t}\}$ share a \emph{common} component. Stack them into a stock-by-day matrix, standardise each stock's series to zero mean and unit variance, and take the eigendecomposition of the sample covariance $\Sigma = \Gamma\Lambda\Gamma'$. The first principal component
+\begin{equation}
+\mathrm{PC1}_t = \gamma_1' \,\mathbf{bw}_t, \qquad \text{share of variance} = \frac{\lambda_1}{\sum_{k}\lambda_k}=\frac{\lambda_1}{N}, \label{eq:pca}
+\end{equation}
+is interpreted as the \emph{systematic} arbitrage-constraint factor. Its determinants are then examined by time-series regression on funding-liquidity and market variables (\S\ref{sec:aggarwal} reports the results).
+
+\begin{takeaway}
+This two-step design --- estimate per-stock bands, then PCA them into a systematic factor --- is precisely the skeleton of our Chapter~1 \emph{arbitrage-constraint index}. We extend it by (i) adding MWPL-specific inputs (ban dummy, \%MWPL utilisation, delivery share, ownership breadth) to the cross-section before extracting the common factor, and (ii) replacing Aggarwal's funding-liquidity driver with the \emph{ban / MWPL} shock as the exogenous mover of the band.
+\end{takeaway}
+
+% =====================================================================
+\section{Hansen--Seo (2002) and Ters--Urban (2020): the TVECM we will use}
+\label{sec:tvecm}
+The estimators above either fix the cointegrating vector at $(1,-1)$ or treat the basis as univariate. Hansen \& Seo (2002) provide the modern, fully bivariate treatment: a \emph{two-regime threshold VECM with an unknown cointegrating vector} $\beta$. With $y_t=(f_t,s_t)'$ and error-correction term $w_{t-1}(\beta)=\beta' y_{t-1}$,
+\begin{equation}
+\Delta y_t = \begin{cases} A_1'\,X_{t-1}(\beta) + \varepsilon_t, & w_{t-1}(\beta)\le \hat\gamma,\\[3pt] A_2'\,X_{t-1}(\beta) + \varepsilon_t, & w_{t-1}(\beta) > \hat\gamma, \end{cases} \qquad X_{t-1}(\beta)=\big(1,\ w_{t-1}(\beta),\ \Delta y_{t-1}',\dots,\Delta y_{t-p}'\big)', \label{eq:hansenseo}
+\end{equation}
+estimated by maximum likelihood, jointly searching over the threshold $\gamma$ and $\beta$ on a two-dimensional grid; they also give a $\sup$-LM test of linear cointegration against the threshold alternative.
+
+\paragraph{Ters--Urban (2020).} Ters and Urban extend Hansen--Seo to \emph{three} regimes (two thresholds $\gamma_1<\gamma_2$), add a constant in the cointegration relation (to absorb a persistent non-zero basis), and solve the harder joint estimation with a dynamic grid:
+\begin{equation}
+\Delta y_t = \begin{cases} A_1' X_{t-1}(\beta) + \varepsilon_t, & w_{t-1}(\beta) \le \gamma_1 \quad(\text{negative-basis arbitrage}),\\[3pt] A_2' X_{t-1}(\beta) + \varepsilon_t, & \gamma_1 < w_{t-1}(\beta) < \gamma_2 \quad(\text{no-arbitrage band}),\\[3pt] A_3' X_{t-1}(\beta) + \varepsilon_t, & w_{t-1}(\beta) \ge \gamma_2 \quad(\text{positive-basis arbitrage}). \end{cases} \label{eq:tersurban}
+\end{equation}
+The middle regime has (near-)zero error-correction loading; the outer regimes correct. The estimated thresholds recover the band, and its (possibly asymmetric) half-widths measure the \emph{overall round-trip arbitrage cost} on each side --- even when that cost is otherwise unobservable. Two properties make it ideal for us. First, the thresholds $\gamma_1,\gamma_2$ need not be symmetric, so the model \emph{estimates} the short-side asymmetry rather than assuming it. Second, and decisively, Ters and Urban design the method explicitly for \emph{pre/post-event analysis of regulatory changes}: comparing the estimated band before and after a dated shock measures how the policy moved arbitrage costs. That is exactly our 2024--26 reform design.
+
+\begin{takeaway}
+Ters--Urban \eqref{eq:tersurban} is the project's \emph{workhorse} band estimator (Chapter~4). We estimate the band on each stock's basis, allow the thresholds to depend on the Chapter~1 constraint index, and re-estimate around each dated reform (the 1~Oct~2025 MWPL/ban recast, the FutEq redefinition, the intraday-monitoring date) to read off how the band moved. The three-regime, asymmetric-threshold structure is the econometric embodiment of the one-sided GV wedge, and the ``unknown $\beta$ / constant in cointegration'' features handle India's persistent non-zero basis. TAR \eqref{eq:tar} and STAR \eqref{eq:star} are reported alongside as robustness.
+\end{takeaway}

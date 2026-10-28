@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\makeatletter
+\providecommand{\UseTaggingSocket}[1]{}
+\providecommand{\UseInstance}[3]{}
+\makeatother
+
+\usepackage{amsmath,amssymb,booktabs,xcolor,enumitem,fancyhdr}
+\usepackage[a4paper,margin=0.85in]{geometry}
+
+\definecolor{owblue}{RGB}{20,40,90}
+\definecolor{owgray}{RGB}{92,92,92}
+\definecolor{owgreen}{RGB}{20,110,60}
+\definecolor{owred}{RGB}{150,30,30}
+
+\usepackage[colorlinks=true,linkcolor=owblue,urlcolor=owblue]{hyperref}
+
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -.2ex}{1.8ex \@plus.2ex}%
+  {\normalfont\large\bfseries\color{owblue}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-2.6ex \@plus -1ex \@minus -.2ex}{1.2ex \@plus.2ex}%
+  {\normalfont\normalsize\bfseries\color{owblue}}}
+\makeatother
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small\color{owgray}Model A --- Constrained Arbitrage}
+\rhead{\small\color{owgray}BS Project · Limits to Arbitrage}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\keybox}[1]{\par\vspace{4pt}\begin{center}%
+\fcolorbox{owgray!45}{owblue!5}{\begin{minipage}{0.955\linewidth}%
+\vspace{3pt}\small #1\vspace{3pt}\end{minipage}}\end{center}\vspace{2pt}}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=3pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{owblue} Model A --- A Trader With a Position Cap}\\[4pt]
+{\normalsize A first model of the no-arbitrage band and the F\&O ban}\\[6pt]
+{\footnotesize Prince Kumar · Roll No.\ 23B3032 · BS Economics, IIT Bombay}\\[2pt]
+{\footnotesize Guide: Prof.\ Aditi Chaubal · BS Project (EC 495 / EC 497) · September 2026}
+\end{center}
+\vspace{-4pt}
+{\color{owgray}\hrule height 0.6pt}
+\vspace{10pt}
+
+\noindent This is the first of the two small models for the project. It is a model of one arbitrage trader who is careful about risk, has limited money, and faces a hard cap on how big his position can be. That cap is India's MWPL rule, and the F\&O ban is the case where the cap fully binds. The aim is to show, from the trader's own decision, why a mispricing can sit uncorrected, and what the ban does to it.
+
+\keybox{\textbf{Main result.} The model gives a ``no-trade band'' around the fair price: a range where the gap is too small to be worth correcting, so it just stays there. The band is lop-sided --- wider on the side where the trader would have to short the stock, because shorting is harder in India. When the ban switches on, the trader cannot add to his position, so the band suddenly gets wider and the price stops correcting.}
+
+\section{The set-up}
+There is one stock. It trades in the cash (spot) market and also has a single-stock futures contract. Let $F$ be the futures price and $F^\ast$ be the ``fair'' futures price from the usual cost-of-carry formula. The gap I care about is the basis
+\[
+m \;=\; F - F^\ast .
+\]
+If $m>0$ the futures is too expensive: to correct it you sell futures and buy spot (no shorting needed). If $m<0$ the futures is too cheap: to correct it you buy futures and short the spot --- and the short is the hard leg in India (naked overnight shorting is barred and stock lending is thin).
+
+I keep the trader's choices simple:
+\begin{itemize}
+\item He picks a position $q$ in the ``correct the gap'' trade. If he bets the right way his expected profit is $q\,m$.
+\item He dislikes risk, so a position of size $q$ costs him $\tfrac{\alpha}{2}\sigma_m^2 q^2$, where $\alpha$ is how risk-averse he is and $\sigma_m^2$ is how much the gap bounces around before it closes.
+\item Trading costs him $c$ per unit either way (fees, the securities-transaction tax, the bid--ask). Shorting costs an extra $c_s$ per unit, so the short side is dearer.
+\item He has a hard cap on his position: $|q|\le L$, where $L$ is his share of the stock's MWPL. The ban is when $L$ is reached and no new positions are allowed.
+\end{itemize}
+There are also outside traders (hedgers, retail) whose buying or selling pushes the gap around, and a small amount of local liquidity that leans against the gap. These are what move the price when the arbitrage trader stays out.
+
+\section{When does he trade? The band}
+The trader maximises
+\[
+q\,m \;-\; \tfrac{\alpha}{2}\sigma_m^2 q^2 \;-\; c\,|q| \;-\; c_s\max(-q,0).
+\]
+The first-order condition is easy to read. On the upper side he sells ($q>0$) only if the gap beats his cost, $m>c$, and then $q=(m-c)/(\alpha\sigma_m^2)$. On the lower side he buys and shorts ($q<0$) only if $m<-(c+c_s)$. In between he does nothing. So the range where he stays out --- the no-trade band --- is
+\[
+\boxed{\;\text{no-trade band}\;=\;\Big[\ \underbrace{-(c+c_s)}_{\text{lower edge: cost }+\text{ extra cost of shorting}}\ ,\ \ \underbrace{+\,c}_{\text{upper edge: normal cost}}\ \Big]\;}
+\]
+The band is lop-sided: the lower edge is further out by exactly $c_s$, the extra cost of shorting. That is the whole reason the gap is allowed to get bigger on the ``futures too cheap'' side before anyone fixes it. This lines up with what Aggarwal (2015) actually found for Indian single-stock futures --- about $-15$ basis points on the lower side against $+3$ on the upper side. In the model that says $c$ is small (a few bp) and $c_s$ is the bigger piece.
+
+When demand is small the gap just sits inside the band and drifts with order flow. When demand is large the trader steps in and pins the gap near the edge. How hard he can pin it depends on his capacity: the more risk-averse he is, or the more the gap bounces around, the less he compresses it, so the bigger the leftover mispricing.
+
+\section{What the ban does}
+Now use the cap. Most of the time $|q|\le L$ does not bind and everything above holds. But when a stock gets crowded and its open interest reaches 95\% of the MWPL, the ban switches on and the trader cannot open any new position.
+
+In the math the cap is a constraint with a shadow price $\lambda\ge 0$. His condition on the upper side becomes
+\[
+m - \alpha\sigma_m^2 q - c - \lambda \;=\; 0,\qquad \lambda\ge 0,\ \ \lambda\,(L-q)=0.
+\]
+While the cap is slack, $\lambda=0$. The moment it binds, $\lambda$ jumps above zero. A positive $\lambda$ means the gap now has to be even bigger before trading is worth it --- so the band widens on that side. Under the full ban he cannot add at all, so nothing pulls the price back: the gap can keep growing until the ban lifts.
+
+\keybox{\textbf{This is the key idea of the project.} The ban is not a gentle tightening --- it is a switch. The instant it binds, the correcting force is removed and the mispricing is free to widen. Because the short side is already the constrained leg, the effect is sharpest there.}
+
+\section{How fast does the gap close?}
+To talk about how long a mispricing lasts, put the model in motion over time. Outside the band the gap closes each period at a speed $\theta$ set by how much arbitrage capacity there is; inside the band it does not close at all --- it just drifts. Writing the adjustment as $\Delta m_t = -\theta\,(m_{t-1}-\text{edge})$, the half-life of a gap is
+\[
+H \;=\; \frac{\ln 2}{-\ln(1-\theta)} .
+\]
+The speed $\theta$ is smaller when the trader is more risk-averse, when the gap is more volatile, and when the cap is tighter. Inside the band, and during the ban, $\theta=0$, so $H$ is effectively infinite --- the gap can last a long time. This is what I will actually estimate later: how fast the gap reverts, and whether that speed drops to near zero when a stock is in the ban.
+
+\section{What it predicts, and where it fits}
+The model gives a clear list of things to test:
+\begin{itemize}
+\item the gap is bigger and lasts longer when the limits are tighter, and it is lop-sided (wider on the short side);
+\item when the ban binds, the band jumps wider and the gap stops closing;
+\item drift after earnings is deeper for stocks where the limits bind;
+\item ``bet against the gap'' signals earn more in those stocks (a real mistake, not extra risk);
+\item and the effect can be pinned down using outside changes in the position limit, which depends on free float and on past delivery volume --- numbers that move for reasons unrelated to today's trading.
+\end{itemize}
+
+\keybox{\textbf{Where this model fits.} Model A is the ``why'' side of the project. It explains, from one trader's decision, why a band exists, why it is lop-sided, and what the ban does. Model B (the second note) reaches the same band from a different angle and connects directly to the statistics I will run. The two agree on the predictions above, which means I have a fixed set of hypotheses before I look at any data.}
+
+\end{document}

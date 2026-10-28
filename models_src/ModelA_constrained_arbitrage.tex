@@ -1,0 +1,237 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F3A5F}
+\usepackage[colorlinks=true,linkcolor=accent,citecolor=accent,urlcolor=accent]{hyperref}
+\usepackage{sectsty}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\onehalfspacing
+\partfont{\color{accent}}\sectionfont{\color{accent}}\subsectionfont{\color{accent}}
+\pagestyle{fancy}\fancyhf{}
+\rhead{\small\itshape Model A: Constrained Arbitrage}\lhead{\small BS Project --- Theoretical Framework}
+\cfoot{\thepage}\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\E}{\mathbb{E}}\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\R}{\mathbb{R}}\newcommand{\dd}{\mathrm{d}}\newcommand{\1}{\mathbf{1}}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\rupee}{\ensuremath{\mathrm{Rs}\,}}
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}
+\theoremstyle{remark}
+\newtheorem*{takeaway}{Mapping to the empirics}
+
+\title{\vspace{-1.2cm}\color{accent}\bfseries A Constrained-Arbitrage Model of the\\ Indian No-Arbitrage Band\\[0.25cm]
+\large\mdseries\color{black} Theoretical Framework for the BS Project --- \emph{Candidate Model A}}
+\author{Prince Kumar (23B3032), BS Economics, IIT Bombay\\ \small Guide: Prof.\ Aditi Chaubal \quad\textbar\quad EC~495 / EC~497}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent This is one of two independently-developed theoretical frameworks for the project (the other being the reduced-form band-of-inaction model, Candidate~B). It is built \emph{before} any empirical work, so that the project's hypotheses are \emph{derived} from a model rather than fitted to data. The model takes a risk-averse arbitrageur in the tradition of Gromb--Vayanos (2010) and adds the one institutional feature that defines the Indian setting: a \emph{hard, mechanical position limit} of the Market-Wide-Position-Limit (MWPL) type, whose ``F\&O ban'' is the binding case. From the arbitrageur's constrained optimisation we derive, as theorems, an asymmetric no-arbitrage band, its comparative statics, the discrete widening caused by the ban (through the constraint's shadow price), the slowing of mispricing correction, a cross-sectional pricing implication, and a falsification route. Each result is stated as a proposition and mapped to a pre-registered empirical hypothesis. The model reaches --- from primitives --- the same qualitative conclusions the empirical design sets out to test, which is precisely the guard against confirmation bias that this stage is meant to provide.
+\end{abstract}
+
+\section{Purpose and design principles}
+The project's central claim is that arbitrage constraints, and in particular India's MWPL ``F\&O ban,'' widen and prolong mispricing in single stocks. To test that claim credibly we first ask: \emph{what would a coherent model of a constrained arbitrageur actually predict?} If a disciplined model, solved from primitives, delivers the same signs and comparative statics that we intend to look for, then finding them in the data is confirmation of a theory; if the model delivers something different, we have learned that before touching the data. This document supplies that model. It is deliberately partial-equilibrium and tractable --- every central object has a closed form --- because the goal is transparent, falsifiable predictions, not maximal generality. Section~\ref{sec:env} sets up the environment; Sections~\ref{sec:band}--\ref{sec:id} prove six propositions; Section~\ref{sec:map} maps them to the empirical design and to the six requirements identified in the literature review.
+
+\section{Environment}\label{sec:env}
+We model a single F\&O stock over two dates, $t=0$ (positions are taken) and $t=1$ (the basis converges). There is a spot market and a single-stock futures market on the same underlying; both are used because, in India, \emph{intraday} cash short-selling is permitted but \emph{naked overnight} short-selling is barred and the securities-lending (SLB) market is thin, so a persistent short position is taken through futures.
+
+\paragraph{The basis.} Let $F$ be the futures price, $S$ the spot price, $r$ the interest rate, $\delta$ the dividend yield and $\tau$ the time to expiry. The cost-of-carry fair value is $F^\ast = S e^{(r-\delta)\tau}$, and the \emph{basis} (mispricing) is
+\begin{equation}
+m \;\equiv\; F - F^\ast .
+\end{equation}
+$m>0$ means futures are rich (the correcting trade, \emph{cash-and-carry}, is: sell futures, buy spot --- no stock short needed); $m<0$ means futures are cheap (the correcting trade, \emph{reverse cash-and-carry}, is: buy futures, short spot --- and the spot short is the constrained leg). At $t=1$ the basis converges to zero in expectation; over the holding period it carries risk with variance $\sigma_m^2$ per unit position (``basis risk,'' the risk that the gap widens before it closes).
+
+\paragraph{Agents.} Three groups trade the futures:
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt]
+\item \textbf{Outside traders} (hedgers, retail, noise traders) with an exogenous net futures demand $u\in\R$ (signed): $u>0$ is net buying pressure that pushes $F$ up and $m$ up. $u$ is the non-fundamental demand shock; it is the source of mispricing pressure and, empirically, the crowding that drives open interest toward the MWPL.
+\item \textbf{A competitive local fringe} (jobbers, prop desks providing liquidity) whose net futures demand leans against the basis, $-\varphi\, m$ with elasticity $\varphi>0$. The fringe has limited risk-bearing capacity, so $\varphi$ is finite: absent the specialist arbitrageur, a demand shock moves the basis.
+\item \textbf{A representative arbitrageur}: competitive, with constant absolute risk aversion $\alpha$, who runs the basis trade subject to costs and a position limit, defined next.
+\end{enumerate}
+
+\paragraph{The arbitrageur's costs and limit.} Let $q$ denote the arbitrageur's \emph{basis-convergence position}: $q>0$ is the trade that profits when $m$ falls (sell futures / buy spot), $q<0$ the trade that profits when $m$ rises (buy futures / short spot). The per-unit convergence profit is $q\,m$ and the risk is $q^2\sigma_m^2$. Trading costs are
+\begin{equation}
+\mathrm{TC}(q) = c\,\abs{q} \;+\; c_s\,\max(-q,0), \label{eq:tc}
+\end{equation}
+where $c>0$ is the symmetric round-trip cost (brokerage, exchange fees, securities-transaction tax, bid--ask) incurred on either side, and $c_s>0$ is the \emph{extra} cost incurred only when the position requires shorting the stock ($q<0$, reverse cash-and-carry): the SLB borrow fee, search cost and recall risk. Finally, the MWPL imposes a hard cap
+\begin{equation}
+\abs{q}\le L, \qquad L \equiv \kappa\cdot \mathrm{MWPL}, \qquad \mathrm{MWPL}=\min\!\big(0.15\,\mathrm{FF},\ 65\,\mathrm{ADDV}\big), \label{eq:cap}
+\end{equation}
+where $\kappa\in(0,1]$ is the arbitrageur's admissible share of the market-wide limit, $\mathrm{FF}$ is free float and $\mathrm{ADDV}$ is the trailing average daily delivery value. The ``ban'' is the event that market-wide open interest reaches $95\%$ of MWPL, after which \emph{no fresh positions may be opened} --- the exact binding case of \eqref{eq:cap}, treated in \S\ref{sec:ban}.
+
+\begin{assumption}[Primitives]\label{as:prim}
+$\alpha,\sigma_m^2,\varphi,c,c_s,L>0$; the demand shock $u$ has a continuous distribution with full support; and the fringe and arbitrageur take the basis $m$ as given (competitive). Positions clear the futures market at zero net supply.
+\end{assumption}
+
+\section{Equilibrium and the no-arbitrage band}\label{sec:band}
+The arbitrageur solves
+\begin{equation}
+\max_{\abs{q}\le L}\; \Pi(q) \;=\; q\,m \;-\; \tfrac{\alpha}{2}\sigma_m^2 q^2 \;-\; c\abs{q} \;-\; c_s\max(-q,0). \label{eq:arbprob}
+\end{equation}
+Because the objective is concave and the cost \eqref{eq:tc} is piecewise linear, the solution is piecewise linear with a \emph{no-trade region}. Ignoring the cap for now (interior solution), the first-order conditions give the desired position
+\begin{equation}
+q^\ast(m) = \begin{cases} \dfrac{m-c}{\alpha\sigma_m^2}, & m > c \quad(\text{sell futures}),\\[8pt] 0, & -(c+c_s)\le m \le c,\\[6pt] \dfrac{m+c+c_s}{\alpha\sigma_m^2}, & m < -(c+c_s)\quad(\text{buy futures / short spot}). \end{cases} \label{eq:qstar}
+\end{equation}
+Market clearing in the futures (outside demand $u$, fringe $-\varphi m$, arbitrageur supplying $-q$) is
+\begin{equation}
+u - \varphi m - q = 0. \label{eq:clear}
+\end{equation}
+Combining \eqref{eq:qstar}--\eqref{eq:clear} yields the equilibrium basis as a function of the demand shock.
+
+\begin{proposition}[The asymmetric no-arbitrage band]\label{prop:band}
+Under Assumption~\ref{as:prim} and an interior (uncapped) arbitrageur, the equilibrium basis is piecewise linear in the demand shock,
+\begin{equation}
+m(u) = \begin{cases} \dfrac{\alpha\sigma_m^2\,u + c}{\,1+\alpha\sigma_m^2\varphi\,}, & u > \varphi c \quad(\text{upper arbitrage regime}),\\[10pt] \dfrac{u}{\varphi}, & -\varphi(c+c_s)\le u \le \varphi c \quad(\text{no-arbitrage band}),\\[8pt] \dfrac{\alpha\sigma_m^2\,u - (c+c_s)}{\,1+\alpha\sigma_m^2\varphi\,}, & u < -\varphi(c+c_s)\quad(\text{lower arbitrage regime}). \end{cases} \label{eq:mofu}
+\end{equation}
+Consequently the arbitrageur is inactive precisely when the basis lies in the band
+\begin{equation}
+\boxed{\; m \in [\,C_1,\,C_2\,] = [\,-(c+c_s),\ +c\,], \qquad \text{with half-widths } \abs{C_2}=c,\ \abs{C_1}=c+c_s. \;}
+\end{equation}
+The band is \emph{asymmetric}: it is wider on the lower (negative-basis, short-constrained) side by exactly $c_s$.
+\end{proposition}
+
+\begin{proof}
+In the no-trade region $q^\ast=0$, so \eqref{eq:clear} gives $m=u/\varphi$; this is consistent with $q^\ast=0$ iff $m\in[-(c+c_s),c]$, i.e.\ $u\in[-\varphi(c+c_s),\varphi c]$. In the upper regime substitute $q^\ast=(m-c)/(\alpha\sigma_m^2)$ into \eqref{eq:clear}: $u-\varphi m-(m-c)/(\alpha\sigma_m^2)=0$, i.e.\ $\alpha\sigma_m^2 u - \alpha\sigma_m^2\varphi m - (m-c)=0$, giving $m=(\alpha\sigma_m^2 u + c)/(1+\alpha\sigma_m^2\varphi)$; this exceeds $c$ iff $u>\varphi c$. The lower regime is symmetric with $c$ replaced by $-(c+c_s)$. The band edges are the values of $m$ at which $q^\ast$ switches from zero, namely $C_2=c$ and $C_1=-(c+c_s)$, and $\abs{C_1}-\abs{C_2}=c_s>0$.
+\end{proof}
+
+The economics is exactly the one-sided friction wedge of Gromb--Vayanos: the short-side cost $c_s$ raises the price of correcting a \emph{negative} basis, so negative mispricings are tolerated to a larger magnitude before anyone trades. This is the theoretical origin of the persistent \emph{negative} Indian basis (Nandan et al.) and of Aggarwal's estimated bands of about $-15$~bp (lower) versus $+3$~bp (upper): in the model's language, $c\approx 3$~bp and $c_s\approx 12$~bp.
+
+\begin{takeaway}
+Proposition~\ref{prop:band} \emph{is} Chapter~2's object: the mispricing $m$ and the band that contains it. It predicts, before we look, that estimated bands will be asymmetric with the wide side on the negative basis. Requirement~(1) (a band) and requirement~(2) (asymmetry) are satisfied.
+\end{takeaway}
+
+\section{Comparative statics}\label{sec:cs}
+\begin{proposition}[The band widens with constraints; passthrough falls with capacity]\label{prop:cs}
+Let the band width be $W\equiv C_2-C_1 = 2c+c_s$ and the asymmetry $A\equiv\abs{C_1}-\abs{C_2}=c_s$. Then
+\begin{equation}
+\frac{\partial W}{\partial c}=2>0,\quad \frac{\partial W}{\partial c_s}=1>0,\quad \frac{\partial A}{\partial c_s}=1>0,\quad \frac{\partial A}{\partial c}=0.
+\end{equation}
+Moreover, in either arbitrage regime the passthrough of demand shocks to the basis,
+\begin{equation}
+\frac{\partial m}{\partial u} = \frac{\alpha\sigma_m^2}{1+\alpha\sigma_m^2\varphi}\;\in\;\Big(0,\tfrac1\varphi\Big),
+\end{equation}
+is increasing in risk aversion $\alpha$ and in basis risk $\sigma_m^2$, and decreasing in arbitrage/fringe capacity ($\varphi$, and $1/\alpha$). Hence, for a given demand shock, mispricing is larger where arbitrage capacity is smaller.
+\end{proposition}
+\begin{proof}
+The width and asymmetry expressions are immediate from Proposition~\ref{prop:band}. For passthrough, differentiate the upper-regime line in \eqref{eq:mofu}: $\partial m/\partial u=\alpha\sigma_m^2/(1+\alpha\sigma_m^2\varphi)$. Writing it as $1/(\varphi+1/(\alpha\sigma_m^2))$ shows it is increasing in $\alpha$ and $\sigma_m^2$ and decreasing in $\varphi$, and bounded above by $1/\varphi$ (the no-arbitrage-band slope) since $1/(\alpha\sigma_m^2)>0$.
+\end{proof}
+
+Proposition~\ref{prop:cs} says a stock with higher basis risk, a thinner arbitrage base, or a costlier short leg has both a \emph{wider} band and \emph{less} compression of shocks inside the arbitrage regime --- so larger observed $\abs{m}$. This is the cross-sectional content the constraint index (Chapter~1) is built to capture.
+
+\section{The position limit and the ban}\label{sec:ban}
+Now impose the cap \eqref{eq:cap}. Attach a Kuhn--Tucker multiplier $\lambda\ge 0$ to the upper constraint $q\le L$ (the lower case is symmetric). The arbitrageur's first-order condition in the upper regime becomes
+\begin{equation}
+m - \alpha\sigma_m^2 q - c - \lambda = 0, \qquad \lambda\ge 0,\quad \lambda\,(L-q)=0. \label{eq:kkt}
+\end{equation}
+
+\begin{proposition}[The ban widens the band through the shadow price]\label{prop:ban}
+There is a threshold demand shock $\bar u \equiv \varphi c + (1+\alpha\sigma_m^2\varphi)L$ such that:
+\begin{enumerate}[leftmargin=1.6em,itemsep=2pt]
+\item For $u\le \bar u$ the cap slacks ($\lambda=0$) and $m(u)$ is as in Proposition~\ref{prop:band}.
+\item For $u>\bar u$ the cap binds ($q=L$), the shadow price is
+\begin{equation}
+\lambda(u) = m - \alpha\sigma_m^2 L - c = \frac{u-L}{\varphi} - \alpha\sigma_m^2 L - c \;>\;0, \label{eq:lambda}
+\end{equation}
+and the equilibrium basis jumps to $m(u)=\dfrac{u-L}{\varphi}$, which exceeds the uncapped value; the passthrough reverts to the (steep) no-arbitrage-band slope, $\partial m/\partial u = 1/\varphi$.
+\item \textbf{The ban.} Once market-wide open interest reaches $95\%$ of MWPL, no fresh positions may be opened, so the arbitrageur's correcting position is frozen at its current level $\bar q$ and cannot grow. Then $\partial q/\partial u=0$ and $\partial m/\partial u = 1/\varphi$ for all further demand pressure on the constrained side: correction is switched off and the basis is unbounded above (the band's constrained edge opens) until the ban lifts.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+With $q=L$ fixed, clearing \eqref{eq:clear} gives $m=(u-L)/\varphi$. Substituting into \eqref{eq:kkt} gives \eqref{eq:lambda}; $\lambda>0$ iff $m>\alpha\sigma_m^2 L + c$, i.e.\ $(u-L)/\varphi>\alpha\sigma_m^2L+c$, i.e.\ $u>\varphi c + (1+\alpha\sigma_m^2\varphi)L\equiv\bar u$. At $u=\bar u$ the capped basis $(u-L)/\varphi$ equals the uncapped value $(\alpha\sigma_m^2 u+c)/(1+\alpha\sigma_m^2\varphi)$ (continuity), and for $u>\bar u$ the capped line has the strictly steeper slope $1/\varphi>\alpha\sigma_m^2/(1+\alpha\sigma_m^2\varphi)$, so the capped basis lies strictly above the uncapped one and rises one-for-$\varphi$ with $u$. When fresh positions are prohibited, $q$ cannot increase, so $\dd q=0$ and $\dd m/\dd u=1/\varphi$ identically; there is no level of $m$ at which correction resumes, so the constrained edge of the band is $+\infty$.
+\end{proof}
+
+Proposition~\ref{prop:ban} is the heart of the project: the ban is not a soft tightening but a \emph{discrete regime switch}. The instant the limit binds, the shadow price $\lambda$ jumps from zero, the correcting force is removed, and the basis on the pressured side widens and stops mean-reverting. Symmetrically, on the negative-basis side the ban blocks the reverse-cash-and-carry that was already the constrained leg, so the effect there is even sharper.
+
+\begin{takeaway}
+Proposition~\ref{prop:ban} delivers requirement~(3): the ban widens the band discretely. It is the structural statement behind the causal test (Chapter~3) and the regime-shift analysis (Chapter~4): entering the ban should raise $\abs{m}$ and kill the error-correction term. The $2024$--$26$ reforms that changed $L$ (via the ADDV formula) and the ban rule are, in the model, dated shifts in $\bar u$ and in the constrained-edge behaviour.
+\end{takeaway}
+
+\section{Dynamics: mispricing persistence and half-life}\label{sec:dyn}
+To speak to \emph{persistence} we embed the static equilibrium in discrete time. Let the demand shock follow a stationary process and let the basis adjust each period toward the nearest band edge at a speed set by arbitrage capacity. Outside the band and away from the cap, combine the arbitrageur's gradual position-building with clearing to obtain the error-correction law
+\begin{equation}
+\Delta m_t = -\,\theta\,\big(m_{t-1}-C_j\big) + \varepsilon_t, \qquad \theta \equiv \frac{\psi}{\,\alpha\sigma_m^2\,(1+\alpha\sigma_m^2\varphi)\,}\in(0,1), \label{eq:ecm}
+\end{equation}
+where $C_j\in\{C_1,C_2\}$ is the relevant edge, $\psi>0$ is a trading-intensity constant, and inside the band $\theta=0$ (a random walk: no correction). The \emph{half-life} of a deviation is
+\begin{equation}
+H = \frac{\ln 2}{-\ln(1-\theta)}. \label{eq:halflife}
+\end{equation}
+\begin{proposition}[Slower correction under tighter constraints]\label{prop:dyn}
+The adjustment speed $\theta$ is decreasing in risk aversion $\alpha$, basis risk $\sigma_m^2$, and (through $\psi$) the tightness of the position cap, and $\theta=0$ both inside the band and while the ban binds. Consequently the half-life $H$ in \eqref{eq:halflife} is increasing in these constraints and $H\to\infty$ inside the band and under the ban.
+\end{proposition}
+\begin{proof}
+Monotonicity of $\theta$ in $\alpha,\sigma_m^2$ is immediate from \eqref{eq:ecm}; a binding or near-binding cap reduces the tradeable increment per period, lowering $\psi$ and hence $\theta$. Inside the band and under the ban the arbitrageur does not trade, so $\Delta m_t=\varepsilon_t$, i.e.\ $\theta=0$. Finally $H=\ln2/[-\ln(1-\theta)]$ is decreasing in $\theta$ on $(0,1)$ and diverges as $\theta\to0^+$.
+\end{proof}
+
+\begin{takeaway}
+Proposition~\ref{prop:dyn} is requirement~(4) and is exactly what the three-regime TVECM (Ters--Urban) estimates: an error-correction loading that is $\approx 0$ in the middle (band) regime and larger (more negative) outside, and that shrinks toward zero when the constraint tightens or the ban binds. It also predicts \emph{deeper} post-earnings drift for constrained stocks (Chapter~2), since drift is unclosed mispricing.
+\end{takeaway}
+
+\section{Cross-sectional pricing}\label{sec:xs}
+\begin{proposition}[Signals pay more where constraints bind]\label{prop:xs}
+Consider a basis-signal strategy that, each period, takes a unit position in the direction of correction whenever $\abs{m}$ exceeds the band. Its expected per-period return satisfies
+\begin{equation}
+\E[\text{return}] \;=\; \E\big[\,\abs{m}-\text{edge}\ \big|\ \text{outside band}\,\big]\cdot\Pr(\text{outside band}),
+\end{equation}
+which is increasing in the band width $W=2c+c_s$, in basis risk $\sigma_m^2$, and in the tightness of the cap, and decreasing in arbitrage capacity. Hence, in the cross-section, the strategy earns more among high-constraint stocks.
+\end{proposition}
+\begin{proof}
+By Propositions~\ref{prop:band}--\ref{prop:cs}, a larger $W$, $\sigma_m^2$ or tighter cap raises both the probability that $\abs{m}$ exits the (wider) band and the average distance beyond the edge (less compression), so both factors of $\E[\text{return}]$ increase.
+\end{proof}
+
+\begin{takeaway}
+Proposition~\ref{prop:xs} is requirement~(5) and the content of Chapter~5's Fama--MacBeth test: interact signal returns with the constraint index and predict a positive loading. Under India's near-absolute short constraint, the effect should be strongest on the overpricing/negative-basis leg (Stambaugh--Yu--Yuan asymmetry).
+\end{takeaway}
+
+\section{Identification}\label{sec:id}
+\begin{proposition}[Exogenous denominator variation identifies the ban effect]\label{prop:id}
+Let ban status depend on the cap $L=\kappa\min(0.15\,\mathrm{FF},65\,\mathrm{ADDV})$. Holding contemporaneous demand $u$ fixed, an exogenous change in $L$ shifts the threshold $\bar u$ and, when the cap binds, the basis: from \eqref{eq:lambda}, $\partial m/\partial L = -1/\varphi<0$ under the ban (a larger cap relieves the constraint and shrinks the basis). Because $L$ moves with free float (issuance, shareholding changes) and with the \emph{trailing, quarterly-reset} ADDV, this variation is orthogonal to today's mispricing shock $u$ and provides an instrument for ban status.
+\end{proposition}
+\begin{proof}
+Under the binding cap, $m=(u-L)/\varphi$ (Proposition~\ref{prop:ban}), so $\partial m/\partial L=-1/\varphi$ at fixed $u$. Free float and trailing ADDV are predetermined relative to the contemporaneous shock $u_t$, so $\mathrm{Cov}(L_t,u_t)=0$ by timing, giving the exclusion restriction.
+\end{proof}
+
+The regression discontinuity at the $95\%$ threshold is a complementary check, but the running variable (utilisation) is anticipated and manipulable, so its density will bunch (a McCrary test will show this); the model therefore designates the denominator instrument of Proposition~\ref{prop:id} as primary and the RD as supporting --- exactly the stance taken in the project document.
+
+\begin{takeaway}
+Proposition~\ref{prop:id} is requirement~(6) and Chapter~3's identification strategy, derived here from the model rather than asserted.
+\end{takeaway}
+
+\section{Mapping to the empirical design}\label{sec:map}
+Table~\ref{tab:mapA} shows that the model delivers all six requirements set out in the literature review, each as a derived proposition tied to a chapter and hypothesis.
+
+\begin{table}[h]\centering\small\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.31\textwidth} p{0.32\textwidth} p{0.28\textwidth}@{}}
+\toprule
+\textbf{Requirement} & \textbf{Model result} & \textbf{Empirical counterpart} \\
+\midrule
+(1) Explicit band & Prop.~\ref{prop:band}: $[-(c+c_s),c]$ & Ch.~2 basis; Ch.~4 band \\
+(2) Asymmetry & Prop.~\ref{prop:band}: wide side $=c_s$ & Aggarwal $-15/+3$ bp; H1 \\
+(3) Ban widens band & Prop.~\ref{prop:ban}: shadow price jump & Ch.~3 causal; H1/H4 \\
+(4) Slower correction & Prop.~\ref{prop:dyn}: $\theta\!\to\!0$; $H\!\to\!\infty$ & TVECM speed; PEAD; H2 \\
+(5) Cross-section & Prop.~\ref{prop:xs}: return $\uparrow$ in constraint & Fama--MacBeth; H5 \\
+(6) Identification & Prop.~\ref{prop:id}: $\partial m/\partial L<0$, exogenous & IV via ADDV/FF; H3/H6 \\
+\bottomrule
+\end{tabular}
+\caption{Model~A delivers every requirement as a derived proposition.}
+\label{tab:mapA}
+\end{table}
+
+\section{Assumptions, limitations, and robustness}
+The model is partial-equilibrium and two-date at its core, with a reduced-form dynamic extension \eqref{eq:ecm}; this buys tractability and closed forms at the cost of not endogenising the demand process $u$ or the fringe capacity $\varphi$. Three extensions are natural and do not overturn the results. (i) \emph{Heterogeneous arbitrageurs}: replacing the representative arbitrageur with a distribution of costs smooths the band edges into a transition region --- this is precisely the smooth-transition (STAR) generalisation and motivates reporting STAR alongside the threshold estimator. (ii) \emph{Performance-based capital} (Shleifer--Vishny): letting the arbitrageur's capital fall after adverse basis moves adds the fire-sale amplification $\partial m/\partial u<-1$, reinforcing Proposition~\ref{prop:ban} in stressed states. (iii) \emph{Endogenous crowding}: linking $u$ to lottery/retail demand (Kumar; Sehgal et al.) closes the loop with the policy chapter, since the same demand that widens the band also drives open interest toward the MWPL trigger. The key qualitative predictions --- an asymmetric band, discrete widening under the ban, slower correction, a cross-sectional premium, and an exogenous-denominator instrument --- are robust to all three.
+
+\paragraph{Bottom line.} From a standard constrained-arbitrage model plus one institutional primitive (the MWPL cap), the project's six hypotheses emerge as theorems. Building this before the empirics means that, if the data show these patterns, they corroborate a pre-specified theory; if they do not, the model tells us exactly which assumption to revisit.
+
+\end{document}

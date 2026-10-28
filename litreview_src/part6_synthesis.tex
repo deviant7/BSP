@@ -1,0 +1,74 @@
+\part{Synthesis: What the Literature Implies for Our Model}
+\label{part:synthesis}
+
+The review has a single destination: a formal model of our project, to be built \emph{before} the empirics so that the hypotheses are theory-derived rather than data-fitted. This part draws the strands together, states what such a model must reproduce, and sketches the natural candidate.
+
+% =====================================================================
+\section{The through-line}
+Every paper is a facet of one object: the \emph{asymmetric no-arbitrage band} around an Indian stock's cost-of-carry fair value, and how an exogenous contraction of arbitrage capacity widens it. Formally, write the observed (log) basis of stock $i$ as
+\begin{equation}
+z_{i,t} = \underbrace{\theta_{i,t}}_{\substack{\text{risk-bearing wedge}\\ \sim \alpha\sigma_i^2(1-\rho_i^2)u_{i,t}\ \text{(GV, DSSW)}}} \;\pm\; \underbrace{c_{i,t}}_{\substack{\text{friction wedge, one-sided}\\ \text{short-sale/position limit (GV)}}} \;+\; \underbrace{a_{i,t}}_{\substack{\text{amplification, state-dependent}\\ \text{PBA fire-sale (SV)}}} \;+\; \eta_{i,t},
+\end{equation}
+and let the \emph{band} be the interval $[\,C_1(\,\cdot\,),\,C_2(\,\cdot\,)\,]$ of $z$ within which no correction occurs (Part~III). The project's claims are then: (i) the band is asymmetric because $c$ is one-sided on the short/negative-basis leg (GV \eqref{eq:gv-asym}; Aggarwal $-15/+3$ bp; Ofek $13.6\%/4.4\%$); (ii) the band widens with a constraint index built from ban status, \%MWPL, idiosyncratic volatility, delivery share and ownership breadth (DSSW variance channel; Aggarwal PCA); and (iii) the MWPL ban is an exogenous jump in the position-limit component of $c$, so it should widen the band and slow correction --- causally, not just in correlation.
+
+% =====================================================================
+\section{Paper-to-project map}
+Table~\ref{tab:map} states, for each reference, what the project takes and where it is used.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{0.30\textwidth} p{0.42\textwidth} p{0.20\textwidth}@{}}
+\toprule
+\textbf{Paper} & \textbf{What we take} & \textbf{Used in} \\
+\midrule
+Shleifer--Vishny (1997) & Capital is state-dependent; shocks to capacity widen mispricing; fire-sale amplification & Motivation; Ch.\ 4 (non-linearity) \\
+De Long et al.\ (1990) & Mispricing scales with variance of non-fundamental demand; systematic sentiment & Constraint index (IVOL); policy ch. \\
+Gromb--Vayanos (2010) & Price $=$ risk term $+$ one-sided friction wedge; position limits as shadow cost & Core model; band asymmetry \\
+Cost-of-carry basis & Primary mispricing measure $z=[F-Se^{(r-\delta)\tau}]/S$ & Ch.\ 2 (measure 1) \\
+Ofek et al.\ (2004) & Put--call-parity deviation; short-side asymmetry; predictability & Ch.\ 2 (measure 2) \\
+PEAD-India (2018) & SUE-based drift; Fama--MacBeth; robust to IVOL & Ch.\ 2 (measure 3) \\
+Stambaugh et al.\ (2015) & Composite mispricing score; IVOL as arbitrage risk; Fama--MacBeth & Ch.\ 5 (cross-section) \\
+Dwyer (1996); YPP (1994) & Three-regime TAR / threshold-ECM for the basis & Ch.\ 4 (baseline) \\
+Tse (2001) & Smooth-transition (STAR) alternative; heterogeneity; asymmetry & Ch.\ 4 (robustness) \\
+Aggarwal (2015) & Band estimation $+$ PCA commonality on Indian SSF; the precedent/gap & Ch.\ 1 \& 4 (method) \\
+Hansen--Seo (2002); Ters--Urban (2020) & 3-regime TVECM, unknown $\beta$, pre/post-event design & Ch.\ 4 (workhorse) \\
+Nandan (2014); Roy--Chakraborty (2023); Slivka (2011) & Negative/asymmetric basis; cointegration; $2\times$ band benchmark & Calibration \\
+Kumar (2009); Sehgal et al.\ (2024) & Which stocks retail crowds (low-price/high-IVOL/high-skew) & Policy ch.; H3 \\
+Barber--Odean (2000, 2013) & Retail as net noise traders & Policy ch. \\
+SEBI (2024); SEBI circulars; NSE rules & Welfare number; the ban mechanism and dated shocks & Policy ch.; identification \\
+\bottomrule
+\end{tabular}
+\caption{How each reference feeds the project.}
+\label{tab:map}
+\end{table}
+
+% =====================================================================
+\section{What the theoretical model must reproduce}
+\label{sec:model-requirements}
+The literature pins down a checklist for the next-stage model. A satisfactory model of our project should deliver, from primitives, all of the following --- which are then the \emph{pre-registered} hypotheses, derived not assumed:
+\begin{enumerate}[leftmargin=1.5em,itemsep=3pt]
+\item \textbf{A no-arbitrage band of explicit width.} An interval $[C_1,C_2]$ in basis space with a closed-form (or comparative-static) expression for its half-widths in terms of transaction costs, risk-bearing capacity, and a \emph{position-limit shadow cost}. (Maps to H1.)
+\item \textbf{Asymmetry.} $\abs{C_1} > \abs{C_2}$ (wider on the short/negative-basis side) whenever the binding constraint is on shorting/short-side futures --- the GV \eqref{eq:gv-asym} property, matching Aggarwal's $-15/+3$ bp.
+\item \textbf{Monotonic comparative static in the constraint.} $\partial(C_2-C_1)/\partial(\text{constraint}) > 0$: tighter constraints widen the band. The MWPL ban is the discrete limiting case (shadow price jumps when the limit binds). (Maps to H1, H4.)
+\item \textbf{Slower correction inside a wider band.} A longer mispricing half-life when the band is wider / the stock is in the ban --- the dynamic, testable via the TVECM error-correction speed and via PEAD depth. (Maps to H2.)
+\item \textbf{A cross-sectional pricing implication.} Signals/anomalies earn higher returns in high-constraint stocks (mispricing not risk) --- SYY logic under India's near-absolute short constraint. (Maps to H5.)
+\item \textbf{A falsification route.} The band should respond to \emph{exogenous} movements in the constraint (the ADDV/free-float denominator revisions; the dated reforms), not merely to endogenous crowding. (Maps to H3/H6.)
+\end{enumerate}
+
+% =====================================================================
+\section{A candidate model skeleton for the next step}
+\label{sec:skeleton}
+The most direct route is to take the Gromb--Vayanos arbitrageur (\S\ref{sec:gv}) and add a \emph{hard position limit} of MWPL type. Sketch: a risk-averse arbitrageur chooses a futures position $x$ against a demand shock $u$, maximising the mean--variance objective \eqref{eq:gv-mv} subject to a position cap
+\begin{equation}
+\abs{x} \le L, \qquad L = \kappa\cdot\mathrm{MWPL} = \kappa\cdot\min\!\big(0.15\,\mathrm{FF},\ 65\,\mathrm{ADDV}\big),
+\end{equation}
+representing the per-participant share of the market-wide limit. The Karush--Kuhn--Tucker conditions introduce a multiplier $\lambda\ge 0$ on the cap; the equilibrium basis becomes
+\begin{equation}
+z = \alpha\sigma^2(1-\rho^2)\,u \;\pm\; c \;+\; \lambda(u,L)\cdot\mathrm{sgn}(x), \qquad \lambda>0 \iff \abs{x}=L .
+\end{equation}
+When market-wide OI approaches $95\%$ of MWPL, the cap binds ($\lambda$ jumps from $0$), the wedge widens discretely, and the band's constrained-side half-width increases --- delivering requirements (1)--(4) analytically. Because $L$ depends on ADDV/free-float through \eqref{eq:mwpl-new}, exogenous denominator revisions shift $L$ (and hence $\lambda$) independently of current mispricing, delivering requirement (6). Embedding this in a two-period (or infinite-horizon, à la DSSW) setting with stochastic $u$ generates the persistence dynamics of requirement (3); adding the SV fund-flow channel \eqref{eq:sv-G} yields the amplification of \eqref{eq:sv-resiliency}. This is a sketch, not the model --- but it shows the literature furnishes every block needed, which is the point of building the theory first.
+
+% =====================================================================
+\section{Where the gap sits (our contribution)}
+The international theory of limits to arbitrage (SV, DSSW, GV) is mature; the measurement (basis, PCP, PEAD, SYY) and the band econometrics (TAR/STAR/TVECM) are standard; and the Indian evidence (Aggarwal, Nandan, Roy--Chakraborty, Slivka) establishes that wide, asymmetric, cointegrated bands exist. \emph{No paper ties a mechanical, dated position-limit shock (the MWPL ban) to the width and dynamics of the Indian no-arbitrage band, nor uses it as an instrument for arbitrage capacity.} That junction --- theory-modelled first, then tested on a decade of public NSE data around the 2024--26 reforms --- is the project's contribution. The immediate next step is to turn \S\ref{sec:model-requirements}--\S\ref{sec:skeleton} into a fully worked model with proofs, then take its derived predictions to the data.

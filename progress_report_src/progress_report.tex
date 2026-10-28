@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\makeatletter
+\providecommand{\UseTaggingSocket}[1]{}
+\providecommand{\UseInstance}[3]{}
+\makeatother
+
+\usepackage{amsmath,amssymb,booktabs,xcolor,enumitem,fancyhdr}
+\usepackage[a4paper,margin=0.85in]{geometry}
+
+\definecolor{owblue}{RGB}{20,40,90}
+\definecolor{owgray}{RGB}{92,92,92}
+\definecolor{owgreen}{RGB}{20,110,60}
+\definecolor{owred}{RGB}{150,30,30}
+
+\usepackage[colorlinks=true,linkcolor=owblue,urlcolor=owblue]{hyperref}
+
+% navy numbered section headings, no extra packages
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -.2ex}{1.8ex \@plus.2ex}%
+  {\normalfont\large\bfseries\color{owblue}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-2.6ex \@plus -1ex \@minus -.2ex}{1.2ex \@plus.2ex}%
+  {\normalfont\normalsize\bfseries\color{owblue}}}
+\makeatother
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small\color{owgray}BS Project --- Progress Report}
+\rhead{\small\color{owgray}Limits to Arbitrage · EC 495}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\keybox}[1]{\par\vspace{4pt}\begin{center}%
+\fcolorbox{owgray!45}{owblue!5}{\begin{minipage}{0.955\linewidth}%
+\vspace{3pt}\small #1\vspace{3pt}\end{minipage}}\end{center}\vspace{2pt}}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=3pt}
+
+\begin{document}
+
+% ---------- title block ----------
+\begin{center}
+{\LARGE\bfseries\color{owblue} BS Project --- Progress Report}\\[4pt]
+{\normalsize Limits to arbitrage in the Indian equity market}\\[6pt]
+{\footnotesize Prince Kumar · Roll No.\ 23B3032 · BS Economics, IIT Bombay}\\[2pt]
+{\footnotesize Guide: Prof.\ Aditi Chaubal · Courses EC 495 / EC 497 · September 2026}
+\end{center}
+\vspace{-4pt}
+{\color{owgray}\hrule height 0.6pt}
+\vspace{10pt}
+
+\noindent This note is a short update on where my project is so far. I have finished the reading, and I have started on the theory side before doing any data work. Below I explain the idea, what I have read and noted down, why I am doing the theory first, and the two models I have built.
+
+% ---------- 1 ----------
+\section{The project}
+\textbf{The idea.} In theory, if a stock is priced wrongly, traders should trade against the mistake and the price should snap back almost at once. In Indian stocks this does not really happen. Price gaps often last for days or weeks. The usual reason given is that arbitrage is not free: the traders who would fix the mistake face costs, limited capital, and rules that stop them from taking positions.
+
+\textbf{Why India is a good place to study this.} India has one rule that makes these limits very easy to see. Every stock in the derivatives segment has a Market-Wide Position Limit (MWPL). Once the total open interest in a stock crosses 95\% of that limit, the stock goes into an ``F\&O ban'': no new positions are allowed, only closing trades. This ban is mechanical, it is dated to the day, and NSE publishes the list every evening. One thing I want to note carefully, because it matters for the whole project: it is not true that there is no short selling in India. Intraday short selling is allowed. What is blocked is naked overnight short selling, and the stock-lending market is thin. So the main way to hold a lasting arbitrage position is through single-stock futures, and the ban is exactly a limit on those futures. That makes the ban a clean shock to arbitrage.
+
+\keybox{\textbf{Problem statement / thesis.} How much of the mispricing that survives in Indian stocks is caused by limits on arbitrage, and in particular by the MWPL F\&O ban? My claim is that when these limits bind, mispricing gets larger and takes longer to correct, and the ban is a clean, dated event that lets me show this is causal and not just a correlation.}
+
+% ---------- 2 ----------
+\section{Why I want to do this}
+There are a few reasons I find this worth doing.
+
+\begin{itemize}
+\item As far as I can tell, nobody has studied India's MWPL ban as a shock to arbitrage. There is a lot of international work on short-sale limits and position limits (US, Korea, Taiwan), and there is descriptive Indian work on derivatives, but the ban itself has not been used this way. So there is a real gap.
+\item It is useful for policy. SEBI has been changing these rules a lot between 2024 and 2026, and it is openly trading off ``control speculation'' against ``keep the market working''. My project measures the market-quality side of that trade-off, so it speaks to something the regulator is actively deciding.
+\item It has a clean payoff for asset pricing. If I can show that certain price patterns survive only where the limits bind, that is evidence they are genuine mistakes, not just extra reward for risk.
+\end{itemize}
+
+% ---------- 3 ----------
+\section{What I have read}
+Before starting I read the main papers the project builds on --- 21 in total. I have written a separate, longer note that goes through each one with the math; here I just want to show what I took from them and how it feeds into my project. I have grouped them by what they are for.
+
+\begin{center}
+\footnotesize
+\begin{tabular}{p{2.9cm} p{4.1cm} p{7.1cm}}
+\toprule
+\textbf{What it is for} & \textbf{Main papers} & \textbf{What I took from them} \\
+\midrule
+The theory of why mispricing survives & Shleifer \& Vishny (1997); De Long, Shleifer, Summers, Waldmann (1990); Gromb \& Vayanos (2010) & Arbitrage is done by a few specialists with limited, borrowed capital, so it can be weak exactly when it is needed. Noise traders create their own risk, which keeps a gap open. Gromb--Vayanos was the most useful: a cost of shorting shows up as a one-sided wedge, which is why the mispricing band is lop-sided. \\
+\addlinespace
+How to measure the mispricing & Cost-of-carry basis; Ofek, Richardson \& Whitelaw (2004); post-earnings drift (Harshita et al.\ 2018); Stambaugh, Yu \& Yuan (2015) & Three ways to ``price the same thing twice'' and read the gap: futures vs.\ fair value, put--call parity in options, and drift after earnings. Stambaugh et al.\ also give a clean way to combine many signals into one mispricing score, which I can reuse. \\
+\addlinespace
+How to estimate the band & Dwyer et al.\ (1996); Tse (2001); Hansen \& Seo (2002); Ters \& Urban (2020) & The basis does not correct smoothly; it sits still inside a band and only reverts outside it. This is a threshold model. Ters--Urban's three-regime version is the one I plan to use, because it fits an unknown band and is built for before/after policy studies. \\
+\addlinespace
+Indian evidence + the rules & Aggarwal (2015); Nandan et al.\ (2014); Roy \& Chakraborty (2023); Slivka et al.\ (2011); SEBI circulars (2024, 2025) & Aggarwal is the closest to my work: she measures no-arbitrage bands for Indian single-stock futures and finds them lop-sided (about $-15$ bp on one side, $+3$ bp on the other), but she never uses the ban. That gap is my project. The Indian basis is usually negative, and Indian bands are about twice as wide as in developed markets. \\
+\addlinespace
+The retail side (for the policy chapter) & Kumar (2009); Barber \& Odean (2000, 2013); SEBI F\&O loss study (2024) & Retail traders prefer cheap, volatile, lottery-like stocks and mostly lose money (SEBI: about 93\% of individual F\&O traders lost money). This is the demand side --- the crowding that pushes a stock's open interest up to the ban in the first place. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent The short version: the theory tells me a mispricing band should exist and should be lop-sided; the Indian papers show it does exist and is lop-sided; and nobody has yet linked it to the ban. That link is what I am doing.
+
+% ---------- 4 ----------
+\section{How I am doing it: theory first, then data}
+One choice I want to explain, because it shapes the order of everything. \textbf{Before I touch any data, I am building the theory side first} --- writing down a proper mathematical model of what should happen --- and only after that will I test it on data.
+
+I am doing it in this order on purpose. If I look at the data first and then build a story around whatever I happen to find, it is very easy to fool myself: with enough patience you can always find some pattern and then explain it after the fact. That is the overfitting / confirmation-bias problem. If instead the model says something specific in advance, and the data then agrees, that is real evidence. So I want the predictions written down and fixed before I run a single regression. The rest of this note is the theory I have built so far.
+
+% ---------- 5 ----------
+\section{The two models I have built}
+I have built two small models. They come at the same thing from different directions, and they end up predicting the same things. I built both because each has a different strength, and I have not yet fixed on one as the final version --- I would like your view on which to lead with.
+
+\subsection{Model A: a careful arbitrage trader with a position cap}
+\textbf{The set-up.} There is one arbitrage trader who dislikes risk and has limited capital. He watches the gap between the futures price and its fair value and decides how big a position to take. Correcting the gap costs money, and shorting the stock costs extra (because of the overnight short and thin lending market). On top of that he has a hard cap on his position size --- this is the MWPL, and the ban is the case where the cap fully binds.
+
+\textbf{What comes out.} Solving his problem gives a ``no-trade band'': a range of mispricing where it is simply not worth trading, so the gap just sits there. In the model the band is
+\[
+\boxed{\;\text{no-trade band} \;=\; \Big[\ \underbrace{-(c+c_s)}_{\text{lower edge: normal cost }+\text{ extra cost of shorting}}\ ,\ \ \underbrace{+\,c}_{\text{upper edge: normal cost}}\ \Big]\;}
+\]
+where $c$ is the normal round-trip cost and $c_s$ is the extra cost of shorting. Because $c_s$ only hits one side, the band is lop-sided: wider on the side where you would need to short. This matches Aggarwal's $-15$/$+3$ bp finding. The best part is what the cap does. When the stock hits the ban, the trader cannot add to his position, so he simply cannot pull the price back. The shadow price of the cap jumps, the band gets suddenly wider, and correction switches off until the ban lifts.
+
+\subsection{Model B: waiting until it is worth fixing}
+\textbf{The set-up.} Here I do not model the trader in detail. I just say that fixing a mispricing costs money, so a sensible trader waits until the gap is big enough to be worth fixing, and acts only at the edges. Between those edges he does nothing.
+
+\textbf{What comes out.} This ``wait until it is worth it'' behaviour is again a band. I get a formula for how wide it is: it grows when the stock is more volatile and when trading costs are higher, and it is lop-sided for the same shorting reason as before. The useful thing about this version is that the band it produces is exactly the three-regime threshold model I am going to estimate on the data later. So the theory and the statistics are the same object --- when I fit the threshold model, I am directly estimating the band the theory describes. When the ban binds, the ``fix it'' barrier disappears and the gap can drift freely, which again means no correction.
+
+\subsection{What both models predict, and how they fit the project}
+Both models give me the same list of predictions, which become the things I will test:
+\begin{itemize}
+\item mispricing is larger and lasts longer when the limits are tighter, and it is lop-sided (wider on the short side);
+\item the ban makes the band jump wider and stops correction;
+\item post-earnings drift is deeper for constrained stocks;
+\item signals earn more in constrained stocks (mistake, not risk);
+\item and the effect can be identified from outside movements in the position limit (the limit depends on free float and past delivery volume, which move for reasons unrelated to today's trading).
+\end{itemize}
+
+\keybox{\textbf{Where the models fit.} Model A explains the \emph{why} --- the trader's behaviour and what the ban does to him. Model B connects straight to the \emph{statistics} I will run --- its band is the threshold model I will estimate. They agree on the predictions, so together they give me a set of hypotheses that are fixed before I see the data.}
+
+% ---------- 6 ----------
+\section{Where things stand, and what is next}
+\textbf{Done so far.} The reading is finished and written up. The two models are written up in full with the derivations, and I have attached both write-ups with this report.
+
+\textbf{Next steps.} The immediate one is to settle on the final model (or keep both, if you think that is better) after your feedback. After that I will start on the data. Everything I need is public NSE data --- daily price files, the ban list, MWPL and delivery files, and shareholding filings --- for roughly the 220 derivative stocks over 2015 to 2026. My first data task will be a couple of quick checks to confirm the identification is sound (whether the 95\% cut-off is usable, and whether the position-limit changes give me the variation I need) before building the full dataset.
+
+\vspace{6pt}
+\noindent I would be glad to hear your thoughts, especially on the two models and which one to take forward.
+
+\end{document}

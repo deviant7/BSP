@@ -1,0 +1,160 @@
+\part{The Theory of Limited Arbitrage}
+\label{part:theory}
+
+The three papers in this part answer a single question in three complementary ways: \emph{why does a mispricing survive at all?} Classical theory (Fama, Ross) assumes a continuum of small, diversified, infinitely-lived arbitrageurs who compete mispricing away to zero. Each model below breaks one of those assumptions --- limited/withdrawable capital (Shleifer--Vishny), short horizons facing self-created risk (De~Long et al.), and explicit position/financing frictions (Gromb--Vayanos) --- and each delivers the same qualitative object: an interval of mispricing, a \emph{no-arbitrage band}, inside which rational arbitrage does not operate. Together they are the theoretical justification for everything measured in Parts~II--IV.
+
+% =====================================================================
+\section{Shleifer \& Vishny (1997): Performance-Based Arbitrage}
+\label{sec:sv}
+
+\subsection*{Question and contribution}
+Standard models predict that the \emph{larger} a mispricing, the \emph{more} arbitrage capital rushes in to correct it, so arbitrage is most powerful exactly when it is most needed. Shleifer and Vishny (SV) overturn this by taking seriously that real arbitrage is done by \emph{specialists trading other people's money}. The separation of ``brains'' (the arbitrageur's knowledge) from ``resources'' (outside investors' capital) creates an agency problem: capital is allocated on \emph{past} performance, which is worst precisely when \emph{future} expected returns are highest. The result is that arbitrage can be weakest in extreme mispricings --- and can even amplify them.
+
+\subsection*{The model}
+Consider one asset with fundamental value $V$, revealed at $t=3$. There are three periods $t=1,2,3$ and three types of agent: noise traders, arbitrageurs, and the outside investors who fund them. In periods $t=1,2$ pessimistic noise traders exert an aggregate ``pessimism shock'' $S_t$ that depresses demand; their demand for the asset is
+\begin{equation}
+Q^{N}(t) \;=\; \frac{V - S_t}{p_t},
+\end{equation}
+where $p_t$ is the price. The first shock $S_1$ is known at $t=1$; the second, $S_2$, is uncertain:
+\begin{equation}
+S_2 = \begin{cases} S \;(>S_1) & \text{with probability } q \quad(\text{misperception deepens}),\\[2pt] 0 & \text{with probability } 1-q \quad(\text{noise corrects: } p_2=V).\end{cases}
+\end{equation}
+Risk-neutral arbitrageurs hold cumulative funds $F_t$ and invest $D_t \le F_t$ in the asset at $t=1$ (keeping $F_1-D_1$ in cash as an option to buy more if the asset gets cheaper). With unit asset supply, market clearing $Q^N(t)+Q^A(t)=1$ (with $Q^A=D_t/p_t$ or $F_t/p_t$) gives the prices
+\begin{align}
+p_1 &= V - S_1 + D_1, \label{eq:sv-p1}\\
+p_2 &= V - S_2 + F_2. \label{eq:sv-p2}
+\end{align}
+The maintained assumption is that arbitrage capital is too small to remove the mispricing, $F_t < S_t$, so prices stay below $V$ whenever noise traders are active.
+
+\paragraph{Performance-based arbitrage (PBA).} The engine of the model is how $F_2$ is determined. Outside investors cannot evaluate strategies; they update on realised returns only. If the arbitrageur's gross return between $t=1$ and $t=2$ is $p_2/p_1$ on the invested part, funds next period are
+\begin{equation}
+F_2 \;=\; G\!\left(D_1\frac{p_2}{p_1} + (F_1 - D_1)\right), \qquad G'>0,\quad G''\le 0, \label{eq:sv-G}
+\end{equation}
+with $G$ normalised so that performance equal to the benchmark leaves funds unchanged, and with fund-flow sensitivity $G'$ large enough that under-performance triggers withdrawals. This is \emph{PBA}: capital chases past returns. Because all arbitrageurs in a segment hold the same position, they gain or lose funds together --- there is no deep-pocketed outsider to step in.
+
+\subsection*{Solving for equilibrium}
+Since managers are paid in proportion to funds managed, they maximise expected terminal funds. If noise corrects at $t=2$ the position is liquidated at $V$ and held in cash; if it deepens, funds $F_2$ then grow by $V/p_2$ to $t=3$. The objective is
+\begin{equation}
+\E W \;=\; (1-q)\,G\!\left(D_1\frac{V}{p_1} + (F_1-D_1)\right) \;+\; q\,\frac{V}{p_2}\,G\!\left(D_1\frac{p_2}{p_1} + (F_1-D_1)\right). \label{eq:sv-EW}
+\end{equation}
+The first-order condition in $D_1$ trades off the benefit of being fully invested if the price recovers against the option value of holding cash in case it falls further. Arbitrageurs choose to be \emph{fully invested} ($D_1=F_1$) when the recovery is likely and the initial displacement large --- precisely,
+\begin{equation}
+(1-q)\,G'\!\left(\tfrac{V}{p_1}-1\right) \;+\; q\,G'\!\left(\tfrac{p_2}{p_1}-1\right)\frac{V}{p_2} \;>\;0 \quad\text{at } D_1=F_1. \label{eq:sv-fullinv}
+\end{equation}
+Under full investment, $F_2 = G(F_1\,p_2/p_1)$, and substituting into \eqref{eq:sv-p2} gives the second-period price \emph{implicitly}:
+\begin{equation}
+p_2 \;=\; V - S + G\!\left(F_1\frac{p_2}{p_1}\right). \label{eq:sv-p2imp}
+\end{equation}
+
+\subsection*{The key result: negative resiliency}
+Differentiate \eqref{eq:sv-p2imp} with respect to the deepening shock $S$ (treating $p_1$ as given):
+\begin{equation}
+\frac{\dd p_2}{\dd S} \;=\; \frac{-1}{\,1 - G'\dfrac{F_1}{p_1}\,} \;<\; -1, \label{eq:sv-resiliency}
+\end{equation}
+where the stable equilibrium requires $0 < G'F_1/p_1 < 1$. Equation~\eqref{eq:sv-resiliency} is the paper's punchline. In an efficient market the sensitivity of price to a sentiment shock would be zero; with limited capital it is $-1$ at $t=1$; but under PBA, at $t=2$ the price falls \emph{more than one-for-one} with the shock. When the mispricing worsens, arbitrageurs suffer losses, investors withdraw funds ($F_2$ falls), and the arbitrageurs are forced to \emph{liquidate into the falling market} --- a fire sale that pushes the price still further from $V$. Arbitrage is not merely limited; at the extreme it is destabilising.
+
+\begin{takeaway}
+SV is the conceptual charter for the whole project. It says (i) arbitrage capacity is finite and \emph{state-dependent} --- it shrinks in bad states; (ii) mispricing has a \emph{time dimension} (it can widen and persist), so we must model the \emph{speed} of correction, not just its level (Parts~II--III); and (iii) a sudden, external contraction of arbitrage capacity should \emph{widen} mispricing. India's MWPL ban is exactly such a contraction, imposed mechanically and dated to the day. The amplification channel \eqref{eq:sv-resiliency} also warns us that ban effects may be non-linear and largest in already-stressed names.
+\end{takeaway}
+
+% =====================================================================
+\section{De Long, Shleifer, Summers \& Waldmann (1990): Noise-Trader Risk}
+\label{sec:dssw}
+
+\subsection*{Question and contribution}
+Friedman and Fama argued that irrational ``noise traders'' cannot move prices for long: rational arbitrageurs trade against them, profit, and drive them extinct. DSSW show this argument fails once arbitrageurs are \emph{risk-averse with short horizons}. The very unpredictability of noise traders' future beliefs is a risk --- \emph{noise-trader risk} --- that deters arbitrage. Prices then diverge from fundamentals \emph{even with no fundamental risk at all}, and noise traders can earn \emph{higher} average returns by bearing the risk they themselves create. ``Noise traders create their own space.''
+
+\subsection*{The model}
+An overlapping-generations economy: two-period-lived agents, no first-period consumption, so investable resources are exogenous. Two assets pay the identical dividend $r$: a safe asset $s$ in perfectly elastic supply (price fixed at $1$, hence $r$ is the riskless rate), and a risky asset $u$ in fixed unit supply with price $p_t$. If priced at fundamentals both would equal $1$ in every period; noise traders break this. A fraction $\mu$ of agents are noise traders, $1-\mu$ are sophisticated. Every agent has CARA utility over end-of-life wealth $w$,
+\begin{equation}
+U(w) = -\exp(-2\gamma w),
+\end{equation}
+with absolute risk aversion $2\gamma$. Under normality, maximising $\E U$ is equivalent to maximising $\bar w - \gamma\,\sigma_w^2$. Noise traders misperceive the expected \emph{next-period price} of $u$ by an i.i.d.\ normal amount
+\begin{equation}
+\rho_t \sim \mathcal N\!\left(\rho^\ast,\ \sigma_\rho^2\right),
+\end{equation}
+where $\rho^\ast$ measures average ``bullishness'' and $\sigma_\rho^2$ the variability of sentiment.
+
+\paragraph{Demands.} Let ${}_t\sigma^2_{p_{t+1}}\equiv \E_t[(p_{t+1}-\E_t p_{t+1})^2]$ be the one-period-ahead price variance. Mean--variance optimisation gives holdings of the risky asset:
+\begin{align}
+\lambda^{i}_t &= \frac{r + {}_t\E p_{t+1} - (1+r)p_t}{2\gamma\, {}_t\sigma^2_{p_{t+1}}} && \text{(sophisticated)}, \label{eq:dssw-lami}\\[4pt]
+\lambda^{n}_t &= \frac{r + {}_t\E p_{t+1} - (1+r)p_t}{2\gamma\, {}_t\sigma^2_{p_{t+1}}} \;+\; \frac{\rho_t}{2\gamma\, {}_t\sigma^2_{p_{t+1}}} && \text{(noise traders)}. \label{eq:dssw-lamn}
+\end{align}
+Demand is (perceived excess return)/(risk aversion $\times$ variance); the only difference is the extra term $\rho_t/(2\gamma\,{}_t\sigma^2_{p_{t+1}})$ by which optimistic noise traders over-hold. Crucially, the \emph{variance in the denominator is generated endogenously by noise trading itself}: even sophisticated investors cannot take unbounded positions, because the price at which they must sell when old depends on next period's (uncertain) noise-trader mood. This is what prevents arbitrage from enforcing the law of one price.
+
+\subsection*{The pricing function}
+Old agents sell their unit; young agents' demands must sum to the unit supply. Imposing this and looking for a steady state (the unconditional distribution of $p_{t+1}$ equals that of $p_t$) yields the central closed form,
+\begin{equation}
+\boxed{\;p_t \;=\; 1 \;+\; \underbrace{\frac{\mu(\rho_t-\rho^\ast)}{1+r}}_{\text{(a) sentiment fluctuation}} \;+\; \underbrace{\frac{\mu\rho^\ast}{r}}_{\text{(b) mean mispricing}} \;-\; \underbrace{\frac{(2\gamma)}{r}\,\frac{\mu^2\sigma_\rho^2}{(1+r)^2}}_{\text{(c) noise-trader-risk premium}}\;}
+\label{eq:dssw-price}
+\end{equation}
+with the (constant) one-step-ahead price variance
+\begin{equation}
+{}_t\sigma^2_{p_{t+1}} \;=\; \frac{\mu^2\sigma_\rho^2}{(1+r)^2}. \label{eq:dssw-var}
+\end{equation}
+Read \eqref{eq:dssw-price} term by term. (a) The price moves one-for-one (scaled by $\mu/(1+r)$) with \emph{current} sentiment $\rho_t$ --- excess volatility unrelated to fundamentals. (b) If noise traders are bullish on average ($\rho^\ast>0$) the price is permanently \emph{above} fundamental value. (c) Regardless of the sign of $\rho^\ast$, the term $-(2\gamma/r)\,\mu^2\sigma_\rho^2/(1+r)^2$ is a strict \emph{discount}: the mere presence of sentiment \emph{risk} lowers the price. It is this term that survives even when average sentiment is neutral, and that is the formal statement of ``limits to arbitrage without fundamental risk.''
+
+\subsection*{Relative returns: noise traders can win}
+Because bullish noise traders hold more of the risky asset (which carries the risk premium (c)), they can earn a \emph{higher} expected return than the sophisticates who lean against them. DSSW show the return differential is non-monotone (inverted-U) in $\rho^\ast$: a little bullishness earns the risk premium and beats the arbitrageurs, but too much bullishness makes noise traders buy at prices so inflated that they lose. This is the mechanism behind the SEBI finding (Part~V) that the \emph{aggregate} of retail derivative traders loses to proprietary and foreign desks: crowding is self-defeating past a point, even as it moves prices.
+
+\begin{takeaway}
+DSSW supplies the second leg of the band (SV supplied the capital leg): even absent any capital-withdrawal channel, \emph{risk} created by unpredictable order flow keeps a finite wedge open. For us, three things carry over. First, the discount term (c) shows mispricing scales with the \emph{variance} of non-fundamental demand $\sigma_\rho^2$ --- a rationale for putting idiosyncratic volatility \emph{into} our constraint index. Second, the model is explicitly about \emph{marketwide} (non-diversifiable) sentiment, which is why our constraint index will have a systematic (PCA) component. Third, it is the theoretical bridge to the retail/policy chapter: retail crowding is noise-trader demand, and the ban is triggered when that demand piles into a single name.
+\end{takeaway}
+
+% =====================================================================
+\section{Gromb \& Vayanos (2010): A Unified Model of Arbitrage Costs}
+\label{sec:gv}
+
+\subsection*{Question and contribution}
+Gromb and Vayanos (GV) survey the field and, importantly for us, \emph{nest} its mechanisms in one tractable model, cataloguing the costs an arbitrageur faces: (i) risk (fundamental and non-fundamental), (ii) short-selling costs, (iii) leverage/margin constraints, and (iv) constraints on equity capital. The model shows how each cost maps into a \emph{price wedge}, and --- the single most useful result for us --- how a short-selling cost makes that wedge \emph{one-sided}, i.e.\ produces an \emph{asymmetric} no-arbitrage band.
+
+\subsection*{Baseline: the price impact of a demand shock}
+Two risky assets $A,B$ trade in Period~1 and pay off in Period~2; the riskless rate is $0$. Payoffs $d_A,d_B$ are jointly normal with means $\bar d_i$, standard deviations $\sigma_i$, correlation $\rho$. Asset $B$ is priced at its expected payoff, $p_B=\bar d_B$; $p_A$ is endogenous. Outside investors demand $u$ shares of $A$ inelastically --- $u$ is the \emph{demand shock}. Competitive arbitrageurs with CARA utility choose positions $x_A,x_B$ to maximise
+\begin{equation}
+-\,\E_1\!\left[\exp(-\alpha W_2)\right],\qquad W_2 = W_1 + x_A(d_A-p_A) + x_B(d_B-p_B). \label{eq:gv-obj}
+\end{equation}
+Using normality and $p_B=\bar d_B$, this reduces to the mean--variance problem
+\begin{equation}
+\max_{x_A,x_B}\; x_A(\bar d_A - p_A) - \frac{\alpha}{2}\Big(x_A^2\sigma_A^2 + x_B^2\sigma_B^2 + 2x_Ax_B\rho\sigma_A\sigma_B\Big). \label{eq:gv-mv}
+\end{equation}
+The optimal hedge is $x_B = -(\rho\sigma_A/\sigma_B)\,x_A$, and the optimal position in $A$ is
+\begin{equation}
+x_A = \frac{\bar d_A - p_A}{\alpha\sigma_A^2(1-\rho^2)}. \label{eq:gv-xA}
+\end{equation}
+Market clearing $x_A + u = 0$ (asset $A$ in zero net supply) gives the equilibrium price
+\begin{equation}
+\boxed{\;p_A \;=\; \bar d_A + \alpha\,\sigma_A^2\,(1-\rho^2)\,u\;} \label{eq:gv-price}
+\end{equation}
+So a demand shock moves the price, and its impact is \emph{larger} when arbitrageurs are more risk-averse ($\alpha$), when the asset is riskier ($\sigma_A$), and when it is harder to hedge (small $|\rho|$; more idiosyncratic risk, fewer substitutes). If $A$ and $B$ are perfect substitutes ($\rho=1$) the wedge vanishes: arbitrage is riskless and perfect. This equation is the ``how big is the band'' benchmark; everything else adds terms to it. (Under the ``intertemporal arbitrage'' reading, $A$ and $B$ are the same asset at two dates and $\sigma_A^2(1-\rho^2)$ becomes the risk borne while waiting for capital to arrive.)
+
+\subsection*{Non-fundamental risk feeds back}
+When the shock $u$ is itself random (introduced in a Period~0), \eqref{eq:gv-price} implies asset $A$'s price volatility rises to
+\begin{equation}
+\sigma_A\sqrt{\,1 + \alpha^2\sigma_A^2(1-\rho^2)^2\sigma_u^2\,}, \label{eq:gv-vol}
+\end{equation}
+and its correlation with $B$ falls. Demand-shock risk thus \emph{amplifies itself} (as in DSSW): the possibility of future shocks makes short-horizon arbitrageurs less willing to absorb today's shock.
+
+\subsection*{Short-selling cost: the origin of asymmetry}
+Now let shorting $A$ cost $c$ per share. The objective \eqref{eq:gv-mv} gains a term $-\,c\,\abs{x_A}\,\1\{x_A<0\}$, and the equilibrium price becomes \emph{one-sided}:
+\begin{equation}
+p_A = \begin{cases} \bar d_A + \alpha\sigma_A^2(1-\rho^2)\,u, & u \le 0 \quad(\text{arbitrageurs long}),\\[4pt] \bar d_A + \alpha\sigma_A^2(1-\rho^2)\,u + c, & u > 0 \quad(\text{arbitrageurs short}). \end{cases} \label{eq:gv-asym}
+\end{equation}
+The short-selling cost bites \emph{only} when arbitrageurs must short (positive demand shock), lifting the price by exactly $c$. Setting $\rho=1$ (identical payoffs) isolates a pure law-of-one-price violation:
+\begin{equation}
+p_A = \bar d + c \quad\text{when } u>0, \qquad p_A=\bar d \quad\text{when } u\le 0.
+\end{equation}
+An identical-payoff asset is over-priced by the cost of shorting it, and not at all under-priced.
+
+\subsection*{Leverage/margin and equity-capital constraints}
+When arbitrageurs face a margin requirement $\sum_i m_i\abs{x_i}\le W$, the constraint binds in states where the position is large; its Lagrange multiplier acts as an \emph{additional, endogenous holding cost} that widens the wedge exactly when the shock (and hence the opportunity) is largest. Equity-capital constraints reintroduce the SV channel: a loss shrinks $W$, tightens the constraint, forces de-leveraging, and can trigger the fire-sale amplification of \S\ref{sec:sv}. GV's synthesis is that all four costs are variations on one theme --- each adds a term to \eqref{eq:gv-price} that is increasing in the size of the required position and in how binding the friction is.
+
+\begin{takeaway}
+GV is the model our project most directly instantiates, for two reasons. (1) It gives the exact functional shape of the object we estimate: mispricing $=$ (risk-bearing term) $+$ (friction wedge), with the wedge \emph{one-sided} under short-sale-type constraints --- which predicts and explains the \emph{asymmetric} bands found for India (Aggarwal; Ofek; \S\ref{sec:aggarwal},~\ref{sec:ofek}). (2) India's MWPL ban is a \emph{hard position/leverage constraint} of exactly GV type (iii): once binding, no fresh positions --- the shadow price of the constraint jumps, and the wedge widens. Our constraint index is, in GV's language, an empirical proxy for the combined shadow cost of costs (ii)--(iv); our causal tests ask whether an exogenous increase in that shadow cost (a ban) moves the wedge as \eqref{eq:gv-asym} predicts.
+\end{takeaway}
+
+\subsection{Part~I synthesis: the anatomy of a no-arbitrage band}
+The three models compose into one picture. Write the observed price of a security as its fundamental value plus a wedge:
+\begin{equation}
+p = \underbrace{V}_{\text{fundamental}} \;+\; \underbrace{\theta(u,\sigma^2,\alpha)}_{\substack{\text{risk-bearing term}\\ \text{(DSSW, GV baseline)}}} \;\pm\; \underbrace{c(\text{constraints})}_{\substack{\text{one-sided friction wedge}\\ \text{(GV short-sale/margin)}}} \;+\; \underbrace{\text{amplification}}_{\substack{\text{state-dependent, PBA}\\ \text{(SV)}}}.
+\end{equation}
+This decomposition motivates the empirical programme exactly: Part~II measures the wedge (the basis, put--call-parity deviations, PEAD); Part~III estimates the \emph{band} --- the region where the wedge persists because it is smaller than the round-trip friction --- and its asymmetry; and Part~IV asks whether an exogenous shock to $c$ (the MWPL ban and the 2024--26 reforms) shifts the band as theory predicts. The persistent \emph{negative} basis documented for India (Part~IV) is the empirical signature of the one-sided wedge in \eqref{eq:gv-asym}, since the binding constraint in India is on the short/negative-basis side.

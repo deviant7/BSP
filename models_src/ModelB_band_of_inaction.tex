@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{6A1B2A}
+\usepackage[colorlinks=true,linkcolor=accent,citecolor=accent,urlcolor=accent]{hyperref}
+\usepackage{sectsty}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\onehalfspacing
+\partfont{\color{accent}}\sectionfont{\color{accent}}\subsectionfont{\color{accent}}
+\pagestyle{fancy}\fancyhf{}
+\rhead{\small\itshape Model B: Band of Inaction}\lhead{\small BS Project --- Theoretical Framework}
+\cfoot{\thepage}\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\E}{\mathbb{E}}\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\R}{\mathbb{R}}\newcommand{\dd}{\mathrm{d}}\newcommand{\1}{\mathbf{1}}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\rupee}{\ensuremath{\mathrm{Rs}\,}}
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}
+\theoremstyle{remark}
+\newtheorem*{takeaway}{Mapping to the empirics}
+
+\title{\vspace{-1.2cm}\color{accent}\bfseries A Band-of-Inaction Model of the\\ Indian No-Arbitrage Band\\[0.25cm]
+\large\mdseries\color{black} Theoretical Framework for the BS Project --- \emph{Candidate Model B}}
+\author{Prince Kumar (23B3032), BS Economics, IIT Bombay\\ \small Guide: Prof.\ Aditi Chaubal \quad\textbar\quad EC~495 / EC~497}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent This is the second of two independently-developed theoretical frameworks for the project (the first being the constrained-arbitrage model, Candidate~A). Where Candidate~A builds the band up from an arbitrageur's optimisation, Candidate~B takes the \emph{reduced-form} route: it treats correcting a mispricing as a costly control problem and derives the no-arbitrage band as the \emph{optimal region of inaction}, in the tradition of transaction-cost impulse-control models (Dumas, 1992; Constantinides). The pay-off of this route is that the band it produces is \emph{exactly} the object our econometrics estimates: the basis is a regulated process that behaves as a random walk inside the band and mean-reverts only at its edges, which is a three-regime threshold model (the TAR / Ters--Urban TVECM). The document derives the band and its (asymmetric) edges from smooth-pasting conditions, gives their comparative statics, shows how the MWPL position limit and its ``F\&O ban'' remove the correcting barrier, proves the discrete-time bridge to the threshold estimator, and states the cross-sectional and identification implications --- so that, as with Candidate~A, the project's hypotheses are theorems derived before any data work.
+\end{abstract}
+
+\section{Purpose and how this differs from Candidate A}
+Both frameworks target the same object --- the no-arbitrage band around a stock's cost-of-carry fair value --- but from opposite directions. Candidate~A models \emph{who} corrects mispricing (a risk-averse arbitrageur) and derives the band from their constrained trade-off; its strength is the behavioural mechanism and the explicit shadow price of the ban. Candidate~B abstracts from the identity of the arbitrageur and asks only: \emph{given that correction is costly, when is it optimal to act?} Its strength is a razor-tight link to the estimator --- the model's band \emph{is} the threshold band we fit --- and clean comparative statics from a single control problem. Read together they triangulate the same predictions; this document is written to stand alone as a candidate final framework.
+
+\section{Environment}\label{sec:env}
+Consider one F\&O stock. As in Candidate~A, let $F^\ast=S e^{(r-\delta)\tau}$ be the cost-of-carry fair futures value and let the (log) basis be
+\begin{equation}
+z_t \;=\; f_t - s_t - (r-\delta)\tau, \qquad f=\ln F,\ s=\ln S,
+\end{equation}
+the stationary error-correction term of the cointegrated pair $(f,s)$ (a fact confirmed for Indian single-stock futures by Roy \& Chakraborty, 2023). \emph{In the absence of arbitrage} --- i.e.\ while no one is trading against the gap --- order flow from hedgers, retail and noise traders pushes the basis around as a driftless diffusion,
+\begin{equation}
+\dd z_t = \sigma\,\dd W_t, \label{eq:bm}
+\end{equation}
+with $W$ a standard Brownian motion and $\sigma>0$ the instantaneous basis volatility. Equation~\eqref{eq:bm} encodes the null of ``no correction'': left alone, the basis neither reverts nor is pinned to zero.
+
+\paragraph{Costly correction.} Pulling the basis back toward zero requires putting on the cash-and-carry trade (for $z>0$: sell futures, buy spot) or the reverse cash-and-carry (for $z<0$: buy futures, short spot). Each intervention carries a cost. We adopt the canonical impulse-control cost structure: an intervention that resets the basis incurs a fixed cost $K_j$ that differs by side,
+\begin{equation}
+K_{+} = K \quad (\text{upper side, } z>0), \qquad K_{-} = K + K_s \quad (\text{lower side, } z<0), \label{eq:Kcosts}
+\end{equation}
+where $K>0$ is the symmetric round-trip cost of establishing and unwinding the arbitrage program and $K_s>0$ is the \emph{extra} cost of the leg that must short the stock (SLB borrow fee, search, recall risk) --- the same asymmetry as in Candidate~A. While the basis is away from zero the arbitrageur bears a running ``carry/opportunity'' cost $\theta z^2$ per unit time ($\theta>0$): capital tied to an open gap, financing and mark-to-market risk that scale with the squared deviation.\footnote{The quadratic running cost is the standard tractable choice (linear-quadratic control); the qualitative results below hold for any convex running cost.} Future costs are discounted at rate $\rho>0$.
+
+\paragraph{The MWPL limit.} As in Candidate~A, the correcting position is capped: $\abs{q}\le L=\kappa\min(0.15\,\mathrm{FF},65\,\mathrm{ADDV})$, and the ``ban'' (open interest $\ge 95\%$ of MWPL) forbids fresh positions. In the control language this raises --- and in the limit makes infinite --- the cost of the intervention that would reflect the basis, as formalised in \S\ref{sec:ban}.
+
+\section{The optimal band of inaction}\label{sec:band}
+The arbitrageur chooses an intervention policy to minimise the expected discounted sum of running and intervention costs. This is an impulse-control problem whose solution is a \emph{barrier (band) policy}: do nothing while $z$ lies in an interval $[C_1,C_2]$, and intervene to reset the basis toward zero the instant $z$ reaches an edge. Formally the value function $V(z)$ satisfies the quasi-variational inequality
+\begin{equation}
+\min\Big\{\ \rho V(z) - \tfrac{\sigma^2}{2}V''(z) - \theta z^2,\ \ V(z) - \big[\,V(0)+K_j\,\big]\ \Big\} = 0, \label{eq:qvi}
+\end{equation}
+where the first term is the Hamilton--Jacobi--Bellman operator on the inaction region and the second is the intervention (obstacle) term. Inside the inaction region the HJB holds with equality:
+\begin{equation}
+\rho V(z) = \tfrac{\sigma^2}{2}V''(z) + \theta z^2. \label{eq:hjb}
+\end{equation}
+
+\begin{proposition}[Existence and shape of the no-arbitrage band]\label{prop:band}
+The solution of \eqref{eq:qvi} is a band policy with inaction region $[C_1,C_2]$. On the inaction region the value function is
+\begin{equation}
+V(z) = A_{+}e^{\eta z} + A_{-}e^{-\eta z} + \frac{\theta}{\rho}z^2 + \frac{\theta\sigma^2}{\rho^2}, \qquad \eta \equiv \frac{\sqrt{2\rho}}{\sigma}, \label{eq:V}
+\end{equation}
+and each edge $C_j$ is pinned down by a \emph{value-matching} and a \emph{smooth-pasting} condition,
+\begin{equation}
+V(C_j) = V(0) + K_j, \qquad V'(C_j) = 0. \label{eq:smoothpaste}
+\end{equation}
+The band is asymmetric: because $K_{-}=K+K_s>K_{+}=K$, the lower edge is farther from zero, $\abs{C_1}>\abs{C_2}$.
+\end{proposition}
+\begin{proof}
+Equation~\eqref{eq:hjb} is a linear second-order ODE; its homogeneous solutions are $e^{\pm\eta z}$ with $\eta=\sqrt{2\rho}/\sigma$, and a particular solution for the forcing $\theta z^2$ is $(\theta/\rho)z^2+\theta\sigma^2/\rho^2$ (substitute to verify: $\rho[(\theta/\rho)z^2+\theta\sigma^2/\rho^2] = \theta z^2+\theta\sigma^2/\rho$ and $\tfrac{\sigma^2}{2}\cdot 2\theta/\rho=\theta\sigma^2/\rho$, matching). Hence \eqref{eq:V}. Optimality of a barrier policy for a diffusion with convex running cost and fixed intervention cost is standard: value-matching says the arbitrageur is indifferent between acting and not at the edge (acting costs $K_j$ and resets the state to $0$), and smooth-pasting $V'(C_j)=0$ is the first-order optimality (high-contact) condition selecting the edge. Since $K_{-}>K_{+}$, a larger deviation is tolerated before the more expensive lower-side intervention is triggered, so $\abs{C_1}>\abs{C_2}$.
+\end{proof}
+
+\paragraph{Closed form for a symmetric benchmark.} To exhibit the comparative statics transparently, take the symmetric case ($K_j=K$, so $C_2=-C_1=b$) and solve \eqref{eq:smoothpaste} for small intervention cost. With $A_{+}=A_{-}=A$ (symmetry), $V(z)=2A\cosh(\eta z)+(\theta/\rho)z^2+\theta\sigma^2/\rho^2$. Smooth pasting $V'(b)=0$ gives $2A\eta\sinh(\eta b) = -2\theta b/\rho$, and value-matching $V(b)-V(0)=K$ gives $2A(\cosh(\eta b)-1)+(\theta/\rho)b^2=K$. Eliminating $A$ and expanding for small $\eta b$ (using $(\cosh x-1)/\sinh x=\tanh(x/2)\approx x/2 - x^3/24$) yields, at leading order,
+\begin{equation}
+\boxed{\; b \;=\; \left(\frac{6K\sigma^2}{\theta}\right)^{1/4}. \;} \label{eq:bwidth}
+\end{equation}
+\begin{proof}[Derivation of \eqref{eq:bwidth}]
+From smooth-pasting, $A=-\theta b/[\rho\eta\sinh(\eta b)]$. Substitute into value-matching:
+$-2\theta b/[\rho\eta\sinh(\eta b)]\cdot(\cosh(\eta b)-1)+\theta b^2/\rho=K$. Using $(\cosh\varepsilon-1)/\sinh\varepsilon=\tanh(\varepsilon/2)\approx \varepsilon/2-\varepsilon^3/24$ with $\varepsilon=\eta b$: the first term $\approx -2\theta b/(\rho\eta)\,[\eta b/2-(\eta b)^3/24]=-\theta b^2/\rho+\theta\eta^2 b^4/(12\rho)$. Adding $\theta b^2/\rho$ leaves $\theta\eta^2 b^4/(12\rho)=K$. With $\eta^2=2\rho/\sigma^2$ this is $\theta b^4/(6\sigma^2)=K$, i.e.\ $b=(6K\sigma^2/\theta)^{1/4}$.
+\end{proof}
+The asymmetric edges follow the same formula with the side-specific cost: $C_2=(6K\sigma^2/\theta)^{1/4}$ and $\abs{C_1}=(6(K+K_s)\sigma^2/\theta)^{1/4}>C_2$.
+
+\begin{takeaway}
+Proposition~\ref{prop:band} and \eqref{eq:bwidth} give requirements~(1) and~(2): an explicit, asymmetric no-arbitrage band $[C_1,C_2]$, wider on the short-constrained (negative-basis) side. This is Chapter~2's/Chapter~4's object, and $[C_1,C_2]$ is exactly what the threshold estimator reports (\S\ref{sec:bridge}).
+\end{takeaway}
+
+\section{Comparative statics}\label{sec:cs}
+\begin{proposition}[The band widens with cost and volatility]\label{prop:cs}
+For the band half-width \eqref{eq:bwidth},
+\begin{equation}
+\frac{\partial b}{\partial K}>0,\qquad \frac{\partial b}{\partial \sigma^2}>0,\qquad \frac{\partial b}{\partial \theta}<0,
+\end{equation}
+and the asymmetry $\abs{C_1}-\abs{C_2}=(6\sigma^2/\theta)^{1/4}\big[(K+K_s)^{1/4}-K^{1/4}\big]$ is positive and increasing in the short-side cost $K_s$ and in volatility $\sigma^2$. Thus stocks that are more volatile, costlier to arbitrage, or harder to short have wider and more asymmetric bands.
+\end{proposition}
+\begin{proof}
+Immediate from \eqref{eq:bwidth}: $b\propto K^{1/4}\sigma^{1/2}\theta^{-1/4}$ gives the three signs; the asymmetry expression substitutes the side-specific costs, and $\partial/\partial K_s>0$, $\partial/\partial\sigma^2>0$ follow since $(K+K_s)^{1/4}-K^{1/4}>0$ is increasing in $K_s$ and the prefactor increases in $\sigma^2$.
+\end{proof}
+
+\begin{takeaway}
+This is requirement~(2) sharpened and the cross-sectional engine (\S\ref{sec:xs}). The constraint index (Chapter~1) is, in this model, a proxy for the composite $(K,K_s,\sigma^2,\theta)$ that sets the band width; the reforms enter through $K,K_s$ (\S\ref{sec:ban}).
+\end{takeaway}
+
+\section{The MWPL limit and the ban}\label{sec:ban}
+The position cap enters through the intervention cost. Establishing the correcting position of size needed to reflect the basis is cheap when the cap is slack, but as market-wide open interest approaches the MWPL the marginal position becomes unavailable, so the \emph{effective} intervention cost rises; at the ban it is prohibitive. Model this by letting the side-specific cost depend on cap utilisation $\omega\equiv \text{OI}/\mathrm{MWPL}\in[0,1]$,
+\begin{equation}
+K_j(\omega) = K_j\cdot g(\omega), \qquad g'(\omega)>0,\qquad g(\omega)\to\infty \text{ as } \omega\to 0.95^{-}, \label{eq:Komega}
+\end{equation}
+capturing that the correcting trade gets dearer as the limit nears and becomes impossible at the ban.
+
+\begin{proposition}[The ban removes the reflecting barrier]\label{prop:ban}
+Under \eqref{eq:Komega}, the band half-width on side $j$ is $b_j(\omega)=(6K_j g(\omega)\sigma^2/\theta)^{1/4}$, which is increasing in utilisation $\omega$ ($\partial b_j/\partial\omega>0$). As $\omega\to0.95^{-}$, $b_j\to\infty$: the reflecting edge recedes to infinity, the basis ceases to be regulated, and \eqref{eq:bm} governs it unchecked --- $z$ becomes a non-stationary driftless martingale on that side. Hence entering the ban discretely widens the band and eliminates mean reversion until the ban lifts.
+\end{proposition}
+\begin{proof}
+Substitute $K_j g(\omega)$ for $K_j$ in \eqref{eq:bwidth}: $b_j(\omega)=(6K_jg(\omega)\sigma^2/\theta)^{1/4}$, increasing in $g$ hence in $\omega$; as $g\to\infty$, $b_j\to\infty$. With no finite reflecting edge the QVI obstacle in \eqref{eq:qvi} never binds, so $z$ solves $\dd z=\sigma\,\dd W$ without intervention, a martingale with no stationary distribution.
+\end{proof}
+
+Proposition~\ref{prop:ban} is Candidate~B's version of the ban result: instead of a shadow price jumping (Candidate~A), the \emph{reflecting barrier vanishes}. The two descriptions are the same phenomenon --- correction switches off --- seen through the two modelling lenses. Because the constrained leg is the short side, the negative edge $C_1$ blows up first and fastest, deepening the pre-existing negative-basis asymmetry.
+
+\begin{takeaway}
+Requirement~(3): the ban widens the band discretely and kills reflection. The $2024$--$26$ reforms act through $g(\cdot)$ and through the level of $K_j$ (e.g.\ the ADDV-based MWPL changes what $\omega$ means), giving the dated shifts the TVECM event-study reads off (Chapter~4).
+\end{takeaway}
+
+\section{The discrete-time bridge to the threshold estimator}\label{sec:bridge}
+The reason to build this model is that its solved object maps one-to-one onto the econometrics.
+\begin{proposition}[The regulated basis is a three-regime threshold model]\label{prop:bridge}
+Sample the controlled basis at interval $\Delta$. Inside the band, $z$ evolves by \eqref{eq:bm} with no intervention, so
+\begin{equation}
+z_t = z_{t-1} + \varepsilon_t, \qquad \varepsilon_t\sim(0,\sigma^2\Delta), \qquad z_{t-1}\in(C_1,C_2), \label{eq:innerRW}
+\end{equation}
+a unit-root (no-correction) process. Once $z$ reaches an edge it is pushed back toward the interior, which in discrete time appears as mean reversion with a negative error-correction loading in the outer regimes:
+\begin{equation}
+\Delta z_t = \begin{cases} \alpha_{-}\,(z_{t-1}-C_1) + \varepsilon_t, & z_{t-1}\le C_1,\\[2pt] \varepsilon_t, & C_1<z_{t-1}<C_2,\\[2pt] \alpha_{+}\,(z_{t-1}-C_2) + \varepsilon_t, & z_{t-1}\ge C_2, \end{cases} \qquad \alpha_{-},\alpha_{+}<0. \label{eq:tar}
+\end{equation}
+Equation~\eqref{eq:tar} is exactly the three-regime threshold autoregression / threshold VECM estimated in the project (Yadav--Pope--Paudyal; Dwyer et al.; Ters--Urban), with thresholds $(C_1,C_2)$ equal to the model's band edges and a middle regime that is (near) a random walk.
+\end{proposition}
+\begin{proof}
+Inside the inaction region there is no intervention, so $z$ inherits \eqref{eq:bm}, giving \eqref{eq:innerRW} with a unit root. At the barriers the reflection of a regulated diffusion contributes a local mean-reverting drift; discretely sampled, this is captured by a negative loading on the (demeaned) deviation in the outer regimes, yielding \eqref{eq:tar}. The regime boundaries are the barriers $C_1,C_2$ by construction.
+\end{proof}
+
+\begin{takeaway}
+Proposition~\ref{prop:bridge} is the payoff of Candidate~B and covers requirement~(4): the estimator is not an arbitrary functional form but the \emph{exact} discrete image of the model, so the fitted Ters--Urban thresholds \emph{are} estimates of the structural band edges, and the near-zero middle-regime error-correction coefficient is the model's inaction region. It also tells us how to read a ban: a stretch during which the outer-regime loading collapses toward zero and the effective band widens.
+\end{takeaway}
+
+\section{Cross-sectional pricing}\label{sec:xs}
+\begin{proposition}[Wider bands, larger and more persistent mispricing, higher signal returns]\label{prop:xs}
+On the inaction region the basis is a martingale, so absent intervention its dispersion grows with time; the stationary dispersion of $z$ under the band policy is increasing in the band width $b$. Therefore a basis-signal strategy (trade toward correction when $z$ exits the band) has expected return increasing in $b$, and hence --- by Proposition~\ref{prop:cs} --- increasing in $K,K_s,\sigma^2$ and in cap tightness. Cross-sectionally, high-constraint stocks exhibit larger average $\abs{z}$, longer half-lives, and higher signal returns.
+\end{proposition}
+\begin{proof}
+A wider inaction interval lets $z$ wander further before reflection, raising the variance of its stationary law (for regulated Brownian motion on $[C_1,C_2]$ the stationary distribution spreads with the interval length). Larger typical $\abs{z}$ and rarer/weaker reflection raise both the frequency and the size of profitable signal trades, so expected signal return rises in $b$; the dependence on primitives follows from Proposition~\ref{prop:cs}.
+\end{proof}
+
+\begin{takeaway}
+Requirement~(5): Chapter~5's Fama--MacBeth prediction that signals pay more where constraints bind, obtained here from the width of the inaction region.
+\end{takeaway}
+
+\section{Identification}\label{sec:id}
+\begin{proposition}[Exogenous cost/limit variation shifts the band]\label{prop:id}
+The band edges $C_j=(6K_j g(\omega)\sigma^2/\theta)^{1/4}$ depend on the position limit through $\omega=\text{OI}/\mathrm{MWPL}$ and through $K_j$. Because $\mathrm{MWPL}=\kappa\min(0.15\,\mathrm{FF},65\,\mathrm{ADDV})$ depends on free float and \emph{trailing, quarterly-reset} ADDV, exogenous movements in these denominators shift $\omega$ (and hence $C_j$) independently of the contemporaneous order-flow innovations $\varepsilon_t$ driving $z$. This provides an instrument for ban status / band width, with first stage $\partial C_j/\partial\mathrm{MWPL}<0$ (a larger limit lowers $\omega$, narrowing the band).
+\end{proposition}
+\begin{proof}
+$C_j$ is increasing in $\omega$ (Proposition~\ref{prop:ban}) and $\omega$ is decreasing in MWPL for given OI, so $\partial C_j/\partial\mathrm{MWPL}<0$. Free float and trailing ADDV are predetermined relative to $\varepsilon_t$, delivering the exclusion restriction $\mathrm{Cov}(\mathrm{MWPL}_t,\varepsilon_t)=0$ by timing.
+\end{proof}
+
+\begin{takeaway}
+Requirement~(6): the same ADDV/free-float instrument as Candidate~A and the project document, here shifting the band width rather than a shadow price. The $95\%$ RD is again a supporting check subject to McCrary bunching.
+\end{takeaway}
+
+\section{Mapping to the empirical design}\label{sec:map}
+\begin{table}[h]\centering\small\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.30\textwidth} p{0.34\textwidth} p{0.27\textwidth}@{}}
+\toprule
+\textbf{Requirement} & \textbf{Model result} & \textbf{Empirical counterpart} \\
+\midrule
+(1) Explicit band & Prop.~\ref{prop:band}; $b=(6K\sigma^2/\theta)^{1/4}$ & Ch.~2 basis; Ch.~4 band \\
+(2) Asymmetry & Prop.~\ref{prop:band}--\ref{prop:cs}: $\abs{C_1}>\abs{C_2}$ via $K_s$ & Aggarwal $-15/+3$ bp; H1 \\
+(3) Ban widens band & Prop.~\ref{prop:ban}: barrier $\to\infty$ & Ch.~3 causal; H1/H4 \\
+(4) Slower correction / estimator & Prop.~\ref{prop:bridge}: TAR/TVECM is the discrete image & TVECM regimes; PEAD; H2 \\
+(5) Cross-section & Prop.~\ref{prop:xs}: return $\uparrow$ in $b$ & Fama--MacBeth; H5 \\
+(6) Identification & Prop.~\ref{prop:id}: $\partial C_j/\partial\mathrm{MWPL}<0$, exogenous & IV via ADDV/FF; H3/H6 \\
+\bottomrule
+\end{tabular}
+\caption{Model~B delivers every requirement, with an exact bridge to the threshold estimator.}
+\label{tab:mapB}
+\end{table}
+
+\section{Assumptions, limitations, and relation to Candidate A}
+The model's tractability rests on three choices: a driftless-diffusion basis \eqref{eq:bm} (the ``no-correction'' null), a quadratic running cost, and fixed-cost impulse control. Relaxing them changes constants, not signs: a mean-reverting fundamental component adds drift inside the band (still a threshold model, now with a small inner loading); a \emph{proportional} intervention cost $c$ replaces impulse control with a reflecting (singular-control) band whose width scales as $b\propto(c\sigma^2/\theta)^{1/3}$ (Dumas, 1992) --- same comparative statics; and heterogeneous costs across arbitrageurs smooth the edges into a transition band, i.e.\ the STAR generalisation. What the reduced-form approach does \emph{not} provide is the behavioural mechanism or the welfare/relative-returns content --- for those, Candidate~A (and the DSSW/Shleifer--Vishny apparatus behind it) is needed. That is the sense in which the two frameworks are complements: \textbf{Candidate~A supplies the mechanism and the shadow price of the ban; Candidate~B supplies the reduced-form band that the econometrics estimates directly.} Both reach, from primitives and before any data work, the same six predictions --- which is exactly the pre-registration discipline this stage is meant to enforce.
+
+\paragraph{Bottom line.} Treating arbitrage as costly control, the no-arbitrage band emerges as an optimal region of inaction whose width and asymmetry follow $b=(6K\sigma^2/\theta)^{1/4}$-type formulas, whose constrained edge blows up under the ban, and whose discrete-time image \emph{is} the threshold VECM we estimate. The project's hypotheses are again theorems, obtained independently of Candidate~A.
+
+\end{document}
