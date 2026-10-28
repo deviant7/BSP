@@ -112,10 +112,19 @@
   near-month usable stock-days 363k; basis median ≈ 0–9 bp/yr, p10–p90 ≈ −40 to +30 bp; |m| shrinks toward expiry; theoretical-
   settlement days ~0% for near-month (2.4% of next-month rows have zero contracts). No ban linkage done (blind).
 
+- **Progress report drafted (28 Oct 2026, user request):** `progress_report_src/progress_report_oct2026.tex` →
+  `BSP_Progress_Report_Oct2026.pdf` (one PDF for the guide; main text ~9 pp + full model as Appendix A via pdfpages).
+  Sections: summary; refinements (scope table, corrected institutional facts, design changes); 3-pp theory summary; data built
+  (sources, checks, ban facts table/figures, MWPL shocks, basis measure); pre-specified tests table; plan (ordered, no dates);
+  questions for the guide. Style rules applied: no em dashes (also removed from model doc), plain first-person language, no
+  internal references, AI-phrase scan clean. Basis numbers are macros (\basisN etc.) filled from the full basis run.
+  The older Sep-28 progress report (never sent) is superseded but kept.
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
   (one PDF, guide-facing, incl. 3-pp theory).
+- User to review the progress report draft; confirm guide's name spelling (Chaubal vs 'Chawla' typed once).
 - User to review Model C (guide-safe now). Get full texts of Saurav et al. (2026), Gagnon (2018),
   Brennan–Schwartz (1990) via IITB library and check Model C against them. Estimator-on-simulated-data exercise.
 - Next steps per plan v2 §12: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.

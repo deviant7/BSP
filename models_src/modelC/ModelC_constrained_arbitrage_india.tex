@@ -16,7 +16,7 @@
 \setstretch{1.2}
 \sectionfont{\color{accent}}\subsectionfont{\color{accent}}
 \pagestyle{fancy}\fancyhf{}
-\rhead{\small\itshape Constrained Arbitrage under India's Limits}\lhead{\small BS Project --- Theoretical Framework}
+\rhead{\small\itshape Constrained Arbitrage under India's Limits}\lhead{\small BS Project: Theoretical Framework}
 \cfoot{\thepage}\renewcommand{\headrulewidth}{0.4pt}
 
 \newcommand{\E}{\mathbb{E}}
@@ -34,7 +34,7 @@
 \title{\vspace{-1.2cm}\color{accent}\bfseries Constrained Arbitrage under India's Limits:\\ A Model of the Basis, the F\&O Ban and Short-Sale Constraints\\[0.25cm]
 \large\mdseries\color{black} Theoretical framework for the BS Project}
 \author{Prince Kumar (23B3032), BS Economics, IIT Bombay\\ \small Guide: Prof.\ Aditi Chaubal \quad\textbar\quad EC~495 / EC~497}
-\date{Draft, October 2026}
+\date{October 2026}
 
 \begin{document}
 \maketitle
@@ -48,7 +48,7 @@ mean--variance arbitrage sector that trades the futures--cash basis against outs
 features matter for the Indian setting. (i) The F\&O ban is modelled as it actually operates: a
 \emph{reduce-only} rule for every participant, not a freeze on the arbitrageur alone. (ii) Arbitrage inventory is a state
 variable, so the no-trade region moves with existing positions. (iii) Demand that is blocked from the futures market
-can spill into the cash market. The model's sharpest prediction is that the ban turns two-sided arbitrage into
+can spill into the cash market. The main prediction is that the ban turns two-sided arbitrage into
 \emph{one-sided} arbitrage: futures that are too cheap are still corrected (by unwinding existing cash-and-carry
 positions), while futures that are too rich are not. The ban's effect on the \emph{level} of the basis is
 \emph{ambiguous}, and the model states the observable conditions that sign it. It also implies that the MWPL
@@ -189,7 +189,7 @@ estimate mean thresholds of $-39$ and $-10$ bp for 102 NSE stock futures (5-minu
 is negative in Aggarwal (2015) and Nandan et al.\ (2014). The model reproduces this if reverse arbitrage is costly and
 cash-and-carry capital accepts a below-benchmark return. One candidate is the tax treatment of arbitrage funds, which
 are taxed as equity. If so, the inflows after the 1 April 2023 debt-fund tax change should have lowered $r_A$ and with it
-the upper edge --- a testable implication. It must be separated from the futures STT increase on the same date, which
+the upper edge, which is a testable implication. It must be separated from the futures STT increase on the same date, which
 raises $\tau_+$.
 \end{remark}
 
@@ -432,7 +432,7 @@ valid when $p\ge v-\delta$, i.e.\ $\delta\ge Q/k$. Subtract; the derivative in $
 F\&O inclusion lowers $c_s$ (futures, options, short-selling and SLB eligibility arrive together). It should lower
 prices of high-dispersion stocks at inclusion and reduce their subsequent underperformance; exclusion should do the
 reverse. Diamond and Verrecchia (1987) imply that, even without a level bias, short constraints slow the incorporation of
-bad news --- the same direction as Proposition~\ref{prop:news}.
+bad news, which points in the same direction as Proposition~\ref{prop:news}.
 \end{test}
 
 %=====================================================================
@@ -443,8 +443,8 @@ be observed. Let costs differ across arbitrageurs, $c\sim G$ on $[\underline c,\
 \eqref{eq:obj}. Aggregate arbitrage is $a(m)=\int (m-c)^+\,dG(c)/\gamma$, which is continuous and convex in $m$ above
 $\underline c$, so the strength of correction rises smoothly with the size of the deviation. In discrete time, with capital
 moving to opportunities only gradually, the basis follows an error-correction process whose speed of adjustment is a
-smooth, increasing function of $|m_{t-1}-\text{centre}|$ --- the exponential/logistic smooth-transition model (Tse, 2001) ---
-and is well approximated by a three-regime threshold model whose thresholds are quantiles of $G$ (Dwyer, Locke and Yu,
+smooth, increasing function of $|m_{t-1}-\text{centre}|$. This is the exponential or logistic smooth-transition model (Tse, 2001).
+It is also well approximated by a three-regime threshold model whose thresholds are quantiles of $G$ (Dwyer, Locke and Yu,
 1996; Ters and Urban, 2020). Proposition~\ref{prop:inv} adds that the thresholds move with inventory, and
 Proposition~\ref{prop:onesided} that in a ban the upper regime's adjustment speed falls toward zero while the lower regime's
 remains. A band-of-inaction (impulse-control) derivation gives the same reading for a single arbitrageur: the threshold is
@@ -490,7 +490,7 @@ its sign follows the composition of order flow (closing versus new demand) as th
 \begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
 \item Partial equilibrium with linear outside demand and a myopic, mean--variance arbitrage sector; dynamic hedging and
 the option to unwind early (Brennan and Schwartz, 1990) enter only through the inventory structure.
-\item The split of outside demand into closing and new-exposure parts (B2) is the crucial modelling choice behind
+\item The split of outside demand into closing and new-exposure parts (B2) is the modelling choice that drives
 Props.~\ref{prop:flip}--\ref{prop:level}. Its empirical counterpart (order flow that opens versus closes positions) is only
 partly observable from public data (changes in OI against volume).
 \item Reverse arbitrage by stock holders is folded into cash-market depth, not modelled as a separate agent.
