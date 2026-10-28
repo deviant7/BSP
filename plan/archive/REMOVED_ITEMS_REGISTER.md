@@ -73,3 +73,7 @@ Status: **Dropped** (not in current plan) · **Demoted** (kept as optional/robus
 - 28 Oct 2026 (data start): pre-sample 2010–2014 MWPL/ban data downloaded for robustness/power (addition, not in v1/v2);
   primary basis measure defined on daily VWAPs (futures vs cash) instead of settlement/close prices, because NSE uses a theoretical
   settlement price on no-trade days (close/settlement basis kept as secondary).
+- 28 Oct 2026 (PAP v1): rate changed from '91-day T-bill (main)' to the 3-month interbank rate (monthly, OECD) because no daily
+  T-bill series was obtainable; T-bill/MIBOR kept as robustness if found. H7 regimes now defined by stock-level 20/80 quantiles
+  on non-ban days (TVECM thresholds and ±25 bp as robustness) instead of 'pre-period TVECM thresholds'. H9 and the level effect
+  moved from primary to secondary; primary family = {H7, H8, H3, H6}. Draft v0 archived.

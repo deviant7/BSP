@@ -27,6 +27,11 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
   dropped/demoted/changed, why, and how to reintroduce it. **User wants all past plans and deletions kept; update the register
   whenever the plan changes.**
 
+- `plan/pre_analysis_plan_v1.md` — the test plan (samples, outcomes, treatments, primary H7/H8/H3/H6, secondary tests,
+  inference, power, falsifiers). **Blind rule: no outcome may be related to any treatment until it is tagged `pap-v1`.**
+- `data_pipeline/` (+ README) builds everything from NSE archives into `data/processed/` (raw data git-ignored).
+- `BSP_Progress_Report_Oct2026.pdf` + `progress_report_src/progress_report_oct2026.tex` — guide-facing report (not yet sent).
+
 ## File map (repo root)
 - `BSP_Project_Document.docx` / `.pdf` — the detailed study plan (Sep 2026); identical content. The user's master plan.
 - `BSP_Literature_Review.pdf` + `litreview_src/` — 29-pp math-level review (LaTeX, compiles).

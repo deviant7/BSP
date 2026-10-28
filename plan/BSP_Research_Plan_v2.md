@@ -129,7 +129,7 @@ version, full estimator-on-simulated-data exercise (TVECM/RD/event study), and r
 New design point from the model: MWPL is not a valid excluded instrument for ban status (Prop. 9); measured basis must use
 trade-based prices because NSE uses a theoretical settlement price on no-trade days (Prop. 7).
 
-**Phase 2 — Pre-analysis plan.** *(Draft v0: `plan/pre_analysis_plan_draft.md`.)* Samples, outcomes, treatments, specifications, expected signs + reversal
+**Phase 2 — Pre-analysis plan.** *(v1 complete: `plan/pre_analysis_plan_v1.md`; tag `pap-v1` after user OK; v0 in archive.)* Samples, outcomes, treatments, specifications, expected signs + reversal
 conditions, inference, primary vs secondary outcomes, falsifiers. Git-tagged. Guide signs off on 1 + 2.
 
 **Phase 3 — Blind data build.** *(Started 28 Oct 2026: `data_pipeline/`, sources in its README.)* Panel 2015–2026 for all listed stocks (cash) and F&O stocks (futures,
