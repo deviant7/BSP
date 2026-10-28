@@ -1,0 +1,33 @@
+cash trading days without an F&O file (bridged): ['2021-03-30']
+F&O stock-days 534712, symbols 374, ISIN matched 1.0000
+symbol renames linked by ISIN: 21: CADILAHC->ZYDUSLIFE (2022-03-04), CROMPGREAV->CGPOWER (2017-03-07), GMRINFRA->GMRAIRPORT (2024-12-10), ICICIPRULI->ICICILIFE (2026-10-22), IDFCBANK->IDFCFIRSTB (2019-01-15), INFRATEL->INDUSTOWER (2020-12-17), KPIT->BSOFT (2019-02-25), L&TFH->LTF (2024-04-22), LTI->LTIM (2022-12-02), LTIM->LTM (2026-02-26), MCDOWELL-N->UNITDSPR (2024-06-06), MOTHERSUMI->MOTHERSON (2022-06-08), NIITTECH->COFORGE (2020-08-19), PVR->PVRINOX (2023-05-11), RDEL->RNAVAL (2017-09-15), SKSMICRO->BHARATFIN (2016-06-30), SRTRANSFIN->SHRIRAMFIN (2022-12-19), SSLT->VEDL (2015-05-06), TATAGLOBAL->TATACONSUM (2020-02-26), TATAMOTORS->TMPV (2025-10-23), ZOMATO->ETERNAL (2025-04-08)
+events: entries 239, exits 171; eligibility-type exits (cash trading continues) 162; entries of established stocks 239
+by year:
+type  entry  exit
+y                
+2015     20     3
+2016     16     3
+2017     41     5
+2018      0    11
+2019      0    56
+2020      6    13
+2021     60     0
+2022      2     8
+2023      0     8
+2024     45     5
+2025     33    48
+2026     16    11
+largest batches:
+      date  type  n
+2024-11-29 entry 45
+2019-06-28  exit 34
+2017-04-28 entry 16
+2021-02-26 entry 16
+2025-02-28  exit 16
+2017-03-31 entry 15
+2015-05-29 entry 14
+2019-09-27  exit 12
+2021-08-27 entry 10
+2025-08-01  exit 10
+2025-05-30 entry  9
+2021-12-31 entry  9

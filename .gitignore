@@ -1,0 +1,13 @@
+# raw downloads are re-creatable from the scripts in data_pipeline/
+data/raw/
+# LaTeX build files
+*.aux
+*.log
+*.toc
+*.out
+# build output of the report source (final copy is committed at repo root)
+progress_report_src/progress_report_oct2026.pdf
+data/processed/basis_panel.csv.gz
+# Python bytecode
+__pycache__/
+*.pyc

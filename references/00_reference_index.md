@@ -108,6 +108,21 @@ The Oct 2025 / Dec 2025 changes that give us the constraint-intensity shocks and
 The mechanical rules (95% entry, 80% release; MWPL formula) and the data-file layouts we'll actually download.
 [gov] nseindia.com → Products → Derivatives → Position Limits; Historical Reports.
 
+
+**19. ⭐ NSE Clearing circular 119/2025 (8 Sep 2025) — SOP for new MWPL & ban-period monitoring.** (`19_nse_clearing_circ119_2025_mwpl_sop.pdf`)
+Primary source: MWPL = min(15% FF, 65× ADDV in quantity), floor 10% FF, quarterly; ban at FutEq OI > 95%, exit at 80%; penalties. Effective 1 Oct 2025.
+
+**20. ⭐ Shankar, Sankar & Kiran Kumar (2015), "Mispricing in single stock futures: Empirical examination of Indian markets", NSE WP/16/2015; publ. Emerging Markets Finance & Trade 55(7) 1619–1633 (2019).** (`20_…pdf`)
+Closest Indian multi-regime (SETAR) precedent: 102 stocks, 5-min data 2007–09; band ≈ 28 bp, both bounds negative; volatility & futures illiquidity widen the band. No ban/MWPL.
+
+**21. ○ Nandan, Agrawal & Jindal (2015), "An Empirical Investigation of Mispricing in Stock Futures at the NSE", Indian Journal of Finance 9(9) 23–35.** (`21_…pdf`)
+5 stocks, daily 2012–13; underpricing larger than overpricing; weak methods (see notes batch 6).
+
+**22. ○ NSE Clearing FAQ on position limits, limit monitoring and ban period (updated 13 Oct 2025).** (`22_…pdf`)
+Data-file details (combineoi FutEq field, NPH files, base-position files); MWPL previously monthly.
+
+**Corrections to entries above (fact-check 28 Oct 2026, see `memory/07_fact_check.md`):** #7b Ters–Urban is *J. Financial Markets* 47 (2020) 100503, not IREF 2019; #8 Nandan et al. (2014) is *Asia-Pacific J. Mgmt Research & Innovation* 10(4) 413–422, not *Vision*; #14 Sehgal et al. is *Borsa Istanbul Review* 24 (2024) 449–459; #11 Slivka et al. also published as Indian J. Finance 6(1) 11–18 (2012); #17's "ban-period relaxation" wording is inaccurate (new rule = must reduce FutEq delta; 3 Nov 2025 intraday monitoring is a tightening).
+
 ---
 
 ## Reading order (suggested)

@@ -1,0 +1,26 @@
+
+Paired MC (ban minus no-ban, same shocks; bp): share_new, mu_new, d_mean, d_p90, d_p10
+  0.5   0.0    +4.93    +5.32    +5.07
+  0.5   1.0    -3.09    -2.27    -3.11
+  0.5   2.0   -10.83   -10.24   -10.82
+  0.5   4.0   -26.03   -25.55   -25.31
+
+Adjustment slope of dm on lagged m (more negative = faster reversion):
+  normal: above p80 -0.182 | below p20 -0.116
+  ban   : above p80 -0.130 | below p20 -0.163
+
+CHECK REPORT
+  [PASS] Prop 1 static band closed form vs solver (max abs err, bp)  (2.84e-14)
+  [PASS] Prop 3 dynamic step (normal) closed form vs solver  (6.22e-57)
+  [PASS] Prop 4 dynamic step (ban) closed form vs solver  (6.22e-57)
+  [PASS] Prop 4 floor gamma*a - c_u respected in ban  (0.00e+00)
+  [PASS] Prop 4 slope above no-trade region in ban = 1/PHI  (1.00e+00)
+  [PASS] Normal-times slope beyond upper edge = gamma/(gamma*PHI+1)  (5.00e-01)
+  [PASS] Lemma: for the same u, m(ban) >= m(normal)  (0.00e+00)
+  [PASS] Prop 6: m^B - m^N non-increasing in new-exposure demand  (0.00e+00)
+  [PASS] Prop 6: m^B - m^N >= 0 at zero new demand, < 0 for large new demand  (0.00e+00)
+  [PASS] Prop 11 no-short price closed form  (6.84e-05)
+  [PASS] Prop 11 overpricing (sqrt(delta)-sqrt(Q/k))^2  (6.84e-05)
+  [PASS] Prop 11 price non-decreasing in short cost c_s  (0.00e+00)
+  [PASS] Prop 6 level effect: >0 with no new-exposure inflow, <0 with large inflow  (0.00e+00)
+ALL PASS
