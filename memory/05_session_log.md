@@ -120,6 +120,18 @@
   internal references, AI-phrase scan clean. Basis numbers are macros (\basisN etc.) filled from the full basis run.
   The older Sep-28 progress report (never sent) is superseded but kept.
 
+- **Price data complete (2015-01-01 → 2026-10-27):** 2,916 trading days with futures+cash+delivery; only gap 30 Mar 2021 (F&O
+  file missing at NSE). Trading days match the MWPL panel exactly (2,917). **Basis panel built** (`data/processed/basis_panel.csv.gz`,
+  74 MB, git-ignored, rebuild with build_basis.py): 1.65 m futures rows; F_vwap inside [low, high] 99.77% (2.0% of legacy rows needed
+  lot snapping); all futures rows match cash. Near-month usable (≥5 contracts) 531,007; CLEAN sample (no dividend/other corporate event
+  in contract life) 499,682: median +1.2 bp, p10 −33.0, p90 +26.1, |m|>200 bp 0.65% (mostly distressed stocks: JETAIRWAYS, DHFL,
+  YESBANK, IDEA, JUSTDIAL…; kept). Stable across legacy→UDiFF switch. Errors found: (i) non-dividend events (e.g. NTPC bonus
+  debentures 20 Mar 2015, −6% basis) → `event_in_life` flag (0.9% of rows); (ii) ex-date dividend adjustment over-corrects
+  (+9.7 bp vs +1.1 bp; unadjusted −48.8) → likely look-ahead on unannounced dividends; flag/announcement-date adjustment needed.
+  Nifty implied repo (UDiFF period, F_close vs UndrlygPric, which equals cash close within 2 bp) swings 3–8% with July–Sep lows =
+  dividend season; no clean validation without index dividends (to do: Nifty TRI vs price index).
+- **Progress report finalised:** `BSP_Progress_Report_Oct2026.pdf` (25 pp: ~9 pp report + model appendix). Numbers filled from data.
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report

@@ -36,6 +36,20 @@ def dividends(raw):
     return d.groupby(["symbol", "ex"], as_index=False)["div"].max()   # same event listed twice (e.g. 'purpose revised')
 
 
+EVENT_RE = re.compile(r"bonus|split|sub-division|rights|debenture|demerger|scheme|capital reduction|buy ?back|"
+                      r"distribution|amalgamation|merger|reduction", re.I)
+
+
+def other_events(raw):
+    """Non-dividend corporate events that change what the stock holder receives (bonus debentures, splits, rights, ...)."""
+    rows = []
+    for f in sorted(glob.glob(os.path.join(raw, "corpactions", "*.json"))):
+        for r in json.load(open(f)):
+            if EVENT_RE.search(r.get("subject", "")) and r.get("exDate") not in (None, "-"):
+                rows.append((r["symbol"].strip(), pd.to_datetime(r["exDate"], format="%d-%b-%Y")))
+    return pd.DataFrame(rows, columns=["symbol", "ex"]).drop_duplicates()
+
+
 def lot_sizes(fut):
     """Legacy files lack lot size: OI and change in OI are whole multiples of the lot, so take their gcd per contract."""
     leg = fut[fut["src"] == "legacy"]
@@ -107,6 +121,14 @@ def main(raw, out):
     stf = stf.merge(pv, on=["date", "symbol", "expiry"], how="left")
     stf["pv"] = stf["pv"].fillna(0.0)
     stf["div_yield_in_life"] = stf["pv"] / stf["S_vwap"]
+    ev = other_events(raw)
+    e = stf[["date", "symbol", "expiry"]].merge(ev, on="symbol", how="inner")
+    e = e[(e["ex"] > e["date"]) & (e["ex"] <= e["expiry"])].drop_duplicates(["date", "symbol", "expiry"])
+    e["event_in_life"] = True
+    stf = stf.merge(e[["date", "symbol", "expiry", "event_in_life"]], on=["date", "symbol", "expiry"], how="left")
+    stf["event_in_life"] = stf["event_in_life"].fillna(False).astype(bool)
+    rep.append(f"non-dividend corporate events parsed: {len(ev)}; stock-futures rows with such an event in the contract life: "
+               f"{stf['event_in_life'].mean():.4f}")
 
     stf["m_vwap"] = np.log(stf["F_vwap"]) - np.log(stf["S_vwap"] - stf["pv"]) - stf["r"] * stf["tau"]
     theo = np.where(stf["src"] == "udiff", stf["trades"].fillna(0) == 0, stf["n_contracts"].fillna(0) == 0)
@@ -120,7 +142,7 @@ def main(raw, out):
 
     keep = ["date", "symbol", "expiry", "k", "tau", "F_vwap", "S_vwap", "close", "S_close", "n_contracts", "lot_used",
             "value_rs", "oi", "chg_oi", "S_qty", "S_value", "S_trades", "r", "pv", "div_yield_in_life", "m_vwap", "m_close",
-            "theoretical_settle", "r_implied", "rel_repo", "lot_snapped", "src"]
+            "theoretical_settle", "r_implied", "rel_repo", "lot_snapped", "event_in_life", "src"]
     stf[keep].to_csv(os.path.join(out, "basis_panel.csv.gz"), index=False, compression="gzip", float_format="%.8g")
 
     # index futures (NIFTY) implied rate for validation against the interbank rate
@@ -130,6 +152,10 @@ def main(raw, out):
     # outcome-only validation (no treatment variables)
     v = stf[(stf["k"] == 0) & stf["m_vwap"].notna() & (stf["n_contracts"] >= 5)]
     rep.append(f"near-month usable stock-days (>=5 contracts): {len(v)}")
+    c = v[~v["event_in_life"] & (v["pv"] == 0)]
+    rep.append(f"CLEAN near-month sample (no dividend or other corporate event in contract life): n={len(c)}, "
+               f"median {c['m_vwap'].median()*1e4:.1f} bp, p10 {c['m_vwap'].quantile(.1)*1e4:.1f}, "
+               f"p90 {c['m_vwap'].quantile(.9)*1e4:.1f}, share |m|>200bp {(c['m_vwap'].abs() > 0.02).mean():.4f}")
     q = v.groupby(v["date"].dt.year)["m_vwap"].describe(percentiles=[.1, .5, .9])[["count", "10%", "50%", "90%"]] * [1, 1e4, 1e4, 1e4]
     rep.append("basis m_vwap by year (bp):\n" + q.round(1).to_string())
     bins = pd.cut(v["tau"] * 365, [0, 3, 7, 14, 21, 35, 70], right=True)

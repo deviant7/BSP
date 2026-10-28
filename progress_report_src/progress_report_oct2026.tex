@@ -22,11 +22,11 @@
 \setlist{itemsep=1pt,topsep=3pt}
 
 % numbers from the basis panel (filled from data/processed/basis_report.txt)
-\newcommand{\basisN}{XXX}
-\newcommand{\basisMedian}{XXX}
-\newcommand{\basisPten}{XXX}
-\newcommand{\basisPninety}{XXX}
-\newcommand{\vwapInRange}{XXX}
+\newcommand{\basisN}{499{,}682}
+\newcommand{\basisMedian}{1.2}
+\newcommand{\basisPten}{$-33.0$}
+\newcommand{\basisPninety}{26.1}
+\newcommand{\vwapInRange}{99.8\%}
 
 \begin{document}
 
@@ -275,10 +275,22 @@ discontinuity analysis.
 For each stock and day the basis is computed from the volume-weighted average prices of the near-month future and of the
 stock, net of dividends going ex before expiry and of the cost of carry at the three-month interbank rate. The older F\&O files
 do not report lot sizes, so lot sizes are recovered from open interest and checked against the day's price range: the futures
-average price lies within the day's high and low for \vwapInRange\ of traded contracts. The panel has \basisN\ stock-days with
-at least five contracts traded. The median basis is \basisMedian\ basis points, and the 10th and 90th percentiles are
-\basisPten\ and \basisPninety\ basis points. The basis shrinks toward expiry, as it should. As noted above, no mispricing
-measure has yet been related to bans, reforms or other treatments.
+average price lies within the day's high and low for \vwapInRange\ of traded contracts. Every futures observation has a
+matching cash price, and the trading days in the price files match those in the open interest files exactly.
+
+Two checks led to changes. First, some corporate events other than dividends (for example the bonus debentures issued by NTPC
+in March 2015) move the futures price relative to the stock. Days on which such an event, or a dividend, goes ex before expiry
+are flagged and kept out of the main sample. Second, adjusting for dividends with their actual ex-dates over-corrects a little,
+probably because some dividends were not yet announced on the earlier days; these days are also flagged.
+
+On the remaining \basisN\ stock-days with at least five contracts traded, the median basis is \basisMedian\ basis points, and
+the 10th and 90th percentiles are \basisPten\ and \basisPninety\ basis points. The basis shrinks toward expiry, and its
+distribution is stable across the change in NSE's file format in July 2024. About 0.7\% of stock-days lie more than 200 basis
+points from zero. These come mainly from stocks under heavy selling pressure (for example during business or credit distress),
+not from data errors, so they are kept and handled with the estimation methods. A comparison of the index futures basis with
+money market rates is still to be done, because it needs index dividends: the implied rate on Nifty futures is lowest every
+July to September, when most index dividends are paid. As noted above, no mispricing measure has yet been related to bans,
+reforms or other treatments.
 
 \section{Pre-specified tests}\label{sec:tests}
 The main hypotheses, how each will be tested and what result would contradict it:
@@ -304,8 +316,8 @@ post-reform period, which has only 44 ban spells; results for that period will b
 \section{Plan from here}\label{sec:plan}
 The steps below are in order of dependence.
 \begin{enumerate}
-\item Finish the price data: add the list of F\&O entries and exits, the free-float history and the announcement dates for
-results; compare the index futures basis with money market rates as a further check on the measure.
+\item Finish the price data: add the list of F\&O entries and exits, the free-float history, the announcement dates for
+results and the dividends of the Nifty index, and compare the index futures basis with money market rates.
 \item Fix the test plan in writing, including sample filters, variable definitions and specifications, before any outcome is
 related to a treatment.
 \item Estimate the no-arbitrage band with three-regime threshold error-correction models and smooth-transition models, and

@@ -66,6 +66,13 @@ Post-reform ban events are few (44 spells) → reform-period ban analyses are lo
 No upper/lower asymmetry in bans; no change in futures activity during bans; band unrelated to dated cost shocks; F&O inclusion
 without effect on delay/drift.
 
+## 8b. Data decisions from the build (28 Oct 2026)
+- Main sample excludes stock-days with a dividend or other corporate event (bonus, split, rights, debentures, demerger, scheme,
+  buyback) going ex in the contract life (flags `pv>0`, `event_in_life`); robustness adds dividend days with an
+  announcement-date-aware adjustment.
+- Outliers (|m| > 200 bp, 0.65% of clean days) are kept; main estimates use winsorisation at 1/99% within year, robustness without.
+- Rate: monthly 3-month interbank (OECD); relative implied repo removes common rate error.
+
 ## 9. Data gaps to resolve before tagging
 Dividend/corporate-action source for q; MIBOR vs T-bill series (RBI DBIE); results-announcement dates; free-float history
 (monthly NPH files, discontinued Oct 2025); F&O inclusion/exclusion list; AMFI monthly arbitrage AUM.
