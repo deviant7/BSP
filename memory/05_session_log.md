@@ -132,6 +132,32 @@
   dividend season; no clean validation without index dividends (to do: Nifty TRI vs price index).
 - **Progress report finalised:** `BSP_Progress_Report_Oct2026.pdf` (25 pp: ~9 pp report + model appendix). Numbers filled from data.
 
+- **User's F&O membership sheet (fno_pit_3.xlsx, from an earlier project) evaluated (28 Oct 2026):** 367 symbols × 2,463 dates,
+  0/1, 1 Jan 2016 → 23 Dec 2025. Calendar: trading days only (no holidays); 4 weekend columns = genuine special sessions
+  (1 Feb 2020 & 1 Feb 2025 budget Saturdays, 20 Jan 2024, 18 May 2024); MISSING the 5 Diwali muhurat sessions (19 Oct 2017,
+  7 Nov 2018, 4 Nov 2021, 24 Oct 2022, 1 Nov 2024). Contains index underlyings (NIFTY, BANKNIFTY, FINNIFTY, NIFTYIT, MIDCPNIFTY,
+  S&P, DJIA, FTSE, INDIAVIX…), 3 truncated symbols (MCDOWELL=MCDOWELL-N, TV=TV18BRDCST, NAM=NAM-INDIA) and a test symbol NSETEST
+  (6 Nov 2023). After fixing those, it matches futures-bhavcopy STF membership EXACTLY (452,616 stock-days). Verdict: accurate
+  but redundant (our futures-based membership covers 2015–Oct 2026 incl. muhurat days); used as an independent cross-check.
+  It revealed 713 'Not available in NSE-F&O' placeholder symbols in combineoi → now restored from ISIN (204, all post-2012 ones);
+  25 restored rows dropped on ISIN-change days. Ban facts unchanged.
+- **Membership definition:** a stock is in F&O on day t if STF contracts are listed in that day's F&O bhavcopy. combineoi lists
+  entrants one day early (limits apply to next day) and drops exits a day before the last expiry. PNBHOUSING had an MWPL row with
+  OI = 0 for Aug–Dec 2019 without futures.
+- **F&O events (data/processed/fno_events.csv):** 239 entries, 171 exits 2015–2026 (162 eligibility exits with continued cash
+  trading); 21 symbol renames linked by ISIN (e.g. ZOMATO→ETERNAL, TATAMOTORS→TMPV, MCDOWELL-N→UNITDSPR); missing F&O file
+  30 Mar 2021 bridged (it had created 156 fake exits/entries). Big batches: 45 entries 29 Nov 2024 (Aug-2024 criteria),
+  34 exits 28 Jun 2019, 16 exits 28 Feb 2025.
+- **1 Oct 2025 MWPL rebuilt from pre-reform data:** 15%-FF leg exact (85 stocks, median error 0.0%) → FF = old MWPL/0.20 confirmed;
+  ADDV leg: actual exceeds NSE-only-delivery prediction by median 6.5% (BSE deliveries); use actual published MWPLs for intensity.
+- **Announcements (data/processed/announcements.csv.gz):** NSE results API (`corporates-financial-results`, 2014 → Mar 2025) +
+  Integrated Filing API (`integrated-filing-results`, paginated: use size=20000, check totalCount; from quarter ended Mar 2025,
+  NSE/CML/2025/20). 89,452 events (symbol × quarter), 14,930 for F&O symbols (median 4/yr); 63% released after 15:30 → day 0 =
+  next trading day. XBRL links kept → EPS/SUE feasible from free data (to do). Bug fixed: pre-2015 events had been mapped to the
+  first 2015 day (calendar now from the 2010+ panel).
+- Nifty TRI not available (niftyindices API refused); downloading daily Nifty close + trailing div yield (ind_close_all) for a
+  Nov–Mar index-futures check.
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report

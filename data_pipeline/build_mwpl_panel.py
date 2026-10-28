@@ -116,6 +116,24 @@ def main(raw, out):
     panel = panel.sort_values("own_member", ascending=False)
     panel = panel.dropna(subset=["date", "symbol"]).drop_duplicates(["date", "symbol"]).sort_values(["date", "symbol"])
     panel = panel.drop(columns=["own_member"])
+    # NSE sometimes prints "Not available in NSE-F&O" in the symbol field; restore the symbol from the same ISIN on the
+    # nearest date where it is given
+    ph = panel["symbol"].str.contains("Not available", case=False, na=False)
+    good = panel.loc[~ph & panel["isin"].notna(), ["isin", "date", "symbol"]].sort_values("date")
+    fixed = 0
+    if ph.any():
+        rows = panel.loc[ph, ["isin", "date"]].sort_values("date").reset_index()
+        back = pd.merge_asof(rows, good.rename(columns={"symbol": "sym_b"}), on="date", by="isin", direction="backward")
+        fwd = pd.merge_asof(rows, good.rename(columns={"symbol": "sym_f"}), on="date", by="isin", direction="forward")
+        sym = back["sym_b"].fillna(fwd["sym_f"])
+        panel.loc[rows["index"].values, "symbol"] = sym.fillna("UNMAPPED:" + rows["isin"].astype(str)).values
+        fixed = int(sym.notna().sum())
+    rep.append(f"placeholder symbols ('Not available in NSE-F&O'): {int(ph.sum())}; restored from ISIN: {fixed}")
+    panel["_restored"] = ph.values
+    n0 = len(panel)
+    panel = panel.sort_values("_restored").drop_duplicates(["date", "symbol"]).drop(columns="_restored")
+    rep.append(f"restored rows dropped because the symbol already appears that day (old ISIN on an ISIN-change day): {n0 - len(panel)}")
+    panel = panel.sort_values(["date", "symbol"])
     panel = panel.drop(columns=["inner_date"])
     panel["util"] = panel["oi"] / panel["mwpl"]
     if "futeq_oi" in panel.columns:

@@ -1,8 +1,10 @@
 recovered damaged zips: 0; misdated files: [('combineoi_02112012.zip:combineoi_02112012.csv', '2012-11-05', 'dropped')]
 files with unparseable inner date (kept, file-name date used): 1
 bundled extra members read: ['combineoi_01072025.zip:combineoi_30062025.csv', 'combineoi_02072025.zip:combineoi_01072025.csv', 'combineoi_02072025.zip:combineoi_30062025.csv', 'combineoi_02102015.zip:combineoi_01102015.csv']
+placeholder symbols ('Not available in NSE-F&O'): 713; restored from ISIN: 204
+restored rows dropped because the symbol already appears that day (old ISIN on an ISIN-change day): 25
 combineoi files: 4134, unreadable: 14 [('combineoi_01062012.zip', 'no readable csv member'), ('combineoi_04062012.zip', 'no readable csv member'), ('combineoi_05062012.zip', 'no readable csv member'), ('combineoi_06062012.zip', 'no readable csv member'), ('combineoi_07062012.zip', 'no readable csv member')]
-panel rows: 752062, dates: 4120, symbols: 473, range: 2010-02-01 to 2026-10-27
+panel rows: 752037, dates: 4120, symbols: 476, range: 2010-02-01 to 2026-10-27
 secban files: 4152; misdated: [('2014-02-19', '2014-03-19', 'dropped'), ('2014-08-25', '2014-08-26', 'dropped')]
 ban stock-days on panel trading days: 11758
 flag(t) -> ban list(t+1): flagged 11771, listed 11758, both 11753, flag-only 18, list-only 5

@@ -1,0 +1,18 @@
+filing rows 185273; events (symbol x period end) 89452; symbols 2914
+released after close: 0.634; median days from period end to release: 43
+events per year:
+event_day
+2014.0    6189
+2015.0    5975
+2016.0    6178
+2017.0    6411
+2018.0    6421
+2019.0    6345
+2020.0    6510
+2021.0    6730
+2022.0    6917
+2023.0    7515
+2024.0    8078
+2025.0    8698
+2026.0    7307
+events for symbols ever in F&O: 14930; per symbol-year median 4
