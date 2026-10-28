@@ -1,291 +1,206 @@
-# BSP — Research Plan v2 (how to take the project forward)
+# BSP — Research Plan v2 (revised 28 Oct 2026)
 
-*Drafted 28 Oct 2026. Builds on `BSP_Project_Document` (Sep 2026), which stays the statement of goals.
-No calendar: phases are ordered by logical dependency only. Items marked [verify] must be checked
-against an NSE/SEBI primary source before anything rests on them.*
-
----
-
-## 0. The guiding idea
-
-The project document's goals are good and stay: (1) a reproducible measure of how tightly arbitrage
-constraints bind, (2) mispricing measures, (3) a causal estimate of the ban's effect, (4) the
-no-arbitrage band and how the 2025 reforms moved it, (5) the cross-sectional asset-pricing test,
-(6) a policy reading. What changes is the *order of reasoning* and the *discipline*:
-
-> **theory → written predictions → blind data build → validation → tests → interpretation.**
-
-Each chapter keeps its goal, but its hypothesis is now derived from one model, written down with its
-sign *conditions* before outcomes are looked at, and tested with a design that can return a
-surprise. The guide's request (theory first, against confirmation bias) is met by the model *plus*
-the pre-analysis plan — the second is what actually ties our hands.
-
-Status note: Prof. Chaubal has seen only the project document. Models A/B and the progress report
-were never sent, so they can be replaced freely. The next thing she sees should be the corrected
-theoretical framework (Phase 1) with a short note on how it revises the plan.
+*Builds on `BSP_Project_Document` (Sep 2026), whose goals stand. No calendar: phases are ordered by
+logical dependency only. [verify] = must be checked against a primary source; see
+`memory/07_fact_check.md` for the verification log.*
 
 ---
 
-## 1. What the theory has to get right (and why A/B must be replaced, not polished)
+## 0. Scope: limits to arbitrage in Indian equities — the ban is one lens, not the project
 
-### 1.1 The ban, described correctly
-- Trigger: market-wide OI > 95% of MWPL (end of day; intraday checks from 3 Nov 2025).
-  Exit: OI < 80% [verify]. In ban, **every participant** may only trade to *reduce* their position
-  (post 1 Oct 2025: reduce end-of-day FutEq delta). This applies to futures *and* options on the stock.
-- Consequence: in a ban, a trade can occur only between a closing long and a closing short, so OI can
-  only fall. Rolling over into the next expiry is, in effect, a fresh position [verify how NSE treats rollovers].
-- Who holds the OI? Every futures contract has a long and a short. In India the typical
-  configuration in crowded stocks is: leveraged speculators long futures; cash-and-carry arbitrageurs
-  (arbitrage mutual funds, prop desks) **long cash / short futures**. Reverse arbitrage (short cash /
-  long futures) is rare because naked overnight cash shorting is barred and SLB is thin.
+The question is the project document's: **how strongly do limits to arbitrage bind in Indian
+equities, what kinds of limits matter, and how much mispricing do they explain?** The literature
+(Shleifer–Vishny; Gromb–Vayanos) groups limits into a few kinds, and India gives a dated,
+observable shock to almost every one of them:
 
-### 1.2 The mechanism the model should formalise (a hypothesis to be derived, not assumed)
-1. **One-sided arbitrage in a ban.** Arbitrageurs cannot open new short-futures/long-cash positions,
-   so a *rich* futures price (positive basis) is no longer corrected. They *can* unwind existing
-   positions (buy back futures, sell cash), which corrects a *cheap* futures price (negative basis).
-   ⇒ In a ban the upper band edge opens while the lower edge survives (or tightens): the effect on
-   persistence is **asymmetric**, and its direction is set by the sign of pre-ban arbitrage inventory.
-2. **Spillover to spot.** New speculative demand that cannot enter futures moves to the cash market
-   (delivery or margin-funded), pushing spot relative to futures ⇒ a level effect on the basis that
-   can be **negative**.
-3. **Net effect on the basis level is ambiguous** (1 pushes up the upper tail, 2 pushes the mean down);
-   the sign depends on observables: pre-ban basis sign, inventory proxy, how much demand migrates.
-4. **Anticipation.** As utilisation approaches 95%, arbitrageurs who fear being locked in widen the
-   price they need to open new positions ⇒ the band starts widening *before* the ban, and agents may
-   avoid crossing (bunching below 95%). This predicts a *smaller* jump at 95% than a naive model —
-   an honest prediction for the RD.
-5. **Hysteresis.** With entry at 95% and exit at 80% [verify], two stocks at the same utilisation can be
-   in different states, depending on their path.
-
-This is a genuine result if it holds: a "reduce-only" rule converts two-sided arbitrage into
-one-sided arbitrage. Nothing in the 21 papers derives it.
-
-### 1.3 What A and B contribute
-- **Keep from A:** the static environment (CARA arbitrageur, fringe −φm, asymmetric costs c, c_s,
-  clearing) and Prop 1 (asymmetric band) and Prop 2 (comparative statics). These are correct.
-- **Replace in A:** Prop 3 (ban freezes only the arbitrageur; conflates the per-entity cap with the
-  market-wide trigger), Prop 4 (θ asserted, not derived), Prop 5 (proof false), Prop 6 ("Cov(L,u)=0 by
-  timing" invalid with persistent demand; ADDV not excludable).
-- **Keep from B, demoted to the econometrics appendix:** the band-of-inaction logic as the *reading* of a
-  threshold model. Fix the QVI sign (obstacle is V(0)+K_j−V(z)); state that with pure impulse control the
-  outer regimes are empty, so the TAR/TVECM mapping needs heterogeneous arbitrageurs or monitoring
-  frictions (which is also what motivates STAR). Drop g(ω)→∞ as an assumption.
-
-### 1.4 Horizon and calibration
-Our data are daily. Daily settlement prices of futures and the cash closing price are both last-30-minute
-VWAPs [verify for each period], so the daily basis measures the *persistent* component that survives
-intraday HFT arbitrage. The model's arbitrageur is therefore an overnight carrier (arbitrage fund / prop
-desk) facing STT, stamp duty, exchange fees, funding spread, margins — not Aggarwal's 1-second trader.
-Calibration should start from a **cost-implied band** built bottom-up (Slivka-style, ~2.5% in 2009 terms),
-not from Aggarwal's 18 bp.
-
----
-
-## 2. Revised hypotheses (derived, with sign conditions)
-
-Each keeps the project document's number where possible; "⇐" gives the model result it rests on.
-
-| # | Hypothesis (revised) | Changes vs project doc |
+| Kind of limit | Indian instrument / shock | Main use in the thesis |
 |---|---|---|
-| H1 | Mispricing magnitude and persistence rise with *ex-ante friction* (costs, basis risk, capacity, short-side cost). ⇐ static band + comparative statics | Index now excludes outcomes and the ban (see §4.3); association, not causal |
-| H2 | Earnings drift is larger where the short channel is constrained; **in a ban, drift after bad news rises, after good news not** (only futures give overnight short exposure; long side can still buy cash). | Sign made asymmetric; conditional on EPS/surprise data |
-| H3 | Band width rises with cost/illiquidity/volatility; the estimated band is close to the cost-implied band. ⇐ band formula | Adds a non-circular validation (estimated vs cost-implied) |
-| H4 | The 1 Oct 2025 package (lower MWPL denominator, FutEq numerator, delta-reduction rule) has **heterogeneous** effects whose sign per stock follows from predicted Δutilisation; the 3 Nov 2025 intraday monitoring is a *tightening*; the Oct 2024 STT increase on F&O [verify] is a cost shock that widens bands. | "Relaxations" framing dropped; no assumed sign for the package |
-| H5 | Anomaly returns are larger where arbitrage is constrained. Stated two-sided for IVOL because in India high-IVOL stocks outperform (Sehgal et al. 2024). | Two-sided; signal set rebuilt from public data |
-| H6 | Ban effects survive when ban status is driven by mechanical variation (recalculation dates, reform intensity, hysteresis), not only by crowding. | Instrument redesigned (§5) |
-| H7 *(new)* | In a ban, correction becomes one-sided: positive-basis deviations persist, negative-basis deviations still revert (given short-futures arbitrage inventory). | The model's sharpest, most falsifiable prediction |
-| H8 *(new)* | In a ban, trading migrates to the cash market: cash volume, delivery %, and spot volatility move; futures volume and OI fall. | Mechanism check; outcomes not used in H1–H7 |
+| **Short-sale constraints** | Naked overnight cash shorting barred; SLB thin; the only practical overnight short is via single-stock futures/options, which exist only for F&O stocks. **F&O inclusion/exclusion** creates/removes the channel permanently; the **F&O ban** removes it temporarily. | Ch 5 (ban), Ch 6 (F&O eligibility, cross-section) |
+| **Trading costs** | STT/stamp-duty changes on dated budget days (e.g., futures STT cut 2013, raised Oct 2024 [verify]) | Ch 4 (bands) |
+| **Arbitrage capital & funding** | Arbitrage mutual-fund AUM (AMFI monthly) incl. tax-driven inflows; money-market rate shocks (Aggarwal: MIBOR drives bands); margin-rule changes (peak margin 2020–21 [verify]) | Ch 4 (bands over time) |
+| **Arbitrage risk** | Idiosyncratic / basis risk (IVOL) | Ch 3 (index), Ch 6 |
+| **Position limits** | MWPL, entity limits, 2025 reforms | Ch 4, Ch 5 |
 
-What would *falsify* the model: no asymmetry in H7; bans with no change in futures activity (H8); the
-estimated band far from any plausible cost (H3).
+So the ban is the sharpest *causal* lens on one constraint, but the thesis measures and tests all
+of them. One model covers them all (each is a parameter), so every chapter's hypothesis comes from
+the same theory.
 
----
+Order of work: **theory → pre-analysis plan → blind data build → validation → tests → interpretation.**
 
-## 3. Phase plan (ordered by dependency, no dates)
-
-### Phase 0 — Facts and housekeeping
-1. Verify from NSE/SEBI circulars: 80% ban exit; history of the MWPL formula before 2025 (was there a
-   "30× average daily volume" leg, and until when?); rollover treatment during a ban; physical settlement
-   of stock derivatives (phased from 2018) [verify]; closing/settlement-price methodology by period;
-   STT/stamp duty history (incl. 1 Oct 2024 F&O STT rise) [verify]; F&O eligibility criteria changes
-   (2018 revision, 2024 revision) [verify]; T+1 cash settlement transition (2023).
-2. Data-availability check (no outcomes computed): archive depth for combined-OI/MWPL files, ban lists,
-   F&O bhavcopy (options too), cash bhavcopy with delivery, corporate actions (dividends, splits), SLB
-   bhavcopy, NSE XBRL financial results (free EPS?), Prowess/CMIE access via IITB library.
-3. Fix the project document's errors (short-selling line; "relaxations"; unverified rules) and the
-   literature review / notes errors listed in `memory/04_models_and_audit.md`.
-
-### Phase 1 — Theory (one model, "the ban as a reduce-only market-wide freeze")
-- Environment from A (§1.3) + inventory state + outside futures speculators whose futures demand is also
-  frozen in a ban + cash-market spillover share s + anticipation via probability of entering a ban.
-- Results to derive: (i) normal-times band; (ii) ban band — one-sided, with conditions; (iii) basis
-  level under ban — sign conditions; (iv) pre-ban widening and bunching; (v) MWPL change → ban
-  probability → basis (what an instrument would and would not identify, with the exclusion problem
-  stated); (vi) PEAD asymmetry; (vii) heterogeneous arbitrageurs → smooth transition (STAR) and
-  populated outer regimes (TVECM).
-- **Simulation:** simulate the model, then run every planned estimator (event study, RD, TVECM) on
-  simulated data. This checks that the estimators recover the effects, shows how anticipation biases the
-  RD, and gives power calculations — all before seeing real outcomes.
-- Deliverables: full model (LaTeX, ~10–15 pp) + 3-page plain-language version for the guide + a one-page
-  note mapping each result to a hypothesis and test.
-
-### Phase 2 — Pre-analysis plan (PAP)
-- Fix: sample filters; outcome definitions (§4.2); treatment definitions; each specification; expected
-  sign *and the condition under which it reverses*; inference (clustering, bootstrap); multiple-testing
-  treatment (primary vs secondary outcomes); what counts as a falsification.
-- Timestamp it with a git tag (optionally OSF). Deviations later are allowed but must be reported.
-- Guide signs off on Phase 1 + Phase 2 before outcome analysis.
-
-### Phase 3 — Data pipeline (blind to outcome–treatment relationships)
-- Build the stock-day panel 2015–2026 (and the event files). Allowed while blind: data-quality reports,
-  treatment-side descriptives (number/length of bans, utilisation paths, MWPL changes at 1 Oct 2025 and
-  at each quarterly recalculation), outcome *distributions* on their own. Not allowed: any table/plot of
-  outcomes by treatment.
-- **Pipeline validation on a non-test object:** compute the Nifty index futures basis and replicate
-  Nandan et al. (2014) (mean −₹8.19, 71% negative days, 2003–12). If our code matches, the stock-level
-  basis code is trusted.
-- Reconstruct FutEq (delta-based) OI pre-2025 from option settle prices (Black-76 on the futures price)
-  and check it against NSE's published FutEq after the change.
-
-### Phase 4 — Measurement chapter (project doc Ch 1 + Ch 2)
-See §4. Validation of the index is done against the band estimates from Phase 5 and against the
-cost-implied band — both computed independently.
-
-### Phase 5 — Causal and dynamic chapters (project doc Ch 3 + Ch 4)
-See §5 and §6.
-
-### Phase 6 — Cross-section (project doc Ch 5)
-See §7.
-
-### Phase 7 — Policy chapter, writing, replication package
-- Policy: read the estimates against SEBI's speculation-control vs market-quality trade-off; quantify
-  "spurious" bans (bans driven by the denominator, not by crowding) before vs after 1 Oct 2025.
-- Replication package: code + derived measures. Check NSE terms before redistributing raw files.
+Status: Prof. Chaubal has seen only the project document. Models A/B and the progress report were not
+sent and can be replaced. The next thing she sees: the corrected framework + a one-page note.
 
 ---
 
-## 4. Measurement (Chapters on data, mispricing, constraint index)
+## 1. Theory: one model of constrained arbitrage in India
 
-### 4.1 Panel
-Stock-day, F&O universe with time-varying membership (~180–220 stocks), 2015–2026; near-month and
-next-month futures; options near the money; ban status, utilisation, MWPL; cash OHLC, volume,
-delivery; corporate actions; shareholding (quarterly, forward-filled). Known breaks to handle:
-physical settlement, T+1, UDiFF format (2024), COVID 2020, lot-size changes, eligibility revisions.
+### 1.1 Core (from Model A, kept because it is correct)
+A risk-averse arbitrageur (risk-bearing capacity 1/α, i.e., capital), basis risk σ², trading cost c,
+extra short-side cost c_s, outside demand u, fringe −φm; clearing gives the asymmetric band
+[−(c+c_s), c] and comparative statics (Model A Props 1–2). Each Indian constraint is a parameter:
+- costs (STT, fees) → c; short-side cost → c_s (SSF available: finite; cash-only stock: effectively ∞
+  for overnight positions);
+- capital/funding → α (and the financing rate);
+- arbitrage risk → σ²;
+- position limits → a cap, and the ban → a *reduce-only* rule (§1.2).
 
-### 4.2 Mispricing measures
-1. **Futures basis (primary).** m = ln(F/F*), F* = (S − PV(dividends within life))·e^{r(T−t)}; r =
-   MIBOR/T-bill (sensitivity to both). Also the **relative implied repo**: each stock's implied financing
-   rate minus the cross-sectional median that day, which removes errors in r common to all stocks. Exclude
-   the last few days before expiry; also report the next-month contract.
-2. **Put–call–futures parity (secondary).** C − P = e^{−r(T−t)}(F − K) for near-ATM, actually traded
-   strikes. Stock options are European [verify date], and using F instead of S removes dividends and the
-   stock-shorting leg, so it isolates the options–futures link. Restrict to volume-filtered strikes;
-   non-synchronous closing prices are the main risk.
-3. **Earnings drift (conditional on data).** Surprise = SUE (seasonal random walk, Harshita et al.:
-   (EPS_q − EPS_{q−4})/price) if EPS is available (NSE XBRL results or Prowess), and in any case the
-   **earnings-announcement return (EAR)** surprise, which needs only prices. Drift = BHAR[+2,+64].
-4. **Cash-market efficiency (for §7):** variance ratios, price delay (Hou–Moskowitz), which exist for
-   non-F&O stocks too.
+### 1.2 The ban, modelled correctly (replaces A Prop 3)
+In a ban every participant (futures and options on that stock) may only reduce positions (post
+1 Oct 2025: reduce end-of-day FutEq delta). Typical OI: speculators long futures, arbitrageurs long
+cash/short futures. Results to *derive* (they are conjectures until derived):
+1. **One-sided correction** — rich futures (positive basis) no longer corrected (no new short futures);
+   cheap futures still corrected by unwinding.
+2. **Spillover to cash** — new speculative demand moves to the cash market; basis *level* can fall.
+   Net level effect ambiguous, with sign conditions on observables.
+3. **Anticipation** near 95% — band widens before the ban; bunching below 95%; small RD jump.
+4. **Hysteresis** — entry 95%, exit 80% [verify].
 
-### 4.3 Constraint index (keeps the project doc goal, removes circularity)
-- Build it **only from ex-ante friction inputs** that the model says set the band: trading cost
-  (bid–ask proxy, Amihud, NSE impact cost if available), short-side cost (SLB availability/fee), basis
-  risk / IVOL, capacity (headroom 1 − OI/MWPL, lagged), funding (rate spread).
-- **Exclude** basis dispersion (an outcome) and ban status (the treatment). Report demand-pressure
-  variables (delivery %, retail ownership share, turnover) as a *separate* crowding index — the model
-  treats demand u and frictions as different objects.
-- Weights: (a) PCA, as in the project doc; (b) a model-implied index (weights from the band formula);
-  (c) robustness with a latent-factor model. Validation: does the index predict out-of-sample the
-  band width estimated in §6 and the cost-implied band? This makes Chapter 1 the stand-alone,
-  citable deliverable the project document wanted — now with a non-circular validation.
+### 1.3 Cash-only stocks (for the F&O-eligibility chapter)
+A short Miller (1977)-style extension: with dispersed beliefs and binding short constraints, prices
+reflect optimists; giving a stock a short channel (F&O entry) lowers overpricing and speeds incorporation
+of bad news (Diamond–Verrecchia 1987) [verify refs]. Exit does the reverse.
 
----
+### 1.4 Dynamics and estimation lens
+Heterogeneous arbitrageurs (cost distribution) turn the sharp band into a transition zone and populate
+the outer regimes, which is what makes 3-regime TVECM / ESTAR the right estimators. Model B's
+band-of-inaction derivation (QVI sign fixed; "exact bridge" claim dropped) goes to an appendix as the
+interpretation of the threshold.
 
-## 5. Causal effects of the ban (project doc Ch 3), several designs, none relied on alone
+### 1.5 Horizon
+Data are daily → the arbitrageur is an *overnight carrier* (arbitrage fund / prop desk). Calibrate from a
+bottom-up cost band (STT, stamp duty, fees, funding, margins), not from Aggarwal's 1-second 18 bp band.
 
-1. **Ban-entry event study with near-miss controls.** Treated: stock-days entering a ban. Controls:
-   stocks whose utilisation reached, say, 85–94.9% in the same window without crossing, matched on the
-   utilisation path and on the basis before the event. Stacked DiD / Callaway–Sant'Anna for repeated
-   events. Outcomes: H7 (asymmetric reversion), basis level, H8 (spot spillover).
-2. **RD at 95%** with McCrary. Supporting only; the model predicts anticipation and bunching, so a small
-   jump is not evidence against the mechanism — this is written in the PAP in advance.
-3. **Hysteresis design** (if 80% exit is confirmed). Among stock-days with utilisation in [80, 95), compare
-   in-ban vs not-in-ban, conditional on the current level and trend of utilisation.
-4. **Mechanical denominator variation.**
-   - *Quarterly MWPL recalculation dates (post Oct 2025):* MWPL changes discretely on a known date while
-     OI is continuous ⇒ a jump in utilisation, and hence in ban probability. Compare stocks whose MWPL
-     fell vs rose around each recalculation.
-   - *1 Oct 2025 formula change as continuous treatment:* for each stock, predicted Δln(utilisation) =
-     Δln(OI measure: notional → FutEq, from the pre-reform options share) − Δln(MWPL: 20% FF →
-     min(15% FF, 65×ADDV), floor 10% FF), all from pre-reform data. Use it as treatment intensity
-     (DiD with stock and date fixed effects) and as an instrument for ban days.
-   - *Pre-2025:* free-float changes are often news (OFS, QIPs, promoter sales), so they are a weak and
-     possibly invalid instrument; use only as robustness, and only if the volume leg (if any) adds
-     variation.
-   - The exclusion restriction is argued, not assumed: ADDV can affect spot liquidity directly, so
-     specifications control for ADDV/turnover levels and use the *formula-induced* part of the change.
+### 1.6 Simulation
+Simulate the model; run every planned estimator on simulated data (power, bias, how anticipation
+affects the RD) before touching real outcomes.
+
+### What is dropped from A/B
+A Prop 3 (ban freezes only the arbitrageur; per-entity cap conflated with market-wide trigger), Prop 4's
+asserted θ, Prop 5 (false proof), Prop 6 ("Cov(L,u)=0 by timing"); B's g(ω)→∞ assumption.
 
 ---
 
-## 6. Bands and reforms (project doc Ch 4) — the non-linear time-series core
+## 2. Hypotheses (derived, with the condition under which each would reverse)
 
-- **Per-stock and pooled threshold models.** Ters–Urban 3-regime TVECM as the workhorse (test β = 1
-  rather than leaving β fully free, since theory pins it), Aggarwal-style 3-regime TAR and Tse-style
-  ESTAR as robustness. With ~2,700 daily observations per stock over the full sample but only ~250 after
-  Oct 2025, pre/post comparisons use pooled/panel threshold models (stock fixed effects, common
-  thresholds scaled by stock cost) or groups of similar stocks.
-- **Ban-dependent regimes (direct test of H7):** a threshold model whose upper/lower adjustment speeds
-  are allowed to differ in ban vs non-ban states — observed regime (ban) × unobserved regime (threshold).
-- **Estimated vs cost-implied band (H3):** Ters–Urban's precisely estimated θ + β0 is directly comparable
-  to the bottom-up cost band.
-- **Reforms:** 1 Oct 2024 STT change (cost shock, common), 1 Oct 2025 package (heterogeneous intensity,
-  §5.4), 3 Nov 2025 intraday monitoring (tightening), 6 Dec 2025 pre-open session. The 2024 index-only
-  measures are placebos for single-stock bands (they should not move them, except through spillover).
+| # | Hypothesis | Constraint |
+|---|---|---|
+| H1 | Mispricing size and persistence rise with ex-ante frictions (index built from frictions only). Association. | all |
+| H2 | Earnings drift is larger where shorting is hard: in cash-only vs F&O stocks, and in a ban — **after bad news, not good news**. | short-sale |
+| H3 | Band width rises with costs, illiquidity, volatility; estimated band ≈ cost-implied band; STT changes move the band by roughly the cost change. | costs |
+| H4 | Bands widen when arbitrage capital is scarce (low/falling arbitrage-fund AUM, higher funding rates, tighter margins). | capital |
+| H5 | Anomaly returns are larger where arbitrage is constrained (two-sided for IVOL: high-IVOL stocks outperform in India). | risk, short-sale |
+| H6 | F&O inclusion lowers overpricing / drift / price delay; exclusion raises them. | short-sale |
+| H7 | In a ban, correction becomes one-sided (positive-basis deviations persist). | short-sale / limits |
+| H8 | In a ban, trading migrates to the cash market (cash volume, delivery %, spot volatility up; futures OI down). | limits (mechanism check) |
+| H9 | The 1 Oct 2025 package has heterogeneous effects whose per-stock sign follows predicted Δutilisation; 3 Nov 2025 is a tightening. | limits |
 
----
-
-## 7. Cross-section (project doc Ch 5), made more powerful
-
-- **SYY-style test, done as SYY did it:** double sorts (constraint × anomaly) with value-weighted
-  portfolios, plus Fama–MacBeth as a complement. Anomalies rebuilt from public data (momentum,
-  short-term reversal, MAX, IVOL, illiquidity, turnover, delivery-based, and accounting anomalies if
-  XBRL/Prowess works). Do not rely on the internship's 45-signal library unless its use is cleared under
-  the internship agreement.
-- **Power fix — F&O eligibility events.** Inclusion in the F&O segment *creates* an overnight short channel
-  (single-stock futures); exclusion removes it. Inclusions/exclusions happen in batches over 2015–2026
-  (including large eligibility revisions [verify]), across a universe of ~2,000 listed stocks. Staggered
-  DiD (Callaway–Sant'Anna / Sun–Abraham) on anomaly returns, PEAD and price delay around these events is
-  a direct "limits to arbitrage in Indian equities" test with far more power than 220 stocks. It also
-  connects the ban (a temporary loss of the channel) to entry/exit (a permanent gain/loss).
+Falsifiers written in advance: no asymmetry in H7; no futures-activity change in bans (H8); estimated
+band far from any plausible cost (H3); no effect of F&O entry (H6).
 
 ---
 
-## 8. Safeguards against confirmation bias (in addition to theory)
+## 3. Phases
 
-1. PAP with sign *conditions* and falsification criteria (Phase 2), git-tagged.
-2. Blind pipeline: no outcome-by-treatment output until the PAP is tagged.
-3. Simulated-data runs of every estimator (Phase 1) — power and bias known in advance.
-4. Placebos: index-only reforms for single-stock bands; fake ban dates; non-F&O stocks for ban effects.
-5. Primary vs secondary outcomes fixed in advance; report all pre-specified tests, including nulls.
-6. "Expected results" section replaced by "predictions and what would contradict them".
+**Phase 0 — Facts and feasibility.** Verify every rule, date and citation (see `memory/07_fact_check.md`).
+Check data availability (no outcomes computed): archives of combined OI/MWPL, ban lists, F&O and cash
+bhavcopies (with delivery), corporate actions, F&O eligibility lists over time, AMFI arbitrage-fund AUM,
+NSE XBRL results (EPS), Prowess access via the library. Fix project-document and literature-review errors.
+
+**Phase 1 — Theory + simulation** (§1). Deliverables: full model (LaTeX), 3-page guide version, one-page
+result→hypothesis→test map.
+
+**Phase 2 — Pre-analysis plan.** Samples, outcomes, treatments, specifications, expected signs + reversal
+conditions, inference, primary vs secondary outcomes, falsifiers. Git-tagged. Guide signs off on 1 + 2.
+
+**Phase 3 — Blind data build.** Panel 2015–2026 for all listed stocks (cash) and F&O stocks (futures,
+options, OI, ban). While blind: data-quality reports, treatment-side descriptives, outcome distributions
+alone; no outcome-by-treatment output. Pipeline validated by replicating Nandan et al. (2014) Nifty
+futures basis.
+
+**Phase 4 — Measurement (Ch 3).** **Phase 5 — Bands over time (Ch 4).** **Phase 6 — Ban (Ch 5).**
+**Phase 7 — F&O eligibility and cross-section (Ch 6).** **Phase 8 — Policy, writing, replication package.**
 
 ---
 
-## 9. Proposed thesis structure
+## 4. Measurement (Ch 3; project doc Ch 1–2)
 
-1. Introduction and institutions (short selling, SLB, F&O, MWPL, ban, 2024–26 reforms).
-2. Theory: the ban as a reduce-only freeze (model + simulations).
-3. Data and measurement: panel, mispricing measures, constraint index and its validation (Ch 1–2 of the doc).
-4. Causal effects of the ban (Ch 3 of the doc).
-5. Bands and regime shifts (Ch 4 of the doc).
-6. Cross-section and F&O eligibility (Ch 5 of the doc).
-7. Policy and conclusion (Ch 6 of the doc).
-Appendices: band-of-inaction derivation (fixed Model B), PAP, data construction, replication guide.
+**Mispricing measures**
+1. *Futures basis* (F&O stocks; primary): m = ln(F/F*), F* = (S − PV(div))·e^{r(T−t)}; r = MIBOR and
+   T-bill as sensitivity; plus **relative implied repo** (stock's implied rate minus the day's
+   cross-sectional median) to remove common-rate error. Drop final days before expiry.
+2. *Earnings drift* (all stocks): surprise = earnings-announcement return (prices only); SUE (Harshita
+   et al.) if EPS is obtainable. Drift = BHAR[+2,+64].
+3. *Price efficiency* (all stocks): price delay (Hou–Moskowitz 2005) and variance ratios [verify refs].
+4. *Put–call parity* — **optional robustness only** (thin, non-synchronous stock-option prices).
+
+**Constraint index** (keeps the doc's stand-alone deliverable, minus circularity)
+- Inputs: frictions only — bid–ask proxy/Amihud/impact cost, SLB availability, IVOL/basis risk,
+  lagged MWPL headroom, F&O status. **Excluded:** basis dispersion (outcome), ban status (treatment).
+- Crowding variables (delivery %, retail ownership, turnover) form a separate index.
+- Weights: PCA (as in the doc) and model-implied weights. Validated against the estimated bands (Ch 4).
 
 ---
 
-## 10. Immediate next steps
-1. Phase 0 fact checks (rules and data availability) — no outcome computed.
-2. Write the corrected model (Phase 1) and simulate it.
-3. Send Prof. Chaubal: the model (3-pp version + full), a one-page note on how it revises the plan, and
-   ask for her view on the PAP idea and on building the data pipeline blind in parallel.
+## 5. Bands over time — costs and capital (Ch 4; the non-linear time-series core)
+
+- 3-regime TVECM (Ters–Urban; test β = 1) as workhorse; ESTAR (Tse) as robustness. Pooled/panel
+  threshold models for sub-periods with few daily observations.
+- **Costs (H3):** compare estimated θ+β0 with the bottom-up cost band; event windows around STT changes.
+- **Capital (H4):** let thresholds/adjustment speeds depend on arbitrage-fund AUM, funding rates, and
+  margin regimes (smooth-transition with an observed transition variable — Prof. Chaubal's area).
+- **Reforms (H9):** 1 Oct 2025 package (heterogeneous intensity), 3 Nov 2025 tightening; the 2024
+  index-only measures as placebos for single-stock bands.
+- Cross-sectional variation in bands feeds H1 and the index validation.
+
+## 6. The F&O ban (Ch 5)
+
+1. Ban-entry event study vs near-miss controls (85–94.9% utilisation, matched on path); stacked DiD.
+   Outcomes: H7 asymmetry, basis level, H8 spillover, H2 (bad-news drift in ban) if enough events.
+2. RD at 95% with McCrary — supporting; anticipation predicted in advance.
+3. Hysteresis design in [80, 95) — only if the 80% exit is confirmed.
+4. Mechanical variation: quarterly MWPL recalculation dates (post Oct 2025); 1 Oct 2025 predicted
+   Δutilisation (numerator: notional → FutEq, from pre-reform options share — use NSE's published FutEq
+   if available, else reconstruct; denominator: 20% FF → min(15% FF, 65×ADDV), floor 10%). Pre-2025
+   free-float changes only as robustness (often news-driven).
+
+## 7. F&O eligibility and the cross-section (Ch 6)
+
+- **F&O inclusion/exclusion as staggered events (H6, H2):** ~2,000 listed stocks; Callaway–Sant'Anna /
+  Sun–Abraham DiD on drift, price delay, overpricing proxies; matched non-F&O controls. Eligibility is
+  rule-based (market cap, turnover, MWPL criteria) [verify], which also allows an RD on the criteria.
+- **SYY-style test (H5):** double sorts constraint × anomaly (VW), FM as complement; anomalies rebuilt from
+  public data (momentum, reversal, MAX, IVOL, illiquidity, turnover; accounting ones only if EPS/XBRL works).
+  The internship 45-signal library only if its use is cleared under the internship agreement.
+
+## 8. Policy and conclusion (Ch 7)
+Read results against SEBI's speculation-vs-market-quality trade-off: which limits matter most, how many
+bans were "spurious" (denominator-driven) before vs after 1 Oct 2025, what F&O eligibility rules imply.
+Retail-crowding framing from the SEBI loss study, kept short.
+
+---
+
+## 9. Safeguards against confirmation bias
+PAP with reversal conditions and falsifiers (git-tagged); blind build; estimators tested on simulated data;
+placebos (index-only reforms; fake ban dates; non-F&O stocks for ban effects); all pre-specified tests
+reported, nulls included; "Expected results" replaced by "predictions and what would contradict them".
+
+## 10. Trimmed from the project document / earlier plan, and why
+- **Put–call parity as a core measure** → optional robustness (data quality; little beyond the basis).
+- **Aggarwal-style per-stock-per-day TAR** → not feasible on daily data; 3-regime TVECM + ESTAR suffice.
+- **Latent-factor version of the index** → PCA + model-implied weights are enough.
+- **45-signal Fama–MacBeth as a chapter** → folded into a public-anomaly SYY test inside Ch 6.
+- **Full pre-2025 FutEq reconstruction** → only if NSE did not publish FutEq before the reform.
+- **Callaway–Sant'Anna for 2025 reforms** → not staggered (one date); continuous-intensity DiD instead.
+- **OSF registration** → git tag suffices.
+- **Pre-2025 free-float "instrument" as primary** → robustness only.
+
+## 11. Thesis structure
+1. Introduction and institutions. 2. Theory (+ simulation). 3. Data and measurement (mispricing,
+constraint index). 4. Bands over time: costs, capital, reforms. 5. The F&O ban. 6. F&O eligibility and
+the cross-section. 7. Policy and conclusion. Appendices: band-of-inaction derivation, PAP, data
+construction, replication guide.
+
+## 12. Next steps
+1. Phase 0 verification (in progress: `memory/07_fact_check.md`) and data-availability checks.
+2. Corrected model + simulation.
+3. Send Prof. Chaubal the model (full + 3-page) and a one-page note on how it revises the plan.
