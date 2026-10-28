@@ -179,6 +179,8 @@
   User could not see new files on GitHub: all work is on branch `claude/compassionate-rubin-s9gny2` (19 commits ahead of
   `main`, which has only the initial commit); explained; no PR created. Removed committed __pycache__ files; ignored them.
 
+- User opened and merged PR #1 (branch → main, merge commit 65ef0e3); verified main has all files. Branch restarted from main.
+
 ## Open threads (current; older lists superseded)
 - Waiting: user sends the progress report; guide's reply (framing, theory depth, TAR/STAR, test plan) → then tag `pap-v1`.
 - Confirm guide's name spelling (Chaubal).

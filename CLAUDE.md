@@ -13,8 +13,8 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 
 ## START HERE
 `memory/08_handoff_next_session.md` — exact state at the end of the last session, what is waiting on whom, rebuild recipe,
-key numbers, data errors already fixed, artefact map. Work lives on branch `claude/compassionate-rubin-s9gny2` (main = initial
-commit only). Blind rule: nothing outcome-vs-treatment until `pap-v1` is tagged (waiting for the guide's reply).
+key numbers, data errors already fixed, artefact map. All work up to 28 Oct 2026 is merged into `main` (PR #1);
+new work goes on branch `claude/compassionate-rubin-s9gny2` and reaches `main` via a new PR. Blind rule: nothing outcome-vs-treatment until `pap-v1` is tagged (waiting for the guide's reply).
 
 ## Read these before answering anything substantive
 1. `memory/01_project_context.md` — the research design, chapters, hypotheses, data, timeline, decision history.

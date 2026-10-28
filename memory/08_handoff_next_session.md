@@ -6,9 +6,9 @@ every artefact, every rule, and how to rebuild everything.
 ---------------------------------------------------------------------------------------------------------------------
 ## 0. Git / GitHub (the user asked about this)
 - All work is on branch **`claude/compassionate-rubin-s9gny2`** of `deviant7/bsp` (pushed; remote == local at session end).
-- **`main` still has only the "Initial commit"** (a6a8412). GitHub shows `main` by default, so the new files are only visible
-  after switching the branch selector to `claude/compassionate-rubin-s9gny2` (or via a PR/merge). No PR has been created;
-  system rules: create a PR / merge to main ONLY if the user asks. If the user wants the files on main, offer a PR.
+- **PR #1 (https://github.com/deviant7/BSP/pull/1) was opened and merged by the user on 28 Oct 2026** → `main` (merge commit
+  65ef0e3) now contains all work up to 0e78747. The working branch was then restarted from `origin/main`. Later work on the
+  branch needs a new PR to reach `main` (create one only if the user asks).
 - Commit trailers required: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` and
   `Claude-Session: https://claude.ai/code/session_01M6SKm82udXsHf6727aGMNw`. Never put model names in repo files.
 - `data/raw/` (1.2 GB) and `data/processed/basis_panel.csv.gz` (74 MB) are git-ignored → **lost when the container ends**;
