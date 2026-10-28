@@ -72,6 +72,14 @@ Staggered DiD (Callaway–Sant'Anna; Sun–Abraham as check) for entries and, se
 and never-treated cash stocks matched on size, turnover and volatility in the 6 months before. Outcomes O5 (bad-news drift),
 O6 (delay). Prediction: after entry, bad-news drift and delay fall; reverse after exit. *Fails if* no change or opposite signs.
 
+## 5b. Lesson from estimators on simulated data (before any real-data estimation)
+A fixed-threshold 3-regime TAR recovers known thresholds well (true −30/+15 bp → −29.1/+15.2), but on a basis simulated from
+the model (thresholds move with arbitrage inventory) it does not recover the cost band (estimates −10/0 bp vs c₊ = 15 bp).
+Therefore: (i) estimated fixed thresholds are reported as *average* band edges, not as costs; (ii) H3 compares the *change* in
+edges across STT dates (inventory roughly unchanged within ±40 days) rather than their levels; (iii) a threshold model whose
+thresholds depend on lagged OI/MWPL (state-dependent band) is added as the main robustness for H7 and H3
+(`analysis/test_setar_simulated.py`).
+
 ## 6. Further pre-specified tests (secondary; reported, labelled exploratory)
 - **Level effect of bans (Prop. 6):** stacked ban-entry event study (window −20…+20; controls = stock-days with ω ∈ [0.85, 0.95)
   in the same week that do not enter, matched on 5-day ω path and basis level); split by composition of pre-ban activity

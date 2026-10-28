@@ -158,6 +158,13 @@
 - Nifty TRI not available (niftyindices API refused); downloading daily Nifty close + trailing div yield (ind_close_all) for a
   Nov–Mar index-futures check.
 
+- **PAP v1 written** (`plan/pre_analysis_plan_v1.md`; v0 archived). Primary family {H7, H8, H3, H6}; secondary: level effect,
+  H9, RD, hysteresis, H2, H1, H4, H5. Power: 1,789 spells (44 post-reform), 233 entries / 158 eligibility exits, 7,910 F&O
+  announcements (188 in bans). Tag `pap-v1` only after user OK (guide may want to see it).
+- **Band estimator** `analysis/setar.py` (3-regime SETAR, grid search, trims) + `analysis/test_setar_simulated.py`: recovers a
+  known TAR (−30/+15 → −29.1/+15.2) but NOT the cost band on model-simulated basis (inventory-dependent thresholds → −10/0 bp):
+  fixed thresholds = average edges, not costs; PAP §5b adds state-dependent thresholds (lagged OI/MWPL) and edge *changes* for H3.
+
 ## Open threads
 - Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
   fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
