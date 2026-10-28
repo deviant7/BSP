@@ -174,16 +174,15 @@
 - **User asked to remove §7 'Points on which I would value your guidance' from the report** (done; summary line adjusted; the
   removed text is kept in `progress_report_src/removed_guidance_questions.tex`; the user will raise the questions personally).
 
-## Open threads
-- Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
-  fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
-  (one PDF, guide-facing, incl. 3-pp theory).
-- User to review the progress report draft; confirm guide's name spelling (Chaubal vs 'Chawla' typed once).
-- User to review Model C (guide-safe now). Get full texts of Saurav et al. (2026), Gagnon (2018),
-  Brennan–Schwartz (1990) via IITB library and check Model C against them. Estimator-on-simulated-data exercise.
-- Next steps per plan v2 §12: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
-- Guide's response on the revised framework (she has seen only the project doc).
-- Fix project doc (short-selling line, "relaxations", timeline with theory stage).
-- Fix lit-review / notes / reference-index errors (listed in 04) — awaiting user go-ahead.
-- Verify 80% ban-exit rule and historical 30× volume MWPL leg from NSE circulars.
-- Data feasibility: ban list archive depth, combined OI files back to 2015, option settle-price quality, EPS source.
+- **End of session (28 Oct 2026):** user decided to WAIT for the guide's reply before tagging `pap-v1`. Asked to save
+  everything → wrote `memory/08_handoff_next_session.md` (full state, rebuild recipe, numbers, data errors, artefact map).
+  User could not see new files on GitHub: all work is on branch `claude/compassionate-rubin-s9gny2` (19 commits ahead of
+  `main`, which has only the initial commit); explained; no PR created. Removed committed __pycache__ files; ignored them.
+
+## Open threads (current; older lists superseded)
+- Waiting: user sends the progress report; guide's reply (framing, theory depth, TAR/STAR, test plan) → then tag `pap-v1`.
+- Confirm guide's name spelling (Chaubal).
+- Library full texts: Saurav–Srivastava–Agarwalla 2026, Gagnon 2018, Brennan–Schwartz 1990.
+- Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe
+  delay/VR; state-dependent-threshold estimator; density test at 95%.
+- Optional (user go-ahead needed): fix project-document and literature-review errors listed in memory/04.

@@ -11,6 +11,11 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
   The container is ephemeral; only what is committed to this repo survives.
 - The user wants thorough, unbiased, academically rigorous work; read primary sources, not just notes. Flag errors honestly.
 
+## START HERE
+`memory/08_handoff_next_session.md` — exact state at the end of the last session, what is waiting on whom, rebuild recipe,
+key numbers, data errors already fixed, artefact map. Work lives on branch `claude/compassionate-rubin-s9gny2` (main = initial
+commit only). Blind rule: nothing outcome-vs-treatment until `pap-v1` is tagged (waiting for the guide's reply).
+
 ## Read these before answering anything substantive
 1. `memory/01_project_context.md` — the research design, chapters, hypotheses, data, timeline, decision history.
 2. `memory/02_literature_digest.md` — verified facts/numbers from all 21 papers (read from the PDFs).
@@ -19,6 +24,7 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 5. `memory/05_session_log.md` — chronological log of what was done, decided, and what is open.
 6. `memory/06_user_working_style.md` — how the user likes to work.
 7. `memory/07_fact_check.md` — internet verification of every rule/date/citation (28 Oct 2026), with corrections.
+8. `memory/08_handoff_next_session.md` — end-of-session handoff (read first).
 
 ## Current master plan
 - `plan/BSP_Research_Plan_v2.md` — how the project proceeds (supersedes the project doc's §7 methods ordering and §12 timeline;
@@ -30,7 +36,8 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 - `plan/pre_analysis_plan_v1.md` — the test plan (samples, outcomes, treatments, primary H7/H8/H3/H6, secondary tests,
   inference, power, falsifiers). **Blind rule: no outcome may be related to any treatment until it is tagged `pap-v1`.**
 - `data_pipeline/` (+ README) builds everything from NSE archives into `data/processed/` (raw data git-ignored).
-- `BSP_Progress_Report_Oct2026.pdf` + `progress_report_src/progress_report_oct2026.tex` — guide-facing report (not yet sent).
+- `BSP_Progress_Report_Oct2026.pdf` + `progress_report_src/progress_report_oct2026.tex` — guide-facing report (final, not yet sent;
+  guidance-questions section removed at user's request, kept in `progress_report_src/removed_guidance_questions.tex`).
 
 ## File map (repo root)
 - `BSP_Project_Document.docx` / `.pdf` — the detailed study plan (Sep 2026); identical content. The user's master plan.

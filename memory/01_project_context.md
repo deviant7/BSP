@@ -54,3 +54,7 @@ bands, FM, robustness, writing.
 
 ## Current status (28 Oct 2026)
 - See `05_session_log.md` for the latest decisions and open threads.
+
+## Status at end of 28 Oct 2026 session
+Theory done (Model C, guide-safe); data built (ban/MWPL 2010–2026, F&O membership/events, prices, basis, announcements, Nifty);
+progress report final but not sent; PAP v1 complete, NOT tagged (waiting for guide). Full detail: `memory/08_handoff_next_session.md`.
