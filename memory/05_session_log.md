@@ -71,8 +71,23 @@
   `BSP_Model_C_Constrained_Arbitrage_India.pdf` (15 pp, 11 propositions, H1–H9 map with falsifiers). All numerical checks pass
   after correcting the level-effect proposition (first version failed: mean-zero spillover cannot shift the mean).
 
+- **User (28 Oct 2026):** nothing shared with guide since the project doc; next deliverable = ONE progress-report PDF (incl. 3-pp
+  theory version), but only after MORE progress. Guide-facing docs must contain no internal references (rule saved in 06).
+  Asked: "can we just work with data without modelling?" → answered: possible in principle (design-based empirics), but keep the
+  existing model as is (guide asked for it; it already changed the design: MWPL-instrument invalid, settlement-price trap,
+  ambiguous level sign, inventory-dependent thresholds, STT/tax confound) and do no further theory unless data demand it.
+  From now on mostly data.
+- Model document made guide-safe (no Model A/B/C labels, audit, internal paths, reading-status notes).
+- **Data pipeline started** (`data_pipeline/`, README documents sources/formats): NSE archives reachable from container.
+  combineoi (MWPL, OI, FutEq OI post-reform, next-day ban flag) + fo_secban downloaded for 2010–2026 (running);
+  prices (futures rows, options summary, cash EQ/BE/BZ, MTO delivery) for 2015–2026 (running; resumable).
+  Raw data in data/raw (git-ignored). Draft pre-analysis plan written: `plan/pre_analysis_plan_draft.md` (blind; to be tagged pap-v1).
+
 ## Open threads
-- User to review Model C; then 3-pp guide version + note to Prof. Chaubal. Get full texts of Saurav et al. (2026), Gagnon (2018),
+- Finish downloads → build panels → treatment-side descriptives (ban spells, rule checks, MWPL shocks, utilisation density) →
+  fill PAP numbers → build basis series (VWAP-based) + Nifty validation vs Nandan et al. → tag PAP → then progress report
+  (one PDF, guide-facing, incl. 3-pp theory).
+- User to review Model C (guide-safe now). Get full texts of Saurav et al. (2026), Gagnon (2018),
   Brennan–Schwartz (1990) via IITB library and check Model C against them. Estimator-on-simulated-data exercise.
 - Next steps per plan v2 §12: Phase 0 fact checks → corrected model + simulation → send guide model + 1-page note.
 - Guide's response on the revised framework (she has seen only the project doc).

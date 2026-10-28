@@ -70,3 +70,6 @@ Status: **Dropped** (not in current plan) · **Demoted** (kept as optional/robus
   model-free percentile bounds as threshold robustness and positioning vs Shankar et al. (2015/2019) and Saurav et al. (2026) to §5;
   Gagnon (2018) precedent and "three channels opened by F&O inclusion" to §7; FutEq OI already published pre-reform (§6.4);
   Phase 0 to-do list updated.
+- 28 Oct 2026 (data start): pre-sample 2010–2014 MWPL/ban data downloaded for robustness/power (addition, not in v1/v2);
+  primary basis measure defined on daily VWAPs (futures vs cash) instead of settlement/close prices, because NSE uses a theoretical
+  settlement price on no-trade days (close/settlement basis kept as secondary).
