@@ -181,6 +181,17 @@
 
 - User opened and merged PR #1 (branch → main, merge commit 65ef0e3); verified main has all files. Branch restarted from main.
 
+## Session 5 Nov 2026 (new session; context re-gathered)
+- Container persisted: data/raw (1.2 GB) and basis_panel.csv.gz still present; no rebuild needed. Re-read CLAUDE.md, memory 01–08,
+  plan v2, PAP v1, removed-items register, both conversation logs, reference index + notes batches 1–6, the guide-facing report,
+  model C (all propositions), all data-build reports. Re-ran verify_modelC.py (ALL PASS) and test_setar_simulated.py (same
+  results); all processed datasets load (panel 752,037 rows; ban days 11,758; spells 2,184; membership 534,712; events 410;
+  announcements 89,452; basis 1,066,167). No `pap-v1` tag; origin/main unchanged (65ef0e3).
+- Found and fixed one stale number in the guide report: the year table had been generated before the placeholder-symbol fix;
+  2017 'F&O stocks (avg per day)' is 200, not 201. Table + report figures regenerated, report PDF rebuilt (26 pp). All other
+  report numbers verified against current data.
+- Unknown at session start (ask user): was the report sent? has the guide replied? guide's name spelling?
+
 ## Open threads (current; older lists superseded)
 - Waiting: user sends the progress report; guide's reply (framing, theory depth, TAR/STAR, test plan) → then tag `pap-v1`.
 - Confirm guide's name spelling (Chaubal).
