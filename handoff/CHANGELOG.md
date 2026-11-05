@@ -7,3 +7,4 @@
 - 5 Nov 2026: PAP §11 C1-C5 clarifications committed before any test (c6b1701); analysis sample + inference helpers;
   H8, H7, H3 run (results in 04 §4.7, `analysis/output/`); PAP §11.2 exploratory note (March 2020 break). 05 updated with
   PREVCLOSE finding and market-cap plan for H6.
+- 5 Nov 2026: `pap-v1` confirmed on GitHub (annotated tag → 85dac3a), created by the user.

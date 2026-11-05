@@ -5,7 +5,7 @@
 | Component | State | Where |
 |---|---|---|
 | Theory | Complete, verified (ALL PASS) | `BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models_src/modelC/` |
-| Pre-analysis plan | **Frozen**: `pap-v1` at commit 85dac3a (local tag; may not be on GitHub yet) | `plan/pre_analysis_plan_v1.md` |
+| Pre-analysis plan | **Frozen**: `pap-v1` at commit 85dac3a, on GitHub (created by the user, 5 Nov 2026) | `plan/pre_analysis_plan_v1.md` |
 | Master plan | v2 (goals of the project document; order of work) | `plan/BSP_Research_Plan_v2.md` |
 | Data: treatment side | Built, audited | `data/processed/mwpl_oi_panel.csv.gz`, `ban_days`, `ban_spells`, `fno_membership`, `fno_events` |
 | Data: outcome side | Basis built, audited; announcements rebuilt | `basis_panel.csv.gz` (git-ignored), `announcements.csv.gz` |

@@ -1,7 +1,7 @@
 # 14. Open issues, questions and risks
 
 ## 14.1 Waiting on the user
-1. Create the `pap-v1` tag on GitHub (commit 85dac3a); session proxy blocks tag pushes.
+1. (Done 5 Nov 2026) `pap-v1` tag created on GitHub by the user at 85dac3a.
 2. Optionally fetch library papers: Saurav-Srivastava-Agarwalla 2026 (priority), Gagnon 2018, Brennan-Schwartz 1990.
 3. Go-ahead needed before fixing the errors in the project document (short-selling line; 30x leg; "relaxations";
    timeline) and in the literature review.

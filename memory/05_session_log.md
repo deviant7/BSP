@@ -270,7 +270,7 @@
 
 ## Open threads (current; older lists superseded)
 - H8, H7, H3 run (see above). Next: H6 inputs (adjusted returns, market cap via XBRL), §11 H6 entry, run H6, Holm; discuss H7/H8/H3 readings with user.
-- User to create tag pap-v1 on GitHub (Desktop instructions given 5 Nov).
+- Tag pap-v1 now on GitHub (refs/tags/pap-v1 → 85dac3a), created by the user, 5 Nov 2026.
 - Library full texts: Saurav–Srivastava–Agarwalla 2026, Gagnon 2018, Brennan–Schwartz 1990.
 - Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe
   delay/VR; state-dependent-threshold estimator; density test at 95%.
