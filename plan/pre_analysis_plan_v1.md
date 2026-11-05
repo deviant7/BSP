@@ -193,3 +193,36 @@ Jan 2015, excluding any window overlapping a true STT date; the true events' ran
 - 5 Nov 2026, H3 (exploratory calibration): against the 30 pre-specified placebo dates, the average Delta q80 of 2024 and
   2026 is exceeded by 4.6% of placebo pairs; band width (q80 - q20) by 23.4%; q80 relative to the median by 27.4%. The
   rise is mostly a common level shift; stock-clustered SEs ignore cross-sectional correlation (Kolari and Pynnonen 2010).
+
+### 11.3 Clarifications for H6, fixed on 5 Nov 2026 BEFORE any H6 outcome was related to F&O status
+Inputs built first (no outcome-by-treatment output): split/bonus/dividend-adjusted daily returns for all EQ/BE/BZ stocks
+(`data_pipeline/build_returns.py`; NSE's prevclose is not adjusted) and daily market capitalisation from AMFI's half-yearly
+lists (direct from Jul 2017; back-cast with split factors before that; `data_pipeline/build_amfi_mcap.py`, `build_mcap.py`).
+
+**C6. H6.** (a) *Treated units.* Entries: a stock's first F&O entry in the sample (stocks in F&O on 1 Jan 2015 are never
+in the entry design); established stocks only (fno_events note blank). Eligibility exits: a stock's first exit with
+continued cash trading (note blank). Post periods are censored at the next opposite event (exit after an entry, re-entry
+after an exit). (b) *Time unit:* calendar years 2015 to 2025 (2026 incomplete, not used). Cohort g = first calendar year
+fully after the event (event year + 1); the event year itself is a transition year and is excluded for that unit
+(anticipation = 1 year in Callaway-Sant'Anna terms, so the base period is g - 2). (c) *Controls:* entries: not-yet-treated
+and never-treated cash-market stocks (never in F&O during 2015 to 2026); exits: not-yet-exited and never-exited F&O stocks.
+Covariates (Callaway-Sant'Anna outcome-regression estimator) measured in the base year: log average market cap, log
+average daily traded value, standard deviation of daily returns. (d) *Outcome O6, price delay:* Hou-Moskowitz
+D1 = 1 - R2(restricted)/R2(unrestricted) from calendar-week returns in the calendar year, regressing the stock's weekly
+return on the contemporaneous value-weighted cash-universe return (restricted) plus four weekly lags (unrestricted);
+at least 40 valid weeks. (e) *Outcome O5, bad-news drift:* EAR = cumulative return over days -1 to +1 minus that of the
+equal-weighted portfolio of the stock's market-cap decile (deciles formed each month on the previous month-end market cap,
+whole cash universe); bad news = EAR in the bottom tercile of all EARs in the same calendar quarter; BHAR[+2,+64] = buy-
+and-hold return from day +2 to +64 minus the buy-and-hold return of the same decile portfolio (at least 50 valid daily
+returns). Because drift exists only at announcement events, H6-drift is estimated as a stacked difference-in-differences at
+the announcement level (one stack per event cohort year; treated stocks' bad-news events and those of clean controls as in
+(c), three years either side; stack-by-stock and stack-by-quarter fixed effects; SE clustered by stock), which keeps the
+Callaway-Sant'Anna comparison of treated cohorts with not-yet- and never-treated units. (f) *Main estimates:* delay: overall
+ATT (cohort-size-weighted average of post-period ATT(g,t)), with event-time profile; drift: Treated x Post coefficient
+on bad-news BHAR. Inference: cluster (stock) bootstrap, 499 draws, for the Callaway-Sant'Anna aggregates.
+(g) *Predictions:* entry: delay ATT < 0, bad-news BHAR ATT > 0 (drift weaker); exit: delay ATT > 0, bad-news BHAR ATT < 0.
+(h) *Test statistic for the family:* p_H6 = min(1, 4 x min of the four one-sided p-values) (Bonferroni across the four
+components); each component is reported. (i) *Sun-Abraham check:* interaction-weighted event study on the annual delay
+panel with never-treated units as the reference. (j) *Robustness:* drop the batch cohorts (entries in 2024 incl. the
+29 Nov 2024 batch; exits in 2019 incl. the 28 Jun 2019 batch); drop stock-years whose market cap is back-cast; VR(5)
+as an alternative efficiency outcome.

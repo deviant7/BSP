@@ -12,3 +12,5 @@ data/processed/basis_panel.csv.gz
 __pycache__/
 *.pyc
 data/processed/cache/
+data/processed/returns_daily.csv.gz
+data/processed/mcap_daily.csv.gz
