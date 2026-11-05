@@ -6,7 +6,8 @@ restored rows dropped because the symbol already appears that day (old ISIN on a
 combineoi files: 4134, unreadable: 14 [('combineoi_01062012.zip', 'no readable csv member'), ('combineoi_04062012.zip', 'no readable csv member'), ('combineoi_05062012.zip', 'no readable csv member'), ('combineoi_06062012.zip', 'no readable csv member'), ('combineoi_07062012.zip', 'no readable csv member')]
 panel rows: 752037, dates: 4120, symbols: 476, range: 2010-02-01 to 2026-10-27
 secban files: 4152; misdated: [('2014-02-19', '2014-03-19', 'dropped'), ('2014-08-25', '2014-08-26', 'dropped')]
-ban stock-days on panel trading days: 11758
-flag(t) -> ban list(t+1): flagged 11771, listed 11758, both 11753, flag-only 18, list-only 5
-  examples flag-only: [('2012-06-14', 'WELCORP'), ('2014-02-19', 'AUROPHARMA'), ('2014-08-25', 'HDIL'), ('2014-08-25', 'IBREALEST'), ('2014-08-25', 'IRB'), ('2014-08-25', 'UNITECH'), ('2020-03-23', 'ADANIENT'), ('2020-03-23', 'IBULHSGFIN')]
+trading days without a ban list, imputed: ['2014-02-19', '2014-08-25', '2025-05-06'] (7 stock-days: ['AUROPHARMA', 'HDIL', 'IBREALEST', 'IRB', 'UNITECH', 'MANAPPURAM', 'RBLBANK'])
+ban stock-days on panel trading days: 11765
+flag(t) -> ban list(t+1): flagged 11764, listed 11758, both 11753, flag-only 11, list-only 5
+  examples flag-only: [('2012-06-14', 'WELCORP'), ('2020-03-23', 'ADANIENT'), ('2020-03-23', 'IBULHSGFIN'), ('2020-03-23', 'IDEA'), ('2020-03-23', 'JINDALSTEL'), ('2020-03-23', 'JUSTDIAL'), ('2020-03-23', 'NCC'), ('2020-03-23', 'PNB')]
   examples list-only: [('2012-06-14', 'ABAN'), ('2012-06-14', 'COREEDUTEC'), ('2012-06-14', 'JETAIRWAYS'), ('2012-09-10', 'HDIL'), ('2024-01-23', 'IRCTC')]

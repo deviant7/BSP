@@ -1,10 +1,11 @@
 legacy rows whose lot was snapped above the gcd (range check not independent for these): 0.0201
 futures rows 1652524; with trades 1450297; F_vwap inside [low, high] (±0.5%): 0.9977
 stock-futures rows (near+next) 1066167; matched to cash 1.0000
+rate: last published month 2026-09; rows using a carried-forward rate 7225
 dividend events parsed: 16320
 non-dividend corporate events parsed: 1991; stock-futures rows with such an event in the contract life: 0.0091
-near-month usable stock-days (>=5 contracts): 531007
-CLEAN near-month sample (no dividend or other corporate event in contract life): n=499682, median 1.2 bp, p10 -33.0, p90 26.1, share |m|>200bp 0.0065
+near-month usable stock-days (>=5 contracts): 534628
+CLEAN near-month sample (no dividend or other corporate event in contract life): n=503170, median 1.2 bp, p10 -33.0, p90 26.2, share |m|>200bp 0.0065
 basis m_vwap by year (bp):
         count   10%  50%   90%
 date                          
@@ -19,13 +20,13 @@ date
 2023  45688.0 -29.1  1.0  24.9
 2024  45497.0 -28.7 -0.2  24.6
 2025  53607.0 -29.4  1.0  24.4
-2026  38479.0 -33.1  0.5  28.2
+2026  42100.0 -32.6  0.8  28.5
 convergence by calendar days to expiry (bp):
              count  median_bp  median_abs_bp
 tau                                         
-(0, 3]     67217.0        2.0           12.8
-(3, 7]     53903.0        0.7           13.0
-(7, 14]   121772.0        3.2           14.1
-(14, 21]  124538.0        1.5           14.7
-(21, 35]  137842.0        0.9           16.6
+(0, 3]     67430.0        2.0           12.8
+(3, 7]     54542.0        0.7           13.1
+(7, 14]   122837.0        3.3           14.1
+(14, 21]  125603.0        1.5           14.7
+(21, 35]  138268.0        0.9           16.6
 share of near-month rows with theoretical settlement flag: 0.0000

@@ -1,18 +1,19 @@
-filing rows 185273; events (symbol x period end) 89452; symbols 2914
-released after close: 0.634; median days from period end to release: 43
+filing rows 185273; events (symbol x period end) 93129; symbols 2957
+board meetings on results: 65709 (symbol x quarter); also in filings: 62032, of which meeting day = release day: 0.546; added from board meetings: 3677
+released after close (timing known): 0.634; median days from period end to release: 43
 events per year:
 event_day
-2014.0    6189
-2015.0    5975
+2014.0    6190
+2015.0    5977
 2016.0    6178
 2017.0    6411
-2018.0    6421
-2019.0    6345
-2020.0    6510
-2021.0    6730
-2022.0    6917
-2023.0    7515
-2024.0    8078
-2025.0    8698
-2026.0    7307
-events for symbols ever in F&O: 14930; per symbol-year median 4
+2018.0    6706
+2019.0    6682
+2020.0    6821
+2021.0    6997
+2022.0    7403
+2023.0    7722
+2024.0    8221
+2025.0    8770
+2026.0    7377
+events for symbols ever in F&O: 15324; per symbol-year median 4

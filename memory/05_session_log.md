@@ -192,9 +192,38 @@
   report numbers verified against current data.
 - Unknown at session start (ask user): was the report sent? has the guide replied? guide's name spelling?
 
+- **User (5 Nov):** report WAS sent; guide liked it and gave the go-ahead for further work; name spelling confirmed "Chaubal".
+  Asked: are the 3 library papers needed? (answered: not blocking; Saurav et al. first, for positioning only). Asked for a
+  `docs/` folder documenting the FINAL project form (not history), thorough, for non-experts, finalized items only; and an
+  audit of the data collection before moving on.
+- **Data audit (5 Nov), scripts in `analysis/audit/`:** coverage of every raw source vs the trading calendar; duplicates;
+  legacy->UDiFF continuity; combineoi OI vs bhavcopy OI; corporate actions; results; rates; Nifty. Findings:
+  1. secban list missing at NSE for 6 May 2025 (404) and misdated-only for 19 Feb / 25 Aug 2014 -> ban days were missing and
+     one spell was split. FIX: impute (prev-day No-Fresh flag + in ban on t-1 and t+1), `source=imputed` (7 stock-days).
+     Now: 2015-26 spells 1,788 (was 1,789), ban stock-days 9,416 (was 9,414); entry/exit rule checks 99.4%/99.7%;
+     flag->list agreement 11,753/11,764.
+  2. FRED 3M rate ends Sep 2026 -> all Oct 2026 basis rows had r=NaN. FIX: carry last value forward max 2 months,
+     `r_filled` flag (7,225 rows). Clean near-month sample now 503,170 (median 1.2, p10 -33.0, p90 26.2 bp).
+  3. combineoi OI = bhavcopy stock fut+opt OI on 95% of stock-days; mismatches = expiry days (bhavcopy still counts expiring
+     contracts) + Apr 2021 (~2-3% gap all stocks) + small subsets in early 2015, Feb 2016, Feb 2020. combineoi is the file NSE
+     uses for bans -> kept as authoritative; documented.
+  4. Nifty index file: 9 days missing at NSE (2015-16) -> validation series only; documented.
+  5. RESULTS DATES (important): legacy results API misses ~10% of F&O stock-quarters pre-2024 (26% for Jun-2022 quarter),
+     AND its timestamps are often later re-filings: vs board-meeting dates, release = meeting day 55%, +1 day 29%, >=6 days
+     12%; in 2017-18 ~90% are >=2 days late (e.g. HINDUNILVR Jun-2018: meeting 16 Jul, feed says 3 Aug). Spot checks with
+     the corporate-announcements API ("Financial Result Updates") show the true first release on the meeting day, often in
+     market hours. FIX in progress: download board meetings (done, data/raw/boardmeetings, 312 half-month files) and all
+     "Financial Result Updates" announcements 2014-2026 (data/raw/resultupdates, 4-day windows) and rebuild day 0 from the
+     earliest release.
+  - Checks that passed: no duplicate futures/cash rows; UDiFF switch 8 Jul 2024 continuous (181 stocks both sides; UDiFF
+    contracts are in `qty`, handled); empty delivery markers all on holidays; corporate-action counts stable, no caps;
+    expiry weekday switch to Tuesday from 30 Sep 2025 visible; every stock-day has a near contract.
+- **docs/ started:** 01 concepts, 02 question, 03 institutions, 04 theory, 05 hypotheses, 06 sources, 07 construction,
+  08 variables (written while downloads ran). Still to write: README, 09 design, 10 audit, 11 facts, 12 reproducibility,
+  13 references.
+
 ## Open threads (current; older lists superseded)
-- Waiting: user sends the progress report; guide's reply (framing, theory depth, TAR/STAR, test plan) → then tag `pap-v1`.
-- Confirm guide's name spelling (Chaubal).
+- Guide gave go-ahead (5 Nov) -> finish audit fixes -> tag `pap-v1`.
 - Library full texts: Saurav–Srivastava–Agarwalla 2026, Gagnon 2018, Brennan–Schwartz 1990.
 - Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe
   delay/VR; state-dependent-threshold estimator; density test at 95%.
