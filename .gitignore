@@ -11,3 +11,4 @@ data/processed/basis_panel.csv.gz
 # Python bytecode
 __pycache__/
 *.pyc
+data/processed/cache/

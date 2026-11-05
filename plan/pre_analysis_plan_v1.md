@@ -172,3 +172,9 @@ Jan 2015, excluding any window overlapping a true STT date; the true events' ran
 (g) Threshold-model edges: pooled 3-regime threshold model on stock-demeaned m within each window (robustness).
 
 **C5. Family.** Holm at 5% over {p_H7, p_H8, p_H3, p_H6}. H6 details are fixed in a later dated entry before it is run.
+
+### 11.2 Analyses added after seeing results (exploratory; the pre-specified results are always reported first)
+- 5 Nov 2026, H8: the pre-specified identity reading failed (ban-day mean R = 0.42). Diagnostics showed a break in ban-day
+  R between 6 and 24 March 2020 (before: mean 0.86, no day with R <= 0.01; after: mean 0.10, median 0.012), absent on
+  non-ban days, with NSE's change-in-OI field equal to the change in OI levels. Added an exploratory split at 15 Mar 2020.
+  The cause (probably intraday round trips tolerated in bans before then) is not documented in sources found so far.

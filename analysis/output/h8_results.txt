@@ -1,0 +1,32 @@
+H8: trading moves out of futures in a ban (PAP §5, §11 C3)
+
+pre-reform non-expiry F&O stock-days: 456370; ban days 8639
+
+Identity test: R = (Delta OI + volume) / volume, near + next contracts
+  ban days (n=8639, stocks 136): mean 0.4240 [95% CI 0.3404, 0.5196], median 0.3045 [0.0889, 0.7197]
+    quantiles p10/p25/p75/p90: 0.000/0.008/0.849/0.939
+    share of ban days with R <= 0.01: 0.272; R <= 0.05: 0.382
+  comparison non-ban days, omega_(t-1) in [0.80, 0.95) (n=10829): mean 1.0190, median 1.0137
+  all non-ban days: mean 1.0132, median 1.0090
+  pre-set reading (mean < 0.10 and < 1/10 of comparison mean): identity DOES NOT HOLD
+  ban-day R by omega_(t-1) bin: [0.8, 0.85): mean 0.518 (n=1946); [0.85, 0.9): mean 0.398 (n=1957); [0.9, 0.95): mean 0.395 (n=1538); [0.95, 1.0): mean 0.405 (n=1487); [1.0, 1.05): mean 0.399 (n=806); [1.05, 9.0): mean 0.381 (n=905)
+
+Regressions, omega_(t-1) in [0.80, 0.95): n=16270, ban days 5441, stocks 167
+  y = a + b*Ban + stock-by-bin FE + date FE; SE two-way clustered (stock, date)
+  log(1 + futures contracts)       b = -2.0036  se 0.1106  t -18.11  n=16270  (non-ban mean of y 8.5016)
+  log(1 + cash shares traded)      b = +0.0726  se 0.0266  t +2.73  n=16270  (non-ban mean of y 15.7991)
+  delivery share                   b = +0.0410  se 0.0045  t +9.08  n=16270  (non-ban mean of y 0.2599)
+  R                                b = -0.5732  se 0.0436  t -13.16  n=16270  (non-ban mean of y 1.0190)
+
+Family test statistic (§11 C3 f): one-sided p that the Ban coefficient on log futures contracts < 0: p_H8 = 0
+Prediction: futures volume falls, cash volume and delivery share rise, R close to 0 in bans.
+
+Post-1 Oct 2025 (delta-based rule; descriptive only):
+  ban days n=397: mean R 0.4276, median 0.3403; comparison non-ban [0.80,0.95) n=703: mean 1.0460, median 1.0326
+Robustness: excluding imputed ban days: n=8637, mean R 0.4241
+
+EXPLORATORY (added after the pre-specified result was seen): split at 15 Mar 2020
+  ban days before 15 Mar 2020: n=3715, mean R 0.8553, median 0.8710, share R <= 0.01 0.000
+  ban days 15 Mar 2020 to Sep 2025: n=4924, mean R 0.0987, median 0.0115, share R <= 0.01 0.477
+  log futures contracts, before 15 Mar 2020: b = -0.9718 (se 0.0360), n=6990
+  log futures contracts, after 15 Mar 2020: b = -2.7218 (se 0.0476), n=9280
