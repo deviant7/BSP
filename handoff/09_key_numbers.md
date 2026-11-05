@@ -70,3 +70,16 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - Slivka et al. (2011): cost band ~2.47% for JSWSTEEL.
 - SEBI (2024): 93% of individual F&O traders lost money FY22 to FY24; over Rs 1.8 lakh crore.
 - Arbitrage-fund AUM about Rs 71,106 crore (Apr 2023) → Rs 1,98,981 crore (Oct 2024) (press, from AMFI; to confirm).
+
+## Added 5 Nov 2026
+- Returns: 5,331,373 stock-days, 3,723 stocks; factor check 99.6% of 769 ex-dates; 424 inferred missing CAs; 448 jumps.
+- AMFI: 18 half-years, ~3,400 (2017H2) to ~5,370 companies; NSE coverage 89–97% by count, 95–99.8% by value.
+- Market cap: 94.7% of stock-days; back-cast 3-year test median error 0.3%, 82% within 10%.
+- Delay panel: 17,715 stock-years (price >= Rs 5), median D1 0.243; by size quintile 0.364 → 0.189.
+- Events with EAR 75,233, BHAR 72,972; winsorised mean BHAR bad −2.7%, good +1.5%.
+- H6: entry delay ATT −0.109 (0.023); SA −0.063; entry drift −0.040 (0.018); exit delay +0.053 (0.040); exit drift +0.014.
+- Holm: H8 7.4e-41, H3 5.5e-24, H6 1.0e-5, H7 1.
+- H8 ban-day R by enforcement regime: median 0.871 / 0.011 / 0.193 / 0.357.
+- H7 diagnostics: liquid days δ_up −0.154, δ_lo +0.130; EOD era δ_up +0.016, δ_lo +0.126; intraday era −0.201 / −0.120;
+  first 4 days of spell δ_up −0.163, later −0.008.
+- H3 placebo pairs: d80 4.6%, width 23.4%, q80−median 27.4%.

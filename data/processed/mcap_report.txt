@@ -1,0 +1,19 @@
+AMFI half-year x stock matches: 33759 (by ISIN 33751, by symbol 8)
+back-cast test (share count taken from 3 years later): n=18637, median |log error| 0.003, p75 0.051, p90 0.202, share within 10% 0.818
+  (from the next half-year: median |log error| 0.001, within 10% 0.943)
+stock-days with a market cap: 0.947; by source: {'amfi': 0.787, 'backcast': 0.172, 'forward': 0.04, 'interpolated': 0.001}
+by year:
+      stocks  share_with_mcap
+date                         
+2015  1661.0            0.901
+2016  1681.0            0.936
+2017  1720.0            0.971
+2018  1736.0            0.976
+2019  1768.0            0.974
+2020  1801.0            0.972
+2021  1943.0            0.970
+2022  2040.0            0.961
+2023  2163.0            0.949
+2024  2266.0            0.947
+2025  2514.0            0.930
+2026  2925.0            0.891

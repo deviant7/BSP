@@ -19,7 +19,8 @@ files that make up the project, the software needed and the exact sequence of co
 
 ## 12.2 Software
 
-- Python 3 with `numpy`, `pandas`, `matplotlib`, `openpyxl` (`pip install numpy pandas matplotlib openpyxl`).
+- Python 3 with `numpy`, `pandas`, `scipy`, `matplotlib`, `openpyxl`, `pyfixest` (`pip install numpy pandas scipy matplotlib openpyxl pyfixest`).
+- `pdftotext` (poppler) for the AMFI lists.
 - `curl` (the FRED download falls back to it).
 - LaTeX for the PDFs: `texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern`.
 - Network access to `nsearchives.nseindia.com`, `www.nseindia.com` and `fred.stlouisfed.org`.
@@ -45,10 +46,23 @@ python3 -I data_pipeline/describe_bans.py data/processed reports/figs
 python3 -I data_pipeline/build_fno_events.py data/raw data/processed
 python3 -I data_pipeline/build_announcements.py data/raw data/processed
 python3 -I data_pipeline/build_basis.py data/raw data/processed
+python3 -I data_pipeline/build_returns.py data/raw data/processed
+python3 -I data_pipeline/build_amfi_mcap.py data/raw data/processed
+python3 -I data_pipeline/build_mcap.py data/processed
 python3 -I data_pipeline/report_figs.py data/processed reports/figs
 python3 -I data_pipeline/report_tables.py data/processed reports/tables
 
-# 3. checks
+# 3. tests (frozen plan) and their checks
+python3 -I analysis/test_inference.py
+python3 -I analysis/samples.py
+python3 -I analysis/h8_trading.py
+python3 -I analysis/h7_onesided.py
+python3 -I analysis/h7_diagnostics.py
+python3 -I analysis/h3_costs.py
+python3 -I analysis/h6_outcomes.py
+python3 -I analysis/h6_fno.py
+
+# 4. other checks
 python3 -I analysis/test_setar_simulated.py
 python3 -I analysis/audit/audit_coverage.py data/raw
 python3 -I analysis/audit/audit_prices.py data/raw
@@ -71,6 +85,9 @@ Approximate run times on one machine: the open-interest and ban files about 40 m
 | `announcements.csv.gz` | one row per stock and quarter | `announcements_report.txt` |
 | `basis_panel.csv.gz` | 1,066,167 stock-day-contract rows | `basis_report.txt` |
 | `nifty_futures.csv.gz`, `nifty50_daily.csv` | validation series | `basis_report.txt` |
+| `returns_daily.csv.gz` (not committed) | 5,331,373 stock-days, 3,723 stocks | `returns_report.txt` |
+| `amfi_mcap.csv.gz` | 18 half-years, about 3,400 to 5,400 companies each | `amfi_mcap_report.txt` |
+| `mcap_daily.csv.gz` (not committed) | daily market cap, 94.7% of cash stock-days | `mcap_report.txt` |
 
 ## 12.5 Things that change if the data are rebuilt later
 

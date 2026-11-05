@@ -38,7 +38,7 @@ Create `analysis/samples.py` (build once, reuse everywhere) and write a counts r
    `pyfixest` is installable from PyPI in the container (checked 5 Nov 2026: pyfixest 0.60.0 downloads); cross-check the hand-written code against
    it on one regression. Write unit tests on simulated data with known coefficients.
 
-## Step 2. Primary tests (order: H8, H7, H3, H6) — H8, H7, H3 DONE 5 Nov 2026 (results: 04 §4.7); H6 next
+## Step 2. Primary tests (order: H8, H7, H3, H6) — ALL DONE 5 Nov 2026 incl. Holm (results: 04 §4.7, §4.9; docs/14). Kept below for reference.
 
 H8 first: it is the mechanical check that bans bind and that the ban timing is right; if it fails, the ban results need
 re-thinking before anything else.
@@ -101,7 +101,9 @@ Holm across the four primary tests at 5% (one p-value per hypothesis; decide in 
 the hypothesis's p-value where several exist, e.g. delta_upper - delta_lower for H7, the mean (Delta OI + volume) / volume
 or the futures-volume coefficient for H8).
 
-## Step 3. Secondary tests (labelled exploratory)
+## Step 3. Secondary tests (labelled exploratory) — NEXT
+Before each: write any open implementation details into PAP §11 with the date, commit, then run. Inputs ready: basis sample
+(`analysis/samples.py`), returns, market caps, event outcomes (`data/processed/cache/`). H4 still needs AMFI arbitrage-fund AUM.
 
 Level effect (stacked ban-entry event study with near-miss controls, split by pre-ban Delta OI / volume); H9 (basis
 quantiles by utilisation bins; 1 Oct 2025 intensity DiD); RD at 95% after the Cattaneo-Jansson-Ma density test (density

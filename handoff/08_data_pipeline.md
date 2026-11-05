@@ -173,3 +173,17 @@ Reports: `build_report.txt`, `descriptives.txt`, `fno_events_report.txt`, `annou
 - Useful endpoints: `corporates-corporateActions`, `corporates-financial-results`, `integrated-filing-results`,
   `corporate-board-meetings`, `corporate-announcements` (with `&subject=Financial%20Result%20Updates`).
 - Keep request windows small (half-month or four-day) and check for suspicious round counts.
+
+## 8.6 Added 5 Nov 2026: returns, market caps, analysis caches
+| Script | Writes | Notes |
+|---|---|---|
+| `data_pipeline/build_returns.py RAW OUT` | `returns_daily.csv.gz` (git-ignored), `returns_report.txt` | columns date, symbol, isin, series, close, prevclose, qty, value_rs, k, k_used, div, ret, flag (other_ca / first_day / factor_mismatch / likely_missing_ca / jump) |
+| `data_pipeline/build_amfi_mcap.py RAW OUT` | `raw/amfi_mcap/*.pdf`, `amfi_mcap.csv.gz`, report | 18 half-years; URLs hard-coded (names differ; 2026H1 on portal.amfiindia.com/spages/) |
+| `data_pipeline/build_mcap.py OUT` | `mcap_daily.csv.gz` (git-ignored), `mcap_report.txt` | src amfi / backcast / forward / interpolated |
+| `analysis/samples.py` | `data/processed/cache/basis_sample.pkl`, `futures_activity.pkl` (git-ignored) | shared samples per PAP §11 C1 |
+| `analysis/h6_outcomes.py` | cache `delay_panel.pkl`, `event_outcomes.pkl` | D1 delay, VR5, covariates; EAR, BHAR, bad/good |
+More quirks: 45. NSE PREVCLOSE unadjusted for corporate actions. 46. Split and bonus on the same day are separate CA records
+(multiply factors). 47. CA feed misses some splits/bonuses (424 inferred). 48. ETFs trade in EQ series; '-RE' rights
+entitlements in BE. 49. Sub-rupee stocks tick 0.05 → 0.10 (100% "returns"); price filter Rs 5 for event outcomes.
+50. AMFI PDFs: wrapped rows; ISIN glued to names; Jan–Jun 2018 parses 96%. 51. Results XBRL links blank before 2018; NSE
+shareholding API only from 2021. 52. pdftotext needed.

@@ -22,6 +22,7 @@ Archive URLs below start with `https://nsearchives.nseindia.com/`. Web endpoints
 | 8 | Board meetings | Date and purpose of board meetings (used to fill gaps in source 7) | Event list | 2014 to 2026 | `download_results_filings.py ... boardmeetings` |
 | 9 | All-index closing file | Nifty 50 close, P/E, P/B and trailing dividend yield | Daily | 2015 to 27 Oct 2026 | `download_index_close.py` |
 | 10 | Interest rates (FRED, OECD MEI) | India 3-month interbank rate (main), call money rate | Monthly | 2011 to Sep 2026 | `download_rates_corpactions.py` |
+| 11 | AMFI half-yearly average market capitalisation lists | Six-month average market cap of every listed company (ISIN, BSE/NSE symbols), large/mid/small-cap category | Half-yearly | Jul-Dec 2017 to Jan-Jun 2026 | `build_amfi_mcap.py` |
 
 ## 6.2 Details by source
 
@@ -76,6 +77,12 @@ half-month windows. Used to fill quarters missing from sources 7 and 7b and to d
 ### (9) All-index closing file: `content/indices/ind_close_all_DDMMYYYY.csv`
 One row per index; the Nifty 50 row is kept (close, P/E, P/B, dividend yield). Used only to validate the cost-of-carry
 inputs with Nifty futures.
+
+### (11) AMFI market-cap lists: `amfiindia.com/Themes/Theme1/downloads/...pdf` (file names differ by period; listed in the script)
+PDF tables published twice a year by the Association of Mutual Funds in India for SEBI's large/mid/small-cap
+categorisation: one row per listed company with ISIN, BSE, NSE and MSEI symbols, six-month average total market cap on
+each exchange and the average of all exchanges (Rs crore). Read with `pdftotext -layout`. Used for market capitalisation
+(size matching, size deciles, value weights).
 
 ### (10) Interest rates: FRED series `INDIR3TIB01STM` (main) and `IRSTCI01INM156N`
 Monthly averages in percent per year, published with a lag of about one month.

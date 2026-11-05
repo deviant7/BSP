@@ -67,6 +67,10 @@ plain language: how the project guards against fitting the data, what is estimat
 - Outcomes: drift after bad news (O5) and price delay (O6).
 - **Prediction:** after entry, bad-news drift and delay fall; after exit they rise. **Fails if** no change or opposite
   signs.
+- Implementation (fixed before running, plan §11.3): calendar-year panel, cohort = first year fully after the event;
+  delay by Callaway-Sant'Anna with base-year covariates; drift (which exists only at announcement events) by a stacked
+  difference-in-differences with clean controls; family p-value = Bonferroni across the four components (entry/exit x
+  delay/drift).
 
 ## 9.4 Secondary tests (labelled exploratory)
 

@@ -11,8 +11,8 @@
 ## 14.2 Open technical questions
 | Issue | Why it matters | Plan |
 |---|---|---|
-| How NSE's `PREVCLOSE` handles splits/bonuses | Returns for H6, H5, EAR, BHAR | Check known splits before building returns |
-| Market capitalisation for the cash universe | Size matching for H6 controls; size-matched BHAR | Find a free source (NSE market-cap files, XBRL shares outstanding, historic NPH files for F&O stocks) |
+| NSE `PREVCLOSE` not adjusted (resolved) | Returns | Adjusted in build_returns.py (99.6% factor check) |
+| Market capitalisation before Jul 2017 | Back-cast from later AMFI share counts (82% within 10% at 3 years) | Optional: verify with CMIE Prowess (user has college access) |
 | April 2021 combineoi vs bhavcopy OI gap (2 to 3%) | Utilisation precision that month | combineoi is NSE's own ban input; documented; could compare with NSE's "Combined Delta Equivalent OI" report |
 | Dividend over-correction | Dividend contracts are excluded; announcement-aware adjustment would bring them back | Optional robustness using announcement dates from corporate actions |
 | BSE-only listings lack results | 86 stock-quarters (MCX, Abbott, Nestle pre-2023) | Optional: BSE API |
@@ -39,3 +39,11 @@
 - Do not delete superseded files or plans.
 - Do not put internal labels or history into guide-facing documents or `docs/`.
 - Do not push to any branch other than the working branch; do not open a PR unasked.
+
+## 14.5 Interpretation questions raised by the primary results (5 Nov 2026)
+- H7 rejected with the opposite sign; post-hoc reading (blocked new demand at ban start) is not tested; the level-effect
+  secondary test (split by pre-ban order-flow composition) speaks to it and should be run next.
+- H6 delay effect could be liquidity/attention or growth selection rather than short-sale access; drift contradicts the
+  short-sale channel. Possible exploratory checks (log in §11.2 first): placebo cohorts of stocks that met size criteria
+  but were not added; split by pre-entry disagreement (turnover/volatility).
+- H3: report pre-specified p with the placebo calibration side by side.

@@ -286,8 +286,27 @@
 - docs/14_results.md created (H8, H7, H3 with exploratory parts marked); docs/03 gained the enforcement-regime row and the
   2020 penalty; docs/13 refs added (SEBI PR 18/2020, 59/2020, ICCL notice, Kolari–Pynnönen). PAP §11.2 extended.
 
+- **H6 inputs built (5 Nov):** (1) `data_pipeline/build_returns.py`: split/bonus/dividend-adjusted returns, 5.33 m
+  stock-days, 3,723 stocks; factors match price jumps 99.6% (after MULTIPLYING same-day split+bonus records — first version
+  took the max, 4.2% mismatches); listing days, rights/demerger/scheme ex-dates → NaN; 424 likely-missing CAs (price ratio at
+  a standard split ratio) → NaN + inferred factor; ETFs and -RE symbols dropped; 448 jumps flagged. (2) AMFI half-yearly
+  average market caps (18 PDFs, Jul–Dec 2017 → Jan–Jun 2026; `build_amfi_mcap.py`; parser handles wrapped rows and ISINs
+  glued to names); matched 89–97% of NSE stocks by count, 95–99.8% by value; free-float check median 0.48, 99.5% plausible.
+  (3) `build_mcap.py`: daily mcap = split-adjusted price × half-year share count; back-cast before Jul 2017 (3-year
+  back-cast test: 82% within 10%); 94.7% of stock-days; 99.4–99.6% of event stocks. XBRL results only from 2018 (pre-2018
+  links blank) and NSE shareholding API only from 2021 → not used. Prowess optional (verify pre-2018 back-cast).
+- **PAP §11.3 C6 (a)–(k)** fixed and committed BEFORE estimation (dbdfcde, e9ba556): calendar-year CS design, anticipation
+  1 year, covariates, delay D1, EAR/BHAR vs size-decile EW, bad = bottom EAR tercile per quarter, stacked DiD for drift,
+  Bonferroni p_H6, price ≥ Rs 5 filter (penny tick artefacts: BHAR up to 8,190), winsorising.
+- **H6 results (analysis/output/h6_results.txt):** entry delay ATT −0.109 (boot se 0.023, p 1.3e-6; SA −0.063 (0.019);
+  leads −3/−4 ≈ 0; robust); entry bad-news drift −0.040 (0.018) = STRONGER drift (opposite); exit delay +0.053 (p 0.09);
+  exit drift +0.014 (opposite, n.s.). p_H6 = 5.2e-6. Caveat: F&O entry selects on growth.
+- **Holm (analysis/output/primary_family.txt):** H8 7.4e-41, H3 5.5e-24, H6 1.0e-5 rejected; H7 1 not rejected.
+- docs updated: 06 (AMFI source), 07 (7.10 returns, 7.11 mcap, 7.12 H6 outcomes), 09 (H6 implementation), 10 (10.7
+  returns/mcap checks), 12 (rebuild + tests), 14 (H6, Holm).
+
 ## Open threads (current; older lists superseded)
-- H8, H7, H3 run (see above). Next: H6 inputs (adjusted returns, market cap via XBRL), §11 H6 entry, run H6, Holm; discuss H7/H8/H3 readings with user.
+- All four primary tests run + Holm (5 Nov). Next: secondary tests (level effect, H9, density test + RD, hysteresis, H2, H1, H4 needs AMFI arbitrage AUM, H5); optional Prowess check of pre-2018 market caps.
 - Tag pap-v1 now on GitHub (refs/tags/pap-v1 → 85dac3a), created by the user, 5 Nov 2026.
 - Library full texts: Saurav–Srivastava–Agarwalla 2026, Gagnon 2018, Brennan–Schwartz 1990.
 - Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe

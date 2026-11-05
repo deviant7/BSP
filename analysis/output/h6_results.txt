@@ -1,0 +1,25 @@
+H6: F&O entry and eligibility exit (PAP §5 H6, §11.3 C6). Delay = Hou-Moskowitz D1 (calendar year);
+drift = BHAR[+2,+64] after bad-news announcements (bottom EAR tercile in the quarter), winsorised.
+
+ENTRIES (Callaway-Sant'Anna, outcome regression on base-year covariates; controls never- and not-yet-treated)
+  cohorts used: [np.int64(2017), np.int64(2018), np.int64(2021), np.int64(2022), np.int64(2025)]; treated stock-years in post cells: 413
+  delay ATT (post) = -0.1086 (bootstrap se 0.0231); prediction < 0; one-sided p = 1.31e-06; pre-period average -0.0207
+  event-time profile (e: ATT, treated n): -10: -0.058 (15); -9: -0.034 (15); -8: -0.156 (19); -7: -0.036 (54); -6: -0.057 (60); -5: -0.018 (65); -4: +0.013 (74); -3: +0.009 (123); 0: -0.090 (131); 1: -0.218 (79); 2: -0.097 (71); 3: -0.093 (49); 4: -0.065 (27); 5: -0.079 (20); 6: -0.014 (19); 7: -0.033 (13); 8: -0.099 (4)
+  Sun-Abraham check (never-treated reference): -0.0628 (se 0.0193)
+  bad-news drift (stacked DiD): Treated x Post = -0.0397 (se 0.0176); prediction > 0; one-sided p = 0.988; treated bad-news events 788, stocks in sample 421
+    robustness unwinsorised: -0.0429 (se 0.0187)
+
+ELIGIBILITY EXITS (controls: stocks in F&O in the base year and in year t that have not exited by t)
+  cohorts used: [np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2023), np.int64(2024)]; treated stock-years in post cells: 335
+  delay ATT (post) = +0.0531 (bootstrap se 0.0399); prediction > 0; one-sided p = 0.0913; pre-period average +0.0008
+  event-time profile: -9: +0.066 (7); -8: -0.030 (11); -7: +0.105 (11); -6: +0.022 (21); -5: -0.019 (73); -4: -0.012 (83); -3: +0.010 (89); 0: +0.034 (83); 1: +0.128 (67); 2: +0.021 (58); 3: +0.053 (52); 4: +0.027 (39); 5: -0.006 (30); 7: +0.293 (3); 8: +0.236 (3)
+  bad-news drift (stacked DiD): Treated x Post = +0.0144 (se 0.0199); prediction < 0; one-sided p = 0.767; treated bad-news events 634, stocks in sample 204
+
+Robustness (C6 j):
+  entries without the 2024 event year (29 Nov 2024 batch): delay ATT -0.1201
+  entries with base year >= 2018 (no back-cast market caps): delay ATT -0.0992
+  entries, VR(5) as outcome: ATT +0.0226 (efficiency: closer to 1)
+  exits without the 2019 event year (28 Jun 2019 batch): delay ATT +0.0711
+
+Component one-sided p-values: entry_delay 1.31e-06, entry_drift 0.988, exit_delay 0.0913, exit_drift 0.767
+Family test statistic (C6 h): p_H6 = min(1, 4 x min p) = 5.25e-06

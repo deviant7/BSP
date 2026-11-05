@@ -30,7 +30,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | `data_pipeline/` | 12 scripts + README (see 08) |
 | `data/processed/` | Processed data and build reports (see 08 §8.2); `basis_panel.csv.gz` present only in a container that built it |
 | `data/raw/` | Raw downloads (not tracked) |
-| `analysis/` | `setar.py` (3-regime SETAR), `test_setar_simulated.py`, `audit/` (3 audit scripts) |
+| `analysis/` | `setar.py`, `test_setar_simulated.py`, `audit/`; `samples.py`, `inference.py`, `test_inference.py`; tests `h8_trading.py`, `h7_onesided.py`, `h7_diagnostics.py` (exploratory), `h3_costs.py`, `h6_outcomes.py`, `h6_fno.py`; `output/` result files |
 | `models_src/` | LaTeX of Models A and B and their guide versions (superseded); `modelC/` (tex, compiled PDF copy, `verify_modelC.py`, `verify_output.txt`, `figs/fig_band.pdf`, `fig_path.pdf`, `fig_hist.pdf`) |
 | `progress_report_src/` | `progress_report_oct2026.tex` (the sent report; includes `../reports/tables/ban_by_year.tex` and figures; macros like `\basisN` hold basis numbers), `removed_guidance_questions.tex`, `progress_report.tex` (Sep 28 note) |
 | `litreview_src/` | LaTeX of the literature review (main + 6 parts + references) |

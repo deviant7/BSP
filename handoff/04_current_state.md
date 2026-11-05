@@ -9,9 +9,10 @@
 | Master plan | v2 (goals of the project document; order of work) | `plan/BSP_Research_Plan_v2.md` |
 | Data: treatment side | Built, audited | `data/processed/mwpl_oi_panel.csv.gz`, `ban_days`, `ban_spells`, `fno_membership`, `fno_events` |
 | Data: outcome side | Basis built, audited; announcements rebuilt | `basis_panel.csv.gz` (git-ignored), `announcements.csv.gz` |
-| Data: not yet collected | AMFI arbitrage-fund AUM; XBRL EPS; SLB; index dividends | see 05 |
+| Data: added 5 Nov | adjusted daily returns; AMFI half-yearly market caps; daily market caps (back-cast before Jul 2017) | `data_pipeline/build_returns.py`, `build_amfi_mcap.py`, `build_mcap.py` |
+| Data: not yet collected | AMFI arbitrage-fund AUM (H4); XBRL EPS (SUE, secondary); SLB (H1); index dividends | see 05 |
 | Estimators | 3-regime SETAR (`analysis/setar.py`), tested on simulated data | `analysis/` |
-| Main tests | H8, H7, H3 **run** (5 Nov 2026); H6 pending (inputs) | `analysis/output/h*_results.txt`; summary in §4.7 below |
+| Main tests | **All four primary tests run + Holm** (5 Nov 2026) | `analysis/output/`, `docs/14_results.md`; summary §4.7 and §4.9 |
 | Final-form docs | Complete for the current state; results page to be added | `docs/` |
 | Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
@@ -92,3 +93,14 @@ placebo, so reporting it is allowed).
    = blocked new demand (P5) dominates at ban start.
 3. **H3:** placebo-calibrated evidence weak (docs/14 §14.4): mostly a common level shift.
 Full results page for outside readers: `docs/14_results.md`.
+
+## 4.9 H6 and the primary family (5 Nov 2026)
+| H6 component | Prediction | Estimate (se) | One-sided p |
+|---|---|---|---|
+| entry: price delay (CS) | < 0 | -0.109 (0.023); Sun-Abraham -0.063 (0.019) | 1.3e-6 |
+| entry: bad-news BHAR (stacked) | > 0 | -0.040 (0.018) stronger drift | 0.99 |
+| exit: price delay | > 0 | +0.053 (0.040) | 0.091 |
+| exit: bad-news BHAR | < 0 | +0.014 (0.020) | 0.77 |
+p_H6 = 5.2e-6 (Bonferroni of components). Holm: H8 7.4e-41, H3 5.5e-24, H6 1.0e-5 rejected; H7 not.
+Interpretation notes: delay supports short-sale-access (or a liquidity/attention channel: F&O entry selects on growth);
+drift contradicts. H3 strength overstated by stock-only clustering.

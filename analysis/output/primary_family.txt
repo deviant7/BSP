@@ -1,0 +1,9 @@
+Primary family {H7, H8, H3, H6}: Holm correction at 5% (PAP §7). p-values are the pre-specified family statistics
+(H7 analysis/output/h7_results.txt; H8 h8_results.txt, t = -18.11 with 167 stock clusters; H3 h3_results.txt; H6 above).
+hypothesis            p       p_holm  reject_5pct
+        H8 1.859972e-41 7.439886e-41         True
+        H3 1.840000e-24 5.520000e-24         True
+        H6 5.248748e-06 1.049750e-05         True
+        H7 1.000000e+00 1.000000e+00        False
+
+Note: H3's pre-specified p ignores cross-sectional correlation; its placebo-calibrated p is about 0.05 (exploratory).

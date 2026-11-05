@@ -170,7 +170,55 @@ Rules:
 cost-of-carry inputs against the index's published dividend yield; `nifty50_daily.csv` keeps the index close and
 dividend yield.
 
-## 7.10 Rules for the analysis samples
+## 7.10 Daily returns adjusted for corporate actions (`build_returns.py`)
+
+NSE's previous-close field is **not** adjusted for splits or bonuses (Tata Steel's 1:10 split on 28 July 2022 shows a
+previous close of Rs 959.4 and a close of Rs 100.35). Rules:
+
+1. One row per stock and day (series EQ, else BE, else BZ). Rights-entitlement symbols ("-RE") and exchange-traded
+   funds (symbols containing ETF or ending in BEES) are dropped.
+2. Share-count factor k on an ex-date: a split from face value a to b gives k = a/b; a bonus of x new shares for every
+   y held gives k = (x + y)/y; a split and a bonus on the same day multiply (NSE lists them as separate records).
+   Bonus debentures and preference shares are not bonuses of shares.
+3. Return = (close x k + dividend) / previous close - 1 on an ex-date, close / previous close - 1 otherwise.
+4. Every factor is checked against the price jump on the ex-date: 99.6% agree within 25%.
+5. Ex-dates of rights issues, demergers and schemes of arrangement: return set to missing (their price effect needs
+   issue prices or values that the announcement text does not give reliably).
+6. The first trading day of a symbol after 1 Jan 2015 (new listing, relisting, demerged entity): return missing (the
+   previous close is a base price).
+7. A fall whose price ratio is within 3% of a standard split or bonus ratio (1.25, 4/3, 1.5, 2, 2.5, 3, 4, 5, 10, 20)
+   with no corporate action on record is treated as a corporate action missing from the feed: return missing, and the
+   ratio is used as the share-count factor for market capitalisation (424 cases).
+8. Other moves larger than 50% are kept and flagged `jump` (448 cases, mostly sub-rupee stocks and relistings).
+
+## 7.11 Daily market capitalisation (`build_amfi_mcap.py`, `build_mcap.py`)
+
+1. The 18 AMFI half-yearly lists are parsed: a record starts at its serial number and may wrap onto the next line; the
+   ISIN is found by its structure (it is sometimes printed glued to the company name); the last number on the row is the
+   average market cap across exchanges.
+2. An adjusted price A_t = close_t x K_t is formed, where K_t is the cumulative product of share-count factors (7.10), so
+   that A_t is comparable across splits and bonuses.
+3. For each half-year h, the share count in adjusted units is S_h = AMFI average market cap_h / mean of A_t over h; AMFI
+   rows are matched to stocks by ISIN within the half-year, else by the NSE symbol printed in the row.
+4. Market cap on day t = A_t x S_h(t). Before a stock's first AMFI half-year (in particular all of January 2015 to June
+   2017) the first S_h is used ("back-cast"); after its last, the last S_h. This ignores new issues and buybacks; tested
+   inside the AMFI window, a share count taken from three years later is within 10% for 82% of stock-halves.
+
+## 7.12 Outcomes for the F&O entry and exit tests (`analysis/h6_outcomes.py`)
+
+- **Price delay**: calendar-week returns (at least 3 valid days in the week); value-weighted market return of the cash
+  universe (weights = previous day's market cap); per stock and calendar year (at least 40 weeks), D1 = 1 - R2 of the
+  regression on the contemporaneous market return / R2 with four weekly lags added. Stock-years with an average price
+  below Rs 5 are excluded.
+- **Size deciles**: each month, on the previous month-end market cap, over the whole cash universe; equal-weighted daily
+  decile returns form the benchmark.
+- **EAR** = cumulative return over days -1 to +1 around the results day 0 minus that of the stock's size-decile portfolio;
+  **BHAR** = buy-and-hold return over days +2 to +64 minus that of the decile portfolio (at least 50 valid days);
+  **bad news** = bottom tercile of EAR among all results in the same calendar quarter. Events with a day-0 price below
+  Rs 5 are excluded (tick-size artefacts); duplicate (stock, day) events counted once; EAR and BHAR winsorised at 1% and
+  99% within each year for the main estimates.
+
+## 7.13 Rules for the analysis samples
 
 These are applied when the tests are run, not when the panels are built; they are fixed in the pre-analysis plan:
 

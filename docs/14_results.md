@@ -4,8 +4,8 @@ This page reports the tests of the frozen plan (`plan/pre_analysis_plan_v1.md`, 
 run. For each test the **pre-specified result comes first**. Analyses added after a result was seen are marked
 **exploratory** and are listed in the plan's deviations log (§11.2). Output files: `analysis/output/`. Code: `analysis/`.
 
-Status: three of the four primary tests are complete (H8, H7, H3). H6 (F&O entry and exit) and the secondary tests are
-still to be run, so the multiple-testing correction over the primary family is not yet computed.
+Status: all four primary tests are complete (H8, H7, H3, H6) and corrected for multiple testing (14.6). The secondary
+tests are still to be run.
 
 ## 14.1 Common set-up
 
@@ -109,7 +109,45 @@ shift of the whole distribution rather than of its upper edge, and the shifts ar
 errors clustered only by stock ignore cross-sectional correlation, which over-rejects when all observations share the same
 event date (Kolari and Pynnonen 2010). The evidence that costs set the edge is therefore weak.
 
-## 14.5 To come
+## 14.5 H6: short-sale access (F&O entry and eligibility exit)
 
-H6 (F&O entry and exit; needs returns adjusted for splits and bonuses and market capitalisation), the Holm correction over
-{H7, H8, H3, H6}, and the secondary tests (level effect, H9, RD, hysteresis, H2, H1, H4, H5).
+**Pre-specified test** (`analysis/h6_fno.py`, output `h6_results.txt`; outcomes `analysis/h6_outcomes.py`; details in the
+plan's §11.3). Units: stocks by calendar year, 2015 to 2025. A stock's cohort is the first calendar year fully after its
+event; the event year itself is a transition year. Price delay: Callaway-Sant'Anna with base-year covariates (log market
+cap, log traded value, volatility), controls never-treated and not-yet-treated, stock-cluster bootstrap (499 draws).
+Bad-news drift: stacked difference-in-differences at the announcement level. Entries in 2015 have no pre-year in the data
+and cannot enter the delay design; cohorts used for entries: 2017, 2018, 2021, 2022, 2025.
+
+| Component | Prediction | Estimate | Standard error | One-sided p |
+|---|---|---|---|---|
+| Entry: price delay | < 0 | **-0.109** (median delay 0.24) | 0.023 | 1.3e-6 |
+| Entry: BHAR after bad news | > 0 (weaker drift) | **-0.040** (stronger drift) | 0.018 | 0.99 |
+| Exit: price delay | > 0 | +0.053 | 0.040 | 0.091 |
+| Exit: BHAR after bad news | < 0 | +0.014 | 0.020 | 0.77 |
+
+Family statistic (Bonferroni across the four components): p_H6 = 5.2e-6. **On the pre-specified statistic H6 is
+supported, through price delay: prices of stocks that enter the F&O segment respond much faster to market-wide news,
+and prices of stocks that leave respond somewhat more slowly. The drift components go the other way:** after entry the
+drift that follows bad news is stronger, not weaker, and exits do not strengthen it.
+
+Checks: Sun-Abraham estimate for entries -0.063 (0.019); leads three and four years before entry close to zero (+0.009,
++0.013); without the 2024 batch -0.120; with cohorts whose base year is from 2018 (no back-cast market caps) -0.099; the
+variance ratio moves toward 1 after entry (+0.023). Exits without the 2019 batch: +0.071.
+
+Caveat: entry into the F&O segment requires a stock to have grown in size and liquidity, which by itself lowers price
+delay. The covariates are measured two years before the event, and the leads do not show a trend over the last years
+before entry, but selection on growth cannot be ruled out.
+
+## 14.6 The primary family (Holm correction, 5%)
+
+| Hypothesis | Pre-specified p | Holm-adjusted p | Rejected at 5% |
+|---|---|---|---|
+| H8 (trading moves out of futures) | 1.9e-41 | 7.4e-41 | yes |
+| H3 (costs set band edges) | 1.8e-24 | 5.5e-24 | yes (placebo-calibrated p about 0.05; see 14.4) |
+| H6 (short-sale access) | 5.2e-6 | 1.0e-5 | yes (through price delay; drift components contradict) |
+| H7 (one-sided correction) | 1 | 1 | no (opposite sign) |
+
+## 14.7 To come
+
+The secondary tests: level effect of bans, H9 (anticipation and the 1 October 2025 reform), regression discontinuity at
+95% with the density test, hysteresis, H2 (bad news in bans), H1 (friction index), H4 (arbitrage capital), H5 (anomalies).

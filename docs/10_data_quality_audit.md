@@ -95,15 +95,30 @@ After the fixes:
 | F&O events with a known release time | 99.0% |
 | Change relative to the feed alone | For 51.5% of the F&O events the event day moved earlier (36% by two or more calendar days); none moved later |
 
-## 10.7 Corporate actions
+## 10.7 Returns and market capitalisation
+
+| Check | Result |
+|---|---|
+| Split and bonus factors against the price jump on the ex-date | 99.6% of 769 ex-dates agree within 25% (after multiplying same-day split and bonus records) |
+| Unexplained daily moves above 50% | 448 (0.84 per 10,000 stock-days), mostly sub-rupee stocks and relistings; flagged |
+| Likely corporate actions missing from NSE's feed | 424 falls at standard split/bonus ratios with no record; return set to missing |
+| AMFI rows parsed | 98% to 100% of serial numbers in every half-year except Jan to Jun 2018 (96%) |
+| NSE stocks matched to an AMFI market cap | 89% to 97% by count, 95% to 99.8% by traded value, 93% to 99.7% of F&O stocks, depending on the half-year |
+| AMFI total market cap against free-float market cap from the MWPL (F&O stocks) | implied free-float share between 0.05 and 1.05 for 99.5% of stock-halves; median 0.48 |
+| Back-cast of market cap (share count from 3 years later) | median error 0.3%; within 10% for 82%; 90th percentile error 20% |
+| Market cap available | 94.7% of cash stock-days; 99.4% to 99.6% of F&O entry and exit stocks in the six months before their event |
+
+## 10.8 Corporate actions
 
 Monthly record counts are stable (about 1,900 to 2,700 per year), with no sign of truncation by the API, and the
 dividend parser separates dividends from splits ("sub-division") and other events.
 
-## 10.8 What the audit does not cover
+## 10.9 What the audit does not cover
 
 - Intraday data are not used, so whether a future traded in its last half hour (which decides NSE's theoretical
   settlement price) is not observed; the `theoretical_settle` flag only marks days with no trades at all.
 - Dividends are adjusted with their actual ex-dates, not with the information available at the time; dividend contracts
   are therefore excluded from the main sample.
 - Results of companies that file only with BSE are missing (10.6).
+- Market caps before July 2017 are back-cast from later share counts (10.7); a commercial database (CMIE Prowess) could
+  verify them.
