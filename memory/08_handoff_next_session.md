@@ -6,7 +6,9 @@ every artefact, every rule, and how to rebuild everything.
 ---------------------------------------------------------------------------------------------------------------------
 ## 0b. STATE AS OF 5 Nov 2026 (supersedes §1–§2 where they conflict)
 - Report WAS sent; Prof. Aditi **Chaubal** (spelling confirmed) liked it and gave the go-ahead. → Data audit done and fixed
-  (docs/10_data_quality_audit.md), PAP updated with pre-tag revisions and **tagged `pap-v1`** (5 Nov 2026). The blind rule is
+  (docs/10_data_quality_audit.md), PAP updated with pre-tag revisions and **tagged `pap-v1` at commit 85dac3a** (5 Nov 2026). The cloud session's git proxy
+  refuses tag pushes (HTTP 403), so the tag exists only locally until the user creates it on GitHub (Releases → new tag
+  `pap-v1` on commit 85dac3a, or `git tag -a pap-v1 85dac3a && git push origin pap-v1`). Commit 85dac3a is pushed. The blind rule is
   now lifted for tests run AS SPECIFIED in the PAP; any deviation goes into PAP §11 with date and reason.
 - **`docs/`** = final-form documentation for outside readers (README + 13 pages). Keep it updated when anything final changes;
   no history, no Models A/B, no internal notes there. Add a results page when tests are run.

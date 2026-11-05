@@ -236,7 +236,8 @@
 - **docs/ completed:** README + 01–13 (concepts, question, institutions, theory, hypotheses, sources, construction,
   variables, design, audit, facts, reproducibility, references). Final form only.
 - **PAP:** pre-tag revisions (a)–(d) written into the status block; power counts updated; register changelog updated;
-  plan v2 Phase 2 status updated; data_pipeline/README completed. **Tagged `pap-v1`.**
+  plan v2 Phase 2 status updated; data_pipeline/README completed. **Tagged `pap-v1` at commit 85dac3a** (local; tag push
+  refused by the session's git proxy, HTTP 403 → user to create the tag on GitHub; commit itself pushed).
 
 ## Open threads (current; older lists superseded)
 - `pap-v1` tagged (5 Nov). Next: run the primary tests H7, H8, H3, H6 exactly as specified; then secondary.
