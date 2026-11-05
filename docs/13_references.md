@@ -25,6 +25,8 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
   *Journal of Econometrics* 110(2), 293-318.
 - Hou, K. and T. Moskowitz (2005). Market frictions, price delay, and the cross-section of expected returns. *Review of
   Financial Studies* 18(3), 981-1020.
+- Kolari, J. and S. Pynnonen (2010). Event study testing with cross-sectional correlation of abnormal returns. *Review
+  of Financial Studies* 23(11), 3996-4025.
 - Miller, E. (1977). Risk, uncertainty, and divergence of opinion. *Journal of Finance* 32(4), 1151-1168.
 - Nandan, T., P. Agrawal and S. Bhargava (2014). Mispricing in CNX Nifty futures: An empirical investigation.
   *Asia-Pacific Journal of Management Research and Innovation* 10(4), 413-422.
@@ -60,4 +62,8 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
 - NSE Clearing, FAQ on position limits, limit monitoring and securities in ban period (updated 13 October 2025).
 - NSE circulars FATAX56235 (STT from 1 April 2023) and FATAX73524 (STT from 1 April 2026).
 - NSE surveillance circular 849/2025 (31 October 2025): intraday monitoring of the MWPL.
+- SEBI press release 18/2020 (20 March 2020): regulatory measures in view of market volatility (MWPL halving, intraday
+  monitoring of positions in banned stocks); BSE/ICCL notice 20200322-2 (22 March 2020) implementing it from 23 March 2020.
+- SEBI press release 59/2020 (25 November 2020): review of the March 2020 measures (intraday monitoring of ban positions
+  continued till further directions).
 - SEBI (2024). Analysis of profit and loss of individual traders in the equity F&O segment.

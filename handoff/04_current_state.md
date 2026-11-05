@@ -83,3 +83,12 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 Holm across the four waits for H6. Questions for the user: the March 2020 break (does he know of a rule or broker change?);
 how to present H7's reversal; whether to add the placebo-calibrated p for H3 as a sensitivity (it is pre-specified as a
 placebo, so reporting it is allowed).
+
+## 4.8 Research on the open questions (5 Nov 2026, user asked for it)
+1. **H8 March 2020 break: resolved.** SEBI PR 18/2020 made violations in banned stocks be checked on peak intraday
+   positions from 23 Mar 2020 (references/24); kept by PR 59/2020 (references/23); from 1 Oct 2025 end-of-day FutEq checks
+   (references/19). The identity holds when enforcement is intraday (median R 0.011). See docs/14 §14.2.
+2. **H7:** exploratory diagnostics (docs/14 §14.3): not noise; era-dependent; concentrated at spell starts; post-hoc reading
+   = blocked new demand (P5) dominates at ban start.
+3. **H3:** placebo-calibrated evidence weak (docs/14 §14.4): mostly a common level shift.
+Full results page for outside readers: `docs/14_results.md`.

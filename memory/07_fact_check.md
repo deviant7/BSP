@@ -129,3 +129,12 @@ Primary PDFs in `references/` (SEBI 2024/132, SEBI 2025/79, SEBI PR 22/2024, all
 | Cash delivery STT 0.1% on buy and sell; physically settled derivatives 0.1% | ✔S | Zerodha, ClearTax, Business Standard 2018 |
 | NSE: futures not traded in last half hour → settlement = theoretical price F = S·e^{rt} | ✔P (NSE page via search) | nseindia.com equity-derivatives settlement-price page → settlement-basis ≈ 0 mechanically on no-trade days |
 | Full texts of Saurav–Srivastava–Agarwalla (2026), Gagnon (2018), Brennan–Schwartz (1990) | ? | Blocked (SSRN/Wiley/JSTOR 403). Abstracts only. Need IITB library download |
+
+## K. Fourth pass (5 Nov 2026, while interpreting H8)
+| Item | Status | Evidence |
+|---|---|---|
+| Intraday (peak) monitoring of positions in banned stocks from 23 Mar 2020 | ✔P NEW | SEBI PR 18/2020 Annex A 1(i) (via taxguru reproduction); ICCL/BSE notice 20200322-2 (saved `references/24_...txt`); PR 59/2020 (saved `references/23_...pdf`) keeps it till further directions |
+| Pre-2020 ban penalty assessed on end-of-day positions | ✔S | NSE penalty text quoted on tradingqna (2017); Zerodha (Nithin, 2017) said exchanges' circulars meant nothing new even intraday, but other brokers allowed intraday |
+| From 1 Oct 2025 entity monitoring is end-of-day FutEq vs base position | ✔P | NSE Clearing 119/2025 §2.2 (references/19) |
+| "FutEq ban from 8 Dec 2025" (Angel One notice) | ? | Our data show the market-level FutEq trigger from 1 Oct 2025; 8 Dec likely broker-side entity checks |
+| Academic study of ban effects | still none found | searches 5 Nov 2026 (web): only broker explainers |

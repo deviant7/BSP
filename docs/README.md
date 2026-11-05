@@ -33,6 +33,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | [11_descriptive_facts.md](11_descriptive_facts.md) | Facts about bans, position limits, F&O membership, announcements and the basis (no outcome is related to any treatment) |
 | [12_reproducibility.md](12_reproducibility.md) | Repository layout, software, the exact rebuild sequence, outputs |
 | [13_references.md](13_references.md) | Papers and regulatory documents |
+| [14_results.md](14_results.md) | Results of the pre-specified tests (H8, H7, H3 so far), with exploratory diagnostics marked as such |
 
 ## Where the project stands
 
@@ -41,7 +42,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | Theoretical framework | Complete; every closed form checked numerically |
 | Pre-analysis plan | Complete and frozen (git tag `pap-v1`) |
 | Data set | Built and audited (sources, construction, checks in pages 06, 07 and 10) |
-| Tests | To be run under the frozen plan; results will be added as a new page |
+| Tests | H8, H7, H3 run (page 14); H6 and secondary tests to follow |
 
 ## Conventions
 

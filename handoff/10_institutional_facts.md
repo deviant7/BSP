@@ -12,7 +12,9 @@ secondary sources (broker notes, press); **D** confirmed in our own data; **?** 
 | Ban exit: combined OI <= 80% of MWPL ("in line with existing practice", NSE Clearing 119/2025 §2.1.2) | P, D (99.7%) |
 | Ban covers all expiries of the stock's futures and options; index derivatives and cash unaffected | S |
 | Rollover not allowed in a ban | S (broker FAQs citing SEBI) |
-| Penalty for increasing positions: 1% of value, min Rs 5,000, max Rs 1 lakh per entity per stock per day | P |
+| Penalty for increasing positions: 1% of value, min Rs 5,000, max Rs 1 lakh per entity per stock per day (from 1 Oct 2025) | P |
+| **Ban enforcement regimes** (found 5 Nov 2026): to 22 Mar 2020 end-of-day positions only (intraday round trips not violations; some brokers allowed them, Zerodha did not); **from 23 Mar 2020 peak-intraday positions** (SEBI PR 18/2020; ICCL notice 22 Mar 2020: penalty lower of 1% or Rs 5 lakh per client, min Rs 50,000), continued after 26 Nov 2020 "till further directions" (PR 59/2020); **from 1 Oct 2025 end-of-day FutEq vs base position** (NSE Clearing 119/2025). Data: ban-day (dOI+V)/V median 0.87 / 0.011 / 0.19-0.36 in the three regimes | P, D |
+| Broker notices cite 8 Dec 2025 for "delta-based exposure limits on open positions in ban period" (Angel One); the market-level FutEq trigger is visibly in force from 1 Oct 2025 in our data (805 gross > 95% stock-days without bans in Oct to early Dec 2025). 8 Dec 2025 is probably the brokers' implementation of the entity-level delta check; unresolved | S, D |
 | Pre-Oct 2025 MWPL = 20% of non-promoter shares (SEBI/DNPD/Cir-31/2006, 22 Sep 2006) | P, D (free float = MWPL/0.20 reproduces Oct 2025 limits) |
 | 30x prior-month-volume leg: SEBI/DNPD/Cir-26/2004 (16 Jul 2004), replaced in 2006; irrelevant for the sample | P |
 | MWPL recomputed monthly before the reform (monthly non-promoter holding data); quarterly after | P (FAQ) |

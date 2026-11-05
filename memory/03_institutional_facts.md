@@ -57,3 +57,15 @@ gross-OI monitoring discontinued; entity check vs base position using 2 PM SPAN 
 ## Data files (from project doc §8)
 sec_bhavdata_full (delivery), UDiFF bhavcopy (ISIN-keyed, 2024+), F&O bhavcopy (settle/OI), combined OI/MWPL (with FutEq post-2025),
 securities-in-ban CSV, shareholding pattern, results calendar, India VIX, F&O eligibility lists. Wrappers: R `nser`, Python scrapers.
+
+## Added 5 Nov 2026: ban enforcement regimes (primary sources: references/23, references/24, references/19)
+- To 22 Mar 2020: increases checked on END-OF-DAY positions only (NSE penalty text "at the end of each day ... increased
+  his existing positions"); intraday round trips not violations (some brokers allowed them; Zerodha blocked them).
+- 23 Mar 2020 →: SEBI PR 18/2020 (20 Mar 2020) Annex A 1(i): exchanges/CCs "shall check on an intra-day basis (monitoring of
+  Peak intraday OI or Periodic intraday monitoring of OI)"; ICCL/BSE notice 20200322-2: violations "based on the monitoring
+  of peak intraday positions"; penalty lower of 1% of value in violation or Rs 5 lakh per client, min Rs 50,000. Kept
+  "till further directions" by PR 59/2020 (25 Nov 2020) although the MWPL halving was withdrawn.
+- 1 Oct 2025 →: NSE Clearing 119/2025 §2.2: entity EOD FutEq vs base position (2 PM SPAN delta); penalty 1%, min 5,000,
+  max 1 lakh. Broker notices date "delta-based exposure limits in ban period" to 8 Dec 2025 (unresolved).
+- Data confirm: ban-day (ΔOI+V)/V median 0.871 (to 22 Mar 2020), 0.011 (23 Mar 2020–Sep 2025), 0.193 (Oct–7 Dec 2025),
+  0.357 (8 Dec 2025 →).

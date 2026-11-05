@@ -8,3 +8,4 @@
   H8, H7, H3 run (results in 04 §4.7, `analysis/output/`); PAP §11.2 exploratory note (March 2020 break). 05 updated with
   PREVCLOSE finding and market-cap plan for H6.
 - 5 Nov 2026: `pap-v1` confirmed on GitHub (annotated tag → 85dac3a), created by the user.
+- 5 Nov 2026: research on H8 break (enforcement regimes, primary sources saved as references/23-24), H7 diagnostics, H3 placebo calibration; docs/14_results.md; facts updated in docs/03, handoff/10, memory/03, memory/07; PAP §11.2 extended.

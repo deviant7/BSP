@@ -43,7 +43,8 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 7b Ters-Urban; 7c Tse; 8 Nandan et al. (Nifty); 9 Roy-Chakraborty; 10 PEAD India (Harshita et al.); 11 Slivka et al.;
 12 SEBI F&O retail-loss study; 13 Kumar; 14 lottery factor India (Sehgal et al.); 15a/15b Barber-Odean; 16 SEBI 2024/132;
 17 SEBI 2025/79; 18 NSE MWPL methodology page (HTML); 19 NSE Clearing 119/2025; 20 Shankar et al. 2015; 21 Nandan-Agrawal-
-Jindal 2015; 22 NSE Clearing FAQ Oct 2025.
+Jindal 2015; 22 NSE Clearing FAQ Oct 2025; 23 SEBI PR 59/2020 (review of the March 2020 measures); 24 BSE/ICCL notice
+20200322-2 implementing SEBI PR 18/2020 (text).
 
 ## Not in the repo
 - `BSP Proposal.docx` (the original proposal sent to the guide; desktop era).

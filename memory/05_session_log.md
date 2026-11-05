@@ -268,6 +268,24 @@
     close 100.35); (ii) market cap: no free NSE file found (PR zips have none); plan = shares from XBRL paid-up capital / face
     value; (iii) §11 dated entry for H6 details before running.
 
+- **User (5 Nov, later): plans fine; do deep research on the three open questions; get H6 data (else Prowess via college);
+  keep memory, docs and handoff updated.**
+- Research results:
+  1. **March 2020 break = enforcement change (resolved, primary sources):** SEBI PR 18/2020 (20 Mar 2020) → ICCL/BSE notice
+     20200322-2: from 23 Mar 2020 ban violations identified from PEAK INTRADAY positions (before: end of day); PR 59/2020
+     keeps it "till further directions"; from 1 Oct 2025 NSE Clearing 119/2025 entity EOD FutEq vs base position. Ban-day R
+     median 0.871 / 0.011 / 0.193 (Oct–7 Dec 2025) / 0.357 (8 Dec 2025 →). Saved references/23 (PR 59/2020 pdf), 24 (ICCL
+     notice text). Also confirmed in data that the market-level FutEq trigger applies from 1 Oct 2025 (805 gross>95%
+     stock-days Oct–early Dec 2025 without ban); Angel One's "8 Dec 2025" = broker-side entity checks (unresolved).
+  2. **H7 exploratory diagnostics** (analysis/h7_diagnostics.py): not noise (stronger on liquid days); era split: EOD era
+     δ_up +0.016 n.s., δ_lo +0.126; intraday era δ_up −0.201, δ_lo −0.120; faster upward reversion concentrated in first
+     4 days of spell (−0.163 vs −0.008). Reading (post hoc): blocked new-exposure demand at ban start (P5/B2) removes the
+     rich-futures pressure; H7 derived from P4 alone. Legs regression too noisy to separate futures vs cash.
+  3. **H3 calibration:** avg Δq80 (2024, 2026) exceeded by 4.6% of placebo pairs; width 23.4%; q80−median 27.4% →
+     mostly a common level shift; stock-only clustering over-rejects (Kolari–Pynnönen 2010). No academic ban study found.
+- docs/14_results.md created (H8, H7, H3 with exploratory parts marked); docs/03 gained the enforcement-regime row and the
+  2020 penalty; docs/13 refs added (SEBI PR 18/2020, 59/2020, ICCL notice, Kolari–Pynnönen). PAP §11.2 extended.
+
 ## Open threads (current; older lists superseded)
 - H8, H7, H3 run (see above). Next: H6 inputs (adjusted returns, market cap via XBRL), §11 H6 entry, run H6, Holm; discuss H7/H8/H3 readings with user.
 - Tag pap-v1 now on GitHub (refs/tags/pap-v1 → 85dac3a), created by the user, 5 Nov 2026.

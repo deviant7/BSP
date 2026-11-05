@@ -178,3 +178,18 @@ Jan 2015, excluding any window overlapping a true STT date; the true events' ran
   R between 6 and 24 March 2020 (before: mean 0.86, no day with R <= 0.01; after: mean 0.10, median 0.012), absent on
   non-ban days, with NSE's change-in-OI field equal to the change in OI levels. Added an exploratory split at 15 Mar 2020.
   The cause (probably intraday round trips tolerated in bans before then) is not documented in sources found so far.
+- 5 Nov 2026, H8 (resolution of the break): SEBI press release 18/2020 (20 Mar 2020; clearing-corporation notice of
+  22 Mar 2020) made the clearing corporations identify ban violations "based on the monitoring of peak intraday positions"
+  from 23 Mar 2020 (before: end-of-day positions only), continued "till further directions" by PR 59/2020 (25 Nov 2020).
+  From 1 Oct 2025 NSE Clearing 119/2025 checks entity positions at end of day in FutEq terms. Ban-day R by regime: to
+  22 Mar 2020 mean 0.855 / median 0.871; 23 Mar 2020 to 30 Sep 2025 mean 0.099 / median 0.011; 1 Oct to 7 Dec 2025 median
+  0.193; from 8 Dec 2025 median 0.357. The identity holds when the rule is enforced intraday, as the model's P7(i) assumes.
+- 5 Nov 2026, H7 (exploratory diagnostics, `analysis/h7_diagnostics.py`): the reversal is stronger, not weaker, on liquid
+  days (>= 1,000 contracts on t and t-1: delta_up -0.154, delta_lo +0.130), so measurement noise does not explain it;
+  end-of-day-enforcement era: delta_up +0.016 (n.s.), delta_lo +0.126; peak-intraday era: delta_up -0.201, delta_lo
+  -0.120; faster upward reversion concentrated in the first 4 calendar days of a spell (-0.163 vs -0.008 later).
+  Reading (post hoc, not a confirmation): blocked new-exposure demand at ban start (model P5/B2) removes the pressure that
+  made futures rich; the pre-specified H7 isolates P4 and ignores this opposing channel.
+- 5 Nov 2026, H3 (exploratory calibration): against the 30 pre-specified placebo dates, the average Delta q80 of 2024 and
+  2026 is exceeded by 4.6% of placebo pairs; band width (q80 - q20) by 23.4%; q80 relative to the median by 27.4%. The
+  rise is mostly a common level shift; stock-clustered SEs ignore cross-sectional correlation (Kolari and Pynnonen 2010).

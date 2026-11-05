@@ -131,3 +131,7 @@ Data-file details (combineoi FutEq field, NPH files, base-position files); MWPL 
 ## Notes
 - Per-paper reading notes will be saved alongside as `notes_<n>_<shortname>.md`.
 - [lib] items: download the journal PDF via IITB access and drop it here as `<n>_<shortname>.pdf` so it can be read line-by-line.
+
+## Added 5 Nov 2026
+**23. SEBI press release 59/2020 (25 Nov 2020), review of the 20 Mar 2020 measures** (`23_sebi_pr59_2020_review_of_march2020_measures.pdf`): MWPL halving withdrawn after 26 Nov 2020; ban-period rule and intraday (peak or periodic) monitoring of positions in banned stocks continue till further directions.
+**24. BSE / ICCL notice 20200322-2 (22 Mar 2020) implementing SEBI PR 18/2020** (`24_bse_iccl_notice_20200322-2_sebi_pr18_2020.txt`, text extracted from the web page): from 23 Mar 2020, MWPL halving criteria, ban list, violations identified from peak intraday positions, penalty min Rs 50,000 / max Rs 5 lakh per client.
