@@ -27,7 +27,8 @@ Theory done and verified (`BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models
 (`data_pipeline/`, `data/processed/`, `docs/10_data_quality_audit.md`). The guide received the October progress report,
 liked it and gave the go-ahead. Pre-analysis plan `plan/pre_analysis_plan_v1.md` frozen as git tag **`pap-v1` at 85dac3a**
 (on GitHub; created by the user via GitHub Desktop, 5 Nov 2026). Tests now run exactly as the
-plan specifies; deviations go in its §11. H8, H7, H3 run (results: `handoff/04_current_state.md` §4.7); **next: H6**.
+plan specifies; deviations go in its §11. All four primary tests run + Holm (results: `docs/14_results.md`,
+`handoff/04_current_state.md` §4.7–4.9); **next: secondary tests**.
 All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR when the user asks.
 
 ## Folders

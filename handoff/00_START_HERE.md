@@ -20,7 +20,8 @@ before doing anything. Last full update: **5 November 2026** (see `CHANGELOG.md`
 4. Method order: **theory first** (the guide asked for it) → a **pre-analysis plan** frozen with a git tag before any
    outcome is related to any treatment → a **blind data build** from free NSE archives → tests → interpretation.
 5. Status on 5 Nov 2026: theory done and verified; data built and audited; pre-analysis plan frozen (`pap-v1`);
-   primary tests H8, H7, H3 run (H7 rejected with the opposite sign; see `04_current_state.md` §4.7); H6 next.
+   all four primary tests run and Holm-corrected (H8, H3, H6 rejected at 5%; H7 rejected its prediction with the
+   opposite sign; see `04_current_state.md` §4.7 to 4.9 and `docs/14_results.md`); secondary tests next.
 
 ## 2. Reading order (do not skip)
 
