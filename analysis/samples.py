@@ -76,9 +76,10 @@ def basis_sample(rebuild=False):
     X = X.merge(near, on=["symbol", "i"], how="left")
     X["chosen"] = np.where(X["near_d"] > 3, X["k"] == 0, X["k"] == 1)
     # lag of the same contract on the previous trading day (C1 d)
-    L = X[["symbol", "expiry", "i", "m_vwap", "valid"]].copy()
+    L = X[["symbol", "expiry", "i", "m_vwap", "m_close", "rel_repo", "valid"]].copy()
     L["i"] = L["i"] + 1
-    L = L.rename(columns={"m_vwap": "m_lag_raw", "valid": "lag_valid"})
+    L = L.rename(columns={"m_vwap": "m_lag_raw", "m_close": "mclose_lag_raw", "rel_repo": "repo_lag_raw",
+                          "valid": "lag_valid"})
     S = X[X["chosen"]].merge(L, on=["symbol", "expiry", "i"], how="left")
     S["lag_valid"] = S["lag_valid"].fillna(False).astype(bool)
     S = S[S["valid"]].copy()
@@ -89,9 +90,15 @@ def basis_sample(rebuild=False):
     lag_year = days[(S["i"] - 1).clip(lower=0).values].year
     S["m_lag"] = S["m_lag_raw"].clip(pd.Series(lag_year, index=S.index).map(q[0.01]),
                                      pd.Series(lag_year, index=S.index).map(q[0.99]))
-    S.loc[~S["lag_valid"], ["m_lag", "m_lag_raw"]] = np.nan
+    S.loc[~S["lag_valid"], ["m_lag", "m_lag_raw", "mclose_lag_raw", "repo_lag_raw"]] = np.nan
     S["dm"] = S["m"] - S["m_lag"]
     S["dm_raw"] = S["m_vwap"] - S["m_lag_raw"]
+    # robustness outcomes (close-based basis, relative implied repo), winsorised the same way
+    for cur, lagc, out in [("m_close", "mclose_lag_raw", "mc"), ("rel_repo", "repo_lag_raw", "rr")]:
+        qq = S.groupby("year")[cur].quantile([0.01, 0.99]).unstack()
+        S[out] = S[cur].clip(S["year"].map(qq[0.01]), S["year"].map(qq[0.99]))
+        ly = pd.Series(lag_year, index=S.index)
+        S[out + "_lag"] = S[lagc].clip(ly.map(qq[0.01]), ly.map(qq[0.99]))
     lag, B = treatment(days, pos)
     S = S.merge(lag, on=["symbol", "i"], how="left")
     S = S.merge(B, on=["date", "symbol"], how="left")
