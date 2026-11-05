@@ -122,8 +122,9 @@ Output `basis_panel.csv.gz`: one row per stock, day and contract, for the near (
 8. **Basis.** `m_vwap = ln F_vwap - ln(S_vwap - pv) - r * tau` (main measure, see
    [08_variables_and_measures.md](08_variables_and_measures.md)).
 9. **Close-based basis.** `m_close` uses the futures closing price and the cash closing price (secondary measure).
-   `theoretical_settle = True` when the contract had no trades (UDiFF: number of trades is zero; legacy: contracts is
-   zero), the case in which NSE's settlement price is a theoretical value.
+   `theoretical_settle = True` when the contract had no trades all day (UDiFF: number of trades is zero; legacy:
+   contracts is zero), the case in which NSE's settlement price is certainly a theoretical value. This is a lower bound:
+   the daily files do not show whether a contract traded in the last half hour.
 10. **Implied repo.** `r_implied = [ln F_vwap - ln(S_vwap - pv)] / tau`; `rel_repo` = r_implied minus the day's
     cross-sectional median for the same contract order, using rows with at least 7 calendar days to expiry.
 
@@ -131,17 +132,37 @@ Output `basis_panel.csv.gz`: one row per stock, day and contract, for the near (
 
 Output `announcements.csv.gz`: one row per stock and period end (a quarter).
 
-1. **Filings.** Every standalone and consolidated filing for the period is read. The event's release time is the
-   **earliest** broadcast time across them. XBRL links are kept for the standalone and the consolidated filing.
-2. **Filling gaps from board meetings.** The legacy results feed lacks some filings (for example 52 of 198 F&O stocks have
-   no filing for the June 2022 quarter there). For each stock and quarter missing from the filings, the board meeting on
-   financial results is used: the period is the last quarter end before the meeting date; when a meeting is rescheduled,
-   the latest intimation gives the final date. These events have a date but no time: `timing_known = False`,
-   `src = board_meeting`.
-3. **Event day.** Day 0 is the release day if the result was released before the 15:30 close, otherwise the next trading
-   day. For board-meeting events, day 0 is the meeting day (the next trading day if it is a holiday). The trading calendar
+Three NSE sources are combined, because none is complete on its own:
+
+| Source | Gives | Weakness found in the audit |
+|---|---|---|
+| Results filings (source 7) | Period end, broadcast time, XBRL links | Misses about 10% of F&O stock-quarters before 2024; its time is often that of a later re-filing (in 2017 and 2018 most times are days or weeks after the results were first released) |
+| "Financial Result Updates" announcements (source 7b, category of the corporate-announcements feed) | The exchange's dissemination time of each results filing, to the second | Period end must be read from the text ("...for the period ended 30-Jun-2018") |
+| Board meetings (source 8) | The date of the board meeting that approved the results | No time of day |
+
+Listed companies must disclose results within 30 minutes of the end of the board meeting that approves them, so the
+meeting date bounds the release date.
+
+Rules:
+
+1. **Period.** For filings, the period end given in the filing. For announcements, the date after "period ended" in the
+   text, moved to its month end; if it cannot be read or is implausible (before the announcement or more than 200 days
+   earlier), the last quarter end before the announcement. For board meetings, the last quarter end before the meeting.
+2. **Release time.** The earliest timed release across the announcements and the filings for that stock and quarter
+   (`release_src` = announcement or filing).
+3. **Re-filing guard.** If a board meeting on results is known and the only timed release comes from the filing feed
+   and is more than one calendar day after the meeting, that time is treated as a re-filing: the release is the meeting
+   date with unknown time (`release_src = board_meeting`, `timing_known = False`). An announcement time is kept even if
+   it is later than the meeting, because that usually means the meeting was postponed.
+4. **Board-meeting-only quarters.** Quarters known only from a board meeting get the meeting date, time unknown. For
+   board meetings, the latest intimation for a stock and quarter gives the final date; status notices (postponed,
+   rescheduled, adjourned, cancelled) are not used as dates.
+5. **Event day.** Day 0 is the release day if the result was released before the 15:30 close, otherwise the next trading
+   day. If the time is unknown, day 0 is the next trading day after the release date (most results are released after
+   the close); the announcement-return window [-1, +1] then contains the release day either way. The trading calendar
    used here starts in 2010, so that events before 2015 are dated correctly.
-4. **Plausibility.** Events released more than 200 days after the period end, or before it, are dropped.
+6. **Plausibility.** Events released before the period end or more than 200 days after it are dropped.
+7. **XBRL links** are kept for the earliest standalone and the earliest consolidated filing.
 
 ## 7.9 Nifty futures validation series
 

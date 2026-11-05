@@ -53,7 +53,7 @@ contract roll or a gap in the sample), regressed on the lagged level by regime (
 
 | Variable | Definition |
 |---|---|
-| Day 0 | Release day if released before 15:30, otherwise the next trading day (board-meeting events: the meeting day) |
+| Day 0 | Release day if released before 15:30, otherwise the next trading day; if the release time is unknown, the next trading day after the release date ([07_data_construction.md](07_data_construction.md), 7.8) |
 | Surprise (main) | EAR: abnormal return over days -1 to +1 |
 | Surprise (secondary) | SUE from earnings per share in the XBRL filings, if extraction succeeds |
 | Drift | BHAR[+2, +64]: buy-and-hold return from day +2 to day +64 minus that of a size-matched portfolio |

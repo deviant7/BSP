@@ -1,9 +1,27 @@
-# 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026, end of session)
+# 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026; UPDATED 5 Nov 2026 — see §0b first)
 
 Read this file first, then CLAUDE.md and memory/01–07. It states exactly where the project is, what is waiting on whom,
 every artefact, every rule, and how to rebuild everything.
 
 ---------------------------------------------------------------------------------------------------------------------
+## 0b. STATE AS OF 5 Nov 2026 (supersedes §1–§2 where they conflict)
+- Report WAS sent; Prof. Aditi **Chaubal** (spelling confirmed) liked it and gave the go-ahead. → Data audit done and fixed
+  (docs/10_data_quality_audit.md), PAP updated with pre-tag revisions and **tagged `pap-v1`** (5 Nov 2026). The blind rule is
+  now lifted for tests run AS SPECIFIED in the PAP; any deviation goes into PAP §11 with date and reason.
+- **`docs/`** = final-form documentation for outside readers (README + 13 pages). Keep it updated when anything final changes;
+  no history, no Models A/B, no internal notes there. Add a results page when tests are run.
+- Audit fixes (details memory/05, docs/10): imputed ban lists (6 May 2025; 19 Feb & 25 Aug 2014); r carried forward for
+  Oct 2026 (`r_filled`); results day 0 rebuilt (announcements 'Financial Result Updates' + filings + board meetings + ISIN
+  symbol history) — the old feed had dated 51.5% of F&O events too late; coverage now 98–100% of F&O stock-quarters.
+- New raw folders: data/raw/boardmeetings (312 files), data/raw/resultupdates (1,173 files). Rebuild recipe in docs/12.
+- New numbers: 2015–26 spells **1,788**, ban stock-days **9,416**, 141 stocks; (0.90,0.95] non-ban 2,439/139; clean basis
+  sample 503,170 (median +1.2, p10 −33.0, p90 +26.2 bp); announcements 94,071 events, **8,594 for F&O stocks (180 on ban days)**,
+  timing known 99%, 62% after close. The SENT report used the pre-audit numbers (1,789 / 9,414 / 7,910 / 188 / 63%); tell the
+  guide about the corrected results-date construction when results are presented.
+- Remaining known gap: BSE-only companies traded on NSE (MCX, Abbott India, Nestle India before 2023) have no results events.
+- Next: run the pre-specified tests (H7, H8, H3, H6, then secondary); blind-safe inputs still to collect: AMFI arbitrage AUM,
+  XBRL EPS, SLB.
+
 ## 0. Git / GitHub (the user asked about this)
 - All work is on branch **`claude/compassionate-rubin-s9gny2`** of `deviant7/bsp` (pushed; remote == local at session end).
 - **PR #1 (https://github.com/deviant7/BSP/pull/1) was opened and merged by the user on 28 Oct 2026** → `main` (merge commit

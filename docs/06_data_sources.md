@@ -18,6 +18,7 @@ Archive URLs below start with `https://nsearchives.nseindia.com/`. Web endpoints
 | 5 | Security-wise delivery file (MTO) | Quantity traded and quantity delivered per stock | Daily | 1 Jan 2015 to 27 Oct 2026 | `download_nse_prices.py` |
 | 6 | Corporate actions | Dividends, splits, bonuses, rights and other events, with ex-dates | Event list, by month | Jan 2014 to Nov 2026 | `download_rates_corpactions.py` |
 | 7 | Financial results filings | Release timestamp of each quarterly and annual result, period end, links to XBRL filings | Event list, by month | 2014 to Oct 2026 | `download_results_filings.py` |
+| 7b | Financial result announcements | Exchange dissemination time of each results filing (category "Financial Result Updates") | Event list | 2014 to Oct 2026 | `download_results_filings.py ... resultupdates` |
 | 8 | Board meetings | Date and purpose of board meetings (used to fill gaps in source 7) | Event list | 2014 to 2026 | `download_results_filings.py ... boardmeetings` |
 | 9 | All-index closing file | Nifty 50 close, P/E, P/B and trailing dividend yield | Daily | 2015 to 27 Oct 2026 | `download_index_close.py` |
 | 10 | Interest rates (FRED, OECD MEI) | India 3-month interbank rate (main), call money rate | Monthly | 2011 to Sep 2026 | `download_rates_corpactions.py` |
@@ -62,10 +63,15 @@ One JSON list per month: symbol, series, subject (free text, e.g. "Dividend - Rs
 - From the quarter ended March 2025: `api/integrated-filing-results?...&type=Integrated Filing- Financials&size=20000`
   (paginated; the script checks that the number of records equals the reported total).
 
+### (7b) Financial result announcements: `api/corporate-announcements?index=equities&from_date=..&to_date=..&subject=Financial%20Result%20Updates`
+Symbol, dissemination timestamp (`an_dt`) and a text such as "X Limited has submitted to the Exchange the financial
+results for the period ended June 30, 2024". Downloaded in four-day windows. This is the first public release time of
+each result.
+
 ### (8) Board meetings: `api/corporate-board-meetings?index=equities&from_date=..&to_date=..`
-Symbol, meeting date, purpose (e.g. "Financial results", "Dividend/Financial results"), intimation timestamp, and the
-original and revised meeting dates when a meeting is rescheduled. Downloaded in half-month windows. Used only to date
-results that are missing from source 7 (see [07_data_construction.md](07_data_construction.md), 7.8).
+Symbol, meeting date, purpose (e.g. "Results", "Financial Results/Dividend"), intimation timestamp. Downloaded in
+half-month windows. Used to fill quarters missing from sources 7 and 7b and to detect re-filing times (see
+[07_data_construction.md](07_data_construction.md), 7.8).
 
 ### (9) All-index closing file: `content/indices/ind_close_all_DDMMYYYY.csv`
 One row per index; the Nifty 50 row is kept (close, P/E, P/B, dividend yield). Used only to validate the cost-of-carry

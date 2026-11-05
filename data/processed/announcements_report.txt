@@ -1,19 +1,29 @@
-filing rows 185273; events (symbol x period end) 93129; symbols 2957
-board meetings on results: 65709 (symbol x quarter); also in filings: 62032, of which meeting day = release day: 0.546; added from board meetings: 3677
-released after close (timing known): 0.634; median days from period end to release: 43
+  symbol mapping: 11963 of 182071 records relabelled to the symbol trading on the event date
+results filings: 185273 rows -> 90643 (symbol, quarter end)
+  symbol mapping: 5571 of 74233 records relabelled to the symbol trading on the event date
+result-update announcements: 74233; period parsed from text 1.000 (fallback: quarter before the announcement for 0.008); -> 72627 (symbol, quarter end)
+  symbol mapping: 6808 of 112150 records relabelled to the symbol trading on the event date
+board meetings on results: 92375 (symbol, quarter end)
+timed release more than 1 day after the board meeting: 3225; from the filing feed only (treated as re-filing, release = meeting date): 747; announcement-based (kept): 2478
+events (symbol, quarter end): 94071; symbols 3219
+release source: release_src; announcement     72356; filing           17525; board_meeting     4190
+timed release vs board-meeting day (where both exist, n=88185): same day 0.902, next day 0.065, before 0.005
+timing known: 0.955; released at or after 15:30 (timing known): 0.665; median days from quarter end to release: 42
 events per year:
 event_day
-2014.0    6190
-2015.0    5977
-2016.0    6178
-2017.0    6411
-2018.0    6706
-2019.0    6682
-2020.0    6821
-2021.0    6997
-2022.0    7403
-2023.0    7722
-2024.0    8221
-2025.0    8770
-2026.0    7377
-events for symbols ever in F&O: 15324; per symbol-year median 4
+2014.0    6306
+2015.0    6135
+2016.0    6363
+2017.0    6614
+2018.0    6807
+2019.0    6776
+2020.0    6785
+2021.0    7027
+2022.0    7416
+2023.0    7774
+2024.0    8242
+2025.0    8782
+2026.0    7370
+events on days the stock is in the F&O segment: 8594; timing known 0.990; source: release_src; announcement     6844; filing           1661; board_meeting      89
+coverage: share of F&O stocks (at quarter end) with an event for that quarter: min 0.978 (2023Q2), median 0.991
+coverage by quarter: 2015Q1 0.99, 2015Q2 0.99, 2015Q3 0.99, 2015Q4 0.99, 2016Q1 1.00, 2016Q2 0.99, 2016Q3 0.99, 2016Q4 1.00, 2017Q1 0.99, 2017Q2 0.99, 2017Q3 0.99, 2017Q4 0.99, 2018Q1 0.99, 2018Q2 0.99, 2018Q3 0.99, 2018Q4 0.98, 2019Q1 0.98, 2019Q2 0.98, 2019Q3 0.99, 2019Q4 0.99, 2020Q1 0.99, 2020Q2 0.99, 2020Q3 0.99, 2020Q4 0.99, 2021Q1 0.99, 2021Q2 0.99, 2021Q3 0.99, 2021Q4 0.98, 2022Q1 0.98, 2022Q2 0.98, 2022Q3 0.98, 2022Q4 0.98, 2023Q1 0.98, 2023Q2 0.98, 2023Q3 0.99, 2023Q4 0.99, 2024Q1 0.98, 2024Q2 0.99, 2024Q3 0.98, 2024Q4 0.99, 2025Q1 0.99, 2025Q2 1.00, 2025Q3 0.99, 2025Q4 0.99, 2026Q1 0.99, 2026Q2 0.99

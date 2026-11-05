@@ -221,9 +221,25 @@
 - **docs/ started:** 01 concepts, 02 question, 03 institutions, 04 theory, 05 hypotheses, 06 sources, 07 construction,
   08 variables (written while downloads ran). Still to write: README, 09 design, 10 audit, 11 facts, 12 reproducibility,
   13 references.
+- **Results-date fix completed (5 Nov):** downloaded 'Financial Result Updates' announcements 2014–2026 (1,173 four-day
+  files, 74,255 records; period parsed from text for 99.2%). New build_announcements: release = earliest of announcement and
+  filing; board meetings (purposes containing 'result', status notices excluded, latest intimation) fill gaps and override
+  filing-only times >1 day after the meeting (747 cases); every record mapped to the symbol trading on the event date via
+  cash-bhavcopy ISIN history (NSE feeds label old records with CURRENT symbols, e.g. CADILAHC under ZYDUSLIFE — this alone
+  was most of the 10% coverage gap). Result: 94,071 events; F&O coverage 98–100% per quarter (median 99.1%); timed release on
+  meeting day 90.2% / next day 6.5%; 8,594 F&O events (180 on ban days), timing known 99%. vs old build: 51.5% of the 7,910 old
+  F&O events moved EARLIER (36% by >=2 days), none later. Remaining gap 86 stock-quarters = BSE-only listings (MCX, Abbott,
+  Nestle pre-2023). Unknown-time rule: day 0 = next trading day after the release date.
+- Other checks: combineoi symbols vs F&O bhavcopy membership agree on 99.97% of stock-days (combineoi lists new stocks a day
+  early). Report table `reports/tables/ban_by_year.tex` regenerated (1,788 / 9,416); the sent PDF was NOT rebuilt (it is the
+  record of what the guide received).
+- **docs/ completed:** README + 01–13 (concepts, question, institutions, theory, hypotheses, sources, construction,
+  variables, design, audit, facts, reproducibility, references). Final form only.
+- **PAP:** pre-tag revisions (a)–(d) written into the status block; power counts updated; register changelog updated;
+  plan v2 Phase 2 status updated; data_pipeline/README completed. **Tagged `pap-v1`.**
 
 ## Open threads (current; older lists superseded)
-- Guide gave go-ahead (5 Nov) -> finish audit fixes -> tag `pap-v1`.
+- `pap-v1` tagged (5 Nov). Next: run the primary tests H7, H8, H3, H6 exactly as specified; then secondary.
 - Library full texts: Saurav–Srivastava–Agarwalla 2026, Gagnon 2018, Brennan–Schwartz 1990.
 - Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe
   delay/VR; state-dependent-threshold estimator; density test at 95%.

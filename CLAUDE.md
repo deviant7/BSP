@@ -14,7 +14,9 @@ positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Us
 ## START HERE
 `memory/08_handoff_next_session.md` — exact state at the end of the last session, what is waiting on whom, rebuild recipe,
 key numbers, data errors already fixed, artefact map. All work up to 28 Oct 2026 is merged into `main` (PR #1);
-new work goes on branch `claude/compassionate-rubin-s9gny2` and reaches `main` via a new PR. Blind rule: nothing outcome-vs-treatment until `pap-v1` is tagged (waiting for the guide's reply).
+new work goes on branch `claude/compassionate-rubin-s9gny2` and reaches `main` via a new PR. **`pap-v1` tagged 5 Nov 2026**
+(guide gave go-ahead; data audit done). Tests now run exactly as the PAP specifies; deviations logged in PAP §11.
+**`docs/`** holds the final-form documentation for outside readers (keep it current; no history there).
 
 ## Read these before answering anything substantive
 1. `memory/01_project_context.md` — the research design, chapters, hypotheses, data, timeline, decision history.
@@ -34,7 +36,8 @@ new work goes on branch `claude/compassionate-rubin-s9gny2` and reaches `main` v
   whenever the plan changes.**
 
 - `plan/pre_analysis_plan_v1.md` — the test plan (samples, outcomes, treatments, primary H7/H8/H3/H6, secondary tests,
-  inference, power, falsifiers). **Blind rule: no outcome may be related to any treatment until it is tagged `pap-v1`.**
+  inference, power, falsifiers). **Frozen: git tag `pap-v1` (5 Nov 2026).**
+- `docs/` — final-form project documentation (README + 01 concepts … 13 references), written for non-experts.
 - `data_pipeline/` (+ README) builds everything from NSE archives into `data/processed/` (raw data git-ignored).
 - `BSP_Progress_Report_Oct2026.pdf` + `progress_report_src/progress_report_oct2026.tex` — guide-facing report (final, not yet sent;
   guidance-questions section removed at user's request, kept in `progress_report_src/removed_guidance_questions.tex`).

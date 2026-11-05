@@ -1,9 +1,17 @@
 # Pre-analysis plan — v1 (28 Oct 2026)
 
-**Status.** Complete. To be git-tagged `pap-v1` once the user confirms (the progress report asks the guide whether she wants
-to see the test plan first; if she asks for changes they are made before tagging). **Until the tag, no outcome is related to
-any treatment.** After the tag, every change is logged in §11 with date and reason; results under the original specification
-are always reported.
+**Status.** Final; frozen with the git tag `pap-v1` (5 Nov 2026, after the guide's go-ahead and the data audit).
+**Until the tag, no outcome was related to any treatment.** After the tag, every change is logged in §11 with date and
+reason; results under the original specification are always reported.
+
+**Pre-tag revisions from the data audit (5 Nov 2026; no outcome had been related to any treatment):**
+(a) days without an official ban list (6 May 2025; 19 Feb and 25 Aug 2014) use an imputed list (previous day's "No Fresh
+Positions" flags plus continuing spells), flagged; (b) months after the last published interbank rate use the last value,
+at most two months forward, flagged `r_filled` (robustness: drop them); (c) results day 0 now comes from the earliest of the
+exchange's "Financial Result Updates" announcement and the filing, with board meetings filling gaps and overriding late
+re-filing times, and records mapped to the symbol trading on the event date (the filing feed alone dated 51.5% of F&O
+events too late); if the release time is unknown, day 0 = next trading day after the release date (robustness: drop
+these events); (d) power counts in §8 updated.
 Previous version: `plan/archive/pre_analysis_plan_v0_draft_2026-10-28.md`.
 
 ---
@@ -16,7 +24,7 @@ Previous version: `plan/archive/pre_analysis_plan_v0_draft_2026-10-28.md`.
 | F&O membership | STF rows of F&O bhavcopy | 2015 – 27 Oct 2026 | identical to an independent membership sheet (2016–2025) |
 | Futures, cash, delivery | NSE bhavcopies, MTO | 2015 – 27 Oct 2026 (gap: F&O file 30 Mar 2021) | VWAP inside [low, high] 99.77%; 100% cash match |
 | Dividends, corporate events | NSE corporate-actions API | 2014 – 2026 | parser separates dividends from splits ('sub-division') |
-| Results announcements | NSE results API (to Mar 2025) + Integrated Filing (from Mar 2025 quarter) | 2014 – 2026 | ~4 events per stock-year |
+| Results announcements | NSE 'Financial Result Updates' announcements + results filings (Integrated Filing from Mar 2025 quarter) + board meetings | 2014 – 2026 | 98–100% of F&O stock-quarters; release time known for 99% |
 | Rates | OECD MEI via FRED: 3-month interbank (main), call money | monthly, 2011 – 2026 | — |
 
 ## 2. Samples
@@ -35,7 +43,7 @@ Previous version: `plan/archive/pre_analysis_plan_v0_draft_2026-10-28.md`.
 - **O4 trading:** futures contracts traded, ΔOI (contracts), ΔOI + volume, cash volume, delivery %.
 - **O5 earnings drift:** BHAR[+2,+64] (vs size-matched F&O/cash portfolio); surprise = EAR = abnormal return [−1,+1] around day 0
   (main); SUE from XBRL EPS (secondary, if extraction succeeds). Day 0 = release day if released before 15:30, else next
-  trading day.
+  trading day (time unknown: next trading day after the release date).
 - **O6 cash efficiency:** Hou–Moskowitz delay (weekly returns, 52-week windows), VR(5).
 
 ## 4. Treatments
@@ -88,7 +96,7 @@ thresholds depend on lagged OI/MWPL (state-dependent band) is added as the main 
   FE). Prediction: upper quantile rises smoothly with ω; reform effect follows the intensity.
 - **RD at 95%:** local linear on ω_{t−1}; Cattaneo–Jansson–Ma density test first. Supporting only.
 - **Hysteresis:** ω ∈ [0.80, 0.95): in-ban vs not-in-ban, controlling for ω, Δω, 5 lags of m.
-- **H2:** bad-news drift on ban days vs non-ban days (188 announcements in bans → low power, stated in advance); pre-announcement
+- **H2:** bad-news drift on ban days vs non-ban days (180 announcements in bans → low power, stated in advance); pre-announcement
   basis (days −5…−1) in bans vs not.
 - **H1:** friction index (bid–ask proxy, Amihud, IVOL, lagged headroom 1−ω, SLB availability if obtained) vs band width.
 - **H4:** arbitrage-fund flows vs the upper quantile of the cross-sectional basis (monthly).
@@ -99,8 +107,8 @@ Two-way clustered SEs (stock, date). Event studies with few clusters: wild-clust
 Holm correction at 5%. Outliers: main estimates winsorise m at 1/99% within year; robustness without.
 
 ## 8. Power notes (treatment-side counts, known before any outcome analysis)
-Ban spells 2015–2026: 1,789 (44 after Oct 2025); ban stock-days 9,414; stocks ever banned 141; not-in-ban stock-days with
-ω ∈ (0.90, 0.95]: 2,441 pre-reform / 139 post; F&O entries 233 / eligibility exits 158; F&O announcements 7,910 (188 on ban
+Ban spells 2015–2026: 1,788 (44 after Oct 2025); ban stock-days 9,416; stocks ever banned 141; not-in-ban stock-days with
+ω ∈ (0.90, 0.95]: 2,439 pre-reform / 139 post; F&O entries 233 / eligibility exits 158; F&O announcements 8,594 (180 on ban
 days). Post-reform ban analyses and H2-in-bans are low-powered.
 
 ## 9. Falsifiers (from the model)
