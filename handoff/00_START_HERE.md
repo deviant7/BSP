@@ -2,7 +2,7 @@
 
 You are taking over an ongoing research project. This folder is written so that a new chat or a new model, with no
 memory of earlier work, can reach the same depth of context as the assistant that has worked on it so far. Read it fully
-before doing anything. Last full update: **5 November 2026** (see `CHANGELOG.md` for every later change).
+before doing anything. Last full update: **5 November 2026, end of session** (resume card: `16_resume_here.md`) (see `CHANGELOG.md` for every later change).
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -27,6 +27,7 @@ before doing anything. Last full update: **5 November 2026** (see `CHANGELOG.md`
 
 | # | File | Why |
 |---|---|---|
+| 0 | **`16_resume_here.md`** | **Exactly where the last session stopped and the first actions for the next one (read right after this file)** |
 | 1 | this file | Orientation, rules, bootstrap prompt |
 | 2 | `01_project_overview.md` | The research design in full |
 | 3 | `02_people_rules_and_working_style.md` | Who the user and guide are; every durable rule (several are strict) |
@@ -43,6 +44,7 @@ before doing anything. Last full update: **5 November 2026** (see `CHANGELOG.md`
 | 14 | `13_environment_and_tooling.md` | How the cloud container, NSE access, git and LaTeX behave |
 | 15 | `14_open_issues_and_risks.md` | Open threads, unresolved questions, risks, things to verify |
 | 16 | `15_maintenance_protocol.md` | How to keep this folder and `memory/` current |
+| 17 | `16_resume_here.md` | Resume card: where we stopped, rebuild list, next tests in order (update it at every session end) |
 
 Deeper material, when needed: `docs/` (polished final-form documentation for outside readers), `memory/` (the
 assistant's running notes, including the full session log `memory/05_session_log.md`), `plan/` (master plan, frozen test
@@ -72,7 +74,7 @@ plan, archive of all earlier plans and a register of everything removed), the PD
 ## 4. Bootstrap prompt (the user can paste this into a new chat)
 
 > You are continuing my BS thesis project in the repository `deviant7/bsp`, branch `claude/compassionate-rubin-s9gny2`.
-> Before doing anything, read `CLAUDE.md` and then every file in `handoff/` in the order given in
+> Before doing anything, read `CLAUDE.md`, then `handoff/16_resume_here.md`, then every file in `handoff/` in the order given in
 > `handoff/00_START_HERE.md`, then skim `memory/05_session_log.md` and `plan/pre_analysis_plan_v1.md`. Do not rely on
 > summaries alone where a primary file exists. When you have finished, (1) summarise where the project stands in about
 > ten lines, (2) list the next three concrete steps from `handoff/05_next_steps.md`, (3) list anything in the handoff

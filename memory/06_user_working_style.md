@@ -22,3 +22,8 @@
   everything planned, all rules). Update both after every meaningful step (protocol: handoff/15_maintenance_protocol.md).
 - **`docs/` (5 Nov 2026):** final-form documentation only, for readers without domain knowledge; no history.
 - Guide's name confirmed: **Chaubal** (5 Nov 2026). She received and liked the Oct 2026 report; go-ahead given.
+- **5 Nov 2026 (later):** when the assistant has open questions or doubts, the user wants them researched deeply first
+  ("do deep research on everything you wanted my views on"); asks to fetch data independently and only fall back to his
+  college **CMIE Prowess** access if free data are unobtainable or poor; asks to keep memory, docs and handoff updated
+  continuously; ends sessions with "save everything ... pick up exactly where we left off" → write `handoff/16_resume_here.md`.
+- Uses GitHub Desktop on his machine (created the `pap-v1` tag there when the cloud proxy could not push tags).

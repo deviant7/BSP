@@ -1,4 +1,6 @@
-# 04. Current state (as of 5 November 2026)
+# 04. Current state (as of 5 November 2026, end of session)
+
+Resume card with first actions: `16_resume_here.md`. Results for outside readers: `docs/14_results.md`.
 
 ## 4.1 Status board
 

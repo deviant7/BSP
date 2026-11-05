@@ -21,7 +21,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 ## Folders
 | Path | Content |
 |---|---|
-| `handoff/` | This continuity brief (00 to 15 + CHANGELOG) |
+| `handoff/` | This continuity brief (00 to 16 + CHANGELOG; 16 = resume card) |
 | `docs/` | Final-form documentation for outside readers (README, 01 to 13) |
 | `memory/` | Assistant's running notes: 01 context, 02 literature digest, 03 institutional facts, 04 models and audit, 05 session log (chronological, most detailed), 06 user style, 07 fact-check log, 08 earlier handoff (superseded by `handoff/`, kept) |
 | `plan/BSP_Research_Plan_v2.md` | Master plan (scope table, theory summary, hypotheses H1 to H9, phases, measurement, chapters) |

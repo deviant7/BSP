@@ -7,6 +7,7 @@ capital, arbitrage risk and position limits bind in Indian equities, with India'
 everyone once market-wide OI > 95% of MWPL, until 80%) as the sharpest lens. Public NSE data; bans 2010–2026, prices 2015–2026.
 
 ## START HERE
+**Resuming? Read `handoff/16_resume_here.md` first** (where the last session stopped, rebuild list, next steps), then
 **`handoff/00_START_HERE.md`** — the complete continuity brief (reading order, rules, current state, next steps, theory,
 test plan, data pipeline, numbers, facts, literature, repo map, environment, open issues, maintenance protocol).
 Read all of `handoff/` in the order it gives before doing substantive work.

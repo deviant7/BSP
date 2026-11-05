@@ -42,3 +42,8 @@ Then commit and push to `claude/compassionate-rubin-s9gny2`.
 ## 15.4 How a new chat should start
 Use the bootstrap prompt in `00_START_HERE.md` §4. The new chat reads `CLAUDE.md`, all of `handoff/` in order, then the
 session log and the PAP, reports the state, lists inconsistencies, and waits for the user's go-ahead.
+
+## 15.5 At the end of every session
+Rewrite `16_resume_here.md` (where we stopped, last message to the user, first actions, rebuild list of git-ignored files,
+next work in order, lessons that must not be lost), append the session-end entry to `memory/05_session_log.md`, update
+`04_current_state.md`, `CHANGELOG.md` and `CLAUDE.md`'s state paragraph, then commit and push and confirm the tree is clean.

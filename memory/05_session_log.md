@@ -305,6 +305,14 @@
 - docs updated: 06 (AMFI source), 07 (7.10 returns, 7.11 mcap, 7.12 H6 outcomes), 09 (H6 implementation), 10 (10.7
   returns/mcap checks), 12 (rebuild + tests), 14 (H6, Holm).
 
+- **END OF SESSION 5 Nov 2026 (user: "Save everything ... pick up from exactly where we left off").** State: all four
+  primary tests + Holm done (H8, H3, H6 rejected at 5%; H7 not, opposite sign); research on the open questions done
+  (enforcement regimes; H7 diagnostics; H3 placebo calibration); H6 data from free sources (returns, AMFI mcaps; Prowess
+  optional). Resume card written: `handoff/16_resume_here.md` (first actions, rebuild list of git-ignored files:
+  data/raw 1.4 GB, basis_panel, returns_daily, mcap_daily, cache/*.pkl; pip install pyfixest; smoke tests; next =
+  secondary tests in order: level effect → density test → RD → hysteresis → H9 → H2 → H1 → H4 (needs AMFI arbitrage AUM)
+  → H5; each with a dated PAP §11 entry first). Working tree clean at the end; tag pap-v1 on GitHub.
+
 ## Open threads (current; older lists superseded)
 - All four primary tests run + Holm (5 Nov). Next: secondary tests (level effect, H9, density test + RD, hysteresis, H2, H1, H4 needs AMFI arbitrage AUM, H5); optional Prowess check of pre-2018 market caps.
 - Tag pap-v1 now on GitHub (refs/tags/pap-v1 → 85dac3a), created by the user, 5 Nov 2026.

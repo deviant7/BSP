@@ -10,3 +10,4 @@
 - 5 Nov 2026: `pap-v1` confirmed on GitHub (annotated tag → 85dac3a), created by the user.
 - 5 Nov 2026: research on H8 break (enforcement regimes, primary sources saved as references/23-24), H7 diagnostics, H3 placebo calibration; docs/14_results.md; facts updated in docs/03, handoff/10, memory/03, memory/07; PAP §11.2 extended.
 - 5 Nov 2026: H6 inputs (adjusted returns, AMFI market caps, daily mcap), PAP §11.3 C6 before estimation, H6 run, Holm over the family; docs 06/07/09/10/12/14 and handoff 04/05/08/09/12/14 updated.
+- 5 Nov 2026 (session end): `16_resume_here.md` resume card; 00 reading order, 04, 12, 15 (session-end rule), CLAUDE.md, memory 05/06/08 updated.

@@ -81,6 +81,21 @@ Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Ve
    refused by the session's git proxy; the user must create the tag on GitHub).
 6. User asked for a dedicated **`handoff/` folder** for continuity across chats/models (this folder), alongside memory.
 
+## Phase 4: main tests (5 November 2026, same session, after the handoff was created)
+
+1. Implementation details the plan left open were written into PAP §11 (C1 to C5) and committed before any test ran.
+2. Shared sample and inference code (pyfixest two-way FE and clustering, checked on simulated panels).
+3. H8 run: supported; identity failed pooled → research found the enforcement regimes (SEBI PR 18/2020 intraday checks
+   from 23 Mar 2020; PR 59/2020; NSE Clearing 119/2025 end-of-day FutEq from 1 Oct 2025); the identity holds under
+   intraday enforcement.
+4. H7 run: rejected with the opposite sign; exploratory diagnostics (not noise; era-dependent; concentrated at spell
+   starts → blocked-new-demand channel).
+5. H3 run: supported on the pre-specified statistic; placebo calibration weak (common shocks).
+6. User: plans fine; research the open questions deeply; get the H6 data (Prowess as fallback); keep memory, docs,
+   handoff updated. Built adjusted returns (NSE prevclose unadjusted) and AMFI half-yearly market caps (back-cast before
+   Jul 2017); H6 details fixed in §11.3 before estimation; H6 run (delay supports, drift contradicts); Holm over the family.
+7. Session ended with a full save; resume card `16_resume_here.md`.
+
 ## Decisions and their reasons (quick reference)
 
 | Decision | Reason |
@@ -102,3 +117,8 @@ Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Ve
 | 45-signal Fama-MacBeth chapter dropped | IP risk, accounting data not free; public anomalies with SYY double sorts instead |
 | Git tag instead of OSF registration | Timestamp is enough (OSF if the guide wants) |
 | Wait for guide before tag; then tag 5 Nov | User's choice; guide approved |
+| Implementation details fixed in PAP §11 before each test | Keeps the frozen plan honest where it left details open |
+| Exploratory additions labelled and logged in §11.2 | Pre-specified results always reported first |
+| Free data (AMFI) for market caps; Prowess only for verification | User asked to try free sources first |
+| H6 drift via stacked DiD; p_H6 Bonferroni of 4 components | Drift exists only at events; one p-value needed for Holm |
+| Price >= Rs 5 filter for event outcomes | Sub-rupee tick artefacts (BHAR up to 8,190) |
