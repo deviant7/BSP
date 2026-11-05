@@ -226,3 +226,10 @@ components); each component is reported. (i) *Sun-Abraham check:* interaction-we
 panel with never-treated units as the reference. (j) *Robustness:* drop the batch cohorts (entries in 2024 incl. the
 29 Nov 2024 batch; exits in 2019 incl. the 28 Jun 2019 batch); drop stock-years whose market cap is back-cast; VR(5)
 as an alternative efficiency outcome.
+(k) *Added the same day, still before any H6 outcome was related to F&O status* (after inspecting outcome
+distributions alone): sub-rupee stocks produce tick-size artefacts (a Rs 0.05 to Rs 0.10 move is a 100% return; the
+largest BHARs exceed 8,000). Therefore: events with a day-0 closing price below Rs 5 are excluded; duplicate events
+(same stock and event day) are counted once; EAR and BHAR are winsorised at 1% and 99% within each calendar year for the
+main estimates (robustness without); stock-years with an average price below Rs 5 are excluded from the delay panel;
+in the drift design, control stocks are restricted to the range (min, max) of base-year log market cap of the treated
+cohort in the stack.
