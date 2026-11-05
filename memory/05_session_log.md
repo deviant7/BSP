@@ -247,8 +247,30 @@
   state the two-layer rule; memory/08 marked superseded. Verified while writing: basis-panel OI/ΔOI in shares (both formats);
   pyfixest installable.
 
+- **Primary tests run (5 Nov, after `pap-v1` and the §11 C1–C5 clarifications committed in c6b1701):**
+  Sample (analysis/samples.py): 486,040 chosen-contract stock-days, 371 stocks; next contract used 18.5%; 8,851 ban days.
+  Inference: pyfixest two-way FE + two-way clustered SE, validated on simulated panels (analysis/test_inference.py).
+  - **H8** (analysis/output/h8_results.txt): in [0.80,0.95) zone, Ban → log futures contracts −2.00 (se 0.11), log cash
+    shares +0.073 (0.027), delivery share +0.041 (0.0045); p_H8 ≈ 0. Identity R=(ΔOI+V)/V on ban days: mean 0.42 (pre-set
+    reading FAILS). Exploratory: break between 6 and 24 Mar 2020: before mean 0.86 (no R<=0.01), after mean 0.10/median 0.012;
+    non-ban R ≈ 1.01 all years; chg_oi = ΔOI levels. Cause unknown (likely intraday round trips tolerated before) → ask user.
+    Futures volume effect −0.97 before vs −2.72 after. Logged in PAP §11.2.
+  - **H7** (h7_results.txt): REJECTED. δ_up = −0.089 (t −2.4), δ_lo = +0.081 (t +2.7): in bans rich futures revert FASTER,
+    cheap futures SLOWER (opposite of the model); p_H7 = 1. Robust: fixed ±25 bp, SETAR thresholds, state-dependent, no
+    imputed, no r_filled, rel. repo; close-based δ_up ≈ 0; unwinsorised δ_up +0.077 (t 1.6). After an expiry inside the
+    spell δ_lo + δ_lo_exp = −0.83 (much faster downward reversion; opposite of 'floor wears out'). Post-reform n.s.
+    Candidate readings for discussion (not claimed): closing pressure by speculative longs dominates (long liquidation
+    pushes futures down); noise in thin-trading VWAPs; contract-level selection (≥5 contracts on ban days).
+  - **H3** (h3_results.txt): mean Δq80 2023 −2.12, 2024 +6.42, 2026 +7.44 bp (ordering YES); p_H3 = 1.8e-24 (stock-clustered,
+    as pre-specified). Placebo (pre-specified): sd 7.4 bp across 30 pseudo-events; 2024 rank 0.10, 2026 0.067 → stock-only
+    clustering understates uncertainty (common date shocks); shifts exceed cost changes and d50/d20 also move (level shift).
+  - H6 not run: needs (i) split/bonus adjustment (NSE PREVCLOSE is NOT adjusted: TATASTEEL split 28 Jul 2022 prevclose 959.4,
+    close 100.35); (ii) market cap: no free NSE file found (PR zips have none); plan = shares from XBRL paid-up capital / face
+    value; (iii) §11 dated entry for H6 details before running.
+
 ## Open threads (current; older lists superseded)
-- `pap-v1` tagged (5 Nov). Next: run the primary tests H7, H8, H3, H6 exactly as specified; then secondary.
+- H8, H7, H3 run (see above). Next: H6 inputs (adjusted returns, market cap via XBRL), §11 H6 entry, run H6, Holm; discuss H7/H8/H3 readings with user.
+- User to create tag pap-v1 on GitHub (Desktop instructions given 5 Nov).
 - Library full texts: Saurav–Srivastava–Agarwalla 2026, Gagnon 2018, Brennan–Schwartz 1990.
 - Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe
   delay/VR; state-dependent-threshold estimator; density test at 95%.

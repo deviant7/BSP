@@ -38,7 +38,7 @@ Create `analysis/samples.py` (build once, reuse everywhere) and write a counts r
    `pyfixest` is installable from PyPI in the container (checked 5 Nov 2026: pyfixest 0.60.0 downloads); cross-check the hand-written code against
    it on one regression. Write unit tests on simulated data with known coefficients.
 
-## Step 2. Primary tests (order: H8, H7, H3, H6)
+## Step 2. Primary tests (order: H8, H7, H3, H6) — H8, H7, H3 DONE 5 Nov 2026 (results: 04 §4.7); H6 next
 
 H8 first: it is the mechanical check that bans bind and that the ban timing is right; if it fails, the ban results need
 re-thinking before anything else.
@@ -80,12 +80,14 @@ re-thinking before anything else.
 
 ### H6: short-sale access (F&O entry and eligibility exit)
 Needs inputs not yet built:
-- **Daily returns for the cash universe** (all EQ/BE/BZ stocks): from `data/raw/prices/cash` close and previous close.
-  Verify how NSE's `PREVCLOSE` treats splits and bonuses on ex-dates (if adjusted, return = close / prevclose - 1 is
-  clean; otherwise adjust with corporate actions). Check a known split (e.g. a 1:5 split) before using.
-- **Market capitalisation** for size matching and size portfolios: not in the bhavcopy. Options: NSE market-cap archive
-  files, or shares outstanding from the XBRL filings, or free float = MWPL/0.20 for F&O stocks only (not enough for
-  controls). Find a source first; if none is free, match on traded value and price level and log the deviation.
+- **Daily returns for the cash universe** (all EQ/BE/BZ stocks): from `data/raw/prices/cash`. Checked 5 Nov 2026:
+  NSE's `PREVCLOSE` is **not** adjusted (TATASTEEL 1:10 split, 28 Jul 2022: prevclose 959.4, close 100.35; RELIANCE 1:1
+  bonus, 28 Oct 2024: prevclose 2655.70, close 1334.35). Build adjustment factors from corporate actions (splits:
+  "From Rs X ... To Rs Y"; bonus "a:b" → factor (a+b)/b; rights and demergers flagged and excluded around ex-date).
+- **Market capitalisation**: no free NSE file found (checked: `archives/equities/mcap/...` 404; the daily PR zips have no
+  market-cap file). Plan: shares outstanding = paid-up equity capital / face value from each quarter's XBRL results filing
+  (links in `announcements.csv.gz`), carried forward to the next filing; market cap = shares x close. Free float =
+  MWPL/0.20 cross-checks F&O stocks.
 - **Market return** for price delay: equal-weighted cash-universe return, or Nifty 50 / a broad index file.
 - Outcomes: price delay (weekly returns, 52-week windows), VR(5), BHAR[+2,+64] after bad news (EAR in bottom tercile or
   quintile; pre-specify which in §11 before running if the PAP is silent).

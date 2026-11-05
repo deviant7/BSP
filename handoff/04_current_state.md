@@ -11,7 +11,7 @@
 | Data: outcome side | Basis built, audited; announcements rebuilt | `basis_panel.csv.gz` (git-ignored), `announcements.csv.gz` |
 | Data: not yet collected | AMFI arbitrage-fund AUM; XBRL EPS; SLB; index dividends | see 05 |
 | Estimators | 3-regime SETAR (`analysis/setar.py`), tested on simulated data | `analysis/` |
-| Main tests | **Not run** | next step |
+| Main tests | H8, H7, H3 **run** (5 Nov 2026); H6 pending (inputs) | `analysis/output/h*_results.txt`; summary in §4.7 below |
 | Final-form docs | Complete for the current state; results page to be added | `docs/` |
 | Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
@@ -70,3 +70,16 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 | Models A and B PDFs, 28 Sep progress note | Internal (never sent) | Superseded; kept |
 | `docs/` | Outside readers, final repo | Current |
 | `handoff/`, `memory/`, `plan/` | Internal continuity | Current |
+
+## 4.7 Primary results so far (5 Nov 2026; pre-specified, after the §11 C1 to C5 clarifications)
+
+| Test | Pre-specified statistic | Result | Notes |
+|---|---|---|---|
+| H8 | one-sided p, Ban coefficient on log futures contracts < 0 | b = -2.00 (se 0.11), p ~ 0: **supported** | cash volume +7.3%, delivery share +4.1 pp (as predicted). Identity (dOI+V)/V ~ 0 **fails** pooled (mean 0.42). Exploratory: break mid-March 2020 (before 0.86, after median 0.01); cause unknown |
+| H7 | IU p = max(p(delta_up > 0), p(delta_up - delta_lo > 0)) | delta_up = -0.089 (t -2.4), delta_lo = +0.081 (t +2.7), p = 1: **rejected; opposite sign** | robust across pre-specified checks except close-based (delta_up ~ 0) and unwinsorised (delta_up +0.08, t 1.6). After an expiry in the spell, downward reversion much faster |
+| H3 | one-sided p, mean change in stock q80, 2024+2026, stock-clustered | +6.96 bp (se 0.61), p = 1.8e-24; ordering 2026 > 2024 > 2023 holds: **supported by the pre-specified test** | pre-specified placebo: sd 7.4 bp across pseudo-events, 2024 rank 0.10, 2026 0.07: weak once common shocks are allowed for; shifts larger than the cost changes |
+| H6 | to be fixed in §11 before running | not run | needs split/bonus-adjusted returns and market cap |
+
+Holm across the four waits for H6. Questions for the user: the March 2020 break (does he know of a rule or broker change?);
+how to present H7's reversal; whether to add the placebo-calibrated p for H3 as a sensitivity (it is pre-specified as a
+placebo, so reporting it is allowed).
