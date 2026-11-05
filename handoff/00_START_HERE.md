@@ -19,8 +19,8 @@ before doing anything. Last full update: **5 November 2026** (see `CHANGELOG.md`
    unstudied. But the project is **broader than the ban** (user's explicit instruction).
 4. Method order: **theory first** (the guide asked for it) → a **pre-analysis plan** frozen with a git tag before any
    outcome is related to any treatment → a **blind data build** from free NSE archives → tests → interpretation.
-5. Status on 5 Nov 2026: theory done and verified; data built and audited; pre-analysis plan frozen (`pap-v1`); **the
-   main tests have not been run yet**. That is the next step.
+5. Status on 5 Nov 2026: theory done and verified; data built and audited; pre-analysis plan frozen (`pap-v1`);
+   primary tests H8, H7, H3 run (H7 rejected with the opposite sign; see `04_current_state.md` §4.7); H6 next.
 
 ## 2. Reading order (do not skip)
 
@@ -93,5 +93,5 @@ plan, archive of all earlier plans and a register of everything removed), the PD
    meetings and ISIN history.)
 6. What has the guide seen? (The project document of September 2026 and the progress report PDF of October 2026, which
    she liked; she gave the go-ahead.)
-7. Is the git tag `pap-v1` on GitHub? (Not necessarily: it was created locally at commit 85dac3a; the cloud session's git
-   proxy refused tag pushes. Check with `git ls-remote --tags origin`.)
+7. Is the git tag `pap-v1` on GitHub? (Yes, since 5 Nov 2026: created by the user, pointing to commit 85dac3a. Cloud
+   sessions cannot push tags through their git proxy.)
