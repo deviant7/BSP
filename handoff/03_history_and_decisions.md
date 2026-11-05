@@ -1,0 +1,104 @@
+# 03. History and decisions (chronological)
+
+Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Very old conversation.txt`,
+`Recent Conversation.txt`), `plan/archive/` and `plan/archive/REMOVED_ITEMS_REGISTER.md`.
+
+## Phase 0: choosing the topic (before September 2026, desktop chats)
+
+- The user asked for BSP ideas in market efficiency using Indian data. Seven ideas were proposed (expiry-day migration DiD,
+  **F&O ban as a limits-to-arbitrage shock**, retail exit and noise-trader theory, losing weekly expiries, staggered T+0,
+  anomalies risk vs mispricing, index inclusion).
+- He wanted a multi-chapter research **programme** on public data. Two programmes were evaluated in depth:
+  - **Program A (chosen): limits to arbitrage in Indian equities**, with the ban/MWPL as the constraint shock.
+  - **Program B (dropped): the retail transformation 2019 to 2026.** Fatal measurement problem: participant-wise OI is
+    market-level only; shareholding measures ownership, not trading; the 2024 to 2026 reforms are index-level (N of 1 or 2,
+    no cross-section for DiD); welfare already estimated by SEBI with account data. It survives only as the concluding
+    policy chapter.
+- Advice then: make the constraint measure a deliverable that survives a null; run the density (McCrary) test early.
+- A proposal (`BSP Proposal.docx`, not in the repo) was sent to Prof. Chaubal, who approved it.
+- Note: two claims from that era later proved wrong and were removed: "position limits have been studied in Korea and
+  Taiwan" (no source found) and "MWPL = 20% of free float **or 30 times prior-month volume**" (the volume leg ended in 2006).
+
+## Phase 1: project document and literature (September 2026, desktop chats)
+
+- `BSP_Project_Document.docx` (= `.pdf`): detailed study plan. Six chapters: constraint index (PCA), mispricing measures
+  (basis, put-call parity, PEAD), causal identification (MWPL-denominator revisions as instrument; RD at 95% with
+  McCrary), no-arbitrage band and 2025 regime shifts (TAR/STAR/Ters-Urban TVECM), cross-section (Fama-MacBeth on the
+  45-signal library), policy chapter. Hypotheses H1 to H6. Timeline by weeks. The user's master plan (goals kept).
+- 21 reference PDFs collected (user downloaded them via the library), verified, read in full; notes batches 1 to 5;
+  Shleifer-Vishny OCR'd. A 29-page LaTeX literature review (`BSP_Literature_Review.pdf`).
+- The guide then asked for a **mathematical model first**.
+- Two candidate models were built: **Model A** (risk-averse arbitrageur with an MWPL cap; ban as a KKT shadow-price jump)
+  and **Model B** (impulse-control band of inaction, b = (6K sigma^2/theta)^(1/4), "bridge" to TAR/TVECM), with 3-page
+  guide versions and a 28 Sep 2026 progress note. **None of these was sent to the guide.**
+
+## Phase 2: first cloud session (28 October 2026)
+
+1. Read everything; built `memory/` and `CLAUDE.md` (user: save memory regularly).
+2. **Audit of Models A and B** (`memory/04_models_and_audit.md`): both mis-model the ban (it restricts everyone, not only
+   the arbitrageur; A conflated entity caps with the 95% market-wide trigger); A's Prop. 5 proof false; A's Prop. 4 theta
+   ad hoc; B's QVI sign flipped and the "exact bridge" overstated; the identification claim "Cov(L,u) = 0 by timing" invalid;
+   both were built to deliver H1 to H6 (reverse-engineering risk). Advice: one corrected model whose predictions can fail,
+   plus a git-timestamped pre-analysis plan.
+3. User corrections: the guide has not seen A/B or the progress note; **ignore timelines**; keep the document's goals;
+   **the project is limits to arbitrage broadly, not only the ban**.
+4. `plan/BSP_Research_Plan_v2.md` written (theory → PAP → blind data → validation → tests). Earlier plans archived;
+   removed-items register created (user: keep all plans and deletions).
+5. **Internet fact-check of every rule, date and citation** (`memory/07_fact_check.md`). Main corrections: no 30x volume
+   leg after 2006; ADDV in quantity; 80% exit confirmed (NSE Clearing circular 119/2025, saved as `references/19`); mutual
+   funds may legally short; new facts: COVID MWPL halving 2020, STT 0.05% from 1 Apr 2026, closing auction for F&O stocks
+   from 3 Aug 2026, ban penalties, short-selling eligibility limited to F&O securities, MWPL was recomputed monthly before
+   the reform. Two more Indian papers found and read (#20 Shankar et al. 2015; #21 Nandan, Agrawal and Jindal 2015).
+6. **Model C written** ("go ahead"): one model with every limit as a parameter, the ban as reduce-only for everyone,
+   inventory, spillover to cash, anticipation, hysteresis, the MWPL-not-an-instrument result, bad news in bans, Miller
+   overpricing. All closed forms verified numerically. A first version of the level-effect proposition **failed** its
+   check (mean-zero spillover cannot shift the mean) and was corrected to depend on the inflow of new demand.
+7. User asked "can we just work with data without modelling?" Answer: possible in principle, but keep the existing model
+   (the guide asked for it and it already changed the design); no more theory unless the data demand it.
+8. **Data pipeline built** (blind): MWPL/OI/ban panel 2010 to 2026; prices 2015 to 2026; basis; F&O membership and events
+   (the user's own membership sheet `fno_pit_3.xlsx` matched exactly after cleaning, used as a cross-check);
+   announcements; Nifty validation. Many NSE file quirks found and fixed (catalogue in 08).
+9. **Pre-analysis plan v1** written; tests on simulated data showed fixed-threshold SETAR recovers textbook thresholds but
+   not the model's cost band (inventory moves thresholds), which changed H3 and added state-dependent thresholds.
+10. **Progress report** (`BSP_Progress_Report_Oct2026.pdf`, 26 pp) written to guide-facing rules; the user asked to remove
+    the "points on which I would value your guidance" section (kept in a separate file).
+11. The user chose to **wait for the guide** before tagging the plan. Handoff written (`memory/08`). PR #1 opened and merged
+    by the user (main = 65ef0e3).
+
+## Phase 3: second cloud session (5 November 2026)
+
+1. Full context re-gathered; one stale number fixed in the report table (2017 average F&O stocks 200, not 201).
+2. User: the report was **sent**, the guide **liked it** and gave the go-ahead; name is "Chaubal". Asked whether the three
+   library papers are needed (answer: not blocking; Saurav et al. first, for positioning). Asked for (a) a data audit,
+   (b) a `docs/` folder of the final form, then (c) next steps.
+3. **Data audit** (`docs/10_data_quality_audit.md`, scripts in `analysis/audit/`). Fixed: missing ban lists (imputed);
+   October 2026 rate missing (carried forward, flagged); **results dates** (the filing feed had late re-filing times and
+   current symbols; rebuilt from "Financial Result Updates" announcements + filings + board meetings + ISIN symbol
+   history; 51.5% of old F&O events had been dated too late; coverage now 98 to 100%). Documented: combineoi vs bhavcopy
+   OI differences; 9 missing Nifty days; BSE-only listings without results.
+4. **`docs/`** written: README + 13 pages.
+5. **Pre-analysis plan finalised** with pre-tag revisions (a) to (d) and **tagged `pap-v1`** at commit 85dac3a (tag push
+   refused by the session's git proxy; the user must create the tag on GitHub).
+6. User asked for a dedicated **`handoff/` folder** for continuity across chats/models (this folder), alongside memory.
+
+## Decisions and their reasons (quick reference)
+
+| Decision | Reason |
+|---|---|
+| Program A over B | B's treatment cannot be measured per stock with public data; reforms are index-level |
+| Theory before data | Guide's instruction; guards against confirmation bias |
+| One model (C) replacing A and B | A/B mis-modelled the ban and were reverse-engineered to H1 to H6 |
+| Ban = reduce-only for everyone | That is the rule (NSE Clearing 119/2025; SEBI 2025/79) |
+| MWPL not an instrument | It moves anticipation and caps even without a ban (Prop. 9) |
+| VWAP basis, not settlement | Theoretical settlement price on no-trade days |
+| 3-month interbank rate (monthly, OECD/FRED) | No daily T-bill series obtainable; relative implied repo removes common rate error |
+| H7 regimes by stock-level 20/80 percentiles on non-ban days | Model-free, robust to inventory-moving thresholds; TVECM and fixed bands as robustness |
+| H3 on changes of edges around STT dates | Fixed thresholds estimate average edges, not costs (simulation) |
+| H9 and level effect secondary | Lower power / sign set by composition |
+| 1 Apr 2023 not used alone for H3 | Same day as the debt-fund tax change |
+| F&O entry/exit for H6 over ~2,000 cash stocks | Much more power than ~200 F&O stocks |
+| Friction index from frictions only | Basis (outcome) and ban (treatment) as inputs would be circular |
+| Put-call parity demoted | Thin, stale stock-option prices |
+| 45-signal Fama-MacBeth chapter dropped | IP risk, accounting data not free; public anomalies with SYY double sorts instead |
+| Git tag instead of OSF registration | Timestamp is enough (OSF if the guide wants) |
+| Wait for guide before tag; then tag 5 Nov | User's choice; guide approved |

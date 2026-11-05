@@ -1,4 +1,7 @@
-# 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026; UPDATED 5 Nov 2026 — see §0b first)
+# 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026; updated 5 Nov 2026)
+
+> **Superseded as the entry point by `handoff/00_START_HERE.md` (5 Nov 2026).** Kept for the record; `handoff/` is the
+> maintained, complete brief.
 
 Read this file first, then CLAUDE.md and memory/01–07. It states exactly where the project is, what is waiting on whom,
 every artefact, every rule, and how to rebuild everything.

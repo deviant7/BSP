@@ -16,5 +16,9 @@
   in anything she will see. Write as a self-contained academic document. (Internal honesty notes live in memory/, not in her PDF.)
 - **Progress report plan:** ONE PDF to the guide, which will include the 3-page plain-language theory version. The user wants MORE
   progress (beyond theory) before building it — e.g., data built and first descriptive facts.
-- User spelled the guide's name "Aditi Chawla" once (voice typing); records say Prof. Aditi Chaubal — confirm spelling before
-  putting it on the report.
+- User spelled the guide's name "Aditi Chawla" once (voice typing); confirmed 5 Nov 2026: **Chaubal**.
+- **Two-layer continuity (5 Nov 2026):** (1) memory/ for the assistant's own future sessions; (2) `handoff/` folder, as
+  extensive as possible, that the user can point any new chat/model to so it gets the same depth of context (everything done,
+  everything planned, all rules). Update both after every meaningful step (protocol: handoff/15_maintenance_protocol.md).
+- **`docs/` (5 Nov 2026):** final-form documentation only, for readers without domain knowledge; no history.
+- Guide's name confirmed: **Chaubal** (5 Nov 2026). She received and liked the Oct 2026 report; go-ahead given.

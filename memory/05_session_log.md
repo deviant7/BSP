@@ -238,6 +238,14 @@
 - **PAP:** pre-tag revisions (a)–(d) written into the status block; power counts updated; register changelog updated;
   plan v2 Phase 2 status updated; data_pipeline/README completed. **Tagged `pap-v1` at commit 85dac3a** (local; tag push
   refused by the session's git proxy, HTTP 403 → user to create the tag on GitHub; commit itself pushed).
+- **User (5 Nov): continuity in two layers.** (1) memory for the assistant; (2) a very extensive `handoff/` folder any new
+  chat/model can be pointed to. Created `handoff/` (00_START_HERE with reading order, rules, bootstrap prompt and self-check;
+  01 overview; 02 people/rules/style; 03 history and decisions; 04 current state; 05 detailed next steps; 06 theory with
+  all propositions; 07 frozen test plan + implementation notes; 08 data pipeline deep dive (scripts, data dictionary,
+  44-item quirk catalogue, NSE access); 09 key numbers; 10 institutional facts with status; 11 literature; 12 repo map;
+  13 environment; 14 open issues/risks; 15 maintenance protocol; CHANGELOG). CLAUDE.md rewritten to point to handoff/ and
+  state the two-layer rule; memory/08 marked superseded. Verified while writing: basis-panel OI/ΔOI in shares (both formats);
+  pyfixest installable.
 
 ## Open threads (current; older lists superseded)
 - `pap-v1` tagged (5 Nov). Next: run the primary tests H7, H8, H3, H6 exactly as specified; then secondary.
