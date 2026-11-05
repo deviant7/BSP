@@ -119,4 +119,56 @@ no effect of F&O entry/exit on delay or bad-news drift (H6).
 AMFI arbitrage-fund AUM series; XBRL EPS extraction for SUE; index dividends for the Nifty futures check; SLB data.
 
 ## 11. Deviations log
-(empty)
+Entries are dated. "Clarification" = a detail the plan left open, fixed before any test was run; "Deviation" = a change
+to something the plan specified.
+
+### 11.1 Clarifications fixed on 5 Nov 2026, after the tag and BEFORE any primary or secondary test was run
+Only treatment-side counts had been looked at (stock-days by lagged utilisation bin and ban status).
+
+**C1. Analysis sample for all basis tests (§2, §3).**
+(a) Trading days to expiry d_t = number of trading days after t up to and including the expiry day (expiry day: d = 0).
+The near contract is used if d_t > 3, otherwise the next contract. Contracts are identified by expiry date, not by order.
+(b) ">= 5 contracts" applies to the chosen contract on day t. (c) Exclusions apply to the chosen contract row: dividend
+going ex within its life (pv > 0), other corporate event (event_in_life), missing VWAP (lot failure), and trading days 1 to
+20 of a membership spell that starts with an F&O entry event. (d) Delta m_t = m_t - m_(t-1) for the same contract on the
+previous trading day; the day-(t-1) row must satisfy (b) and (c) itself (it need not be the chosen contract at t-1, e.g. on
+a switch day). (e) Winsorisation: 1st and 99th percentiles of m per calendar year, computed on the chosen-contract sample,
+applied to every level (m_t and m_(t-1)) by the year of its date; Delta m uses the winsorised levels. (f) Ban_it = stock on
+the ban list for day t (official or imputed). omega_(t-1) = util (gross OI) on files dated before 1 Oct 2025, util_futeq
+from 1 Oct 2025, taken from the previous trading day's file.
+
+**C2. H7.** (a) mu_i, and the 20th/80th percentiles defining the regimes, are computed from stock i's analysis-sample
+levels m_t on non-ban days over the full sample (winsorised). Stocks with fewer than 100 such observations are dropped.
+(b) The regression includes the middle regime: all three regimes have a beta and a delta. (c) "Expiry inside the current
+ban spell": PostExp_it = 1 if Ban_it = 1 and an expiry date of the stock's futures falls in [spell start, t-1]; the
+interaction (m_(t-1) - mu_i) x regime x Ban x PostExp is added in a second specification. (d) Test statistic for the
+multiple-testing family: intersection-union p-value p_H7 = max(p1, p2), p1 one-sided for delta_upper > 0, p2 one-sided for
+delta_upper - delta_lower > 0, two-way clustered standard errors (stock, date). (e) Main estimate pooled 2015 to 2026;
+pre- and post-1 Oct 2025 reported separately. (f) Robustness thresholds: fixed +/-25 bp around mu_i; per-stock thresholds
+from the 3-regime threshold autoregression of the basis on non-ban days (`analysis/setar.py`; the basis imposes the
+cointegrating vector beta = 1, so the univariate threshold model on m is used in place of a TVECM); state-dependent
+thresholds = the 20th/80th percentiles computed separately within each stock's terciles of omega_(t-1) on non-ban days.
+
+**C3. H8.** (a) Period 1 Jan 2015 to 30 Sep 2025 (gross-OI rule); post-reform days reported descriptively only.
+(b) Expiry days of the near contract are excluded. (c) Delta OI and volume summed over the near and next contracts, in
+contracts: Delta OI = chg_oi / lot_used, volume = contracts traded. R_it = (Delta OI + V) / V for V > 0. (d) Identity
+test: mean and median of R on ban days with bootstrap (stock-clustered) confidence intervals, against non-ban days.
+R >= 0 always holds arithmetically; the prediction is R close to 0 in bans. Pre-set reading: the identity "holds" if the
+mean of R on ban days is below 0.10 and below one tenth of the mean on comparison non-ban days. (e) Comparison sample:
+stock-days with omega_(t-1) in [0.80, 0.95) (the only range where both ban and non-ban days exist; above 0.95 there are
+almost no non-ban days). Regressions of y on Ban with stock-by-bin fixed effects (bins [0.80, 0.85), [0.85, 0.90),
+[0.90, 0.95)) and date fixed effects, two-way clustered SE; y = log(1 + futures contracts, near + next),
+log(1 + cash shares traded), delivery share (deliverable / traded quantity, EQ series), and R. (f) Test statistic for the
+family: one-sided p-value that the Ban coefficient on log futures contracts is < 0.
+
+**C4. H3.** (a) Event days: 3 Apr 2023 (first trading day on or after 1 Apr 2023), 1 Oct 2024, 1 Apr 2026. Pre window
+= the 40 trading days before the event day; post window = the event day and the next 39 trading days. (b) Analysis
+sample of C1; stocks with at least 20 observations in each window. (c) Stock-level outcome: Delta q80_i = 80th percentile of
+winsorised m in the post window minus that in the pre window (also q20 and the median). (d) Test statistic for the family:
+one-sided p-value that the mean of Delta q80 over stock-event observations from the 2024 and 2026 events (2023 excluded as
+confounded) is > 0, standard errors clustered by stock. (e) Ordering 2026 > 2024 > 2023 judged on point estimates
+(descriptive; three events). (f) Placebo: the same statistic at pseudo-event days spaced 80 trading days apart from
+Jan 2015, excluding any window overlapping a true STT date; the true events' ranks in this distribution are reported.
+(g) Threshold-model edges: pooled 3-regime threshold model on stock-demeaned m within each window (robustness).
+
+**C5. Family.** Holm at 5% over {p_H7, p_H8, p_H3, p_H6}. H6 details are fixed in a later dated entry before it is run.
