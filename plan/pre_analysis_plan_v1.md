@@ -512,3 +512,19 @@ with every component sourced; compared descriptively with the estimated edges.
   (2) Measurement noise: instrumenting x_(t-1) with x_(t-2) shrinks the slopes (linear -0.26 to -0.14; middle regime -0.49
   to -0.19; upper -0.52 to -0.14; lower -0.17 to -0.12), so much of the daily reversion is noise and the upper/lower
   asymmetry in reversion speed is not robust.
+
+### 11.14 Constraint index as a stand-alone deliverable (project-document goal; master plan §4), fixed on 7 Nov 2026 BEFORE it was built
+Known beforehand: H1 (F&O-only friction index; SLB activity entered with the wrong sign), H5 (constraint groups), H6
+(price delay falls after F&O entry), H2(e) (cash-only stocks drift more after good and bad news).
+**C17. Constraint index.** (a) *Universe:* all NSE EQ/BE/BZ stocks with a quarter-end price >= Rs 5 and at least 40 trading
+days in the quarter, 2015 Q1 to 2026 Q3. (b) *Components per stock-quarter* (frictions only; no basis, no ban): (1) no
+short channel = 1 if the stock is not in the F&O segment at quarter end; (2) SLB scarcity = 1 - share of trading days
+with any SLB trade; (3) Corwin-Schultz spread (as C13 c); (4) log Amihud illiquidity; (5) idiosyncratic volatility
+(daily, on the Nifty 50). (c) *Index:* first principal component of the components standardised within quarter, sign
+such that the loadings sum to a positive number; loadings for each year reported for stability; the index is published
+with its components (`data/processed/constraint_index_q.csv.gz`). The F&O-only index with utilisation (C13) is kept as a
+separate position-limit index. (d) *Validation (associations, frictions measured before outcomes):* (i) annual price delay
+D1 (calendar year y) on the mean index over the four quarters of year y-1, year FE, SE clustered by stock; prediction
+positive; (ii) absolute post-announcement drift |BHAR_w[+2,+64]| on the index of the previous quarter, quarter FE, SE
+two-way (stock, event date); prediction positive; and bad-news BHAR on the index (prediction negative); (iii) F&O subset:
+quarterly basis band width on the index (as H1); (iv) persistence: quarter-to-quarter rank correlation of the index.
