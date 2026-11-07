@@ -1,0 +1,74 @@
+\chapter{Introduction}\label{ch:intro}
+
+\section{The question}
+When two ways of holding the same risk trade at different prices, an arbitrageur can buy the cheap one, sell the dear one
+and wait for the prices to meet. If arbitrage were free and unlimited, such gaps would never be large or long-lived.
+Shleifer and Vishny (1997) and Gromb and Vayanos (2010) explain why it is neither: arbitrage needs capital, it carries
+risk while the gap persists, it costs money to trade, and it often needs a short position that may be costly or not
+allowed. Each of these limits lets prices drift away from each other.
+
+This thesis asks how strongly these limits bind in the Indian equity market, which of them matter, and how much
+mispricing they explain. India is a good place to ask. Almost every limit changes on known dates: the securities
+transaction tax (STT) on futures was raised three times between 2023 and 2026; only stocks in the futures and options
+(F\&O) segment can be sold short or shorted through stock futures, and stocks enter and leave that segment every few
+months; the assets of arbitrage mutual funds grew several times after a change in the taxation of debt funds in 2023; and
+position limits are set by formula and were changed in October 2025.
+
+India also has an unusual rule. When market-wide open interest in a stock's derivatives exceeds 95\% of its market-wide
+position limit (MWPL), the stock enters an \emph{F\&O ban}: every participant, not only arbitrageurs, may only trade to
+reduce positions until open interest falls to 80\%. Between 2015 and October 2026 this happened 1,788 times to 141 stocks.
+To my knowledge no study has estimated its effects. The ban is the sharpest lens on one limit, but it is one lens among
+several; the thesis studies the limits side by side.
+
+\section{Approach}
+The work followed a fixed order, designed to prevent fitting the theory and the data to each other.
+\begin{enumerate}
+\item \emph{Theory first.} One model covers all the limits; each enters as a parameter. The ban is modelled as the rule
+actually works. Every hypothesis is derived from the model with the result that would contradict it (Chapter~\ref{ch:theory}).
+\item \emph{A frozen test plan.} Samples, variables, specifications and falsifiers were written down and frozen with a
+time-stamped record before any outcome was related to any treatment. Every detail the plan left open was fixed in a dated
+log before the test that needed it was run (Appendix~\ref{app:plan}).
+\item \emph{Data from primary sources.} All data come from public exchange archives and are built with scripts that check
+every step against the exchange's own rules (Chapter~\ref{ch:data}).
+\item \emph{Estimators tested on simulated data} from the model before use.
+\item \emph{All results reported,} including those that contradict the model.
+\end{enumerate}
+
+\section{Main findings}
+\begin{enumerate}
+\item \textbf{Bans bind on trading.} In a ban, futures trading falls by about two log points and the delivery share of cash
+trading rises. When the rule was enforced on peak intraday positions (March 2020 to September 2025), the change in open
+interest equals minus the volume: every futures trade closed a long and a short. Under end-of-day enforcement before March
+2020 this identity did not hold.
+\item \textbf{Correction is not one-sided as predicted.} The model predicts that rich futures stop being corrected in a ban
+because nobody may open new cash-and-carry positions. The data show the opposite: rich futures revert faster in a ban, and
+cheap futures more slowly. The effect is concentrated in the first days of a spell and survives a correction for noise in
+daily prices.
+\item \textbf{The basis falls when a ban starts.} Against stocks that came close to the trigger but did not cross it, the
+basis is about 6 basis points (bp) lower in the first days of a ban, more when open interest had been building fast, and
+it returns to its earlier level after about a week. Utilisation does not bunch below the trigger, and as utilisation rises
+the basis is more often rich.
+\item \textbf{Costs, capital and the band.} The basis follows a wide, asymmetric band, about $-35$ to $+24$\bp\ around each
+stock's median. The upper part of the distribution rose around the 2024 and 2026 STT increases, but by more than the cost
+changes and mostly as a common shift. A new cash-and-carry round trip costs 27 to 31\bp, which places it in the outer tail
+of the basis; rolling an existing position costs 4 to 8\bp. Inflows into arbitrage funds are followed by a lower upper
+tail, but the evidence is weak.
+\item \textbf{Short-sale access and the cross-section.} After a stock enters the F\&O segment its price responds faster to
+market-wide news; drift after bad news does not weaken. A constraint index built only from frictions, for every listed
+stock, predicts slower price adjustment and larger drift after bad, but not good, news.
+\end{enumerate}
+
+\section{Contribution}
+The thesis studies the F\&O ban for the first time; models it as a reduce-only rule for every participant and shows that
+this makes correction one-sided in theory and the level effect ambiguous in sign; shows that changes in the position limit
+cannot serve as an instrument for ban status; estimates the no-arbitrage band of Indian stock futures over a long daily
+sample with threshold and smooth-transition models; and publishes a constraint index for all Indian stocks. The closest
+earlier work on Indian stock futures estimates bands from intraday data over short samples without the ban (Aggarwal,
+2015; Shankar, Sankar and Kiran Kumar, 2019); Saurav, Srivastava and Agarwalla (2026) study the basis around earnings
+announcements and short-sale constraints.
+
+\section{Outline}
+Chapter~\ref{ch:inst} describes the Indian rules. Chapter~\ref{ch:theory} presents the model. Chapter~\ref{ch:data}
+describes the data, the measures and the constraint index. Chapter~\ref{ch:band} estimates the band and relates it to
+costs, capital and position limits. Chapter~\ref{ch:ban} studies the ban. Chapter~\ref{ch:elig} studies entry into and exit
+from the F\&O segment and the cross-section of stocks. Chapter~\ref{ch:concl} concludes and discusses policy.
