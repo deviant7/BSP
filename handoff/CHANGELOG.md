@@ -20,3 +20,4 @@
 - 7 Nov 2026: exploratory build-up split of the level effect (analysis/level_effect_buildup.py; docs/14 §14.7; PAP §11.2; 04).
 - 7 Nov 2026: hysteresis (PAP §11.7 C10; analysis/hysteresis.py; docs/14 §14.10; 04; 09; 14 open issues added).
 - 7 Nov 2026: H9 (PAP §11.8 C11; analysis/h9_regime.py; docs/14 §14.11; 04; 09).
+- 7 Nov 2026: H2 (PAP §11.9 C12; analysis/h2_badnews.py; docs/14 §14.12; 04; 09).

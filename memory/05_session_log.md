@@ -380,3 +380,7 @@
 - **H9 (7 Nov):** PAP §11.8 C11 committed first (8484f59). A: upper-tail share rises with omega (slope p 0.019; step near
   0.75), lower tail/level flat → upper edge loosens (anticipation + pressure). B: 1 Oct 2025 intensity: first stage strong,
   U +0.061 p 0.11 (right sign, n.s.). C: quarterly resets n.s. Next: H2.
+- **H2 (7 Nov):** PAP §11.9 C12 committed first (0a90154). Drift in bans: no evidence, very imprecise (Bbad +0.007, se
+  0.034). Pre-EA basis outside bans lower before bad news (-2.0 bp, p 0.039; replicates Saurav et al. direction); bans
+  uninformative. Cash-only vs F&O: drift larger both ways (good +2.4%) → general under-reaction, not bad-news asymmetry.
+  Next: H1.

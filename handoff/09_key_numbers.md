@@ -113,3 +113,6 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - H9 (`analysis/output/h9_results.txt`): A 423,104 non-ban stock-days, 319 stocks; U slope +0.0787 (0.0377) p 0.019; bin coefs
   +0.009/+0.012/+0.012/+0.040/+0.034/+0.040/+0.031. B: I median 0.316 (0.24-0.69); first stage +0.276 (0.030); U +0.0612
   (0.0499) p 0.111; level +4.79 (4.85); ban +0.0229 (0.0186). C: first stage +0.242; U +0.051; level +3.89.
+- H2 (`analysis/output/h2_results.txt`): 8,586 F&O events (BHAR 8,283); ban0 179 (bad 55, good 58); bad -0.0125, good +0.0030;
+  Bbad +0.0074 (0.0341); pre-EA bad - good -1.957 (1.109) p 0.039; Bbad -19.7 (13.3), Bgood -22.7 (15.2); cash-only nbad
+  -0.0067 (0.0042), ngood +0.0240 (0.0043).

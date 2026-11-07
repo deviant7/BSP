@@ -338,6 +338,30 @@ pre-trends are noisy.
 **Part C, quarterly resets (January, April, July 2026; stacked).** First stage +0.24 (0.05); U +0.051 (0.052), level +3.9
 (4.8), bans -0.002: no detectable effect.
 
-## 14.12 To come
+## 14.12 Secondary: H2, bad news in bans
 
-H2 (bad news in bans), H1 (friction index), H4 (arbitrage capital), H5 (anomalies).
+Details fixed before running: plan §11.9 (C12). Code `analysis/h2_badnews.py`; output `analysis/output/h2_results.txt`.
+Events: 8,586 results announcements of F&O stocks, 179 with day 0 in a ban (55 bad news, 58 good news); low power was
+stated in advance. Bad and good news are the bottom and top terciles of the announcement return within each quarter.
+
+**Drift (pre-specified).** Buy-and-hold abnormal return over days +2 to +64 on bad, good, ban and their interactions,
+quarter fixed effects. Outside bans the drift after bad news is -1.25% against the middle tercile (se 0.38) and +0.30%
+after good news. In bans: Ban x Bad +0.7% (se 3.4), one-sided p (< 0) = 0.59; Ban x Good -1.3% (3.1). No evidence that bad
+news drifts more in a ban; the standard errors are about ten times the effect sizes found elsewhere. Robustness (stock
+fixed effects, near-ban comparison events only, ban on any of days 0 to +5, unwinsorised, pre-reform only) gives Ban x Bad
+between -2.5% and +1.5%, all insignificant.
+
+**Pre-announcement basis (pre-specified).** Mean basis over days -5 to -1 relative to the stock's normal median. Outside
+bans it is 2.0 bp lower before bad news than before good news (se 1.1, one-sided p = 0.039; 1.1 bp with stock fixed effects),
+the direction reported by Saurav, Srivastava and Agarwalla (2026). In bans (110 events with a ban on day -1) the
+difference cannot be estimated with useful precision (change +3.0, se 20.1). The basis before announcements in a ban is
+about 20 bp lower for both bad and good news, in line with the low in-ban level found in 14.7.
+
+**Also reported, cash-only versus F&O stocks (association).** All 72,429 events with a size decile, quarter and size-decile
+fixed effects: relative to F&O stocks, cash-only stocks drift -0.67% more after bad news (se 0.42) and +2.40% more after
+good news (se 0.43). Prices of cash-only stocks under-react in both directions, which does not show the bad-news
+asymmetry the short-sale mechanism predicts; the F&O entry and exit design (14.5) is the causal test of that channel.
+
+## 14.13 To come
+
+H1 (friction index), H4 (arbitrage capital), H5 (anomalies).

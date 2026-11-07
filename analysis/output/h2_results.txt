@@ -1,0 +1,37 @@
+H2: bad news in bans (PAP §11.9 C12). Secondary, unadjusted p. SE two-way clustered (stock, event date).
+F&O-stock events: 8586; with BHAR 8283; on ban days 179 (bad 55, good 58); ban on day -1: 146
+
+(b) DRIFT: BHAR_w[+2,+64] on Bad, Good, Ban0 and interactions, quarter FE (units: return, 0.01 = 1%)
+  bad    -0.0125 (se 0.0038)
+  good   +0.0030 (se 0.0036)
+  B      -0.0135 (se 0.0236)
+  Bbad   +0.0074 (se 0.0341)
+  Bgood  -0.0129 (se 0.0312)
+  TEST: one-sided p (Ban0 x Bad < 0) = 0.585; Ban0xBad - Ban0xGood = +0.0203 (se 0.0319)
+  drift outside bans (bad - good) = -0.0155; n = 8283
+  robustness (Ban0 x Bad; Ban0 x Good):
+    stock FE added                                 +0.0044 (0.0324); -0.0092 (0.0285); n 8283, ban events 177
+    non-ban events with omega_(t-1) >= 0.80 only   +0.0154 (0.0519); +0.0474 (0.0510); n 394, ban events 177
+    ban on any of days 0..+5                       -0.0251 (0.0240); -0.0277 (0.0280); n 8283, ban events 386
+    unwinsorised BHAR                              +0.0155 (0.0403); -0.0166 (0.0324); n 8283, ban events 177
+    pre-reform only                                +0.0060 (0.0348); -0.0209 (0.0313); n 7604, ban events 173
+
+(c) PRE-ANNOUNCEMENT BASIS: mean of m - q50_i over days -5..-1 (bp), quarter FE; n = 7110, in a ban on day -1: 110
+  bad    -2.313 (se 1.070)
+  good   -0.356 (se 0.867)
+  B      -0.871 (se 2.651)
+  Bbad   -19.691 (se 13.307)
+  Bgood  -22.707 (se 15.175)
+  outside bans, bad - good = -1.957 (se 1.109); one-sided p (< 0) = 0.0387
+  in bans, change in (bad - good) = +3.016 (se 20.088); one-sided p (> 0) = 0.44
+  with stock FE: bad - good outside bans -1.068; Bbad -21.571 (12.668), Bgood -22.790 (14.579)
+
+(e) ALSO REPORTED (association): all events with a market-cap decile, n = 72429 (cash-only 64201)
+  BHAR_w on Bad, Good, NonFnO and interactions, quarter and size-decile FE:
+  bad    -0.0117 (se 0.0037)
+  good   +0.0032 (se 0.0036)
+  non    -0.0009 (se 0.0042)
+  nbad   -0.0067 (se 0.0042)
+  ngood  +0.0240 (se 0.0043)
+
+Secondary test statistic (C12 b): one-sided p (Ban0 x Bad < 0) = 0.585

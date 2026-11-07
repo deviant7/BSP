@@ -132,3 +132,6 @@ VWAP vs close discrepancy on ban days flagged as a measurement issue (handoff/14
 H9 (PAP §11.8 C11; docs/14 §14.11): A: U slope +0.079 (0.038) p 0.019; U share 0.20 → 0.26-0.27 (step near 0.75), L and
 level (date FE) flat. B (1 Oct 2025): first stage +0.28; U +0.061 p 0.11; level +4.8; ban +0.023 (all n.s., right sign).
 C (quarterly resets): first stage +0.24; outcomes n.s.
+H2 (PAP §11.9 C12; docs/14 §14.12): Ban0 x Bad +0.0074 (0.0341), p 0.59 (no power); pre-EA basis outside bans bad - good
+-1.96 bp (1.11) p 0.039 (Saurav et al. direction); in bans uninformative; cash-only: bad -0.67%, good +2.40% vs F&O
+(under-reaction both ways).
