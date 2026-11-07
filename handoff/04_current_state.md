@@ -118,3 +118,8 @@ matching leaves treated 10 bp lower on day -1 and a dip on day -1. Exploratory: 
 Density test at 95% (PAP §11.5 C8; docs/14 §14.8): transition population (below 95% the day before), CJM log ratio -0.05,
 p = 0.86; robust across p, h, regimes, MWPL-change days; binned check +0.31 is bandwidth-driven (exploratory); cluster
 bootstrap se of CJM 0.29. No bunching below 95%; utilisation accelerates toward the trigger. RD usable as supporting.
+RD at 95% (PAP §11.6 C9; docs/14 §14.9): sharp (99.7% vs 0.06% in ban). Futures contracts -1.53, R -0.66, delivery share
++0.051 (all strong); cash volume no jump. Basis level -12.9 (p 0.02) BUT crossing-day basis already -11.3 (p 0.048) and the
+same-contract change on t only -2.8 (n.s.) → level gap precedes the ban. Futures jump -0.57 EoD era vs -2.29 intraday era.
+Placebo cutoff 0.90 basis +24 (h 0.008, degenerate). Open interpretive issue: rising OI with a falling basis before
+entry may reflect new SHORT futures demand, not long → exploratory long/short build-up split of the level effect.

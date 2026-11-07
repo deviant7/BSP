@@ -104,3 +104,6 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - Density test (`analysis/output/density_test.txt`): main population 47,503 stock-days in [0.60,1.30] (353 stocks); [0.90,0.95)
   1,699, [0.95,1.00) 661; CJM f- 0.326, f+ 0.311, T -0.18, p 0.855, h 0.031/0.036; binned theta +0.313 (boot se 0.135);
   exploratory CJM cluster-boot se 0.287. Next-day crossing share 6.8% at 0.85 → ~50% at 0.93-0.95.
+- RD at 95% (`analysis/output/rd_95.txt`): n 49,029 (210 stocks); in ban on t: 0.0006 below / 0.9973 above. m_t -12.95 (5.18)
+  p 0.020 h 0.074; dm_t -2.80 (4.14); m_(t-1) -11.33 (5.69) p 0.048; m_(t-2) -6.69 (4.95); futures -1.527 (0.144); R -0.655;
+  delivery +0.051; cash +0.043 (n.s.); fuzzy m -9.45 (7.04). Futures EoD era -0.570, intraday -2.286.

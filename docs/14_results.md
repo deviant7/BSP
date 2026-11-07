@@ -224,7 +224,43 @@ stocks crossing the next day rises steadily with yesterday's utilisation (7% at 
 regression discontinuity can therefore be read as supporting evidence, with the caveat that the density test has limited
 power against moderate discontinuities once dependence within stocks is allowed for.
 
-## 14.9 To come
+## 14.9 Secondary (supporting): regression discontinuity at 95%
 
-Regression discontinuity at 95%, hysteresis, H9 (anticipation and the 1 October 2025 reform), H2 (bad news in bans), H1
-(friction index), H4 (arbitrage capital), H5 (anomalies).
+Details fixed before running: plan §11.6 (C9). Code `analysis/rd_95.py`; output `analysis/output/rd_95.txt`. Units:
+stock-days whose stock was not in a ban the day before (49,029 in the utilisation range 0.60 to 1.30, 2015 to September
+2025). Above 95% the stock is in the ban the next day in 99.7% of cases (0.06% below), so the design is sharp. Local linear
+fits with the MSE-optimal bandwidth, robust bias-corrected inference, clustering by stock.
+
+| Outcome on the first possible ban day | Jump at 95% (se) | Robust p |
+|---|---|---|
+| **Basis level (bp), main** | -12.9 (5.2) | 0.020 |
+| Change in the basis that day, same contract (bp) | -2.8 (4.1) | 0.75 |
+| Close-based basis (bp) | -11.9 (5.0) | 0.016 |
+| log(1 + futures contracts) | -1.53 (0.14) | 2e-21 |
+| R = (change in OI + volume) / volume | -0.66 (0.06) | 4e-29 |
+| log(1 + cash shares traded) | +0.04 (0.35) | 0.84 |
+| Delivery share | +0.051 (0.015) | 0.0006 |
+| Check: basis two days before (bp) | -6.7 (4.9) | 0.17 |
+| Check: futures contracts two days before | +0.17 (0.14) | 0.17 |
+| Check: basis on the crossing day itself (bp) | -11.3 (5.7) | 0.048 |
+| Check: share with a valid basis | +0.016 (0.021) | 0.51 |
+
+Reading. The mechanism outcomes jump sharply and in the predicted direction: futures trading falls by about 1.5 log
+points, every futures trade closes positions (R falls toward 0), and the delivery share of cash trading rises; cash volume
+does not jump. The basis level is lower above the cutoff, but almost all of that gap is already present on the crossing
+day, before the ban starts (-11.3 bp), and the change on the first ban day is small and insignificant. The RD therefore
+does not separate an effect of the ban on the level from the pressure that pushes utilisation over 95%; the basis tends to
+be low on the day open interest crosses the trigger. Selection into the basis sample does not jump.
+
+Robustness. The basis jump is stable in size (-10.7 to -14.9) across double bandwidth, local quadratic, a donut, days
+without an MWPL change and the intraday-enforcement era, but not significant at half the bandwidth (-11.0, p = 0.43), in
+the end-of-day era (-12.1, p = 0.19) or as a fuzzy RD (-9.5, p = 0.20). The futures-volume jump is robust everywhere; it is
+-0.57 under end-of-day enforcement and -2.29 under intraday enforcement, matching the enforcement regimes found for H8.
+Placebo cutoffs: none for futures volume; for the basis, none at 0.85 or 1.00, but a jump of +24 bp at 0.90 with a
+degenerate bandwidth (0.008), which is a reminder that the basis RD is noisy. After October 2025: futures volume -1.7,
+basis not estimable with precision (37 stock-days just above the cutoff).
+
+## 14.10 To come
+
+Hysteresis, H9 (anticipation and the 1 October 2025 reform), H2 (bad news in bans), H1 (friction index), H4 (arbitrage
+capital), H5 (anomalies).

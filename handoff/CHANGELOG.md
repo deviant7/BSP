@@ -16,3 +16,4 @@
 - 7 Nov 2026 (re-verification of the morning's fixes): in-ban trading rule from 1 Oct 2025 is looser (SEBI 2025/79 Table 2) — earlier 'not a relaxation' notes corrected in references/notes_batch5 box, reference index, docs/03, 10; short-selling box in notes_batch1 checked against SEBI 5 Jan 2024 circular (new references/25); memory/07 §L.
 - 7 Nov 2026: level-effect secondary test: PAP §11.4 C7 (before estimation), analysis/level_effect.py, results docs/14 §14.7 (14.8 = to come), 04 §4.10, 09, 16 (item 1 done), PAP §11.2 exploratory entry.
 - 7 Nov 2026: density test at 95% (PAP §11.5 C8; analysis/density_test.py; docs/14 §14.8; 04 §4.10; 09; reports/figs/density_95.pdf).
+- 7 Nov 2026: RD at 95% (PAP §11.6 C9; analysis/rd_95.py; docs/14 §14.9; 04; 09).

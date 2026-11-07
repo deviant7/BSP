@@ -367,3 +367,8 @@
   rdrobust 2.1.1 installed (pip). Result: no discontinuity (CJM p 0.86, robust); binned McCrary +0.31 shown (exploratory)
   to grow with bandwidth → boundary bias; CJM cluster-boot se 0.29 (limited power). No bunching; utilisation accelerates
   near 95%. Figure reports/figs/density_95.pdf. Next: RD at 95%.
+- **RD at 95% (7 Nov):** PAP §11.6 C9 committed first (f96bca8). Mechanism jumps strong (futures -1.53, R -0.66, delivery
+  +5.1 pp; cash volume none). Basis level -12.9 (p 0.02) but already -11.3 on the crossing day; same-day change -2.8 n.s. →
+  RD cannot separate a ban level effect from the crossing pressure. Placebo 0.90 basis +24 at h 0.008 (degenerate). New
+  insight: rising OI + falling basis before entry ⇒ maybe new SHORT futures demand; C cannot sign it → exploratory
+  long/short build-up split (price direction with OI) for the level effect next.
