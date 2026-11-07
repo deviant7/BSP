@@ -76,6 +76,12 @@ python3 -I analysis/h2_badnews.py
 python3 -I analysis/h1_frictions.py
 python3 -I analysis/h4_capital.py
 python3 -I analysis/h5_anomalies.py
+python3 -I analysis/h7_iv.py                     # exploratory noise check of H7
+# band-estimation chapter (plan §11.13) and the constraint index (plan §11.14)
+python3 -I analysis/band_estimation.py
+python3 -I analysis/band_exploratory.py          # exploratory
+python3 -I analysis/band_costs.py
+python3 -I analysis/constraint_index.py          # writes data/processed/constraint_index_q.csv.gz
 
 # 4. other checks
 python3 -I analysis/test_setar_simulated.py
