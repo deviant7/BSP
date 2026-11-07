@@ -84,4 +84,10 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
   monitoring of positions in banned stocks); BSE/ICCL notice 20200322-2 (22 March 2020) implementing it from 23 March 2020.
 - SEBI press release 59/2020 (25 November 2020): review of the March 2020 measures (intraday monitoring of ban positions
   continued till further directions).
+- NSE circular 1/2018 (July 2018) on STT for physically settled stock derivatives (0.1% on the settlement value, buyer and
+  seller), as reported by Business Standard (19 July 2018).
+- Indian Stamp Act amendments effective 1 July 2020: uniform stamp duty on securities (delivery purchase 0.015%, futures
+  0.002%), as summarised by exchange-member bulletins of 1 July 2020.
+- NSE transaction charges revised from 1 October 2024 (cash 0.00297%, equity futures 0.00173%), following SEBI's directive
+  on uniform charges.
 - SEBI (2024). Analysis of profit and loss of individual traders in the equity F&O segment.

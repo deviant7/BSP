@@ -70,3 +70,7 @@
 - H9 B: the 1 Oct 2025 reform coincides with the FutEq numerator change and intraday monitoring (3 Nov); only one quarter
   each side before the first reset.
 - SLB activity seems to measure borrowing demand, not ease of borrowing (wrong sign in H1).
+- **Measurement noise in daily VWAP basis** (band chapter, exploratory IV): OLS reversion slopes are inflated toward -1.
+  Implication to check: H7's regime slopes (OLS) on ban days, where trading is thinner, could be affected; the H7
+  liquid-days diagnostic argues against noise, but an IV version (x_(t-2) as instrument) of H7 is a worthwhile exploratory
+  robustness check (log in §11.2 if run).

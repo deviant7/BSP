@@ -106,7 +106,7 @@ level_effect_buildup.py [exploratory], density_test.py, rd_95.py, hysteresis.py,
 h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI monthly arbitrage-fund series.
 
 ## Step 3b. Analyses in the master plan that are not PAP tests (still to do; ask the user which first)
-1. **No-arbitrage band chapter (master plan §5, Ch 4; the guide's area, non-linear time series):** 3-regime threshold
+1. **DONE 7 Nov 2026 (docs/15_band_estimation.md; PAP §11.13 C16 + §11.2).** No-arbitrage band chapter (master plan §5, Ch 4; the guide's area, non-linear time series): 3-regime threshold
    models (per stock and pooled, by period) and smooth-transition (ESTAR/LSTAR) error-correction models of the basis;
    thresholds/adjustment speeds against the dated cost, capital and limit changes; state-dependent thresholds (lagged
    OI/MWPL). The estimators exist (`analysis/setar.py`) and were tested on simulated data; H3 used quantile edges. This
@@ -116,7 +116,8 @@ h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI
    decide on the SLB input (its sign suggests it measures borrowing demand).
 3. Optional: XBRL EPS for SUE (secondary surprise measure for H2/H6); index dividends; announcement-aware dividend
    adjustment; BSE-only results.
-4. Open interpretive threads (handoff/14): VWAP vs close basis on ban days; long vs short build-up; RD basis gap before the
+4. Exploratory robustness worth doing: H7 with x_(t-2) as instrument (noise; handoff/14).
+5. Open interpretive threads (handoff/14): VWAP vs close basis on ban days; long vs short build-up; RD basis gap before the
    ban; 8 Dec 2025 broker date.
 
 ## Step 4. Inputs (status 7 Nov 2026)

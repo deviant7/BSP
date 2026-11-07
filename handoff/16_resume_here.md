@@ -32,7 +32,7 @@ then to continue with the **band-estimation chapter first** and the remaining ne
 4. Smoke tests: `python3 -I analysis/h8_trading.py` (b = -2.0036); `cd models_src/modelC && python3 verify_modelC.py`
    (ALL PASS; restore the figure PDFs with `git checkout` if only timestamps changed).
 
-## 16.1b The next piece of work: the band-estimation chapter (master plan §5, Ch 4; the guide's area)
+## 16.1b DONE 7 Nov 2026 (docs/15_band_estimation.md; results 04 §4.11): the band-estimation chapter (master plan §5, Ch 4)
 Not a PAP test; it is estimation and description of the no-arbitrage band over time. Plan (write a dated note in PAP
 §11 before any new hypothesis-like comparison):
 1. Pooled and per-stock 3-regime threshold autoregressions of the basis (`analysis/setar.py`), by period (STT regimes,
@@ -43,7 +43,8 @@ Not a PAP test; it is estimation and description of the no-arbitrage band over t
 4. Linearity tests (Hansen-type threshold test with bootstrap; Luukkonen-type tests for STAR) and model diagnostics.
 5. Bottom-up cost band per period (STT, stamp duty, fees, funding) to compare with the estimated edges.
 6. Write `docs/15_band_estimation.md` (final form) and a results section; update handoff/memory.
-Then: constraint index deliverable (05 Step 3b.2), write-up and a first-results PDF for the guide (ask before sending).
+**Next now:** constraint index deliverable (05 Step 3b.2), optional exploratory IV check of H7, then the write-up and a
+first-results PDF for the guide (ask before sending).
 
 ## (Original card of 5 November 2026 follows)
 

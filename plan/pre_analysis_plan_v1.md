@@ -505,3 +505,10 @@ association.
 delivery and on futures, stamp duty, exchange and clearing charges, GST on charges; brokerage at an institutional rate),
 with every component sourced; compared descriptively with the estimated edges.
 (h) Units: bp; all estimates are descriptive; inference is reported for the linearity tests and threshold intervals only.
+- 7 Nov 2026, band chapter (exploratory, `analysis/band_exploratory.py`, after the C16 estimates were seen): (1) with
+  full-sample demeaning the 2026 / post-April-2026 upper threshold collapses (about -2 bp; 53-58% of observations in the
+  upper regime) because of the level shift found in H3; re-estimated with demeaning within each STT period: lower/upper
+  thresholds -39.1/+23.8, -30.9/+18.9, -31.5/+23.1, -31.5/+28.9; slope above the upper edge -0.77, -0.55, -0.20, -0.15.
+  (2) Measurement noise: instrumenting x_(t-1) with x_(t-2) shrinks the slopes (linear -0.26 to -0.14; middle regime -0.49
+  to -0.19; upper -0.52 to -0.14; lower -0.17 to -0.12), so much of the daily reversion is noise and the upper/lower
+  asymmetry in reversion speed is not robust.

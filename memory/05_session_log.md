@@ -403,3 +403,9 @@
   rule), 16 (self-contained checkpoint card + band-chapter plan); docs 08 (§8.4 friction index, §8.5 secondary measures),
   09 (secondary implementation), 10 (§10.9 SLB/AMFI checks), 11 (§11.6 SLB, §11.7 arbitrage funds); memory 02, 03, 04
   (empirical status of Model C; model SLB wording to fix), 06; data_pipeline/README. Next: band-estimation chapter.
+- **Band chapter (7 Nov):** PAP §11.13 C16 committed first (8609699). Fast cumulative-sum SETAR (matches fit_setar3
+  exactly) with wild-bootstrap linearity test and stock-cluster threshold CIs; ESTAR/LSTAR; observed-transition STR;
+  per-stock; cost band (sources: NSE 1/2018 STT 0.1% physical settlement; stamp duty Jul 2020; NSE charges Oct 2024).
+  Pooled band -34.5/+23.9 bp, nonlinear; threshold model best by BIC. Exploratory: period demeaning fixes 2026; IV check
+  shows much daily reversion is VWAP noise (asymmetry in speeds not robust) → flag H7 IV check. docs/15 written.
+  Next: constraint-index deliverable, H7 IV (exploratory), write-up.

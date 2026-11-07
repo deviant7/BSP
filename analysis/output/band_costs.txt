@@ -1,0 +1,22 @@
+Bottom-up cost band for overnight cash-and-carry (bp of notional) and estimated upper edges (bp, levels).
+
+Period               | A: open + hold to expiry | B: roll one month | sensitivity A (brokerage 0.005%-0.03%/leg)
+to Mar 2023          |          27.1            |        4.0        |  25.3 to  34.1
+Apr 2023 - Sep 2024  |          27.3            |        4.3        |  25.5 to  34.4
+Oct 2024 - Mar 2026  |          28.0            |        5.0        |  26.2 to  35.1
+from Apr 2026        |          31.0            |        8.0        |  29.2 to  38.1
+(before July 2020 with a state stamp duty of about 0.01% on delivery: A 26.6)
+
+Estimated edges in levels (pooled threshold model on m, not demeaned; and the 80th/90th percentiles of m), non-ban days:
+  to Mar 2023           threshold model: gL  -33.9, gU  +27.5; median  +0.9; p80 +18.8; p90 +27.5; p95 +35.3
+  Apr 2023 - Sep 2024   threshold model: gL  -25.9, gU  +23.6; median  +1.0; p80 +16.9; p90 +24.7; p95 +32.2
+  Oct 2024 - Mar 2026   threshold model: gL  -34.4, gU  +21.5; median  +1.1; p80 +16.8; p90 +24.2; p95 +30.6
+  from Apr 2026         threshold model: gL  -23.5, gU  +24.1; median  +3.2; p80 +21.2; p90 +29.7; p95 +37.5
+
+Reading: the full round trip (A, 27 to 31 bp at a 0.01% brokerage per leg) lies above the estimated upper
+threshold in levels (+22 to +28 bp) and the 80th percentile, and between the 90th and 95th percentiles; the
+marginal cost of rolling an existing position (B) is 4 to 8 bp. A band set by the cost of new entry would sit near
+A; a band set by funds that keep capital in place and roll would sit much lower. STT raised A by about 4 bp from
+the first to the last period; the estimated upper threshold did not rise in step, while the 90th percentile
+rose by about 2 bp in the last period. The basis is measured net of the 3-month interbank rate, so a fund whose
+required return differs from that rate shifts the whole band (model P2 iv).

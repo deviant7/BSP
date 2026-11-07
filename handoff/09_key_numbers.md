@@ -125,3 +125,8 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - H5 (`analysis/output/h5_results.txt`): 228,795 stock-months; G1 24,024 / G2 15,427 / G3 189,344; median mcap 43,513 /
   11,402 / 770 cr; VW short G3-G1 +0.037% (0.200) p 0.574; EW short -0.487% (0.163), long +0.455% (0.151); momentum short
   G3-G1 -0.507% (0.217).
+- Band chapter (`analysis/output/band_estimation.txt`, `band_exploratory.txt`, `band_costs.txt`): n 473,110, 360 stocks;
+  x p5/p50/p95 -71.7/-0.1/+34.0; pooled gL -34.5, gU +23.9, slopes -0.084/-0.468/-0.809, shares .12/.76/.12, F 7,471 (boot
+  crit 30.7); BIC lin 3,034,394, SETAR 3,005,493, LSTAR 3,005,545, ESTAR 3,008,092; Wald x2,x3 2,066. IV slopes linear
+  -0.142 (OLS -0.262), middle -0.192, upper -0.141, lower -0.121. STR rho1: omega +0.225 (0.053), days +0.221 (0.023), AUM
+  -0.077 (0.019). Per-stock 258: gL p50 -26.4, gU +16.5, width 40.9. Cost A 27.1/27.3/28.0/31.0; B 4.0/4.3/5.0/8.0.

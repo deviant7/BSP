@@ -144,3 +144,13 @@ flow -17.5 (14.2) p 0.11; first differences -20.6 (6.8) p 0.001; pre-2023 -26 (p
 SLB eligibility correction: SLB covers non-F&O liquid stocks since Jul 2013 (docs/handoff fixed; sent PDFs not).
 H5 (PAP §11.12 C15; docs/14 §14.15): VW short leg G3 - G1 +0.04% (p 0.57); EW -0.49% (p 0.001) but long leg +0.46% too
 (symmetric small-stock effect); momentum short leg -0.51% (0.22) fits. Summary table of all secondary tests: docs/14 §14.16.
+
+## 4.11 Band-estimation chapter (7 Nov 2026; PAP §11.13 C16; docs/15_band_estimation.md)
+Pooled threshold model (non-ban, 473,110 obs): gL -34.5 [-37.2, -32.2], gU +23.9 [+20.3, +26.1] (stock-demeaned);
+linearity rejected (sup-F 7,471, boot p < 0.005); slopes -0.08/-0.47/-0.81; BIC: threshold < LSTAR < ESTAR < linear.
+Exploratory: noise check (IV with x_(t-2)) shrinks slopes to -0.12/-0.19/-0.14 → much daily reversion is noise; asymmetry
+in speeds not robust. Period-demeaned thresholds by STT period -39/+24, -31/+19, -32/+23, -32/+29; slope above upper edge
+-0.77 → -0.15 over time. States: lower edge wider far from expiry; at high utilisation the basis is more often rich.
+Observed-transition STR: reversion weakens with utilisation (+0.225, se 0.053), faster in the last week (+0.221 above 7
+days), faster with large arbitrage assets (-0.077). Per-stock: median -26/+17 (width 41), unrelated to friction index.
+Cost band: open+hold 27-31 bp (STT period 1→4), roll 4-8 bp; vs upper threshold +22 to +28 and p90 +24 to +30.

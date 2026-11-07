@@ -34,6 +34,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | [12_reproducibility.md](12_reproducibility.md) | Repository layout, software, the exact rebuild sequence, outputs |
 | [13_references.md](13_references.md) | Papers and regulatory documents |
 | [14_results.md](14_results.md) | Results of all pre-specified tests (primary H8, H7, H3, H6 with the multiple-testing correction; all secondary tests), with exploratory additions marked as such |
+| [15_band_estimation.md](15_band_estimation.md) | Estimation of the no-arbitrage band: threshold and smooth-transition models, the band over time and across states, per-stock bands, and a bottom-up cost band |
 
 ## Where the project stands
 
@@ -43,6 +44,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | Pre-analysis plan | Complete and frozen (git tag `pap-v1`) |
 | Data set | Built and audited (sources, construction, checks in pages 06, 07 and 10) |
 | Tests | All primary tests (with Holm correction) and all secondary tests run (page 14; summary 14.16) |
+| Band estimation | Threshold and smooth-transition estimates, states, costs (page 15) |
 
 ## Conventions
 
