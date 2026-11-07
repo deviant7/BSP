@@ -110,3 +110,6 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - Hysteresis (`analysis/output/hysteresis.txt`): zone 16,296 stock-days (5,373 ban); main n 15,832, ban 5,237, 163 stocks:
   Ban +0.377 (0.809) p 0.642; no lags -14.137 (2.439); close +3.152 (0.954); futures -1.924; R -0.546; delivery +0.042;
   post-reform -6.595 (2.791), 302 ban days.
+- H9 (`analysis/output/h9_results.txt`): A 423,104 non-ban stock-days, 319 stocks; U slope +0.0787 (0.0377) p 0.019; bin coefs
+  +0.009/+0.012/+0.012/+0.040/+0.034/+0.040/+0.031. B: I median 0.316 (0.24-0.69); first stage +0.276 (0.030); U +0.0612
+  (0.0499) p 0.111; level +4.79 (4.85); ban +0.0229 (0.0186). C: first stage +0.242; U +0.051; level +3.89.

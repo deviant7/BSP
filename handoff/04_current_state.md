@@ -129,3 +129,6 @@ reading is therefore only partial; keep it labelled post hoc.
 Hysteresis (PAP §11.7 C10; docs/14 §14.10): Ban +0.38 (0.81), p 0.64 with 5 basis lags; without lags -14.1 → no extra
 level shift once the path is held fixed; trading effects as H8; close-based +3.2 (p 0.001), rel. repo -51. Recurrent
 VWAP vs close discrepancy on ban days flagged as a measurement issue (handoff/14).
+H9 (PAP §11.8 C11; docs/14 §14.11): A: U slope +0.079 (0.038) p 0.019; U share 0.20 → 0.26-0.27 (step near 0.75), L and
+level (date FE) flat. B (1 Oct 2025): first stage +0.28; U +0.061 p 0.11; level +4.8; ban +0.023 (all n.s., right sign).
+C (quarterly resets): first stage +0.24; outcomes n.s.

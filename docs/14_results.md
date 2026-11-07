@@ -303,7 +303,41 @@ in 14.7 the overall level effect is -6.3 against -0.7). On thin ban days the fut
 day's VWAP may come at different times of day, and the futures closing price may be stale; daily data cannot tell which
 measure is closer to the truth. Results that depend on the measure are reported for both.
 
-## 14.11 To come
+## 14.11 Secondary: H9, anticipation below 95% and changes in the position limit
 
-H9 (anticipation and the 1 October 2025 reform), H2 (bad news in bans), H1 (friction index), H4 (arbitrage capital), H5
-(anomalies).
+Details fixed before running: plan §11.8 (C11). Code `analysis/h9_regime.py`; output `analysis/output/h9_results.txt`.
+Outcomes use each stock's own basis distribution on non-ban days with utilisation below 60%: U = 1 if the basis is above
+that distribution's 80th percentile, L = 1 if below its 20th, and the level relative to its median.
+
+**Part A, anticipation (non-ban days, 2015 to September 2025, 423,104 stock-days).** Pre-specified statistic: slope of U on
+utilisation between 0.60 and 0.95, stock and date fixed effects: +0.079 (se 0.038), one-sided p = 0.019.
+
+| Utilisation the day before | Share of days in the upper tail | U coefficient vs below 0.60 (se) | L coefficient (se) |
+|---|---|---|---|
+| below 0.60 | 0.200 | 0 | 0 |
+| 0.60 to 0.70 | 0.22 | +0.009 to +0.012 (0.007) | 0.000 to -0.004 |
+| 0.75 to 0.80 | 0.26 | +0.040 (0.009) | +0.006 (0.011) |
+| 0.80 to 0.90 | 0.26 to 0.27 | +0.034 to +0.040 (0.010 to 0.011) | +0.001 |
+| 0.90 to 0.95 | 0.27 | +0.031 (0.013) | +0.008 (0.013) |
+
+Reading. As utilisation approaches the trigger the upper tail of the basis grows (more days with rich futures), while the
+lower tail and the average level (after date effects) do not change: the upper edge loosens, as the model's anticipation
+result predicts, and there is no further jump at 95% on non-ban days. The rise comes more as a step around 0.75 than as a
+smooth slope. As stated in advance, high utilisation also signals demand pressure, so this is anticipation plus pressure.
+Without date effects the median basis also rises with utilisation (0 to +4.9 bp), but that rise reflects periods with
+high utilisation across many stocks.
+
+**Part B, the 1 October 2025 formula (208 stocks; window July to December 2025).** Intensity = size of each stock's cut
+in the MWPL (log points 0.24 to 0.69). First stage: utilisation rises by 0.28 per unit of intensity (se 0.03). Pre-specified
+statistic: Post x intensity on U +0.061 (se 0.050), one-sided p = 0.11; level +4.8 bp (4.8); bans +0.023 (0.019); L -0.038.
+All point in the predicted direction (bigger cuts, more upper-tail days and bans), none is significant. Robustness: predicted
+utilisation change instead of intensity +0.008 (0.041) for U; non-ban days only +0.067 (0.050); window to March 2026 +0.051
+(0.043). Monthly event study for the level: July +15.5 (8.0), August +2.5, October to December +9 to +12 (6 to 7.5), so
+pre-trends are noisy.
+
+**Part C, quarterly resets (January, April, July 2026; stacked).** First stage +0.24 (0.05); U +0.051 (0.052), level +3.9
+(4.8), bans -0.002: no detectable effect.
+
+## 14.12 To come
+
+H2 (bad news in bans), H1 (friction index), H4 (arbitrage capital), H5 (anomalies).

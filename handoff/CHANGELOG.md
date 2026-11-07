@@ -19,3 +19,4 @@
 - 7 Nov 2026: RD at 95% (PAP §11.6 C9; analysis/rd_95.py; docs/14 §14.9; 04; 09).
 - 7 Nov 2026: exploratory build-up split of the level effect (analysis/level_effect_buildup.py; docs/14 §14.7; PAP §11.2; 04).
 - 7 Nov 2026: hysteresis (PAP §11.7 C10; analysis/hysteresis.py; docs/14 §14.10; 04; 09; 14 open issues added).
+- 7 Nov 2026: H9 (PAP §11.8 C11; analysis/h9_regime.py; docs/14 §14.11; 04; 09).

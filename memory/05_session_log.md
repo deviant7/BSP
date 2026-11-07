@@ -377,3 +377,6 @@
 - **Hysteresis (7 Nov):** PAP §11.7 C10 committed first (3e72a35). Ban +0.38 (0.81), p 0.64 with 5 lags; without lags -14.1;
   trading as H8; close-based +3.2 (p 0.001) → recurring VWAP-vs-close discrepancy on ban days logged in handoff/14.
   Post-reform -6.6 (2.8). Next: H9.
+- **H9 (7 Nov):** PAP §11.8 C11 committed first (8484f59). A: upper-tail share rises with omega (slope p 0.019; step near
+  0.75), lower tail/level flat → upper edge loosens (anticipation + pressure). B: 1 Oct 2025 intensity: first stage strong,
+  U +0.061 p 0.11 (right sign, n.s.). C: quarterly resets n.s. Next: H2.
