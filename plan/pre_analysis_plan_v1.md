@@ -333,3 +333,21 @@ on average per C7); anticipation is continuous through 0.95 and does not create 
   D: long build-up -7.9 (se 2.7, n 453), short build-up -5.5 (2.2, n 406), difference +2.4 (3.5); short covering and long
   unwinding +8.4 each (n 9 and 21; imprecise). The crossing-day dip is concentrated in long build-up events (D at k = -2:
   +8.2 vs -0.3). Same-day controls: long -5.4, short minus long +3.3 (4.3).
+
+### 11.7 Clarifications for the hysteresis comparison (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+Known beforehand: H8 already compared trading outcomes in the same utilisation zone (Ban coefficient on log futures
+contracts -2.00 with stock-by-bin and date fixed effects).
+**C10. Hysteresis.** (a) *Sample:* C1 analysis sample, 2 Jan 2015 to 30 Sep 2025, stock-days with omega_(t-1) in
+[0.80, 0.95). In-ban stock-days in this zone are days of a spell after utilisation fell back below 95% but not yet to 80%.
+(b) *Main specification:* m_t = b*Ban_t + g1*omega_(t-1) + g2*(omega_(t-1) - omega_(t-2)) + sum_{l=1..5} r_l*m_(t-l)
++ stock FE + date FE + e; m_(t-l) = winsorised chosen-contract basis levels on the previous five trading days (all must be
+in the analysis sample); SEs two-way clustered (stock, date). Units bp.
+(c) *Test statistic (secondary, unadjusted):* two-sided p for b = 0 (the plan states "in a ban vs not" without a sign). The
+model's reading (Lemma: for the same pressure and inventory the basis in a ban is at least as high; in this zone open
+interest is falling, i.e. closing pressure) leans to b > 0; the one-sided p for b > 0 is also reported.
+(d) *Secondary outcomes, same specification:* Delta m_t (same contract); close-based basis; relative implied repo;
+log(1 + futures contracts), R and delivery share (expiry days excluded) for comparison with H8.
+(e) *Robustness:* utilisation as bin dummies ([0.80, 0.85), [0.85, 0.90), [0.90, 0.95)) instead of linear; without the
+lagged basis; adding the maximum of omega over t-10..t-1 (recent path); excluding imputed ban days; the two enforcement
+regimes; the in-ban days split into before and after an expiry within the spell (PostExp, as in C2 c). After 1 Oct 2025:
+descriptive.
