@@ -383,3 +383,23 @@ reduce-only days). *Test statistic B (secondary):* one-sided p that b > 0 for U.
 (h) Quarterly resets (PAP §4 c), also reported: stacked design over the resets of 1 Jan, 1 Apr and 1 Jul 2026, intensity
 -ln(MWPL after / MWPL before), window 30 trading days before and after, stack-by-stock and stack-by-date FE. 1 Apr 2026 is
 also the STT increase (common to all stocks, absorbed by date FE, but interactions cannot be excluded).
+
+### 11.9 Clarifications for H2 (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+Known beforehand (counts only): 8,586 announcement events of F&O stocks (event outcomes of C6 e and k), 179 with day 0 on a
+ban day (55 bad news, 58 good news by the EAR tercile rule). H6 found stronger bad-news drift after F&O entry.
+**C12. H2.** (a) *Events:* results announcements (C6 e, k: price >= Rs 5, duplicates removed) of stocks in the F&O segment
+on day 0, 2015 to 2026. Ban0 = stock on the ban list on day 0. Bad/Good = bottom/top EAR tercile within the calendar
+quarter (C6 e); middle tercile is the reference.
+(b) *Drift:* BHAR_w[+2,+64] (winsorised, C6 k) = a + b1 Bad + b2 Good + b3 Ban0 + b4 Ban0*Bad + b5 Ban0*Good + quarter FE;
+SE two-way clustered (stock, event date). *Prediction:* b4 < 0 (more negative drift after bad news in a ban); b5 about 0.
+*Test statistic (secondary, unadjusted):* one-sided p that b4 < 0. Also reported: b4 - b5.
+(c) *Pre-announcement basis:* pre_m = mean over days -5..-1 of (m_t - q50_i) in bp (C1 sample, winsorised; q50_i = the
+stock's median on non-ban days with omega < 0.60, as C11 a; at least 3 valid days). BanPre = stock in a ban on day -1.
+pre_m = c0 + c1 Bad + c2 Good + c3 BanPre + c4 BanPre*Bad + c5 BanPre*Good + quarter FE. *Prediction:* outside bans the
+basis is lower before bad news than before good news (c1 - c2 < 0; the pattern reported by Saurav, Srivastava and
+Agarwalla 2026); in a ban this disappears (c4 - c5 > 0). One-sided p-values reported for both.
+(d) *Robustness:* stock FE added; non-ban comparison events restricted to omega_(t-1) >= 0.80 on day 0; ban defined as any
+ban day in days 0..+5; EAR from days 0..+1 only is not recomputed (C6 definition kept); unwinsorised BHAR; pre-reform only.
+(e) *Also reported (cross-section, association only):* bad-news drift in cash-only stocks versus F&O stocks, all events
+2015 to 2026: BHAR_w on Bad, Good, NonFnO and their interactions, quarter FE and log market-cap decile FE (the H6 design
+gives the causal version through entry and exit).
