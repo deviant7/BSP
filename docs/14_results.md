@@ -4,8 +4,8 @@ This page reports the tests of the frozen plan (`plan/pre_analysis_plan_v1.md`, 
 run. For each test the **pre-specified result comes first**. Analyses added after a result was seen are marked
 **exploratory** and are listed in the plan's deviations log (§11.2). Output files: `analysis/output/`. Code: `analysis/`.
 
-Status: all four primary tests are complete (H8, H7, H3, H6) and corrected for multiple testing (14.6). The secondary
-tests are still to be run.
+Status: all four primary tests are complete (H8, H7, H3, H6) and corrected for multiple testing (14.6). Secondary tests
+(reported unadjusted, labelled exploratory by the plan) start in 14.7.
 
 ## 14.1 Common set-up
 
@@ -147,7 +147,54 @@ before entry, but selection on growth cannot be ruled out.
 | H6 (short-sale access) | 5.2e-6 | 1.0e-5 | yes (through price delay; drift components contradict) |
 | H7 (one-sided correction) | 1 | 1 | no (opposite sign) |
 
-## 14.7 To come
+## 14.7 Secondary: the level effect of a ban
 
-The secondary tests: level effect of bans, H9 (anticipation and the 1 October 2025 reform), regression discontinuity at
-95% with the density test, hysteresis, H2 (bad news in bans), H1 (friction index), H4 (arbitrage capital), H5 (anomalies).
+Question (model result on the level effect): does a ban raise or lower the basis level, and does the sign follow the
+composition of trading before the ban? The model predicts a higher basis when the pressure comes from closing trades and a
+lower basis when new speculative demand keeps arriving (it can no longer enter futures and part of it moves to the stock).
+Details fixed before estimation: plan §11.4 (C7). Code `analysis/level_effect.py`; output
+`analysis/output/level_effect_results.txt`.
+
+Design. Each ban spell from 2015 to September 2025 with no ban in the five days before it is an event (day 0 = first ban
+day). Controls are other stocks in the same week with utilisation between 85% and 95%, no ban within five days either
+side, matched (up to five, nearest by Mahalanobis distance) on the utilisation path of days -5 to -1 and the basis on day
+-1. Outcome: the change in the basis from day -1, treated minus matched controls, averaged over the ban days among days
+0 to 4. Composition C = change in futures open interest over days -5 to -1 divided by futures volume over the same days.
+
+**Pre-specified result (889 matched events, 129 stocks; bp):**
+
+| | Mean effect (se) |
+|---|---|
+| All events | -6.3 (median -7.8) |
+| C <= 0, falling OI before entry (30 events) | +8.4 (10.9) |
+| C > 0, rising OI before entry (859 events) | -6.8 (1.8) |
+| Difference | -15.2 (10.9); one-sided p = 0.083 |
+| Median split of C (difference high minus low) | -5.8 (2.9); one-sided p = 0.025 |
+| Slope on standardised C | -4.8 (1.6); one-sided p = 0.0014 |
+
+Reading. The signs are as the model predicts: positive (not significant) when open interest was falling, negative and
+significant when it was rising, and more negative the faster it rose. On average the basis falls by about 6 bp during
+the first days of a ban, relative to the matched controls, and returns to its earlier level about a week after day 0. The
+pre-specified split has little power because only 30 events had falling open interest before entry (open interest must
+rise for utilisation to cross 95%), so its difference is not significant at 5%; the median split and the continuous
+measure, fixed in the same entry before estimation, are.
+
+Checks (pre-specified): unwinsorised basis -11.3 overall, slope p = 0.013; close-based basis -0.7 overall (no level
+effect) but a strong composition gradient (slope -4.7, p = 0.0002; closing group +23.1, se 10.9); relative implied repo (an annualised rate, so in different units):
+negative level, no significant gradient; **same-day controls only (685 events): level -4.0 (se 2.0), gradient not
+significant (slope -2.1, se 1.8)**; excluding imputed ban days: unchanged. By enforcement regime (exploratory): the
+gradient appears in both (slope -5.0 to 22 March 2020, -6.1 after). After the October 2025 reform: 19 matched events,
+all with rising open interest, mean -2.8 (too few to test).
+
+Caveats. Matching is imperfect: on day -1 the treated basis is 10 bp below that of its controls, and the treated basis
+dips on day -1 itself (the day utilisation crosses 95%), so the event-time profile shows a positive pre-period of about
++4 to +6 bp relative to day -1. **Exploratory (added after the results were seen):** with the baseline taken over days
+-10 to -2 the in-ban level effect is -11.3 (se 1.5) and the slope on C -3.1 (p = 0.007); controlling for the day -1 gap
+(which shows the expected mean reversion, coefficient -0.29) gives -9.2 at average composition and a slope of -3.5
+(se 1.6). The result is consistent with the H7 diagnostics: at the start of a ban the basis falls as new long demand
+for futures is blocked.
+
+## 14.8 To come
+
+H9 (anticipation and the 1 October 2025 reform), regression discontinuity at 95% with the density test, hysteresis, H2
+(bad news in bans), H1 (friction index), H4 (arbitrage capital), H5 (anomalies).

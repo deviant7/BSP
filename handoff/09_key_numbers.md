@@ -94,3 +94,10 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - H7 diagnostics: liquid days δ_up −0.154, δ_lo +0.130; EOD era δ_up +0.016, δ_lo +0.126; intraday era −0.201 / −0.120;
   0 to 4 calendar days after spell start δ_up −0.163, later −0.008.
 - H3 placebo pairs: d80 4.6%, width 23.4%, q80−median 27.4%.
+
+## Secondary tests (7 Nov 2026)
+- Level effect (`analysis/output/level_effect_results.txt`): events 1,744 pre-reform spells → 1,127 usable (543 had a ban in
+  days -5..-1) → 889 matched (129 stocks); candidate controls 2,451 stock-days; C median 0.058, C <= 0 for 30 matched events.
+  Mean D -6.28 bp; C<=0 +8.36 (10.88); C>0 -6.79 (1.76); diff -15.15 p 0.083; median split -5.82 p 0.025; slope -4.83 p 0.0014.
+  Same-day controls 685 events: -4.04 (2.03), slope -2.08 (1.83). Close-based: -0.69 overall, slope -4.73 p 0.0002.
+  Exploratory: baseline -10..-2: -11.3, slope -3.08 p 0.007; gap-adjusted: -9.24, slope -3.48 (1.63), gap coef -0.29.

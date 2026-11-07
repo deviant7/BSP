@@ -267,3 +267,9 @@ and event date.
 (g) *Also reported:* the event-time profile k = -20 to +20 (pre-trends; note earlier spells can fall before day -5);
 robustness: same-day controls only; unwinsorised basis; relative implied repo; close-based basis; excluding imputed ban
 days. Exploratory: the two pre-reform enforcement regimes (to 22 Mar 2020; 23 Mar 2020 to 30 Sep 2025).
+- 7 Nov 2026, level effect (exploratory additions in `analysis/level_effect.py`, after the C7 results were seen): matching
+  left the treated basis 10 bp below its controls on day -1, and the treated basis dips on day -1 (event-time profile
+  about +4 to +6 bp before day -1). Added: (1) baseline = mean of D_k over k = -10..-2: level -11.3 bp (se 1.5), slope on
+  standardised C -3.1 (p = 0.007), median split -4.5 (p = 0.049); (2) control for the day -1 treated-minus-control gap:
+  gap coefficient -0.29 (mean reversion), level at mean C -9.2, slope -3.5 (se 1.6); (3) event-time paths by median C:
+  high-C events fall about 7 to 8 bp on days 0 to 1 and recover by day 7. Pre-specified C7 results are reported first.

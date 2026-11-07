@@ -1,4 +1,4 @@
-# 04. Current state (as of 7 November 2026, start of session; nothing new run since 5 Nov)
+# 04. Current state (as of 7 November 2026; level-effect secondary test run)
 
 Resume card with first actions: `16_resume_here.md`. Results for outside readers: `docs/14_results.md`.
 
@@ -107,3 +107,11 @@ Full results page for outside readers: `docs/14_results.md`.
 p_H6 = 5.2e-6 (Bonferroni of components). Holm: H8 7.4e-41, H3 5.5e-24, H6 1.0e-5 rejected; H7 not.
 Interpretation notes: delay supports short-sale-access (or a liquidity/attention channel: F&O entry selects on growth);
 drift contradicts. H3 strength overstated by stock-only clustering.
+
+## 4.10 Secondary tests (7 Nov 2026 onward)
+Level effect (PAP §11.4 C7; `analysis/level_effect.py`; docs/14 §14.7): 889 matched pre-reform ban entries. Basis falls
+-6.3 bp in the first ban days vs matched controls and recovers by about day 7. Pre-specified split: C <= 0 (30 events)
++8.4 (se 10.9), C > 0 -6.8 (1.8), difference -15.2, p = 0.083 (n.s.: closing group tiny); median split -5.8, p = 0.025;
+slope on C -4.8, p = 0.0014. Signs as Prop. 6 predicts. Fragile: same-day controls only, gradient n.s. (-2.1, se 1.8);
+matching leaves treated 10 bp lower on day -1 and a dip on day -1. Exploratory: baseline k=-10..-2 level -11.3, slope p
+0.007; gap-adjusted level -9.2, slope -3.5 (se 1.6). Post-reform 19 events, all C > 0, mean -2.8.

@@ -51,7 +51,7 @@ For each test: (i) write the open implementation details into PAP §11 as a new 
 §11.2, (v) update `docs/14_results.md`, `handoff/04`, `handoff/09`, `memory/05`, CHANGELOG; commit and push.
 All secondary tests are labelled exploratory in reporting (PAP §6).
 
-1. **Level effect of bans** (PAP §6 first bullet; model Prop. 6). Spec in the plan: stacked ban-entry event study, window
+1. **DONE 7 Nov 2026 (results docs/14 §14.7, PAP §11.4 C7).** Level effect of bans (PAP §6 first bullet; model Prop. 6). Spec in the plan: stacked ban-entry event study, window
    -20 to +20 trading days; controls = stock-days with omega in [0.85, 0.95) in the same week that do not enter, matched
    on the 5-day omega path and basis level; split by composition of pre-ban activity (dOI / volume over the 5 days before
    entry: rising OI = new-exposure demand, falling = closing). Prediction: the level effect's sign follows composition

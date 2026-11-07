@@ -354,3 +354,11 @@
   may short; naked barred; institutions no day trading; F&O securities eligible; "and SLB" was not in that primary →
   box now says SLB list is F&O-based per secondary sources. 2004 origin of the 30× leg could not be re-verified today
   (✔S). (4) memory/08 note reworded (not all §6 numbers changed).
+- **Level effect run (7 Nov).** Treatment-side look first (C distribution: median +0.053, C<=0 only 8%; 1,201 spells with
+  >=5 clean pre-days; 2,451 candidate control days). PAP §11.4 C7 committed (25bd744) BEFORE estimation, incl. a median
+  split and continuous C. Code checked on synthetic data (recovers +10/-6). Results: 889 matched events; mean D -6.3 bp;
+  C<=0 (30) +8.4 (10.9), C>0 -6.8 (1.8), diff p 0.083; median split p 0.025; slope p 0.0014 → signs as Prop. 6; basis
+  recovers by ~day 7. Weak spots: same-day controls only → gradient n.s.; day -1 imbalance (treated 10 bp lower) and day -1
+  dip. Exploratory (logged §11.2): baseline -10..-2 → -11.3, slope p 0.007; gap-adjusted -9.2, slope -3.5 (1.6).
+  Post-reform 19 events, all C>0, -2.8. Consistent with H7 diagnostics (blocked new long demand at ban start).
+  Next: density test at 95% (treatment-side), then RD.
