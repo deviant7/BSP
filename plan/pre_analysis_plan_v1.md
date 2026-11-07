@@ -473,3 +473,35 @@ legs as above); IVOL-tercile grouping; excluding stocks below the cross-sectiona
 (g) Caveats stated in advance: G1 stocks are much larger than G2/G3; within-group sorting and benchmarking against the
 group return remove the level difference but not differences in the cross-sectional dispersion of returns; delisting
 returns are not available.
+
+### 11.13 Band-estimation chapter (master plan §5), specifications fixed on 7 Nov 2026 BEFORE estimation
+Not a confirmatory test of the plan (the confirmatory band test is H3, already reported); it estimates and describes the
+no-arbitrage band. Known beforehand: all primary and secondary results, including H3 (upper quantile rose around the
+2024/2026 STT dates, mostly a common level shift), H7 (reversion by percentile regime), H9 A (upper tail widens with
+utilisation), H4 (weak capital effect) and the simulation lesson that fixed thresholds estimate average edges (§5b).
+**C16. Band estimation.** (a) *Data:* C1 sample, non-ban days, 2 Jan 2015 to 27 Oct 2026; x_(t-1) = m_(t-1) - mu_i (mu_i =
+the stock's median on non-ban days, winsorised levels, as C2 a), Delta m_t same contract (bp).
+(b) *Pooled 3-regime threshold model:* Delta m_t = a_r + rho_r x_(t-1) + e in regimes x < gL, gL <= x <= gU, x > gU; grid
+over the 5th to 95th percentiles of x (step 1 percentile), at least 10% of observations in each outer regime and 20% in the
+middle. Linearity test: sup-F against the linear model, p-value from a wild bootstrap clustered by date (Rademacher
+weights, 199 draws). Threshold uncertainty: stock-cluster bootstrap (199 draws). Reported: thresholds, regime slopes,
+half-lives, shares.
+(c) *By period and state (same estimator):* calendar years; STT periods (to 31 Mar 2023; 3 Apr 2023 to 30 Sep 2024;
+1 Oct 2024 to 31 Mar 2026; from 1 Apr 2026); ban-enforcement eras are not used (non-ban days only); days to expiry
+(terciles); lagged utilisation (terciles of omega_(t-1)); arbitrage-capital regimes (terciles of monthly arbitrage-fund
+net assets relative to total F&O stock market activity are NOT used: simply terciles of log net assets over April 2018 to
+September 2026, which mostly orders time, so it is reported as descriptive only).
+(d) *Smooth transition:* exponential STAR, Delta m_t = a + [rho_1 + rho_2 (1 - exp(-gamma (x_(t-1) - c)^2 / s_x^2))] x_(t-1) + e
+(s_x = sd of x), and logistic STAR with transition variable x_(t-1) (asymmetric edges); estimated by profiling (grid over
+gamma and c, OLS given them); compared with the threshold and linear models by SSR and BIC. Linearity check against STAR:
+auxiliary regression of Delta m on x, x^2, x^3 (stock and date FE, two-way clustered); joint test of x^2 and x^3.
+(e) *Observed transition variables (state-dependent adjustment):* Delta m_t = a + [rho_0 + rho_1 G(s; gamma, c)] x_(t-1) + e,
+logistic G, s in {omega_(t-1); trading days to expiry; log arbitrage-fund net assets (monthly, from April 2018)}; profile
+estimation over (gamma, c); rho's with two-way clustered SE at the chosen (gamma, c).
+(f) *Per-stock models:* the threshold model per stock on non-ban days (at least 500 observations); distribution of gL,
+gU and gU - gL; cross-sectional relation of the band width to the H1 friction index (stock means), reported as an
+association.
+(g) *Cost band:* a bottom-up round-trip cost for an overnight cash-and-carry position in each STT period (STT on cash
+delivery and on futures, stamp duty, exchange and clearing charges, GST on charges; brokerage at an institutional rate),
+with every component sourced; compared descriptively with the estimated edges.
+(h) Units: bp; all estimates are descriptive; inference is reported for the linearity tests and threshold intervals only.
