@@ -115,3 +115,6 @@ Level effect (PAP §11.4 C7; `analysis/level_effect.py`; docs/14 §14.7): 889 ma
 slope on C -4.8, p = 0.0014. Signs as Prop. 6 predicts. Fragile: same-day controls only, gradient n.s. (-2.1, se 1.8);
 matching leaves treated 10 bp lower on day -1 and a dip on day -1. Exploratory: baseline k=-10..-2 level -11.3, slope p
 0.007; gap-adjusted level -9.2, slope -3.5 (se 1.6). Post-reform 19 events, all C > 0, mean -2.8.
+Density test at 95% (PAP §11.5 C8; docs/14 §14.8): transition population (below 95% the day before), CJM log ratio -0.05,
+p = 0.86; robust across p, h, regimes, MWPL-change days; binned check +0.31 is bandwidth-driven (exploratory); cluster
+bootstrap se of CJM 0.29. No bunching below 95%; utilisation accelerates toward the trigger. RD usable as supporting.

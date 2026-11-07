@@ -297,3 +297,8 @@ jumps through the denominator); the two pre-reform enforcement regimes; the pre-
 open positions before an expected ban does the opposite). A significant discontinuity in the main population means the RD
 at 95% is not credible as a local randomisation and is reported as descriptive only. Supplementary (treatment side): the
 mean daily change in utilisation by bins of omega_(d-1) between 0.80 and 0.95, against bins further below.
+- 7 Nov 2026, density test (exploratory additions in `analysis/density_test.py`, after the C8 results were seen): the
+  pre-specified CJM test finds no discontinuity (log ratio -0.05, p = 0.86) while the pre-specified binned check gives +0.31
+  (CI +0.08 to +0.62). Added: (1) stock-cluster bootstrap of the CJM log ratio at the main bandwidths: se 0.29, interval
+  -0.62 to +0.54; (2) binned estimate by bandwidth: +0.12 (0.02), +0.19 (0.03), +0.29 (0.04), +0.31 (0.05), +0.34 (0.075),
+  +0.30 (0.10) — rising with h, consistent with boundary bias from linear fits to a convex falling density.

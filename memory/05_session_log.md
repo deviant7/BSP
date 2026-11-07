@@ -362,3 +362,8 @@
   dip. Exploratory (logged §11.2): baseline -10..-2 → -11.3, slope p 0.007; gap-adjusted -9.2, slope -3.5 (1.6).
   Post-reform 19 events, all C>0, -2.8. Consistent with H7 diagnostics (blocked new long demand at ban start).
   Next: density test at 95% (treatment-side), then RD.
+- **Density test (7 Nov):** PAP §11.5 C8 committed first (3f7ffab). Key design point: literal population (all non-ban days)
+  is mechanically discontinuous (absorption into ban) → main = one-step transitions from below 0.95. rddensity 3.0 /
+  rdrobust 2.1.1 installed (pip). Result: no discontinuity (CJM p 0.86, robust); binned McCrary +0.31 shown (exploratory)
+  to grow with bandwidth → boundary bias; CJM cluster-boot se 0.29 (limited power). No bunching; utilisation accelerates
+  near 95%. Figure reports/figs/density_95.pdf. Next: RD at 95%.

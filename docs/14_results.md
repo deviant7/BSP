@@ -194,7 +194,37 @@ dips on day -1 itself (the day utilisation crosses 95%), so the event-time profi
 (se 1.6). The result is consistent with the H7 diagnostics: at the start of a ban the basis falls as new long demand
 for futures is blocked.
 
-## 14.8 To come
+## 14.8 Secondary (supporting): density of utilisation at 95%
 
-H9 (anticipation and the 1 October 2025 reform), regression discontinuity at 95% with the density test, hysteresis, H2
-(bad news in bans), H1 (friction index), H4 (arbitrage capital), H5 (anomalies).
+Question: do stocks bunch just below the 95% trigger (traders holding back to avoid a ban) or just above it (a rush to
+open positions before an expected ban)? The model does not sign this; the answer decides whether a regression
+discontinuity at 95% can be read as local randomisation. Details fixed before running: plan §11.5 (C8). Code
+`analysis/density_test.py`; output `analysis/output/density_test.txt`; figure `reports/figs/density_95.pdf`.
+
+Population. End-of-day utilisation of stocks that were not in a ban and were below 95% the day before (47,503 stock-days in
+[0.60, 1.30], 2015 to September 2025). Using all non-ban stock-days instead would build in a drop above 95% mechanically
+(a stock above the trigger is in the ban from the next day); that version is also reported.
+
+**Pre-specified result (Cattaneo-Jansson-Ma, local quadratic, robust bias-corrected):** density just below 0.326, just
+above 0.311, log ratio -0.05; T = -0.18, p = 0.86. No discontinuity. The same holds for local linear (p = 0.59) and cubic
+(p = 0.49) fits, fixed bandwidths of 0.02 (p = 0.93) and 0.05 (p = 0.23), all non-ban stock-days (p = 0.93), excluding
+days with an MWPL change (p = 0.94), and each enforcement regime separately (p = 0.37 and 0.43). The pre-sample 2010 to
+2014 shows a positive jump (log ratio +1.10, p = 0.008) that the binned check does not confirm (-0.03). After October 2025
+there are too few observations (36 just above the cutoff).
+
+A binned McCrary-type check with a stock-clustered bootstrap (pre-specified because the test above treats repeated days
+of a stock as independent) gives +0.31 (95% interval +0.08 to +0.62). **Exploratory (added after the results were seen):**
+the binned estimate rises with the bandwidth (+0.12 at 0.02, +0.31 at 0.05, +0.34 at 0.075), the pattern expected from
+fitting straight lines to a convex, falling density, whereas the main estimator corrects for this bias; a
+stock-clustered bootstrap of the main estimate gives a standard error of 0.29 (interval -0.62 to +0.54).
+
+Reading. There is no sign of bunching below 95%: utilisation does not stall as it nears the trigger. The mean daily change
+in utilisation is larger, not smaller, just below 95% (+0.008 to +0.014 against about 0 further below), and the share of
+stocks crossing the next day rises steadily with yesterday's utilisation (7% at 0.85, about 50% at 0.93 to 0.95). The
+regression discontinuity can therefore be read as supporting evidence, with the caveat that the density test has limited
+power against moderate discontinuities once dependence within stocks is allowed for.
+
+## 14.9 To come
+
+Regression discontinuity at 95%, hysteresis, H9 (anticipation and the 1 October 2025 reform), H2 (bad news in bans), H1
+(friction index), H4 (arbitrage capital), H5 (anomalies).

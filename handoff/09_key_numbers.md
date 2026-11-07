@@ -101,3 +101,6 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
   Mean D -6.28 bp; C<=0 +8.36 (10.88); C>0 -6.79 (1.76); diff -15.15 p 0.083; median split -5.82 p 0.025; slope -4.83 p 0.0014.
   Same-day controls 685 events: -4.04 (2.03), slope -2.08 (1.83). Close-based: -0.69 overall, slope -4.73 p 0.0002.
   Exploratory: baseline -10..-2: -11.3, slope -3.08 p 0.007; gap-adjusted: -9.24, slope -3.48 (1.63), gap coef -0.29.
+- Density test (`analysis/output/density_test.txt`): main population 47,503 stock-days in [0.60,1.30] (353 stocks); [0.90,0.95)
+  1,699, [0.95,1.00) 661; CJM f- 0.326, f+ 0.311, T -0.18, p 0.855, h 0.031/0.036; binned theta +0.313 (boot se 0.135);
+  exploratory CJM cluster-boot se 0.287. Next-day crossing share 6.8% at 0.85 → ~50% at 0.93-0.95.
