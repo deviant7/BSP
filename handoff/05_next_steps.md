@@ -100,35 +100,44 @@ Holm across the four primary tests at 5% (one p-value per hypothesis; decide in 
 the hypothesis's p-value where several exist, e.g. delta_upper - delta_lower for H7, the mean (Delta OI + volume) / volume
 or the futures-volume coefficient for H8).
 
-## Step 3. Secondary tests (labelled exploratory) — NEXT
-Before each: write any open implementation details into PAP §11 with the date, commit, then run. Inputs ready: basis sample
-(`analysis/samples.py`), returns, market caps, event outcomes (`data/processed/cache/`). H4 still needs AMFI arbitrage-fund AUM.
+## Step 3. Secondary tests — ALL DONE 7 Nov 2026 (PAP §11.4 to §11.12, each committed before running; results docs/14 §14.7 to §14.16; summary in 04 §4.10)
+Level effect, density test, RD, hysteresis, H9, H2, H1, H4, H5. Scripts in `analysis/` (level_effect.py,
+level_effect_buildup.py [exploratory], density_test.py, rd_95.py, hysteresis.py, h9_regime.py, h2_badnews.py,
+h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI monthly arbitrage-fund series.
 
-Level effect (stacked ban-entry event study with near-miss controls, split by pre-ban Delta OI / volume); H9 (basis
-quantiles by utilisation bins; 1 Oct 2025 intensity DiD); RD at 95% after the Cattaneo-Jansson-Ma density test (density
-test is treatment-side and can be done at any time); hysteresis; H2 (180 ban-day announcements); H1 (friction index);
-H4 (needs AMFI); H5 (anomaly double sorts; needs returns and characteristics).
+## Step 3b. Analyses in the master plan that are not PAP tests (still to do; ask the user which first)
+1. **No-arbitrage band chapter (master plan §5, Ch 4; the guide's area, non-linear time series):** 3-regime threshold
+   models (per stock and pooled, by period) and smooth-transition (ESTAR/LSTAR) error-correction models of the basis;
+   thresholds/adjustment speeds against the dated cost, capital and limit changes; state-dependent thresholds (lagged
+   OI/MWPL). The estimators exist (`analysis/setar.py`) and were tested on simulated data; H3 used quantile edges. This
+   is descriptive/estimation work, not a new confirmatory test; anything new it tests needs a §11 entry first.
+2. **Constraint index as a stand-alone deliverable** (project-document goal): the H1 index (Corwin-Schultz, Amihud, IVOL,
+   utilisation, SLB) is built per stock-quarter (`data/processed/cache/frictions_q.pkl`); document, validate against bands,
+   decide on the SLB input (its sign suggests it measures borrowing demand).
+3. Optional: XBRL EPS for SUE (secondary surprise measure for H2/H6); index dividends; announcement-aware dividend
+   adjustment; BSE-only results.
+4. Open interpretive threads (handoff/14): VWAP vs close basis on ban days; long vs short build-up; RD basis gap before the
+   ban; 8 Dec 2025 broker date.
 
-## Step 4. Inputs still to collect (blind-safe, can run in parallel)
+## Step 4. Inputs (status 7 Nov 2026)
 
-| Input | Use | Notes |
-|---|---|---|
-| AMFI monthly arbitrage-fund AUM and net flows (mid-2018 on) | H4 | amfiindia.com monthly reports; categorised from 2018 |
-| EPS from XBRL filings | SUE (secondary surprise) | links in `announcements.csv.gz` (`xbrl_standalone`, `xbrl_consolidated`); legacy XML to Mar 2025, Integrated Filing XML after |
-| SLB bhavcopy | Friction index (H1) | NSE SLB segment archives |
-| Market capitalisation (DONE 5 Nov 2026) | H6 matching, size portfolios, H5 | AMFI half-yearly lists + back-cast; Prowess only to verify pre-Jul-2017 |
-| Index dividends | Sharper Nifty validation | optional |
-| BSE results for BSE-only listings (MCX, Abbott, Nestle before 2023) | Close the last 1% gap in announcements | optional |
-| Announcement-date-aware dividend adjustment | Lets dividend contracts back into the sample | optional robustness |
+| Input | Status |
+|---|---|
+| AMFI monthly arbitrage-fund series | DONE (Apr 2018 to Sep 2026) |
+| SLB bhavcopy | DONE (2015 to 2026) |
+| Market capitalisation | DONE (AMFI half-yearly + back-cast; Prowess only to verify pre-Jul-2017) |
+| EPS from XBRL filings | not collected (optional, SUE) |
+| Index dividends; BSE-only results; dividend adjustment | optional |
 
 ## Step 5. Writing and reporting
 
 1. `docs/14_results.md` (final-form results page): every pre-specified test, original specification first, nulls
-   included.
+   included. Complete for primary and secondary tests (7 Nov 2026).
 2. Thesis chapters in LaTeX (structure in 01). The literature-review PDF needs its known errors fixed before reuse.
 3. Next guide deliverable: one PDF (guide-facing rules), probably "first results". Ask the user before sending anything.
 4. With the user's go-ahead only: correct the project document's known errors (short-selling line, 30x leg,
-   "relaxations", timeline).
+   "relaxations", timeline). The next guide-facing document must also correct the SLB-eligibility wording of the sent
+   report and model PDF (SLB is not limited to F&O stocks; short selling is).
 
 ## Step 6. Keep continuity
 

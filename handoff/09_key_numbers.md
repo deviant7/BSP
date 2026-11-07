@@ -122,3 +122,6 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - H4 (`analysis/output/h4_results.txt`): 101 months; flow mean 1.94%, sd 6.94%; q80 mean 17.62; main -17.47 (NW 14.23)
   p 0.11; FD -20.63 (6.77); pre-2023 -25.99 (16.46); post +17.09 (16.87); STT 2026 step +5.03 (1.83). AMFI AUM Apr 2018
   56,218 cr → Sep 2026 2,97,632 cr.
+- H5 (`analysis/output/h5_results.txt`): 228,795 stock-months; G1 24,024 / G2 15,427 / G3 189,344; median mcap 43,513 /
+  11,402 / 770 cr; VW short G3-G1 +0.037% (0.200) p 0.574; EW short -0.487% (0.163), long +0.455% (0.151); momentum short
+  G3-G1 -0.507% (0.217).

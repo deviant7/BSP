@@ -23,14 +23,16 @@ Read all of `handoff/` in the order it gives before doing substantive work.
   (`plan/archive/`, `REMOVED_ITEMS_REGISTER.md`); guide-facing documents have no internal references, no em dashes, no
   AI-sounding phrases; `docs/` documents the final form only (no history). Full list: `handoff/02_people_rules_and_working_style.md`.
 
-## State in one paragraph (5 Nov 2026)
+## State in one paragraph (7 Nov 2026)
 Theory done and verified (`BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models_src/modelC/`). Data built and audited
-(`data_pipeline/`, `data/processed/`, `docs/10_data_quality_audit.md`). The guide received the October progress report,
-liked it and gave the go-ahead. Pre-analysis plan `plan/pre_analysis_plan_v1.md` frozen as git tag **`pap-v1` at 85dac3a**
-(on GitHub; created by the user via GitHub Desktop, 5 Nov 2026). Tests now run exactly as the
-plan specifies; deviations go in its §11. All four primary tests run + Holm (results: `docs/14_results.md`,
-`handoff/04_current_state.md` §4.7–4.9); **next: secondary tests**.
-All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR when the user asks.
+(`data_pipeline/`, `data/processed/`, `docs/10_data_quality_audit.md`); SLB and AMFI arbitrage-fund series added 7 Nov.
+The guide received the October progress report, liked it and gave the go-ahead. Pre-analysis plan `plan/pre_analysis_plan_v1.md`
+frozen as git tag **`pap-v1` at 85dac3a** (on GitHub). Tests run exactly as the plan specifies; every open detail was
+written into its §11 before each run (C1-C15), exploratory additions in §11.2. **All primary tests (+ Holm) and all
+secondary tests are done** (results: `docs/14_results.md`, summary §14.16; `handoff/04_current_state.md` §4.7-4.10).
+Next: the band-estimation chapter and the write-up (`handoff/05_next_steps.md` Step 3b, 5); ask the user before sending
+anything to the guide. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
+when the user asks.
 
 ## Folders
 - `handoff/` continuity brief · `docs/` final-form documentation · `memory/` assistant notes (05 = session log)

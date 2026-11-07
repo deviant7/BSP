@@ -22,3 +22,4 @@
 - 7 Nov 2026: H9 (PAP §11.8 C11; analysis/h9_regime.py; docs/14 §14.11; 04; 09).
 - 7 Nov 2026: H2 (PAP §11.9 C12; analysis/h2_badnews.py; docs/14 §14.12; 04; 09).
 - 7 Nov 2026: H1 and H4 (PAP §11.10-11.11; analysis/h1_frictions.py, h4_capital.py; docs/14 §14.13-14.14; 04; 08 new data builders; 09); SLB and AMFI data; SLB-eligibility correction.
+- 7 Nov 2026: H5 (PAP §11.12 C15; analysis/h5_anomalies.py; docs/14 §14.15) and secondary summary §14.16; 00, 04, 05 (Step 3 done, 3b new), 09, 16 header, CLAUDE.md, memory/01 status.

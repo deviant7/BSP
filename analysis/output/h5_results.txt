@@ -1,0 +1,41 @@
+H5: anomaly returns by short-sale constraint (PAP §11.12 C15). Secondary, unadjusted. Monthly, Newey-West (6 lags).
+Stock-months (signal months Jan 2016 to Sep 2026, price >= Rs 5): 228795; by group: G1 24024, G2 15427, G3 189344
+Median market cap by group (Rs crore): G1 43513, G2 11402, G3 770
+
+MAIN: composite score terciles within group, value-weighted, legs vs group VW return:
+  G1: short leg -0.169% (se 0.248); long leg +0.121% (0.105); long-short +0.290% (0.321) per month; months 129
+  G2: short leg -0.236% (se 0.461); long leg -0.016% (0.248); long-short +0.221% (0.633) per month; months 104
+  G3: short leg -0.131% (se 0.160); long leg +0.087% (0.139); long-short +0.218% (0.255) per month; months 129
+  short leg G3 - G1: +0.037% (NW se 0.200); one-sided p (< 0) = 0.574; long leg G3 - G1: -0.034% (0.143), two-sided p = 0.811
+  short leg G2 - G1: -0.008% (NW se 0.382); one-sided p (< 0) = 0.491; long leg G2 - G1: -0.091% (0.274), two-sided p = 0.741
+
+Equal-weighted:
+  G1: short leg -0.386% (se 0.168); long leg +0.263% (0.143); long-short +0.649% (0.297) per month; months 129
+  G2: short leg -0.384% (se 0.290); long leg +0.099% (0.258); long-short +0.484% (0.515) per month; months 104
+  G3: short leg -0.874% (se 0.094); long leg +0.718% (0.096); long-short +1.592% (0.178) per month; months 129
+  short leg G3 - G1: -0.487% (NW se 0.163); one-sided p (< 0) = 0.00142; long leg G3 - G1: +0.455% (0.151), two-sided p = 0.00254
+Excluding stocks below the median market cap:
+  G1: short leg -0.066% (se 0.239); long leg +0.151% (0.090); long-short +0.218% (0.307) per month; months 129
+  G2: short leg +0.075% (se 0.415); long leg +0.061% (0.256); long-short -0.014% (0.584) per month; months 104
+  G3: short leg -0.012% (se 0.180); long leg -0.029% (0.115); long-short -0.017% (0.258) per month; months 129
+  short leg G3 - G1: +0.055% (NW se 0.206); one-sided p (< 0) = 0.604; long leg G3 - G1: -0.180% (0.113), two-sided p = 0.109
+Holding months to September 2025:
+  G1: short leg -0.176% (se 0.274); long leg +0.106% (0.115); long-short +0.283% (0.355) per month; months 116
+  G2: short leg -0.361% (se 0.518); long leg +0.101% (0.264); long-short +0.461% (0.697) per month; months 91
+  G3: short leg -0.171% (se 0.173); long leg +0.116% (0.149); long-short +0.288% (0.273) per month; months 116
+  short leg G3 - G1: +0.005% (NW se 0.221); one-sided p (< 0) = 0.509; long leg G3 - G1: +0.010% (0.150), two-sided p = 0.948
+IVOL terciles as groups (I3 = highest arbitrage risk), composite without IVOL:
+  I1: short leg -0.074% (se 0.080); long leg +0.573% (0.279); long-short +0.647% (0.323) per month; months 129
+  I2: short leg -0.067% (se 0.130); long leg +0.161% (0.306); long-short +0.228% (0.404) per month; months 129
+  I3: short leg -0.056% (se 0.267); long leg -0.067% (0.491); long-short -0.011% (0.690) per month; months 129
+  short leg I3 - I1: +0.018% (NW se 0.273); one-sided p (< 0) = 0.527; long leg I3 - I1: -0.640% (0.538), two-sided p = 0.234
+
+Each anomaly separately (terciles within group; short = predicted-low-return tercile):
+  mom    long-short G1 +0.36% G2 +0.94% G3 +1.12%; short leg G3-G1 -0.507% (0.217); long leg G3-G1 +0.251% (0.228)
+  rev    long-short G1 +0.55% G2 +0.26% G3 -0.10%; short leg G3-G1 +0.391% (0.154); long leg G3-G1 -0.261% (0.193)
+  max    long-short G1 +0.25% G2 +0.17% G3 +0.16%; short leg G3-G1 -0.023% (0.223); long leg G3-G1 -0.110% (0.117)
+  ivol   long-short G1 +0.05% G2 +0.78% G3 -0.05%; short leg G3-G1 +0.016% (0.255); long leg G3-G1 -0.089% (0.099)
+  illiq  long-short G1 +0.13% G2 -0.12% G3 +0.44%; short leg G3-G1 +0.015% (0.055); long leg G3-G1 +0.325% (0.348)
+  turn   long-short G1 -0.08% G2 +0.11% G3 -0.12%; short leg G3-G1 +0.016% (0.284); long leg G3-G1 -0.028% (0.122)
+
+Secondary test statistic (C15 e): one-sided p (short leg G3 - G1 < 0) = 0.574

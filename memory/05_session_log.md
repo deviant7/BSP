@@ -391,3 +391,8 @@
 - **H4 (7 Nov):** AMFI monthly arbitrage-fund series built (Apr 2018-Sep 2026; two layouts; checks vs published figures
   pass). PAP §11.11 C14 committed first. Lagged flow -17.5 (p 0.11); first differences -20.6 (p 0.001); pre-2023 only.
   Next: H5. pip installs this session: rddensity, rdrobust, xlrd (statsmodels present).
+- **H5 (7 Nov):** PAP §11.12 C15 committed first. VW short leg G3 - G1 +0.04% (p 0.57) → not supported; EW both legs
+  stronger in small cash-only stocks (symmetric); momentum short leg fits (-0.51%). **All secondary tests done**; summary
+  table docs/14 §14.16. Docs 06/07/12/13 updated (SLB, AMFI, rebuild steps, references). Handoff 00/04/05/09/16 + CLAUDE.md
+  + memory/01 status updated. Next (needs the user's choice): band-estimation chapter (threshold/STAR; guide's area),
+  constraint-index deliverable, write-up / first-results PDF for the guide (ask before sending).

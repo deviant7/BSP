@@ -1,4 +1,17 @@
-# 16. RESUME HERE (written at the end of the session of 5 November 2026)
+# 16. RESUME HERE (updated 7 November 2026, after all secondary tests)
+
+**Update 7 Nov 2026 (supersedes §16.1 and §16.3 where they conflict):** the user asked to "go ahead with the next steps
+carefully ... keep updating docs, memory and handoff". Done this session: broader context read (memory, plans, notes,
+chat logs); corrections verified against primary sources (in-ban rule from Oct 2025 is looser; SLB is not F&O-only);
+**all secondary tests run**, each with a dated PAP §11 entry committed first (C7 level effect, C8 density, C9 RD, C10
+hysteresis, C11 H9, C12 H2, C13 H1, C14 H4, C15 H5); new data: SLB bhavcopies 2015-2026 and AMFI monthly arbitrage-fund
+series. Results: `docs/14_results.md` §14.7-14.16 (summary table §14.16); state `04_current_state.md` §4.10; next steps
+`05_next_steps.md` Step 3b (band-estimation chapter, constraint index deliverable) and Step 5 (write-up; ask before
+sending anything to the guide). Extra pip installs needed in a fresh container: `rddensity rdrobust xlrd` (statsmodels
+present). New git-ignored inputs to rebuild if lost: `data/raw/slb/` (download_slb.py, ~30 min), `data/raw/amfi_monthly/`
+(download_amfi_monthly.py); caches `frictions_q.pkl`, `h5_monthly.pkl` rebuild automatically.
+
+## (Original card of 5 November 2026 follows)
 
 The user ended the session with: "Save everything to memory ... We will pick up from exactly where we left off in the next
 session." This page says exactly where that is and what to do first. Read `00_START_HERE.md` (reading order) and this

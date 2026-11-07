@@ -4,8 +4,9 @@ This page reports the tests of the frozen plan (`plan/pre_analysis_plan_v1.md`, 
 run. For each test the **pre-specified result comes first**. Analyses added after a result was seen are marked
 **exploratory** and are listed in the plan's deviations log (§11.2). Output files: `analysis/output/`. Code: `analysis/`.
 
-Status: all four primary tests are complete (H8, H7, H3, H6) and corrected for multiple testing (14.6). Secondary tests
-(reported unadjusted, labelled exploratory by the plan) start in 14.7.
+Status: all four primary tests are complete (H8, H7, H3, H6) and corrected for multiple testing (14.6). All secondary
+tests of the plan are complete (14.7 to 14.15; summary 14.16), reported unadjusted and labelled exploratory as the plan
+says.
 
 ## 14.1 Common set-up
 
@@ -407,6 +408,52 @@ Reading. There is weak evidence that inflows of arbitrage capital are followed b
 mainly before April 2023 and in month-on-month changes; after the 2023 tax change, when assets grew fastest, the relation
 is not visible. With about a hundred monthly observations and flows that chase returns, the test has little power.
 
-## 14.15 To come
+## 14.15 Secondary: H5, anomaly returns by short-sale constraint
 
-H5 (anomalies by constraint).
+Details fixed before running: plan §11.12 (C15). Code `analysis/h5_anomalies.py`; output `analysis/output/h5_results.txt`.
+All NSE stocks priced at Rs 5 or more, signals at each month-end from January 2016 to September 2026, returns the next month
+(228,795 stock-months). Constraint groups at each month-end: G1 F&O stocks (median market cap Rs 43,513 crore), G2
+cash-only stocks with SLB trades in the last three months (Rs 11,402 crore), G3 cash-only stocks without SLB trades (Rs 770
+crore). Within each group, stocks are sorted into terciles of a composite mispricing score (average percentile rank of
+momentum, short-term reversal, maximum daily return, idiosyncratic volatility, illiquidity and turnover, oriented so that
+high means overpriced). Legs are measured against the group's value-weighted return.
+
+**Pre-specified result (value-weighted):** short leg G1 -0.17% a month (se 0.25), G3 -0.13% (0.16); difference G3 - G1
++0.04% (Newey-West se 0.20), one-sided p = 0.57; long-leg difference -0.03% (0.14). The overpriced side does not do worse
+where shorting is constrained.
+
+| Check | Short leg G3 - G1 (se) | Long leg G3 - G1 (se) |
+|---|---|---|
+| Equal-weighted | **-0.49% (0.16)**, p = 0.001 | **+0.46% (0.15)** |
+| Excluding stocks below median market cap | +0.06% (0.21) | -0.18% (0.11) |
+| Holding months to September 2025 | +0.01% (0.22) | +0.01% (0.15) |
+| G2 vs G1 (value-weighted) | -0.01% (0.38) | -0.09% (0.27) |
+| IVOL terciles as groups (I3 - I1) | +0.02% (0.27) | -0.64% (0.54) |
+
+Single anomalies (value-weighted long-short returns per month, G1 / G2 / G3): momentum +0.36% / +0.94% / +1.12%, with the
+short leg of constrained stocks lower by 0.51% (se 0.22), as the model predicts; short-term reversal +0.55% / +0.26% / -0.10%
+(the opposite pattern); maximum return, idiosyncratic volatility, illiquidity and turnover show no systematic
+difference.
+
+Reading. Value-weighted, there is no sign that constrained stocks' overpriced side underperforms more. Equal-weighted, the
+anomaly spread is much larger among small cash-only stocks, but on both sides (long leg +0.72%, short leg -0.87% a month in
+G3), which is a small-stock effect rather than the one-sided pattern of the short-sale mechanism. Momentum alone fits the
+prediction. The groups differ greatly in size, which limits what this comparison can show (caveat stated in advance).
+
+## 14.16 Summary of the secondary tests
+
+| Test | Pre-specified statistic | Result | In one line |
+|---|---|---|---|
+| Level effect (14.7) | D(rising OI) - D(falling OI) < 0 | -15.2 bp, p = 0.083 | Signs as predicted; basis falls about 6 bp at ban start; closing group tiny; same-day-control version weak |
+| Density at 95% (14.8) | CJM test | p = 0.86 | No bunching; RD usable as supporting |
+| RD at 95% (14.9) | jump in basis level | -12.9 bp, p = 0.02 | Gap already present on the crossing day; trading jumps are sharp |
+| Hysteresis (14.10) | Ban coefficient | +0.4 bp, p = 0.64 | No extra level shift at equal utilisation and path; trading effects as H8 |
+| H9 anticipation (14.11 A) | slope of upper-tail share | +0.079, p = 0.019 | Upper tail widens as utilisation rises (anticipation plus pressure) |
+| H9 reform (14.11 B) | Post x intensity on upper tail | +0.061, p = 0.11 | Right direction, not significant; strong first stage |
+| H2 (14.12) | Ban x Bad on drift | +0.7%, p = 0.59 | No power; pre-announcement basis pattern found outside bans |
+| H1 (14.13) | friction index on band width | +3.5 bp per sd, p = 0.002 | Across stocks yes; not within stocks; persistence measure fails |
+| H4 (14.14) | lagged flow on q80 | -17.5, p = 0.11 | Weak; significant in first differences and before 2023 |
+| H5 (14.15) | short leg G3 - G1 | +0.04%, p = 0.57 | Not supported value-weighted; symmetric small-stock effect equal-weighted |
+
+All secondary p-values are unadjusted, as the plan states; with ten secondary statistics, one or two values below 0.05
+would be expected by chance even with no effects.

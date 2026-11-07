@@ -1,4 +1,4 @@
-# 04. Current state (as of 7 November 2026; level-effect secondary test run)
+# 04. Current state (as of 7 November 2026, evening: all primary AND secondary tests done)
 
 Resume card with first actions: `16_resume_here.md`. Results for outside readers: `docs/14_results.md`.
 
@@ -12,9 +12,11 @@ Resume card with first actions: `16_resume_here.md`. Results for outside readers
 | Data: treatment side | Built, audited | `data/processed/mwpl_oi_panel.csv.gz`, `ban_days`, `ban_spells`, `fno_membership`, `fno_events` |
 | Data: outcome side | Basis built, audited; announcements rebuilt | `basis_panel.csv.gz` (git-ignored), `announcements.csv.gz` |
 | Data: added 5 Nov | adjusted daily returns; AMFI half-yearly market caps; daily market caps (back-cast before Jul 2017) | `data_pipeline/build_returns.py`, `build_amfi_mcap.py`, `build_mcap.py` |
-| Data: not yet collected | AMFI arbitrage-fund AUM (H4); XBRL EPS (SUE, secondary); SLB (H1); index dividends | see 05 |
+| Data: added 7 Nov | NSE SLB bhavcopies 2015-2026 (`slb_daily.csv.gz`); AMFI monthly arbitrage-fund series Apr 2018-Sep 2026 | `data_pipeline/download_slb.py`, `build_slb.py`, `download_amfi_monthly.py` |
+| Data: not yet collected | XBRL EPS (SUE, optional); index dividends | see 05 |
 | Estimators | 3-regime SETAR (`analysis/setar.py`), tested on simulated data | `analysis/` |
 | Main tests | **All four primary tests run + Holm** (5 Nov 2026) | `analysis/output/`, `docs/14_results.md`; summary §4.7 and §4.9 |
+| Secondary tests | **All done 7 Nov 2026** (level effect, density, RD, hysteresis, H9, H2, H1, H4, H5) | §4.10; `docs/14_results.md` §14.7 to §14.16 |
 | Final-form docs | Complete for the current state, incl. results page | `docs/` (README + 01 to 14) |
 | Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
@@ -140,3 +142,5 @@ opposite (-0.033, noise); stock FE → 0 (cross-sectional only); SLB scarcity wr
 built (NSE SLBM bhavcopies 2015-2026). H4 (§11.11 C14; §14.14): AMFI arbitrage AUM Apr 2018-Sep 2026 built; q80 on lagged
 flow -17.5 (14.2) p 0.11; first differences -20.6 (6.8) p 0.001; pre-2023 -26 (p 0.06), post-2023 +17. Weak support.
 SLB eligibility correction: SLB covers non-F&O liquid stocks since Jul 2013 (docs/handoff fixed; sent PDFs not).
+H5 (PAP §11.12 C15; docs/14 §14.15): VW short leg G3 - G1 +0.04% (p 0.57); EW -0.49% (p 0.001) but long leg +0.46% too
+(symmetric small-stock effect); momentum short leg -0.51% (0.22) fits. Summary table of all secondary tests: docs/14 §14.16.
