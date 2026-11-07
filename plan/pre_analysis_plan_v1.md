@@ -351,3 +351,35 @@ log(1 + futures contracts), R and delivery share (expiry days excluded) for comp
 lagged basis; adding the maximum of omega over t-10..t-1 (recent path); excluding imputed ban days; the two enforcement
 regimes; the in-ban days split into before and after an expiry within the spell (PostExp, as in C2 c). After 1 Oct 2025:
 descriptive.
+
+### 11.8 Clarifications for H9 (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+Known beforehand (treatment side): on 1 Oct 2025 all 208 F&O stocks' MWPL fell, ln(new/old) from -0.69 to -0.24 (median
+-0.32); FutEq OI exists in our files only from 1 Oct 2025 (ratio FutEq/gross OI on 1 Oct: median 0.73); later quarterly
+MWPL resets on 1 Jan, 1 Apr and 1 Jul 2026 (about 155 stocks each). Known outcome-side results: level effect, RD,
+hysteresis (C7, C9, C10).
+**C11. H9.** Part A, anticipation (2 Jan 2015 to 30 Sep 2025, C1 sample, non-ban days only):
+(a) Stock-specific tail thresholds from each stock's non-ban days with omega_(t-1) < 0.60: q20_i, q50_i, q80_i of the
+winsorised basis (stocks with fewer than 100 such days dropped). Outcomes: U_it = 1{m_t > q80_i} (upper exceedance),
+L_it = 1{m_t < q20_i}, and the level m_t - q50_i (bp).
+(b) Specification: outcome on omega_(t-1) bin dummies [0.60, 0.65), ..., [0.90, 0.95) (reference: omega_(t-1) < 0.60) +
+stock FE + date FE; SE two-way clustered (stock, date). Also reported: the raw 20th/50th/80th percentiles of m - q50_i by
+bin (descriptive).
+(c) *Test statistic A (secondary, unadjusted):* one-sided p that the slope of U on omega_(t-1), estimated on
+omega_(t-1) in [0.60, 0.95) with stock and date FE, is > 0. Smoothness: the bin coefficients are reported in order; a
+"jump only at 95% with no gradient" pattern contradicts. Caveat stated in advance: high utilisation also marks demand
+pressure, so the gradient is anticipation plus pressure; it is not a clean anticipation estimate.
+Part B, the 1 Oct 2025 reform:
+(d) Stocks in F&O on both 30 Sep and 1 Oct 2025. Intensity I_i = -ln(MWPL_new / MWPL_old) (positive; larger = bigger cut,
+pre-determined by pre-reform free float and deliveries). Secondary intensity: predicted change in log utilisation
+P_i = ln(FutEq OI / gross OI on 1 Oct 2025) + I_i (uses the 1 Oct composition because FutEq OI is not in our files before).
+(e) Window 1 Jul 2025 to 31 Dec 2025 (before the 1 Jan 2026 reset). y_it = b * Post_t * I_i + stock FE + date FE; SE
+two-way clustered; outcomes U_it and L_it (thresholds as in a, from each stock's pre-reform data), m_t - q50_i, and, as
+first stage and treatment-side checks, utilisation omega_t and the ban indicator. Ban days included in the main
+estimate (the reform acts on the whole regime, Prop. "MWPL not an instrument"); non-ban days only as robustness.
+(f) *Prediction:* larger cuts raise utilisation and bans and raise U (a higher upper edge through anticipation and more
+reduce-only days). *Test statistic B (secondary):* one-sided p that b > 0 for U.
+(g) Robustness: P_i instead of I_i; window extended to 31 Mar 2026 (intensity fixed at 1 Oct); monthly event study
+(July to December, September = reference); non-ban days only.
+(h) Quarterly resets (PAP §4 c), also reported: stacked design over the resets of 1 Jan, 1 Apr and 1 Jul 2026, intensity
+-ln(MWPL after / MWPL before), window 30 trading days before and after, stack-by-stock and stack-by-date FE. 1 Apr 2026 is
+also the STT increase (common to all stocks, absorbed by date FE, but interactions cannot be excluded).
