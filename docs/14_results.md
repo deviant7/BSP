@@ -78,7 +78,7 @@ significant.
 - Differs by enforcement period: before 23 Mar 2020, delta_upper +0.016 (not significant) and delta_lower +0.126; from
   23 Mar 2020 to Sep 2025, delta_upper -0.201 and delta_lower -0.120 (downward deviations revert faster, as the model
   predicts for the lower regime).
-- The faster reversion of upward deviations is concentrated in the first four calendar days of a spell (-0.163, against
+- The faster reversion of upward deviations is concentrated in the start day and the next four calendar days of a spell (-0.163, against
   -0.008 later).
 
 A reading consistent with these facts, but not tested in advance: when a ban starts, new demand for futures exposure is

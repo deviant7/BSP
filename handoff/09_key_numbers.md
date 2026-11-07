@@ -92,5 +92,5 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - Holm: H8 7.4e-41, H3 5.5e-24, H6 1.0e-5, H7 1.
 - H8 ban-day R by enforcement regime: median 0.871 / 0.011 / 0.193 / 0.357.
 - H7 diagnostics: liquid days δ_up −0.154, δ_lo +0.130; EOD era δ_up +0.016, δ_lo +0.126; intraday era −0.201 / −0.120;
-  first 4 days of spell δ_up −0.163, later −0.008.
+  0 to 4 calendar days after spell start δ_up −0.163, later −0.008.
 - H3 placebo pairs: d80 4.6%, width 23.4%, q80−median 27.4%.

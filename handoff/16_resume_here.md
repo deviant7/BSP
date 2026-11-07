@@ -27,7 +27,7 @@ page; the detailed state is in `04_current_state.md`.
 
 ## 16.2 First actions in the next session (in order)
 
-1. `git status`, `git log --oneline -5` (last commit at session end: the end-of-session save after 4393286), `git ls-remote --tags origin`
+1. `git status`, `git log --oneline -5` (latest commits are the 7 Nov 2026 context-gathering saves after beb11b5), `git ls-remote --tags origin`
    (`pap-v1` → 85dac3a).
 2. Check what the container still has. These are **not in git** and must be rebuilt if missing:
 

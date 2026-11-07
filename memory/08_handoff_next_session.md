@@ -100,6 +100,7 @@ cd models_src/modelC && python3 verify_modelC.py     # all checks PASS
 Report: `cd progress_report_src && pdflatex progress_report_oct2026.tex` (twice) → copy to repo root.
 
 ## 6. Key verified numbers (for any later writing)
+(Pre-audit numbers of 28 Oct 2026. Current values: §0b above and `handoff/09_key_numbers.md`.)
 - Ban/MWPL panel: 4,120 trading days (Feb 2010–27 Oct 2026), 476 symbols. Flags vs next-day ban list 11,753/11,771 (99.85%).
   Entry rule (ω>0.95 day before) 99.2%; exit rule (ω≤0.80 last ban day) 99.5% of spells.
 - Main sample 2015–2026: 1,789 spells, 9,414 ban stock-days, 141 stocks; median spell 4 days pre-Oct-2025 (mean 5.2), 9 days

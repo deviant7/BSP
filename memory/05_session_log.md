@@ -325,6 +325,16 @@
   08 quirk 26; 09 primary numbers; 12 counts; 13 tools/sizes; memory/01 status (+ ADDV in quantity, not value);
   data_pipeline/README new builders. Not changed: PAP §1 table still shows pre-audit rule checks 99.2/99.5% (frozen text;
   current 99.4/99.7% in §8 and docs).
+- User (7 Nov, second request): read ALL memory files and any other file that adds context before the level-effect test.
+  Read in full: memory 01–08 (incl. the whole session log), plan v2, PAP v1 + v0 draft, removed-items register, model C
+  ban section (Lemma, P4–P7), progress report tex as sent + removed guidance questions, reference index + notes batches
+  1–6, both chat logs (re-read), docs 02/05/09/11, analysis code samples/inference/h7/h7_diagnostics/h8, handoff 00/03/04/
+  16/CHANGELOG. Findings fixed: (1) H7 diagnostic "first 4 calendar days" = days 0–4 after spell start (code: dos <= 4);
+  wording corrected in PAP §11.2 (dated note), docs/14, handoff/09; numbers unchanged. (2) notes batches 1 and 5 carried
+  facts later corrected (30× leg, ADDV value, "relaxation", MWPL instrument, "no cash shorting") → correction boxes added
+  (text kept). (3) memory/08 §6 marked pre-audit; handoff/16 last-commit pointer updated. No other inconsistencies found.
+  Earliest history confirmed from the chat logs: a short proposal (BSP Proposal.docx, not in repo) went to the guide first,
+  then the detailed project document; the guide asked for theory first; Models A/B were never sent.
 
 ## Open threads (current; older lists superseded)
 - All four primary tests run + Holm (5 Nov). Next: secondary tests (level effect, H9, density test + RD, hysteresis, H2, H1, H4 needs AMFI arbitrage AUM, H5); optional Prowess check of pre-2018 market caps.

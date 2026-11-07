@@ -2,6 +2,13 @@
 
 Covers references 16–18, read directly from the SEBI circulars. These give the **exact rules and dates** our identification depends on. Everything below is quotable primary-source fact.
 
+> **Corrections (added 7 Nov 2026; details in `memory/07_fact_check.md`).** These Sep 2026 notes contain four points later
+> found wrong: (1) the pre-reform MWPL was 20% of free float only; the "30× prior-month volume" leg is from 2004 and ended
+> in 2006; (2) ADDV is measured in **quantity** (shares), not value (NSE Clearing SOP); (3) the 1 Oct 2025 ban rule is not a
+> "relaxation": positions must reduce end-of-day FutEq delta, and the 3 Nov 2025 intraday monitoring is a tightening;
+> (4) the MWPL is **not** a valid instrument for ban status (it moves anticipation and entity caps even without a ban; model
+> Prop. 9). The text below is kept as written.
+
 ---
 
 ## 16. SEBI Circular 2024/132 (1 Oct 2024) — "Measures to Strengthen Equity Index Derivatives Framework"

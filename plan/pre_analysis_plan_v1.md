@@ -190,6 +190,8 @@ Jan 2015, excluding any window overlapping a true STT date; the true events' ran
   -0.120; faster upward reversion concentrated in the first 4 calendar days of a spell (-0.163 vs -0.008 later).
   Reading (post hoc, not a confirmation): blocked new-exposure demand at ban start (model P5/B2) removes the pressure that
   made futures rich; the pre-specified H7 isolates P4 and ignores this opposing channel.
+  (Wording corrected 7 Nov 2026: "first 4 calendar days" means the spell's start day and the next four calendar days,
+  i.e. 0 to 4 calendar days after the start, as coded in `analysis/h7_diagnostics.py`; the numbers are unchanged.)
 - 5 Nov 2026, H3 (exploratory calibration): against the 30 pre-specified placebo dates, the average Delta q80 of 2024 and
   2026 is exceeded by 4.6% of placebo pairs; band width (q80 - q20) by 23.4%; q80 relative to the median by 27.4%. The
   rise is mostly a common level shift; stock-clustered SEs ignore cross-sectional correlation (Kolari and Pynnonen 2010).
