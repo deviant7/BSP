@@ -426,3 +426,22 @@ beta > 0 for W, A and rho. *Test statistic (secondary, unadjusted):* one-sided p
 days including ban days; period to 2026 Q3; index without the SLB input.
 (g) Caveat stated in advance: frictions are correlated with size and liquidity, so beta is an association, not a causal
 effect; this is H1's role in the plan.
+
+### 11.11 Clarifications for H4 (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+Data collected (treatment side): AMFI monthly reports, arbitrage-fund category, April 2018 to September 2026
+(`data_pipeline/download_amfi_monthly.py` -> `data/processed/amfi_arbitrage_monthly.csv`; net inflow, net AUM; average AUM
+from April 2019). Checked against two published figures (April 2023 and October 2024 AUM match exactly). Known outcome
+results: H3 (level shifts around STT dates).
+**C14. H4.** (a) *Monthly outcome:* the 80th percentile of the winsorised basis across all stock-days of the month in the C1
+sample on non-ban days (bp); also the 90th, 50th and 20th percentiles and q80 - q20.
+(b) *Capital measure:* flow_t = net inflow in month t / net AUM at the end of month t-1.
+(c) *Main specification:* q80_t = a + b * flow_(t-1) + c1 * 1{t >= Apr 2023} + c2 * 1{t >= Oct 2024} + c3 * 1{t >= Apr 2026}
++ e_t (step dummies for the debt-fund tax change and the three STT increases; the April 2023 tax change and STT step share
+one dummy), May 2018 to September 2026; Newey-West standard errors with 6 lags.
+*Prediction:* b < 0 (inflows of arbitrage capital lower the upper part of the basis distribution). *Test statistic
+(secondary, unadjusted):* one-sided p that b < 0.
+(d) *Caveat stated in advance:* arbitrage-fund returns rise with the basis, so return-chasing flows create a positive
+association that biases b upward (against the prediction); contemporaneous flows are more exposed to this than lagged ones.
+(e) *Also reported:* contemporaneous flow_t; change in log AUM; log AUM with a linear trend; the other quantiles and the
+width; first differences (Delta q80 on flow_(t-1)); excluding March to May 2020 (COVID redemptions and MWPL halving);
+sub-periods before and from April 2023; adding the monthly change in the 3-month interbank rate.
