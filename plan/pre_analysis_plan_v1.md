@@ -302,3 +302,28 @@ mean daily change in utilisation by bins of omega_(d-1) between 0.80 and 0.95, a
   (CI +0.08 to +0.62). Added: (1) stock-cluster bootstrap of the CJM log ratio at the main bandwidths: se 0.29, interval
   -0.62 to +0.54; (2) binned estimate by bandwidth: +0.12 (0.02), +0.19 (0.03), +0.29 (0.04), +0.31 (0.05), +0.34 (0.075),
   +0.30 (0.10) — rising with h, consistent with boundary bias from linear fits to a convex falling density.
+
+### 11.6 Clarifications for the regression discontinuity at 95% (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+Known beforehand: the density test (C8) finds no discontinuity; the level-effect study (C7) found a basis dip on the day
+utilisation crosses 95% (day t-1 here), which motivates the placebo outcomes in (e).
+**C9. RD.** (a) *Units:* stock-days t, 2 Jan 2015 to 30 Sep 2025, with the stock not in a ban on t-1 (at risk of entry).
+Running variable omega_(t-1) (utilisation in the file of day t-1, gross OI); cutoff 0.95; above it the stock is in the
+ban on t (sharp in design; the share actually in a ban on each side is reported, and a fuzzy RD with Ban_t as treatment is
+reported alongside).
+(b) *Estimator:* `rdrobust` 2.1.1 (Calonico, Cattaneo and Titiunik): local linear, triangular kernel, MSE-optimal bandwidth
+(common on both sides), conventional estimate with robust bias-corrected confidence interval and p-value, standard errors
+clustered by stock.
+(c) *Main outcome:* the winsorised basis level m_t of the C1 analysis sample (bp). Secondary basis outcomes: Delta m_t
+(same contract), close-based basis, relative implied repo.
+(d) *Mechanism outcomes (sample of H8, expiry days excluded):* log(1 + futures contracts, near + next), R = (Delta OI + V)/V,
+log(1 + cash shares traded), delivery share.
+(e) *Validity checks:* pre-determined placebo outcomes m_(t-2) and log futures contracts on t-2; m_(t-1) is also reported
+but it is the crossing day itself, so it may move with the same pressure that pushes utilisation over 95%. Selection: the share
+of at-risk stock-days with a valid basis on t (>= 5 contracts) is itself estimated as an RD outcome, because bans thin
+futures trading and the basis sample could be selected at the cutoff.
+(f) *Robustness:* half and double the MSE-optimal bandwidth; local quadratic; donut excluding |omega - 0.95| < 0.005;
+excluding days with an MWPL change on t-1; the two enforcement regimes; placebo cutoffs 0.85 and 0.90 (stocks below 0.95
+only) and 1.00 (above 0.95 only). After 1 Oct 2025 (FutEq utilisation): descriptive.
+(g) *Reading:* supporting evidence only (PAP §6). The model predicts the reduce-only effects at the cutoff (futures
+volume falls; R near 0 under intraday enforcement; basis level sign set by composition, mostly new exposure, so negative
+on average per C7); anticipation is continuous through 0.95 and does not create a jump.
