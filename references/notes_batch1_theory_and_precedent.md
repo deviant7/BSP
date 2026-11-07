@@ -2,10 +2,14 @@
 
 Covers references 1–5 (Tiers 1–2). For each: the argument, the mechanism, the evidence/method, and **what we take for our project**. Where a full PDF isn't in the folder yet, notes are built from the verified abstract plus the canonical content; mark such papers for a verbatim re-read once you drop the journal PDF in `references/`.
 
-> **Corrections (added 7 Nov 2026).** "No cash short-selling" below is imprecise: naked short selling is barred, intraday
-> shorting is allowed, and only F&O-segment securities are eligible for short selling and SLB (`memory/07_fact_check.md` §B).
-> The plan items mentioned here (45-signal library, retail-ownership H3, MWPL-denominator instrument) were later changed;
-> see `plan/archive/REMOVED_ITEMS_REGISTER.md`. The text below is kept as written.
+> **Corrections (added 7 Nov 2026).** "No cash short-selling" below is wrong. SEBI's framework (circular of 5 Jan 2024,
+> `references/25`, restating the 2007 circular): all classes of investors may short sell; naked short selling is not
+> permitted, so every short sale must be delivered at settlement; institutional investors may not day trade (retail
+> investors may square off within the day); securities traded in the F&O segment are eligible for short selling. Overnight
+> shorts therefore need borrowed stock, and the exchanges' SLB lists are drawn from F&O securities (secondary sources;
+> not re-checked against an NSE primary page). The plan items mentioned here (45-signal library, retail-ownership H3,
+> MWPL-denominator instrument) were later changed; see `plan/archive/REMOVED_ITEMS_REGISTER.md`. The text below is kept
+> as written.
 
 ---
 

@@ -73,7 +73,8 @@ position-limit monitoring (1 Apr 2025). NSE ended Bank Nifty/FinNifty/Midcap Sel
 - "No genuine short selling in the cash market" (project document §1): intraday shorting exists; overnight needs SLB.
 - "MWPL = 20% FF or 30x volume" for the sample period.
 - "October and December 2025 relaxations": the 3 Nov 2025 change is a tightening; Dec 2025 changes are index options and
-  pre-open.
+  pre-open. (Precise, 7 Nov 2026: the package is not a relaxation, since every MWPL fell; but the in-ban trading
+  rule itself did loosen on 1 Oct 2025: new contracts are allowed if end-of-day FutEq delta falls, SEBI 2025/79 Table 2.)
 - "Position limits studied in Korea and Taiwan": no source.
 - "Arbitrage mutual funds are barred from shorting" (Slivka et al.): outdated.
 - ADDV as a delivery value: it is in quantity terms in the NSE SOP.

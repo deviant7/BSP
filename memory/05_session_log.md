@@ -343,3 +343,14 @@
 - Blind-safe work available: AMFI arbitrage AUM; XBRL EPS (SUE); announcement-aware dividend adjustment; SLB data; cash-universe
   delay/VR; state-dependent-threshold estimator; density test at 95%.
 - Optional (user go-ahead needed): fix project-document and literature-review errors listed in memory/04.
+- User (7 Nov): "make sure the edits were correct and were wrong in the first place; do not assume". Re-verified each:
+  (1) H7 spell-start wording: code `dos = (date - start).days <= 4`, spell start = first ban-list day (100%) → days 0–4
+  (5 calendar days incl. start); old "first 4 calendar days" was imprecise → fix confirmed. (2) batch-5 box: 20% FF only
+  confirmed (SEBI 2025/79 §5.2.1 + data); ADDV in quantity confirmed (NSE 119/2025, FAQ); **my item (3) was WRONG**: the
+  in-ban trading rule from 1 Oct 2025 IS looser (SEBI 2025/79 §5.3 + Table 2: new delta-reducing contracts allowed) — only
+  the package as a whole is not a relaxation → box rewritten; the 28 Oct reference-index note had the same error → dated
+  correction appended; docs/03 and handoff/10 now state it; memory/07 §L. Item (4) MWPL instrument matches the model.
+  (3) batch-1 box: short-selling framework checked against SEBI circular 5 Jan 2024 (saved references/25): all investors
+  may short; naked barred; institutions no day trading; F&O securities eligible; "and SLB" was not in that primary →
+  box now says SLB list is F&O-based per secondary sources. 2004 origin of the 30× leg could not be re-verified today
+  (✔S). (4) memory/08 note reworded (not all §6 numbers changed).
