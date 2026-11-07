@@ -130,3 +130,4 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
   crit 30.7); BIC lin 3,034,394, SETAR 3,005,493, LSTAR 3,005,545, ESTAR 3,008,092; Wald x2,x3 2,066. IV slopes linear
   -0.142 (OLS -0.262), middle -0.192, upper -0.141, lower -0.121. STR rho1: omega +0.225 (0.053), days +0.221 (0.023), AUM
   -0.077 (0.019). Per-stock 258: gL p50 -26.4, gU +16.5, width 40.9. Cost A 27.1/27.3/28.0/31.0; B 4.0/4.3/5.0/8.0.
+- H7 IV (`analysis/output/h7_iv.txt`): 456,344 obs; 2SLS delta_up -0.1903 (0.0774), delta_lo +0.0882 (0.0145), diff -0.2786 (0.0788); OLS same sample -0.0850 / +0.1023.

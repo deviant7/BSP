@@ -154,3 +154,4 @@ in speeds not robust. Period-demeaned thresholds by STT period -39/+24, -31/+19,
 Observed-transition STR: reversion weakens with utilisation (+0.225, se 0.053), faster in the last week (+0.221 above 7
 days), faster with large arbitrage assets (-0.077). Per-stock: median -26/+17 (width 41), unrelated to friction index.
 Cost band: open+hold 27-31 bp (STT period 1→4), roll 4-8 bp; vs upper threshold +22 to +28 and p90 +24 to +30.
+H7 IV (exploratory, 7 Nov): 2SLS delta_up -0.190 (0.077), delta_lo +0.088 (0.015) → H7's opposite-sign result survives the noise correction (docs/14 §14.3).

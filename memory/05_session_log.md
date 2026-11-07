@@ -409,3 +409,4 @@
   Pooled band -34.5/+23.9 bp, nonlinear; threshold model best by BIC. Exploratory: period demeaning fixes 2026; IV check
   shows much daily reversion is VWAP noise (asymmetry in speeds not robust) → flag H7 IV check. docs/15 written.
   Next: constraint-index deliverable, H7 IV (exploratory), write-up.
+- H7 IV (7 Nov, exploratory): opposite-sign result survives noise correction (2SLS delta_up -0.19, delta_lo +0.09). PAP §11.14 C17 committed (constraint index).

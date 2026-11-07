@@ -116,7 +116,7 @@ h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI
    decide on the SLB input (its sign suggests it measures borrowing demand).
 3. Optional: XBRL EPS for SUE (secondary surprise measure for H2/H6); index dividends; announcement-aware dividend
    adjustment; BSE-only results.
-4. Exploratory robustness worth doing: H7 with x_(t-2) as instrument (noise; handoff/14).
+4. DONE 7 Nov: H7 with x_(t-2) as instrument (opposite sign survives; docs/14 §14.3).
 5. Open interpretive threads (handoff/14): VWAP vs close basis on ban days; long vs short build-up; RD basis gap before the
    ban; 8 Dec 2025 broker date.
 

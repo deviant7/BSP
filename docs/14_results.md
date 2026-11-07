@@ -87,6 +87,11 @@ blocked (the model's second ban channel, which reverses the response of the basi
 pressure that had made futures rich, so upward deviations close quickly. The pre-specified H7 was derived from the
 reduce-only arbitrage channel alone and did not net out this opposing channel.
 
+**Exploratory, measurement noise** (added after the band estimation of [15_band_estimation.md](15_band_estimation.md)
+showed that noise in daily prices inflates reversion slopes; `analysis/h7_iv.py`): with regimes classified by the
+deviation two days earlier and yesterday's deviation instrumented by it, delta_up = -0.190 (se 0.077) and delta_lo =
++0.088 (0.015); the difference is -0.279 (0.079). The opposite-sign result is not caused by noisier prices on ban days.
+
 ## 14.4 H3: costs set the band edges
 
 **Pre-specified test** (`analysis/h3_costs.py`, output `h3_results.txt`): change in each stock's 80th percentile of the

@@ -528,3 +528,8 @@ D1 (calendar year y) on the mean index over the four quarters of year y-1, year 
 positive; (ii) absolute post-announcement drift |BHAR_w[+2,+64]| on the index of the previous quarter, quarter FE, SE
 two-way (stock, event date); prediction positive; and bad-news BHAR on the index (prediction negative); (iii) F&O subset:
 quarterly basis band width on the index (as H1); (iv) persistence: quarter-to-quarter rank correlation of the index.
+- 7 Nov 2026, H7 with instrumental variables (exploratory, `analysis/h7_iv.py`, motivated by the band chapter's noise
+  check): regimes by x_(t-2) (stock 20/80 percentiles), x_(t-1) terms instrumented by x_(t-2) terms, stock and date FE,
+  two-way clustered SE (456,344 obs, 8,027 ban days). 2SLS: delta_up -0.190 (se 0.077), delta_lo +0.088 (0.015),
+  delta_up - delta_lo -0.279 (0.079); OLS on the same sample -0.085 / +0.102. The opposite-sign rejection of H7 is not a
+  measurement-noise artefact. By era (2SLS): end-of-day -0.153 / +0.090; intraday -0.381 (0.236) / +0.012.

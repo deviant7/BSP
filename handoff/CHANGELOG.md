@@ -25,3 +25,4 @@
 - 7 Nov 2026: H5 (PAP §11.12 C15; analysis/h5_anomalies.py; docs/14 §14.15) and secondary summary §14.16; 00, 04, 05 (Step 3 done, 3b new), 09, 16 header, CLAUDE.md, memory/01 status.
 - 7 Nov 2026 CHECKPOINT: 00, 02, 03 (Phase 5), 06 (§6.7), 11, 12, 13 (§13.8), 14 (§14.6), 15, 16 (checkpoint card); docs 08, 09, 10, 11; memory 02/03/04/06; data_pipeline/README.
 - 7 Nov 2026: band-estimation chapter (PAP §11.13 C16, §11.2 entry; analysis/band_estimation.py, band_exploratory.py, band_costs.py; docs/15; 04 §4.11; 05; 09; 14; 16).
+- 7 Nov 2026: H7 IV exploratory check (analysis/h7_iv.py; PAP §11.2; docs/14 §14.3; 04; 05; 09; 14); PAP §11.14 C17 constraint index.
