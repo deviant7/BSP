@@ -38,6 +38,10 @@ Processed, compact outputs go to `data/processed/` (committed when small).
 - `build_amfi_mcap.py RAW OUT` — downloads and parses AMFI's half-yearly average market-cap lists (Jul 2017 onward).
 - `build_mcap.py OUT` — daily market capitalisation from AMFI share counts and split-adjusted prices (back-cast before
   Jul 2017).
+- `download_slb.py OUT [threads]` — NSE SLBS daily bhavcopies (`SLBM_BC_DDMMYYYY.DAT`), 2015 onward (added 7 Nov 2026).
+- `build_slb.py RAW OUT` — parses them into `slb_daily.csv.gz` (fee, quantity, value, trades, tenure, expiry) + report.
+- `download_amfi_monthly.py RAW OUT` — AMFI monthly reports (Excel, Apr 2018 onward) and the arbitrage-fund category row
+  → `amfi_arbitrage_monthly.csv` (two layouts; needs `xlrd`).
 - Full documentation of every source, rule and check: `docs/06_data_sources.md`, `docs/07_data_construction.md`,
   `docs/10_data_quality_audit.md`.
 

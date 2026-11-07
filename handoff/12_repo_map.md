@@ -27,16 +27,16 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | `plan/BSP_Research_Plan_v2.md` | Master plan (scope table, theory summary, hypotheses H1 to H9, phases, measurement, chapters) |
 | `plan/pre_analysis_plan_v1.md` | Frozen test plan (`pap-v1` at 85dac3a) |
 | `plan/archive/` | `plan_v1_project_document_Sep2026.md`, `plan_v2.0_first_draft_2026-10-28.md`, `plan_v2.1_broadened_2026-10-28.md`, `pre_analysis_plan_v0_draft_2026-10-28.md`, `REMOVED_ITEMS_REGISTER.md` (every removed/changed item with reason and how to reintroduce; changelog at the end) |
-| `data_pipeline/` | 15 scripts + README (see 08; incl. `build_returns.py`, `build_amfi_mcap.py`, `build_mcap.py`) |
+| `data_pipeline/` | 18 scripts + README (see 08; incl. `build_returns.py`, `build_amfi_mcap.py`, `build_mcap.py`, and from 7 Nov `download_slb.py`, `build_slb.py`, `download_amfi_monthly.py`) |
 | `data/processed/` | Processed data and build reports (see 08 §8.2); `basis_panel.csv.gz` present only in a container that built it |
 | `data/raw/` | Raw downloads (not tracked) |
-| `analysis/` | `setar.py`, `test_setar_simulated.py`, `audit/`; `samples.py`, `inference.py`, `test_inference.py`; tests `h8_trading.py`, `h7_onesided.py`, `h7_diagnostics.py` (exploratory), `h3_costs.py`, `h6_outcomes.py`, `h6_fno.py`; `output/` result files |
+| `analysis/` | `setar.py`, `test_setar_simulated.py`, `audit/`; `samples.py`, `inference.py`, `test_inference.py`; tests `h8_trading.py`, `h7_onesided.py`, `h7_diagnostics.py` (exploratory), `h3_costs.py`, `h6_outcomes.py`, `h6_fno.py`; secondary tests (7 Nov) `level_effect.py`, `level_effect_buildup.py` (exploratory), `density_test.py`, `rd_95.py`, `hysteresis.py`, `h9_regime.py`, `h2_badnews.py`, `h1_frictions.py`, `h4_capital.py`, `h5_anomalies.py`; `output/` result files (one `.txt` per test, plus `level_effect_events.csv.gz`) |
 | `models_src/` | LaTeX of Models A and B and their guide versions (superseded); `modelC/` (tex, compiled PDF copy, `verify_modelC.py`, `verify_output.txt`, `figs/fig_band.pdf`, `fig_path.pdf`, `fig_hist.pdf`) |
 | `progress_report_src/` | `progress_report_oct2026.tex` (the sent report; includes `../reports/tables/ban_by_year.tex` and figures; macros like `\basisN` hold basis numbers), `removed_guidance_questions.tex`, `progress_report.tex` (Sep 28 note) |
 | `litreview_src/` | LaTeX of the literature review (main + 6 parts + references) |
-| `reports/figs/` | `ban_days_per_month.pdf`, `spell_lengths.pdf`, `utilisation_near_threshold.pdf`, `mwpl_ratio_oct2025.pdf` |
+| `reports/figs/` | `ban_days_per_month.pdf`, `spell_lengths.pdf`, `utilisation_near_threshold.pdf`, `mwpl_ratio_oct2025.pdf`, `density_95.pdf` (7 Nov) |
 | `reports/tables/` | `ban_by_year.tex` (regenerated after the audit: 1,788 / 9,416) |
-| `references/` | 24 numbered items (#18 HTML page, #24 text file), `00_reference_index.md`, `notes_batch1..6` |
+| `references/` | 25 numbered items (#18 HTML page, #24 text file), `00_reference_index.md`, `notes_batch1..6` (batches 1 and 5 carry correction boxes added 7 Nov) |
 
 ## references/ numbering
 1 Shleifer-Vishny; 2 Gromb-Vayanos; 3 DSSW; 4 Aggarwal; 5 Stambaugh-Yu-Yuan; 6 Ofek et al.; 7a Dwyer-Locke-Yu;
@@ -44,7 +44,10 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 12 SEBI F&O retail-loss study; 13 Kumar; 14 lottery factor India (Sehgal et al.); 15a/15b Barber-Odean; 16 SEBI 2024/132;
 17 SEBI 2025/79; 18 NSE MWPL methodology page (HTML); 19 NSE Clearing 119/2025; 20 Shankar et al. 2015; 21 Nandan-Agrawal-
 Jindal 2015; 22 NSE Clearing FAQ Oct 2025; 23 SEBI PR 59/2020 (review of the March 2020 measures); 24 BSE/ICCL notice
-20200322-2 implementing SEBI PR 18/2020 (text).
+20200322-2 implementing SEBI PR 18/2020 (text); 25 SEBI circular 2024/1 (5 Jan 2024), framework for short selling.
+
+New processed data (7 Nov, committed): `data/processed/slb_daily.csv.gz`, `slb_report.txt`, `amfi_arbitrage_monthly.csv`.
+Git-ignored, rebuildable: `data/raw/slb/`, `data/raw/amfi_monthly/`, caches `frictions_q.pkl`, `h5_monthly.pkl`.
 
 ## Not in the repo
 - `BSP Proposal.docx` (the original proposal sent to the guide; desktop era).

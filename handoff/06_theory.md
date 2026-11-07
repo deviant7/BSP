@@ -87,3 +87,16 @@ of edges; state-dependent thresholds added as robustness (PAP §5b).
 
 The user decided (28 Oct 2026): keep this model as is; no further theory unless the data demand it. If results contradict
 a proposition, report it; do not modify the model to fit.
+
+## 6.7 Empirical status of each proposition (after all tests, 7 Nov 2026; details docs/14)
+| Prop. | What the data say |
+|---|---|
+| P1-P2 (band; costs set edges) | H3: upper quantile rose around 2024/2026 STT increases (pre-specified p ~ 0); placebo-calibrated evidence weak (common level shifts). H1: wider bands where frictions are higher, across stocks only. Band centred below zero in the lower tail (descriptive) |
+| P3 (inventory moves thresholds) | Simulation only; supports reporting edges as averages; state-dependent thresholds used as robustness |
+| P4 (one-sided correction) | H7 rejected with the opposite sign (rich futures revert faster in bans), concentrated at spell starts and in the intraday-enforcement era |
+| P5-P6 (sign reversal; level effect by composition) | Level effect: basis falls about 6 bp at ban start, more when OI rose faster before entry; closing-pressure group positive but tiny (30 events); the fall appears for both long and short build-up; RD shows the gap already on the crossing day |
+| P7 (trading in a ban) | H8 supported: futures volume -2.0 log points; dOI = -V holds under intraday enforcement (23 Mar 2020 to Sep 2025), not under end-of-day checks; RD and hysteresis show the same |
+| P8 (anticipation) | Density smooth through 95%; upper-tail share rises with utilisation (H9 A, p = 0.019); no further jump on non-ban days |
+| P9 (MWPL not an instrument) | Used as design rule; 1 Oct 2025 intensity moves utilisation strongly (first stage), basis effects n.s. |
+| P10 (bad news in bans) | Untestable with 55 bad-news ban events; pre-announcement basis lower before bad news outside bans (2 bp, p = 0.04) |
+| P11 (Miller; F&O inclusion) | H6: price delay falls after entry (supported); bad-news drift stronger after entry (contradicts); H5: no overpricing-side asymmetry value-weighted; momentum alone fits |

@@ -41,8 +41,9 @@
 - Do not push to any branch other than the working branch; do not open a PR unasked.
 
 ## 14.5 Interpretation questions raised by the primary results (5 Nov 2026)
-- H7 rejected with the opposite sign; post-hoc reading (blocked new demand at ban start) is not tested; the level-effect
-  secondary test (split by pre-ban order-flow composition) speaks to it and should be run next.
+- H7 rejected with the opposite sign; post-hoc reading (blocked new demand at ban start). The level-effect test (7 Nov) shows
+  the basis falls at ban start, more after faster OI build-up, but for both long and short build-up, so the reading is only
+  partial (14.6 below).
 - H6 delay effect could be liquidity/attention or growth selection rather than short-sale access; drift contradicts the
   short-sale channel. Possible exploratory checks (log in §11.2 first): placebo cohorts of stocks that met size criteria
   but were not added; split by pre-entry disagreement (turnover/volatility).
@@ -59,3 +60,13 @@
   eligible for short selling *and stock lending*. SLB has covered other liquid stocks since July 2013 (SEBI), visible in the
   SLB data from 2018. Short-selling eligibility is correctly F&O-only. Correct this in the next guide-facing document
   (model tex lines on the short-sale table, the cash-only section and the F&O-inclusion test) and rebuild the model PDF then.
+
+## 14.6 Risks and caveats from the secondary tests (7 Nov 2026)
+- Ten secondary statistics, unadjusted: one or two p < 0.05 are expected by chance (stated in docs/14 §14.16).
+- Level effect: matching imbalance (treated 10 bp lower on day -1); same-day-control version weak; closing group 30 events.
+- H1 persistence measure fails at daily frequency (noise); H1 is cross-sectional only (no within-stock effect).
+- H4: ~100 months, return-chasing flows; results depend on specification (levels vs differences, pre/post 2023).
+- H5: constraint groups differ hugely in size (median mcap 43,513 / 11,402 / 770 cr); equal-weighted effects are symmetric.
+- H9 B: the 1 Oct 2025 reform coincides with the FutEq numerator change and intraday monitoring (3 Nov); only one quarter
+  each side before the first reset.
+- SLB activity seems to measure borrowing demand, not ease of borrowing (wrong sign in H1).

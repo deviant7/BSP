@@ -49,3 +49,14 @@
 ## 13.7 Commit conventions
 - Descriptive message, then the trailers given in `00_START_HERE.md` §3 (use your own session link).
 - Never include model names or identifiers in commits or files.
+
+## 13.8 Added 7 Nov 2026
+- Extra Python packages (not preinstalled): `pip install rddensity rdrobust xlrd` (rddensity 3.0, rdrobust 2.1.1);
+  `statsmodels` 0.15 and `pyfixest` 0.60 are used too (pyfixest needs installing in a fresh container).
+- NSE SLB bhavcopies: `https://nsearchives.nseindia.com/archives/slbs/bhavcopy/SLBM_BC_DDMMYYYY.DAT` with a browser
+  User-Agent and Referer `https://www.nseindia.com/all-reports`; ~30 min for 2015-2026 with 4 threads. The NSE
+  `api/reports` endpoint returned 404 for SLB; the archive path works.
+- AMFI monthly Excel: `https://portal.amfiindia.com/spages/am{mon}{yyyy}repo.xls` (Apr 2018 on; .xls needs xlrd, some
+  months are .xlsx inside a .xls name, so try openpyxl too); curl sometimes times out where Python succeeds.
+- Waiting for long jobs: run them with `run_in_background` and wait for the completion notification (foreground sleep
+  is blocked).

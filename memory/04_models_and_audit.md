@@ -62,3 +62,13 @@ Not yet shown to the guide; no 3-pp guide version yet.
 - Numerical results (illustrative params): reversion slope above p80 −0.18 → −0.13 in ban, below p20 −0.12 → −0.16; level effect
   +4.9 bp (no new inflow) vs −3.1/−10.8/−26.0 bp with 1/2/4 bp/day new inflow. A first version of the level check FAILED because
   mean-zero spillover shocks cannot move the mean — the proposition was corrected to depend on the *inflow* of new demand.
+
+## Empirical status of Model C (7 Nov 2026; full table in handoff/06 §6.7)
+- Supported: P7 (trading in a ban; identity under intraday enforcement), P8 (smooth density; upper tail widens toward 95%),
+  P1-P2 partly (H3 on the pre-specified test, weak once placebo-calibrated; H1 across stocks), P11 partly (H6 delay).
+- Contradicted: P4 as tested by H7 (opposite sign); P11's bad-news drift after F&O entry (H6 drift); H5 asymmetry (VW).
+- Signs as predicted but weak: P6 level effect by composition; P9-based reform design (H9 B) n.s.; H4 capital.
+- Untestable here: P10 in bans (55 bad-news events).
+- Model text to correct in the next guide-facing version: the short-sale table, the cash-only section and the F&O-
+  inclusion test say F&O inclusion brings "short-selling and SLB eligibility"; SLB has covered liquid non-F&O stocks since
+  2013 (short selling remains F&O-only). The sent PDF is unchanged.

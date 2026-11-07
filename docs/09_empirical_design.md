@@ -85,6 +85,15 @@ plain language: how the project guards against fitting the data, what is estimat
 | H4 | Arbitrage-fund flows versus the upper quantile of the cross-sectional basis, monthly. |
 | H5 | Anomaly returns by constraint terciles (double sorts). |
 
+Implementation of every secondary test was fixed in the plan's deviations log before it was run (§11.4 to §11.12):
+level effect (event and control definitions, composition splits including a median split, outcome averaged over the
+in-ban days 0 to 4); density test on one-step transitions from below 95% (the density over all non-ban days is
+discontinuous by construction, because a stock above the trigger is in the ban the next day); RD with robust
+bias-corrected inference and pre-determined placebo outcomes; hysteresis with five basis lags; H9 with stock-specific tail
+exceedances and the 1 October 2025 intensity; H2 with ban x bad-news interactions; H1 with a principal-component friction
+index; H4 on lagged arbitrage-fund flows with step dummies for the tax and STT dates; H5 with three short-sale constraint
+groups. Results: [14_results.md](14_results.md).
+
 ## 9.5 Inference
 
 - Standard errors clustered two ways, by stock and by date.

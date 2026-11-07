@@ -76,11 +76,12 @@ contract roll or a gap in the sample), regressed on the lagged level by regime (
 | Near miss | Not in a ban, with omega in [0.85, 0.95) (control group for ban entries) | panel |
 | Hysteresis zone | omega in [0.80, 0.95), in a ban or not | panel |
 | COVID halving | MWPL halved for 61 stocks in the files of 20 to 27 March 2020 (effective the next trading day); restored for 70 stocks on 26 November 2020 | panel (MWPL changes) |
-| 1 Oct 2025 intensity | ln(MWPL_new / MWPL_old) per stock, and the predicted change in utilisation from pre-reform open-interest composition | panel |
+| 1 Oct 2025 intensity | I = -ln(MWPL_new / MWPL_old) per stock (0.24 to 0.69), and the predicted change in log utilisation ln(FutEq OI / gross OI on 1 Oct 2025) + I | panel |
 | Quarterly MWPL resets | MWPL changes on recomputation dates after October 2025 | panel |
 | STT dates | 1 April 2023, 1 October 2024, 1 April 2026 | fixed dates |
 | F&O entry, eligibility exit | Event dates (usable: 233 entries, 158 eligibility exits) | fno_events.csv |
-| Arbitrage capital | Arbitrage-fund assets and flows (to be collected) | AMFI |
+| Arbitrage capital | Monthly flow = arbitrage-fund net inflow / previous month-end net assets; net assets (AMFI, April 2018 to September 2026) | amfi_arbitrage_monthly.csv |
+| Short-sale constraint group (H5) | G1 F&O stock; G2 cash-only with an SLB trade in the last three months; G3 cash-only without | fno_membership, slb_daily |
 
 ## 8.3 Controls and conditioning variables
 
@@ -90,11 +91,33 @@ contract roll or a gap in the sample), regressed on the lagged level by regime (
 | Stock's percentile thresholds of m on non-ban days (20th, 80th) | Define the lower and upper regimes for H7 |
 | Lagged basis (5 lags), lagged utilisation path, change in utilisation | Control for selection on past paths (hysteresis, event-study matching) |
 | Size, turnover, volatility in the 6 months before an event | Matching of controls for F&O entry and exit |
-| Pre-ban composition: change in OI over volume in the 5 days before entry | Splits the level-effect test |
+| Pre-ban composition C: change in OI over volume (near + next futures, contracts) in the 5 days before entry; build-up type from the signs of the OI change and the cash price change | Splits the level-effect test |
 | Days to expiry | Band edges shrink toward expiry |
 
 ## 8.4 Friction index (for H1)
 
-Built only from ex-ante frictions, never from the outcome (basis) or the treatment (ban): a bid-ask spread proxy, the
-Amihud illiquidity ratio, idiosyncratic volatility, lagged headroom (1 - omega) and securities-lending availability if
-obtained. Weights from principal components and, as an alternative, from the model.
+Built only from ex-ante frictions, never from the outcome (basis) or the treatment (ban), per stock and quarter, used in
+the next quarter:
+
+| Component | Definition |
+|---|---|
+| Spread | Corwin-Schultz (2012) two-day estimate from daily cash high and low prices, with the overnight-gap adjustment, negative values set to 0, quarterly mean |
+| Illiquidity | log of the quarterly mean of absolute daily return / traded value (Rs crore) (Amihud 2002) |
+| Idiosyncratic volatility | standard deviation of residuals of daily returns on the Nifty 50 return (at least 40 days) |
+| Utilisation | mean omega on non-ban days (less headroom = more friction) |
+| SLB scarcity | 1 - share of trading days with any SLB trade in the stock |
+
+Each component is standardised within quarter; the index is the first principal component (loadings 0.57, 0.37, 0.55,
+0.45, 0.18; 44% of variance). The SLB component enters with the wrong sign in the outcome regressions, which suggests that
+SLB activity reflects demand to borrow; an index without it is reported alongside.
+
+## 8.5 Measures used in the secondary tests
+
+| Measure | Definition | Test |
+|---|---|---|
+| Event difference D | Change in the basis from day -1 of a ban entry, treated minus matched near-miss controls, averaged over the in-ban days 0 to 4 | Level effect |
+| Upper and lower exceedance U, L | 1 if the basis is above the stock's 80th (below its 20th) percentile on non-ban days with utilisation below 0.60 | H9 |
+| Band width W, size A, persistence rho | Per stock-quarter on non-ban days: q80 - q20 of m; mean absolute m; slope of m_t on m_(t-1) (same contract) | H1 |
+| Monthly upper quantile | 80th percentile of m across all non-ban stock-days of the month | H4 |
+| Composite mispricing score | Average percentile rank of momentum (t-11 to t-1), short-term reversal, maximum daily return, idiosyncratic volatility, Amihud illiquidity and turnover, oriented so that high = overpriced | H5 |
+| Annualised SLB fee | Value / quantity / cash close x 365 / days to SLB expiry | Descriptive |

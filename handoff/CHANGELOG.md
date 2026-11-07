@@ -23,3 +23,4 @@
 - 7 Nov 2026: H2 (PAP §11.9 C12; analysis/h2_badnews.py; docs/14 §14.12; 04; 09).
 - 7 Nov 2026: H1 and H4 (PAP §11.10-11.11; analysis/h1_frictions.py, h4_capital.py; docs/14 §14.13-14.14; 04; 08 new data builders; 09); SLB and AMFI data; SLB-eligibility correction.
 - 7 Nov 2026: H5 (PAP §11.12 C15; analysis/h5_anomalies.py; docs/14 §14.15) and secondary summary §14.16; 00, 04, 05 (Step 3 done, 3b new), 09, 16 header, CLAUDE.md, memory/01 status.
+- 7 Nov 2026 CHECKPOINT: 00, 02, 03 (Phase 5), 06 (§6.7), 11, 12, 13 (§13.8), 14 (§14.6), 15, 16 (checkpoint card); docs 08, 09, 10, 11; memory 02/03/04/06; data_pipeline/README.

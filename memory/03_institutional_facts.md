@@ -69,3 +69,19 @@ securities-in-ban CSV, shareholding pattern, results calendar, India VIX, F&O el
   max 1 lakh. Broker notices date "delta-based exposure limits in ban period" to 8 Dec 2025 (unresolved).
 - Data confirm: ban-day (ΔOI+V)/V median 0.871 (to 22 Mar 2020), 0.011 (23 Mar 2020–Sep 2025), 0.193 (Oct–7 Dec 2025),
   0.357 (8 Dec 2025 →).
+
+## Added 7 Nov 2026 (re-verified against primary texts)
+- **In-ban trading rule from 1 Oct 2025 is LOOSER than before** (SEBI 2025/79 §5.3.1 vs §5.3.2 + Table 2): old rule "trade
+  only to decrease their positions through offsetting positions"; new rule: any trade allowed if the entity's end-of-day
+  FutEq OI falls (e.g. adding a long put or a short call to a long future is permissible). The 2025 PACKAGE is not a
+  relaxation (every MWPL fell; intraday MWPL monitoring with surveillance actions from 3 Nov 2025, §5.4).
+- **Short selling** (SEBI circular SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/1, 5 Jan 2024, references/25, restating the 2007
+  framework): all classes of investors may short; naked short selling not permitted (delivery at settlement mandatory);
+  institutional investors may not day trade; securities traded in the F&O segment are eligible for short selling.
+- **SLB is NOT limited to F&O stocks**: SEBI widened SLB to liquid non-F&O securities from 1 Jul 2013 (Business Standard,
+  30 May 2013; secondary). NSE SLB bhavcopies: non-F&O stocks 0.5-2% of trade records 2015-17, 6-23% from 2019.
+- NSE SLB bhavcopy URL: nsearchives.nseindia.com/archives/slbs/bhavcopy/SLBM_BC_DDMMYYYY.DAT (2015 → present).
+- AMFI monthly report URL: portal.amfiindia.com/spages/am{mon}{yyyy}repo.xls; arbitrage funds a separate category from
+  Apr 2018 (older layout to Mar 2019). AUM Apr 2018 56,218 cr → Sep 2026 2,97,632 cr.
+- 30× volume MWPL leg: 2006 change to free float confirmed (Oneindia, 23 Sep 2006; SEBI 2010 circular keeps the 2006 method);
+  the 2004 circular's text was not retrievable on 7 Nov.

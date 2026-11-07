@@ -27,3 +27,9 @@
   college **CMIE Prowess** access if free data are unobtainable or poor; asks to keep memory, docs and handoff updated
   continuously; ends sessions with "save everything ... pick up exactly where we left off" → write `handoff/16_resume_here.md`.
 - Uses GitHub Desktop on his machine (created the `pap-v1` tag there when the cloud proxy could not push tags).
+- **7 Nov 2026:** "Make sure the edits were correct and were wrong in the first place. Do not assume anything." → always
+  re-verify corrections against code, data and primary texts; say plainly when an earlier correction was itself wrong.
+- "Don't leave out anything that we should have in our analysis, keep things detailed and robust" and "keep updating all
+  things (docs, memory, handoff) after major changes and outcomes".
+- Asks for **checkpoints** before big new work ("update everything so that if we ended here we can pick up"); then continue.
+- Order the user set after the checkpoint: band-estimation chapter first, then the remaining next steps.

@@ -83,3 +83,10 @@ effects found; re-check on Google Scholar/SSRN before writing it as fact, and re
 ## 11.8 Library papers (user offered to fetch)
 Not blocking. Priority: (1) Saurav-Srivastava-Agarwalla 2026 (positioning of H2/H7); (2) Gagnon 2018 (H6 precedent);
 (3) Brennan-Schwartz 1990 (early unwind; theory already built without it).
+
+## Added 7 Nov 2026 (methods used in the secondary tests; standard references, details in docs/13)
+Amihud (2002) illiquidity; Bali, Cakici and Whitelaw (2011) MAX; Calonico, Cattaneo and Titiunik (2014) robust RD;
+Cattaneo, Jansson and Ma (2020) density test; Corwin and Schultz (2012) high-low spread; McCrary (2008); Newey and West
+(1987); Sehgal, Vasishth and Deisting (2024) Indian lottery/IVOL premium (positive IVOL premium in India, so H5's IVOL
+leg is two-sided). Saurav, Srivastava and Agarwalla (2026): our H2 finds their pre-announcement pattern (basis lower
+before bad news) outside bans, 2 bp. Still not read in full (library).

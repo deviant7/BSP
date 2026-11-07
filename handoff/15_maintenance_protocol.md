@@ -47,3 +47,8 @@ session log and the PAP, reports the state, lists inconsistencies, and waits for
 Rewrite `16_resume_here.md` (where we stopped, last message to the user, first actions, rebuild list of git-ignored files,
 next work in order, lessons that must not be lost), append the session-end entry to `memory/05_session_log.md`, update
 `04_current_state.md`, `CHANGELOG.md` and `CLAUDE.md`'s state paragraph, then commit and push and confirm the tree is clean.
+
+## Checkpoints (user request, 7 Nov 2026)
+When the user asks for a checkpoint: bring every handoff file, `docs/`, `memory/` and `CLAUDE.md` up to date with all new
+results and decisions, rewrite the top of `16_resume_here.md` as a self-contained resume card, add a CHANGELOG line,
+commit and push, then continue the work.

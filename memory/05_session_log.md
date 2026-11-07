@@ -396,3 +396,10 @@
   table docs/14 §14.16. Docs 06/07/12/13 updated (SLB, AMFI, rebuild steps, references). Handoff 00/04/05/09/16 + CLAUDE.md
   + memory/01 status updated. Next (needs the user's choice): band-estimation chapter (threshold/STAR; guide's area),
   constraint-index deliverable, write-up / first-results PDF for the guide (ask before sending).
+- **CHECKPOINT (7 Nov, user request):** "update memory, documents and handoff with everything new ... safe checkpoint; then
+  band-estimation chapter first, then remaining next steps". Updated: handoff 00 (date), 02 (verify-don't-assume,
+  checkpoints, thoroughness), 03 (Phase 5 + new decisions), 06 (§6.7 empirical status per proposition), 11 (methods refs),
+  12 (repo map: new scripts/data/ref 25/figure), 13 (§13.8 packages, SLB/AMFI URLs), 14 (§14.6 risks), 15 (checkpoint
+  rule), 16 (self-contained checkpoint card + band-chapter plan); docs 08 (§8.4 friction index, §8.5 secondary measures),
+  09 (secondary implementation), 10 (§10.9 SLB/AMFI checks), 11 (§11.6 SLB, §11.7 arbitrage funds); memory 02, 03, 04
+  (empirical status of Model C; model SLB wording to fix), 06; data_pipeline/README. Next: band-estimation chapter.

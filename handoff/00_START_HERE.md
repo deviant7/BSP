@@ -2,7 +2,7 @@
 
 You are taking over an ongoing research project. This folder is written so that a new chat or a new model, with no
 memory of earlier work, can reach the same depth of context as the assistant that has worked on it so far. Read it fully
-before doing anything. Last full update: **5 November 2026, end of session** (resume card: `16_resume_here.md`) (see `CHANGELOG.md` for every later change).
+before doing anything. Last full update: **7 November 2026, checkpoint after all secondary tests** (resume card: `16_resume_here.md`) (see `CHANGELOG.md` for every later change).
 
 ---------------------------------------------------------------------------------------------------------------------
 

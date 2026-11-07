@@ -69,6 +69,15 @@
 - Raw data (`data/raw/`) and `data/processed/basis_panel.csv.gz` are git-ignored (too large); everything else is committed.
 - `__pycache__/` is ignored (it was committed once by mistake and removed).
 
+## 2.5b Added 7 Nov 2026
+- **Verify, do not assume.** When asked to confirm earlier edits, check each against the code, the data and the primary
+  source; say plainly which earlier corrections were themselves wrong (this happened twice on 7 Nov).
+- The user asks for **checkpoints** ("update everything as if we ended here") before big new pieces of work: then update
+  memory, docs, handoff (incl. `16_resume_here.md`), commit and push before continuing.
+- "Don't leave out anything that we should have in our analysis; keep things detailed and robust": run every
+  pre-specified test and its stated robustness checks; add exploratory checks only when results raise a real question,
+  label them, and log them in PAP §11.2.
+
 ## 2.6 Writing style for guide-facing text (checklist)
 
 - First person ("I built", "I find"), plain sentences, short paragraphs.

@@ -96,6 +96,24 @@ Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Ve
    Jul 2017); H6 details fixed in §11.3 before estimation; H6 run (delay supports, drift contradicts); Holm over the family.
 7. Session ended with a full save; resume card `16_resume_here.md`.
 
+## Phase 5: third cloud session (7 November 2026)
+
+1. Full context re-gathered (all handoff, memory, plans, PAP v0/v1, register, reference notes, report as sent, both chat
+   logs, code). Stale handoff/memory entries fixed.
+2. User: "make sure the edits were correct ... do not assume". Every correction re-checked against code, data and primary
+   texts. Two of the assistant's own corrections were wrong and were fixed: (a) the in-ban trading rule from 1 Oct 2025
+   IS looser than before (SEBI 2025/79 §5.3, Table 2: new delta-reducing contracts allowed); only the 2025 package as a
+   whole is not a relaxation; (b) SLB eligibility is not limited to F&O stocks (SEBI widened it in July 2013; NSE SLB data
+   show many non-F&O stocks). Short-selling eligibility (F&O securities) confirmed from SEBI's 5 Jan 2024 circular
+   (saved as references/25).
+3. **All secondary tests run**, each with a dated PAP §11 entry committed before the run (C7 to C15): level effect
+   (signs as predicted, pre-specified split p = 0.083), density at 95% (no bunching), RD at 95% (trading jumps sharp,
+   basis gap present on the crossing day), hysteresis (no extra level shift), H9 (upper tail widens with utilisation;
+   reform in the right direction, n.s.), H2 (no power in bans; pre-announcement basis pattern outside bans), H1 (frictions
+   and band width across stocks), H4 (weak), H5 (not supported value-weighted). Summary: `docs/14_results.md` §14.16.
+4. New data: NSE SLB bhavcopies 2015 to 2026; AMFI monthly arbitrage-fund series April 2018 to September 2026.
+5. User asked for a full checkpoint, then the band-estimation chapter.
+
 ## Decisions and their reasons (quick reference)
 
 | Decision | Reason |
@@ -122,3 +140,9 @@ Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Ve
 | Free data (AMFI) for market caps; Prowess only for verification | User asked to try free sources first |
 | H6 drift via stacked DiD; p_H6 Bonferroni of 4 components | Drift exists only at events; one p-value needed for Holm |
 | Price >= Rs 5 filter for event outcomes | Sub-rupee tick artefacts (BHAR up to 8,190) |
+| Density test on one-step transitions from below 95% | All-non-ban-days density is discontinuous mechanically (absorption into the ban) |
+| Level-effect composition split also at the median and continuous | Only 8% of entries have falling OI before entry (OI must rise to cross 95%) |
+| Exploratory build-up split (OI x price) | C cannot tell new longs from new shorts; the model's sign depends on it |
+| SLB input in H1 measured as activity | Only a few dozen stocks trade in SLB per day; eligibility barely varies among F&O stocks |
+| H4 on lagged flows with step dummies | Same-month flows chase returns (bias against the prediction); STT/tax dates shift the level |
+| H5 constraint groups F&O / cash-only with SLB / cash-only without | Institutionally grounded short-sale constraint; IVOL terciles as robustness |

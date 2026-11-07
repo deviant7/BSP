@@ -1,15 +1,49 @@
-# 16. RESUME HERE (updated 7 November 2026, after all secondary tests)
+# 16. RESUME HERE (checkpoint of 7 November 2026, evening)
 
-**Update 7 Nov 2026 (supersedes §16.1 and §16.3 where they conflict):** the user asked to "go ahead with the next steps
-carefully ... keep updating docs, memory and handoff". Done this session: broader context read (memory, plans, notes,
-chat logs); corrections verified against primary sources (in-ban rule from Oct 2025 is looser; SLB is not F&O-only);
-**all secondary tests run**, each with a dated PAP §11 entry committed first (C7 level effect, C8 density, C9 RD, C10
-hysteresis, C11 H9, C12 H2, C13 H1, C14 H4, C15 H5); new data: SLB bhavcopies 2015-2026 and AMFI monthly arbitrage-fund
-series. Results: `docs/14_results.md` §14.7-14.16 (summary table §14.16); state `04_current_state.md` §4.10; next steps
-`05_next_steps.md` Step 3b (band-estimation chapter, constraint index deliverable) and Step 5 (write-up; ask before
-sending anything to the guide). Extra pip installs needed in a fresh container: `rddensity rdrobust xlrd` (statsmodels
-present). New git-ignored inputs to rebuild if lost: `data/raw/slb/` (download_slb.py, ~30 min), `data/raw/amfi_monthly/`
-(download_amfi_monthly.py); caches `frictions_q.pkl`, `h5_monthly.pkl` rebuild automatically.
+The user asked for a safe checkpoint ("update everything so that if we ended here we can pick up in the next session"),
+then to continue with the **band-estimation chapter first** and the remaining next steps. This card is self-contained.
+
+## 16.0 Where the project stands
+- Theory (Model C) done and verified. Data built and audited; SLB bhavcopies and AMFI arbitrage-fund series added 7 Nov.
+- Frozen plan `pap-v1` (85dac3a, on GitHub). Every open detail was fixed in PAP §11 before each test (C1 to C15);
+  exploratory additions are logged in §11.2.
+- **Primary tests (+ Holm), 5 Nov:** H8 supported; H3 supported on the pre-specified test (placebo-calibrated weak); H6
+  supported through price delay (drift contradicts); H7 rejected with the opposite sign.
+- **Secondary tests, 7 Nov (all done; summary table `docs/14_results.md` §14.16):** level effect (basis falls about
+  6 bp at ban start, more after faster OI build-up; pre-specified split p = 0.083); density at 95% (no bunching, p = 0.86);
+  RD (trading jumps sharp; basis gap already on the crossing day); hysteresis (no extra level shift, p = 0.64); H9 (upper
+  tail widens toward 95%, p = 0.019; reform right sign, p = 0.11); H2 (no power in bans; pre-announcement basis lower
+  before bad news outside bans, p = 0.04); H1 (frictions and band width across stocks, p = 0.002); H4 (weak, p = 0.11;
+  first differences p = 0.001); H5 (not supported value-weighted, p = 0.57).
+- Corrections verified 7 Nov against primary texts: the in-ban trading rule from 1 Oct 2025 is looser (delta-reducing new
+  contracts allowed), the 2025 package is not; SLB covers liquid non-F&O stocks since 2013 (short selling is F&O-only;
+  SEBI circular 5 Jan 2024 = references/25). The sent report and model PDF keep the old SLB wording: fix in the next
+  guide-facing document.
+- Where everything is: state `04_current_state.md` (§4.7 to §4.10), numbers `09_key_numbers.md`, theory status
+  `06_theory.md` §6.7, open issues `14_open_issues_and_risks.md` §14.6, history `03` Phase 5, next steps `05` Step 3b and 5.
+
+## 16.1a First actions in a new session
+1. `git status`; `git log --oneline -5`; `git ls-remote --tags origin` (pap-v1 → 85dac3a).
+2. Check container files (not in git): `data/raw/` (incl. `slb/`, `amfi_monthly/`), `data/processed/basis_panel.csv.gz`,
+   `returns_daily.csv.gz`, `mcap_daily.csv.gz`, `data/processed/cache/*.pkl`. Rebuild per §16.2 below and
+   `docs/12_reproducibility.md` (new steps: `download_slb.py`, `build_slb.py`, `download_amfi_monthly.py`; secondary-test
+   scripts listed there).
+3. `pip install pyfixest rddensity rdrobust xlrd` (statsmodels present).
+4. Smoke tests: `python3 -I analysis/h8_trading.py` (b = -2.0036); `cd models_src/modelC && python3 verify_modelC.py`
+   (ALL PASS; restore the figure PDFs with `git checkout` if only timestamps changed).
+
+## 16.1b The next piece of work: the band-estimation chapter (master plan §5, Ch 4; the guide's area)
+Not a PAP test; it is estimation and description of the no-arbitrage band over time. Plan (write a dated note in PAP
+§11 before any new hypothesis-like comparison):
+1. Pooled and per-stock 3-regime threshold autoregressions of the basis (`analysis/setar.py`), by period (STT regimes,
+   capital regimes, position-limit regimes), reporting thresholds as **average band edges** (simulation lesson P3).
+2. Smooth-transition error-correction (ESTAR/LSTAR) models of the basis with the deviation as transition variable
+   (Tse 2001), and with observed transition variables (utilisation, arbitrage-fund flows) as the guide's area suggests.
+3. State-dependent thresholds (lagged OI/MWPL terciles), and the asymmetry of the band (lower edge further from zero).
+4. Linearity tests (Hansen-type threshold test with bootstrap; Luukkonen-type tests for STAR) and model diagnostics.
+5. Bottom-up cost band per period (STT, stamp duty, fees, funding) to compare with the estimated edges.
+6. Write `docs/15_band_estimation.md` (final form) and a results section; update handoff/memory.
+Then: constraint index deliverable (05 Step 3b.2), write-up and a first-results PDF for the guide (ask before sending).
 
 ## (Original card of 5 November 2026 follows)
 

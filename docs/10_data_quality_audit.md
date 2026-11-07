@@ -113,7 +113,17 @@ After the fixes:
 Monthly record counts are stable (about 1,900 to 2,700 per year), with no sign of truncation by the API, and the
 dividend parser separates dividends from splits ("sub-division") and other events.
 
-## 10.9 What the audit does not cover
+## 10.9 Securities lending and arbitrage-fund data
+
+| Check | Result |
+|---|---|
+| SLB files against the trading calendar (2015 to 27 Oct 2026) | 2,915 of 2,917 days present (2 missing at NSE) |
+| Trade date inside each SLB file against the file date | identical for all files |
+| SLB coverage | 176,062 trade records, 1,149 symbols; stocks with any trade per year rise from 150 (2015) to 854 (2026); non-F&O stocks are 0.5% to 2% of records before 2018 and 6% to 23% from 2019 |
+| AMFI monthly reports | 102 of 102 months (April 2018 to September 2026) parsed; two layouts handled (April 2018 to March 2019; from April 2019) |
+| Arbitrage-fund net assets against published figures | Rs 71,106 crore (April 2023) and Rs 1,98,981 crore (October 2024) match exactly |
+
+## 10.10 What the audit does not cover
 
 - Intraday data are not used, so whether a future traded in its last half hour (which decides NSE's theoretical
   settlement price) is not observed; the `theoretical_settle` flag only marks days with no trades at all.

@@ -88,3 +88,20 @@ event within the contract's life):
   the last three days.
 - The lower tail is wider than the upper (the 10th percentile is further from zero than the 90th), the asymmetry the model
   expects when reverse arbitrage is costlier than cash-and-carry. This is a description, not a test.
+
+## 11.6 Securities lending
+
+- SLB trading is thin: on a typical day a few dozen stocks are lent. Stocks with at least one SLB trade in the year: 150 in
+  2015, 285 in 2019, 551 in 2022, 854 in 2026.
+- Most SLB activity is in F&O stocks (75% to 100% of traded value each year), but non-F&O stocks account for 6% to 23% of
+  trade records from 2019 (eligibility was widened to liquid non-F&O stocks in 2013).
+- Among F&O stock-quarters, 70% have at least one SLB trade; the median annualised lending fee where a stock is lent is
+  3.5% a year (10th to 90th percentile 0.9% to 12.4%).
+
+## 11.7 Arbitrage funds
+
+- Net assets of arbitrage mutual funds: Rs 56,218 crore in April 2018, about Rs 85,000 crore in early 2020, Rs 52,210 crore
+  after the March 2020 redemptions, Rs 71,106 crore in April 2023, Rs 1,98,981 crore in October 2024 and Rs 2,97,632 crore in
+  September 2026.
+- Monthly net flows average 1.9% of the previous month's assets (standard deviation 6.9%); the largest outflow is March
+  2020 (-40%), and inflows were persistently high from April 2023 (after the change in the taxation of debt funds).
