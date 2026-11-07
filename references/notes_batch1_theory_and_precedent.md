@@ -6,8 +6,9 @@ Covers references 1–5 (Tiers 1–2). For each: the argument, the mechanism, th
 > `references/25`, restating the 2007 circular): all classes of investors may short sell; naked short selling is not
 > permitted, so every short sale must be delivered at settlement; institutional investors may not day trade (retail
 > investors may square off within the day); securities traded in the F&O segment are eligible for short selling. Overnight
-> shorts therefore need borrowed stock, and the exchanges' SLB lists are drawn from F&O securities (secondary sources;
-> not re-checked against an NSE primary page). The plan items mentioned here (45-signal library, retail-ownership H3,
+> shorts therefore need borrowed stock (SLB). SLB eligibility is broader than F&O: SEBI extended it to liquid non-F&O
+> securities from July 2013, and NSE's SLB bhavcopies show many non-F&O stocks trading in SLB from 2018 (checked 7 Nov 2026
+> in `data/processed/slb_daily.csv.gz`). The plan items mentioned here (45-signal library, retail-ownership H3,
 > MWPL-denominator instrument) were later changed; see `plan/archive/REMOVED_ITEMS_REGISTER.md`. The text below is kept
 > as written.
 

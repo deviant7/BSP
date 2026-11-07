@@ -96,8 +96,8 @@ mispricing persist. This project measures how strongly each limit binds in India
 **Short selling** is selling shares you do not own, hoping to buy them back cheaper. In India:
 
 - **Naked** short selling (selling without arranging to deliver the shares) is prohibited.
-- Only **F&O-segment stocks** are eligible for short selling and for the formal stock-lending scheme (**SLB**, securities
-  lending and borrowing). SLB trading is thin.
+- Only **F&O-segment stocks** are eligible for short selling under SEBI's framework. The formal stock-lending scheme
+  (**SLB**, securities lending and borrowing) covers F&O stocks and, since 2013, other liquid stocks; SLB trading is thin.
 - Retail investors can short within a single day, but an **overnight** short position in practice means a short
   single-stock future (or options). This channel exists only for F&O stocks.
 

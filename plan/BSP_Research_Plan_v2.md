@@ -18,7 +18,7 @@ observable shock to almost every one of them:
 
 | Kind of limit | Indian instrument / shock | Main use in the thesis |
 |---|---|---|
-| **Short-sale constraints** | Naked short selling barred; SEBI's framework makes only *F&O-segment securities* eligible for short selling and SLB; SLB thin; the practical overnight short is via single-stock futures/options, which exist only for F&O stocks. **F&O inclusion/exclusion** creates/removes the channel permanently; the **F&O ban** removes it temporarily. | Ch 5 (ban), Ch 6 (F&O eligibility, cross-section) |
+| **Short-sale constraints** | Naked short selling barred; SEBI's framework makes only *F&O-segment securities* eligible for short selling (SLB also covers other liquid stocks since July 2013, corrected 7 Nov 2026); SLB thin; the practical overnight short is via single-stock futures/options, which exist only for F&O stocks. **F&O inclusion/exclusion** creates/removes the channel permanently; the **F&O ban** removes it temporarily. | Ch 5 (ban), Ch 6 (F&O eligibility, cross-section) |
 | **Trading costs** | Futures STT (sell side): 0.017→0.01% on 1 Jun 2013; 0.0125→0.02% on 1 Oct 2024; 0.02→0.05% on 1 Apr 2026 (options also raised) | Ch 4 (bands) |
 | **Arbitrage capital & funding** | Arbitrage mutual-fund AUM (AMFI monthly), incl. inflows after the 1 Apr 2023 debt-fund tax change (≈₹71k cr Apr 2023 → ≈₹1.99 lakh cr Oct 2024); money-market rate shocks (Aggarwal: MIBOR drives bands); peak-margin phase-in (25% Dec 2020 → 100% Sep 2021) | Ch 4 (bands over time) |
 | **Arbitrage risk** | Idiosyncratic / basis risk (IVOL) | Ch 3 (index), Ch 6 |

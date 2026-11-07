@@ -55,3 +55,7 @@
 - **Composition cannot sign new longs vs shorts**; build-up split (OI x price) shows the in-ban fall for both; the "blocked new
   long demand" reading of H7 is only partial.
 - **RD basis gap precedes the ban** (crossing-day basis already low); the RD supports the trading mechanism, not a level effect.
+- **SLB eligibility wording in the sent documents**: the progress report (sent) and the model PDF say only F&O stocks are
+  eligible for short selling *and stock lending*. SLB has covered other liquid stocks since July 2013 (SEBI), visible in the
+  SLB data from 2018. Short-selling eligibility is correctly F&O-only. Correct this in the next guide-facing document
+  (model tex lines on the short-sale table, the cash-only section and the F&O-inclusion test) and rebuild the model PDF then.

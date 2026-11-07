@@ -19,7 +19,7 @@ side by side within one market and one data source.
 
 | Kind of limit | Indian source of variation |
 |---|---|
-| Short-sale constraints | Only F&O-segment stocks are eligible for short selling and stock lending, and the practical overnight short is the single-stock future. **Entry into and exit from the F&O segment** changes this permanently for a stock. The **F&O ban** removes it temporarily. |
+| Short-sale constraints | Only F&O-segment stocks are eligible for short selling (stock lending also covers other liquid stocks, but is thin), and the practical overnight short is the single-stock future. **Entry into and exit from the F&O segment** changes this permanently for a stock. The **F&O ban** removes it temporarily. |
 | Trading costs | The securities transaction tax (STT) on futures sales was changed on fixed dates: 0.01% from 1 June 2013, 0.0125% from 1 April 2023, 0.02% from 1 October 2024 and 0.05% from 1 April 2026. |
 | Arbitrage capital and funding | Assets of arbitrage mutual funds (large inflows after the 1 April 2023 change in the taxation of debt funds); money-market rates; the peak-margin rules phased in from December 2020 to September 2021. |
 | Arbitrage risk | Basis volatility and idiosyncratic (stock-specific) volatility. |

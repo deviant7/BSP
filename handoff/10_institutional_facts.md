@@ -32,7 +32,8 @@ secondary sources (broker notes, press); **D** confirmed in our own data; **?** 
 | Fact | Status |
 |---|---|
 | Naked short selling prohibited (SEBI 20 Dec 2007); short sellers must deliver | S |
-| Only F&O-segment securities eligible for short selling and SLB (Master Circular 16 Oct 2023, Annexure 3) | S |
+| Only F&O-segment securities eligible for short selling (SEBI circular 5 Jan 2024, references/25: all investors may short; naked barred; institutions no day trading) | P |
+| **SLB is NOT limited to F&O stocks** (corrected 7 Nov 2026): SEBI widened SLB eligibility to liquid non-F&O securities from 1 Jul 2013 (Business Standard, 30 May 2013); our SLB bhavcopies show non-F&O stocks in 6-23% of SLB trade rows (1-25% of value) from 2019 (e.g. BANDHANBNK 2019 before F&O entry, NLCINDIA 2024) | S, D |
 | SLB / institutional shorting from 21 Apr 2008; SLB thin | S |
 | Intraday shorting of non-F&O stocks: broker-dependent | ? |
 | Mutual funds may legally short/SLB (MF Regulations amended 2007); arbitrage funds in practice run long cash / short futures | S |

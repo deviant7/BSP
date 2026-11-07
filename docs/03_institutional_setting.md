@@ -39,11 +39,13 @@ Entries and exits happen in batches. In the data the largest are 45 entries on 2
 34 exits on 28 June 2019 and 16 exits on 28 February 2025. Sources: secondary (exchange selection-criteria page citing the
 circular; financial press).
 
-**Why this matters.** Under SEBI's short-selling framework (Master Circular of 16 October 2023, Annexure 3) only
-securities traded in the F&O segment are eligible for short selling and for stock lending and borrowing (SLB).
-Naked short selling is prohibited (SEBI circular of 20 December 2007), and SLB trading is thin. So entering the F&O
-segment gives a stock three short channels at once (futures and options, formal short-selling eligibility, SLB
-eligibility), and leaving it removes them.
+**Why this matters.** Under SEBI's short-selling framework (circular of 5 January 2024, restating the 2007 framework)
+all investors may short sell, naked short selling is prohibited (every short sale must be delivered at settlement),
+institutional investors may not day trade, and securities traded in the F&O segment are eligible for short selling.
+Stock lending and borrowing (SLB) is available for F&O stocks and, since July 2013, also for other liquid stocks
+meeting the exchanges' criteria; in NSE's SLB files, non-F&O stocks account for 6% to 23% of SLB trade records
+(1% to 25% of value) in each year from 2019. SLB trading is thin. So entering the F&O segment gives a stock futures and options and formal short-selling
+eligibility (and SLB eligibility if it did not have it already), and leaving it removes the first two.
 
 ## 3.3 The market-wide position limit (MWPL)
 

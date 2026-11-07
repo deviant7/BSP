@@ -26,7 +26,7 @@ Mispricing measures:
 
 | Limit | Indian source of variation | Used for |
 |---|---|---|
-| Short-sale constraints | Only F&O-segment stocks are eligible for short selling and SLB; naked shorting banned; SLB thin, so the practical overnight short is the stock future. F&O entry/exit changes this permanently; the ban removes it temporarily | H6 (entry/exit), H7, H2 |
+| Short-sale constraints | Only F&O-segment stocks are eligible for short selling (SLB also covers other liquid stocks since 2013; see 10); naked shorting banned; SLB thin, so the practical overnight short is the stock future. F&O entry/exit changes this permanently; the ban removes it temporarily | H6 (entry/exit), H7, H2 |
 | Trading costs | Futures STT: 0.01% (1 Jun 2013), 0.0125% (1 Apr 2023), 0.02% (1 Oct 2024), 0.05% (1 Apr 2026) | H3 |
 | Arbitrage capital | Arbitrage-fund AUM (AMFI, from mid-2018); 1 Apr 2023 debt-fund tax change; peak-margin phase-in Dec 2020 to Sep 2021 | H4 |
 | Arbitrage risk | Basis volatility, idiosyncratic volatility | H1 |
