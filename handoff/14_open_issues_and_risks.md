@@ -47,3 +47,11 @@
   short-sale channel. Possible exploratory checks (log in §11.2 first): placebo cohorts of stocks that met size criteria
   but were not added; split by pre-entry disagreement (turnover/volatility).
 - H3: report pre-specified p with the placebo calibration side by side.
+
+## Added 7 Nov 2026 (secondary tests)
+- **VWAP vs close basis on ban days disagree** (level effect -6.3 vs -0.7; hysteresis +0.4 vs +3.2; RD both about -12). Possible
+  causes: intraday timing mismatch between futures and cash trades on thin ban days; stale futures closes. Daily data cannot
+  resolve it; report both. Intraday data (NSE data shop) would settle it.
+- **Composition cannot sign new longs vs shorts**; build-up split (OI x price) shows the in-ban fall for both; the "blocked new
+  long demand" reading of H7 is only partial.
+- **RD basis gap precedes the ban** (crossing-day basis already low); the RD supports the trading mechanism, not a level effect.

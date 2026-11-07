@@ -1,0 +1,26 @@
+Hysteresis comparison, omega_(t-1) in [0.80, 0.95) (PAP §11.7 C10). Units bp. Stock and date FE; SE two-way clustered (stock, date).
+Zone stock-days 2015 to Sep 2025: 16296, of which in a ban 5373
+
+MAIN: m_t on Ban_t, omega_(t-1), d omega, 5 lags of m:
+  Ban:   +0.377 (se 0.809, t +0.47); two-sided p = 0.642; one-sided p(b > 0) = 0.321; n = 15832, ban days 5237, stocks 163
+  other coefficients: omega_lag -42.387; d_omega +9.026; m_l1 +0.470; m_l2 +0.174; m_l5 +0.100
+
+Secondary outcomes (same specification):
+  Delta m_t, same contract               +0.214 (se 0.774, t +0.28); two-sided p = 0.782; one-sided p(b > 0) = 0.391; n = 15804, ban days 5209, stocks 163
+  close-based basis                      +3.152 (se 0.954, t +3.30); two-sided p = 0.00119; one-sided p(b > 0) = 0.000593; n = 15832, ban days 5237, stocks 163
+  relative implied repo (annual rate)   -50.911 (se 21.586, t -2.36); two-sided p = 0.0196; one-sided p(b > 0) = 0.99; n = 14851, ban days 4857, stocks 161
+  log(1 + futures contracts)             -1.924 (se 0.126, t -15.24); two-sided p = 0; one-sided p(b > 0) = 1; n = 14844, ban days 5000, stocks 163
+  R = (dOI + V)/V                        -0.546 (se 0.046, t -11.82); two-sided p = 0; one-sided p(b > 0) = 1; n = 14844, ban days 5000, stocks 163
+  delivery share                         +0.042 (se 0.005, t +7.73); two-sided p = 1.31e-12; one-sided p(b > 0) = 6.53e-13; n = 14844, ban days 5000, stocks 163
+
+Robustness (outcome m_t):
+  utilisation bins instead of linear             +0.240 (se 0.797, t +0.30); two-sided p = 0.763; one-sided p(b > 0) = 0.382; n = 15832, ban days 5237, stocks 163
+  without lagged basis                          -14.137 (se 2.439, t -5.80); two-sided p = 3.63e-08; one-sided p(b > 0) = 1; n = 16296, ban days 5373, stocks 166
+  adding max omega over t-10..t-1                -1.055 (se 0.936, t -1.13); two-sided p = 0.261; one-sided p(b > 0) = 0.869; n = 15832, ban days 5237, stocks 163
+  excluding imputed ban days                     +0.377 (se 0.810, t +0.47); two-sided p = 0.642; one-sided p(b > 0) = 0.321; n = 15831, ban days 5236, stocks 163
+  end-of-day enforcement (to 22 Mar 2020)        -0.494 (se 1.308, t -0.38); two-sided p = 0.707; one-sided p(b > 0) = 0.647; n = 7206, ban days 2346, stocks 71
+  peak-intraday enforcement (from 23 Mar 2020)   -0.407 (se 1.074, t -0.38); two-sided p = 0.706; one-sided p(b > 0) = 0.647; n = 8626, ban days 2891, stocks 113
+  in-ban days before an expiry in the spell: +0.380 (se 0.812, n ban 5194); after: -0.024 (se 7.207, n ban 43)
+
+After 1 Oct 2025 (FutEq utilisation; descriptive): zone stock-days 1011, in a ban 319
+  Ban:   -6.595 (se 2.791, t -2.36); two-sided p = 0.0284; one-sided p(b > 0) = 0.986; n = 976, ban days 302, stocks 22

@@ -107,3 +107,6 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - RD at 95% (`analysis/output/rd_95.txt`): n 49,029 (210 stocks); in ban on t: 0.0006 below / 0.9973 above. m_t -12.95 (5.18)
   p 0.020 h 0.074; dm_t -2.80 (4.14); m_(t-1) -11.33 (5.69) p 0.048; m_(t-2) -6.69 (4.95); futures -1.527 (0.144); R -0.655;
   delivery +0.051; cash +0.043 (n.s.); fuzzy m -9.45 (7.04). Futures EoD era -0.570, intraday -2.286.
+- Hysteresis (`analysis/output/hysteresis.txt`): zone 16,296 stock-days (5,373 ban); main n 15,832, ban 5,237, 163 stocks:
+  Ban +0.377 (0.809) p 0.642; no lags -14.137 (2.439); close +3.152 (0.954); futures -1.924; R -0.546; delivery +0.042;
+  post-reform -6.595 (2.791), 302 ban days.

@@ -126,3 +126,6 @@ entry may reflect new SHORT futures demand, not long → exploratory long/short 
 Build-up split (exploratory): long build-up -7.9 (2.7), short build-up -5.5 (2.2), diff +2.4 n.s.; closing groups +8.4 (n 30).
 In-ban fall not specific to new longs; crossing-day dip concentrated in long build-up. The H7/level "blocked long demand"
 reading is therefore only partial; keep it labelled post hoc.
+Hysteresis (PAP §11.7 C10; docs/14 §14.10): Ban +0.38 (0.81), p 0.64 with 5 basis lags; without lags -14.1 → no extra
+level shift once the path is held fixed; trading effects as H8; close-based +3.2 (p 0.001), rel. repo -51. Recurrent
+VWAP vs close discrepancy on ban days flagged as a measurement issue (handoff/14).

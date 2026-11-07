@@ -267,7 +267,43 @@ Placebo cutoffs: none for futures volume; for the basis, none at 0.85 or 1.00, b
 degenerate bandwidth (0.008), which is a reminder that the basis RD is noisy. After October 2025: futures volume -1.7,
 basis not estimable with precision (37 stock-days just above the cutoff).
 
-## 14.10 To come
+## 14.10 Secondary: hysteresis between 80% and 95%
 
-Hysteresis, H9 (anticipation and the 1 October 2025 reform), H2 (bad news in bans), H1 (friction index), H4 (arbitrage
-capital), H5 (anomalies).
+Question (model corollary on hysteresis): at the same utilisation between 80% and 95%, does a stock that is in a ban (it
+crossed 95% earlier and has not yet fallen to 80%) have a different basis from a stock that is not? Details fixed before
+running: plan §11.7 (C10). Code `analysis/hysteresis.py`; output `analysis/output/hysteresis.txt`.
+
+Specification: basis level on Ban, utilisation, its change and five lags of the basis, with stock and date fixed effects
+(15,832 stock-days, 5,237 in a ban, 163 stocks, 2015 to September 2025).
+
+**Pre-specified result:** Ban +0.4 bp (se 0.8), two-sided p = 0.64. At equal utilisation and recent basis path, being in
+the reduce-only state does not shift the basis level.
+
+| Outcome (same specification) | Ban coefficient (se) |
+|---|---|
+| Change in the basis, same contract (bp) | +0.2 (0.8) |
+| Close-based basis (bp) | +3.2 (1.0), p = 0.001 |
+| Relative implied repo (annual rate, bp) | -50.9 (21.6), p = 0.02 |
+| log(1 + futures contracts) | -1.92 (0.13) |
+| R = (change in OI + volume) / volume | -0.55 (0.05) |
+| Delivery share | +0.042 (0.005) |
+
+Robustness for the basis level: utilisation bins +0.2 (0.8); adding the highest utilisation of the last ten days -1.1
+(0.9); excluding imputed ban days +0.4; end-of-day era -0.5 (1.3); intraday era -0.4 (1.1); in-ban days before an expiry
+in the spell +0.4, after -0.0 (43 days only). **Without the lagged basis the coefficient is -14.1 (2.4)**: stocks in a ban
+carry a basis that is already low from the start of the spell, which the lags absorb. After October 2025 (302 ban days,
+22 stocks; descriptive): -6.6 (2.8).
+
+Reading. The ban's lasting effect inside this zone is on trading (futures volume, R and the delivery share move as
+strongly as in H8), not on the basis level once its recent path is held fixed. The level falls when the ban begins
+(14.7) and the fall persists rather than growing.
+
+Measurement note. The VWAP-based and close-based basis disagree on ban days in several tests (here +0.4 against +3.2;
+in 14.7 the overall level effect is -6.3 against -0.7). On thin ban days the futures and cash trades that make up each
+day's VWAP may come at different times of day, and the futures closing price may be stale; daily data cannot tell which
+measure is closer to the truth. Results that depend on the measure are reported for both.
+
+## 14.11 To come
+
+H9 (anticipation and the 1 October 2025 reform), H2 (bad news in bans), H1 (friction index), H4 (arbitrage capital), H5
+(anomalies).
