@@ -187,3 +187,14 @@ More quirks: 45. NSE PREVCLOSE unadjusted for corporate actions. 46. Split and b
 entitlements in BE. 49. Sub-rupee stocks tick 0.05 → 0.10 (100% "returns"); price filter Rs 5 for event outcomes.
 50. AMFI PDFs: wrapped rows; ISIN glued to names; Jan–Jun 2018 parses 96%. 51. Results XBRL links blank before 2018; NSE
 shareholding API only from 2021. 52. pdftotext needed.
+
+## Added 7 Nov 2026
+- `data_pipeline/download_slb.py` → `data/raw/slb/YYYYMMDD.dat` (NSE SLBS bhavcopy `SLBM_BC_DDMMYYYY.DAT`, 2,915 days 2015-2026,
+  2 missing at NSE); `data_pipeline/build_slb.py` → `data/processed/slb_daily.csv.gz` (committed; 176,062 rows) +
+  `slb_report.txt`. Fields: symbol, series (tenure code), expiry, fee open/high/low/close (Rs per share), qty, value, trades.
+  Quirk: padded comma-separated, no header; non-F&O stocks trade in SLB (eligibility widened 2013).
+- `data_pipeline/download_amfi_monthly.py` → `data/raw/amfi_monthly/am{mon}{yyyy}repo.xls` (Apr 2018-Sep 2026) and
+  `data/processed/amfi_arbitrage_monthly.csv` (committed). Two layouts: Apr 2018-Mar 2019 sheet 'red+assets' (Table 3
+  redemptions and net inflow; Table 4 net assets; no average AUM); from Apr 2019 one row "Arbitrage Fund" with schemes,
+  folios, mobilised, redeemed, net inflow, net AUM, average AUM. Needs `pip install xlrd`. Nov 2024 needed a retry.
+- Analysis caches: `data/processed/cache/frictions_q.pkl` (H1 stock-quarter frictions; rebuild by deleting it).

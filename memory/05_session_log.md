@@ -384,3 +384,10 @@
   0.034). Pre-EA basis outside bans lower before bad news (-2.0 bp, p 0.039; replicates Saurav et al. direction); bans
   uninformative. Cash-only vs F&O: drift larger both ways (good +2.4%) → general under-reaction, not bad-news asymmetry.
   Next: H1.
+- **H1 (7 Nov):** PAP §11.10 C13 committed first. SLB data found (NSE SLBM_BC files) and built; discovered SLB covers
+  non-F&O stocks (eligibility widened Jul 2013) → corrected docs 01/02/03, handoff 01/10, plan v2, notes batch 1, memory 07;
+  sent PDFs keep old wording (handoff/14). Result: index +3.5 bp/sd on band width (p 0.002), size +2.5; persistence
+  opposite; no within-stock effect; SLB activity wrong sign.
+- **H4 (7 Nov):** AMFI monthly arbitrage-fund series built (Apr 2018-Sep 2026; two layouts; checks vs published figures
+  pass). PAP §11.11 C14 committed first. Lagged flow -17.5 (p 0.11); first differences -20.6 (p 0.001); pre-2023 only.
+  Next: H5. pip installs this session: rddensity, rdrobust, xlrd (statsmodels present).

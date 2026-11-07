@@ -135,3 +135,8 @@ C (quarterly resets): first stage +0.24; outcomes n.s.
 H2 (PAP §11.9 C12; docs/14 §14.12): Ban0 x Bad +0.0074 (0.0341), p 0.59 (no power); pre-EA basis outside bans bad - good
 -1.96 bp (1.11) p 0.039 (Saurav et al. direction); in bans uninformative; cash-only: bad -0.67%, good +2.40% vs F&O
 (under-reaction both ways).
+H1 (PAP §11.10 C13; docs/14 §14.13): index +3.48 bp/sd on band width (p 0.002), +2.53 on size (p 0.0006); persistence
+opposite (-0.033, noise); stock FE → 0 (cross-sectional only); SLB scarcity wrong sign (SLB activity = demand). SLB data
+built (NSE SLBM bhavcopies 2015-2026). H4 (§11.11 C14; §14.14): AMFI arbitrage AUM Apr 2018-Sep 2026 built; q80 on lagged
+flow -17.5 (14.2) p 0.11; first differences -20.6 (6.8) p 0.001; pre-2023 -26 (p 0.06), post-2023 +17. Weak support.
+SLB eligibility correction: SLB covers non-F&O liquid stocks since Jul 2013 (docs/handoff fixed; sent PDFs not).

@@ -116,3 +116,9 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - H2 (`analysis/output/h2_results.txt`): 8,586 F&O events (BHAR 8,283); ban0 179 (bad 55, good 58); bad -0.0125, good +0.0030;
   Bbad +0.0074 (0.0341); pre-EA bad - good -1.957 (1.109) p 0.039; Bbad -19.7 (13.3), Bgood -22.7 (15.2); cash-only nbad
   -0.0067 (0.0042), ngood +0.0240 (0.0043).
+- H1 (`analysis/output/h1_results.txt`): 7,398 stock-quarters, 347 stocks; loadings cs .574 lamihud .368 ivol .554 util .445
+  slb .175 (44%); W +3.484 (1.116) p 0.0017; A +2.532 (0.732); rho -0.0326 (0.0059); stock FE W -0.000 (1.692); no-SLB
+  index +4.52; SLB fee median 3.48%/yr. SLB data: 2,915 files, 176,062 trade rows, 1,149 symbols.
+- H4 (`analysis/output/h4_results.txt`): 101 months; flow mean 1.94%, sd 6.94%; q80 mean 17.62; main -17.47 (NW 14.23)
+  p 0.11; FD -20.63 (6.77); pre-2023 -25.99 (16.46); post +17.09 (16.87); STT 2026 step +5.03 (1.83). AMFI AUM Apr 2018
+  56,218 cr → Sep 2026 2,97,632 cr.

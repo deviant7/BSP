@@ -362,6 +362,51 @@ fixed effects: relative to F&O stocks, cash-only stocks drift -0.67% more after 
 good news (se 0.43). Prices of cash-only stocks under-react in both directions, which does not show the bad-news
 asymmetry the short-sale mechanism predicts; the F&O entry and exit design (14.5) is the causal test of that channel.
 
-## 14.13 To come
+## 14.13 Secondary: H1, frictions and mispricing
 
-H1 (friction index), H4 (arbitrage capital), H5 (anomalies).
+Details fixed before running: plan §11.10 (C13). Code `analysis/h1_frictions.py`; output `analysis/output/h1_results.txt`.
+Stock-quarters of F&O stocks, outcomes from 2015 Q2 to 2025 Q3 on non-ban days (7,398 stock-quarters, 347 stocks); frictions
+from the previous quarter. Index = first principal component of five frictions standardised within quarter: Corwin-Schultz
+spread (loading +0.57), log Amihud illiquidity (+0.37), idiosyncratic volatility (+0.55), utilisation of the MWPL (+0.45)
+and SLB scarcity (share of days without any SLB trade, +0.18); it explains 44% of their variance.
+
+**Pre-specified result:** a one standard deviation higher index goes with a band (q80 - q20 of the basis) 3.5 bp wider
+(se 1.1, one-sided p = 0.002; mean width 40.8 bp) and a mean absolute basis 2.5 bp larger (se 0.7, p = 0.0006). Persistence
+(the daily autoregressive coefficient of the basis, mean 0.41) is lower, not higher, in high-friction stocks (-0.033, se
+0.006), contrary to the prediction; daily measurement noise is larger in less liquid stocks and lowers measured
+persistence, so this measure is not reliable at a daily frequency.
+
+Also reported. All five frictions jointly: Amihud illiquidity (+6.4) and idiosyncratic volatility (+2.5) and the spread
+(+1.6) widen the band; utilisation does not (-1.0); **SLB scarcity has the wrong sign (-9.7)**: stocks with more SLB trading
+have wider bands, which suggests that SLB activity reflects demand to borrow rather than ease of borrowing. The index
+without the SLB input gives +4.5 (1.2). With stock fixed effects the effect disappears (0.0, se 1.7): the relation is
+between stocks, not within a stock over time. Including ban days +4.1; period to 2026 Q3 +3.6. The median annualised SLB
+fee, where a stock is lent at all, is 3.5% a year (10th to 90th percentile 0.9% to 12.4%).
+
+Reading. Frictions line up with wider bands and larger mispricing across stocks, as the model's band result implies, but
+the evidence is an association across stocks (frictions travel with size and liquidity), not variation over time within
+a stock.
+
+## 14.14 Secondary: H4, arbitrage capital
+
+Details fixed before running: plan §11.11 (C14). Code `analysis/h4_capital.py`; output `analysis/output/h4_results.txt`.
+Monthly series May 2018 to September 2026 (101 months). Arbitrage-fund assets (AMFI) grew from about Rs 57,000 crore to
+Rs 2.98 lakh crore; flows are net inflows as a share of the previous month's assets (mean 1.9%, sd 6.9%). Outcome: the 80th
+percentile of the basis across all non-ban stock-days of the month (mean 17.6 bp).
+
+**Pre-specified result:** q80 on last month's flow, with step dummies for April 2023 (tax change and STT), October 2024
+and April 2026 (STT), Newey-West errors: -17.5 bp per unit flow (se 14.2), one-sided p = 0.11; a 10% inflow goes with a
+1.7 bp lower upper quantile the next month. Direction as predicted, not significant.
+
+Also reported: same-month flow +4.5 (14.7), consistent with the return-chasing bias stated in advance; change in log assets
++4.2; log assets with a trend -5.2 (3.3), p = 0.06; q90 -22.1 (15.0), p = 0.07; median -14.4; q20 -11.7; first differences
+**-20.6 (se 6.8), p = 0.001**; adding the change in the interbank rate -17.6; excluding March to May 2020 -17.6 (21.9);
+before April 2023 -26.0 (16.5), p = 0.06; from April 2023 +17.1 (16.9). The April 2026 STT step is +5.0 bp (1.8).
+
+Reading. There is weak evidence that inflows of arbitrage capital are followed by a lower upper quantile of the basis,
+mainly before April 2023 and in month-on-month changes; after the 2023 tax change, when assets grew fastest, the relation
+is not visible. With about a hundred monthly observations and flows that chase returns, the test has little power.
+
+## 14.15 To come
+
+H5 (anomalies by constraint).
