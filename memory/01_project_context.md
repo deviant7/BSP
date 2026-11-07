@@ -56,6 +56,5 @@ bands, FM, robustness, writing.
 Theory done (Model C). Data built and audited (bans/MWPL 2010–2026; prices, basis, announcements, returns, market caps).
 Progress report SENT; guide liked it, go-ahead given. PAP v1 frozen as tag `pap-v1` (85dac3a, on GitHub). All four primary
 tests run + Holm (H8, H3, H6 rejected at 5%; H7 rejected with the opposite sign). 7 Nov: ALL secondary tests run (summary
-docs/14 §14.16). Next: band-estimation chapter (threshold/smooth-transition, the guide's area) and write-up; ask before
-sending anything to the guide.
+docs/14 §14.16). Band chapter (docs/15) and constraint index (docs/16) done 7 Nov. Next: write-up; ask before sending anything to the guide.
 (28 Oct status, kept for history: progress report final but not sent; PAP untagged.)

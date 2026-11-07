@@ -43,8 +43,9 @@ Not a PAP test; it is estimation and description of the no-arbitrage band over t
 4. Linearity tests (Hansen-type threshold test with bootstrap; Luukkonen-type tests for STAR) and model diagnostics.
 5. Bottom-up cost band per period (STT, stamp duty, fees, funding) to compare with the estimated edges.
 6. Write `docs/15_band_estimation.md` (final form) and a results section; update handoff/memory.
-**Next now:** constraint index deliverable (05 Step 3b.2), optional exploratory IV check of H7, then the write-up and a
-first-results PDF for the guide (ask before sending).
+Done after it (7 Nov): H7 IV check (opposite sign survives noise correction; docs/14 §14.3) and the constraint index
+(docs/16; data/processed/constraint_index_q.csv.gz; 04 §4.12). **Next now: the write-up** (thesis chapters in LaTeX and/or
+a first-results PDF for the guide; ask the user which, and never send anything without asking).
 
 ## (Original card of 5 November 2026 follows)
 

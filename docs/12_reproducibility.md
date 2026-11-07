@@ -111,6 +111,7 @@ Approximate run times on one machine: the open-interest and ban files about 40 m
 | `mcap_daily.csv.gz` (not committed) | daily market cap, 94.7% of cash stock-days | `mcap_report.txt` |
 | `slb_daily.csv.gz` | 176,062 SLB trade rows, 1,149 symbols, 2015 to 2026 | `slb_report.txt` |
 | `amfi_arbitrage_monthly.csv` | 102 months, April 2018 to September 2026 | (printed by the downloader) |
+| `constraint_index_q.csv.gz` | 80,042 stock-quarters, 3,310 stocks, 2015 Q1 to 2026 Q3 | `analysis/output/constraint_index.txt` |
 
 ## 12.5 Things that change if the data are rebuilt later
 

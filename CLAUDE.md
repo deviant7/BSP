@@ -30,8 +30,8 @@ The guide received the October progress report, liked it and gave the go-ahead. 
 frozen as git tag **`pap-v1` at 85dac3a** (on GitHub). Tests run exactly as the plan specifies; every open detail was
 written into its §11 before each run (C1-C15), exploratory additions in §11.2. **All primary tests (+ Holm) and all
 secondary tests are done** (results: `docs/14_results.md`, summary §14.16; `handoff/04_current_state.md` §4.7-4.10).
-Next: the band-estimation chapter and the write-up (`handoff/05_next_steps.md` Step 3b, 5); ask the user before sending
-anything to the guide. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
+Band-estimation chapter (`docs/15`) and constraint index (`docs/16`) done 7 Nov. Next: the write-up
+(`handoff/05_next_steps.md` Step 5); ask the user before sending anything to the guide. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
 when the user asks.
 
 ## Folders

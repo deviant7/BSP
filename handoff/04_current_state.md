@@ -155,3 +155,9 @@ Observed-transition STR: reversion weakens with utilisation (+0.225, se 0.053), 
 days), faster with large arbitrage assets (-0.077). Per-stock: median -26/+17 (width 41), unrelated to friction index.
 Cost band: open+hold 27-31 bp (STT period 1→4), roll 4-8 bp; vs upper threshold +22 to +28 and p90 +24 to +30.
 H7 IV (exploratory, 7 Nov): 2SLS delta_up -0.190 (0.077), delta_lo +0.088 (0.015) → H7's opposite-sign result survives the noise correction (docs/14 §14.3).
+
+## 4.12 Constraint index deliverable (7 Nov 2026; PAP §11.14 C17; docs/16_constraint_index.md)
+All NSE stocks, 80,042 stock-quarters (3,310 stocks): no short channel, SLB scarcity, CS spread, log Amihud, IVOL; loadings
++0.49/+0.45/+0.43/+0.49/+0.37, 53% variance, stable by year; persistence 0.90. Validation: delay +0.058 (t 20.8; within
+stock +0.032); |BHAR| +0.023 (t 27); bad-news BHAR -0.008, good-news +0.001 (asymmetric, as predicted; no size control);
+F&O band width -6.4 (opposite; H1 F&O index is the relevant one there). Published: data/processed/constraint_index_q.csv.gz.

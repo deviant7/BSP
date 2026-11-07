@@ -46,7 +46,9 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 Jindal 2015; 22 NSE Clearing FAQ Oct 2025; 23 SEBI PR 59/2020 (review of the March 2020 measures); 24 BSE/ICCL notice
 20200322-2 implementing SEBI PR 18/2020 (text); 25 SEBI circular 2024/1 (5 Jan 2024), framework for short selling.
 
-New processed data (7 Nov, committed): `data/processed/slb_daily.csv.gz`, `slb_report.txt`, `amfi_arbitrage_monthly.csv`.
+New processed data (7 Nov, committed): `data/processed/slb_daily.csv.gz`, `slb_report.txt`, `amfi_arbitrage_monthly.csv`,
+`constraint_index_q.csv.gz`. New analysis scripts: `band_estimation.py`, `band_exploratory.py`, `band_costs.py`,
+`h7_iv.py`, `constraint_index.py`. New docs pages: `docs/15_band_estimation.md`, `docs/16_constraint_index.md`.
 Git-ignored, rebuildable: `data/raw/slb/`, `data/raw/amfi_monthly/`, caches `frictions_q.pkl`, `h5_monthly.pkl`.
 
 ## Not in the repo

@@ -111,7 +111,7 @@ h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI
    thresholds/adjustment speeds against the dated cost, capital and limit changes; state-dependent thresholds (lagged
    OI/MWPL). The estimators exist (`analysis/setar.py`) and were tested on simulated data; H3 used quantile edges. This
    is descriptive/estimation work, not a new confirmatory test; anything new it tests needs a §11 entry first.
-2. **Constraint index as a stand-alone deliverable** (project-document goal): the H1 index (Corwin-Schultz, Amihud, IVOL,
+2. **DONE 7 Nov 2026 (docs/16; PAP §11.14 C17).** **Constraint index as a stand-alone deliverable** (project-document goal): the H1 index (Corwin-Schultz, Amihud, IVOL,
    utilisation, SLB) is built per stock-quarter (`data/processed/cache/frictions_q.pkl`); document, validate against bands,
    decide on the SLB input (its sign suggests it measures borrowing demand).
 3. Optional: XBRL EPS for SUE (secondary surprise measure for H2/H6); index dividends; announcement-aware dividend

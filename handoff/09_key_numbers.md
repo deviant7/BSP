@@ -131,3 +131,4 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
   -0.142 (OLS -0.262), middle -0.192, upper -0.141, lower -0.121. STR rho1: omega +0.225 (0.053), days +0.221 (0.023), AUM
   -0.077 (0.019). Per-stock 258: gL p50 -26.4, gU +16.5, width 40.9. Cost A 27.1/27.3/28.0/31.0; B 4.0/4.3/5.0/8.0.
 - H7 IV (`analysis/output/h7_iv.txt`): 456,344 obs; 2SLS delta_up -0.1903 (0.0774), delta_lo +0.0882 (0.0145), diff -0.2786 (0.0788); OLS same sample -0.0850 / +0.1023.
+- Constraint index (`analysis/output/constraint_index.txt`): 80,042 stock-quarters, 3,310 stocks; F&O 10.8%; SLB any 16.6%; loadings .494/.448/.428/.489/.365 (52.9%); persistence 0.896; delay +0.0584 (0.0028), FE +0.0323 (0.0054); |BHAR| +0.0230 (0.0008); bad -0.0083 (0.0014); good +0.0006 (0.0014); F&O W -6.37 (1.45).

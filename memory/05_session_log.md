@@ -410,3 +410,7 @@
   shows much daily reversion is VWAP noise (asymmetry in speeds not robust) → flag H7 IV check. docs/15 written.
   Next: constraint-index deliverable, H7 IV (exploratory), write-up.
 - H7 IV (7 Nov, exploratory): opposite-sign result survives noise correction (2SLS delta_up -0.19, delta_lo +0.09). PAP §11.14 C17 committed (constraint index).
+- **Constraint index (7 Nov):** PAP §11.14 C17 committed first. All-stock quarterly index published
+  (data/processed/constraint_index_q.csv.gz; docs/16). Validation: delay +0.058 (within stock +0.032), |drift| +0.023,
+  bad-news drift -0.008 vs good +0.001 (asymmetric, as predicted; no size control); within F&O the all-stock index is
+  negatively related to band width (SLB component) → H1 F&O index is the one for the band. Next: write-up (ask user).

@@ -35,6 +35,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | [13_references.md](13_references.md) | Papers and regulatory documents |
 | [14_results.md](14_results.md) | Results of all pre-specified tests (primary H8, H7, H3, H6 with the multiple-testing correction; all secondary tests), with exploratory additions marked as such |
 | [15_band_estimation.md](15_band_estimation.md) | Estimation of the no-arbitrage band: threshold and smooth-transition models, the band over time and across states, per-stock bands, and a bottom-up cost band |
+| [16_constraint_index.md](16_constraint_index.md) | A quarterly constraint index for all NSE stocks (published data set), its construction and validation |
 
 ## Where the project stands
 
@@ -45,6 +46,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | Data set | Built and audited (sources, construction, checks in pages 06, 07 and 10) |
 | Tests | All primary tests (with Holm correction) and all secondary tests run (page 14; summary 14.16) |
 | Band estimation | Threshold and smooth-transition estimates, states, costs (page 15) |
+| Constraint index | Built for all NSE stocks, 2015 to 2026, validated (page 16; data `constraint_index_q.csv.gz`) |
 
 ## Conventions
 
