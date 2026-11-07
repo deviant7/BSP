@@ -3,6 +3,12 @@
 *Earlier versions and everything cut or changed are kept in `plan/archive/` — see
 `plan/archive/REMOVED_ITEMS_REGISTER.md` before reintroducing anything.*
 
+*Status 7 Nov 2026 (added; nothing above or below removed): Phases 0-3 done; plan frozen as `pap-v1`; all primary and
+secondary tests, the band chapter (Ch 4 core) and the constraint index (Ch 3 deliverable) are done; thesis draft and a
+first-results report exist (`BSP_Thesis_Draft_Nov2026.pdf`, `BSP_First_Results_Nov2026.pdf`, the latter not sent).
+Remaining from this plan: put-call parity (optional), SUE from XBRL (optional), policy chapter refinement, replication
+package. Results: `docs/14_results.md`, `docs/15_band_estimation.md`, `docs/16_constraint_index.md`.*
+
 *Builds on `BSP_Project_Document` (Sep 2026), whose goals stand. No calendar: phases are ordered by
 logical dependency only. [verify] = must be checked against a primary source; see
 `memory/07_fact_check.md` for the verification log.*

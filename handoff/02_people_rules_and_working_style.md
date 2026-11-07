@@ -8,7 +8,7 @@
   Indian markets. Knows markets well; wants academic rigour on top.
 - Uses voice typing; messages may contain transcription slips (e.g. "Chawla" for Chaubal). Interpret charitably and
   confirm names before putting them into documents.
-- Earlier sessions ran on his Windows folder `D:\BSP` through a desktop bridge (Claude desktop with a project library).
+- Earlier sessions ran on the user's Windows folder `D:\BSP` through a desktop bridge (Claude desktop with a project library).
   Since 28 Oct 2026 the GitHub repository is the single store; work happens in Claude Code cloud sessions.
 - The internship signal library may be under an agreement (NDA/IP); it is **not** used unless he confirms it is cleared.
 
@@ -24,7 +24,7 @@
   model as an appendix). **She liked the report and gave the go-ahead for further work** (user, 5 Nov 2026).
 - She has **not** seen: the earlier Models A and B, the 28 Sep 2026 progress note, the literature review PDF, the test plan
   as a separate document, or any internal notes.
-- Questions the user said he would raise with her personally (removed from the report at his request, text kept in
+- Questions the user said they would raise with her personally (removed from the report at the user's request, text kept in
   `progress_report_src/removed_guidance_questions.tex`): (1) is the wider framing acceptable; (2) is the theory at the
   right depth; (3) threshold models versus smooth-transition models, and state-dependent thresholds; (4) access to a
   database with EPS and shareholding (e.g. CMIE Prowess); (5) does she want the test plan before the main estimates. His
@@ -41,7 +41,7 @@
 | 5 | Keep the project document's goals (he likes them), while correcting its errors | 28 Oct 2026 |
 | 6 | **Keep every past plan and every deletion**: archive plan versions in `plan/archive/`, log every removed or changed item in `REMOVED_ITEMS_REGISTER.md` with why and how to reintroduce | 28 Oct 2026 |
 | 7 | **Guide-facing documents: no internal references** (no Model A/B/C labels, "audit", memory files, plan versions, phases, file paths, reading-status notes, past mistakes). Self-contained academic writing. **No em dashes, no AI-sounding phrases**, plain first-person language, jargon only when needed. One PDF to the guide at a time | 28 Oct 2026 |
-| 8 | Keep the existing model; no further theory unless the data demand it; "mostly data from now on" (answer to his question "can we work with data without modelling?") | 28 Oct 2026 |
+| 8 | Keep the existing model; no further theory unless the data demand it; "mostly data from now on" (answer to the user's question "can we work with data without modelling?") | 28 Oct 2026 |
 | 9 | Wait for the guide before freezing the test plan (done: she gave the go-ahead; plan frozen 5 Nov 2026) | 28 Oct 2026 |
 | 10 | **`docs/` = documentation of the final project form only**, for readers without domain knowledge; very thorough; only finalised items; separate Markdown files | 5 Nov 2026 |
 | 11 | **`handoff/` = everything a new chat/model needs**, as extensive as possible: everything done, everything planned, all context | 5 Nov 2026 |

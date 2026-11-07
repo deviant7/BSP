@@ -426,3 +426,9 @@
   from first dissemination). Ends with two questions for the guide.
 - **Memory save (7 Nov):** new memory/09_findings_digest.md (all results and numbers); handoff 03/04/05/12/16, CLAUDE.md,
   CHANGELOG updated.
+- **END OF SESSION 7 Nov 2026** (user: "save every bit of context ... we will end the session and pick up next time").
+  Final gap check of the context stores (CLAUDE.md; memory/01-09; handoff/00-16 + CHANGELOG; docs/; plan/ PAP §11 log +
+  REMOVED_ITEMS_REGISTER + master plan; git history). Added: register changelog for 7 Nov; master-plan status note; handoff/07
+  C16-C17; handoff/04 git commits and container additions; handoff/14 waiting-on-user list (review thesis + report, send
+  decision, two questions for the guide, optional Prowess, unresolved 8 Dec 2025 date); handoff/16 rebuild commands for
+  the write-ups; neutral pronouns for the user in handoff/memory. Next session starts with handoff/16 and memory/09.

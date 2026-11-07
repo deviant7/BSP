@@ -6,6 +6,10 @@ chapter (`docs/15`), an exploratory IV check of H7 (opposite sign survives), the
 and the **first-results report** (`BSP_First_Results_Nov2026.pdf`, NOT SENT) were completed and pushed. Every finding with
 its numbers: `memory/09_findings_digest.md`. **Next:** wait for the user's review; send the report only on the user's
 go-ahead; then revise after the guide's comments (see `05_next_steps.md` Step 5).
+Rebuild the write-ups after any change: `cd thesis && pdflatex main.tex` (twice) → copy `main.pdf` to
+`../BSP_Thesis_Draft_Nov2026.pdf`; `cd progress_report_src && pdflatex first_results_nov2026.tex` (twice) → copy to
+`../BSP_First_Results_Nov2026.pdf`. Figures: `python3 -I analysis/thesis_figures.py` (needs the caches). Before any
+guide-facing edit: no em dashes, no AI-sounding words, no internal labels (see `02` §2.6 and memory/06).
 
 # (Checkpoint of 7 November 2026, evening)
 
@@ -79,7 +83,7 @@ page; the detailed state is in `04_current_state.md`.
   only optional, to verify pre-July-2017 back-cast market caps), and asked to keep memory, docs and handoff updated (done).
 - **Last thing the assistant told the user:** next come the secondary tests, starting with the ban level-effect test, each
   with its open details written into the plan's log (§11) before it runs.
-- Nothing is waiting on the user. Optional for him: Prowess market caps 2015 to mid-2017 (verification); the Saurav,
+- Nothing is waiting on the user. Optional for the user: Prowess market caps 2015 to mid-2017 (verification); the Saurav,
   Srivastava and Agarwalla (2026) paper from the library (positioning of H2/H7 before writing); go-ahead to fix the errors in
   the project document.
 
@@ -100,7 +104,7 @@ page; the detailed state is in `04_current_state.md`.
 3. `pip install pyfixest` (not preinstalled; version 0.60.0 was used) and check `pdftotext` exists.
 4. Smoke test: `python3 -I analysis/h8_trading.py` must reproduce `analysis/output/h8_results.txt` (b = -2.0036 on log
    futures contracts). `cd models_src/modelC && python3 verify_modelC.py` must say ALL PASS.
-5. Summarise the state to the user in about ten lines and continue with 16.3 unless he says otherwise.
+5. Summarise the state to the user in about ten lines and continue with 16.3 unless the user says otherwise.
 
 ## 16.3 The next piece of work: secondary tests (PAP §6), in this order
 

@@ -49,7 +49,11 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 
 - Branch `claude/compassionate-rubin-s9gny2` is pushed and up to date (key commits: 85dac3a = frozen plan; c6b1701 = §11
   clarifications before tests; f33bb9e H8; 870e295 H7; a44836c H3; dbdfcde/e9ba556 H6 clarifications; c48e2e9 H6 + Holm;
-  d72bdaa end-of-session save 5 Nov).
+  d72bdaa end-of-session save 5 Nov). 7 Nov session: beb11b5 (context fixes) → ... → 0538cd7 (checkpoint) → 8609699
+  (band §11.13) → 0f6537e (band chapter) → b109ec0 (H7 IV) → 52119d4 (constraint index) → 36f4edc (thesis draft) →
+  4b854e4 (first-results report) → e2ac3e9/f40ef9b (memory save) and the end-of-session save after it. Each PAP §11 entry
+  was committed in its own commit before the analysis it governs (e.g. 25bd744 C7, 3f7ffab C8, f96bca8 C9, 3e72a35 C10,
+  8484f59 C11, 0a90154 C12, e88fefe C13, da352a5 C14, 328010d C15, 8609699 C16, d5e2ff0 C17).
 - `main` = 65ef0e3 (everything up to 28 Oct 2026). Work after that reaches `main` only through a new PR, which only the
   user can request.
 - Tag `pap-v1` → 85dac3a is on GitHub (created by the user with GitHub Desktop, 5 Nov 2026; cloud sessions cannot push
@@ -59,7 +63,9 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 
 - Git-ignored, container-only files (full rebuild list in `16_resume_here.md` §16.2): `data/raw/` (about 1.4 GB),
   `basis_panel.csv.gz`, `returns_daily.csv.gz`, `mcap_daily.csv.gz`, `data/processed/cache/*.pkl`. On 7 Nov 2026 the same
-  container was still in place (all present; pyfixest installed).
+  container was still in place (all present; pyfixest installed). Added on 7 Nov (container-only, rebuildable):
+  `data/raw/slb/` (2,915 files), `data/raw/amfi_monthly/` (102 files), caches `frictions_q.pkl`, `h5_monthly.pkl`;
+  packages installed this session: rddensity, rdrobust, xlrd.
 - Raw folders: `combineoi/`, `secban/`, `prices/{fut,cash,optsum,deliv}/`, `corpactions/` (156 monthly JSON),
   `results/` (Quarterly/Annual 156 each, Integrated 24), `resultupdates/` (1,173 four-day JSON), `boardmeetings/`
   (312 half-month JSON), `amfi_mcap/` (18 PDFs), `rates/` (2 FRED CSV), `indices/nifty50_daily.csv`, `download_log.tsv`,
