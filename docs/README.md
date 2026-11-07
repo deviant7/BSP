@@ -14,6 +14,24 @@ This project builds a theory of arbitrage under India's limits, derives testable
 contradict them, fixes the tests in advance, and tests them on a data set built entirely from public National Stock
 Exchange files for 2015 to 2026 (bans from 2010).
 
+## Main findings
+
+1. **Bans bind on trading.** In a ban futures trading falls by about 2 log points, cash delivery rises, and every futures
+   trade closes positions when the rule is enforced on intraday positions (from March 2020).
+2. **Correction is not one-sided in the way the model predicts.** Rich futures revert faster, not slower, in a ban,
+   mostly at the start of a spell; the result survives a correction for measurement noise.
+3. **The basis falls when a ban starts,** by about 6 bp against similar stocks that stay just below the trigger, more when
+   open interest was building fast; there is no sign of bunching below the trigger.
+4. **Costs and the band.** The upper part of the basis distribution rose around the 2024 and 2026 tax increases, but
+   mostly as a common shift; the band is about -35 to +24 bp around each stock's median, and the full cost of a new
+   cash-and-carry position (27 to 31 bp) sits in its outer tail.
+5. **Short-sale access.** After a stock enters the F&O segment its price responds faster to market news; drift after bad
+   news does not weaken. Across all stocks, a constraint index built from frictions predicts slower price adjustment and
+   more drift after bad (not good) news.
+
+Details, including the tests that failed: [14_results.md](14_results.md), [15_band_estimation.md](15_band_estimation.md),
+[16_constraint_index.md](16_constraint_index.md).
+
 ## How to read this documentation
 
 Read the pages in order if the field is new to you; each page assumes only the ones before it.

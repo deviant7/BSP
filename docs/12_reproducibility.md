@@ -11,10 +11,11 @@ files that make up the project, the software needed and the exact sequence of co
 | `BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models_src/modelC/` | Theoretical framework (PDF, LaTeX source, `verify_modelC.py` numerical checks and their output, figures) |
 | `plan/pre_analysis_plan_v1.md` | The frozen test plan (git tag `pap-v1`) |
 | `data_pipeline/` | Download and build scripts (one per data set), with a README |
-| `data/raw/` | Raw downloads (not committed; about 1.2 GB; rebuilt by the download scripts) |
-| `data/processed/` | Processed data sets and build reports (committed, except the basis panel, which is rebuilt) |
-| `analysis/` | Estimators (`setar.py`), their test on simulated data (`test_setar_simulated.py`), data audit scripts (`audit/`) |
-| `reports/figs/`, `reports/tables/` | Treatment-side figures and tables generated from the processed data |
+| `data/raw/` | Raw downloads (not committed; about 1.5 GB; rebuilt by the download scripts) |
+| `data/processed/` | Processed data sets and build reports (committed, except the basis panel, daily returns and daily market caps, which are rebuilt); includes the published constraint index `constraint_index_q.csv.gz` |
+| `analysis/` | Shared samples and inference (`samples.py`, `inference.py`), one script per test (primary, secondary, band chapter, constraint index), estimators and their tests on simulated data, data audit scripts (`audit/`), result files (`output/`) |
+| `reports/figs/`, `reports/tables/` | Figures and tables generated from the processed data |
+| `thesis/` | LaTeX source of the thesis chapters |
 | `references/` | PDFs of the papers and regulatory documents cited, with an index |
 
 ## 12.2 Software

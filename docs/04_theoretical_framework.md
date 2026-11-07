@@ -72,7 +72,7 @@ Arbitrageurs choose a to maximise
 | Limit | Indian institution | Parameter |
 |---|---|---|
 | Trading costs | STT on futures (four dated levels); cash STT; fees | tau_plus, tau_minus |
-| Short-sale cost | No naked shorting; only F&O stocks eligible; SLB thin | c_minus (effectively infinite for cash-only stocks) |
+| Short-sale cost | No naked shorting; only F&O stocks eligible for short selling; SLB (which also covers other liquid stocks) thin | c_minus (effectively infinite for overnight positions in cash-only stocks) |
 | Arbitrage capital | Arbitrage-fund assets; funding rates; peak-margin rules | alpha (so gamma), r_A |
 | Arbitrage risk | Basis volatility, idiosyncratic volatility | sigma^2 (so gamma) |
 | Position limits | Entity limits, MWPL, F&O ban | caps on a; the reduce-only rule |

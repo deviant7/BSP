@@ -64,7 +64,12 @@ Relative to existing work, the project:
   also change the chance of future bans, which traders respond to even when no ban occurs.
 - **Covers many limits with dated shocks** over a long daily sample (2015 to 2026, about 200 F&O stocks at a time, plus
   the full cash market for the F&O entry and exit tests).
-- **Pre-registers its tests** with falsifiers derived from theory.
+- **Pre-registers its tests** with falsifiers derived from theory, and reports every pre-specified result, including the
+  ones that contradict the model.
+- **Estimates the no-arbitrage band over time and across states** with threshold and smooth-transition models, and
+  compares it with a bottom-up cost band ([15_band_estimation.md](15_band_estimation.md)).
+- **Publishes a constraint index** for every NSE stock and quarter, built from frictions only and validated against price
+  delay and earnings drift ([16_constraint_index.md](16_constraint_index.md)).
 
 ## 2.6 Scope and what is not claimed
 
