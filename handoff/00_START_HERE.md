@@ -19,10 +19,11 @@ before doing anything. Last full update: **7 November 2026, checkpoint after all
    unstudied. But the project is **broader than the ban** (user's explicit instruction).
 4. Method order: **theory first** (the guide asked for it) → a **pre-analysis plan** frozen with a git tag before any
    outcome is related to any treatment → a **blind data build** from free NSE archives → tests → interpretation.
-5. Status on 7 Nov 2026: theory done and verified; data built and audited; pre-analysis plan frozen (`pap-v1`);
-   all four primary tests run and Holm-corrected (H8, H3, H6 rejected at 5%; H7 rejected its prediction with the
-   opposite sign) and **all secondary tests run** (level effect, density, RD, hysteresis, H9, H2, H1, H4, H5; summary in
-   `docs/14_results.md` §14.16). Next: band-estimation chapter / write-up (see `05_next_steps.md` Step 3b and 5).
+5. Status on 7 Nov 2026 (late): theory done and verified; data built and audited; pre-analysis plan frozen (`pap-v1`);
+   all primary tests (Holm) and all secondary tests run; band-estimation chapter (`docs/15`) and constraint index
+   (`docs/16`) done; thesis draft (`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`) and a first-results report for the guide
+   (`BSP_First_Results_Nov2026.pdf`, **not sent**) written. Every finding with its numbers: `memory/09_findings_digest.md`.
+   Next: the user's review; send the report only on the user's go-ahead.
 
 ## 2. Reading order (do not skip)
 
@@ -48,7 +49,8 @@ before doing anything. Last full update: **7 November 2026, checkpoint after all
 | 17 | `16_resume_here.md` | Resume card: where we stopped, rebuild list, next tests in order (update it at every session end) |
 
 Deeper material, when needed: `docs/` (polished final-form documentation for outside readers), `memory/` (the
-assistant's running notes, including the full session log `memory/05_session_log.md`), `plan/` (master plan, frozen test
+assistant's running notes, including the full session log `memory/05_session_log.md` and the findings digest
+`memory/09_findings_digest.md`), `plan/` (master plan, frozen test
 plan, archive of all earlier plans and a register of everything removed), the PDFs at the repo root, and `references/`.
 
 ## 3. Non-negotiable rules (summary; full list in 02)

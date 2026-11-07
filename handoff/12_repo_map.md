@@ -25,7 +25,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 |---|---|
 | `handoff/` | This continuity brief (00 to 16 + CHANGELOG; 16 = resume card) |
 | `docs/` | Final-form documentation for outside readers (README, 01 to 14; 14 = results) |
-| `memory/` | Assistant's running notes: 01 context, 02 literature digest, 03 institutional facts, 04 models and audit, 05 session log (chronological, most detailed), 06 user style, 07 fact-check log, 08 earlier handoff (superseded by `handoff/`, kept) |
+| `memory/` | Assistant's running notes: 01 context, 02 literature digest, 03 institutional facts, 04 models and audit, 05 session log (chronological, most detailed), 06 user style, 07 fact-check log, 08 earlier handoff (superseded by `handoff/`, kept), 09 findings digest (every result and number, 7 Nov 2026) |
 | `plan/BSP_Research_Plan_v2.md` | Master plan (scope table, theory summary, hypotheses H1 to H9, phases, measurement, chapters) |
 | `plan/pre_analysis_plan_v1.md` | Frozen test plan (`pap-v1` at 85dac3a) |
 | `plan/archive/` | `plan_v1_project_document_Sep2026.md`, `plan_v2.0_first_draft_2026-10-28.md`, `plan_v2.1_broadened_2026-10-28.md`, `pre_analysis_plan_v0_draft_2026-10-28.md`, `REMOVED_ITEMS_REGISTER.md` (every removed/changed item with reason and how to reintroduce; changelog at the end) |
