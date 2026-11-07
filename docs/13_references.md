@@ -6,11 +6,19 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
 
 - Aggarwal, N. (2015). Limits to arbitrage: The case of single stock futures and spot prices. IGIDR Working Paper
   WP-2015-010.
+- Amihud, Y. (2002). Illiquidity and stock returns: Cross-section and time-series effects. *Journal of Financial
+  Markets* 5(1), 31-56.
+- Bali, T., N. Cakici and R. Whitelaw (2011). Maxing out: Stocks as lotteries and the cross-section of expected returns.
+  *Journal of Financial Economics* 99(2), 427-446.
 - Brennan, M. and E. Schwartz (1990). Arbitrage in stock index futures. *Journal of Business* 63(1), S7-S31.
+- Calonico, S., M. Cattaneo and R. Titiunik (2014). Robust nonparametric confidence intervals for regression-
+  discontinuity designs. *Econometrica* 82(6), 2295-2326.
 - Callaway, B. and P. Sant'Anna (2021). Difference-in-differences with multiple time periods. *Journal of Econometrics*
   225(2), 200-230.
 - Cattaneo, M., M. Jansson and X. Ma (2020). Simple local polynomial density estimators. *Journal of the American
   Statistical Association* 115(531), 1449-1455.
+- Corwin, S. and P. Schultz (2012). A simple way to estimate bid-ask spreads from daily high and low prices. *Journal
+  of Finance* 67(2), 719-760.
 - Danielsen, B. and S. Sorescu (2001). Why do option introductions depress stock prices? A study of diminishing short
   sale constraints. *Journal of Financial and Quantitative Analysis* 36(4), 451-484.
 - De Long, J. B., A. Shleifer, L. Summers and R. Waldmann (1990). Noise trader risk in financial markets. *Journal of
@@ -27,13 +35,19 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
   Financial Studies* 18(3), 981-1020.
 - Kolari, J. and S. Pynnonen (2010). Event study testing with cross-sectional correlation of abnormal returns. *Review
   of Financial Studies* 23(11), 3996-4025.
+- McCrary, J. (2008). Manipulation of the running variable in the regression discontinuity design: A density test.
+  *Journal of Econometrics* 142(2), 698-714.
 - Miller, E. (1977). Risk, uncertainty, and divergence of opinion. *Journal of Finance* 32(4), 1151-1168.
 - Nandan, T., P. Agrawal and S. Bhargava (2014). Mispricing in CNX Nifty futures: An empirical investigation.
   *Asia-Pacific Journal of Management Research and Innovation* 10(4), 413-422.
 - Nandan, T., P. Agrawal and A. Jindal (2015). An empirical investigation of mispricing in stock futures at the NSE.
   *Indian Journal of Finance* 9(9), 23-35.
+- Newey, W. and K. West (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent
+  covariance matrix. *Econometrica* 55(3), 703-708.
 - Saurav, S., P. Srivastava and S. K. Agarwalla (2026). Decoupled: Disagreement, short-sale constraints, and
   law-of-one-price violations around earnings announcements. SSRN working paper.
+- Sehgal, S., V. Vasishth and F. Deisting (2024). Lottery factor and stock returns: Evidence from India. *Borsa
+  Istanbul Review* 24, 449-459.
 - Shankar, R. L., G. Sankar and K. Kiran Kumar (2015). Mispricing in single stock futures: Empirical examination of
   Indian markets. NSE Working Paper WP/16/2015; published in *Emerging Markets Finance and Trade* 55(7), 1619-1633 (2019).
 - Shleifer, A. and R. Vishny (1997). The limits of arbitrage. *Journal of Finance* 52(1), 35-55.
@@ -53,6 +67,10 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
 - SEBI circular of 20 December 2007 (MRD/DoP/SE/Dep/Cir-14/2007): short-selling framework; naked short selling prohibited.
 - SEBI Master Circular for Stock Exchanges and Clearing Corporations (16 October 2023), Annexure 3: securities eligible
   for short selling.
+- SEBI circular SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/1 (5 January 2024): framework for short selling (all investors may
+  short; naked short selling not permitted; institutional investors may not day trade; F&O securities eligible).
+- SEBI (2013): extension of securities lending and borrowing to liquid non-F&O securities from 1 July 2013 (as reported
+  by Business Standard, 30 May 2013).
 - SEBI circular SEBI/HO/MRD/MRD-PoD-2/P/CIR/2024/116 (30 August 2024): eligibility criteria for single-stock derivatives.
 - SEBI circular SEBI/HO/MRD/TPD-1/P/CIR/2024/132 (1 October 2024): measures for index derivatives.
 - SEBI circular SEBI/HO/MRD/TPD-1/P/CIR/2025/79 (29 May 2025): measures for enhancing trading convenience and

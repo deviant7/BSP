@@ -218,7 +218,24 @@ previous close of Rs 959.4 and a close of Rs 100.35). Rules:
   Rs 5 are excluded (tick-size artefacts); duplicate (stock, day) events counted once; EAR and BHAR winsorised at 1% and
   99% within each year for the main estimates.
 
-## 7.13 Rules for the analysis samples
+## 7.13 Securities lending (`download_slb.py`, `build_slb.py`)
+
+Each daily SLBS bhavcopy is a padded, comma-separated file without a header: company name, symbol, series (tenure code),
+contract expiry, a flag, previous close fee, open, high, low and close fee (Rs per share), a blank field, quantity (shares),
+value (Rs), upper and lower bands, trade date and number of trades. The trade date inside each file equals the file date
+for all 2,915 files. Rows with positive quantity are kept. The annualised lending fee of a trade is value / quantity /
+cash closing price x 365 / calendar days to the SLB contract's expiry. SLB is not limited to F&O stocks: non-F&O stocks
+account for 6% to 23% of trade records in each year from 2019 (eligibility was widened to liquid non-F&O stocks in 2013).
+
+## 7.14 Arbitrage-fund assets (`download_amfi_monthly.py`)
+
+From each monthly AMFI Excel report the arbitrage-fund category is read. April 2018 to March 2019 use an older layout
+(net inflow and redemptions in one table, net assets in another, no average assets); from April 2019 a single row gives
+schemes, folios, funds mobilised, redemptions, net inflow, net assets and average assets. Checks: net assets of
+Rs 71,106 crore in April 2023 and Rs 1,98,981 crore in October 2024 match published figures. Monthly flow = net inflow /
+previous month-end net assets.
+
+## 7.15 Rules for the analysis samples
 
 These are applied when the tests are run, not when the panels are built; they are fixed in the pre-analysis plan:
 

@@ -19,7 +19,8 @@ files that make up the project, the software needed and the exact sequence of co
 
 ## 12.2 Software
 
-- Python 3 with `numpy`, `pandas`, `scipy`, `matplotlib`, `openpyxl`, `pyfixest` (`pip install numpy pandas scipy matplotlib openpyxl pyfixest`).
+- Python 3 with `numpy`, `pandas`, `scipy`, `statsmodels`, `matplotlib`, `openpyxl`, `xlrd`, `pyfixest`, `rddensity`, `rdrobust`
+  (`pip install numpy pandas scipy statsmodels matplotlib openpyxl xlrd pyfixest rddensity rdrobust`).
 - `pdftotext` (poppler) for the AMFI lists.
 - `curl` (the FRED download falls back to it).
 - LaTeX for the PDFs: `texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern`.
@@ -39,6 +40,8 @@ python3 -I data_pipeline/download_results_filings.py data/raw 2025 2026 integrat
 python3 -I data_pipeline/download_results_filings.py data/raw 2014 2026 boardmeetings
 python3 -I data_pipeline/download_results_filings.py data/raw 2014 2026 resultupdates
 python3 -I data_pipeline/download_index_close.py data/raw/indices/nifty50_daily.csv 2015-01-01 2026-10-27
+python3 -I data_pipeline/download_slb.py data/raw/slb 4
+python3 -I data_pipeline/download_amfi_monthly.py data/raw/amfi_monthly data/processed   # also writes the parsed series
 
 # 2. builds (order matters: announcements need the panel and the membership file)
 python3 -I data_pipeline/build_mwpl_panel.py data/raw data/processed
@@ -49,6 +52,7 @@ python3 -I data_pipeline/build_basis.py data/raw data/processed
 python3 -I data_pipeline/build_returns.py data/raw data/processed
 python3 -I data_pipeline/build_amfi_mcap.py data/raw data/processed
 python3 -I data_pipeline/build_mcap.py data/processed
+python3 -I data_pipeline/build_slb.py data/raw/slb data/processed
 python3 -I data_pipeline/report_figs.py data/processed reports/figs
 python3 -I data_pipeline/report_tables.py data/processed reports/tables
 
@@ -61,6 +65,17 @@ python3 -I analysis/h7_diagnostics.py
 python3 -I analysis/h3_costs.py
 python3 -I analysis/h6_outcomes.py
 python3 -I analysis/h6_fno.py
+# secondary tests (plan §6, details in §11.4 to §11.12)
+python3 -I analysis/level_effect.py
+python3 -I analysis/level_effect_buildup.py      # exploratory
+python3 -I analysis/density_test.py
+python3 -I analysis/rd_95.py
+python3 -I analysis/hysteresis.py
+python3 -I analysis/h9_regime.py
+python3 -I analysis/h2_badnews.py
+python3 -I analysis/h1_frictions.py
+python3 -I analysis/h4_capital.py
+python3 -I analysis/h5_anomalies.py
 
 # 4. other checks
 python3 -I analysis/test_setar_simulated.py
@@ -88,6 +103,8 @@ Approximate run times on one machine: the open-interest and ban files about 40 m
 | `returns_daily.csv.gz` (not committed) | 5,331,373 stock-days, 3,723 stocks | `returns_report.txt` |
 | `amfi_mcap.csv.gz` | 18 half-years, about 3,400 to 5,400 companies each | `amfi_mcap_report.txt` |
 | `mcap_daily.csv.gz` (not committed) | daily market cap, 94.7% of cash stock-days | `mcap_report.txt` |
+| `slb_daily.csv.gz` | 176,062 SLB trade rows, 1,149 symbols, 2015 to 2026 | `slb_report.txt` |
+| `amfi_arbitrage_monthly.csv` | 102 months, April 2018 to September 2026 | (printed by the downloader) |
 
 ## 12.5 Things that change if the data are rebuilt later
 

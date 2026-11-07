@@ -95,11 +95,16 @@ Monthly averages in percent per year, published with a lag of about one month.
 | Futures settlement prices as the main price | NSE sets a theoretical cost-of-carry price on days without trades in the last half hour, which would bias the basis toward zero mechanically. Settlement-based measures are kept only as a secondary, flagged measure. |
 | Commercial databases (e.g. CMIE Prowess) | Not needed: free float follows from the MWPL, results dates and XBRL links come from NSE, and every other input is in the NSE archives. |
 
-## 6.4 Inputs still to be collected (do not affect anything built so far)
+## 6.4 Sources added for the secondary tests
+
+| Source | Content | Coverage | Use |
+|---|---|---|---|
+| NSE SLBS bhavcopy (`nsearchives.nseindia.com/archives/slbs/bhavcopy/SLBM_BC_DDMMYYYY.DAT`) | Daily securities lending and borrowing trades: stock, tenure series, contract expiry, lending fee (Rs per share; open, high, low, close), quantity, value, trades | 2 Jan 2015 to 27 Oct 2026 (2 days missing at NSE) | SLB activity and fees for the friction index (H1) and the constraint groups (H5) |
+| AMFI monthly reports (`portal.amfiindia.com/spages/am{mon}{yyyy}repo.xls`) | Category-wise schemes, folios, funds mobilised, redemptions, net inflow, net assets and average assets; arbitrage funds are a separate category | April 2018 to September 2026 | Arbitrage capital (H4) |
+
+## 6.5 Inputs not collected (do not affect anything built so far)
 
 | Input | Use | Source |
 |---|---|---|
-| Arbitrage-fund assets and flows | Arbitrage-capital hypothesis (H4) | AMFI monthly data (separate category from mid-2018) |
 | Earnings per share from XBRL filings | Standardised unexpected earnings (secondary surprise measure) | XBRL links already stored with each announcement |
-| Securities lending (SLB) activity | Friction index (H1) | NSE SLB bhavcopy |
 | Index dividends | Sharper validation with Nifty futures | NSE index data |
