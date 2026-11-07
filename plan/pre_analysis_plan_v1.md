@@ -445,3 +445,31 @@ association that biases b upward (against the prediction); contemporaneous flows
 (e) *Also reported:* contemporaneous flow_t; change in log AUM; log AUM with a linear trend; the other quantiles and the
 width; first differences (Delta q80 on flow_(t-1)); excluding March to May 2020 (COVID redemptions and MWPL halving);
 sub-periods before and from April 2023; adding the monthly change in the 3-month interbank rate.
+
+### 11.12 Clarifications for H5 (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+Known beforehand: H2(e) found larger drift for cash-only stocks after both good and bad news; H6 found faster price
+adjustment after F&O entry. No anomaly portfolio had been formed.
+**C15. H5.** (a) *Universe and timing:* NSE EQ/BE/BZ stocks with an adjusted return and a market cap
+(`returns_daily`, `mcap_daily`), month-end price >= Rs 5; signals at the end of month t, holding month t+1; portfolio
+months February 2016 to October 2026 (month-end October 2026 is the last holding month with data to 27 Oct).
+(b) *Constraint groups (each month-end):* G1 = in the F&O segment (short-selling eligible, stock futures); G2 = cash-only
+with at least one SLB trade in the previous three months; G3 = cash-only without SLB trades (most constrained). Alternative
+grouping (robustness): terciles of idiosyncratic volatility (arbitrage risk, as in Stambaugh, Yu and Yuan 2015).
+(c) *Anomalies (month t):* momentum (return over months t-11 to t-1, skipping t; low = overpriced); short-term reversal
+(return in month t; high = overpriced); MAX (largest daily return in month t; high = overpriced); idiosyncratic volatility
+(residual sd of daily returns on the Nifty 50 return; high = overpriced, the US sign; India's IVOL premium is positive per
+Sehgal et al. 2024, so H5 is two-sided for IVOL); Amihud illiquidity (liquid = lower expected return, treated as the
+"short" side); turnover (value traded / market cap; high = overpriced). Composite mispricing score = average percentile
+rank (0 to 1) across the available anomalies, oriented so that high = overpriced (at least 4 of 6 available).
+(d) *Portfolios:* within each constraint group and month, terciles of the composite score; value-weighted (previous
+month-end market cap) returns in month t+1. Leg returns are measured against the group's value-weighted return that month:
+short leg = most-overpriced tercile minus group return; long leg = most-underpriced tercile minus group return.
+(e) *Prediction (Miller):* the short leg is more negative where shorting is constrained (G3 < G1), while the long leg
+does not differ. *Test statistic (secondary, unadjusted):* one-sided p that mean[short leg G3 - short leg G1] < 0 over
+months, Newey-West (6 lags). Also: long-leg difference (expected about 0; two-sided p), long-short spreads by group.
+(f) *Also reported:* G2 vs G1; equal-weighted; each anomaly separately (tercile sorts, predicted-high minus predicted-low,
+legs as above); IVOL-tercile grouping; excluding stocks below the cross-sectional median market cap; pre-reform
+(to September 2025) only.
+(g) Caveats stated in advance: G1 stocks are much larger than G2/G3; within-group sorting and benchmarking against the
+group return remove the level difference but not differences in the cross-sectional dispersion of returns; delisting
+returns are not available.
