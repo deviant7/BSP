@@ -235,3 +235,35 @@ largest BHARs exceed 8,000). Therefore: events with a day-0 closing price below 
 main estimates (robustness without); stock-years with an average price below Rs 5 are excluded from the delay panel;
 in the drift design, control stocks are restricted to the range (min, max) of base-year log market cap of the treated
 cohort in the stack.
+
+### 11.4 Clarifications for the level effect (PAP §6, first bullet), fixed on 7 Nov 2026 BEFORE any basis value was related to a ban entry
+Looked at first (treatment side and data availability only; no basis value): of 1,744 pre-reform ban spells (2015 to
+Sep 2025), 1,201 have at least 5 non-ban trading days before the start (a quarter re-enter within 3 days of the previous
+spell); the composition ratio C (below) has median +0.053 and only 142 spells (8.1%) have C <= 0, as expected because open
+interest must rise for utilisation to cross 95%; candidate control stock-days total 2,451; 79.5% of spells have at least
+one candidate in the same calendar week, 51% at least five.
+
+**C7. Level effect.** (a) *Events:* ban spells starting 1 Jan 2015 to 30 Sep 2025; day 0 = first ban day (t0). Required:
+no ban day for the stock on days -5 to -1; omega_(t-1) > 0.95 on day 0; a valid analysis-sample basis (C1) on day -1.
+Post-reform spells (from 1 Oct 2025) are run the same way and reported separately (descriptive).
+(b) *Composition:* C = (sum of Delta OI over days -5 to -1) / (sum of futures volume over days -5 to -1), near + next
+contracts, in contracts (as in C3 c). Pre-specified split: C <= 0 (closing pressure) versus C > 0 (new exposure).
+Because only 8% of events have C <= 0, a second split at the median of C over events is added (high C = more new
+exposure), and C is also used as a continuous variable.
+(c) *Controls:* stock-days (j, s) of other stocks with s in the same calendar week (Monday to Sunday) as t0, omega_(s-1) in
+[0.85, 0.95), not in a ban on any of days s-5 to s+5, valid basis on day s-1. Up to 5 nearest neighbours, with
+replacement, by Mahalanobis distance on (omega on days -1 to -5, m_(-1)), covariance from the pooled candidate
+pool. Events without any candidate are dropped (count reported).
+(d) *Outcome:* for each event-time k, the change in the winsorised basis level from day -1, y_k = m_(t0+k) - m_(t0-1),
+using the chosen contract of C1 on each day (levels, so a roll is allowed; treated and controls share the exchange's
+expiry calendar). Event difference D_k = y_k(treated) - mean over available controls of y_k(control).
+(e) *Main statistic:* per event, D = mean of D_k over k = 0 to min(4, L - 1), L = spell length in trading days (in-ban
+days only, at most the median spell length). Units bp.
+(f) *Prediction (Prop. 6):* the level effect falls with new-exposure demand: mean D lower for C > 0 than for C <= 0; with
+the sign expected positive for C <= 0 and negative for large new demand. *Test statistic (secondary, reported
+unadjusted):* one-sided p that the coefficient on 1{C > 0} in a regression of D on a constant and 1{C > 0} is < 0; also the
+group means with their signs, the median-split version, and the slope on C (standardised). SEs two-way clustered by stock
+and event date.
+(g) *Also reported:* the event-time profile k = -20 to +20 (pre-trends; note earlier spells can fall before day -5);
+robustness: same-day controls only; unwinsorised basis; relative implied repo; close-based basis; excluding imputed ban
+days. Exploratory: the two pre-reform enforcement regimes (to 22 Mar 2020; 23 Mar 2020 to 30 Sep 2025).
