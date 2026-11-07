@@ -1,4 +1,13 @@
-# 16. RESUME HERE (checkpoint of 7 November 2026, evening)
+# 16. RESUME HERE (updated 7 November 2026, late: after the write-ups)
+
+**Latest state (supersedes the rest of this card where it conflicts):** after the checkpoint below, the band-estimation
+chapter (`docs/15`), an exploratory IV check of H7 (opposite sign survives), the constraint index (`docs/16`,
+`data/processed/constraint_index_q.csv.gz`), the docs update, the **thesis draft** (`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`)
+and the **first-results report** (`BSP_First_Results_Nov2026.pdf`, NOT SENT) were completed and pushed. Every finding with
+its numbers: `memory/09_findings_digest.md`. **Next:** wait for the user's review; send the report only on the user's
+go-ahead; then revise after the guide's comments (see `05_next_steps.md` Step 5).
+
+# (Checkpoint of 7 November 2026, evening)
 
 The user asked for a safe checkpoint ("update everything so that if we ended here we can pick up in the next session"),
 then to continue with the **band-estimation chapter first** and the remaining next steps. This card is self-contained.

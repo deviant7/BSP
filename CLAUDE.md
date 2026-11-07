@@ -30,8 +30,9 @@ The guide received the October progress report, liked it and gave the go-ahead. 
 frozen as git tag **`pap-v1` at 85dac3a** (on GitHub). Tests run exactly as the plan specifies; every open detail was
 written into its §11 before each run (C1-C15), exploratory additions in §11.2. **All primary tests (+ Holm) and all
 secondary tests are done** (results: `docs/14_results.md`, summary §14.16; `handoff/04_current_state.md` §4.7-4.10).
-Band-estimation chapter (`docs/15`) and constraint index (`docs/16`) done 7 Nov. Next: the write-up
-(`handoff/05_next_steps.md` Step 5); ask the user before sending anything to the guide. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
+Band-estimation chapter (`docs/15`) and constraint index (`docs/16`) done 7 Nov. **Write-ups done 7 Nov:** thesis draft
+(`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the guide (`BSP_First_Results_Nov2026.pdf`,
+**not sent**; send only on the user's go-ahead). Digest of all findings: `memory/09_findings_digest.md`. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
 when the user asks.
 
 ## Folders
@@ -39,8 +40,9 @@ when the user asks.
 - `plan/` master plan v2, frozen PAP, archive + removed-items register
 - `data_pipeline/` scripts + README · `data/processed/` outputs (raw data and basis panel git-ignored; rebuild per `docs/12`)
 - `analysis/` estimators, simulated-data tests, audit scripts · `models_src/` model sources · `references/` papers + notes
-- Root PDFs: project document (guide has it), Oct 2026 progress report (sent), current model; superseded Models A/B,
-  Sep 28 note and literature review are internal and kept.
+- Root PDFs: project document (guide has it), Oct 2026 progress report (sent), current model, thesis draft (Nov 2026),
+  first-results report (Nov 2026, not sent); superseded Models A/B, Sep 28 note and literature review are internal and kept.
+- `thesis/` LaTeX of the thesis draft; `memory/09_findings_digest.md` = every result in one place.
 
 ## Tooling notes
 - `pdftotext` for most PDFs; `1_shleifer_vishny_limits.pdf` needs OCR (tesseract). `pandoc` reads the .docx.

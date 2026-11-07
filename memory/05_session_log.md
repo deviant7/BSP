@@ -414,3 +414,15 @@
   (data/processed/constraint_index_q.csv.gz; docs/16). Validation: delay +0.058 (within stock +0.032), |drift| +0.023,
   bad-news drift -0.008 vs good +0.001 (asymmetric, as predicted; no size control); within F&O the all-stock index is
   negatively related to band width (SLB component) → H1 F&O index is the one for the band. Next: write-up (ask user).
+- **Docs first (7 Nov):** README main findings; docs/02 contributions (band chapter, index); docs/04 SLB wording; docs/12
+  layout (thesis/). No em dashes in docs.
+- **Thesis draft (7 Nov):** `thesis/` main.tex + ch1 intro, ch2 institutions, ch3 theory, ch4 data (+constraint index),
+  ch5 band (H3, H4, H9, H1, costs), ch6 ban (H8, H7, level, density, RD, hysteresis, H2), ch7 eligibility (H6, H5, index),
+  ch8 conclusion/policy; appA plan + log; appB data; appendix C = model PDF via pdfpages; references. New figures via
+  analysis/thesis_figures.py. Compiled 52 pp, no overfull boxes; style scan clean. Root copy BSP_Thesis_Draft_Nov2026.pdf;
+  thesis/main.pdf git-ignored.
+- **First-results report (7 Nov):** progress_report_src/first_results_nov2026.tex → BSP_First_Results_Nov2026.pdf (5 pp),
+  guide-facing, NOT SENT. Includes the two corrections to the October report (SLB wording; counts after dating results
+  from first dissemination). Ends with two questions for the guide.
+- **Memory save (7 Nov):** new memory/09_findings_digest.md (all results and numbers); handoff 03/04/05/12/16, CLAUDE.md,
+  CHANGELOG updated.

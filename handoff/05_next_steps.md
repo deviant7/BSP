@@ -135,7 +135,10 @@ h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI
 1. `docs/14_results.md` (final-form results page): every pre-specified test, original specification first, nulls
    included. Complete for primary and secondary tests (7 Nov 2026).
 2. Thesis chapters in LaTeX (structure in 01). The literature-review PDF needs its known errors fixed before reuse.
-3. Next guide deliverable: one PDF (guide-facing rules), probably "first results". Ask the user before sending anything.
+3. DONE 7 Nov 2026 (draft, NOT SENT): `BSP_First_Results_Nov2026.pdf`. Thesis draft: `BSP_Thesis_Draft_Nov2026.pdf`
+   (`thesis/`). Next: the user reviews both; send the report only on the user's go-ahead; revise the thesis after the
+   guide's comments; read the three library papers when obtained; consider a model extension for blocked new demand
+   (only if the guide agrees; the model itself is not changed to fit results).
 4. With the user's go-ahead only: correct the project document's known errors (short-selling line, 30x leg,
    "relaxations", timeline). The next guide-facing document must also correct the SLB-eligibility wording of the sent
    report and model PDF (SLB is not limited to F&O stocks; short selling is).

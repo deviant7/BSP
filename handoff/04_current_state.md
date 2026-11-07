@@ -74,7 +74,9 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 | `BSP_Model_C_Constrained_Arbitrage_India.pdf` | Guide-safe (also the report's appendix) | Current theory |
 | `BSP_Literature_Review.pdf` | Internal (not sent) | Has known errors listed in `memory/04` (SYY is not Fama-MacBeth, PEAD definitions, Roy-Chakraborty direction, etc.) |
 | Models A and B PDFs, 28 Sep progress note | Internal (never sent) | Superseded; kept |
-| `docs/` | Outside readers, final repo | Current |
+| `BSP_Thesis_Draft_Nov2026.pdf` (`thesis/`) | Internal draft (guide style) | 52 pp, all results; 7 Nov 2026 |
+| `BSP_First_Results_Nov2026.pdf` (`progress_report_src/first_results_nov2026.tex`) | Guide-facing, **NOT SENT** | 5 pp; send only on the user's go-ahead |
+| `docs/` | Outside readers, final repo | Current (pages 01 to 16) |
 | `handoff/`, `memory/`, `plan/` | Internal continuity | Current |
 
 ## 4.7 Primary results so far (5 Nov 2026; pre-specified, after the §11 C1 to C5 clarifications)
@@ -161,3 +163,8 @@ All NSE stocks, 80,042 stock-quarters (3,310 stocks): no short channel, SLB scar
 +0.49/+0.45/+0.43/+0.49/+0.37, 53% variance, stable by year; persistence 0.90. Validation: delay +0.058 (t 20.8; within
 stock +0.032); |BHAR| +0.023 (t 27); bad-news BHAR -0.008, good-news +0.001 (asymmetric, as predicted; no size control);
 F&O band width -6.4 (opposite; H1 F&O index is the relevant one there). Published: data/processed/constraint_index_q.csv.gz.
+
+## 4.13 Write-ups (7 Nov 2026)
+Thesis draft (`thesis/`, 8 chapters + 3 appendices, 52 pp, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the
+guide (`BSP_First_Results_Nov2026.pdf`, 5 pp, not sent). Both follow the guide-facing style rules. The report corrects the
+October report's SLB wording and counts. Digest of every finding: `memory/09_findings_digest.md`.

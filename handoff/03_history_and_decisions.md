@@ -112,7 +112,11 @@ Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Ve
    reform in the right direction, n.s.), H2 (no power in bans; pre-announcement basis pattern outside bans), H1 (frictions
    and band width across stocks), H4 (weak), H5 (not supported value-weighted). Summary: `docs/14_results.md` §14.16.
 4. New data: NSE SLB bhavcopies 2015 to 2026; AMFI monthly arbitrage-fund series April 2018 to September 2026.
-5. User asked for a full checkpoint, then the band-estimation chapter.
+5. User asked for a full checkpoint, then the band-estimation chapter: done (docs/15; noise check shows much daily reversion
+   is VWAP noise). Then an exploratory IV check of H7 (opposite sign survives) and the constraint index for all stocks
+   (docs/16; published data set).
+6. User: "update the docs first, then option 3" → docs updated (main findings, contributions); thesis draft (8 chapters,
+   52 pp) and a 5-page first-results report for the guide (not sent); extensive memory save (memory/09 digest).
 
 ## Decisions and their reasons (quick reference)
 

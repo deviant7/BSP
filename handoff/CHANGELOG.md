@@ -27,3 +27,4 @@
 - 7 Nov 2026: band-estimation chapter (PAP §11.13 C16, §11.2 entry; analysis/band_estimation.py, band_exploratory.py, band_costs.py; docs/15; 04 §4.11; 05; 09; 14; 16).
 - 7 Nov 2026: H7 IV exploratory check (analysis/h7_iv.py; PAP §11.2; docs/14 §14.3; 04; 05; 09; 14); PAP §11.14 C17 constraint index.
 - 7 Nov 2026: constraint index deliverable (PAP §11.14 C17; analysis/constraint_index.py; data/processed/constraint_index_q.csv.gz; docs/16; 04 §4.12; 05; 09; 12; 16; CLAUDE.md; memory/01).
+- 7 Nov 2026: write-ups (thesis/ draft 52 pp; first-results report 5 pp, not sent); docs updated first; memory/09 findings digest; 03, 04 (§4.13 + documents), 05, 12, 16 header, CLAUDE.md.

@@ -5,6 +5,8 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 ## Root
 | File | What it is | Status |
 |---|---|---|
+| `BSP_Thesis_Draft_Nov2026.pdf` | Thesis draft (52 pp) compiled from `thesis/` (7 Nov 2026) | C, I |
+| `BSP_First_Results_Nov2026.pdf` | First-results report for the guide, compiled from `progress_report_src/first_results_nov2026.tex`; NOT SENT | C |
 | `CLAUDE.md` | Project memory loaded automatically by Claude Code; points to `handoff/16_resume_here.md` and `00_START_HERE.md` | C, I |
 | `BSP_Project_Document.docx` / `.pdf` | Detailed study plan, Sep 2026 (identical content); the user's master plan of goals; has known errors (see 10) | C (goals), G |
 | `BSP_Progress_Report_Oct2026.pdf` | Progress report sent to the guide (26 pp incl. model appendix); pre-audit numbers | C, G |
@@ -33,6 +35,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | `analysis/` | `setar.py`, `test_setar_simulated.py`, `audit/`; `samples.py`, `inference.py`, `test_inference.py`; tests `h8_trading.py`, `h7_onesided.py`, `h7_diagnostics.py` (exploratory), `h3_costs.py`, `h6_outcomes.py`, `h6_fno.py`; secondary tests (7 Nov) `level_effect.py`, `level_effect_buildup.py` (exploratory), `density_test.py`, `rd_95.py`, `hysteresis.py`, `h9_regime.py`, `h2_badnews.py`, `h1_frictions.py`, `h4_capital.py`, `h5_anomalies.py`; `output/` result files (one `.txt` per test, plus `level_effect_events.csv.gz`) |
 | `models_src/` | LaTeX of Models A and B and their guide versions (superseded); `modelC/` (tex, compiled PDF copy, `verify_modelC.py`, `verify_output.txt`, `figs/fig_band.pdf`, `fig_path.pdf`, `fig_hist.pdf`) |
 | `progress_report_src/` | `progress_report_oct2026.tex` (the sent report; includes `../reports/tables/ban_by_year.tex` and figures; macros like `\basisN` hold basis numbers), `removed_guidance_questions.tex`, `progress_report.tex` (Sep 28 note) |
+| `thesis/` | LaTeX of the thesis draft: `main.tex`, `ch1_introduction` to `ch8_conclusion`, `appA_plan`, `appB_data`, `references` (appendix C includes the model PDF) |
 | `litreview_src/` | LaTeX of the literature review (main + 6 parts + references) |
 | `reports/figs/` | `ban_days_per_month.pdf`, `spell_lengths.pdf`, `utilisation_near_threshold.pdf`, `mwpl_ratio_oct2025.pdf`, `density_95.pdf` (7 Nov) |
 | `reports/tables/` | `ban_by_year.tex` (regenerated after the audit: 1,788 / 9,416) |

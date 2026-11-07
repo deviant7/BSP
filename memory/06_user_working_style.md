@@ -33,3 +33,8 @@
   things (docs, memory, handoff) after major changes and outcomes".
 - Asks for **checkpoints** before big new work ("update everything so that if we ended here we can pick up"); then continue.
 - Order the user set after the checkpoint: band-estimation chapter first, then the remaining next steps.
+- 7 Nov 2026 (write-ups): "Update the docs first then go ahead with option 3 [thesis chapters, then the guide PDF].
+  Do it right. For the write-ups, no em-dashes, or AI-sounding phrases. Keep them clean and readable. Then save extensive
+  memories." Checks used: grep for em/en dashes and a list of AI-ish words (delve, crucial, notably, it is worth noting,
+  in conclusion, landscape, leverage, underscore, pivotal, furthermore, moreover, seamless, holistic, shed light,
+  paramount); plain first person; no internal labels (no "Model C", no plan clause numbers, no file paths) in guide text.
