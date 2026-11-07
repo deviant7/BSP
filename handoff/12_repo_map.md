@@ -5,7 +5,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 ## Root
 | File | What it is | Status |
 |---|---|---|
-| `CLAUDE.md` | Project memory loaded automatically by Claude Code; points to `handoff/00_START_HERE.md` | C, I |
+| `CLAUDE.md` | Project memory loaded automatically by Claude Code; points to `handoff/16_resume_here.md` and `00_START_HERE.md` | C, I |
 | `BSP_Project_Document.docx` / `.pdf` | Detailed study plan, Sep 2026 (identical content); the user's master plan of goals; has known errors (see 10) | C (goals), G |
 | `BSP_Progress_Report_Oct2026.pdf` | Progress report sent to the guide (26 pp incl. model appendix); pre-audit numbers | C, G |
 | `BSP_Model_C_Constrained_Arbitrage_India.pdf` | Current theory (15 pp); guide-safe | C, G (as appendix) |
@@ -22,12 +22,12 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | Path | Content |
 |---|---|
 | `handoff/` | This continuity brief (00 to 16 + CHANGELOG; 16 = resume card) |
-| `docs/` | Final-form documentation for outside readers (README, 01 to 13) |
+| `docs/` | Final-form documentation for outside readers (README, 01 to 14; 14 = results) |
 | `memory/` | Assistant's running notes: 01 context, 02 literature digest, 03 institutional facts, 04 models and audit, 05 session log (chronological, most detailed), 06 user style, 07 fact-check log, 08 earlier handoff (superseded by `handoff/`, kept) |
 | `plan/BSP_Research_Plan_v2.md` | Master plan (scope table, theory summary, hypotheses H1 to H9, phases, measurement, chapters) |
 | `plan/pre_analysis_plan_v1.md` | Frozen test plan (`pap-v1` at 85dac3a) |
 | `plan/archive/` | `plan_v1_project_document_Sep2026.md`, `plan_v2.0_first_draft_2026-10-28.md`, `plan_v2.1_broadened_2026-10-28.md`, `pre_analysis_plan_v0_draft_2026-10-28.md`, `REMOVED_ITEMS_REGISTER.md` (every removed/changed item with reason and how to reintroduce; changelog at the end) |
-| `data_pipeline/` | 12 scripts + README (see 08) |
+| `data_pipeline/` | 15 scripts + README (see 08; incl. `build_returns.py`, `build_amfi_mcap.py`, `build_mcap.py`) |
 | `data/processed/` | Processed data and build reports (see 08 §8.2); `basis_panel.csv.gz` present only in a container that built it |
 | `data/raw/` | Raw downloads (not tracked) |
 | `analysis/` | `setar.py`, `test_setar_simulated.py`, `audit/`; `samples.py`, `inference.py`, `test_inference.py`; tests `h8_trading.py`, `h7_onesided.py`, `h7_diagnostics.py` (exploratory), `h3_costs.py`, `h6_outcomes.py`, `h6_fno.py`; `output/` result files |
@@ -36,7 +36,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | `litreview_src/` | LaTeX of the literature review (main + 6 parts + references) |
 | `reports/figs/` | `ban_days_per_month.pdf`, `spell_lengths.pdf`, `utilisation_near_threshold.pdf`, `mwpl_ratio_oct2025.pdf` |
 | `reports/tables/` | `ban_by_year.tex` (regenerated after the audit: 1,788 / 9,416) |
-| `references/` | 22 numbered PDFs (#18 is an HTML page), `00_reference_index.md`, `notes_batch1..6` |
+| `references/` | 24 numbered items (#18 HTML page, #24 text file), `00_reference_index.md`, `notes_batch1..6` |
 
 ## references/ numbering
 1 Shleifer-Vishny; 2 Gromb-Vayanos; 3 DSSW; 4 Aggarwal; 5 Stambaugh-Yu-Yuan; 6 Ofek et al.; 7a Dwyer-Locke-Yu;

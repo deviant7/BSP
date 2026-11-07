@@ -6,9 +6,8 @@ in PAP §11 with date and reason before results are reported, and the original s
 
 ## Step 0. Session start checks (every new session)
 
-1. `git status`, `git log --oneline -5`, `git ls-remote --tags origin` (is `pap-v1` on GitHub? if not, remind the user:
-   `git tag -a pap-v1 85dac3a -m "Pre-analysis plan v1 frozen" && git push origin pap-v1`, or create it on GitHub as a
-   release tag targeting 85dac3a).
+1. `git status`, `git log --oneline -5`, `git ls-remote --tags origin` (`pap-v1` → 85dac3a is on GitHub since 5 Nov 2026).
+   Full first-actions list: `16_resume_here.md` §16.2.
 2. `ls data/raw data/processed`: if `data/raw` or `basis_panel.csv.gz` is missing, rebuild (`docs/12_reproducibility.md`;
    the price download takes about 2.5 hours and is resumable, so run it in the background).
 3. `cd models_src/modelC && python3 verify_modelC.py` (ALL PASS) and `python3 -I analysis/test_setar_simulated.py`
@@ -117,7 +116,7 @@ H4 (needs AMFI); H5 (anomaly double sorts; needs returns and characteristics).
 | AMFI monthly arbitrage-fund AUM and net flows (mid-2018 on) | H4 | amfiindia.com monthly reports; categorised from 2018 |
 | EPS from XBRL filings | SUE (secondary surprise) | links in `announcements.csv.gz` (`xbrl_standalone`, `xbrl_consolidated`); legacy XML to Mar 2025, Integrated Filing XML after |
 | SLB bhavcopy | Friction index (H1) | NSE SLB segment archives |
-| Market capitalisation / shares outstanding | H6 matching, size portfolios, H5 | source to be found |
+| Market capitalisation (DONE 5 Nov 2026) | H6 matching, size portfolios, H5 | AMFI half-yearly lists + back-cast; Prowess only to verify pre-Jul-2017 |
 | Index dividends | Sharper Nifty validation | optional |
 | BSE results for BSE-only listings (MCX, Abbott, Nestle before 2023) | Close the last 1% gap in announcements | optional |
 | Announcement-date-aware dividend adjustment | Lets dividend contracts back into the sample | optional robustness |

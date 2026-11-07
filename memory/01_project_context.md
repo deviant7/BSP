@@ -42,19 +42,18 @@ bands, FM, robustness, writing.
   B: impulse-control band of inaction, b=(6Kσ²/θ)^{1/4}, "bridge" to TAR/TVECM). Both "deliver" six requirements = H1–H6.
   Progress report + 3-pp guide versions written Sep 28 — **but NONE of these were sent to the guide**;
   she knows only the project document.
-- No data downloaded, no empirical work yet.
+- (Historical, Sep 2026: no data then. Data built from 28 Oct 2026 on; see below.)
 - **Plan going forward: `plan/BSP_Research_Plan_v2.md`** (keeps the doc's goals; theory→PAP→blind data→tests).
 - **No timeline constraints** (user, 28 Oct 2026): ignore Stage I/II weeks; order work by logic, not dates.
 
 ## Corrections already folded into review/models (but NOT into the Word doc)
 - Short selling: intraday cash shorting allowed; naked overnight shorting barred; SLB thin → SSF is the practical channel.
   The project doc §1 still says "no genuine short selling in the cash market" (fix pending).
-- MWPL formula is 65× ADDV (delivery VALUE), floor 10% FF, quarterly (doc already corrected).
+- MWPL formula is 65× ADDV **in quantity (shares)** per NSE Clearing 119/2025 (the doc's 'delivery value' wording is wrong), floor 10% FF, quarterly.
 - Timeline in doc still lacks the theory stage (pending).
 
-## Current status (28 Oct 2026)
-- See `05_session_log.md` for the latest decisions and open threads.
-
-## Status at end of 28 Oct 2026 session
-Theory done (Model C, guide-safe); data built (ban/MWPL 2010–2026, F&O membership/events, prices, basis, announcements, Nifty);
-progress report final but not sent; PAP v1 complete, NOT tagged (waiting for guide). Full detail: `memory/08_handoff_next_session.md`.
+## Current status (7 Nov 2026) — authoritative detail in handoff/16_resume_here.md and handoff/04_current_state.md
+Theory done (Model C). Data built and audited (bans/MWPL 2010–2026; prices, basis, announcements, returns, market caps).
+Progress report SENT; guide liked it, go-ahead given. PAP v1 frozen as tag `pap-v1` (85dac3a, on GitHub). All four primary
+tests run + Holm (H8, H3, H6 rejected at 5%; H7 rejected with the opposite sign). Next: secondary tests (level effect first).
+(28 Oct status, kept for history: progress report final but not sent; PAP untagged.)

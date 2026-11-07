@@ -71,6 +71,17 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
 - SEBI (2024): 93% of individual F&O traders lost money FY22 to FY24; over Rs 1.8 lakh crore.
 - Arbitrage-fund AUM about Rs 71,106 crore (Apr 2023) → Rs 1,98,981 crore (Oct 2024) (press, from AMFI; to confirm).
 
+## Primary test results (5 Nov 2026; analysis/output/)
+- Analysis sample: 486,040 chosen-contract stock-days, 371 stocks; next contract 18.5%; Delta m defined 482,443; ban days
+  8,851 (Delta m 8,756); post-reform 49,903 (ban 400).
+- H8 (zone omega_(t-1) in [0.80, 0.95), n = 16,270, 5,441 ban days, 167 stocks): log futures contracts -2.0036 (0.1106,
+  t -18.11); log cash shares +0.0726 (0.0266); delivery share +0.0410 (0.0045); R -0.573 (0.044). Ban-day R mean 0.424
+  (CI 0.340-0.520), median 0.305; non-ban comparison mean 1.019. Before/after 15 Mar 2020 futures effect -0.972 / -2.722.
+- H7 main (n 481,772, 360 stocks, 8,662 ban obs): normal slopes up -0.712, mid -0.393, lo -0.204; deltas up -0.089
+  (0.037), mid +0.099 (0.062), lo +0.081 (0.030); diff -0.170 (0.046); p_H7 = 1. Spec 2: delta_lo + interaction -0.827 (0.089).
+- H3: mean d80 2023 -2.12 (181 stocks), 2024 +6.42 (172), 2026 +7.44 (192); pooled 2024+2026 +6.962 (0.613), p 1.84e-24;
+  placebo sd 7.40 (30 dates); ranks 0.667 / 0.100 / 0.067.
+
 ## Added 5 Nov 2026
 - Returns: 5,331,373 stock-days, 3,723 stocks; factor check 99.6% of 769 ex-dates; 424 inferred missing CAs; 448 jumps.
 - AMFI: 18 half-years, ~3,400 (2017H2) to ~5,370 companies; NSE coverage 89–97% by count, 95–99.8% by value.

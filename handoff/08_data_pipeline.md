@@ -122,7 +122,7 @@ Reports: `build_report.txt`, `descriptives.txt`, `fno_events_report.txt`, `annou
 23. Delivery (MTO) empty marker files only on holidays (167 of 3,084 files).
 24. `sec_bhavdata_full` not available for early years (2019 = 404): not used.
 25. Closing auction for F&O stocks from 3 Aug 2026: close-based measures have a break; VWAP basis less affected.
-26. PREVCLOSE treatment of corporate actions: **not yet verified** (needed for returns, H6).
+26. PREVCLOSE is **not** adjusted for corporate actions (verified 5 Nov 2026; handled in `build_returns.py`, see 45).
 
 ### Corporate actions and dividends
 27. "sub-division" contains "div": the dividend regex requires the word "dividend" followed by "Rs/Re/INR X".

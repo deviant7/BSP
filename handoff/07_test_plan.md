@@ -20,7 +20,7 @@ This page summarises it and adds implementation notes that do not change the spe
 | §8 Power | 1,788 spells (44 post-reform), 9,416 ban stock-days, 141 stocks, 2,439/139 near-threshold non-ban days, 233/158 events, 8,594 F&O announcements (180 on ban days) |
 | §9 Falsifiers | No asymmetry (H7); no futures-activity change (H8); band unrelated to cost dates (H3); no entry/exit effect (H6) |
 | §10 Open items not changing the specification | AMFI; XBRL EPS; index dividends; SLB |
-| §11 Deviations log | Empty at tag time |
+| §11 Deviations log | Empty at tag time; now: 11.1 clarifications C1-C5 (before any test), 11.2 exploratory additions after results (H8 break and its resolution, H7 diagnostics, H3 calibration), 11.3 H6 clarifications C6 (a)-(k). Secondary tests get 11.4 onward |
 
 ## 7.2 H7 equation (exact)
 
@@ -31,7 +31,7 @@ This page summarises it and adds implementation notes that do not change the spe
 - Fails if delta_upper <= 0 or delta_upper = delta_lower.
 - Robustness: per-stock TVECM thresholds (non-ban days), fixed +/-25 bp around median, state-dependent thresholds.
 
-## 7.3 Implementation notes (choices the plan leaves open; log them in §11 BEFORE running)
+## 7.3 Implementation notes (choices the plan leaves open; log them in §11 BEFORE running) — items 1 to 9 were all settled in §11.1 and §11.3 on 5 Nov 2026
 
 These are places where the text does not pin down a detail. Decide, write the choice into §11 with the date, then run.
 

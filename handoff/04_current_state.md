@@ -1,4 +1,4 @@
-# 04. Current state (as of 5 November 2026, end of session)
+# 04. Current state (as of 7 November 2026, start of session; nothing new run since 5 Nov)
 
 Resume card with first actions: `16_resume_here.md`. Results for outside readers: `docs/14_results.md`.
 
@@ -15,7 +15,7 @@ Resume card with first actions: `16_resume_here.md`. Results for outside readers
 | Data: not yet collected | AMFI arbitrage-fund AUM (H4); XBRL EPS (SUE, secondary); SLB (H1); index dividends | see 05 |
 | Estimators | 3-regime SETAR (`analysis/setar.py`), tested on simulated data | `analysis/` |
 | Main tests | **All four primary tests run + Holm** (5 Nov 2026) | `analysis/output/`, `docs/14_results.md`; summary §4.7 and §4.9 |
-| Final-form docs | Complete for the current state; results page to be added | `docs/` |
+| Final-form docs | Complete for the current state, incl. results page | `docs/` (README + 01 to 14) |
 | Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
 
@@ -45,21 +45,22 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 
 ## 4.4 Git state
 
-- Branch `claude/compassionate-rubin-s9gny2` is pushed and up to date (last commits: 7377d94 audit fixes; 85dac3a results
-  dates + docs + PAP final; c246acc memory note; then the handoff commit).
+- Branch `claude/compassionate-rubin-s9gny2` is pushed and up to date (key commits: 85dac3a = frozen plan; c6b1701 = §11
+  clarifications before tests; f33bb9e H8; 870e295 H7; a44836c H3; dbdfcde/e9ba556 H6 clarifications; c48e2e9 H6 + Holm;
+  d72bdaa end-of-session save 5 Nov).
 - `main` = 65ef0e3 (everything up to 28 Oct 2026). Work after that reaches `main` only through a new PR, which only the
   user can request.
-- Tag `pap-v1` → 85dac3a exists in the session clone. Pushing tags returned HTTP 403 through the session's git proxy. The
-  user was given the command to create it. **Check** `git ls-remote --tags origin` in a new session; if absent, remind the
-  user (do not move the tag to a later commit: the frozen plan is the version at 85dac3a).
+- Tag `pap-v1` → 85dac3a is on GitHub (created by the user with GitHub Desktop, 5 Nov 2026; cloud sessions cannot push
+  tags). Never move it: the frozen plan is the version at 85dac3a. Since the tag the plan file has only gained §11 text.
 
 ## 4.5 Container state
 
-- `data/raw/` (about 1.2 GB) and `basis_panel.csv.gz` exist only in the container that built them. A new container must
-  rebuild them (`docs/12_reproducibility.md`, about 4 to 5 hours including downloads). Check first: `ls data/raw`.
+- Git-ignored, container-only files (full rebuild list in `16_resume_here.md` §16.2): `data/raw/` (about 1.4 GB),
+  `basis_panel.csv.gz`, `returns_daily.csv.gz`, `mcap_daily.csv.gz`, `data/processed/cache/*.pkl`. On 7 Nov 2026 the same
+  container was still in place (all present; pyfixest installed).
 - Raw folders: `combineoi/`, `secban/`, `prices/{fut,cash,optsum,deliv}/`, `corpactions/` (156 monthly JSON),
   `results/` (Quarterly/Annual 156 each, Integrated 24), `resultupdates/` (1,173 four-day JSON), `boardmeetings/`
-  (312 half-month JSON), `rates/` (2 FRED CSV), `indices/nifty50_daily.csv`, `download_log.tsv`,
+  (312 half-month JSON), `amfi_mcap/` (18 PDFs), `rates/` (2 FRED CSV), `indices/nifty50_daily.csv`, `download_log.tsv`,
   `prices/price_download_log.tsv`.
 
 ## 4.6 Documents and who they are for
@@ -78,14 +79,14 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 
 | Test | Pre-specified statistic | Result | Notes |
 |---|---|---|---|
-| H8 | one-sided p, Ban coefficient on log futures contracts < 0 | b = -2.00 (se 0.11), p ~ 0: **supported** | cash volume +7.3%, delivery share +4.1 pp (as predicted). Identity (dOI+V)/V ~ 0 **fails** pooled (mean 0.42). Exploratory: break mid-March 2020 (before 0.86, after median 0.01); cause unknown |
+| H8 | one-sided p, Ban coefficient on log futures contracts < 0 | b = -2.00 (se 0.11), p ~ 0: **supported** | cash volume +7.3%, delivery share +4.1 pp (as predicted). Identity (dOI+V)/V ~ 0 **fails** pooled (mean 0.42). Exploratory: break mid-March 2020 (before 0.86, after median 0.01) = intraday enforcement from 23 Mar 2020 (§4.8) |
 | H7 | IU p = max(p(delta_up > 0), p(delta_up - delta_lo > 0)) | delta_up = -0.089 (t -2.4), delta_lo = +0.081 (t +2.7), p = 1: **rejected; opposite sign** | robust across pre-specified checks except close-based (delta_up ~ 0) and unwinsorised (delta_up +0.08, t 1.6). After an expiry in the spell, downward reversion much faster |
 | H3 | one-sided p, mean change in stock q80, 2024+2026, stock-clustered | +6.96 bp (se 0.61), p = 1.8e-24; ordering 2026 > 2024 > 2023 holds: **supported by the pre-specified test** | pre-specified placebo: sd 7.4 bp across pseudo-events, 2024 rank 0.10, 2026 0.07: weak once common shocks are allowed for; shifts larger than the cost changes |
-| H6 | to be fixed in §11 before running | not run | needs split/bonus-adjusted returns and market cap |
+| H6 | Bonferroni of four components (§11.3 C6 h) | p = 5.2e-6: **supported through delay; drift contradicts** | see §4.9 |
 
-Holm across the four waits for H6. Questions for the user: the March 2020 break (does he know of a rule or broker change?);
-how to present H7's reversal; whether to add the placebo-calibrated p for H3 as a sensitivity (it is pre-specified as a
-placebo, so reporting it is allowed).
+(This table was written before the research of §4.8 and H6 of §4.9; the open questions it raised were then researched:
+the March 2020 break is the intraday-enforcement change, the H7 reversal has exploratory diagnostics, and H3 is reported
+with its placebo calibration.)
 
 ## 4.8 Research on the open questions (5 Nov 2026, user asked for it)
 1. **H8 March 2020 break: resolved.** SEBI PR 18/2020 made violations in banned stocks be checked on peak intraday

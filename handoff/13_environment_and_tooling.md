@@ -3,7 +3,7 @@
 ## 13.1 Where work happens
 - Claude Code cloud sessions (claude.ai/code), repository `deviant7/bsp` cloned at `/home/user/BSP`. The container is
   ephemeral: anything not committed and pushed is lost when it is reclaimed. A later session may or may not get the same
-  container (on 5 Nov 2026 the old container, with `data/raw`, was still there).
+  container (on 5 Nov and again on 7 Nov 2026 the old container, with `data/raw` and all caches, was still there).
 - Earlier (before 28 Oct 2026): Claude desktop with a bridge to the user's Windows folder `D:\BSP` and a project library.
   The desktop era could not save PDFs to disk and hit .docx upload errors; the repo replaced it.
 - GitHub access is through MCP tools (`mcp__github__*`), not the `gh` CLI. Repository scope: `deviant7/bsp`.
@@ -15,8 +15,8 @@
 - No PR without the user's request. PR #1 (branch → main) was merged by the user on 28 Oct 2026.
 
 ## 13.3 Software
-- Python 3.13 with numpy, pandas (version 3-era warnings about `concat` sorting appear; harmless), matplotlib, openpyxl.
-  `pyfixest` installable from PyPI.
+- Python 3.13 with numpy, pandas (version 3-era warnings about `concat` sorting appear; harmless), scipy, matplotlib,
+  openpyxl. `pyfixest` 0.60.0 installed from PyPI (`pip install pyfixest`); `pdftotext` (poppler) present.
 - LaTeX: `apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern`
   (was installed in the 28 Oct container). Build with `pdflatex` twice.
 - `pdftotext` for most PDFs; OCR for `references/1_shleifer_vishny_limits.pdf`: `apt-get install -y tesseract-ocr`,
@@ -42,7 +42,8 @@
 - Use the scratchpad directory (given in the session's system prompt) for temporary files, not `/tmp`.
 
 ## 13.6 Disk and memory
-- The writable disk is a per-session allowance; `df` can mislead. Raw data ~1.2 GB; basis panel 74 MB compressed; the basis
+- The writable disk is a per-session allowance; `df` can mislead. Raw data ~1.4 GB; basis panel 74 MB, returns 113 MB,
+  market caps 31 MB, caches 180 MB; the basis
   builder needs several GB of RAM.
 
 ## 13.7 Commit conventions

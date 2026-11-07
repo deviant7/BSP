@@ -33,6 +33,11 @@ Processed, compact outputs go to `data/processed/` (committed when small).
 - `build_announcements.py RAW OUT` — results events: earliest release across announcements and filings, board meetings fill
   gaps and override late re-filing times, records mapped to the symbol trading on the event date (ISIN history).
 - `build_basis.py RAW OUT` — basis panel from daily VWAPs (outcome side only).
+- `build_returns.py RAW OUT` — daily total returns for all EQ/BE/BZ stocks, adjusted for splits, bonuses and dividends
+  (NSE's prevclose is not adjusted); flags rights/demerger days, listing days, likely missing corporate actions, jumps.
+- `build_amfi_mcap.py RAW OUT` — downloads and parses AMFI's half-yearly average market-cap lists (Jul 2017 onward).
+- `build_mcap.py OUT` — daily market capitalisation from AMFI share counts and split-adjusted prices (back-cast before
+  Jul 2017).
 - Full documentation of every source, rule and check: `docs/06_data_sources.md`, `docs/07_data_construction.md`,
   `docs/10_data_quality_audit.md`.
 

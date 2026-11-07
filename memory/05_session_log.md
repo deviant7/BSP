@@ -313,6 +313,19 @@
   secondary tests in order: level effect → density test → RD → hysteresis → H9 → H2 → H1 → H4 (needs AMFI arbitrage AUM)
   → H5; each with a dated PAP §11 entry first). Working tree clean at the end; tag pap-v1 on GitHub.
 
+## Session 7 Nov 2026 (new session; context re-gathered)
+- User: "gather full context before we proceed ... use the conversations, chats, artifacts, memory files". Read CLAUDE.md,
+  handoff 16 → 00 → 01–15 + CHANGELOG, memory 01/05/06 (02/03/04/07 known and current), PAP v1 in full (diff since tag =
+  §11 additions only), docs/14, every analysis/output file, data_pipeline/README; the two chat logs had been read in full on
+  5 Nov.
+- Container unchanged: data/raw (1.4 GB incl. amfi_mcap), basis_panel, returns_daily, mcap_daily, cache/*.pkl present;
+  pyfixest 0.60.0 installed. Smoke tests pass: h8_trading reproduces b = -2.0036; verify_modelC ALL PASS (figure PDFs
+  rewritten with new timestamps only → restored); SETAR test -29.1/+15.2 and -10.4/-0.3.
+- Consistency fixes (repo wins over handoff): 04 git/container/H6 row/status; 05 tag + market cap; 07 §11 contents;
+  08 quirk 26; 09 primary numbers; 12 counts; 13 tools/sizes; memory/01 status (+ ADDV in quantity, not value);
+  data_pipeline/README new builders. Not changed: PAP §1 table still shows pre-audit rule checks 99.2/99.5% (frozen text;
+  current 99.4/99.7% in §8 and docs).
+
 ## Open threads (current; older lists superseded)
 - All four primary tests run + Holm (5 Nov). Next: secondary tests (level effect, H9, density test + RD, hysteresis, H2, H1, H4 needs AMFI arbitrage AUM, H5); optional Prowess check of pre-2018 market caps.
 - Tag pap-v1 now on GitHub (refs/tags/pap-v1 → 85dac3a), created by the user, 5 Nov 2026.
