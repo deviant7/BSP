@@ -123,3 +123,6 @@ RD at 95% (PAP §11.6 C9; docs/14 §14.9): sharp (99.7% vs 0.06% in ban). Future
 same-contract change on t only -2.8 (n.s.) → level gap precedes the ban. Futures jump -0.57 EoD era vs -2.29 intraday era.
 Placebo cutoff 0.90 basis +24 (h 0.008, degenerate). Open interpretive issue: rising OI with a falling basis before
 entry may reflect new SHORT futures demand, not long → exploratory long/short build-up split of the level effect.
+Build-up split (exploratory): long build-up -7.9 (2.7), short build-up -5.5 (2.2), diff +2.4 n.s.; closing groups +8.4 (n 30).
+In-ban fall not specific to new longs; crossing-day dip concentrated in long build-up. The H7/level "blocked long demand"
+reading is therefore only partial; keep it labelled post hoc.

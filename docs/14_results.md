@@ -194,6 +194,13 @@ dips on day -1 itself (the day utilisation crosses 95%), so the event-time profi
 (se 1.6). The result is consistent with the H7 diagnostics: at the start of a ban the basis falls as new long demand
 for futures is blocked.
 
+**Exploratory, build-up type** (added after the RD of 14.9 showed the basis already low on the crossing day; code
+`analysis/level_effect_buildup.py`). The ratio C cannot tell new longs from new shorts, so events are also classified, as
+Indian market practice does, by open interest and price over days -5 to -1: long build-up (both up) -7.9 bp (se 2.7,
+453 events), short build-up (open interest up, price down) -5.5 (2.2, 406), difference +2.4 (3.5); short covering and long
+unwinding together have only 30 events, both +8.4 (imprecise). The in-ban fall is therefore not specific to new long
+demand. The dip on the crossing day itself is concentrated in long build-up events.
+
 ## 14.8 Secondary (supporting): density of utilisation at 95%
 
 Question: do stocks bunch just below the 95% trigger (traders holding back to avoid a ban) or just above it (a rush to

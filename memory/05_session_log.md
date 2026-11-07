@@ -372,3 +372,5 @@
   RD cannot separate a ban level effect from the crossing pressure. Placebo 0.90 basis +24 at h 0.008 (degenerate). New
   insight: rising OI + falling basis before entry ⇒ maybe new SHORT futures demand; C cannot sign it → exploratory
   long/short build-up split (price direction with OI) for the level effect next.
+- Build-up split (exploratory, 7 Nov): long build-up -7.9, short build-up -5.5 (diff n.s.); closing +8.4 (n 30). The in-ban
+  fall is not specific to blocked new longs → the post-hoc "blocked long demand" reading of H7 is only partial.

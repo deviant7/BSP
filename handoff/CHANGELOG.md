@@ -17,3 +17,4 @@
 - 7 Nov 2026: level-effect secondary test: PAP §11.4 C7 (before estimation), analysis/level_effect.py, results docs/14 §14.7 (14.8 = to come), 04 §4.10, 09, 16 (item 1 done), PAP §11.2 exploratory entry.
 - 7 Nov 2026: density test at 95% (PAP §11.5 C8; analysis/density_test.py; docs/14 §14.8; 04 §4.10; 09; reports/figs/density_95.pdf).
 - 7 Nov 2026: RD at 95% (PAP §11.6 C9; analysis/rd_95.py; docs/14 §14.9; 04; 09).
+- 7 Nov 2026: exploratory build-up split of the level effect (analysis/level_effect_buildup.py; docs/14 §14.7; PAP §11.2; 04).

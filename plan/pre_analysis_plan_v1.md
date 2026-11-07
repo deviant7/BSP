@@ -327,3 +327,9 @@ only) and 1.00 (above 0.95 only). After 1 Oct 2025 (FutEq utilisation): descript
 (g) *Reading:* supporting evidence only (PAP §6). The model predicts the reduce-only effects at the cutoff (futures
 volume falls; R near 0 under intraday enforcement; basis level sign set by composition, mostly new exposure, so negative
 on average per C7); anticipation is continuous through 0.95 and does not create a jump.
+- 7 Nov 2026, level effect, build-up split (exploratory, `analysis/level_effect_buildup.py`, added after the C7 and C9
+  results were seen; motivated by the RD finding that the basis is already low on the crossing day, and by the fact that
+  C cannot tell new longs from new shorts): events classified by OI change and cash-price change over days -5..-1. In-ban
+  D: long build-up -7.9 (se 2.7, n 453), short build-up -5.5 (2.2, n 406), difference +2.4 (3.5); short covering and long
+  unwinding +8.4 each (n 9 and 21; imprecise). The crossing-day dip is concentrated in long build-up events (D at k = -2:
+  +8.2 vs -0.3). Same-day controls: long -5.4, short minus long +3.3 (4.3).
