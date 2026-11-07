@@ -273,3 +273,27 @@ days. Exploratory: the two pre-reform enforcement regimes (to 22 Mar 2020; 23 Ma
   standardised C -3.1 (p = 0.007), median split -4.5 (p = 0.049); (2) control for the day -1 treated-minus-control gap:
   gap coefficient -0.29 (mean reversion), level at mean C -9.2, slope -3.5 (se 1.6); (3) event-time paths by median C:
   high-C events fall about 7 to 8 bp on days 0 to 1 and recover by day 7. Pre-specified C7 results are reported first.
+
+### 11.5 Clarifications for the density test at 95% (PAP §6, "RD at 95%": density test first), fixed on 7 Nov 2026 BEFORE it was run
+This is a treatment-side test (utilisation only; no outcome).
+**C8. Density test.** (a) *Running variable:* end-of-day utilisation omega_d from the file dated d (gross OI / MWPL before
+1 Oct 2025; FutEq OI / MWPL from 1 Oct 2025); cutoff 0.95 (above it the stock enters the ban on d+1).
+(b) *Main population (transition):* stock-days with the stock not in a ban on d-1 or on d and omega_(d-1) < 0.95, i.e. the
+distribution of today's utilisation for stocks that were below the trigger yesterday. Reason: in the literal population
+"all stock-days not in a ban", a stock above 0.95 is observed for one day only (it is in the ban from the next day)
+while a stock just below can be observed for many days, so that density is discontinuous at 0.95 mechanically even
+without any manipulation. One-step transitions from below do not have this absorption problem. The literal population
+(not in a ban on d) is also reported, with this caveat.
+(c) *Estimator:* Cattaneo-Jansson-Ma local-polynomial density test (Python `rddensity` 3.0; defaults: p = 2, triangular
+kernel, jackknife variance, MSE-optimal bandwidths on each side, robust bias-corrected statistic), on omega in [0.60, 1.30].
+Robustness: p = 1 and p = 3; fixed bandwidths 0.02 and 0.05.
+(d) *Dependence:* the CJM test treats observations as independent; repeated days of the same stock are not. Therefore also a
+McCrary-type binned estimate: frequencies in bins of width 0.0025, local linear fits on each side within 0.05 of the cutoff
+(triangular weights), theta = ln f(0.95+) - ln f(0.95-), with a stock-cluster bootstrap (499 draws) for its standard error.
+(e) *Samples:* main 2 Jan 2015 to 30 Sep 2025. Also: excluding days on which the stock's MWPL changed (utilisation then
+jumps through the denominator); the two pre-reform enforcement regimes; the pre-sample 2010 to 2014; after 1 Oct 2025
+(descriptive, few observations).
+(f) *Reading:* the model does not sign the test (holding back by arbitrageurs thins the density just below 0.95; a rush to
+open positions before an expected ban does the opposite). A significant discontinuity in the main population means the RD
+at 95% is not credible as a local randomisation and is reported as descriptive only. Supplementary (treatment side): the
+mean daily change in utilisation by bins of omega_(d-1) between 0.80 and 0.95, against bins further below.
