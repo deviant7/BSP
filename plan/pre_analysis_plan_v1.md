@@ -403,3 +403,26 @@ ban day in days 0..+5; EAR from days 0..+1 only is not recomputed (C6 definition
 (e) *Also reported (cross-section, association only):* bad-news drift in cash-only stocks versus F&O stocks, all events
 2015 to 2026: BHAR_w on Bad, Good, NonFnO and their interactions, quarter FE and log market-cap decile FE (the H6 design
 gives the causal version through entry and exit).
+
+### 11.10 Clarifications for H1 (PAP §6), fixed on 7 Nov 2026 BEFORE it was run
+SLB data: NSE's daily SLBS bhavcopies (`SLBM_BC_DDMMYYYY.DAT`, 2015 to 2026) were found and are being downloaded
+(`data_pipeline/download_slb.py`); only a few dozen stocks trade in SLB on a typical day, so the SLB input is activity-based.
+**C13. H1.** (a) *Unit:* F&O stock x calendar quarter. Main period: outcomes 2015 Q2 to 2025 Q3 (frictions from the previous
+quarter, 2015 Q1 to 2025 Q2; utilisation is gross-OI based throughout); robustness to 2026 Q3.
+(b) *Outcomes in quarter q* (C1 sample, winsorised m, non-ban days only, at least 30 days): band width W = q80 - q20 of m
+(bp); mispricing size A = mean |m| (bp); persistence rho = OLS slope of m_t on the same contract's m_(t-1) (at least 30 pairs).
+(c) *Frictions in quarter q-1* (all from data that do not involve the basis or the ban): (1) Corwin-Schultz (2012) spread
+from daily cash high and low prices (EQ series; two-day estimator with the overnight-gap adjustment; negative two-day
+estimates set to 0; quarterly mean); (2) Amihud illiquidity = mean of |return| / traded value in Rs crore (log); (3)
+idiosyncratic volatility = standard deviation of residuals from daily stock returns on the Nifty 50 return (at least 40
+days); (4) mean utilisation omega on non-ban days (higher = less headroom); (5) SLB scarcity = 1 - share of trading days with
+any SLB trade in the stock. Annualised SLB fee (fee / cash close x 365 / days to SLB expiry, median over traded days) is
+reported but not in the index (missing for most stock-quarters).
+(d) *Index:* first principal component of the five frictions, each standardised within quarter; sign chosen so that the
+sum of loadings is positive; loadings reported.
+(e) *Specification:* outcome_iq = beta * Index_i,q-1 + quarter FE; SE two-way clustered (stock, quarter). *Prediction:*
+beta > 0 for W, A and rho. *Test statistic (secondary, unadjusted):* one-sided p that beta > 0 for W.
+(f) *Also reported:* all five frictions jointly (standardised); stock FE added (within-stock variation); outcomes on all
+days including ban days; period to 2026 Q3; index without the SLB input.
+(g) Caveat stated in advance: frictions are correlated with size and liquidity, so beta is an association, not a causal
+effect; this is H1's role in the plan.
