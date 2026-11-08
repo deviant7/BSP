@@ -6,7 +6,7 @@
 |---|---|
 | Student | Prince Kumar, roll 23B3032, 4th-year BS Economics, IIT Bombay (2023 to 2027) |
 | Course | BS Project: EC 495 Stage I (6 credits, semester 7, about July to November 2026) then EC 497 Stage II (12 credits, semester 8, about January to April 2027) |
-| Guide | Prof. Aditi Chaubal, Department of Economics (non-linear time series). Spelling "Chaubal" confirmed by the user on 5 Nov 2026 (he once voice-typed "Chawla") |
+| Guide | Prof. Aditi Chaubal, Department of Economics (non-linear time series). Spelling "Chaubal" confirmed by the user on 5 Nov 2026 (the user once voice-typed "Chawla") |
 | Title | Limits to Arbitrage in the Indian Equity Market |
 | Repository | `deviant7/bsp` on GitHub; working branch `claude/compassionate-rubin-s9gny2`; `main` has everything up to 28 Oct 2026 (PR #1 merged) |
 

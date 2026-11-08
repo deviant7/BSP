@@ -16,7 +16,7 @@ secondary sources (broker notes, press); **D** confirmed in our own data; **?** 
 | **Ban enforcement regimes** (found 5 Nov 2026): to 22 Mar 2020 end-of-day positions only (intraday round trips not violations; some brokers allowed them, Zerodha did not); **from 23 Mar 2020 peak-intraday positions** (SEBI PR 18/2020; ICCL notice 22 Mar 2020: penalty lower of 1% or Rs 5 lakh per client, min Rs 50,000), continued after 26 Nov 2020 "till further directions" (PR 59/2020); **from 1 Oct 2025 end-of-day FutEq vs base position** (NSE Clearing 119/2025). Data: ban-day (dOI+V)/V median 0.87 / 0.011 / 0.19-0.36 in the three regimes | P, D |
 | Broker notices cite 8 Dec 2025 for "delta-based exposure limits on open positions in ban period" (Angel One); the market-level FutEq trigger is visibly in force from 1 Oct 2025 in our data (805 gross > 95% stock-days without bans in Oct to early Dec 2025). 8 Dec 2025 is probably the brokers' implementation of the entity-level delta check; unresolved | S, D |
 | Pre-Oct 2025 MWPL = 20% of non-promoter shares (SEBI/DNPD/Cir-31/2006, 22 Sep 2006) | P, D (free float = MWPL/0.20 reproduces Oct 2025 limits) |
-| 30x prior-month-volume leg: SEBI/DNPD/Cir-26/2004 (16 Jul 2004), replaced in 2006; irrelevant for the sample | P |
+| 30x prior-month-volume leg: from SEBI/DNPD/Cir-26/2004 (16 Jul 2004), replaced in 2006; irrelevant for the sample | P for the 2006 change (MWPL 20% FF in SEBI 2025/79 §5.2.1 and in our data); S for the 2004 origin (its text could not be re-retrieved on 7 Nov 2026) |
 | MWPL recomputed monthly before the reform (monthly non-promoter holding data); quarterly after | P (FAQ) |
 | COVID: MWPL halved for F&O stocks with avg high-low range >= 15% or avg utilisation >= 40% over 5 sessions, effective 23 Mar 2020, extended, withdrawn end of 26 Nov 2020 | S, D |
 | New MWPL from 1 Oct 2025: min(15% FF, 65 x market-wide ADDV in shares), floor 10% FF; recomputed quarterly on the previous 3 months (MWPL from 1 Oct 2025 uses 16 Jun to 15 Sep 2025), valid 3 months, published by the 20th of the last month of the quarter; corporate-action adjusted | P |
@@ -31,7 +31,7 @@ secondary sources (broker notes, press); **D** confirmed in our own data; **?** 
 ## Short selling, settlement, market structure
 | Fact | Status |
 |---|---|
-| Naked short selling prohibited (SEBI 20 Dec 2007); short sellers must deliver | S |
+| Naked short selling prohibited; short sellers must deliver at settlement (SEBI 2007 framework, restated in the circular of 5 Jan 2024, references/25) | P |
 | Only F&O-segment securities eligible for short selling (SEBI circular 5 Jan 2024, references/25: all investors may short; naked barred; institutions no day trading) | P |
 | **SLB is NOT limited to F&O stocks** (corrected 7 Nov 2026): SEBI widened SLB eligibility to liquid non-F&O securities from 1 Jul 2013 (Business Standard, 30 May 2013); our SLB bhavcopies show non-F&O stocks in 6-23% of SLB trade rows (1-25% of value) from 2019 (e.g. BANDHANBNK 2019 before F&O entry, NLCINDIA 2024) | S, D |
 | SLB / institutional shorting from 21 Apr 2008; SLB thin | S |

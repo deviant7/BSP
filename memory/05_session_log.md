@@ -432,3 +432,17 @@
   C16-C17; handoff/04 git commits and container additions; handoff/14 waiting-on-user list (review thesis + report, send
   decision, two questions for the guide, optional Prowess, unresolved 8 Dec 2025 date); handoff/16 rebuild commands for
   the write-ups; neutral pronouns for the user in handoff/memory. Next session starts with handoff/16 and memory/09.
+
+## Session 8 Nov 2026 (new session; context re-gathered)
+- Same container (data/raw, basis panel, returns, caches present); tree clean; remote = local (52f5dda); tag pap-v1 → 85dac3a.
+  Packages present; smoke tests pass (H8 b = -2.0036; verify_modelC ALL PASS, figure PDFs restored).
+- Read: handoff 16, 00, 01, 05, 07, 10, 11, 14, 15; memory 09 digest; master plan §8-9 and PAP; project-document section
+  list; the rest was in context from 7 Nov. Fixed stale entries: handoff/01 pronoun; handoff/10 statuses (naked shorting P
+  via references/25; 2004 origin of the 30x leg S); memory/04 (model WAS shown to the guide as the report appendix).
+- Found master-plan items not yet done: (1) policy count of "spurious" (denominator- or measure-driven) bans before vs after
+  Oct 2025 (plan §8); (2) placebos from plan §9 (index-only reforms, fake ban dates, non-F&O stocks); (3) COVID MWPL halving
+  design (plan §6.4; PAP §4a treatment without a specified test); (4) peak-margin phase-in as a capital shock (plan §0);
+  (5) thesis lacks a literature-review chapter (internal lit review PDF has known errors) and the policy chapter lacks the
+  SEBI retail-loss framing (plan §8); appendix on the band-of-inaction derivation and a replication guide (plan §11) are
+  thin. Optional: XBRL SUE; put-call parity. Waiting on the user: review of thesis draft and first-results report; send
+  decision; library papers; Prowess (optional); go-ahead to fix the project document.

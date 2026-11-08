@@ -38,7 +38,7 @@ Prop "bridge": inner random walk + outer mean reversion = 3-regime TAR/TVECM. Pr
 ## Model C — Constrained arbitrage under India's limits (CURRENT; replaces A & B) — 28 Oct 2026
 Files: `models_src/modelC/ModelC_constrained_arbitrage_india.tex` (15 pp) → `BSP_Model_C_Constrained_Arbitrage_India.pdf`;
 `models_src/modelC/verify_modelC.py` (brute-force checks of every closed form + simulations; output in `verify_output.txt`; figs/).
-Not yet shown to the guide; no 3-pp guide version yet.
+Shown to the guide as the appendix of the October 2026 progress report (sent; she liked it). Its SLB wording needs a fix in the next guide-facing version (memory/04 end).
 - Environment: outside demand in cash (D_S − ψ_S s) and futures (D_F − ψ_F f); arbitrage a = long cash/short futures.
   Clearing m = (u − a)/Φ, 1/Φ = 1/ψ_F + 1/ψ_S, u = Φ(D_F/ψ_F − D_S/ψ_S). Arbitrage objective a m − (γ/2)a² − c₊a⁺ − c₋a⁻, γ = ασ².
   c₊ = τ₊ + (r_A − r_b)(T−t); c₋ = τ₋ + (ℓ_s + r_b − r_L)(T−t). Each Indian limit is a parameter (table in §2.4).
