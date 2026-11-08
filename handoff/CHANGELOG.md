@@ -32,3 +32,4 @@
 - 8 Nov 2026 (new session): context re-gathered; smoke tests pass; stale entries fixed (01 pronoun, 10 statuses, memory/04); open master-plan items listed in memory/05.
 - 8 Nov 2026: spurious bans, placebos, COVID halving (PAP §11.15 C18-C20 + results entry; analysis/spurious_bans.py, placebos.py, covid_halving.py; docs/14 §14.17; 04 §4.14; 05 Step 3c; 09).
 - 8 Nov 2026: deep audit (04 §4.15): full rerun reproduces outputs; estimator tests for CS and level effect; number check; fixes (ch4 99.85%, appendix wording, model SLB wording, index bad-news asymmetry = size effect, all write-ups corrected); PAP §11.2 size-check entry; docs/12 rerun + checks; 05, 09, 14 §14.7, 16; memory/05, 09.
+- 8 Nov 2026 END OF SESSION: next-session plan agreed and saved (16 top, 05 Step 3c pointer; memory/05).

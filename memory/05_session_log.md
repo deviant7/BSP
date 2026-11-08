@@ -459,3 +459,9 @@
   (-0.0007, se 0.0023)**: corrected docs/16, README, thesis abstract/ch1/ch4/ch7, report §7; delay survives (+0.036 log
   mcap; +0.028 with stock FE). PAP §11.2 entry logged. Both PDFs rebuilt clean. Lesson: check every cross-sectional
   "constraint" result against size before writing it up.
+- **8 Nov END OF SESSION (user near usage limit).** Agreed plan for the next session, saved in handoff/16 ("PLAN FOR
+  THE NEXT SESSION"): (1) finish content in the thesis only ("write-up" = final submission report; first-results report
+  not updated further): §14.17 results, SEBI retail-loss framing, literature chapter from litreview_src after fixing its
+  errors, optional appendices; (2) re-read every word of every file, artifact and memory to rebuild context; (3) user
+  gives a LaTeX template zip (use only its first few pages) and a PDF whose body formatting they like; build the final PDF
+  with many figures, no em dashes, no AI-sounding phrases.

@@ -7,6 +7,33 @@ PDF's SLB wording. **Next (user's order):** fold §14.17 into thesis ch5/ch6/ch8
 in the policy section; literature chapter from `litreview_src/` after fixing its known errors (11 §11.6); then the user's
 cosmetic changes for the final submission write-up. Report still NOT SENT.
 
+## PLAN FOR THE NEXT SESSION (agreed with the user, 8 Nov 2026, end of session)
+"Write-up" means **the final submission report only**: the thesis built from `thesis/`. The first-results report
+(`BSP_First_Results_Nov2026.pdf`, NOT SENT) is not to be updated further unless the user asks.
+
+**Part 1. Finish the content (the next steps already listed):**
+1. Add the §14.17 results to the thesis: spurious bans (ch5 position limits, ch8 policy), placebos (ch6 ban), COVID
+   halving and restoration (ch5/ch6). Numbers: docs/14 §14.17, 04 §4.14, memory/09.
+2. Policy section (ch8): framing with SEBI's study of retail F&O losses (master plan §8).
+3. Literature chapter adapted from `litreview_src/` / `BSP_Literature_Review.pdf`, after fixing its known errors
+   (11 §11.6). Verify every citation against the primary source.
+4. Optional, as the master plan lists them: band-of-inaction derivation appendix; replication guide appendix.
+
+**Part 2. Context-building re-read (before any formatting work):** read every word of everything: every thesis
+chapter and appendix, the model PDF and its source, every file in `docs/`, `handoff/`, `memory/`, `plan/`, the
+analysis outputs, the root PDFs and other artifacts. Purpose: full context, and catch any remaining inconsistency.
+
+**Part 3. Final build with the user's cosmetic changes:**
+- The user will give (a) a **zip of a LaTeX report template**: use only its **first few pages** (title page and front
+  matter); (b) a **PDF whose content-page formatting/design the user likes**: match that for the body.
+- Build the final PDF = the final deliverable.
+- **Lots of images/figures** so it is easy to read and follow (existing figures in `reports/figs/`, made by
+  `analysis/thesis_figures.py` and `data_pipeline/report_figs.py`; add more where they help: e.g. ban timeline, band
+  diagram, event-study paths, index maps). Follow the guide-facing rules: no em dashes, no AI-sounding phrases, no
+  internal references, plain first person.
+- Unzip the template into its own empty directory (untrusted files); do not run scripts from it.
+
+
 **Latest state (supersedes the rest of this card where it conflicts):** after the checkpoint below, the band-estimation
 chapter (`docs/15`), an exploratory IV check of H7 (opposite sign survives), the constraint index (`docs/16`,
 `data/processed/constraint_index_q.csv.gz`), the docs update, the **thesis draft** (`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`)

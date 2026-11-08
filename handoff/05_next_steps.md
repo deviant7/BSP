@@ -126,7 +126,7 @@ restoration. To fold into the thesis (ch5 position limits, ch6 ban, ch8 policy) 
 final write-up. Then: deep audit of the whole project (user request, 8 Nov), then the final write-up with the user's
 cosmetic changes. Literature-review chapter: adapt the existing 29-page review (litreview_src/) after fixing its known
 errors (handoff/11 §11.6), at the final write-up stage (user, 8 Nov).
-**Deep audit DONE 8 Nov (04 §4.15).** Next: the final write-up stage above (fold §14.17 in, retail-loss framing, literature
+**Deep audit DONE 8 Nov (04 §4.15). Agreed plan for the next session: `16_resume_here.md`, "PLAN FOR THE NEXT SESSION".** Next: the final write-up stage above (fold §14.17 in, retail-loss framing, literature
 chapter), then the user's cosmetic changes.
 
 ## Step 4. Inputs (status 7 Nov 2026)
