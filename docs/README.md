@@ -26,8 +26,8 @@ Exchange files for 2015 to 2026 (bans from 2010).
    mostly as a common shift; the band is about -35 to +24 bp around each stock's median, and the full cost of a new
    cash-and-carry position (27 to 31 bp) sits in its outer tail.
 5. **Short-sale access.** After a stock enters the F&O segment its price responds faster to market news; drift after bad
-   news does not weaken. Across all stocks, a constraint index built from frictions predicts slower price adjustment and
-   more drift after bad (not good) news.
+   news does not weaken. Across all stocks, a constraint index built from frictions predicts slower price adjustment (also after
+   controlling for size) and larger post-announcement drift.
 
 Details, including the tests that failed: [14_results.md](14_results.md), [15_band_estimation.md](15_band_estimation.md),
 [16_constraint_index.md](16_constraint_index.md).

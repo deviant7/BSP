@@ -1,4 +1,11 @@
-# 16. RESUME HERE (updated 7 November 2026, late: after the write-ups)
+# 16. RESUME HERE (updated 8 November 2026: after the deep audit)
+
+**Newest state (8 Nov; supersedes everything below where it conflicts):** remaining master-plan items done (spurious bans,
+placebos, COVID restoration: docs/14 §14.17, 04 §4.14). Deep audit done (04 §4.15): full rerun reproduces every output;
+fixes made, incl. **the constraint index's bad-news asymmetry is a size effect** (all write-ups corrected) and the model
+PDF's SLB wording. **Next (user's order):** fold §14.17 into thesis ch5/ch6/ch8 and the report; SEBI retail-loss framing
+in the policy section; literature chapter from `litreview_src/` after fixing its known errors (11 §11.6); then the user's
+cosmetic changes for the final submission write-up. Report still NOT SENT.
 
 **Latest state (supersedes the rest of this card where it conflicts):** after the checkpoint below, the band-estimation
 chapter (`docs/15`), an exploratory IV check of H7 (opposite sign survives), the constraint index (`docs/16`,

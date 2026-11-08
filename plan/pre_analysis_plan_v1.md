@@ -577,3 +577,10 @@ restricted to stocks with utilisation above 0.20 in the pre-window; window 20 da
   (0.019), in a ban -0.046 (0.014), log futures +0.243 (0.079; pre-trend +0.214 in the fake-date check), U -0.068 (0.032),
   level -2.8 (3.1); fake date 20 days earlier: utilisation, ban, U null. Halving (60 stocks, crash period): utilisation
   +0.092, ban 0.000, futures -0.184, U +0.026, level -15.7 (7.7).
+- 8 Nov 2026, constraint index with a size control (exploratory, `analysis/audit/index_size_check.py`, added during the
+  project audit after the C17 validation results were seen): the C17 validation regressions repeated with market-cap
+  decile fixed effects (decile of the previous month-end market cap) for drift and log market cap (and stock FE) for
+  price delay. |BHAR| +0.0230 (0.0008) -> +0.0147 (0.0012); bad-news BHAR -0.0083 (0.0014) -> -0.0007 (0.0023); good-news
+  BHAR +0.0006 -> +0.0011; price delay (15,227 stock-years with a market cap) +0.0605 -> +0.0359 (0.0043) with log market
+  cap, +0.0277 (0.0055) with stock FE as well. Reading: the delay and |drift| relations survive; the bad-news asymmetry is
+  a size effect. The C17 results are still reported first.

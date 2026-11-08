@@ -1,0 +1,9 @@
+Constraint index and drift with and without a size control (exploratory audit check). Two-way clustered SE.
+
+  all events, |BHAR|   quarter FE: +0.0230 (0.0008);  + size-decile FE: +0.0147 (0.0012); n 69673
+  bad news, BHAR       quarter FE: -0.0083 (0.0014);  + size-decile FE: -0.0007 (0.0023); n 23219
+  good news, BHAR      quarter FE: +0.0006 (0.0014);  + size-decile FE: +0.0011 (0.0024); n 23095
+
+  price delay ~ index_prev             | ys          : index +0.0605 (0.0028); n 15227
+  price delay ~ index_prev + log_mcap  | ys          : index +0.0359 (0.0043); n 15227
+  price delay ~ index_prev + log_mcap  | ys + symbol : index +0.0277 (0.0055); n 15227

@@ -22,7 +22,7 @@ OECD via FRED & Three-month interbank rate (monthly) & 2011 to 2026 \\
 \end{table}
 
 \section{Checks}
-The daily ``no fresh positions'' flags agree with the next day's official ban list on 99.85\% of stock-days; utilisation
+Of the 11,764 daily ``no fresh positions'' flags, 11,753 (99.9\%) match the next day's official ban list; utilisation
 exceeded 95\% on the day before 99.4\% of ban spells began and was at or below 80\% on the last day of 99.7\%. On three days
 the official list is missing at the exchange; those lists are imputed from the previous day's flags and continuing spells
 and flagged. The set of stocks in the open interest files matches the stock futures in the F\&O bhavcopy, and an
@@ -87,20 +87,23 @@ stable from year to year. The index is persistent (quarter-to-quarter rank corre
 
 \begin{table}[h]\centering\small
 \caption{Validation of the constraint index (frictions measured before outcomes)}\label{tab:index}
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-Outcome & Coefficient per s.d.\ (s.e.) & Observations \\
+Outcome & Per s.d.\ (s.e.) & Size-controlled & Obs. \\
 \midrule
-Price delay, next year (year fixed effects) & $+0.058$ (0.003) & 15,790 \\
-Price delay, next year (stock and year fixed effects) & $+0.032$ (0.005) & 15,790 \\
-Absolute drift after announcements, next quarter & $+0.023$ (0.001) & 69,673 \\
-Drift after bad news & $-0.008$ (0.001) & 23,219 \\
-Drift after good news & $+0.001$ (0.001) & 23,095 \\
+Price delay, next year (year FE) & $+0.058$ (0.003) & $+0.036$ (0.004) & 15,790 \\
+Price delay, next year (stock and year FE) & $+0.032$ (0.005) & $+0.028$ (0.006) & 15,790 \\
+Absolute drift after announcements & $+0.023$ (0.001) & $+0.015$ (0.001) & 69,673 \\
+Drift after bad news & $-0.008$ (0.001) & $-0.001$ (0.002) & 23,219 \\
+Drift after good news & $+0.001$ (0.001) & $+0.001$ (0.002) & 23,095 \\
 \bottomrule
 \end{tabular}
+
+\vspace{2pt}\parbox{0.92\textwidth}{\footnotesize FE: fixed effects. Size control: log market capitalisation for price delay (15,227 stock-years with a market capitalisation); market-capitalisation decile fixed effects for drift.}
 \end{table}
-More constrained stocks respond more slowly to market news, also within a stock over time, and drift more after bad but
-not good news, the asymmetry a short-sale constraint should produce (Table~\ref{tab:index}). These are associations; the
-drift regressions do not control for size. Within F\&O stocks, the short-channel component does not vary and SLB activity
+More constrained stocks respond more slowly to market news, also within a stock over time and after controlling for size,
+and drift more after announcements in either direction (Table~\ref{tab:index}). Without a size control, drift after bad
+news, but not good news, is stronger for more constrained stocks; with size-decile fixed effects this asymmetry disappears,
+so it reflects the smaller size of constrained stocks rather than the short-sale constraint. These are associations. Within F\&O stocks, the short-channel component does not vary and SLB activity
 appears to reflect demand to borrow rather than ease of borrowing, so for the futures-cash band of F\&O stocks I use a
 separate F\&O index that adds utilisation of the position limit (Chapter~\ref{ch:band}).

@@ -167,7 +167,9 @@ H7 IV (exploratory, 7 Nov): 2SLS delta_up -0.190 (0.077), delta_lo +0.088 (0.015
 ## 4.12 Constraint index deliverable (7 Nov 2026; PAP §11.14 C17; docs/16_constraint_index.md)
 All NSE stocks, 80,042 stock-quarters (3,310 stocks): no short channel, SLB scarcity, CS spread, log Amihud, IVOL; loadings
 +0.49/+0.45/+0.43/+0.49/+0.37, 53% variance, stable by year; persistence 0.90. Validation: delay +0.058 (t 20.8; within
-stock +0.032); |BHAR| +0.023 (t 27); bad-news BHAR -0.008, good-news +0.001 (asymmetric, as predicted; no size control);
+stock +0.032); |BHAR| +0.023 (t 27); bad-news BHAR -0.008, good-news +0.001 (asymmetric without a size control; **8 Nov audit: with
+size-decile FE the asymmetry vanishes, -0.0007 (0.0023), so it is a size effect**; delay +0.036 with log mcap, +0.028
+with stock FE too; |BHAR| +0.015 with size FE; PAP §11.2 entry; analysis/audit/index_size_check.py);
 F&O band width -6.4 (opposite; H1 F&O index is the relevant one there). Published: data/processed/constraint_index_q.csv.gz.
 
 ## 4.13 Write-ups (7 Nov 2026)
@@ -181,3 +183,21 @@ actual 412 ban days/45 spells/11 stocks vs old rule 1,505/112/36; gross+new limi
 bans ~73%. Placebos: fake bans null for H7 and level effect; index-only and peak-margin dates within placebo range.
 COVID restoration (70 stocks, 27 Nov 2020): utilisation -0.21, ban -4.6 pp, U -0.068 (t -2.1), level n.s.; fake-date
 check clean except futures volume. Halving confounded by the crash. To fold into thesis ch5/ch6/ch8 and the report.
+
+## 4.15 Deep audit of the whole project (8 Nov 2026; user asked for it before the submission write-up)
+- Reproduction: `analysis/audit/rerun_all.sh` cleared the caches and reran all 28 analysis scripts: every one exits 0;
+  outputs identical to the committed ones apart from run times and the last digit of one p-value. Now also runs the two
+  new estimator tests and the index size check (docs/12 §12.3).
+- New estimator tests: `analysis/test_cs_att.py` (CS ATT recovers -0.100: -0.1007, pre +0.0018; biased without the
+  covariate) and `analysis/test_level_effect.py` (level-effect code recovers +10 and -6 bp shifts).
+- Number check: `analysis/audit/check_numbers.py`; all decimals in thesis chapters, report and docs results pages match
+  outputs except section numbers and one fee-schedule input.
+- Fixes: thesis ch4 had the pre-audit "99.85%" agreement figure (corrected); "audit" wording removed from thesis appendices
+  A and B; the model PDF (also thesis Appendix C) had the old "SLB lists drawn from F&O securities" wording in three
+  places (corrected, PDF rebuilt; the version the guide received is archived as
+  `models_src/modelC/BSP_Model_C_as_sent_Oct2026.pdf`); **the constraint index's bad-news asymmetry is a size effect**
+  (corrected in docs/16, docs/README, thesis abstract, ch1, ch4 table, ch7 text and summary, report §7); ch4 index table
+  given a size-control column and fitted to the page.
+- Style scan of all guide-facing sources: no em dashes, no internal labels, no AI-sounding words. Both PDFs rebuilt
+  (thesis 52 pp, 0 overfull boxes; report 5 pp).
+

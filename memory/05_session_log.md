@@ -452,3 +452,10 @@
   confounded. docs/14 §14.17; handoff 04 §4.14, 05 Step 3c, 09. User (8 Nov): after these, a deep audit of the whole
   project, then the final write-up (user will specify mostly cosmetic changes); lit-review chapter from the existing
   review later.
+- **8 Nov: deep audit of the whole project** (user request). Full rerun (`analysis/audit/rerun_all.sh`): all 28 scripts
+  exit 0, outputs reproduce. New tests: CS ATT (-0.1007 vs -0.10) and level-effect code (+10/-6 bp recovered). Number
+  check script: everything matches. Fixes: thesis ch4 "99.85%" (pre-audit figure); "audit" wording in thesis appendices;
+  model PDF SLB wording (3 places; sent copy archived); **index bad-news asymmetry disappears with size-decile FE
+  (-0.0007, se 0.0023)**: corrected docs/16, README, thesis abstract/ch1/ch4/ch7, report §7; delay survives (+0.036 log
+  mcap; +0.028 with stock FE). PAP §11.2 entry logged. Both PDFs rebuilt clean. Lesson: check every cross-sectional
+  "constraint" result against size before writing it up.

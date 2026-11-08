@@ -47,7 +47,9 @@ open+hold 27.1/27.3/28.0/31.0 (25-38 with brokerage range); roll 4.0/4.3/5.0/8.0
 
 ## Constraint index (C17)
 All NSE stocks, 80,042 stock-quarters (3,310 stocks); loadings no_short .49, slb .45, cs .43, lamihud .49, ivol .37; 53%;
-stable by year; persistence 0.90. Delay +0.058 (t 20.8), within stock +0.032; |BHAR| +0.023; bad -0.008, good +0.001; F&O
+stable by year; persistence 0.90. Delay +0.058 (t 20.8), within stock +0.032; |BHAR| +0.023; bad -0.008, good +0.001.
+**Size check (8 Nov audit, exploratory):** size-decile FE: bad -0.0007 (0.0023) → asymmetry is a SIZE effect; |BHAR|
++0.0147; delay +0.0359 with log mcap, +0.0277 with stock FE (n 15,227). F&O
 band width -6.4 (opposite → use H1 F&O index for bands). File `data/processed/constraint_index_q.csv.gz`.
 
 ## Facts verified on 7 Nov (primary sources)
@@ -59,7 +61,8 @@ Jul 2020, NSE charges Oct 2024.
 ## Interpretation in one paragraph (as written in the thesis)
 Position limits bind hard on trading; their price effect is not the reduce-only arbitrage channel but appears at ban start
 (blocked new demand) and fades within a week; enforcement matters (intraday checks). Short-sale access speeds price
-adjustment (F&O entry, constraint index) but evidence on overpricing/bad-news drift is mixed. Costs shape a wide asymmetric
+adjustment (F&O entry, constraint index, robust to size) but evidence on overpricing/bad-news drift is mixed (the index's
+bad-news link is a size effect). Costs shape a wide asymmetric
 band; edges do not move one-for-one with STT; new-entry cost in the outer tail, roll cost small. Capital: weak traces in
 the predicted direction. Ten secondary tests unadjusted: read as a pattern.
 

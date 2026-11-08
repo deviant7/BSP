@@ -78,3 +78,12 @@
   Implication to check: H7's regime slopes (OLS) on ban days, where trading is thinner, could be affected; the H7
   liquid-days diagnostic argues against noise, but an IV version (x_(t-2) as instrument) of H7 is a worthwhile exploratory
   robustness check (log in §11.2 if run). DONE 7 Nov: H7's opposite sign survives (delta_up -0.19, delta_lo +0.09 in 2SLS).
+
+## 14.7 From the deep audit (8 Nov 2026)
+- Constraint index: its link with drift after bad news is a size effect (size-decile FE remove it). Any claim that the
+  index captures short-sale-driven slow absorption of bad news is wrong; the delay and |drift| links survive size controls
+  but remain associations. Constrained stocks are much smaller; size confounds most cross-sectional comparisons (H5 too).
+- The version of the model PDF the guide received (Oct report appendix) still has the old SLB wording; the corrected PDF
+  is in the thesis. Mention the correction to the guide when the next document is sent.
+- Market cap is missing for some stock-years (15,227 of 15,790 in the delay panel have it), so size-controlled delay
+  estimates use a slightly smaller sample.

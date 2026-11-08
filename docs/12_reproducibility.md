@@ -83,14 +83,29 @@ python3 -I analysis/band_estimation.py
 python3 -I analysis/band_exploratory.py          # exploratory
 python3 -I analysis/band_costs.py
 python3 -I analysis/constraint_index.py          # writes data/processed/constraint_index_q.csv.gz
+python3 -I analysis/audit/index_size_check.py    # exploratory size control for the index validation
+# remaining items of the master plan (plan §11.15) and the figures
+python3 -I analysis/spurious_bans.py
+python3 -I analysis/placebos.py
+python3 -I analysis/covid_halving.py
+python3 -I analysis/thesis_figures.py
 
 # 4. other checks
 python3 -I analysis/test_setar_simulated.py
+python3 -I analysis/test_cs_att.py                # Callaway-Sant'Anna estimator recovers a known effect
+python3 -I analysis/test_level_effect.py          # level-effect code recovers known in-ban shifts
 python3 -I analysis/audit/audit_coverage.py data/raw
 python3 -I analysis/audit/audit_prices.py data/raw
 python3 -I analysis/audit/audit_oi_alignment.py data/raw
 (cd models_src/modelC && python3 verify_modelC.py)
 ```
+
+Step 3 and the estimator checks can be run in one go, from the processed data, with
+`bash analysis/audit/rerun_all.sh LOGDIR` (it clears the analysis caches first and logs every script); on the current
+build every script exits cleanly and reproduces the committed outputs apart from run times and the last digit of one
+p-value. `python3 -I analysis/audit/check_numbers.py` lists every decimal number quoted in the thesis, the results
+report and the results pages of these docs that does not appear, after rounding, in an analysis output; on the current
+build the only items listed are section numbers and one cost input taken from the exchange's fee schedule.
 
 Approximate run times on one machine: the open-interest and ban files about 40 minutes; the price files about
 2.5 hours; each event-list download 10 to 30 minutes; each build a few minutes.
