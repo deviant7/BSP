@@ -533,3 +533,36 @@ quarterly basis band width on the index (as H1); (iv) persistence: quarter-to-qu
   two-way clustered SE (456,344 obs, 8,027 ban days). 2SLS: delta_up -0.190 (se 0.077), delta_lo +0.088 (0.015),
   delta_up - delta_lo -0.279 (0.079); OLS on the same sample -0.085 / +0.102. The opposite-sign rejection of H7 is not a
   measurement-noise artefact. By era (2SLS): end-of-day -0.153 / +0.090; intraday -0.381 (0.236) / +0.012.
+
+### 11.15 Remaining master-plan items, specifications fixed on 8 Nov 2026 BEFORE they were run
+Known beforehand: all results above. These items come from the master plan (§6.4 COVID halving, §8 policy, §9 placebos,
+§0 peak margins); none is in the frozen primary or secondary lists, so all are reported as exploratory/descriptive.
+**C18. Spurious bans (treatment side only).** (a) *Pre-reform entries* (2015 to Sep 2025, spells as in C7 a without the
+clean-pre-period filter): decompose the change in log utilisation over the crossing day (file of day t0-1 against
+t0-2) into the change in log gross OI and minus the change in log MWPL. An entry is *denominator-driven* if the MWPL fell
+on that day and OI_(t0-1) / MWPL_(t0-2) <= 0.95 (it would not have crossed at the old limit); reported with the share of
+entries whose MWPL fell within the five days before. (b) *Post-reform counterfactual bans* (1 Oct 2025 to 27 Oct 2026):
+a ban state machine (enter the next day when end-of-day utilisation > 0.95; leave after the day utilisation <= 0.80),
+validated by applying it to actual FutEq utilisation and comparing with the official ban list; then applied to (i) gross
+OI / new MWPL (old measure, new limit), (ii) FutEq OI / old-formula limit, (iii) gross OI / old-formula limit (the old
+rule). Old-formula limit = new MWPL x stock-specific ratio MWPL(30 Sep 2025) / MWPL(1 Oct 2025), which keeps the new
+limit's corporate-action and quarterly updates and freezes the old-to-new ratio (approximation stated). Outcomes: ban
+stock-days, spells, stocks. Same machine on pre-reform gross utilisation as a validation of the machine.
+**C19. Placebos.** (a) *Fake ban dates:* every actual pre-reform spell shifted 60 trading days later for the same stock
+(same length), kept only if no actual ban day of that stock falls within the fake spell or 5 days either side; run the H7
+specification (C2, pct thresholds) with the fake ban indicator replacing the real one (real ban days dropped), and the
+level-effect design (C7) with fake entries. Prediction: no effect. (b) *Index-only reforms* (SEBI 2024/132; single-stock
+derivatives not targeted): the H3 statistic (C4: change in stock q80, 40 trading days each side) at 20 Nov 2024, 3 Feb 2025
+(first trading day on or after 1 Feb) and 1 Apr 2025, ranked against the 30 H3 placebo dates. Prediction: not unusual.
+Windows overlapping the STT event of 1 Oct 2024 are noted. (c) *Peak-margin phase-in* (25% 1 Dec 2020, 50% 1 Mar 2021,
+75% 1 Jun 2021, 100% 1 Sep 2021): the same statistic at each date (descriptive; the model gives no sharp prediction
+because margin rules mainly bind intraday leverage). (d) The master plan's "non-F&O stocks for ban effects" is covered
+by design: the basis exists only for F&O stocks and date fixed effects already use non-banned stocks as controls.
+**C20. COVID MWPL halving and restoration.** (a) *Restoration (main):* treated = stocks whose MWPL doubled in the file of
+26 Nov 2020 (effective 27 Nov); controls = all other F&O stocks; window 40 trading days before and after; DiD
+y = b * Post x Treated + stock FE + date FE, SE two-way clustered; outcomes: utilisation omega_t (first stage), ban
+indicator, log(1 + futures contracts), upper/lower exceedance U, L and level m - q50 (C11 a thresholds). Prediction (model
+anticipation result): restoring the limit lowers utilisation and bans and lowers U. (b) *Halving:* treated = stocks halved
+in the files of 20 to 27 Mar 2020; same outcomes and window around 23 Mar 2020; reported with the caveat that the halving
+coincided with the March 2020 crash and selected stocks on volatility and utilisation. (c) Robustness for (a): controls
+restricted to stocks with utilisation above 0.20 in the pre-window; window 20 days.
