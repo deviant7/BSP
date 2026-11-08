@@ -1,0 +1,23 @@
+Spurious bans before and after the October 2025 reform (PAP §11.15 C18). Treatment side only.
+
+(a) Pre-reform ban entries (2015 to Sep 2025):
+  entries analysed 1744 (of 1744 spells); utilisation on the crossing day > 0.95: 0.995
+  MWPL fell on the crossing day: 8 (0.005); denominator-driven (would not have crossed at the old limit): 7 (0.004)
+  MWPL fell at least once in the five days before entry: 0.017
+  mean change in log utilisation on the crossing day (entries with positive OI on both days, n 1743): 0.1944; from OI 0.1918, from the MWPL 0.0026
+
+(b) Ban state machine (enter after a day > 0.95; leave after a day <= 0.80):
+  validation, pre-reform gross utilisation vs official list: agreement 0.9999; actual ban days 9003, simulated 9025, both 9001, simulated only 24, actual only 2
+  validation, post-reform FutEq / new MWPL vs official list: agreement 1.0000 (actual 412, simulated 412)
+
+  Post-reform counterfactuals, 1 Oct 2025 to 2026-10-27 (stocks in F&O on 30 Sep and 1 Oct 2025; 24 later entrants excluded). Ban stock-days / spells / stocks:
+    actual (official list)                              412 /   45 /  11
+    simulated: FutEq OI, new MWPL (the new rule)        412 /   45 /  11
+    gross OI, new MWPL (old measure, new limit)        6256 /  296 /  85
+    FutEq OI, old-formula limit                           1 /    1 /   1
+    gross OI, old-formula limit (the old rule)         1505 /  112 /  36
+
+  Reading: the measure change (gross -> FutEq) lowers utilisation and removes bans; the formula change (old -> new
+  limit) raises it and adds bans; the new rule combines the two. Approximation: the old-formula limit freezes each
+  stock's old-to-new ratio of 1 Oct 2025.
+  median utilisation on post-reform days: u_fe_new 0.269, u_gr_new 0.441, u_fe_old 0.179, u_gr_old 0.295
