@@ -462,3 +462,37 @@ prediction. The groups differ greatly in size, which limits what this comparison
 
 All secondary p-values are unadjusted, as the plan states; with ten secondary statistics, one or two values below 0.05
 would be expected by chance even with no effects.
+
+## 14.17 Further checks from the master plan (exploratory)
+
+Specified before running in the plan's log (§11.15). Code `analysis/spurious_bans.py`, `analysis/placebos.py`,
+`analysis/covid_halving.py`; outputs of the same names.
+
+**How many bans were "spurious"?** Before October 2025 bans were driven by open interest, not by the limit: on the day
+utilisation crossed 95% the MWPL fell for 8 of 1,744 entries, and only 7 (0.4%) would not have crossed at the previous
+day's limit. For the year after the reform, a simulation of the ban rule (which reproduces the official ban lists exactly)
+compares the new rule with counterfactual rules for the same stocks:
+
+| Rule (1 Oct 2025 to 27 Oct 2026) | Ban stock-days | Spells | Stocks |
+|---|---|---|---|
+| New rule: delta-adjusted OI, new MWPL (actual) | 412 | 45 | 11 |
+| Old rule: gross OI, old-formula limit | 1,505 | 112 | 36 |
+| Gross OI, new MWPL | 6,256 | 296 | 85 |
+| Delta-adjusted OI, old-formula limit | 1 | 1 | 1 |
+
+The reform cut bans by about three quarters relative to the old rule. Measuring open interest in delta terms removes almost
+all bans; the lower limit on its own would have multiplied them; the new rule combines the two. (The old-formula limit
+keeps each stock's ratio of old to new limit from 1 October 2025, an approximation.)
+
+**Placebos.** Shifting every pre-reform ban spell 60 trading days later (same stock and length, away from real bans) gives
+no H7 effect (delta_up +0.037, se 0.047; delta_lo -0.028, se 0.038) and no level effect (mean +1.0 bp, no composition
+gradient), so neither result is produced by the method. The index-derivative reforms of November 2024, February 2025 and
+April 2025 do not move single-stock band edges beyond the placebo range. The peak-margin phases of December 2020 to
+September 2021 move the upper percentile in both directions (+9.6 bp at 50%, -9.9 bp at 75%), with no consistent effect.
+
+**The 2020 halving and restoration of the MWPL.** When the limit was restored for 70 stocks on 27 November 2020, their
+utilisation fell by 0.21 (se 0.02) and their ban days by 4.6 percentage points relative to other F&O stocks, and their
+basis was less often in its upper tail (-0.068, se 0.032), as the anticipation result predicts: a looser limit makes rich
+futures less common. The basis level did not change significantly (-2.8 bp), and a fake date 20 days earlier shows no
+effect on utilisation, bans or the upper tail. Futures volume rose, but it was already rising before. The March 2020
+halving coincided with the crash and selected stocks on volatility and utilisation; it is reported but not interpreted.

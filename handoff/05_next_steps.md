@@ -120,6 +120,13 @@ h1_frictions.py, h4_capital.py, h5_anomalies.py). New data: SLB bhavcopies, AMFI
 5. Open interpretive threads (handoff/14): VWAP vs close basis on ban days; long vs short build-up; RD basis gap before the
    ban; 8 Dec 2025 broker date.
 
+## Step 3c. DONE 8 Nov 2026: remaining master-plan items (PAP §11.15; docs/14 §14.17)
+Spurious bans (counterfactual ban simulation), placebos (fake bans, index-only reforms, peak margins), COVID halving and
+restoration. To fold into the thesis (ch5 position limits, ch6 ban, ch8 policy) and the first-results report in the
+final write-up. Then: deep audit of the whole project (user request, 8 Nov), then the final write-up with the user's
+cosmetic changes. Literature-review chapter: adapt the existing 29-page review (litreview_src/) after fixing its known
+errors (handoff/11 §11.6), at the final write-up stage (user, 8 Nov).
+
 ## Step 4. Inputs (status 7 Nov 2026)
 
 | Input | Status |

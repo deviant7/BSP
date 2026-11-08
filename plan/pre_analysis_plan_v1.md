@@ -566,3 +566,14 @@ anticipation result): restoring the limit lowers utilisation and bans and lowers
 in the files of 20 to 27 Mar 2020; same outcomes and window around 23 Mar 2020; reported with the caveat that the halving
 coincided with the March 2020 crash and selected stocks on volatility and utilisation. (c) Robustness for (a): controls
 restricted to stocks with utilisation above 0.20 in the pre-window; window 20 days.
+- 8 Nov 2026, results of §11.15 (C18-C20; exploratory by design): (C18) pre-reform entries are OI-driven: the MWPL fell on
+  the crossing day for 8 of 1,744 entries and only 7 (0.4%) would not have crossed at the old limit; mean change in log
+  utilisation on the crossing day 0.194, of which 0.192 from OI. The ban state machine reproduces the official lists
+  (99.99% pre-reform, 100% post-reform). Post-reform counterfactuals (1 Oct 2025 to 27 Oct 2026): actual 412 ban
+  stock-days / 45 spells / 11 stocks; old rule (gross OI, old-formula limit) 1,505 / 112 / 36; gross OI with the new limit
+  6,256 / 296 / 85; FutEq with the old limit 1 / 1 / 1. (C19) fake bans: H7 delta_up +0.037 (0.047), delta_lo -0.028
+  (0.038); level effect mean +1.0, no gradient; index-only reform dates and peak-margin dates within the placebo range
+  (peak margin 50% +9.6, 75% -9.9: no consistent sign). (C20) restoration (70 stocks, 27 Nov 2020): utilisation -0.214
+  (0.019), in a ban -0.046 (0.014), log futures +0.243 (0.079; pre-trend +0.214 in the fake-date check), U -0.068 (0.032),
+  level -2.8 (3.1); fake date 20 days earlier: utilisation, ban, U null. Halving (60 stocks, crash period): utilisation
+  +0.092, ban 0.000, futures -0.184, U +0.026, level -15.7 (7.7).

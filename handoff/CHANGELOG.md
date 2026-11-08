@@ -30,3 +30,4 @@
 - 7 Nov 2026: write-ups (thesis/ draft 52 pp; first-results report 5 pp, not sent); docs updated first; memory/09 findings digest; 03, 04 (§4.13 + documents), 05, 12, 16 header, CLAUDE.md.
 - 7 Nov 2026 END OF SESSION: register changelog, master-plan status note, 07 (C16-C17), 04 (git, container), 14 (waiting list), 16 (write-up rebuild commands), neutral pronouns; memory/05 end entry.
 - 8 Nov 2026 (new session): context re-gathered; smoke tests pass; stale entries fixed (01 pronoun, 10 statuses, memory/04); open master-plan items listed in memory/05.
+- 8 Nov 2026: spurious bans, placebos, COVID halving (PAP §11.15 C18-C20 + results entry; analysis/spurious_bans.py, placebos.py, covid_halving.py; docs/14 §14.17; 04 §4.14; 05 Step 3c; 09).

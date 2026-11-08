@@ -446,3 +446,9 @@
   SEBI retail-loss framing (plan §8); appendix on the band-of-inaction derivation and a replication guide (plan §11) are
   thin. Optional: XBRL SUE; put-call parity. Waiting on the user: review of thesis draft and first-results report; send
   decision; library papers; Prowess (optional); go-ahead to fix the project document.
+- **8 Nov: remaining master-plan items** (PAP §11.15 C18-C20 committed first, 1772cb9). Spurious bans: pre-reform OI-driven;
+  post-reform reform cut bans ~73% vs old rule (simulation validated). Placebos: fake bans null; index-only and peak-margin
+  dates in placebo range. COVID restoration: utilisation -0.21, bans -4.6 pp, U -0.068 (anticipation fits); halving
+  confounded. docs/14 §14.17; handoff 04 §4.14, 05 Step 3c, 09. User (8 Nov): after these, a deep audit of the whole
+  project, then the final write-up (user will specify mostly cosmetic changes); lit-review chapter from the existing
+  review later.

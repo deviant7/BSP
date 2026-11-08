@@ -174,3 +174,10 @@ F&O band width -6.4 (opposite; H1 F&O index is the relevant one there). Publishe
 Thesis draft (`thesis/`, 8 chapters + 3 appendices, 52 pp, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the
 guide (`BSP_First_Results_Nov2026.pdf`, 5 pp, not sent). Both follow the guide-facing style rules. The report corrects the
 October report's SLB wording and counts. Digest of every finding: `memory/09_findings_digest.md`.
+
+## 4.14 Remaining master-plan items (8 Nov 2026; PAP §11.15 C18-C20; docs/14 §14.17)
+Spurious bans: pre-reform entries OI-driven (0.4% denominator-driven); post-reform simulation (validated 99.99%/100%):
+actual 412 ban days/45 spells/11 stocks vs old rule 1,505/112/36; gross+new limit 6,256; FutEq+old limit 1 → reform cut
+bans ~73%. Placebos: fake bans null for H7 and level effect; index-only and peak-margin dates within placebo range.
+COVID restoration (70 stocks, 27 Nov 2020): utilisation -0.21, ban -4.6 pp, U -0.068 (t -2.1), level n.s.; fake-date
+check clean except futures volume. Halving confounded by the crash. To fold into thesis ch5/ch6/ch8 and the report.
