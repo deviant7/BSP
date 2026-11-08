@@ -23,7 +23,7 @@ Read all of `handoff/` in the order it gives before doing substantive work.
   (`plan/archive/`, `REMOVED_ITEMS_REGISTER.md`); guide-facing documents have no internal references, no em dashes, no
   AI-sounding phrases; `docs/` documents the final form only (no history). Full list: `handoff/02_people_rules_and_working_style.md`.
 
-## State in one paragraph (7 Nov 2026)
+## State in one paragraph (8 Nov 2026)
 Theory done and verified (`BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models_src/modelC/`). Data built and audited
 (`data_pipeline/`, `data/processed/`, `docs/10_data_quality_audit.md`); SLB and AMFI arbitrage-fund series added 7 Nov.
 The guide received the October progress report, liked it and gave the go-ahead. Pre-analysis plan `plan/pre_analysis_plan_v1.md`
@@ -32,7 +32,7 @@ written into its §11 before each run (C1-C15), exploratory additions in §11.2.
 secondary tests are done** (results: `docs/14_results.md`, summary §14.16; `handoff/04_current_state.md` §4.7-4.10).
 Band-estimation chapter (`docs/15`) and constraint index (`docs/16`) done 7 Nov. **Write-ups done 7 Nov:** thesis draft
 (`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the guide (`BSP_First_Results_Nov2026.pdf`,
-**not sent**; send only on the user's go-ahead). Digest of all findings: `memory/09_findings_digest.md`. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
+**not sent**; send only on the user's go-ahead). Digest of all findings: `memory/09_findings_digest.md`. **8 Nov:** remaining master-plan items done (spurious bans, placebos, COVID restoration; PAP §11.15, `docs/14` §14.17) and a deep audit of the whole project (`handoff/04_current_state.md` §4.15: full rerun reproduces every output; the constraint index's bad-news asymmetry is a size effect, all write-ups corrected). Next: final write-up stage (fold §14.17 in, literature chapter, user's cosmetic changes). All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
 when the user asks.
 
 ## Folders
