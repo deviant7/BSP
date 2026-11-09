@@ -15,11 +15,19 @@ This card supersedes everything below it. The older cards are kept, unedited, as
     `analysis/deck_figures.py` -> `deck/figs/`.
   - `BSP_Presentation_Academic_Nov2026.pdf`, 56 pages, Beamer (Madrid, blue). Source `beamer/main.tex`; charts
     `analysis/beamer_figures.py` -> `beamer/figs/`.
+  - `BSP_Thesis_Short_Nov2026.pdf`, 50 pp, short version for quick readers (the full thesis remains the version of
+    record). Source `thesis_short/`: copies of the chapter files, trimmed; `main.tex` sets `\input@path` to `../thesis/`
+    for `bspstyle.sty` and `\graphicspath` to `../thesis/figs/`. Cut from the full version: approval, certificate,
+    declaration, acknowledgements, lists of figures/tables, symbols; appendices B (data) and C (model); literature
+    chapter condensed to three sections + Table tab:litbands; 8 secondary figures (aum, modelpath, mwpl, basisexp,
+    index, h4, spurious, covid, levelgroups, h5 minus those kept: 18 figures remain); ch5 paragraphs "Capital as a state"
+    and "Peak margins"; shorter ch6 caveats and ch4 validation paragraph. Added an "About this version" page.
+    **Any text change to the full thesis must be copied into `thesis_short/` by hand.**
   - Superseded but kept: `BSP_Thesis_Draft_Nov2026.pdf`; `BSP_First_Results_Nov2026.pdf` (NOT SENT, not maintained).
 - **Guide:** has the project document (Sep) and the October progress report only. Nothing sent since.
 
 ## 16.B Waiting on the user
-1. Review of the thesis and both decks; cosmetic changes.
+1. Review of the thesis, its short version and both decks; cosmetic changes.
 2. Front-page wording: degree "Bachelor of Science in Economics", date November 2026, acknowledgements (neutral draft for
    the user to rewrite), certificate text.
 3. Go-ahead before sending anything to the guide (then mention the SLB correction against the October report).
@@ -43,6 +51,8 @@ This card supersedes everything below it. The older cards are kept, unedited, as
   (writes `BSP_Presentation_Nov2026.pptx` and applies the theme); validate and render with the pptx skill scripts.
 - Academic deck: `python3 -I analysis/beamer_figures.py`; `cd beamer && pdflatex main.tex` twice; copy `main.pdf` to
   `../BSP_Presentation_Academic_Nov2026.pdf`; delete the aux files.
+- Short thesis: `cd thesis_short && pdflatex main.tex` twice; copy `main.pdf` to `../BSP_Thesis_Short_Nov2026.pdf`;
+  delete the aux files.
 - Checks after any text edit: style scan (no em/en dashes, no AI words, no internal labels) and
   `python3 -I analysis/audit/check_numbers.py` (only section numbers and one fee input should be unmatched).
 

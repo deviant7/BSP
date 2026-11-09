@@ -97,4 +97,5 @@ the predicted direction. Ten secondary tests unadjusted: read as a pattern.
   losses: 93% of >1 cr individual F&O traders lost money FY22-FY24); appendices A plan, B data, C model.
 - Decks: consulting `BSP_Presentation_Nov2026.pptx` (37 slides) and academic Beamer `BSP_Presentation_Academic_Nov2026.pdf`
   (56 pages); same numbers as the thesis.
+- Short thesis `BSP_Thesis_Short_Nov2026.pdf` (50 pp, `thesis_short/`): same results, fewer figures and robustness details.
 

@@ -17,6 +17,7 @@ files that make up the project, the software needed and the exact sequence of co
 | `reports/figs/`, `reports/tables/` | Figures and tables generated from the processed data |
 | `thesis/` | LaTeX source of the final thesis (`main.tex`, `bspstyle.sty` page design, `frontmatter.tex`, `abstract.tex`, chapters, appendices A to C, references); figures in `thesis/figs/` from `analysis/thesis_figures_final.py` |
 | `deck/` | Presentation deck in a consulting format: `build_deck.js` (pptxgenjs) and charts in `deck/figs/` from `analysis/deck_figures.py`; output `BSP_Presentation_Nov2026.pptx` |
+| `thesis_short/` | Short version of the thesis (about 50 pages): trimmed copies of the chapter files, using the style and figures of `thesis/`; output `BSP_Thesis_Short_Nov2026.pdf` |
 | `beamer/` | Academic presentation in LaTeX Beamer: `main.tex` and charts in `beamer/figs/` from `analysis/beamer_figures.py`; output `BSP_Presentation_Academic_Nov2026.pdf` |
 | `references/` | PDFs of the papers and regulatory documents cited, with an index |
 
@@ -100,6 +101,7 @@ python3 -I analysis/deck_figures.py                # charts of the consulting de
 NODE_PATH=<folder>/node_modules node deck/build_deck.js   # BSP_Presentation_Nov2026.pptx
 python3 -I analysis/beamer_figures.py              # charts of the academic deck (beamer/figs/)
 (cd beamer && pdflatex main.tex && pdflatex main.tex)   # the academic deck PDF
+(cd thesis_short && pdflatex main.tex && pdflatex main.tex)   # the short thesis PDF
 
 # 4. other checks
 python3 -I analysis/test_setar_simulated.py

@@ -32,7 +32,7 @@ written into its §11 before each run (C1-C15), exploratory additions in §11.2.
 secondary tests are done** (results: `docs/14_results.md`, summary §14.16; `handoff/04_current_state.md` §4.7-4.10).
 Band-estimation chapter (`docs/15`) and constraint index (`docs/16`) done 7 Nov. **Write-ups done 7 Nov:** thesis draft
 (`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the guide (`BSP_First_Results_Nov2026.pdf`,
-**not sent**; send only on the user's go-ahead). Digest of all findings: `memory/09_findings_digest.md`. **8 Nov:** remaining master-plan items done (spurious bans, placebos, COVID restoration; PAP §11.15, `docs/14` §14.17) and a deep audit of the whole project (`handoff/04_current_state.md` §4.15: full rerun reproduces every output; the constraint index's bad-news asymmetry is a size effect, all write-ups corrected). **9 Nov:** final thesis built: `BSP_Thesis_Final_Nov2026.pdf` (source `thesis/`, design `thesis/bspstyle.sty`, figures `analysis/thesis_figures_final.py`). Presentation deck `BSP_Presentation_Nov2026.pptx` (37 slides, consulting format of the user's reference decks; `deck/build_deck.js`, `analysis/deck_figures.py`). Academic backup deck (Beamer): `BSP_Presentation_Academic_Nov2026.pdf` (`beamer/main.tex`, `analysis/beamer_figures.py`). Next: the user's review of thesis and both decks. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
+**not sent**; send only on the user's go-ahead). Digest of all findings: `memory/09_findings_digest.md`. **8 Nov:** remaining master-plan items done (spurious bans, placebos, COVID restoration; PAP §11.15, `docs/14` §14.17) and a deep audit of the whole project (`handoff/04_current_state.md` §4.15: full rerun reproduces every output; the constraint index's bad-news asymmetry is a size effect, all write-ups corrected). **9 Nov:** final thesis built: `BSP_Thesis_Final_Nov2026.pdf` (source `thesis/`, design `thesis/bspstyle.sty`, figures `analysis/thesis_figures_final.py`). Presentation deck `BSP_Presentation_Nov2026.pptx` (37 slides, consulting format of the user's reference decks; `deck/build_deck.js`, `analysis/deck_figures.py`). Academic backup deck (Beamer): `BSP_Presentation_Academic_Nov2026.pdf` (`beamer/main.tex`, `analysis/beamer_figures.py`). Short thesis for quick readers: `BSP_Thesis_Short_Nov2026.pdf` (50 pp; `thesis_short/`, reuses the main thesis style and figures; the full thesis stays the version of record). Next: the user's review of thesis and both decks. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
 when the user asks.
 
 ## Folders
@@ -40,11 +40,11 @@ when the user asks.
 - `plan/` master plan v2, frozen PAP, archive + removed-items register
 - `data_pipeline/` scripts + README · `data/processed/` outputs (raw data and basis panel git-ignored; rebuild per `docs/12`)
 - `analysis/` estimators, simulated-data tests, audit scripts · `models_src/` model sources · `references/` papers + notes
-- Root PDFs: **final thesis `BSP_Thesis_Final_Nov2026.pdf`**, **decks `BSP_Presentation_Nov2026.pptx`/.pdf (consulting) and
+- Root PDFs: **final thesis `BSP_Thesis_Final_Nov2026.pdf`** (+ short version `BSP_Thesis_Short_Nov2026.pdf`), **decks `BSP_Presentation_Nov2026.pptx`/.pdf (consulting) and
   `BSP_Presentation_Academic_Nov2026.pdf` (Beamer)**, project document (guide has it), Oct 2026 progress report (sent),
   current model, earlier thesis draft, first-results report (not sent, not maintained); superseded Models A/B, Sep 28 note
   and literature review are internal and kept. User-supplied templates and design references are also in the root.
-- `thesis/` final thesis LaTeX (`bspstyle.sty` design); `deck/` consulting deck generator; `beamer/` academic deck;
+- `thesis/` final thesis LaTeX (`bspstyle.sty` design); `thesis_short/` 50-page short version; `deck/` consulting deck generator; `beamer/` academic deck;
   `memory/09_findings_digest.md` = every result in one place; `memory/10_reread_findings.md` = last full re-read.
 
 ## Tooling notes

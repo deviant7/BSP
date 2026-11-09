@@ -21,6 +21,7 @@ Resume card with first actions: `16_resume_here.md`. Results for outside readers
 | Further checks | Spurious bans, placebos, COVID halving and restoration (8 Nov) | `docs/14_results.md` §14.17; §4.14 |
 | Deep audit | Full rerun reproduces every output; fixes applied (8 Nov) | §4.15; `analysis/audit/` |
 | Final thesis | 78 pp, template front pages, report design, 26 figures (9 Nov) | `BSP_Thesis_Final_Nov2026.pdf`, `thesis/`; §4.16 |
+| Short thesis | 50 pp short version for quick readers (9 Nov) | `BSP_Thesis_Short_Nov2026.pdf`; `thesis_short/` |
 | Presentation decks | Consulting deck 37 slides; academic Beamer deck 56 pages (9 Nov) | `BSP_Presentation_Nov2026.pptx`, `BSP_Presentation_Academic_Nov2026.pdf`; `deck/`, `beamer/` |
 | Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
@@ -88,6 +89,7 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 | `BSP_Thesis_Draft_Nov2026.pdf` | Earlier draft | 61 pp copy of the 9 Nov content build before the redesign (52 pp on 7 Nov); superseded |
 | `BSP_Presentation_Nov2026.pptx` / `.pdf` (`deck/`) | Presentation, consulting format | 37 slides with speaker notes; 9 Nov 2026 |
 | `BSP_Presentation_Academic_Nov2026.pdf` (`beamer/`) | Presentation, academic Beamer | 56 pages incl. backup frames; 9 Nov 2026 |
+| `BSP_Thesis_Short_Nov2026.pdf` (`thesis_short/`) | Short version of the thesis | 50 pp, 18 figures; full thesis is the version of record; 9 Nov 2026 |
 | Templates and design references from the user | Inputs | IIT Bombay BTP template zip, `Main_content_formatting.pdf`, `GammaLong_Finals_v11.pdf`, `Presentation Deck Example.pdf`, Hyderabad and Trento Beamer zips |
 | `BSP_First_Results_Nov2026.pdf` (`progress_report_src/first_results_nov2026.tex`) | Guide-facing, **NOT SENT** | 5 pp; send only on the user's go-ahead |
 | `docs/` | Outside readers, final repo | Current (pages 01 to 16; updated 9 Nov) |
@@ -219,4 +221,8 @@ check clean except futures volume. Halving confounded by the crash. To fold into
   and `Presentation Deck Example.pdf`; source `deck/build_deck.js`, charts `analysis/deck_figures.py` -> `deck/figs/`.
 - Academic backup deck (9 Nov): `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, Madrid recoloured blue, from the user's
   Hyderabad and Trento Overleaf templates); source `beamer/main.tex`, charts `analysis/beamer_figures.py` -> `beamer/figs/`.
+- Short thesis (9 Nov, user request: about 50 pages, same format, readable): `BSP_Thesis_Short_Nov2026.pdf`, 50 pp,
+  source `thesis_short/` (reuses the main style and figures). Keeps every chapter, the main figures and tables and every
+  pre-specified result; drops the model and data appendices, formal front pages, 8 supporting figures and some robustness
+  paragraphs; literature condensed. Details: `16_resume_here.md` §16.A.
 

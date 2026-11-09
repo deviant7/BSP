@@ -70,7 +70,7 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | Constraint index | Built for all NSE stocks, 2015 to 2026, validated (page 16; data `constraint_index_q.csv.gz`) |
 | Further checks | Spurious bans before and after the 2025 reform, placebos, the 2020 halving and restoration (page 14, 14.17) |
 | Reproduction | A full rerun from the processed data reproduces every reported number (page 12) |
-| Write-ups | Final thesis `BSP_Thesis_Final_Nov2026.pdf` (source `thesis/`); presentation decks `BSP_Presentation_Nov2026.pptx` (consulting format, source `deck/`) and `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, source `beamer/`) |
+| Write-ups | Final thesis `BSP_Thesis_Final_Nov2026.pdf` (source `thesis/`) and its short version `BSP_Thesis_Short_Nov2026.pdf` (source `thesis_short/`); presentation decks `BSP_Presentation_Nov2026.pptx` (consulting format, source `deck/`) and `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, source `beamer/`) |
 
 ## Conventions
 

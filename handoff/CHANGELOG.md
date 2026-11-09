@@ -38,3 +38,4 @@
 - 9 Nov 2026: presentation deck BSP_Presentation_Nov2026.pptx/.pdf (deck/build_deck.js, analysis/deck_figures.py, deck/figs/); 04, 16, CLAUDE.md, memory/05.
 - 9 Nov 2026: academic Beamer deck BSP_Presentation_Academic_Nov2026.pdf (beamer/main.tex, analysis/beamer_figures.py, beamer/figs/); 04, 16, CLAUDE.md, memory/05.
 - 9 Nov 2026 END OF SESSION: in-depth update of memory (01-06, 08, 09), handoff (00-07, 09, 11-14, 16 rewritten), docs (README, 12), CLAUDE.md, master-plan status.
+- 9 Nov 2026: short thesis BSP_Thesis_Short_Nov2026.pdf (50 pp, thesis_short/); 00, 04, 12, 16; docs README, 12; CLAUDE.md; memory/05, 09.

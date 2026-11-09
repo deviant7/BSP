@@ -523,3 +523,11 @@
   14 (review items), 16 (rewritten resume card with design specs and rebuild commands; older cards archived below it);
   docs README (finding 6; status rows incl. write-ups), docs 12 (layout, software, rebuild steps for thesis and decks);
   CLAUDE.md folders; master-plan status line. Next session: start from handoff/16 §16.C.
+- **9 Nov, after the end-of-session update: short thesis.** User asked for a shorter version (about 50 pages, same
+  format, readable, first person, no em dashes or AI phrases, for the reader; the full thesis stays the main one). Built
+  `thesis_short/` (copies of the chapter files, trimmed; reuses `thesis/bspstyle.sty` and `thesis/figs/`) ->
+  `BSP_Thesis_Short_Nov2026.pdf`, 50 pages, 18 figures, 0 overfull boxes, no undefined references. Cut: formal front
+  pages (approval, certificate, declaration, acknowledgements, lists, symbols), appendices B and C, 8 supporting
+  figures (numbers kept in the text), ch5 "Capital as a state" and "Peak margins" paragraphs, shorter ch6 caveats and ch4
+  validation paragraph; literature condensed to three sections + band table; references pruned to the 29 cited. Added an
+  "About this version" page. Style scan clean. Text edits to the full thesis must be copied into `thesis_short/` by hand.
