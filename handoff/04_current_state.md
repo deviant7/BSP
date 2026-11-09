@@ -207,4 +207,5 @@ check clean except futures volume. Halving confounded by the crash. To fold into
 - Final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp) in the new design: template front pages, exhibit-style figures and
   tables (26 figures, 12 tables), native model appendix. The 7/8 Nov draft PDF `BSP_Thesis_Draft_Nov2026.pdf` is kept.
 - Open for the user: cosmetic changes; degree wording, date, acknowledgements; send decision.
-
+- Presentation deck (9 Nov): `BSP_Presentation_Nov2026.pptx` and `.pdf`, 37 slides, format of `GammaLong_Finals_v11.pdf`
+  and `Presentation Deck Example.pdf`; source `deck/build_deck.js`, charts `analysis/deck_figures.py` -> `deck/figs/`.

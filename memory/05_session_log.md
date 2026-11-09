@@ -490,3 +490,16 @@
   - 26 figures from `analysis/thesis_figures_final.py` -> `thesis/figs/` (Liberation Sans; palette #1F4E9A/#C0504D/greys,
     validated with the dataviz validator) + one TikZ design diagram; 12 restyled tables. Ch4 basis description now uses
     the analysis sample (median +1.1, p10 -39.1, p90 +26.8; written to analysis/output/thesis_figures_stats.txt).
+- **9 Nov: presentation deck built.** User committed two reference decks (`GammaLong_Finals_v11.pdf`, LibreOffice, letter 4:3;
+  `Presentation Deck Example.pdf`, Canva, 4:3). Both consulting style: grey 12pt section tracker; navy (#254780) 24pt bold
+  action title stating the takeaway; 16pt navy descriptive subtitle; double rule (thick navy + thin blue) under the
+  header; 14pt bold panel headers with navy underline; ~13pt body with bold lead-ins and bright-blue bold keywords;
+  yellow (#FFF2B3) black-bordered "so-what" callout near the bottom; 8pt source line bottom-left, 9pt page number
+  bottom-right; agenda dividers (Agenda title + navy band with the section name); navy label boxes + grey text boxes;
+  numbered navy circles; grey chevron between chart and "What the chart shows" panel; charts in bright blue / mid blue /
+  steel / near-black with thin black bar outlines, bold value labels, no gridlines, boxed legends; Arial-metric font.
+  Output: `BSP_Presentation_Nov2026.pptx` (+ PDF), 37 slides (title, agenda, exec summary, approach, ban, band, short
+  sales, conclusion, thank you, appendix), speaker notes on content slides. Generator `deck/build_deck.js` (pptxgenjs,
+  installed in the scratchpad, not the repo: `npm install pptxgenjs jszip` then NODE_PATH=... node deck/build_deck.js);
+  charts `analysis/deck_figures.py` -> `deck/figs/` (reuses thesis_figures_final data code, deck styling). Charts are
+  images to match the reference decks' chart style (not native PowerPoint charts).
