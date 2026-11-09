@@ -5,7 +5,14 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 ## Root
 | File | What it is | Status |
 |---|---|---|
-| `BSP_Thesis_Draft_Nov2026.pdf` | Thesis draft (52 pp) compiled from `thesis/` (7 Nov 2026) | C, I |
+| `BSP_Thesis_Final_Nov2026.pdf` | **Final thesis** (78 pp) compiled from `thesis/` (9 Nov 2026) | C |
+| `BSP_Thesis_Draft_Nov2026.pdf` | Earlier thesis draft (9 Nov content build, before the redesign) | S, I |
+| `BSP_Presentation_Nov2026.pptx` / `.pdf` | Presentation deck, consulting format, 37 slides (from `deck/`) | C |
+| `BSP_Presentation_Academic_Nov2026.pdf` | Presentation, academic Beamer, 56 pages (from `beamer/`) | C |
+| `IIT_Bombay_Unofficial_LaTeX_B_Tech_Project__BTP__Template.zip` | User-supplied template (front pages used in the thesis) | input |
+| `Main_content_formatting.pdf` | User-supplied report design (thesis page design follows it) | input |
+| `GammaLong_Finals_v11.pdf`, `Presentation Deck Example.pdf` | User-supplied consulting decks (format of the consulting deck) | input |
+| `Luminescence_Solar_..._Fiber_Geometry.zip`, `PhD__Presentation_Latex_Template_University_of_Hyderabad.zip` | User-supplied Beamer templates (academic deck) | input |
 | `BSP_First_Results_Nov2026.pdf` | First-results report for the guide, compiled from `progress_report_src/first_results_nov2026.tex`; NOT SENT | C |
 | `CLAUDE.md` | Project memory loaded automatically by Claude Code; points to `handoff/16_resume_here.md` and `00_START_HERE.md` | C, I |
 | `BSP_Project_Document.docx` / `.pdf` | Detailed study plan, Sep 2026 (identical content); the user's master plan of goals; has known errors (see 10) | C (goals), G |
@@ -24,7 +31,7 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | Path | Content |
 |---|---|
 | `handoff/` | This continuity brief (00 to 16 + CHANGELOG; 16 = resume card) |
-| `docs/` | Final-form documentation for outside readers (README, 01 to 14; 14 = results) |
+| `docs/` | Final-form documentation for outside readers (README, 01 to 16; 14 = results, 15 = band, 16 = index) |
 | `memory/` | Assistant's running notes: 01 context, 02 literature digest, 03 institutional facts, 04 models and audit, 05 session log (chronological, most detailed), 06 user style, 07 fact-check log, 08 earlier handoff (superseded by `handoff/`, kept), 09 findings digest (every result and number, 7 Nov 2026) |
 | `plan/BSP_Research_Plan_v2.md` | Master plan (scope table, theory summary, hypotheses H1 to H9, phases, measurement, chapters) |
 | `plan/pre_analysis_plan_v1.md` | Frozen test plan (`pap-v1` at 85dac3a) |
@@ -35,7 +42,9 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 | `analysis/` | `setar.py`, `test_setar_simulated.py`, `audit/`; `samples.py`, `inference.py`, `test_inference.py`; tests `h8_trading.py`, `h7_onesided.py`, `h7_diagnostics.py` (exploratory), `h3_costs.py`, `h6_outcomes.py`, `h6_fno.py`; secondary tests (7 Nov) `level_effect.py`, `level_effect_buildup.py` (exploratory), `density_test.py`, `rd_95.py`, `hysteresis.py`, `h9_regime.py`, `h2_badnews.py`, `h1_frictions.py`, `h4_capital.py`, `h5_anomalies.py`; `output/` result files (one `.txt` per test, plus `level_effect_events.csv.gz`) |
 | `models_src/` | LaTeX of Models A and B and their guide versions (superseded); `modelC/` (tex, compiled PDF copy, `verify_modelC.py`, `verify_output.txt`, `figs/fig_band.pdf`, `fig_path.pdf`, `fig_hist.pdf`) |
 | `progress_report_src/` | `progress_report_oct2026.tex` (the sent report; includes `../reports/tables/ban_by_year.tex` and figures; macros like `\basisN` hold basis numbers), `removed_guidance_questions.tex`, `progress_report.tex` (Sep 28 note) |
-| `thesis/` | LaTeX of the thesis draft: `main.tex`, `ch1_introduction` to `ch8_conclusion`, `appA_plan`, `appB_data`, `references` (appendix C includes the model PDF) |
+| `thesis/` | Final thesis LaTeX: `main.tex`, `bspstyle.sty` (page design), `frontmatter.tex`, `abstract.tex`, `ch1_introduction`, `ch_literature`, `ch2_institutions` to `ch8_conclusion` (chapters 3 to 9 in the PDF), `appA_plan`, `appB_data`, `appC_model` (native model appendix), `references`; `figs/` (26 PDFs from `analysis/thesis_figures_final.py` + model figures); `Images/iitb_logo.png`; `archive/main_draft_nov7.tex` |
+| `deck/` | Consulting deck generator `build_deck.js` (pptxgenjs) and `figs/` (PNG charts from `analysis/deck_figures.py`) |
+| `beamer/` | Academic Beamer deck `main.tex` and `figs/` (PDF charts from `analysis/beamer_figures.py`) |
 | `litreview_src/` | LaTeX of the literature review (main + 6 parts + references) |
 | `reports/figs/` | `ban_days_per_month.pdf`, `spell_lengths.pdf`, `utilisation_near_threshold.pdf`, `mwpl_ratio_oct2025.pdf`, `density_95.pdf` (7 Nov) |
 | `reports/tables/` | `ban_by_year.tex` (regenerated after the audit: 1,788 / 9,416) |
@@ -58,3 +67,9 @@ Git-ignored, rebuildable: `data/raw/slb/`, `data/raw/amfi_monthly/`, caches `fri
 - `BSP Proposal.docx` (the original proposal sent to the guide; desktop era).
 - The user's `fno_pit_3.xlsx` membership sheet (from an earlier project; evaluated, matched exactly).
 - Earlier desktop-assistant memory notes (their content is reflected in the chat logs and `memory/`).
+
+New on 8 and 9 Nov: `analysis/spurious_bans.py`, `placebos.py`, `covid_halving.py`, `audit/rerun_all.sh`,
+`audit/check_numbers.py`, `audit/index_size_check.py`, `test_cs_att.py`, `test_level_effect.py`,
+`thesis_figures_final.py`, `deck_figures.py`, `beamer_figures.py`; outputs `index_size_check.txt`,
+`thesis_figures_stats.txt`, `spurious_bans.txt`, `placebos.txt`, `covid_halving.txt`; `memory/10_reread_findings.md`.
+

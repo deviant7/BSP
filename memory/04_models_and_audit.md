@@ -72,3 +72,7 @@ Shown to the guide as the appendix of the October 2026 progress report (sent; sh
 - Model text to correct in the next guide-facing version: the short-sale table, the cash-only section and the F&O-
   inclusion test say F&O inclusion brings "short-selling and SLB eligibility"; SLB has covered liquid non-F&O stocks since
   2013 (short selling remains F&O-only). The sent PDF is unchanged.
+
+## 9 Nov 2026
+Model C is now also native Appendix C of the final thesis. The literature-review errors are fixed in the thesis's
+literature chapter; the internal review PDF itself is unchanged and not used.

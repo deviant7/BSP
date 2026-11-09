@@ -52,11 +52,12 @@ bands, FM, robustness, writing.
 - MWPL formula is 65× ADDV **in quantity (shares)** per NSE Clearing 119/2025 (the doc's 'delivery value' wording is wrong), floor 10% FF, quarterly.
 - Timeline in doc still lacks the theory stage (pending).
 
-## Current status (7 Nov 2026) — authoritative detail in handoff/16_resume_here.md and handoff/04_current_state.md
-Theory done (Model C). Data built and audited (bans/MWPL 2010–2026; prices, basis, announcements, returns, market caps).
-Progress report SENT; guide liked it, go-ahead given. PAP v1 frozen as tag `pap-v1` (85dac3a, on GitHub). All four primary
-tests run + Holm (H8, H3, H6 rejected at 5%; H7 rejected with the opposite sign). 7 Nov: ALL secondary tests run (summary
-docs/14 §14.16). Band chapter (docs/15) and constraint index (docs/16) done 7 Nov. Write-ups done 7 Nov: thesis draft (thesis/,
-BSP_Thesis_Draft_Nov2026.pdf, 52 pp) and first-results report (BSP_First_Results_Nov2026.pdf, NOT SENT). Full digest of
-findings: memory/09_findings_digest.md. Next: user review; send the report only on the user's go-ahead.
-(28 Oct status, kept for history: progress report final but not sent; PAP untagged.)
+## Current status (9 Nov 2026) — authoritative detail in handoff/16_resume_here.md and handoff/04_current_state.md
+Research complete: theory (Model C), data built and audited, PAP v1 frozen (`pap-v1`, 85dac3a), all primary tests (+ Holm:
+H8, H3, H6 supported on the pre-specified statistic; H7 rejected with the opposite sign), all secondary tests, band chapter,
+constraint index, further checks (spurious bans: 2025 rules cut ban days ~3/4; placebos null; COVID restoration fits
+anticipation), deep audit (full rerun reproduces every output; index bad-news asymmetry is a size effect).
+Deliverables 9 Nov: final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp, `thesis/`), consulting deck
+`BSP_Presentation_Nov2026.pptx` (37 slides, `deck/`), academic Beamer deck `BSP_Presentation_Academic_Nov2026.pdf`
+(`beamer/`). Guide has seen only the project document and the October report. Next: user's review and cosmetic changes.
+Still pending with the user: go-ahead to fix the project document's errors (short-selling line, 30x leg, timeline).

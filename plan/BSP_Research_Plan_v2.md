@@ -9,6 +9,11 @@ first-results report exist (`BSP_Thesis_Draft_Nov2026.pdf`, `BSP_First_Results_N
 Remaining from this plan: put-call parity (optional), SUE from XBRL (optional), policy chapter refinement, replication
 package. Results: `docs/14_results.md`, `docs/15_band_estimation.md`, `docs/16_constraint_index.md`.*
 
+*Status 9 Nov 2026 (added; nothing removed): the remaining items of §8 (spurious bans before and after the reform) and §9
+(placebos) were run on 8 Nov (PAP §11.15); a deep audit reproduced every output; the final thesis
+(`BSP_Thesis_Final_Nov2026.pdf`) and two presentation decks were built on 9 Nov. Still optional: put-call parity, SUE from
+XBRL, an RD on the F&O eligibility criteria, a separate crowding index.*
+
 *Builds on `BSP_Project_Document` (Sep 2026), whose goals stand. No calendar: phases are ordered by
 logical dependency only. [verify] = must be checked against a primary source; see
 `memory/07_fact_check.md` for the verification log.*

@@ -85,3 +85,12 @@ securities-in-ban CSV, shareholding pattern, results calendar, India VIX, F&O el
   Apr 2018 (older layout to Mar 2019). AUM Apr 2018 56,218 cr → Sep 2026 2,97,632 cr.
 - 30× volume MWPL leg: 2006 change to free float confirmed (Oneindia, 23 Sep 2006; SEBI 2010 circular keeps the 2006 method);
   the 2004 circular's text was not retrievable on 7 Nov.
+
+## Added 9 Nov 2026
+- COVID halving: 60 stocks halved in the 20 to 27 March 2020 files plus 1 on 29 April 2020 (61 in all); 70 restored in the
+  26 November 2020 file (rule applied dynamically, so more stocks were halved at the end than in March).
+- SEBI 2025/79 para 4.2 states the aim "Reduce instances of spurious F&O ban periods in single stocks"; para 5.2.5 ties
+  the MWPL to delivery volume "to reduce the potential manipulation". SEBI 2024/132 para 2 cites increased retail
+  participation and speculative expiry-day volumes.
+- SEBI PR 22/2024 (23 Sep 2024): 93% of >1 crore individual F&O traders lost money FY22-FY24 (avg ~Rs 2 lakh incl. costs),
+  aggregate >Rs 1.8 lakh crore; FY24 prop +Rs 33,000 cr, FPI +Rs 28,000 cr gross; 96-97% of their profits algorithmic.

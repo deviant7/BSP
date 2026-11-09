@@ -28,6 +28,9 @@ Exchange files for 2015 to 2026 (bans from 2010).
 5. **Short-sale access.** After a stock enters the F&O segment its price responds faster to market news; drift after bad
    news does not weaken. Across all stocks, a constraint index built from frictions predicts slower price adjustment (also after
    controlling for size) and larger post-announcement drift.
+6. **Position-limit rules.** Measured against the old rule applied to the same stocks, the October 2025 rules cut ban days
+   by about three quarters; restoring halved limits in November 2020 lowered utilisation and made a rich basis less common.
+   Placebo checks at false ban dates show neither the reversion result nor the fall in the basis at ban start.
 
 Details, including the tests that failed: [14_results.md](14_results.md), [15_band_estimation.md](15_band_estimation.md),
 [16_constraint_index.md](16_constraint_index.md).
@@ -65,6 +68,9 @@ Read the pages in order if the field is new to you; each page assumes only the o
 | Tests | All primary tests (with Holm correction) and all secondary tests run (page 14; summary 14.16) |
 | Band estimation | Threshold and smooth-transition estimates, states, costs (page 15) |
 | Constraint index | Built for all NSE stocks, 2015 to 2026, validated (page 16; data `constraint_index_q.csv.gz`) |
+| Further checks | Spurious bans before and after the 2025 reform, placebos, the 2020 halving and restoration (page 14, 14.17) |
+| Reproduction | A full rerun from the processed data reproduces every reported number (page 12) |
+| Write-ups | Final thesis `BSP_Thesis_Final_Nov2026.pdf` (source `thesis/`); presentation decks `BSP_Presentation_Nov2026.pptx` (consulting format, source `deck/`) and `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, source `beamer/`) |
 
 ## Conventions
 

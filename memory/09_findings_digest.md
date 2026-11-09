@@ -80,10 +80,21 @@ bad-news link is a size effect). Costs shape a wide asymmetric
 band; edges do not move one-for-one with STT; new-entry cost in the outer tail, roll cost small. Capital: weak traces in
 the predicted direction. Ten secondary tests unadjusted: read as a pattern.
 
-## Write-ups (7 Nov)
+## Write-ups (7 Nov; superseded by the 9 Nov final versions below)
 - `thesis/` (main.tex + ch1-ch8 + literature chapter (9 Nov) + appA plan + appB data + model PDF appendix + references)
   → `BSP_Thesis_Draft_Nov2026.pdf` (52 pp on 7 Nov; 61 pp on 9 Nov). Internal draft, guide-style language.
 - `progress_report_src/first_results_nov2026.tex` → `BSP_First_Results_Nov2026.pdf` (5 pp, guide-facing, NOT SENT): corrects
   the October report's SLB wording and counts (results dated from first dissemination); asks two questions (extend model for
   blocked new demand? take observed-state STR further?).
 - Figures: `analysis/thesis_figures.py` → reports/figs/fig_level_profile, fig_h9_tails, fig_band_years, fig_ban_R.
+
+## Final write-ups (9 Nov 2026)
+- Final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp): abstract with key-number strip; ch1 intro (figures: SAIL ban
+  example, design flow); ch2 literature (new); ch3 institutions (timeline, AUM); ch4 model (band, simulated path); ch5 data
+  (bans, MWPL cut, basis distribution (median +1.1, p10 -39.1, p90 +26.8), expiry, index); ch6 band (scatter, years, H3
+  placebo, cost band, H4, H9, spurious bans, COVID restoration); ch7 ban (H8 by regime, R, H7 three ways, level profile and
+  groups, density, RD, placebos); ch8 eligibility (H6 event study, H5 legs); ch9 conclusion and policy (SEBI retail
+  losses: 93% of >1 cr individual F&O traders lost money FY22-FY24); appendices A plan, B data, C model.
+- Decks: consulting `BSP_Presentation_Nov2026.pptx` (37 slides) and academic Beamer `BSP_Presentation_Academic_Nov2026.pdf`
+  (56 pages); same numbers as the thesis.
+

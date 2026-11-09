@@ -86,3 +86,15 @@
 - No mention of how the work was produced, of internal files, model versions, audits, or earlier mistakes.
 - Numbers must come from the current data build; regenerate tables rather than typing numbers by hand.
 - Build PDFs from LaTeX (`pdflatex` twice); keep sources; never hand-edit PDFs.
+
+## 2.7 Added 9 Nov 2026 (write-up and presentation preferences)
+- "Write-up" means the **final thesis** only; the first-results report is not updated unless asked.
+- The user supplies design references and expects them followed closely, with creative licence: the IIT Bombay BTP
+  template (front pages only), `Main_content_formatting.pdf` (a report design the user likes; the thesis keeps it but stays
+  academic: single column), two consulting decks (`GammaLong_Finals_v11.pdf`, `Presentation Deck Example.pdf`) and two
+  Beamer templates (Hyderabad, Trento).
+- Likes **blue** as the theme colour; figures may use any colours that fit (red, greys, etc.).
+- Wants many figures in write-ups and decks; no em dashes; no AI-sounding phrases; plain first person.
+- Before big pieces of work, asks for a full context re-read (memory, handoff, docs, the thesis PDF) and confirmation.
+- Ends sessions by asking for every memory layer (memory/, handoff/, docs/) to be brought fully up to date.
+- Personal texts (acknowledgements, dedication) are drafted neutrally and flagged for the user to rewrite.

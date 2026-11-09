@@ -1,6 +1,6 @@
 # 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026; updated 5 Nov 2026)
 
-> **Superseded as the entry point by `handoff/16_resume_here.md` and `handoff/00_START_HERE.md` (5 Nov 2026).** Kept for the record; `handoff/` is the
+> **Superseded as the entry point by `handoff/16_resume_here.md` (rewritten 9 Nov 2026) and `handoff/00_START_HERE.md`.** Kept for the record; `handoff/` is the
 > maintained, complete brief.
 
 Read this file first, then CLAUDE.md and memory/01–07. It states exactly where the project is, what is waiting on whom,

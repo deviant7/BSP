@@ -1,27 +1,74 @@
-# 16. RESUME HERE (updated 8 November 2026: after the deep audit)
+# 16. RESUME HERE (updated 9 November 2026, end of session)
 
-**Newest state (8 Nov; supersedes everything below where it conflicts):** remaining master-plan items done (spurious bans,
-placebos, COVID restoration: docs/14 §14.17, 04 §4.14). Deep audit done (04 §4.15): full rerun reproduces every output;
-fixes made, incl. **the constraint index's bad-news asymmetry is a size effect** (all write-ups corrected) and the model
-PDF's SLB wording. **Next (user's order):** fold §14.17 into thesis ch5/ch6/ch8 and the report; SEBI retail-loss framing
-in the policy section; literature chapter from `litreview_src/` after fixing its known errors (11 §11.6); then the user's
-cosmetic changes for the final submission write-up. Report still NOT SENT.
+This card supersedes everything below it. The older cards are kept, unedited, as a record.
 
-**9 Nov, latest:** academic backup deck in Beamer, from the user's two Overleaf templates: `BSP_Presentation_Academic_Nov2026.pdf`
-(source `beamer/main.tex`, charts `analysis/beamer_figures.py` -> `beamer/figs/`; build: `cd beamer && pdflatex main.tex`
-twice). Next: the user's review of thesis, consulting deck and academic deck.
+## 16.A Where the project stands
+- **Research complete.** Theory (Model C, verified); data built and audited; frozen plan `pap-v1` (85dac3a); all primary
+  tests (+ Holm) and secondary tests; band chapter; constraint index; further checks (spurious bans, placebos, COVID
+  halving and restoration); deep audit with a full reproduction (every output reproduces). Results: `docs/14`, `15`, `16`;
+  every number: `memory/09_findings_digest.md`.
+- **Deliverables (repo root), all built 9 Nov 2026:**
+  - `BSP_Thesis_Final_Nov2026.pdf`, 78 pp. Source `thesis/` (`main.tex`, `bspstyle.sty`, `frontmatter.tex`, `abstract.tex`,
+    chapters incl. `ch_literature.tex`, appendices A to C with the model native in `appC_model.tex`). Figures:
+    `analysis/thesis_figures_final.py` -> `thesis/figs/`.
+  - `BSP_Presentation_Nov2026.pptx` (+ `.pdf`), 37 slides, consulting format. Source `deck/build_deck.js`; charts
+    `analysis/deck_figures.py` -> `deck/figs/`.
+  - `BSP_Presentation_Academic_Nov2026.pdf`, 56 pages, Beamer (Madrid, blue). Source `beamer/main.tex`; charts
+    `analysis/beamer_figures.py` -> `beamer/figs/`.
+  - Superseded but kept: `BSP_Thesis_Draft_Nov2026.pdf`; `BSP_First_Results_Nov2026.pdf` (NOT SENT, not maintained).
+- **Guide:** has the project document (Sep) and the October progress report only. Nothing sent since.
 
-**9 Nov, later:** presentation deck built in the format of the user's two reference decks: `BSP_Presentation_Nov2026.pptx`
-(+ `.pdf`), 37 slides; generator `deck/build_deck.js`, charts `analysis/deck_figures.py` -> `deck/figs/`. Rebuild: install
-pptxgenjs and jszip in a scratch folder, `NODE_PATH=<that>/node_modules node deck/build_deck.js`. Next: the user's review.
+## 16.B Waiting on the user
+1. Review of the thesis and both decks; cosmetic changes.
+2. Front-page wording: degree "Bachelor of Science in Economics", date November 2026, acknowledgements (neutral draft for
+   the user to rewrite), certificate text.
+3. Go-ahead before sending anything to the guide (then mention the SLB correction against the October report).
+4. Optional: library papers (Saurav et al. 2026 first), Prowess check, go-ahead to fix the project document, a .pptx
+   version of the Beamer deck.
 
-**9 Nov, end state:** ALL THREE PARTS DONE. Final deliverable `BSP_Thesis_Final_Nov2026.pdf` (78 pp; source `thesis/`,
-style `thesis/bspstyle.sty`, front pages `thesis/frontmatter.tex`, figures `analysis/thesis_figures_final.py` ->
-`thesis/figs/`). Rebuild: `python3 -I analysis/thesis_figures_final.py` then `cd thesis && pdflatex main.tex` twice.
-Waiting on the user: their cosmetic changes; confirm degree wording, date and acknowledgements text; whether to send to
-the guide (mention the SLB correction relative to the October report). Details: memory/05 (9 Nov entries), memory/10.
+## 16.C First actions in a new session
+1. `git status`; `git pull --ff-only origin claude/compassionate-rubin-s9gny2`; `git log --oneline -5`. The user sometimes
+   commits files (templates, references) directly to the branch: pull before looking for them.
+2. Read `CLAUDE.md`, this card, `memory/05_session_log.md` (last entries), `memory/09`, `memory/10`; for a full re-read
+   follow `00_START_HERE.md`. If asked, read the final thesis PDF (`pdftotext -layout`).
+3. Container check (not in git): `data/raw/`, `data/processed/basis_panel.csv.gz`, `returns_daily.csv.gz`,
+   `mcap_daily.csv.gz`, `data/processed/cache/*.pkl`. Rebuild per `docs/12_reproducibility.md` if missing.
+4. Fresh container: `pip install pyfixest rddensity rdrobust xlrd`; for the deck, install pptxgenjs and jszip in a
+   scratch folder (13 §13.9).
 
-**9 Nov progress:** Part 1 DONE (see memory/05, 9 Nov entry; thesis now has a literature chapter and the §14.17 results). Template zip and formatting PDF are in the repo root. Next: Part 2 re-read, then Part 3.
+## 16.D Rebuild commands
+- Thesis: `python3 -I analysis/thesis_figures_final.py` (needs caches; about 5 min) then `cd thesis && pdflatex main.tex`
+  twice; copy `main.pdf` to `../BSP_Thesis_Final_Nov2026.pdf`.
+- Consulting deck: `python3 -I analysis/deck_figures.py`; `NODE_PATH=<scratch>/node_modules node deck/build_deck.js`
+  (writes `BSP_Presentation_Nov2026.pptx` and applies the theme); validate and render with the pptx skill scripts.
+- Academic deck: `python3 -I analysis/beamer_figures.py`; `cd beamer && pdflatex main.tex` twice; copy `main.pdf` to
+  `../BSP_Presentation_Academic_Nov2026.pdf`; delete the aux files.
+- Checks after any text edit: style scan (no em/en dashes, no AI words, no internal labels) and
+  `python3 -I analysis/audit/check_numbers.py` (only section numbers and one fee input should be unmatched).
+
+## 16.E Design specifications (for further edits)
+- **Thesis** (`bspstyle.sty`, after `Main_content_formatting.pdf`, kept single-column): TeX Gyre Heros + sfmath; ruled,
+  numbered, letter-spaced section heads with blue numbers (#1F4E9A); italic chapter lead (`\chapterlead`); captions
+  "FIGURE n.m" label + bold takeaway title + `\exsub{subtitle}` + `\exsource{source}`; tables `\thd` headers, blue bold
+  first column, grey `\rowrule`; footer rule with title and page; `\statstrip` key-number tiles on the abstract page.
+  Front pages from the IIT Bombay BTP template.
+- **Consulting deck** (after GammaLong and the Canva example): 4:3; Arial; 12pt grey tracker; 24pt bold navy (#254780)
+  action title; 15 to 16pt navy subtitle; double rule (navy 2.5pt + blue 0.75pt); 12 to 14pt bold panel headers with
+  navy underline; yellow (#FFF2B3) black-bordered callout; 8pt source; 9pt page number; agenda dividers with a navy band;
+  navy label boxes with grey text boxes; numbered navy circles; grey chevron to a "What the chart shows" panel; charts in
+  bright blue #00A3E8, mid blue, steel, near-black with thin black outlines and no gridlines.
+- **Academic deck** (after the Hyderabad and Trento templates): Beamer Madrid, structure colour #1F4E9A, red alert
+  blocks, green example blocks, times + mathptmx, title page with IITB logo, outline at each section, numbered captions,
+  ball bullets, Proposition/Assumption blocks, references, acknowledgement, Thank You, backup frames.
+
+## 16.F Rules in brief
+Continuity in two layers after every meaningful step (memory + handoff + CHANGELOG, then commit and push to
+`claude/compassionate-rubin-s9gny2`); guide-facing text: no em dashes, no AI phrasing, no internal labels, plain first
+person; `docs/` final form only; keep every past plan and deletion; no timelines; no PR unless asked; never send to the
+guide without the user's go-ahead; never put model names in repo files. Full list: `02`.
+
+---------------------------------------------------------------------------------------------------------------------
+# Archive of earlier resume cards (kept for the record; all items below are done)
 
 ## PLAN FOR THE NEXT SESSION (agreed with the user, 8 Nov 2026, end of session)
 "Write-up" means **the final submission report only**: the thesis built from `thesis/`. The first-results report

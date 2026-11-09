@@ -15,7 +15,9 @@ files that make up the project, the software needed and the exact sequence of co
 | `data/processed/` | Processed data sets and build reports (committed, except the basis panel, daily returns and daily market caps, which are rebuilt); includes the published constraint index `constraint_index_q.csv.gz` |
 | `analysis/` | Shared samples and inference (`samples.py`, `inference.py`), one script per test (primary, secondary, band chapter, constraint index), estimators and their tests on simulated data, data audit scripts (`audit/`), result files (`output/`) |
 | `reports/figs/`, `reports/tables/` | Figures and tables generated from the processed data |
-| `thesis/` | LaTeX source of the thesis chapters |
+| `thesis/` | LaTeX source of the final thesis (`main.tex`, `bspstyle.sty` page design, `frontmatter.tex`, `abstract.tex`, chapters, appendices A to C, references); figures in `thesis/figs/` from `analysis/thesis_figures_final.py` |
+| `deck/` | Presentation deck in a consulting format: `build_deck.js` (pptxgenjs) and charts in `deck/figs/` from `analysis/deck_figures.py`; output `BSP_Presentation_Nov2026.pptx` |
+| `beamer/` | Academic presentation in LaTeX Beamer: `main.tex` and charts in `beamer/figs/` from `analysis/beamer_figures.py`; output `BSP_Presentation_Academic_Nov2026.pdf` |
 | `references/` | PDFs of the papers and regulatory documents cited, with an index |
 
 ## 12.2 Software
@@ -24,7 +26,10 @@ files that make up the project, the software needed and the exact sequence of co
   (`pip install numpy pandas scipy statsmodels matplotlib openpyxl xlrd pyfixest rddensity rdrobust`).
 - `pdftotext` (poppler) for the AMFI lists.
 - `curl` (the FRED download falls back to it).
-- LaTeX for the PDFs: `texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern`.
+- LaTeX for the PDFs: `texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern`
+  (the thesis also uses `tgheros`, `sfmath` and TikZ; the academic deck uses Beamer with the Madrid theme and `appendixnumberbeamer`).
+- Node.js with `pptxgenjs` and `jszip` for the consulting deck (`npm install pptxgenjs jszip` in any folder, then run
+  `NODE_PATH=<that folder>/node_modules node deck/build_deck.js`); LibreOffice to render it to PDF.
 - Network access to `nsearchives.nseindia.com`, `www.nseindia.com` and `fred.stlouisfed.org`.
 
 All scripts are run with `python3 -I` (isolated mode), from the repository root.
@@ -91,6 +96,10 @@ python3 -I analysis/covid_halving.py
 python3 -I analysis/thesis_figures.py
 python3 -I analysis/thesis_figures_final.py       # figures of the final thesis (thesis/figs/)
 (cd thesis && pdflatex main.tex && pdflatex main.tex)   # the thesis PDF
+python3 -I analysis/deck_figures.py                # charts of the consulting deck (deck/figs/)
+NODE_PATH=<folder>/node_modules node deck/build_deck.js   # BSP_Presentation_Nov2026.pptx
+python3 -I analysis/beamer_figures.py              # charts of the academic deck (beamer/figs/)
+(cd beamer && pdflatex main.tex && pdflatex main.tex)   # the academic deck PDF
 
 # 4. other checks
 python3 -I analysis/test_setar_simulated.py

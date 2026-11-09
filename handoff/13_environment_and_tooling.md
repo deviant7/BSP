@@ -60,3 +60,14 @@
   months are .xlsx inside a .xls name, so try openpyxl too); curl sometimes times out where Python succeeds.
 - Waiting for long jobs: run them with `run_in_background` and wait for the completion notification (foreground sleep
   is blocked).
+
+## 13.9 Added 9 Nov 2026 (write-ups and decks)
+- The thesis uses `tgheros` + `sfmath` (sans text and maths), `titlesec`, `fancyhdr`, `caption`, TikZ; all present in the
+  container's TeX Live. Beamer, the Madrid theme and `appendixnumberbeamer` are present too.
+- matplotlib fonts: Liberation Sans for the thesis and deck figures (TrueType embeds cleanly; TeX Gyre Heros OTF triggered
+  font-type warnings in poppler).
+- `pptxgenjs` is NOT installed globally: `npm init -y && npm install pptxgenjs jszip` in a scratchpad folder, then
+  `NODE_PATH=<folder>/node_modules node deck/build_deck.js`. The theme helper comes from the pptx skill
+  (`scripts/apply_theme.js`); the skill's `scripts/office/validate.py` validates the deck and `scripts/office/soffice.py
+  --headless --convert-to pdf` renders it (bare `soffice` can hang).
+- Visual QA: `pdftoppm -jpeg -r 50` and a Pillow contact sheet; look at every page.

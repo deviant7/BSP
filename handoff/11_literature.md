@@ -90,3 +90,10 @@ Cattaneo, Jansson and Ma (2020) density test; Corwin and Schultz (2012) high-low
 (1987); Sehgal, Vasishth and Deisting (2024) Indian lottery/IVOL premium (positive IVOL premium in India, so H5's IVOL
 leg is two-sided). Saurav, Srivastava and Agarwalla (2026): our H2 finds their pre-announcement pattern (basis lower
 before bad news) outside bans, 2 bp. Still not read in full (library).
+
+## 11.9 Added 9 Nov 2026
+The thesis now has a literature chapter (`thesis/ch_literature.tex`) written from the verified digest (memory/02), with
+the old review's errors fixed (SYY double sorts; Harshita BHAR[+2,+64] and price-scaled SUE; Roy-Chakraborty: spot does the
+correction; Sehgal: high IVOL outperforms in India; DSSW market-wide caveat; Loewenstein-Willard; correct venues). Claims
+from papers not read in full (Saurav et al.; Gagnon; Brennan-Schwartz) are kept to what their abstracts or notes support.
+The internal `BSP_Literature_Review.pdf` still has its known errors and is not used.

@@ -127,6 +127,11 @@ Part 1: thesis content completed (literature chapter from the verified digest, w
 §14.17 results; retail-loss policy framing). Part 2: re-read of every file (memory/10). Part 3: final thesis built in the
 design of the user's formatting PDF (kept single-column and academic) with the template's front pages and 26 figures.
 
+Phase 7, continued (9 Nov 2026): the user committed two consulting decks and asked for a deck in the same format:
+`BSP_Presentation_Nov2026.pptx` (37 slides, pptxgenjs, charts as images in the reference style). Then two Overleaf
+Beamer templates and a request for an academic backup deck: `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, Madrid
+recoloured blue, 56 pages). End of session: all memory, handoff and docs files updated.
+
 ## Decisions and their reasons (quick reference)
 
 | Decision | Reason |
@@ -159,3 +164,8 @@ design of the user's formatting PDF (kept single-column and academic) with the t
 | SLB input in H1 measured as activity | Only a few dozen stocks trade in SLB per day; eligibility barely varies among F&O stocks |
 | H4 on lagged flows with step dummies | Same-month flows chase returns (bias against the prediction); STT/tax dates shift the level |
 | H5 constraint groups F&O / cash-only with SLB / cash-only without | Institutionally grounded short-sale constraint; IVOL terciles as robustness |
+| Thesis kept single-column though the formatting PDF is two-column | User asked to keep it academic; equations and wide tables |
+| Consulting deck charts as images, not native PowerPoint charts | Matches the reference decks' chart style; same data as the thesis |
+| Academic deck in Beamer, not .pptx | Both supplied templates are Beamer sources |
+| Literature chapter built from the verified digest, not the old review | The old review has known errors (11 §11.6) |
+

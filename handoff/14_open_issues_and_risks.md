@@ -7,8 +7,10 @@
    timeline) and in the literature review.
 4. Whether the internship 45-signal library may be used (default: no; public anomalies only).
 5. Any news from the guide (answers to the five questions the user planned to ask her in person).
-6. (7 Nov 2026) Review the thesis draft (`BSP_Thesis_Draft_Nov2026.pdf`) and the first-results report
-   (`BSP_First_Results_Nov2026.pdf`); decide whether to send the report (it is NOT sent). The report asks the guide two
+6. (9 Nov 2026) Review the final thesis (`BSP_Thesis_Final_Nov2026.pdf`) and the two decks; send cosmetic changes. The
+   first-results report (`BSP_First_Results_Nov2026.pdf`) is NOT sent and not maintained (the thesis supersedes it).
+   Front pages to confirm: degree "Bachelor of Science in Economics", date November 2026, acknowledgements (neutral
+   draft), certificate wording. Earlier note on the report: The report asks the guide two
    questions: extend the model for blocked new demand at ban start? take the observed-state smooth-transition models further?
 7. Optional: CMIE Prowess to verify pre-July-2017 market caps; the "8 Dec 2025" broker date for delta-based checks is unresolved.
 

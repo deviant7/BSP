@@ -80,3 +80,8 @@ Amihud (2002) JFM 5(1) 31-56; Bali-Cakici-Whitelaw (2011) JFE 99(2) 427-446 (MAX
 Econometrica 82(6) 2295-2326; Cattaneo-Jansson-Ma (2020) JASA (rddensity); Corwin-Schultz (2012) JF 67(2) 719-760;
 McCrary (2008) JoE 142(2) 698-714; Newey-West (1987) Econometrica 55(3) 703-708. Saurav et al. (2026): pre-EA basis lower
 before bad news; our H2 finds the same direction outside bans (2.0 bp, p 0.04).
+
+## 9 Nov 2026
+The thesis literature chapter (`thesis/ch_literature.tex`) was written from this digest; it fixes every error listed
+above (SYY method, PEAD definitions, Roy-Chakraborty direction, Sehgal IVOL sign, DSSW caveat, Loewenstein-Willard,
+venues). Gagnon (2018): about 1,300 US OneChicago listings lowered lending utilisation and fees (from notes/abstract).

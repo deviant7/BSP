@@ -38,3 +38,8 @@
   memories." Checks used: grep for em/en dashes and a list of AI-ish words (delve, crucial, notably, it is worth noting,
   in conclusion, landscape, leverage, underscore, pivotal, furthermore, moreover, seamless, holistic, shed light,
   paramount); plain first person; no internal labels (no "Model C", no plan clause numbers, no file paths) in guide text.
+- **9 Nov 2026:** "write-up" = final thesis only. Supplies design references to follow closely with creative licence:
+  BTP template (front pages), `Main_content_formatting.pdf` (thesis design, kept academic), two consulting decks, two
+  Beamer templates. Likes blue as the theme; figures may use any fitting colours. Wants many figures. Asks for a full
+  context re-read (including the thesis PDF) before big steps, and a full update of memory, handoff and docs at session
+  end. Acknowledgements and other personal texts: draft neutrally and flag for the user.

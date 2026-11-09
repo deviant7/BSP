@@ -17,7 +17,11 @@ Resume card with first actions: `16_resume_here.md`. Results for outside readers
 | Estimators | 3-regime SETAR (`analysis/setar.py`), tested on simulated data | `analysis/` |
 | Main tests | **All four primary tests run + Holm** (5 Nov 2026) | `analysis/output/`, `docs/14_results.md`; summary §4.7 and §4.9 |
 | Secondary tests | **All done 7 Nov 2026** (level effect, density, RD, hysteresis, H9, H2, H1, H4, H5) | §4.10; `docs/14_results.md` §14.7 to §14.16 |
-| Final-form docs | Complete for the current state, incl. results page | `docs/` (README + 01 to 14) |
+| Final-form docs | Complete for the current state, incl. results, band and index pages | `docs/` (README + 01 to 16) |
+| Further checks | Spurious bans, placebos, COVID halving and restoration (8 Nov) | `docs/14_results.md` §14.17; §4.14 |
+| Deep audit | Full rerun reproduces every output; fixes applied (8 Nov) | §4.15; `analysis/audit/` |
+| Final thesis | 78 pp, template front pages, report design, 26 figures (9 Nov) | `BSP_Thesis_Final_Nov2026.pdf`, `thesis/`; §4.16 |
+| Presentation decks | Consulting deck 37 slides; academic Beamer deck 56 pages (9 Nov) | `BSP_Presentation_Nov2026.pptx`, `BSP_Presentation_Academic_Nov2026.pdf`; `deck/`, `beamer/` |
 | Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
 
@@ -80,9 +84,13 @@ without "audit" jargon: e.g. "I now date results from the exchange's first disse
 | `BSP_Model_C_Constrained_Arbitrage_India.pdf` | Guide-safe (also the report's appendix) | Current theory |
 | `BSP_Literature_Review.pdf` | Internal (not sent) | Has known errors listed in `memory/04` (SYY is not Fama-MacBeth, PEAD definitions, Roy-Chakraborty direction, etc.) |
 | Models A and B PDFs, 28 Sep progress note | Internal (never sent) | Superseded; kept |
-| `BSP_Thesis_Draft_Nov2026.pdf` (`thesis/`) | Internal draft (guide style) | 52 pp, all results; 7 Nov 2026 |
+| `BSP_Thesis_Final_Nov2026.pdf` (`thesis/`) | Final thesis (guide-facing style) | 78 pp; 9 Nov 2026; awaiting the user's cosmetic review |
+| `BSP_Thesis_Draft_Nov2026.pdf` | Earlier draft | 61 pp copy of the 9 Nov content build before the redesign (52 pp on 7 Nov); superseded |
+| `BSP_Presentation_Nov2026.pptx` / `.pdf` (`deck/`) | Presentation, consulting format | 37 slides with speaker notes; 9 Nov 2026 |
+| `BSP_Presentation_Academic_Nov2026.pdf` (`beamer/`) | Presentation, academic Beamer | 56 pages incl. backup frames; 9 Nov 2026 |
+| Templates and design references from the user | Inputs | IIT Bombay BTP template zip, `Main_content_formatting.pdf`, `GammaLong_Finals_v11.pdf`, `Presentation Deck Example.pdf`, Hyderabad and Trento Beamer zips |
 | `BSP_First_Results_Nov2026.pdf` (`progress_report_src/first_results_nov2026.tex`) | Guide-facing, **NOT SENT** | 5 pp; send only on the user's go-ahead |
-| `docs/` | Outside readers, final repo | Current (pages 01 to 16) |
+| `docs/` | Outside readers, final repo | Current (pages 01 to 16; updated 9 Nov) |
 | `handoff/`, `memory/`, `plan/` | Internal continuity | Current |
 
 ## 4.7 Primary results so far (5 Nov 2026; pre-specified, after the §11 C1 to C5 clarifications)
@@ -172,7 +180,7 @@ size-decile FE the asymmetry vanishes, -0.0007 (0.0023), so it is a size effect*
 with stock FE too; |BHAR| +0.015 with size FE; PAP §11.2 entry; analysis/audit/index_size_check.py);
 F&O band width -6.4 (opposite; H1 F&O index is the relevant one there). Published: data/processed/constraint_index_q.csv.gz.
 
-## 4.13 Write-ups (7 Nov 2026)
+## 4.13 Write-ups (7 Nov 2026; superseded by the final versions in §4.16)
 Thesis draft (`thesis/`, 8 chapters + 3 appendices, 52 pp, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the
 guide (`BSP_First_Results_Nov2026.pdf`, 5 pp, not sent). Both follow the guide-facing style rules. The report corrects the
 October report's SLB wording and counts. Digest of every finding: `memory/09_findings_digest.md`.

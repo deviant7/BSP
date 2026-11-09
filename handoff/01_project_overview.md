@@ -64,13 +64,19 @@ Mispricing measures:
 
 Primary family corrected with Holm at 5%.
 
-## 1.6 Planned thesis structure
+## 1.6 Planned thesis structure (as planned in Oct 2026; the final structure is below)
 
 1. Introduction and institutions. 2. Theory (+ simulation). 3. Data and measurement (mispricing measures; friction index).
 4. Bands over time: costs, capital, reforms. 5. The F&O ban. 6. F&O eligibility and the cross-section. 7. Policy and
 conclusion. Appendices: band-of-inaction derivation, pre-analysis plan, data construction, replication guide.
 
-## 1.7 Chapter-to-test map
+Final thesis structure (9 Nov 2026, `BSP_Thesis_Final_Nov2026.pdf`): 1 Introduction; 2 Related literature; 3 Institutional
+setting; 4 Model; 5 Data and measurement (incl. constraint index); 6 The no-arbitrage band: costs, capital and position
+limits (H3, H4, H9, H1, spurious bans, COVID restoration); 7 The F&O ban (H8, H7, level effect, 95% trigger, H2, placebos);
+8 F&O eligibility and the cross-section (H6, H5); 9 Conclusion and policy. Appendices: A pre-analysis plan and log;
+B data construction; C the model in full.
+
+## 1.7 Chapter-to-test map (as planned)
 
 | Chapter | Tests |
 |---|---|
@@ -88,7 +94,7 @@ in ban (daily), F&O bhavcopy (2015 to 2026; legacy format to 5 Jul 2024, UDiFF f
 file, 3-month interbank rate (OECD via FRED). Processed sets: MWPL/OI/ban panel (752,037 stock-days), ban days and spells,
 F&O membership and entry/exit events, announcements (94,071 events), basis panel (1,066,167 rows).
 
-## 1.9 What "done" will look like
+## 1.9 What "done" will look like (status 9 Nov 2026: all of it exists; the replication package is the repository itself)
 
 - Theory document (done), test plan (frozen), data set (built, audited), estimates of every pre-specified test with
   nulls reported, a results page in `docs/`, thesis chapters in LaTeX, a final report/thesis PDF for the guide, a

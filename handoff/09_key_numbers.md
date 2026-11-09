@@ -141,3 +141,11 @@ in `docs/11_descriptive_facts.md` and wherever it is quoted. Numbers in the repo
   dated: index 20 Nov 2024 -4.08, 3 Feb 2025 -0.31, 1 Apr 2025 +1.85; peak margin +3.30/+9.61/-9.92/+3.45 (placebo sd 7.40).
 - COVID (`covid_halving.txt`): restoration utilisation -0.2143 (0.0186), ban -0.0459 (0.0144), futures +0.2433 (0.0793), U -0.0679
   (0.0322), level -2.84 (3.06); halving utilisation +0.0916, futures -0.1835, level -15.68 (7.69).
+
+## Added 9 Nov 2026
+- Basis analysis sample (486,040 stock-days): median +1.1 bp, 10th percentile -39.1, 90th +26.8; 3.1% beyond 100 bp
+  (`analysis/output/thesis_figures_stats.txt`). The descriptive clean near-month sample (503,170) has median +1.2, p10 -33.0,
+  p90 +26.2 (docs/11). The thesis now quotes the analysis-sample numbers.
+- COVID halving: 60 stocks halved in the 20 to 27 March 2020 files plus 1 on 29 April (61 in all); 70 restored 26 Nov 2020.
+- Post-reform spells: 44 began on or after 1 Oct 2025; counterfactual tables count 45 (one began 30 Sep 2025).
+- Cost band totals reproduced in the figure script: 27.1 / 27.3 / 28.0 / 31.0 bp.

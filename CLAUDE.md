@@ -40,9 +40,12 @@ when the user asks.
 - `plan/` master plan v2, frozen PAP, archive + removed-items register
 - `data_pipeline/` scripts + README · `data/processed/` outputs (raw data and basis panel git-ignored; rebuild per `docs/12`)
 - `analysis/` estimators, simulated-data tests, audit scripts · `models_src/` model sources · `references/` papers + notes
-- Root PDFs: project document (guide has it), Oct 2026 progress report (sent), current model, thesis draft (Nov 2026),
-  first-results report (Nov 2026, not sent); superseded Models A/B, Sep 28 note and literature review are internal and kept.
-- `thesis/` LaTeX of the thesis draft; `memory/09_findings_digest.md` = every result in one place.
+- Root PDFs: **final thesis `BSP_Thesis_Final_Nov2026.pdf`**, **decks `BSP_Presentation_Nov2026.pptx`/.pdf (consulting) and
+  `BSP_Presentation_Academic_Nov2026.pdf` (Beamer)**, project document (guide has it), Oct 2026 progress report (sent),
+  current model, earlier thesis draft, first-results report (not sent, not maintained); superseded Models A/B, Sep 28 note
+  and literature review are internal and kept. User-supplied templates and design references are also in the root.
+- `thesis/` final thesis LaTeX (`bspstyle.sty` design); `deck/` consulting deck generator; `beamer/` academic deck;
+  `memory/09_findings_digest.md` = every result in one place; `memory/10_reread_findings.md` = last full re-read.
 
 ## Tooling notes
 - `pdftotext` for most PDFs; `1_shleifer_vishny_limits.pdf` needs OCR (tesseract). `pandoc` reads the .docx.

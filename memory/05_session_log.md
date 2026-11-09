@@ -515,3 +515,11 @@
   table, conclusions, policy, limitations/future scope), references, acknowledgement, Thank You, backup frames
   (appendixnumberbeamer). Charts `analysis/beamer_figures.py` -> `beamer/figs/` (PDF, blue + red + other colours).
   Output `BSP_Presentation_Academic_Nov2026.pdf` (56 pages). It is a PDF (Beamer), not a .pptx.
+- **9 Nov END OF SESSION (user ended the session; full memory update requested).** Updated in depth: memory 01 (status),
+  02 (literature chapter note), 03 (halving count, SEBI aims, retail-loss figures), 04, 06 (preferences), 08 (pointer),
+  09 (final write-ups), 05 (this log); handoff 00 (status), 01 (final structure), 02 (§2.7 preferences), 03 (Phase 7 +
+  decisions), 04 (status board, documents table), 05 (current next steps box), 06 (§6.8), 07 (§11 summary to C20), 09
+  (9 Nov numbers), 11 (§11.9), 12 (repo map: deliverables, inputs, thesis/deck/beamer, new scripts), 13 (§13.9 tooling),
+  14 (review items), 16 (rewritten resume card with design specs and rebuild commands; older cards archived below it);
+  docs README (finding 6; status rows incl. write-ups), docs 12 (layout, software, rebuild steps for thesis and decks);
+  CLAUDE.md folders; master-plan status line. Next session: start from handoff/16 §16.C.

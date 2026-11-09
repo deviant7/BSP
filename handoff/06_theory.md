@@ -100,3 +100,8 @@ a proposition, report it; do not modify the model to fit.
 | P9 (MWPL not an instrument) | Used as design rule; 1 Oct 2025 intensity moves utilisation strongly (first stage), basis effects n.s. |
 | P10 (bad news in bans) | Untestable with 55 bad-news ban events; pre-announcement basis lower before bad news outside bans (2 bp, p = 0.04) |
 | P11 (Miller; F&O inclusion) | H6: price delay falls after entry (supported); bad-news drift stronger after entry (contradicts); H5: no overpricing-side asymmetry value-weighted; momentum alone fits |
+
+## 6.8 Added 9 Nov 2026
+The model is also typeset natively as Appendix C of the final thesis (`thesis/appC_model.tex`, generated from the model
+source; future tense updated; H6 row states both overpricing and bad-news speed, tested through delay and drift).
+Chapter 4 of the thesis summarises it as Results 1 to 11.

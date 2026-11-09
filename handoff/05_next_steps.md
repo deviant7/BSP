@@ -4,6 +4,18 @@ Order is by dependency, not by date (no timelines). Everything must follow the f
 `plan/pre_analysis_plan_v1.md`; read `07_test_plan.md` for interpretation notes. Any departure, however small, is logged
 in PAP §11 with date and reason before results are reported, and the original specification is always reported too.
 
+## CURRENT NEXT STEPS (9 Nov 2026; everything below this box is the original plan, all done)
+1. The user reviews `BSP_Thesis_Final_Nov2026.pdf`, `BSP_Presentation_Nov2026.pptx` and
+   `BSP_Presentation_Academic_Nov2026.pdf` and sends cosmetic changes; apply them in `thesis/`, `deck/build_deck.js`,
+   `beamer/main.tex` (and the chart scripts), rebuild, re-run the style scan and `analysis/audit/check_numbers.py`.
+2. Confirm front-page wording with the user: degree name, date, acknowledgements (neutral draft), certificate text.
+3. Only on the user's go-ahead: send material to the guide; when sending, mention the SLB correction relative to the
+   October report and that results are dated from the exchange's first dissemination time.
+4. Optional items: Saurav et al. (2026) in full (library); Prowess check of pre-2017 market caps; XBRL SUE; put-call
+   parity; fixing the project document's known errors (needs the user's go-ahead); a .pptx version of the Beamer deck.
+5. Stage II (EC 497) work, if the user wants more analysis: intraday data for the ban tests; a longer post-reform sample;
+   extending the model for blocked new demand; observed-state smooth-transition models of the band.
+
 ## Step 0. Session start checks (every new session)
 
 1. `git status`, `git log --oneline -5`, `git ls-remote --tags origin` (`pap-v1` → 85dac3a is on GitHub since 5 Nov 2026).

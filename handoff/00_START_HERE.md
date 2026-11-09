@@ -2,7 +2,7 @@
 
 You are taking over an ongoing research project. This folder is written so that a new chat or a new model, with no
 memory of earlier work, can reach the same depth of context as the assistant that has worked on it so far. Read it fully
-before doing anything. Last full update: **7 November 2026, checkpoint after all secondary tests**; final thesis built 9 November 2026 (see `16_resume_here.md` top) (resume card: `16_resume_here.md`) (see `CHANGELOG.md` for every later change).
+before doing anything. Last full update: **9 November 2026, end of session** (final thesis and two presentation decks built; all files reviewed) (resume card: `16_resume_here.md`) (see `CHANGELOG.md` for every later change).
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -19,11 +19,12 @@ before doing anything. Last full update: **7 November 2026, checkpoint after all
    unstudied. But the project is **broader than the ban** (user's explicit instruction).
 4. Method order: **theory first** (the guide asked for it) → a **pre-analysis plan** frozen with a git tag before any
    outcome is related to any treatment → a **blind data build** from free NSE archives → tests → interpretation.
-5. Status on 7 Nov 2026 (late): theory done and verified; data built and audited; pre-analysis plan frozen (`pap-v1`);
-   all primary tests (Holm) and all secondary tests run; band-estimation chapter (`docs/15`) and constraint index
-   (`docs/16`) done; thesis draft (`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`) and a first-results report for the guide
-   (`BSP_First_Results_Nov2026.pdf`, **not sent**) written. Every finding with its numbers: `memory/09_findings_digest.md`.
-   Next: the user's review; send the report only on the user's go-ahead.
+5. Status on 9 Nov 2026: research complete (theory verified; data built and audited; frozen plan `pap-v1`; all primary,
+   secondary and further checks run; band chapter; constraint index; deep audit with a full reproduction). Deliverables:
+   final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp, source `thesis/`), consulting-format deck
+   `BSP_Presentation_Nov2026.pptx` (37 slides, source `deck/`), academic Beamer deck `BSP_Presentation_Academic_Nov2026.pdf`
+   (source `beamer/`). Nothing has been sent to the guide since the October report. Every finding with its numbers:
+   `memory/09_findings_digest.md`. Next: the user's review and cosmetic changes (see `16_resume_here.md`).
 
 ## 2. Reading order (do not skip)
 
