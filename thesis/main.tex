@@ -1,61 +1,9 @@
 \documentclass[11pt,a4paper,oneside]{report}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-\usepackage[a4paper,margin=1in]{geometry}
-\usepackage{amsmath,amssymb}
-\usepackage{booktabs,array,tabularx,longtable}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{pdfpages}
-\usepackage{xcolor}
-\definecolor{accent}{HTML}{1F3A5F}
-\usepackage[colorlinks=true,linkcolor=accent,citecolor=accent,urlcolor=accent]{hyperref}
-\usepackage{caption}
-\captionsetup{font=small,labelfont=bf}
-\usepackage{setspace}
-\setstretch{1.2}
-\setlist{itemsep=2pt,topsep=4pt}
-\graphicspath{{../reports/figs/}}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}
-\newcommand{\bp}{\,bp}
+\usepackage{bspstyle}
+\hypersetup{pdftitle={Limits to Arbitrage in the Indian Equity Market},pdfauthor={Prince Kumar}}
 
 \begin{document}
-
-\begin{titlepage}
-\centering
-\vspace*{3cm}
-{\LARGE\bfseries\color{accent} Limits to Arbitrage in the Indian Equity Market\par}
-\vspace{1.2cm}
-{\large Bachelor's Thesis (EC 495 and EC 497)\par}
-\vspace{0.6cm}
-{\large Prince Kumar (23B3032)\par}
-{BS Economics, Indian Institute of Technology Bombay\par}
-\vspace{0.6cm}
-{Guide: Prof.\ Aditi Chaubal\par}
-\vfill
-{Draft, November 2026\par}
-\end{titlepage}
-
-\begin{abstract}
-In theory, a share and a future on that share should be priced consistently, and arbitrage should close any gap. In
-practice costs, short-sale constraints, limited capital and position limits allow gaps to persist. I study how strongly
-these limits bind in Indian equities, where most of them change on known dates. A model of constrained arbitrage, in
-which India's F\&O ban is a rule that lets every participant only reduce positions, gives predictions and the results
-that would contradict them; the tests were written down and frozen before any outcome was related to any treatment. The
-data are built from public exchange files for 2015 to 2026. Bans bind hard on trading: futures volume falls by about two
-log points, and when the rule is enforced on intraday positions every futures trade closes positions. Correction of the
-futures-cash basis does not become one-sided in the way the model predicts: rich futures revert faster in a ban, mostly at
-the start of a spell. The basis falls by about six basis points when a ban begins, more when open interest was building
-fast, and there is no bunching of utilisation below the trigger. The basis follows a wide, asymmetric band of about $-35$
-to $+24$ basis points around each stock's median, and the full cost of a new cash-and-carry position lies in its outer
-tail. Entry into the F\&O segment speeds up the response of prices to market news but does not weaken drift after bad
-news. A constraint index built only from frictions predicts slower price adjustment across the whole market, also within stocks
-and after controlling for size.
-\end{abstract}
-
-\tableofcontents
+\input{frontmatter}
 
 \include{ch1_introduction}
 \include{ch_literature}
@@ -70,10 +18,7 @@ and after controlling for size.
 \appendix
 \include{appA_plan}
 \include{appB_data}
-\chapter{The theoretical framework in full}\label{app:model}
-The following pages reproduce the full model with proofs, numerical checks and the mapping from results to hypotheses.
-\includepdf[pages=-,pagecommand={\thispagestyle{empty}}]{../BSP_Model_C_Constrained_Arbitrage_India.pdf}
+\include{appC_model}
 
 \include{references}
-
 \end{document}

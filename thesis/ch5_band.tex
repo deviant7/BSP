@@ -1,7 +1,7 @@
 \chapter{The no-arbitrage band: costs, capital and position limits}\label{ch:band}
-
-This chapter describes the band within which the basis moves in normal times and relates it to the three slow-moving
-limits: trading costs, arbitrage capital and the position-limit regime. It uses non-ban stock-days only.
+\chapterlead{The band within which the basis moves in normal times, and how it relates to the three slow-moving limits:
+trading costs, arbitrage capital and the position-limit regime. The chapter uses non-ban stock-days only, except where it
+counts bans.}
 
 \section{Estimating the band}
 Let $x_{t-1}$ be yesterday's basis minus the stock's median basis on non-ban days, in basis points, and $\Delta m_t$ the
@@ -13,11 +13,12 @@ under the linear model comes from a wild bootstrap clustered by date; threshold 
 stocks. I also estimate exponential and logistic smooth-transition models (Tse, 2001), in which the speed of reversion
 changes smoothly with the deviation, and models in which it changes smoothly with an observed state.
 
-\begin{table}[h]\centering\small
-\caption{Pooled threshold model, non-ban days, 2015 to 2026 (473,110 observations, 360 stocks)}\label{tab:setar}
-\begin{tabular}{lccc}
+\begin{table}[t]
+\caption[Pooled threshold model of the basis]{The basis moves in a wide, asymmetric band, but much of the daily reversion is noise}\label{tab:setar}
+\exsub{Pooled three-regime threshold model, non-ban days, 2015 to 2026 (473,110 observations, 360 stocks)}
+\small\begin{tabular}{@{}>{\raggedright\arraybackslash\bfseries\color{accent}}p{6.4cm}ccc@{}}
 \toprule
-& Lower regime & Middle regime & Upper regime \\
+& \thd{Lower regime} & \thd{Middle regime} & \thd{Upper regime} \\
 \midrule
 Threshold (bp, relative to the stock's median) & below $-34.5$ & & above $+23.9$ \\
 95\% interval (stock bootstrap) & $[-37.2,\,-32.2]$ & & $[+20.3,\,+26.1]$ \\
@@ -26,7 +27,15 @@ Slope of $\Delta m_t$ on $x_{t-1}$ & $-0.084$ & $-0.468$ & $-0.809$ \\
 Slope, instrumented by $x_{t-2}$ & $-0.121$ & $-0.192$ & $-0.141$ \\
 \bottomrule
 \end{tabular}
+\exsource{Thresholds chosen by least squares over a grid of percentiles; intervals from resampling whole stocks. Source: author's calculations.}
 \end{table}
+
+\begin{figure}[t]
+\caption[Daily change in the basis against its deviation]{The further the basis moves from the stock's median, the more it reverts the next day}\label{fig:bandscatter}
+\exsub{Mean change in the basis today by yesterday's deviation from the stock's median (5\bp\ bins), non-ban days; shaded: the estimated band}
+\centering\includegraphics[width=\linewidth]{fig_band_scatter}
+\exsource{Source: author's calculations.}
+\end{figure}
 
 Linearity is rejected (sup-$F$ 7,471 against a bootstrap 95\% critical value of 31). The band is about 58\bp\ wide and
 asymmetric: the lower edge is further from the centre, as expected when reverse arbitrage is costlier than cash-and-carry.
@@ -41,9 +50,11 @@ $x_{t-2}$) shrinks all three slopes and removes most of the difference between t
 day-to-day reversion is therefore noise, and the slower reversion of cheap futures in the threshold model is not a robust
 finding. The thresholds, which describe where the basis spends its time, are less affected.
 
-\begin{figure}[h]\centering
-\includegraphics[width=0.75\textwidth]{fig_band_years.pdf}
-\caption{Estimated band edges by year (pooled threshold model, non-ban days, basis relative to each stock's median).}\label{fig:bandyears}
+\begin{figure}[t]
+\caption[Estimated band edges by year]{The band is stable from year to year, apart from the dislocation of March 2020}\label{fig:bandyears}
+\exsub{Thresholds of the pooled threshold model by calendar year, non-ban days, basis relative to each stock's median}
+\centering\includegraphics[width=\linewidth]{fig_band_years}
+\exsource{Source: author's calculations.}
 \end{figure}
 
 The band is stable across years (Figure~\ref{fig:bandyears}), apart from 2020, when the March dislocation pushed the lower
@@ -55,11 +66,12 @@ s.e.\ 0.02).
 \section{Costs}
 \paragraph{Pre-specified test (H3).} Around each STT increase I compare each stock's 80th percentile of the basis in the 40
 trading days before and the 40 from the event.
-\begin{table}[h]\centering\small
-\caption{Change in stock-level percentiles of the basis around STT increases (bp)}\label{tab:h3}
-\begin{tabular}{lccccc}
+\begin{table}[t]
+\caption[Change in stock-level percentiles of the basis around STT increases]{The upper part of the basis rose after the 2024 and 2026 tax increases}\label{tab:h3}
+\exsub{Mean change in each stock's percentiles of the basis, 40 trading days after against 40 before (bp)}
+\small\begin{tabular}{@{}>{\bfseries\color{accent}}lccccc@{}}
 \toprule
-Event & STT change & Stocks & 80th percentile & 20th & Median \\
+\thd{Event} & \thd{STT change} & \thd{Stocks} & \thd{80th percentile} & \thd{20th} & \thd{Median} \\
 \midrule
 3 Apr 2023$^{a}$ & $+0.25$ & 181 & $-2.12$ & $+0.24$ & $+0.27$ \\
 1 Oct 2024 & $+0.75$ & 172 & $+6.42$ & $+4.55$ & $+5.39$ \\
@@ -67,16 +79,23 @@ Event & STT change & Stocks & 80th percentile & 20th & Median \\
 \bottomrule
 \end{tabular}
 
-\vspace{2pt}{\footnotesize $^{a}$ Same day as the change in the taxation of debt funds; reported, not used as evidence.}
+\exsource{$^{a}$ Same day as the change in the taxation of debt funds; reported, not used as evidence. STT change in bp of the futures sale. Source: author's calculations.}
 \end{table}
 Pooling 2024 and 2026, the mean change in the 80th percentile is $+6.96$\bp\ (s.e.\ 0.61, clustered by stock), and the
 ordering of the three events matches the size of the cost changes. On the pre-specified statistic H3 is supported. The
 pre-specified placebo, the same statistic at 30 dates away from the true events, tells a more cautious story: shocks common
 to all stocks move the whole distribution, the placebo statistic has a standard deviation of 7.4\bp, and the true changes
-rank at the 10th and 7th percentiles of the placebo distribution. The changes in the band's width and in the upper
+rank at the 10th and 7th percentiles of the placebo distribution (Figure~\ref{fig:h3placebo}). The changes in the band's width and in the upper
 percentile relative to the median are not unusual. The rise is mostly a shift of the whole distribution, larger than the
 cost changes, and standard errors clustered only by stock overstate the precision when every observation shares the same
-event date (Kolari and Pynn\"onen, 2010). As a further check, the same statistic at the three dates of SEBI's 2024 to 2025
+event date (Kolari and Pynn\"onen, 2010).
+
+\begin{figure}[t]
+\caption[The STT events against placebo dates]{Against placebo dates, the rise after the tax increases is large but not exceptional}\label{fig:h3placebo}
+\exsub{Mean change in stocks' 80th percentile of the basis at the three STT dates and at 30 placebo dates (bp)}
+\centering\includegraphics[width=\linewidth]{fig_h3_placebo}
+\exsource{Placebo dates every 80 trading days, away from the true events. Source: author's calculations.}
+\end{figure} As a further check, the same statistic at the three dates of SEBI's 2024 to 2025
 reforms of index derivatives, which did not change the costs of single-stock arbitrage, gives $-4.1$, $-0.3$ and
 $+1.9$\bp, all well inside the placebo range.
 
@@ -93,7 +112,14 @@ brokerage between 0.005\% and 0.03\% per leg). Rolling an existing position for 
 estimated upper threshold in levels ($+22$ to $+28$\bp) and the 80th percentile lie below the full round trip, which sits
 between the 90th and 95th percentiles. New capital enters only at large deviations; funds that keep capital in place and
 roll can lean against much smaller ones. This is one reason why fixed thresholds sit inside the full cost band, as the
-model's inventory result implies.
+model's inventory result implies (Figure~\ref{fig:costband}).
+
+\begin{figure}[t]
+\caption[The bottom-up cost of a cash-and-carry position]{The full cost of a new position lies above the estimated upper edge}\label{fig:costband}
+\exsub{Round trip of an overnight cash-and-carry position held to delivery, by STT period (bp of notional); triangles: estimated upper threshold in levels}
+\centering\includegraphics[width=\linewidth]{fig_cost_band}
+\exsource{Institutional brokerage of 0.01\% per leg; GST of 18\% on fees and brokerage. Source: NSE circulars on STT and transaction charges; author's calculations.}
+\end{figure}
 
 \section{Arbitrage capital}
 \paragraph{Pre-specified test (H4).} Monthly, from May 2018 to September 2026, I regress the 80th percentile of the basis
@@ -102,7 +128,14 @@ dummies for April 2023, October 2024 and April 2026. The coefficient is $-17.5$\
 one-sided $p=0.11$): a 10\% inflow goes with a 1.7\bp\ lower upper quantile the next month. In first differences the
 relation is clearer ($-20.6$, s.e.\ 6.8), and it is visible before April 2023 ($-26.0$, s.e.\ 16.5) but not after
 ($+17.1$, s.e.\ 16.9). Same-month flows have a positive coefficient, as expected when flows chase the returns that a rich
-basis offers. With about a hundred months the test has little power.
+basis offers. With about a hundred months the test has little power (Figure~\ref{fig:h4}).
+
+\begin{figure}[t]
+\caption[Arbitrage-fund flows and the upper tail of the basis]{The upper tail of the basis and arbitrage-fund flows move a great deal from month to month}\label{fig:h4}
+\exsub{Monthly 80th percentile of the basis across non-ban stock-days (top) and net inflow into arbitrage funds as a share of assets (bottom); dashed: April 2023}
+\centering\includegraphics[width=\linewidth]{fig_h4_flows}
+\exsource{Source: AMFI monthly reports; NSE bhavcopies; author's calculations.}
+\end{figure}
 
 \paragraph{Capital as a state.} In a smooth-transition model with log arbitrage-fund assets as the state, reversion is
 faster when assets are large (the slope falls by 0.077, s.e.\ 0.019, above about Rs 95,000 crore). This variable also orders
@@ -122,10 +155,11 @@ increase comes more as a step around 0.75 than as a smooth slope. The basis is m
 the anticipation result predicts, although high utilisation also signals demand pressure. In a smooth-transition model
 with utilisation as the state, reversion weakens as utilisation rises (the slope rises by 0.225, s.e.\ 0.053).
 
-\begin{figure}[h]\centering
-\includegraphics[width=0.75\textwidth]{fig_h9_tails.pdf}
-\caption{Share of non-ban days with the basis in the stock's upper and lower tail, by utilisation the day before (raw
-shares, before October 2025). With date fixed effects the lower-tail decline disappears; the upper-tail rise remains.}\label{fig:h9}
+\begin{figure}[t]
+\caption[The basis as utilisation nears the trigger]{Rich futures become more common as utilisation approaches the 95\% trigger}\label{fig:h9}
+\exsub{Share of non-ban days with the basis in the stock's upper and lower tail, by utilisation the day before (raw shares, before October 2025)}
+\centering\includegraphics[width=\linewidth]{fig_h9_tails}
+\exsource{With date fixed effects the lower-tail decline disappears; the upper-tail rise remains. Source: author's calculations.}
 \end{figure}
 
 \paragraph{The October 2025 formula and quarterly resets.} The size of each stock's MWPL cut on 1 October 2025 (0.24 to
@@ -142,11 +176,12 @@ utilisation, the simulation reproduces the official ban lists exactly. I then ap
 or in delta terms, and with the new limit or the limit the old formula would have given (each stock's new limit scaled by
 its ratio of old to new limit on 1 October 2025, an approximation).
 
-\begin{table}[h]\centering\small
-\caption{Bans from 1 October 2025 to 27 October 2026 under the new rule and under counterfactual rules}\label{tab:spurious}
-\begin{tabular}{lccc}
+\begin{table}[t]
+\caption[Bans under the new rule and under counterfactual rules]{The new rule produced about a quarter of the ban days the old rule would have}\label{tab:spurious}
+\exsub{Bans from 1 October 2025 to 27 October 2026 for the stocks in the segment on 30 September and 1 October 2025}
+\small\begin{tabular}{@{}>{\bfseries\color{accent}}lccc@{}}
 \toprule
-Open interest and limit & Ban stock-days & Spells & Stocks \\
+\thd{Open interest and limit} & \thd{Ban stock-days} & \thd{Spells} & \thd{Stocks} \\
 \midrule
 Delta-adjusted, new limit (the actual rule) & 412 & 45 & 11 \\
 Gross, old-formula limit (the old rule) & 1,505 & 112 & 36 \\
@@ -155,8 +190,15 @@ Delta-adjusted, old-formula limit & 1 & 1 & 1 \\
 \bottomrule
 \end{tabular}
 
-\vspace{2pt}{\footnotesize The 45 spells include one that began on 30 September 2025.}
+\exsource{The 45 spells include one that began on 30 September 2025. Simulated ban rule validated against the official lists. Source: NSE combined open interest files; author's calculations.}
 \end{table}
+
+\begin{figure}[t]
+\caption[Ban days under four rules]{Measuring open interest in delta terms removes almost all bans; the lower limit alone would have multiplied them}\label{fig:spurious}
+\exsub{Ban stock-days, 1 October 2025 to 27 October 2026, under the actual and three counterfactual rules}
+\centering\includegraphics[width=\linewidth]{fig_spurious}
+\exsource{Source: as for Table~\ref{tab:spurious}.}
+\end{figure}
 
 Under the old rule the same stocks would have spent about 3.7 times as many days in a ban (Table~\ref{tab:spurious}).
 The two parts of the reform pull in opposite directions: measuring open interest in delta terms removes almost every
@@ -173,6 +215,13 @@ points (s.e.\ 3.2). The basis level did not change significantly ($-2.8$\bp, s.e
 earlier shows no effect on utilisation, bans or the upper tail. A looser limit makes rich futures less common, as the
 anticipation result predicts, although the upper-tail effect is weaker with a 20-day window ($-6.1$, s.e.\ 4.0). The
 halving itself coincided with the March 2020 crash and selected stocks on the outcomes, so I do not interpret it.
+
+\begin{figure}[t]
+\caption[The 2020 restoration of the position limit]{Restoring the limit cut the utilisation of the affected stocks at once}\label{fig:covid}
+\exsub{Mean utilisation of the MWPL for the 70 stocks whose limit was restored on 27 November 2020 and for other F\&O stocks}
+\centering\includegraphics[width=\linewidth]{fig_covid}
+\exsource{The fall on day 0 is mechanical (the denominator doubled); the tests use bans and the basis. Source: NSE combined open interest files; author's calculations.}
+\end{figure}
 
 \section{Frictions across stocks (H1)}
 For F\&O stocks I build a quarterly friction index from the spread, illiquidity, idiosyncratic volatility, utilisation of

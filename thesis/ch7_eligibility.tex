@@ -1,4 +1,7 @@
 \chapter{F\&O eligibility and the cross-section}\label{ch:elig}
+\chapterlead{Short-sale constraints across the whole cash market: what entry into and exit from the F\&O segment do to
+price adjustment and drift, whether anomalies are stronger where shorting is hardest, and how drift and price delay vary
+across all stocks.}
 
 \section{Entry into and exit from the F\&O segment (H6)}
 Entry gives a stock futures, options and formal short-selling eligibility at once; an eligibility exit removes them while
@@ -12,11 +15,12 @@ stock-cluster bootstrap. Drift exists only at announcements, so for drift after 
 difference-in-differences at the announcement level. The family statistic is a Bonferroni combination of the four
 components.
 
-\begin{table}[h]\centering\small
-\caption{Effects of F\&O entry and exit}\label{tab:h6}
-\begin{tabular}{lcccc}
+\begin{table}[t]
+\caption[Effects of F\&O entry and exit]{Entry speeds price adjustment; drift after bad news does not weaken}\label{tab:h6}
+\exsub{Pre-specified components of the H6 test}
+\small\begin{tabular}{@{}>{\bfseries\color{accent}}lcccc@{}}
 \toprule
-Component & Prediction & Estimate & s.e. & One-sided $p$ \\
+\thd{Component} & \thd{Prediction} & \thd{Estimate} & \thd{s.e.} & \thd{One-sided $p$} \\
 \midrule
 Entry: price delay & $<0$ & $-0.109$ & 0.023 & $1.3\times10^{-6}$ \\
 Entry: drift after bad news & $>0$ & $-0.040$ & 0.018 & 0.99 \\
@@ -24,6 +28,7 @@ Exit: price delay & $>0$ & $+0.053$ & 0.040 & 0.091 \\
 Exit: drift after bad news & $<0$ & $+0.014$ & 0.020 & 0.77 \\
 \bottomrule
 \end{tabular}
+\exsource{Price delay: Callaway and Sant'Anna estimator, stock-cluster bootstrap. Drift: stacked difference-in-differences at the announcement level. Source: author's calculations.}
 \end{table}
 
 Prices of stocks that enter the segment respond much faster to market-wide news (median delay 0.24 before entry), and those
@@ -32,7 +37,14 @@ leads three and four years before entry are close to zero, and the result holds 
 without back-cast market capitalisations. The drift components go the other way: after entry the drift that follows bad
 news is stronger, not weaker. H6 is supported through price delay and contradicted through drift. Entry requires a stock
 to have grown in size and liquidity, which by itself speeds price adjustment; the covariates and the flat leads limit,
-but cannot rule out, selection on growth.
+but cannot rule out, selection on growth (Figure~\ref{fig:h6es}).
+
+\begin{figure}[t]
+\caption[Price delay around F\&O entry and exit]{Price delay falls after entry and rises a little after exit, with no clear trend before either}\label{fig:h6es}
+\exsub{Callaway and Sant'Anna estimates of the change in price delay by year relative to the first full year after the event (cells with at least 19 treated stocks)}
+\centering\includegraphics[width=\linewidth]{fig_h6_es}
+\exsource{Point estimates; the aggregate post-event effects and their standard errors are in Table~\ref{tab:h6}. Source: author's calculations.}
+\end{figure}
 
 \section{Anomalies and short-sale constraints (H5)}
 Each month I sort stocks within three constraint groups (F\&O stocks; cash-only stocks with SLB trades in the last three
@@ -46,7 +58,15 @@ month (s.e.\ 0.20). Equal-weighted, anomalies are far stronger among small cash-
 $-0.49\%$, long leg $+0.46\%$ a month relative to F\&O stocks), which is a small-stock effect rather than the one-sided
 pattern of a short-sale constraint. Momentum alone fits the prediction: losers among constrained stocks do worse ($-0.51\%$
 a month, s.e.\ 0.22). The groups differ greatly in size (median market capitalisation Rs 43,513 crore for F\&O stocks
-against Rs 770 crore for cash-only stocks without SLB trades), which limits what this comparison can show.
+against Rs 770 crore for cash-only stocks without SLB trades), which limits what this comparison can show
+(Figure~\ref{fig:h5}).
+
+\begin{figure}[t]
+\caption[Anomaly returns where shorting is hardest]{Value-weighted, the overpriced side does no worse where shorting is hardest}\label{fig:h5}
+\exsub{Most constrained group (cash-only stocks without SLB trades) minus F\&O stocks, short and long legs of a composite mispricing sort}
+\centering\includegraphics[width=\linewidth]{fig_h5_legs}
+\exsource{Newey-West standard errors; holding months January 2016 to September 2026. Source: author's calculations.}
+\end{figure}
 
 \section{Drift and price delay across all stocks}
 Two further comparisons use the whole cash market. First, relative to F\&O stocks of the same size decile, cash-only stocks

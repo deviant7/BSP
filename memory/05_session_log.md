@@ -474,3 +474,19 @@
   double sorts, Harshita BHAR/price-scaled SUE, Roy-Chakraborty spot corrects, Sehgal IVOL reversed, DSSW market-wide
   caveat, Loewenstein-Willard, venues), 13 references added, appB reproducibility note. Found and fixed: halving was 60
   stocks in 20-27 Mar files + 1 on 29 Apr (docs/08, 10, 11 said 61 in March files). Thesis 61 pp, clean build.
+- **9 Nov: Part 2 (re-read) and Part 3 (final build) done.** Re-read findings in memory/10_reread_findings.md (small doc
+  fixes; all thesis numbers match outputs). Final thesis: `BSP_Thesis_Final_Nov2026.pdf` (78 pp), source `thesis/`:
+  - `bspstyle.sty`: single-column academic page in the design language of `Main_content_formatting.pdf` (TeX Gyre Heros +
+    sfmath; ruled, numbered, letter-spaced section heads with blue numbers; italic chapter leads; exhibit-style captions:
+    grey "FIGURE n.m" label, bold takeaway title, grey subtitle via \exsub, source line via \exsource; tables with \thd
+    headers, blue bold first column, grey \rowrule; ruled footer; key-number strip \statstrip/\stattile).
+    Chose single column over the PDF's two columns because the user asked to keep it academic (equations, wide tables).
+  - `frontmatter.tex`: template's first pages adapted (title page with IITB logo, Report Approval, Certificate,
+    Declaration, Acknowledgements, Abstract (abstract.tex, with a key-number strip), Contents, List of Figures, List of
+    Tables, Abbreviations, Symbols). Degree written as "Bachelor of Science in Economics", Department of Economics,
+    November 2026. Acknowledgements are a short neutral draft: the user should rewrite them in their own words.
+  - Model appendix is now native LaTeX (`appC_model.tex`, generated from the model source; tense updated; H6 row aligned
+    with the plan). Old main kept in `thesis/archive/main_draft_nov7.tex`.
+  - 26 figures from `analysis/thesis_figures_final.py` -> `thesis/figs/` (Liberation Sans; palette #1F4E9A/#C0504D/greys,
+    validated with the dataviz validator) + one TikZ design diagram; 12 restyled tables. Ch4 basis description now uses
+    the analysis sample (median +1.1, p10 -39.1, p90 +26.8; written to analysis/output/thesis_figures_stats.txt).

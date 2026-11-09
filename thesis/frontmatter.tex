@@ -1,0 +1,173 @@
+% Front matter, following the IIT Bombay project-report template (title page, approval, certificate, declaration,
+% acknowledgements, abstract, contents, lists of figures and tables, abbreviations and symbols).
+
+%---------------------------------------------------------------- title page
+\begin{titlepage}
+\pagenumbering{gobble}
+\begin{center}
+\singlespacing
+\vspace*{1.2cm}
+{\color{ink}\fontsize{22}{27}\selectfont\bfseries Limits to Arbitrage in the\\[2pt] Indian Equity Market\par}
+\vspace{0.5cm}
+{\color{accent}\rule{0.25\linewidth}{1.2pt}\par}
+\vspace{1.1cm}
+{\large A BS project report submitted in partial fulfilment of the requirements\\ for the award of the degree of\par}
+\vspace{0.3cm}
+{\Large\bfseries Bachelor of Science in Economics\par}
+\vspace{0.9cm}
+{\large by\par}
+\vspace{0.2cm}
+{\Large\bfseries\color{accent} Prince Kumar\par}
+{\large (Roll No. 23B3032)\par}
+\vspace{0.9cm}
+{\large Under the supervision of\par}
+\vspace{0.15cm}
+{\Large\bfseries\color{accent} Prof.\ Aditi Chaubal\par}
+\vspace{1.1cm}
+\includegraphics[width=0.24\linewidth]{Images/iitb_logo.png}\par
+\vspace{0.9cm}
+{\large Department of Economics\par}
+{\large\bfseries INDIAN INSTITUTE OF TECHNOLOGY BOMBAY\par}
+\vspace{0.2cm}
+{\large Mumbai 400076, India\par}
+\vspace{0.6cm}
+{\large November 2026\par}
+\end{center}
+\end{titlepage}
+
+\frontmatter
+\pagestyle{body}
+\setcounter{page}{1}
+
+%---------------------------------------------------------------- approval
+\chapter*{Report Approval}
+\addcontentsline{toc}{chapter}{Report Approval}
+\thispagestyle{plain}
+This report entitled \textbf{Limits to Arbitrage in the Indian Equity Market} by \textbf{Prince Kumar}, Roll No.\
+23B3032, is approved for the degree of \textbf{Bachelor of Science in Economics} from the Indian Institute of Technology
+Bombay.
+
+\vspace{2.6cm}
+\noindent
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\dotfill\hspace*{2cm} & \hspace*{1.5cm}\dotfill \\
+Examiner 1 & \hspace*{1.5cm}Examiner 2 \\[2.4cm]
+\dotfill\hspace*{2cm} & \hspace*{1.5cm}\dotfill \\
+Supervisor: Prof.\ Aditi Chaubal & \hspace*{1.5cm}Chairperson \\
+\end{tabularx}
+
+\vspace{2cm}
+\noindent Date: \dotfill\hspace*{9cm}\\[0.6cm]
+Place: \dotfill\hspace*{9cm}
+
+%---------------------------------------------------------------- certificate
+\chapter*{Certificate}
+\addcontentsline{toc}{chapter}{Certificate}
+\thispagestyle{plain}
+This is to certify that the report entitled \textbf{Limits to Arbitrage in the Indian Equity Market}, submitted by
+\textbf{Prince Kumar} (Roll No.\ 23B3032) to the Indian Institute of Technology Bombay for the award of the degree of
+\textbf{Bachelor of Science in Economics}, is a record of original, bona fide research work carried out under my
+supervision and guidance. The report has reached the standards fulfilling the requirements of the regulations related
+to the award of the degree.
+
+The results contained in this report have not been submitted in part or in full to any other university or institute
+for the award of any degree or diploma, to the best of my knowledge.
+
+\vspace{3cm}
+\noindent\rule{6.5cm}{0.4pt}\\
+\textbf{Prof.\ Aditi Chaubal}\\
+Department of Economics\\
+Indian Institute of Technology Bombay
+
+%---------------------------------------------------------------- declaration
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+\thispagestyle{plain}
+I declare that this written submission represents my ideas in my own words and that, where others' ideas or words have
+been included, I have adequately cited and referenced the original sources. I also declare that I have adhered to all
+principles of academic honesty and integrity and have not misrepresented, fabricated or falsified any idea, data, fact
+or source in my submission. I understand that any violation of the above will be cause for disciplinary action by the
+Institute and can also evoke penal action from the sources which have not been properly cited or from whom proper
+permission has not been taken when needed.
+
+\vspace{3cm}
+\noindent\rule{6.5cm}{0.4pt}\\
+\textbf{Prince Kumar}\\
+Roll No.\ 23B3032\\
+Date:\\
+Place: IIT Bombay
+
+%---------------------------------------------------------------- acknowledgements
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\thispagestyle{plain}
+I thank my supervisor, Prof.\ Aditi Chaubal, for her guidance throughout this project, and in particular for the
+advice to build a formal model of what the project would test before looking at any data. That advice shaped the
+whole design of the work.
+
+\vspace{1.5cm}
+\noindent\textbf{Prince Kumar}
+
+%---------------------------------------------------------------- abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{plain}
+\input{abstract}
+
+%---------------------------------------------------------------- lists
+\cleardoublepage
+\pagestyle{body}
+\tableofcontents
+\listoffigures
+\listoftables
+
+%---------------------------------------------------------------- abbreviations
+\chapter*{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+\thispagestyle{plain}
+{\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\leavevmode\bfseries\color{accent}}p{2.9cm}L@{}}
+ADDV & Average daily delivery (in shares), used in the position-limit formula from October 2025 \\
+AMFI & Association of Mutual Funds in India \\
+BHAR & Buy-and-hold abnormal return \\
+EAR & Earnings-announcement return (abnormal return over days $-1$ to $+1$) \\
+F\&O & Futures and options; the derivatives segment of the National Stock Exchange \\
+FutEq & Futures-equivalent (delta-adjusted) open interest \\
+IVOL & Idiosyncratic volatility \\
+LSTAR / ESTAR & Logistic and exponential smooth-transition autoregressive models \\
+MWPL & Market-wide position limit \\
+NSE & National Stock Exchange of India \\
+OI & Open interest \\
+RD & Regression discontinuity \\
+SEBI & Securities and Exchange Board of India \\
+SETAR & Self-exciting threshold autoregressive model \\
+SLB & Securities lending and borrowing \\
+STT & Securities transaction tax \\
+VWAP & Volume-weighted average price \\
+\end{tabularx}}
+
+%---------------------------------------------------------------- symbols
+\chapter*{Symbols}
+\addcontentsline{toc}{chapter}{Symbols}
+\thispagestyle{plain}
+{\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\leavevmode\color{accent}}p{2.9cm}L@{}}
+$m$ & Futures-cash basis, $\ln F-\ln F^*$, in basis points \\
+$F,\ S,\ F^*$ & Futures price, stock price, cost-of-carry value of the future \\
+$\mathrm{PV}(D)$ & Present value of dividends going ex before expiry \\
+$r,\ \tau$ & Three-month interbank rate; time to expiry in years \\
+$u$ & Relative demand pressure of outside traders toward futures \\
+$\Phi$ & Combined depth of the cash and futures markets \\
+$a$ & Arbitrage position (units of cash-and-carry) \\
+$\gamma=\alpha\sigma^2$ & Risk aversion per unit of capital times the risk of the basis \\
+$c_+,\ c_-,\ c_u$ & Cost of a cash-and-carry position, of a reverse position, of unwinding \\
+$\omega$ & Utilisation of the position limit, open interest divided by the MWPL \\
+$\pi(\omega),\ \ell$ & Probability of meeting a ban; extra cost of exiting in a ban \\
+$\chi,\ \lambda$ & Share of blocked new demand that moves to cash; $\lambda=\chi\psi_F/\psi_S$ \\
+$R$ & $(\Delta OI+V)/V$, zero when every futures trade closes positions \\
+$C$ & Composition of open interest before a ban: change in open interest over volume \\
+$U,\ L$ & Indicators of the basis lying in the stock's upper or lower tail \\
+\end{tabularx}}
+
+\mainmatter
+\pagestyle{body}

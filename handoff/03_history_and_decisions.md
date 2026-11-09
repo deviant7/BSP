@@ -118,6 +118,15 @@ Full detail: `memory/05_session_log.md`, the two chat logs at the repo root (`Ve
 6. User: "update the docs first, then option 3" → docs updated (main findings, contributions); thesis draft (8 chapters,
    52 pp) and a 5-page first-results report for the guide (not sent); extensive memory save (memory/09 digest).
 
+## Phase 6: fourth cloud session (8 November 2026)
+Remaining master-plan items (spurious bans, placebos, COVID halving and restoration; PAP §11.15) and a deep audit of the
+whole project (full rerun reproduces every output; the constraint index's bad-news asymmetry is a size effect).
+
+## Phase 7: fifth cloud session (9 November 2026)
+Part 1: thesis content completed (literature chapter from the verified digest, with the old review's errors fixed;
+§14.17 results; retail-loss policy framing). Part 2: re-read of every file (memory/10). Part 3: final thesis built in the
+design of the user's formatting PDF (kept single-column and academic) with the template's front pages and 26 figures.
+
 ## Decisions and their reasons (quick reference)
 
 | Decision | Reason |

@@ -1,4 +1,14 @@
 \chapter{Institutional setting}\label{ch:inst}
+\chapterlead{The Indian rules that shape each limit to arbitrage: who may sell short, which stocks have derivatives, how
+the position limit and the ban work and how they were enforced, what trading costs, and where arbitrage capital comes
+from. Figure~\ref{fig:timeline} places the dated changes on one time line.}
+
+\begin{figure}[t]
+\caption[The dated changes to the limits, 2015 to 2026]{Almost every limit to arbitrage changed on a known date during the sample}\label{fig:timeline}
+\exsub{Futures STT, enforcement of the ban, the position-limit rule and arbitrage capital, 2015 to 2026}
+\centering\includegraphics[width=\linewidth]{fig_timeline}
+\exsource{Source: SEBI circulars and press releases, NSE circulars (listed in the references).}
+\end{figure}
 
 \section{Short selling and securities lending}
 Under SEBI's short-selling framework (restated in a circular of 5 January 2024, in line with the 2007 framework), all
@@ -18,17 +28,19 @@ trading in the cash market. Entry gives a stock futures and options and formal s
 exit removes them.
 
 \section{The market-wide position limit and the ban}
-\begin{table}[h]\centering\small
-\caption{Position-limit rules over the sample}\label{tab:mwpl}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.2cm}LL}
+\begin{table}[t]
+\caption[Position-limit rules over the sample]{The limit was cut and open interest redefined in October 2025}\label{tab:mwpl}
+\exsub{Market-wide position limit (MWPL) and the open interest tested against it}
+\small\begin{tabularx}{\textwidth}{@{}K{3.2cm}LL@{}}
 \toprule
-Period & MWPL & Open interest tested \\
+\thd{Period} & \thd{MWPL} & \thd{Open interest tested} \\
 \midrule
-To 30 Sep 2025 & 20\% of shares held by non-promoters (free float) & Gross open interest, futures and options \\
-20 Mar to 26 Nov 2020 & Halved for volatile or heavily used stocks (61 stocks) & Gross open interest \\
+To 30 Sep 2025 & 20\% of shares held by non-promoters (free float) & Gross open interest, futures and options \\ \rowrule
+20 Mar to 26 Nov 2020 & Halved for volatile or heavily used stocks (61 stocks) & Gross open interest \\ \rowrule
 From 1 Oct 2025 & Lower of 15\% of free float and 65 times average daily delivery (in shares), floor 10\% of free float; recomputed quarterly & Futures-equivalent (delta-adjusted) open interest \\
 \bottomrule
 \end{tabularx}
+\exsource{Source: SEBI circulars of 22 September 2006 and 29 May 2025; SEBI press release 18/2020; NSE Clearing circular 119/2025.}
 \end{table}
 
 A stock enters the ban when market-wide open interest exceeds 95\% of its MWPL at the end of a day, from the next day, and
@@ -59,7 +71,14 @@ Exchange transaction charges were revised on 1 October 2024.
 Arbitrage mutual funds hold long cash, short futures positions and are taxed as equity funds. When the taxation of debt
 funds changed on 1 April 2023 (the same day as an STT increase), arbitrage funds became the tax-efficient home for
 short-term money. Their net assets were Rs 56,218 crore in April 2018, Rs 71,106 crore in April 2023, Rs 1.99 lakh crore in
-October 2024 and Rs 2.98 lakh crore in September 2026.
+October 2024 and Rs 2.98 lakh crore in September 2026 (Figure~\ref{fig:aum}).
+
+\begin{figure}[t]
+\caption[Net assets of arbitrage mutual funds, 2018 to 2026]{Arbitrage-fund assets quadrupled after debt funds lost their tax advantage}\label{fig:aum}
+\exsub{Monthly net assets of the arbitrage-fund category, April 2018 to September 2026}
+\centering\includegraphics[width=\linewidth]{fig_arb_aum}
+\exsource{Source: AMFI monthly reports; author's calculations.}
+\end{figure}
 
 \section{Prices}
 NSE sets a stock future's daily settlement price at a theoretical cost-of-carry value when the contract does not trade in

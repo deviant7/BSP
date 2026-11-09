@@ -34,3 +34,4 @@
 - 8 Nov 2026: deep audit (04 §4.15): full rerun reproduces outputs; estimator tests for CS and level effect; number check; fixes (ch4 99.85%, appendix wording, model SLB wording, index bad-news asymmetry = size effect, all write-ups corrected); PAP §11.2 size-check entry; docs/12 rerun + checks; 05, 09, 14 §14.7, 16; memory/05, 09.
 - 8 Nov 2026 END OF SESSION: next-session plan agreed and saved (16 top, 05 Step 3c pointer; memory/05).
 - 9 Nov 2026: Part 1 of the plan: §14.17 results and SEBI retail-loss framing in thesis ch5/ch6/ch8, literature chapter (ch_literature.tex), references, halving count fix (docs/08, 10, 11); 16; memory/05.
+- 9 Nov 2026: Parts 2 and 3: re-read (memory/10); final thesis BSP_Thesis_Final_Nov2026.pdf (bspstyle.sty, frontmatter, native model appendix, 26 figures via analysis/thesis_figures_final.py); docs/12 and rerun_all.sh updated; 00, 03, 04 §4.16, 16; CLAUDE.md; memory/05, 10.

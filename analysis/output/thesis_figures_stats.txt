@@ -1,0 +1,1 @@
+Analysis sample: 486040 stock-days; median +1.1 bp, 10th percentile -39.1, 90th percentile +26.8; share beyond 100 bp from zero 0.031

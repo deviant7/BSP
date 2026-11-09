@@ -1,19 +1,22 @@
 \chapter{Conclusion and policy}\label{ch:concl}
+\chapterlead{What the tests say about which limits bind, what the results imply for the regulation of position limits and
+short selling, and what the data cannot show.}
 
 \section{What binds}
-\begin{table}[h]\centering\small
-\caption{The pre-specified tests}\label{tab:summary}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{3.2cm}L}
+\begin{table}[t]
+\caption[The pre-specified tests]{Three of four primary hypotheses are supported on the pre-specified statistic; one is rejected with the opposite sign}\label{tab:summary}
+\exsub{All pre-specified tests, with the result and the main qualification}
+\small\begin{tabularx}{\textwidth}{@{}K{4.2cm}>{\raggedright\arraybackslash}p{3.2cm}L@{}}
 \toprule
-Hypothesis & Pre-specified result & Comment \\
+\thd{Hypothesis} & \thd{Pre-specified result} & \thd{Comment} \\
 \midrule
-\multicolumn{3}{l}{\emph{Primary family (Holm correction at 5\%)}} \\
+\multicolumn{3}{@{}l}{\thd{Primary family (Holm correction at 5\%)}} \\
 H8: trading leaves futures in a ban & Supported ($p<10^{-10}$) & Identity holds under intraday enforcement \\
 H3: costs set the band edges & Supported ($p<10^{-10}$) & Placebo-calibrated evidence weak; mostly a common shift \\
 H6: short-sale access & Supported ($p=5\times10^{-6}$) & Through price delay; drift goes the other way \\
 H7: one-sided correction & Rejected, opposite sign & Survives a noise correction \\
 \midrule
-\multicolumn{3}{l}{\emph{Secondary (unadjusted)}} \\
+\multicolumn{3}{@{}l}{\thd{Secondary (unadjusted)}} \\
 Level effect by composition & $p=0.083$ & Signs as predicted; median split $p=0.025$ \\
 Density at 95\% & No discontinuity & No bunching \\
 Regression discontinuity & Basis $-12.9$\bp, $p=0.02$ & Gap present before the ban \\
@@ -26,6 +29,7 @@ H4 capital & $p=0.11$ & Clearer in differences \\
 H5 anomalies & $p=0.57$ & Not supported value-weighted \\
 \bottomrule
 \end{tabularx}
+\exsource{Source: Chapters~\ref{ch:band} to~\ref{ch:elig}.}
 \end{table}
 
 The answer to the question this thesis asks is uneven across the limits. Position limits bind hard on trading: the ban

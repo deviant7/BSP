@@ -50,3 +50,6 @@ Purpose: context building before the final thesis build, and a last consistency 
   lending": the thesis corrects the SLB part. Mention the correction in the covering note when the thesis is sent.
 - Analysis outputs: every decimal number quoted in the thesis matched an output (check_numbers.py, 9 Nov); the three
   new §14.17 passages were checked by hand against spurious_bans.txt, placebos.txt and covid_halving.txt.
+
+## Status
+Re-read complete 9 Nov; findings above were fixed the same day. Final thesis built afterwards (memory/05, 9 Nov).

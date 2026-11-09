@@ -1,4 +1,6 @@
 \chapter{Introduction}\label{ch:intro}
+\chapterlead{Why price gaps between a share and its future can persist, why India is a good place to measure the limits
+that allow them, how the work was organised to avoid fitting theory and data to each other, and what it finds.}
 
 \section{The question}
 When two ways of holding the same risk trade at different prices, an arbitrageur can buy the cheap one, sell the dear one
@@ -18,7 +20,15 @@ India also has an unusual rule. When market-wide open interest in a stock's deri
 position limit (MWPL), the stock enters an \emph{F\&O ban}: every participant, not only arbitrageurs, may only trade to
 reduce positions until open interest falls to 80\%. Between 2015 and October 2026 this happened 1,788 times to 141 stocks.
 To my knowledge no study has estimated its effects. The ban is the sharpest lens on one limit, but it is one lens among
-several; the thesis studies the limits side by side.
+several; the thesis studies the limits side by side. Figure~\ref{fig:utilex} shows how the rule works for the stock that
+was banned most often.
+
+\begin{figure}[t]
+\caption[How the F\&O ban works: one stock in the first half of 2024]{A stock enters the ban when open interest crosses 95\% of its limit and leaves at 80\%}\label{fig:utilex}
+\exsub{Utilisation of the market-wide position limit for SAIL, January to June 2024; shaded days are ban days}
+\centering\includegraphics[width=\linewidth]{fig_util_example}
+\exsource{Source: NSE combined open interest files and securities-in-ban lists; author's calculations.}
+\end{figure}
 
 \section{Approach}
 The work followed a fixed order, designed to prevent fitting the theory and the data to each other.
@@ -33,6 +43,23 @@ every step against the exchange's own rules (Chapter~\ref{ch:data}).
 \item \emph{Estimators tested on simulated data} from the model before use.
 \item \emph{All results reported,} including those that contradict the model.
 \end{enumerate}
+
+\begin{figure}[t]
+\caption[The order of the work]{Theory and tests were fixed before any outcome was related to any treatment}\label{fig:design}
+\exsub{The sequence of the project, from model to results}
+\centering
+\begin{tikzpicture}[node distance=4mm,
+  box/.style={draw=accent,line width=0.7pt,rounded corners=2pt,text width=2.35cm,minimum height=1.45cm,align=center,font=\footnotesize},
+  arr/.style={-{Stealth[length=2.2mm]},line width=0.8pt,color=accent}]
+\node[box] (a) {\textbf{Model}\\ every limit a parameter; predictions and falsifiers};
+\node[box,right=of a] (b) {\textbf{Frozen plan}\\ samples, tests and signs fixed with a time stamp};
+\node[box,right=of b] (c) {\textbf{Blind data}\\ built from exchange files, checked against the rules};
+\node[box,right=of c] (d) {\textbf{Estimators}\\ tested on data simulated with known effects};
+\node[box,right=of d,fill=tilebg] (e) {\textbf{Results}\\ all reported, nulls and contradictions included};
+\foreach \x/\y in {a/b,b/c,c/d,d/e} \draw[arr] (\x) -- (\y);
+\end{tikzpicture}
+\exsource{Every detail the plan left open was fixed in a dated log before the test that needed it (Appendix~\ref{app:plan}).}
+\end{figure}
 
 \section{Main findings}
 \begin{enumerate}

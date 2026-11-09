@@ -1,4 +1,4 @@
-# 04. Current state (as of 7 November 2026, evening: all primary AND secondary tests done)
+# 04. Current state (updated 9 November 2026: final thesis built; earlier sections below kept as written)
 
 Resume card with first actions: `16_resume_here.md`. Results for outside readers: `docs/14_results.md`.
 
@@ -200,4 +200,11 @@ check clean except futures volume. Halving confounded by the crash. To fold into
   given a size-control column and fitted to the page.
 - Style scan of all guide-facing sources: no em dashes, no internal labels, no AI-sounding words. Both PDFs rebuilt
   (thesis 52 pp, 0 overfull boxes; report 5 pp).
+
+## 4.16 Final write-up (9 Nov 2026)
+- Thesis content completed (literature chapter; spurious bans, placebos, COVID restoration; SEBI retail-loss framing).
+- Full re-read of the project (memory/10_reread_findings.md).
+- Final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp) in the new design: template front pages, exhibit-style figures and
+  tables (26 figures, 12 tables), native model appendix. The 7/8 Nov draft PDF `BSP_Thesis_Draft_Nov2026.pdf` is kept.
+- Open for the user: cosmetic changes; degree wording, date, acknowledgements; send decision.
 

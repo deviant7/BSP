@@ -37,4 +37,5 @@ run analysis/spurious_bans.py
 run analysis/placebos.py
 run analysis/covid_halving.py
 run analysis/thesis_figures.py
+run analysis/thesis_figures_final.py
 echo "ALL DONE $(date +%T)"

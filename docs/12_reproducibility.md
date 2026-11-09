@@ -89,6 +89,8 @@ python3 -I analysis/spurious_bans.py
 python3 -I analysis/placebos.py
 python3 -I analysis/covid_halving.py
 python3 -I analysis/thesis_figures.py
+python3 -I analysis/thesis_figures_final.py       # figures of the final thesis (thesis/figs/)
+(cd thesis && pdflatex main.tex && pdflatex main.tex)   # the thesis PDF
 
 # 4. other checks
 python3 -I analysis/test_setar_simulated.py
