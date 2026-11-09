@@ -19,8 +19,8 @@ This card supersedes everything below it. The older cards are kept, unedited, as
     record). Source `thesis_short/`: copies of the chapter files, trimmed; `main.tex` sets `\input@path` to `../thesis/`
     for `bspstyle.sty` and `\graphicspath` to `../thesis/figs/`. Cut from the full version: approval, certificate,
     declaration, acknowledgements, lists of figures/tables, symbols; appendices B (data) and C (model); literature
-    chapter condensed to three sections + Table tab:litbands; 8 secondary figures (aum, modelpath, mwpl, basisexp,
-    index, h4, spurious, covid, levelgroups, h5 minus those kept: 18 figures remain); ch5 paragraphs "Capital as a state"
+    chapter condensed to three sections + Table tab:litbands; 10 supporting figures from the chapters (aum, modelpath, mwpl,
+    basisexp, index, h4, spurious, covid, levelgroups, h5) plus the appendix figures: 18 of 29 remain; ch5 paragraphs "Capital as a state"
     and "Peak margins"; shorter ch6 caveats and ch4 validation paragraph. Added an "About this version" page.
     **Any text change to the full thesis must be copied into `thesis_short/` by hand.**
   - Superseded but kept: `BSP_Thesis_Draft_Nov2026.pdf`; `BSP_First_Results_Nov2026.pdf` (NOT SENT, not maintained).

@@ -527,7 +527,7 @@
   format, readable, first person, no em dashes or AI phrases, for the reader; the full thesis stays the main one). Built
   `thesis_short/` (copies of the chapter files, trimmed; reuses `thesis/bspstyle.sty` and `thesis/figs/`) ->
   `BSP_Thesis_Short_Nov2026.pdf`, 50 pages, 18 figures, 0 overfull boxes, no undefined references. Cut: formal front
-  pages (approval, certificate, declaration, acknowledgements, lists, symbols), appendices B and C, 8 supporting
-  figures (numbers kept in the text), ch5 "Capital as a state" and "Peak margins" paragraphs, shorter ch6 caveats and ch4
+  pages (approval, certificate, declaration, acknowledgements, lists, symbols), appendices B and C, 10 supporting
+  chapter figures (numbers kept in the text), ch5 "Capital as a state" and "Peak margins" paragraphs, shorter ch6 caveats and ch4
   validation paragraph; literature condensed to three sections + band table; references pruned to the 29 cited. Added an
   "About this version" page. Style scan clean. Text edits to the full thesis must be copied into `thesis_short/` by hand.

@@ -223,6 +223,6 @@ check clean except futures volume. Halving confounded by the crash. To fold into
   Hyderabad and Trento Overleaf templates); source `beamer/main.tex`, charts `analysis/beamer_figures.py` -> `beamer/figs/`.
 - Short thesis (9 Nov, user request: about 50 pages, same format, readable): `BSP_Thesis_Short_Nov2026.pdf`, 50 pp,
   source `thesis_short/` (reuses the main style and figures). Keeps every chapter, the main figures and tables and every
-  pre-specified result; drops the model and data appendices, formal front pages, 8 supporting figures and some robustness
+  pre-specified result; drops the model and data appendices, formal front pages, 10 supporting figures and some robustness
   paragraphs; literature condensed. Details: `16_resume_here.md` §16.A.
 
