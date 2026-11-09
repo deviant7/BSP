@@ -98,8 +98,8 @@ Other costs (stamp duty, exchange and clearing fees, brokerage, price impact, fu
 
 - **Arbitrage mutual funds** run cash-and-carry (long stock, short future). They are taxed as equity funds.
 - On **1 April 2023** the tax treatment of debt funds changed (funds with up to 35% in equities taxed at the slab rate),
-  which made arbitrage funds relatively attractive. Reported arbitrage-fund assets rose from about Rs 71,000 crore
-  (April 2023) to about Rs 1.99 lakh crore (October 2024) (AMFI data as reported by the financial press). This date
+  which made arbitrage funds relatively attractive. Arbitrage-fund net assets in AMFI's monthly reports rose from
+  Rs 71,106 crore (April 2023) to Rs 1,98,981 crore (October 2024) and Rs 2,97,632 crore (September 2026). This date
   coincides with an STT increase, so the two cannot be separated in a time series.
 - **Peak-margin rules** (margins checked against intraday peaks) were phased in at 25% (December 2020), 50% (March 2021),
   75% (June 2021) and 100% (1 September 2021).

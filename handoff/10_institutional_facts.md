@@ -54,7 +54,7 @@ secondary sources (broker notes, press); **D** confirmed in our own data; **?** 
 | Options STT premium 0.05% → 0.0625% (Apr 2023) → 0.1% (Oct 2024) → 0.15% (Apr 2026); exercise 0.125% → 0.15% (Apr 2026) | P/S |
 | Cash delivery STT 0.1% each side; physically settled derivatives 0.1% | S |
 | Debt-fund tax change 1 Apr 2023 (<= 35% equity taxed at slab); arbitrage funds equity-taxed | S |
-| Arbitrage-fund AUM ~Rs 71,106 crore (Apr 2023) → Rs 1,98,981 crore (Oct 2024) | S (confirm with AMFI) |
+| Arbitrage-fund AUM Rs 71,106 crore (Apr 2023) → Rs 1,98,981 crore (Oct 2024) → Rs 2,97,632 crore (Sep 2026) | D (AMFI monthly reports, 7 Nov 2026) |
 | AMFI reports arbitrage funds separately from mid-2018 | S |
 | Peak margin 25% (Dec 2020), 50% (Mar 2021), 75% (Jun 2021), 100% (1 Sep 2021) | S |
 

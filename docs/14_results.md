@@ -6,7 +6,8 @@ run. For each test the **pre-specified result comes first**. Analyses added afte
 
 Status: all four primary tests are complete (H8, H7, H3, H6) and corrected for multiple testing (14.6). All secondary
 tests of the plan are complete (14.7 to 14.15; summary 14.16), reported unadjusted and labelled exploratory as the plan
-says.
+says. Further checks from the master plan (spurious bans, placebos, the 2020 halving and restoration of the limit) are in
+14.17.
 
 ## 14.1 Common set-up
 

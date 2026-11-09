@@ -584,3 +584,7 @@ restricted to stocks with utilisation above 0.20 in the pre-window; window 20 da
   BHAR +0.0006 -> +0.0011; price delay (15,227 stock-years with a market cap) +0.0605 -> +0.0359 (0.0043) with log market
   cap, +0.0277 (0.0055) with stock FE as well. Reading: the delay and |drift| relations survive; the bad-news asymmetry is
   a size effect. The C17 results are still reported first.
+- 9 Nov 2026, note on §4(a) (no test changed): the frozen text says the MWPL was halved for 61 stocks in files dated 20 to
+  27 March 2020. The panel shows 60 stocks halved in those files and one more in the file of 29 April 2020 (61 in all).
+  The C20 (b) halving design used the 60 stocks in the stated window, as C20 specified; the restoration design (C20 a) is
+  unaffected.

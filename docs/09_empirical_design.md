@@ -110,6 +110,12 @@ share of observations in each regime) was run on two kinds of simulated data (`a
 2. A basis simulated from the model, where the no-trade region moves with arbitrage inventory: estimates -10 and 0 bp,
    although the cost edge is +15 bp.
 
+Two further estimators were checked the same way (`analysis/test_cs_att.py`, `analysis/test_level_effect.py`):
+
+3. The Callaway-Sant'Anna estimator on a simulated staggered panel with a true effect of -0.10 and selection on a
+   covariate: mean estimate -0.1007 after treatment and +0.0018 before; without the covariate it is biased, as it should be.
+4. The matched level-effect design on simulated random walks with in-ban shifts of +10 and -6 bp: it recovers both.
+
 Consequences written into the plan: estimated fixed thresholds are reported as **average band edges, not costs**; H3
 compares **changes** in edges around STT dates (inventory is roughly constant within plus and minus 40 days) rather than
 levels; and a threshold model whose thresholds depend on lagged open interest and MWPL is the main robustness check for

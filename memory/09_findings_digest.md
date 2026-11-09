@@ -52,6 +52,20 @@ stable by year; persistence 0.90. Delay +0.058 (t 20.8), within stock +0.032; |B
 +0.0147; delay +0.0359 with log mcap, +0.0277 with stock FE (n 15,227). F&O
 band width -6.4 (opposite → use H1 F&O index for bands). File `data/processed/constraint_index_q.csv.gz`.
 
+## Further master-plan checks (C18-C20, 8 Nov; exploratory; docs/14 §14.17)
+- Spurious bans: pre-reform entries OI-driven (MWPL fell on crossing day 8/1,744; denominator-driven 7 = 0.4%). Ban
+  state machine validated (99.99% pre, 100% post). 1 Oct 2025 to 27 Oct 2026, stock-days/spells/stocks: actual 412/45/11;
+  old rule 1,505/112/36 (reform cut ~73%); gross+new limit 6,256/296/85; FutEq+old limit 1/1/1. 45 spells incl. one
+  starting 30 Sep 2025 (44 began after the reform).
+- Placebos: 871 fake spells (+60 days): H7 delta_up +0.037 (0.047), delta_lo -0.028 (0.038); level effect +1.0, no
+  gradient (diff -0.28, se 3.03). Index-reform dates d80 -4.08/-0.31/+1.85; peak margin +3.30/+9.61/-9.92/+3.45 (placebo
+  sd 7.40).
+- COVID restoration (70 stocks, 27 Nov 2020, +-40 days): utilisation -0.214 (0.019), ban -0.046 (0.014), log fut
+  +0.243 (pre-trend in fake date), U -0.068 (0.032), level -2.8 (3.1); 20-day window U -0.061 (0.040); fake date null
+  for utilisation, ban, U. Halving (60 March stocks; 61 incl. one on 29 Apr 2020) confounded by the crash.
+- In the thesis (9 Nov): ch5 position limits (table + restoration), costs (index-reform placebo), capital (peak margins);
+  ch6 placebo section; ch8 policy (spurious bans, retail losses).
+
 ## Facts verified on 7 Nov (primary sources)
 In-ban rule from 1 Oct 2025 looser (SEBI 2025/79 Table 2); package not a relaxation. Short selling: F&O securities only
 (SEBI 5 Jan 2024, references/25). SLB: also liquid non-F&O since Jul 2013 (secondary + SLB data). ADDV in quantity.
@@ -67,8 +81,8 @@ band; edges do not move one-for-one with STT; new-entry cost in the outer tail, 
 the predicted direction. Ten secondary tests unadjusted: read as a pattern.
 
 ## Write-ups (7 Nov)
-- `thesis/` (main.tex + ch1-ch8 + appA plan + appB data + model PDF appendix + references) → `BSP_Thesis_Draft_Nov2026.pdf`
-  (52 pp). Internal draft, guide-style language.
+- `thesis/` (main.tex + ch1-ch8 + literature chapter (9 Nov) + appA plan + appB data + model PDF appendix + references)
+  → `BSP_Thesis_Draft_Nov2026.pdf` (52 pp on 7 Nov; 61 pp on 9 Nov). Internal draft, guide-style language.
 - `progress_report_src/first_results_nov2026.tex` → `BSP_First_Results_Nov2026.pdf` (5 pp, guide-facing, NOT SENT): corrects
   the October report's SLB wording and counts (results dated from first dissemination); asks two questions (extend model for
   blocked new demand? take observed-state STR further?).

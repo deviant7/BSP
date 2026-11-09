@@ -52,7 +52,8 @@ Spells are counted in the year they start.
   1,558 and 1,529 stock-day changes respectively, against at most 457 in any other month), when free float is updated from
   quarterly shareholding filings.
 - **March 2020:** the MWPL was halved for 60 stocks in the files of 20 to 27 March 2020 (28 on 20 March, 13 on
-  23 March, the rest over the following days) and for one more on 29 April 2020 and restored for 70 stocks on 26 November 2020.
+  23 March, the rest over the following days) and for one more on 29 April 2020; it was restored for 70 stocks on
+  26 November 2020.
 - **1 October 2025:** the new formula lowered the MWPL of all 208 F&O stocks. Ratio of new to old: 10th percentile 0.50,
   median 0.73, 90th percentile 0.75. 17% of stocks are at the floor (10% of free float, half the old limit) and 48% at
   15% of free float (three quarters of the old limit). Because the cut differs across stocks and was set from data

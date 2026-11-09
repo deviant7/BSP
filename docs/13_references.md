@@ -10,6 +10,8 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
   Markets* 5(1), 31-56.
 - Bali, T., N. Cakici and R. Whitelaw (2011). Maxing out: Stocks as lotteries and the cross-section of expected returns.
   *Journal of Financial Economics* 99(2), 427-446.
+- Barber, B. and T. Odean (2000). Trading is hazardous to your wealth: The common stock investment performance of
+  individual investors. *Journal of Finance* 55(2), 773-806.
 - Brennan, M. and E. Schwartz (1990). Arbitrage in stock index futures. *Journal of Business* 63(1), S7-S31.
 - Calonico, S., M. Cattaneo and R. Titiunik (2014). Robust nonparametric confidence intervals for regression-
   discontinuity designs. *Econometrica* 82(6), 2295-2326.
@@ -31,10 +33,14 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
 - Gromb, D. and D. Vayanos (2010). Limits of arbitrage. *Annual Review of Financial Economics* 2, 251-275.
 - Hansen, B. and B. Seo (2002). Testing for two-regime threshold cointegration in vector error-correction models.
   *Journal of Econometrics* 110(2), 293-318.
+- Harshita, S. Singh and S. S. Yadav (2018). Post-earnings-announcement drift anomaly in India: A test of market
+  efficiency. *Theoretical Economics Letters* 8(14), 3178-3195.
 - Hou, K. and T. Moskowitz (2005). Market frictions, price delay, and the cross-section of expected returns. *Review of
   Financial Studies* 18(3), 981-1020.
 - Kolari, J. and S. Pynnonen (2010). Event study testing with cross-sectional correlation of abnormal returns. *Review
   of Financial Studies* 23(11), 3996-4025.
+- Kumar, A. (2009). Who gambles in the stock market? *Journal of Finance* 64(4), 1889-1933.
+- Loewenstein, M. and G. Willard (2006). The limits of investor behavior. *Journal of Finance* 61(1), 231-258.
 - McCrary, J. (2008). Manipulation of the running variable in the regression discontinuity design: A density test.
   *Journal of Econometrics* 142(2), 698-714.
 - Miller, E. (1977). Risk, uncertainty, and divergence of opinion. *Journal of Finance* 32(4), 1151-1168.
@@ -44,6 +50,10 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
   *Indian Journal of Finance* 9(9), 23-35.
 - Newey, W. and K. West (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent
   covariance matrix. *Econometrica* 55(3), 703-708.
+- Ofek, E., M. Richardson and R. Whitelaw (2004). Limited arbitrage and short sales restrictions: Evidence from the
+  options markets. *Journal of Financial Economics* 74(2), 305-342.
+- Roy, P. S. and T. Chakraborty (2023). Efficiency of Indian equity futures market: An empirical analysis with reference
+  to National Stock Exchange. *Global Business Review* 24(6), 1326-1352.
 - Saurav, S., P. Srivastava and S. K. Agarwalla (2026). Decoupled: Disagreement, short-sale constraints, and
   law-of-one-price violations around earnings announcements. SSRN working paper.
 - Sehgal, S., V. Vasishth and F. Deisting (2024). Lottery factor and stock returns: Evidence from India. *Borsa
@@ -51,6 +61,8 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
 - Shankar, R. L., G. Sankar and K. Kiran Kumar (2015). Mispricing in single stock futures: Empirical examination of
   Indian markets. NSE Working Paper WP/16/2015; published in *Emerging Markets Finance and Trade* 55(7), 1619-1633 (2019).
 - Shleifer, A. and R. Vishny (1997). The limits of arbitrage. *Journal of Finance* 52(1), 35-55.
+- Slivka, R., V. Shah and J. Wu (2011). Arbitrage of single stocks versus futures in India. Working paper, Polytechnic
+  Institute of New York University.
 - Stambaugh, R., J. Yu and Y. Yuan (2015). Arbitrage asymmetry and the idiosyncratic volatility puzzle. *Journal of
   Finance* 70(5), 1903-1948.
 - Sun, L. and S. Abraham (2021). Estimating dynamic treatment effects in event studies with heterogeneous treatment
@@ -61,6 +73,9 @@ PDFs of most items are in `references/` (see `references/00_reference_index.md`)
   of Banking and Finance* 25(10), 1829-1855.
 
 ## Regulatory and exchange documents
+
+- SEBI press release 22/2024 (23 September 2024): updated study of profits and losses of individual traders in equity
+  F&O (93% lost money, FY22 to FY24).
 
 - SEBI circular SEBI/DNPD/Cir-26/2004/07/16 (16 July 2004): market-wide position limits for single-stock derivatives.
 - SEBI circular SEBI/DNPD/Cir-31/2006 (22 September 2006): MWPL linked to free float (20% of non-promoter shares).
