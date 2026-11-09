@@ -209,3 +209,6 @@ check clean except futures volume. Halving confounded by the crash. To fold into
 - Open for the user: cosmetic changes; degree wording, date, acknowledgements; send decision.
 - Presentation deck (9 Nov): `BSP_Presentation_Nov2026.pptx` and `.pdf`, 37 slides, format of `GammaLong_Finals_v11.pdf`
   and `Presentation Deck Example.pdf`; source `deck/build_deck.js`, charts `analysis/deck_figures.py` -> `deck/figs/`.
+- Academic backup deck (9 Nov): `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, Madrid recoloured blue, from the user's
+  Hyderabad and Trento Overleaf templates); source `beamer/main.tex`, charts `analysis/beamer_figures.py` -> `beamer/figs/`.
+

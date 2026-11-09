@@ -7,6 +7,10 @@ PDF's SLB wording. **Next (user's order):** fold §14.17 into thesis ch5/ch6/ch8
 in the policy section; literature chapter from `litreview_src/` after fixing its known errors (11 §11.6); then the user's
 cosmetic changes for the final submission write-up. Report still NOT SENT.
 
+**9 Nov, latest:** academic backup deck in Beamer, from the user's two Overleaf templates: `BSP_Presentation_Academic_Nov2026.pdf`
+(source `beamer/main.tex`, charts `analysis/beamer_figures.py` -> `beamer/figs/`; build: `cd beamer && pdflatex main.tex`
+twice). Next: the user's review of thesis, consulting deck and academic deck.
+
 **9 Nov, later:** presentation deck built in the format of the user's two reference decks: `BSP_Presentation_Nov2026.pptx`
 (+ `.pdf`), 37 slides; generator `deck/build_deck.js`, charts `analysis/deck_figures.py` -> `deck/figs/`. Rebuild: install
 pptxgenjs and jszip in a scratch folder, `NODE_PATH=<that>/node_modules node deck/build_deck.js`. Next: the user's review.

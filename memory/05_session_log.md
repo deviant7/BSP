@@ -503,3 +503,15 @@
   installed in the scratchpad, not the repo: `npm install pptxgenjs jszip` then NODE_PATH=... node deck/build_deck.js);
   charts `analysis/deck_figures.py` -> `deck/figs/` (reuses thesis_figures_final data code, deck styling). Charts are
   images to match the reference decks' chart style (not native PowerPoint charts).
+- **9 Nov: academic (Beamer) backup deck built.** User committed two Overleaf Beamer templates (zips in root):
+  `PhD__Presentation_Latex_Template_University_of_Hyderabad.zip` (Madrid theme + rose colours; times + mathptmx; outline
+  at every section; numbered captions; ball bullets; blocks/alertblock/exampleblock; theorem environments; references,
+  acknowledgement, "Thank You") and `Luminescence_Solar_Energy_Concentrator_With_Fiber_Geometry.zip` (CambridgeUS;
+  outline at each section). Hybrid built in `beamer/main.tex`: Madrid structure recoloured blue (#1F4E9A; red alert
+  blocks, green example blocks), title page with IITB logo, outline + section outlines, sections Introduction
+  (motivation, the ban, question/objectives, research gaps, contributions), Background, Institutional setting,
+  Theoretical model (set-up, Proposition/Assumption blocks, simulated ban, hypotheses), Data and methodology (TikZ
+  design flow), Results I (ban), II (costs, capital, limits), III (short sales), Conclusions and future scope (summary
+  table, conclusions, policy, limitations/future scope), references, acknowledgement, Thank You, backup frames
+  (appendixnumberbeamer). Charts `analysis/beamer_figures.py` -> `beamer/figs/` (PDF, blue + red + other colours).
+  Output `BSP_Presentation_Academic_Nov2026.pdf` (56 pages). It is a PDF (Beamer), not a .pptx.
