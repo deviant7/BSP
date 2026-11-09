@@ -465,3 +465,12 @@
   errors, optional appendices; (2) re-read every word of every file, artifact and memory to rebuild context; (3) user
   gives a LaTeX template zip (use only its first few pages) and a PDF whose body formatting they like; build the final PDF
   with many figures, no em dashes, no AI-sounding phrases.
+- **9 Nov (new session): Part 1 of the agreed plan done.** User committed `IIT_Bombay_Unofficial_LaTeX_B_Tech_Project__BTP__Template.zip`
+  and `Main_content_formatting.pdf` (root) for Part 3; deliverable = final thesis PDF only. Thesis additions: ch5 (index-reform
+  placebo in costs; peak margins in capital; spurious-bans table + COVID restoration in position limits; summary), ch6
+  (placebo section: fake bans null), ch8 policy rewritten (SEBI PR 22/2024 retail losses verified from references/12; 2024/132
+  cites retail participation; 2025/79 para 4.2 "spurious" bans; reform cut ban days ~3/4), ch1 (outline + finding 4),
+  new ch_literature.tex (Related literature; built from memory/02 verified digest, known lit-review errors fixed: SYY
+  double sorts, Harshita BHAR/price-scaled SUE, Roy-Chakraborty spot corrects, Sehgal IVOL reversed, DSSW market-wide
+  caveat, Loewenstein-Willard, venues), 13 references added, appB reproducibility note. Found and fixed: halving was 60
+  stocks in 20-27 Mar files + 1 on 29 Apr (docs/08, 10, 11 said 61 in March files). Thesis 61 pp, clean build.

@@ -34,7 +34,7 @@ No file of any source falls on a weekend.
 | Stocks flagged "No Fresh Positions" on day t versus the official list for day t+1 | 11,753 of 11,764 flags agree (99.9%); 5 listed stocks were not flagged. The differences trace to the COVID halving days of March 2020, one corrupt 2012 file and single dated files. |
 | Entry rule: utilisation above 95% on the day before a spell starts | 99.4% of 2,181 spells (median 1.006) |
 | Exit rule: utilisation at or below 80% on the last ban day | 99.7% of spells (99.9% at or below 82%) |
-| COVID halving dates | MWPL halved for 61 stocks in the files of 20 to 27 March 2020; restored for 70 stocks on 26 November 2020, as in the regulatory record |
+| COVID halving dates | MWPL halved for 60 stocks in the files of 20 to 27 March 2020 and one more on 29 April 2020; restored for 70 stocks on 26 November 2020, as in the regulatory record |
 | 1 October 2025 formula | The new MWPL of the 85 stocks at 15% of free float is reproduced exactly from pre-reform free float (MWPL / 0.20) |
 
 ## 10.4 Open interest against the price files

@@ -75,7 +75,7 @@ contract roll or a gap in the sample), regressed on the lagged level by regime (
 | Ban spell | Consecutive ban days; length; days since start; whether an expiry has occurred inside the spell | ban_spells.csv.gz |
 | Near miss | Not in a ban, with omega in [0.85, 0.95) (control group for ban entries) | panel |
 | Hysteresis zone | omega in [0.80, 0.95), in a ban or not | panel |
-| COVID halving | MWPL halved for 61 stocks in the files of 20 to 27 March 2020 (effective the next trading day); restored for 70 stocks on 26 November 2020 | panel (MWPL changes) |
+| COVID halving | MWPL halved for 60 stocks in the files of 20 to 27 March 2020 and one more on 29 April 2020 (effective the next trading day); restored for 70 stocks on 26 November 2020 | panel (MWPL changes) |
 | 1 Oct 2025 intensity | I = -ln(MWPL_new / MWPL_old) per stock (0.24 to 0.69), and the predicted change in log utilisation ln(FutEq OI / gross OI on 1 Oct 2025) + I | panel |
 | Quarterly MWPL resets | MWPL changes on recomputation dates after October 2025 | panel |
 | STT dates | 1 April 2023, 1 October 2024, 1 April 2026 | fixed dates |

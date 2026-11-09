@@ -7,6 +7,8 @@ PDF's SLB wording. **Next (user's order):** fold §14.17 into thesis ch5/ch6/ch8
 in the policy section; literature chapter from `litreview_src/` after fixing its known errors (11 §11.6); then the user's
 cosmetic changes for the final submission write-up. Report still NOT SENT.
 
+**9 Nov progress:** Part 1 DONE (see memory/05, 9 Nov entry; thesis now has a literature chapter and the §14.17 results). Template zip and formatting PDF are in the repo root. Next: Part 2 re-read, then Part 3.
+
 ## PLAN FOR THE NEXT SESSION (agreed with the user, 8 Nov 2026, end of session)
 "Write-up" means **the final submission report only**: the thesis built from `thesis/`. The first-results report
 (`BSP_First_Results_Nov2026.pdf`, NOT SENT) is not to be updated further unless the user asks.

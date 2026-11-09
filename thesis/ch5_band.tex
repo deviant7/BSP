@@ -76,7 +76,9 @@ to all stocks move the whole distribution, the placebo statistic has a standard 
 rank at the 10th and 7th percentiles of the placebo distribution. The changes in the band's width and in the upper
 percentile relative to the median are not unusual. The rise is mostly a shift of the whole distribution, larger than the
 cost changes, and standard errors clustered only by stock overstate the precision when every observation shares the same
-event date (Kolari and Pynn\"onen, 2010).
+event date (Kolari and Pynn\"onen, 2010). As a further check, the same statistic at the three dates of SEBI's 2024 to 2025
+reforms of index derivatives, which did not change the costs of single-stock arbitrage, gives $-4.1$, $-0.3$ and
+$+1.9$\bp, all well inside the placebo range.
 
 \paragraph{Band edges by tax period.} Measuring each deviation from the stock's median within each period (the full-sample
 median does not remove the 2026 level shift), the upper threshold is $+23.8$, $+18.9$, $+23.1$ and $+28.9$\bp\ in the four
@@ -106,6 +108,11 @@ basis offers. With about a hundred months the test has little power.
 faster when assets are large (the slope falls by 0.077, s.e.\ 0.019, above about Rs 95,000 crore). This variable also orders
 time, so the evidence is descriptive.
 
+\paragraph{Peak margins.} From December 2020 to September 2021 margins had to be collected on peak intraday positions, in
+four steps of 25\%. This raises the capital an arbitrageur must post during the day. The upper percentile moves in both
+directions at the four steps ($+3.3$, $+9.6$, $-9.9$ and $+3.5$\bp, against a placebo standard deviation of 7.4), so I find
+no consistent effect; the rule mainly binds intraday leverage, which a daily basis does not measure.
+
 \section{Position limits}
 \paragraph{Anticipation (H9).} On non-ban days before October 2025, the share of days on which a stock's basis is in its own
 upper tail (above the 80th percentile of its days with utilisation below 60\%) rises from 0.20 to about 0.27 as utilisation
@@ -126,6 +133,47 @@ shares, before October 2025). With date fixed effects the lower-tail decline dis
 $+0.061$ (s.e.\ 0.050, $p=0.11$), on the level $+4.8$\bp\ and on bans $+0.023$: all in the predicted direction, none
 significant. The quarterly resets of January, April and July 2026 move utilisation but show no effect on the basis.
 
+\paragraph{How the October 2025 rules changed the number of bans.} SEBI's stated aim was to reduce ``spurious'' bans. Before
+the reform, bans were driven by open interest, not by changes in the limit: on the day utilisation crossed 95\% the limit
+fell for only 8 of 1,744 entries, and only 7 (0.4\%) would not have crossed at the previous day's limit. To see what the
+two parts of the reform did, I simulate the ban rule (enter the day after utilisation exceeds 95\%, leave the day after it
+is at or below 80\%) for the stocks that were in the segment on both 30 September and 1 October 2025. Applied to the actual
+utilisation, the simulation reproduces the official ban lists exactly. I then apply it with open interest measured gross
+or in delta terms, and with the new limit or the limit the old formula would have given (each stock's new limit scaled by
+its ratio of old to new limit on 1 October 2025, an approximation).
+
+\begin{table}[h]\centering\small
+\caption{Bans from 1 October 2025 to 27 October 2026 under the new rule and under counterfactual rules}\label{tab:spurious}
+\begin{tabular}{lccc}
+\toprule
+Open interest and limit & Ban stock-days & Spells & Stocks \\
+\midrule
+Delta-adjusted, new limit (the actual rule) & 412 & 45 & 11 \\
+Gross, old-formula limit (the old rule) & 1,505 & 112 & 36 \\
+Gross, new limit & 6,256 & 296 & 85 \\
+Delta-adjusted, old-formula limit & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}{\footnotesize The 45 spells include one that began on 30 September 2025.}
+\end{table}
+
+Under the old rule the same stocks would have spent about 3.7 times as many days in a ban (Table~\ref{tab:spurious}).
+The two parts of the reform pull in opposite directions: measuring open interest in delta terms removes almost every
+ban, because options now count only by their delta and offsetting positions of the same client net out, while the lower limit on its own would have quadrupled them.
+The combination cut bans by about three quarters.
+
+\paragraph{The 2020 halving and restoration.} From 23 March 2020 the limit was halved for stocks whose recent daily
+price range or utilisation was high, and on 27 November 2020 it was restored for the 70 stocks whose limit was then
+halved. The restoration is a clean shock: it was
+announced, it came in a calm market, and it doubled the limit of some stocks and not others. Against other F\&O stocks, in
+the 40 trading days either side, the utilisation of the restored stocks fell by 0.21 (s.e.\ 0.02), their share of days in
+a ban by 4.6 percentage points (s.e.\ 1.4), and the share of days with their basis in its upper tail by 6.8 percentage
+points (s.e.\ 3.2). The basis level did not change significantly ($-2.8$\bp, s.e.\ 3.1). A false restoration date 20 days
+earlier shows no effect on utilisation, bans or the upper tail. A looser limit makes rich futures less common, as the
+anticipation result predicts, although the upper-tail effect is weaker with a 20-day window ($-6.1$, s.e.\ 4.0). The
+halving itself coincided with the March 2020 crash and selected stocks on the outcomes, so I do not interpret it.
+
 \section{Frictions across stocks (H1)}
 For F\&O stocks I build a quarterly friction index from the spread, illiquidity, idiosyncratic volatility, utilisation of
 the position limit and SLB scarcity, measured in the previous quarter. A one standard deviation higher index goes with a
@@ -139,4 +187,5 @@ $+17$\bp, and their widths are not related to the stocks' average index.
 The basis follows a wide, asymmetric, nonlinear band. Its edges respond to costs less cleanly than the model implies; the
 full cost of new arbitrage lies in the outer tail, while the cost of keeping capital in place is small. Capital and the
 position-limit regime leave traces in the predicted direction (faster correction with more capital, a richer basis near
-the trigger), but the formal tests of capital flows and of the 2025 reform are not significant.
+the trigger, a less often rich basis after the 2020 restoration of the limit), but the formal tests of capital flows and of
+the 2025 reform are not significant. The 2025 rules cut the number of bans by about three quarters.
