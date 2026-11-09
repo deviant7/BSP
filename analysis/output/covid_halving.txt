@@ -1,0 +1,39 @@
+COVID MWPL halving and restoration (PAP §11.15 C20). Exploratory. Stock and date FE; SE two-way clustered.
+Halved stocks (files 20-27 Mar 2020): 60; restored stocks (file 26 Nov 2020, effective 27 Nov): 70
+
+(a) RESTORATION, 40 trading days either side of 27 Nov 2020
+  utilisation (first stage)          Post x Treated -0.2143 (se 0.0186, t -11.53); n 10986, treated stocks 70
+  in a ban                           Post x Treated -0.0459 (se 0.0144, t -3.18); n 10990, treated stocks 70
+  log(1 + futures contracts)         Post x Treated +0.2433 (se 0.0793, t +3.07); n 10580, treated stocks 70
+  upper exceedance U                 Post x Treated -0.0679 (se 0.0322, t -2.11); n 10343, treated stocks 70
+  lower exceedance L                 Post x Treated +0.0172 (se 0.0295, t +0.58); n 10343, treated stocks 70
+  level m - q50 (bp)                 Post x Treated -2.8425 (se 3.0620, t -0.93); n 10343, treated stocks 70
+  robustness: controls with pre-window mean utilisation > 0.20
+  utilisation (first stage)          Post x Treated -0.2106 (se 0.0214, t -9.84); n 6454, treated stocks 70
+  in a ban                           Post x Treated -0.0460 (se 0.0143, t -3.22); n 6454, treated stocks 70
+  log(1 + futures contracts)         Post x Treated +0.3037 (se 0.0857, t +3.54); n 6212, treated stocks 70
+  upper exceedance U                 Post x Treated -0.0875 (se 0.0454, t -1.93); n 6269, treated stocks 70
+  lower exceedance L                 Post x Treated -0.0131 (se 0.0251, t -0.52); n 6269, treated stocks 70
+  level m - q50 (bp)                 Post x Treated -3.0635 (se 3.0331, t -1.01); n 6269, treated stocks 70
+  robustness: 20 trading days either side
+  utilisation (first stage)          Post x Treated -0.2173 (se 0.0212, t -10.24); n 5478, treated stocks 70
+  in a ban                           Post x Treated -0.0358 (se 0.0189, t -1.89); n 5479, treated stocks 70
+  log(1 + futures contracts)         Post x Treated +0.1101 (se 0.0757, t +1.45); n 5206, treated stocks 70
+  upper exceedance U                 Post x Treated -0.0605 (se 0.0401, t -1.51); n 5241, treated stocks 70
+  lower exceedance L                 Post x Treated +0.0124 (se 0.0318, t +0.39); n 5241, treated stocks 70
+  level m - q50 (bp)                 Post x Treated -3.8874 (se 3.7835, t -1.03); n 5241, treated stocks 70
+  placebo: fake restoration 20 days earlier (data before the true date only)
+  utilisation (first stage)          Post x Treated -0.0132 (se 0.0184, t -0.72); n 5458, treated stocks 70
+  in a ban                           Post x Treated -0.0214 (se 0.0222, t -0.96); n 5459, treated stocks 70
+  log(1 + futures contracts)         Post x Treated +0.2138 (se 0.0842, t +2.54); n 5186, treated stocks 70
+  upper exceedance U                 Post x Treated +0.0109 (se 0.0398, t +0.27); n 5049, treated stocks 70
+  lower exceedance L                 Post x Treated -0.0289 (se 0.0342, t -0.85); n 5049, treated stocks 70
+  level m - q50 (bp)                 Post x Treated +2.9693 (se 3.4107, t +0.87); n 5049, treated stocks 70
+
+(b) HALVING, 40 trading days either side of 23 Mar 2020 (crash period; selected stocks)
+  utilisation (first stage)          Post x Treated +0.0916 (se 0.0206, t +4.45); n 11422, treated stocks 60
+  in a ban                           Post x Treated -0.0003 (se 0.0102, t -0.03); n 11425, treated stocks 60
+  log(1 + futures contracts)         Post x Treated -0.1835 (se 0.0763, t -2.41); n 10854, treated stocks 60
+  upper exceedance U                 Post x Treated +0.0264 (se 0.0215, t +1.23); n 10357, treated stocks 60
+  lower exceedance L                 Post x Treated +0.0754 (se 0.0381, t +1.98); n 10357, treated stocks 60
+  level m - q50 (bp)                 Post x Treated -15.6840 (se 7.6851, t -2.04); n 10357, treated stocks 60

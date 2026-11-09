@@ -1,0 +1,31 @@
+H1: ex-ante frictions and mispricing (PAP §11.10 C13). Secondary, unadjusted. SE two-way clustered (stock, quarter).
+
+Index loadings (first principal component, frictions standardised within quarter): cs +0.574, lamihud +0.368, ivol +0.554, util +0.445, slb_scarce +0.175; variance share 0.444
+Correlations of standardised frictions:
+              cs  lamihud  ivol  util  slb_scarce
+cs          1.00     0.38  0.68  0.37        0.10
+lamihud     0.38     1.00  0.21  0.15        0.24
+ivol        0.68     0.21  1.00  0.45        0.03
+util        0.37     0.15  0.45  1.00        0.12
+slb_scarce  0.10     0.24  0.03  0.12        1.00
+
+Stock-quarters (outcomes 2015Q2-2025Q3 with lagged frictions): 7398, stocks 347
+Outcome means: W 40.83, A 23.30, rho 0.41
+
+MAIN band width W = q80 - q20 (bp)       : beta (per 1 sd of index) +3.4836 (se 1.1159, t +3.12); one-sided p(> 0) = 0.00165; n 7398
+MAIN mispricing size A = mean |m| (bp)   : beta (per 1 sd of index) +2.5323 (se 0.7321, t +3.46); one-sided p(> 0) = 0.000639; n 7398
+MAIN persistence rho                     : beta (per 1 sd of index) -0.0326 (se 0.0059, t -5.50); one-sided p(> 0) = 1; n 7385
+
+Also reported:
+  W on all five frictions (standardised): cs +1.579 (0.767); lamihud +6.409 (0.684); ivol +2.486 (0.876); util -0.963 (0.780); slb_scarce -9.677 (0.838)
+  W with stock FE: -0.0002 (1.6922)
+  A on all five frictions (standardised): cs +0.977 (0.589); lamihud +4.149 (0.472); ivol +1.843 (0.644); util -0.082 (0.560); slb_scarce -7.051 (0.710)
+  A with stock FE: +0.1896 (1.0771)
+  rho on all five frictions (standardised): cs -0.009 (0.004); lamihud +0.012 (0.005); ivol +0.003 (0.004); util -0.018 (0.006); slb_scarce -0.076 (0.005)
+  rho with stock FE: -0.0305 (0.0080)
+  W on all days incl. ban days: +4.0681 (1.1166)
+  W, period to 2026Q3 (n 8210): +3.5955 (1.0191)
+  W, index without SLB (loadings cs +0.59, lamihud +0.35, ivol +0.57, util +0.45): +4.5205 (1.1885)
+  SLB fee (annualised, median over traded days): stock-quarters with any SLB trade 10074 of 14447; median fee 3.48% a year (p10 0.87%, p90 12.40%)
+
+Secondary test statistic (C13 e): one-sided p (beta > 0 for W) = 0.00165

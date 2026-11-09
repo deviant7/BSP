@@ -1,0 +1,68 @@
+Density of utilisation at the 95% trigger (PAP §11.5 C8). Treatment side only.
+
+MAIN: transitions (not in ban on d-1 and d; omega_(d-1) < 0.95), 2015 to Sep 2025: n in [0.60, 1.30] = 47503 (stock-days), stocks 353; n in [0.90, 0.95) 1699, in [0.95, 1.00) 661
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.326, f(0.95+) 0.311, log ratio -0.047; robust T -0.18, p = 0.855; h_left 0.031 (n 779), h_right 0.036 (n 498)
+    p=1: log ratio +0.176, T +0.54, p = 0.587
+    p=3: log ratio +0.166, T +0.69, p = 0.487
+    h=0.02: log ratio +0.024, T +0.09, p = 0.932
+    h=0.05: log ratio +0.273, T +1.21, p = 0.226
+  binned (w 0.0025, h 0.05): theta = ln f+ - ln f- = +0.313; stock-cluster bootstrap se 0.135, 95% CI [+0.075, +0.620]
+
+LITERAL: all stock-days not in a ban on d (mechanically discontinuous; see C8 b): n in [0.60, 1.30] = 49035 (stock-days), stocks 353; n in [0.90, 0.95) 1816, in [0.95, 1.00) 731
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.311, f(0.95+) 0.304, log ratio -0.022; robust T -0.08, p = 0.934; h_left 0.031 (n 829), h_right 0.039 (n 599)
+    p=1: log ratio +0.192, T +0.61, p = 0.545
+    p=3: log ratio +0.116, T +0.46, p = 0.643
+    h=0.02: log ratio +0.082, T +0.28, p = 0.78
+    h=0.05: log ratio +0.182, T +0.83, p = 0.406
+  binned (w 0.0025, h 0.05): theta = ln f+ - ln f- = +0.334; stock-cluster bootstrap se 0.128, 95% CI [+0.100, +0.574]
+
+Robustness and sub-samples (main population definition):
+  excluding days with an MWPL change: n in [0.60, 1.30] = 47188 (stock-days), stocks 353; n in [0.90, 0.95) 1694, in [0.95, 1.00) 654
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.316, f(0.95+) 0.310, log ratio -0.021; robust T -0.08, p = 0.936; h_left 0.031 (n 782), h_right 0.036 (n 495)
+  binned (w 0.0025, h 0.05): theta = ln f+ - ln f- = +0.317; stock-cluster bootstrap se 0.135, 95% CI [+0.078, +0.576]
+  end-of-day enforcement (to 22 Mar 2020): n in [0.60, 1.30] = 20988 (stock-days), stocks 233; n in [0.90, 0.95) 744, in [0.95, 1.00) 299
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.393, f(0.95+) 0.298, log ratio -0.275; robust T -0.90, p = 0.369; h_left 0.047 (n 675), h_right 0.055 (n 326)
+  binned (w 0.0025, h 0.05): theta = ln f+ - ln f- = +0.012; stock-cluster bootstrap se 0.199, 95% CI [-0.379, +0.424]
+  peak-intraday enforcement (23 Mar 2020 to Sep 2025): n in [0.60, 1.30] = 26515 (stock-days), stocks 286; n in [0.90, 0.95) 955, in [0.95, 1.00) 362
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.245, f(0.95+) 0.329, log ratio +0.295; robust T +0.79, p = 0.431; h_left 0.029 (n 390), h_right 0.032 (n 251)
+  binned (w 0.0025, h 0.05): theta = ln f+ - ln f- = +0.624; stock-cluster bootstrap se 0.209, 95% CI [+0.287, +1.094]
+  pre-sample 2010 to 2014: n in [0.60, 1.30] = 12515 (stock-days), stocks 277; n in [0.90, 0.95) 600, in [0.95, 1.00) 224
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.247, f(0.95+) 0.744, log ratio +1.103; robust T +2.66, p = 0.00777; h_left 0.035 (n 377), h_right 0.044 (n 209)
+  binned (w 0.0025, h 0.05): theta = ln f+ - ln f- = -0.028; stock-cluster bootstrap se 0.159, 95% CI [-0.290, +0.322]
+  after 1 Oct 2025 (FutEq utilisation; descriptive): n in [0.60, 1.30] = 3674 (stock-days), stocks 232; n in [0.90, 0.95) 135, in [0.95, 1.00) 36
+  CJM (p=2, MSE-optimal h): f(0.95-) 0.228, f(0.95+) 0.429, log ratio +0.631; robust T +0.68, p = 0.495; h_left 0.033 (n 81), h_right 0.042 (n 35)
+  binned (w 0.0025, h 0.05): theta = -0.162
+
+Supplementary: daily change in utilisation by omega_(d-1), main population:
+                   n  mean d_omega  median d_omega  share rising
+bin                                                             
+[0.5, 0.6)     26229        0.0014          0.0049        0.6276
+[0.6, 0.7)     20127        0.0003          0.0058        0.6301
+[0.7, 0.8)     15562       -0.0035          0.0051        0.6002
+[0.8, 0.85)     5701       -0.0046          0.0052        0.5876
+[0.85, 0.9)     4125        0.0027          0.0073        0.6158
+[0.9, 0.925)    1208        0.0136          0.0084        0.6010
+[0.925, 0.95)    607        0.0084          0.0137        0.6392
+
+Share crossing 0.95 the next day by omega_(d-1):
+              size    mean
+omega_prev                
+[0.85, 0.86)   950  0.0684
+[0.86, 0.87)   881  0.0760
+[0.87, 0.88)   846  0.0969
+[0.88, 0.89)   792  0.1389
+[0.89, 0.9)    656  0.1982
+[0.9, 0.91)    543  0.2339
+[0.91, 0.92)   475  0.3474
+[0.92, 0.93)   339  0.4218
+[0.93, 0.94)   268  0.5261
+[0.94, 0.95)   190  0.4789
+
+EXPLORATORY (added after the results were seen; PAP §11.2)
+  (1) CJM log ratio at h = (0.031, 0.036): -0.047; stock-cluster bootstrap (499 draws) se 0.287, 95% interval [-0.623, +0.542]
+  (2) binned theta, h = 0.02: +0.116
+  (2) binned theta, h = 0.03: +0.190
+  (2) binned theta, h = 0.04: +0.291
+  (2) binned theta, h = 0.05: +0.313
+  (2) binned theta, h = 0.075: +0.342
+  (2) binned theta, h = 0.1: +0.302

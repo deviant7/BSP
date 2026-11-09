@@ -1,0 +1,34 @@
+Constraint index for all NSE stocks (PAP §11.14 C17).
+Stock-quarters 80042 (3310 stocks, 2015Q1 to 2026Q3); F&O share 0.108; any SLB trade in quarter 0.166
+Loadings (first principal component, components standardised within quarter): no_short +0.494, slb_scarce +0.448, cs +0.428, lamihud +0.489, ivol +0.365; variance share 0.529
+Correlations of standardised components:
+              z_no_short  z_slb_scarce  z_cs  z_lamihud  z_ivol
+z_no_short          1.00          0.70  0.32       0.55    0.26
+z_slb_scarce        0.70          1.00  0.25       0.44    0.19
+z_cs                0.32          0.25  1.00       0.49    0.52
+z_lamihud           0.55          0.44  0.49       1.00    0.34
+z_ivol              0.26          0.19  0.52       0.34    1.00
+
+Loadings by year:
+  2015: no_short +0.46, slb_scarce +0.34, cs +0.46, lamihud +0.50, ivol +0.46 (share 0.52)
+  2016: no_short +0.48, slb_scarce +0.39, cs +0.45, lamihud +0.50, ivol +0.42 (share 0.53)
+  2017: no_short +0.48, slb_scarce +0.40, cs +0.45, lamihud +0.49, ivol +0.41 (share 0.54)
+  2018: no_short +0.49, slb_scarce +0.44, cs +0.42, lamihud +0.51, ivol +0.37 (share 0.52)
+  2019: no_short +0.48, slb_scarce +0.43, cs +0.43, lamihud +0.52, ivol +0.37 (share 0.54)
+  2020: no_short +0.51, slb_scarce +0.49, cs +0.37, lamihud +0.50, ivol +0.33 (share 0.53)
+  2021: no_short +0.50, slb_scarce +0.48, cs +0.41, lamihud +0.48, ivol +0.35 (share 0.57)
+  2022: no_short +0.49, slb_scarce +0.47, cs +0.42, lamihud +0.48, ivol +0.36 (share 0.58)
+  2023: no_short +0.50, slb_scarce +0.46, cs +0.44, lamihud +0.45, ivol +0.38 (share 0.54)
+  2024: no_short +0.51, slb_scarce +0.49, cs +0.40, lamihud +0.45, ivol +0.37 (share 0.52)
+  2025: no_short +0.50, slb_scarce +0.45, cs +0.44, lamihud +0.50, ivol +0.33 (share 0.51)
+  2026: no_short +0.51, slb_scarce +0.47, cs +0.44, lamihud +0.51, ivol +0.25 (share 0.49)
+
+Persistence: mean quarter-to-quarter rank correlation 0.896
+
+Validation (associations; frictions measured before outcomes):
+  (i) price delay D1 (year y) on mean index of year y-1, year FE: +0.0584 (se 0.0028, t +20.75); n 15790; mean delay 0.317
+      with stock FE: +0.0323 (se 0.0054)
+  (ii) |BHAR[+2,+64]| on previous-quarter index, quarter FE: +0.0230 (se 0.0008, t +27.24); n 69673; mean |BHAR| 0.1519
+       bad-news BHAR on index: -0.0083 (se 0.0014); n 23219
+       good-news BHAR on index: +0.0006 (se 0.0014); n 23095
+  (iii) F&O band width W on previous-quarter index: -6.366 bp (se 1.451); n 8232

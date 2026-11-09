@@ -42,19 +42,22 @@ bands, FM, robustness, writing.
   B: impulse-control band of inaction, b=(6Kσ²/θ)^{1/4}, "bridge" to TAR/TVECM). Both "deliver" six requirements = H1–H6.
   Progress report + 3-pp guide versions written Sep 28 — **but NONE of these were sent to the guide**;
   she knows only the project document.
-- No data downloaded, no empirical work yet.
+- (Historical, Sep 2026: no data then. Data built from 28 Oct 2026 on; see below.)
 - **Plan going forward: `plan/BSP_Research_Plan_v2.md`** (keeps the doc's goals; theory→PAP→blind data→tests).
 - **No timeline constraints** (user, 28 Oct 2026): ignore Stage I/II weeks; order work by logic, not dates.
 
 ## Corrections already folded into review/models (but NOT into the Word doc)
 - Short selling: intraday cash shorting allowed; naked overnight shorting barred; SLB thin → SSF is the practical channel.
   The project doc §1 still says "no genuine short selling in the cash market" (fix pending).
-- MWPL formula is 65× ADDV (delivery VALUE), floor 10% FF, quarterly (doc already corrected).
+- MWPL formula is 65× ADDV **in quantity (shares)** per NSE Clearing 119/2025 (the doc's 'delivery value' wording is wrong), floor 10% FF, quarterly.
 - Timeline in doc still lacks the theory stage (pending).
 
-## Current status (28 Oct 2026)
-- See `05_session_log.md` for the latest decisions and open threads.
-
-## Status at end of 28 Oct 2026 session
-Theory done (Model C, guide-safe); data built (ban/MWPL 2010–2026, F&O membership/events, prices, basis, announcements, Nifty);
-progress report final but not sent; PAP v1 complete, NOT tagged (waiting for guide). Full detail: `memory/08_handoff_next_session.md`.
+## Current status (9 Nov 2026) — authoritative detail in handoff/16_resume_here.md and handoff/04_current_state.md
+Research complete: theory (Model C), data built and audited, PAP v1 frozen (`pap-v1`, 85dac3a), all primary tests (+ Holm:
+H8, H3, H6 supported on the pre-specified statistic; H7 rejected with the opposite sign), all secondary tests, band chapter,
+constraint index, further checks (spurious bans: 2025 rules cut ban days ~3/4; placebos null; COVID restoration fits
+anticipation), deep audit (full rerun reproduces every output; index bad-news asymmetry is a size effect).
+Deliverables 9 Nov: final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp, `thesis/`), consulting deck
+`BSP_Presentation_Nov2026.pptx` (37 slides, `deck/`), academic Beamer deck `BSP_Presentation_Academic_Nov2026.pdf`
+(`beamer/`). Guide has seen only the project document and the October report. Next: user's review and cosmetic changes.
+Still pending with the user: go-ahead to fix the project document's errors (short-selling line, 30x leg, timeline).

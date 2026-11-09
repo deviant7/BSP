@@ -1,0 +1,87 @@
+\chapter{Institutional setting}\label{ch:inst}
+\chapterlead{The Indian rules that shape each limit to arbitrage: who may sell short, which stocks have derivatives, how
+the position limit and the ban work and how they were enforced, what trading costs, and where arbitrage capital comes
+from. Figure~\ref{fig:timeline} places the dated changes on one time line.}
+
+\begin{figure}[t]
+\caption[The dated changes to the limits, 2015 to 2026]{Almost every limit to arbitrage changed on a known date during the sample}\label{fig:timeline}
+\exsub{Futures STT, enforcement of the ban, the position-limit rule and arbitrage capital, 2015 to 2026}
+\centering\includegraphics[width=\linewidth]{fig_timeline}
+\exsource{Source: SEBI circulars and press releases, NSE circulars (listed in the references).}
+\end{figure}
+
+\section{Short selling and securities lending}
+Under SEBI's short-selling framework (restated in a circular of 5 January 2024, in line with the 2007 framework), all
+classes of investors may sell short, but naked short selling is prohibited: every short sale must be delivered at
+settlement. Institutional investors may not day trade. Securities traded in the F\&O segment are eligible for short
+selling. An overnight short in the cash market therefore needs borrowed stock, which comes from the securities lending
+and borrowing (SLB) segment. SLB covers F\&O stocks and, since July 2013, other liquid stocks that meet the exchanges'
+criteria, but trading in it is thin: on a typical day a few dozen stocks are lent. In practice the overnight short in an
+Indian stock is a short single-stock future (or an options position), and this exists only for F\&O stocks. Stock
+derivatives have been physically settled since the October 2019 expiry.
+
+\section{The F\&O segment}
+A stock enters the F\&O segment when it meets SEBI's eligibility criteria (market capitalisation, traded value, order size,
+MWPL and delivery value; the criteria were tightened in 2018 and again on 30 August 2024) and leaves it after failing them.
+From 2015 to October 2026 there were 239 entries and 171 exits, 162 of them eligibility exits after which the stock kept
+trading in the cash market. Entry gives a stock futures and options and formal short-selling eligibility at once, and
+exit removes them.
+
+\section{The market-wide position limit and the ban}
+\begin{table}[t]
+\caption[Position-limit rules over the sample]{The limit was cut and open interest redefined in October 2025}\label{tab:mwpl}
+\exsub{Market-wide position limit (MWPL) and the open interest tested against it}
+\small\begin{tabularx}{\textwidth}{@{}K{3.2cm}LL@{}}
+\toprule
+\thd{Period} & \thd{MWPL} & \thd{Open interest tested} \\
+\midrule
+To 30 Sep 2025 & 20\% of shares held by non-promoters (free float) & Gross open interest, futures and options \\ \rowrule
+20 Mar to 26 Nov 2020 & Halved for volatile or heavily used stocks (61 stocks) & Gross open interest \\ \rowrule
+From 1 Oct 2025 & Lower of 15\% of free float and 65 times average daily delivery (in shares), floor 10\% of free float; recomputed quarterly & Futures-equivalent (delta-adjusted) open interest \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: SEBI circulars of 22 September 2006 and 29 May 2025; SEBI press release 18/2020; NSE Clearing circular 119/2025.}
+\end{table}
+
+A stock enters the ban when market-wide open interest exceeds 95\% of its MWPL at the end of a day, from the next day, and
+leaves it when open interest falls to 80\%. During the ban every participant may only reduce positions, in all expiries
+and in both futures and options; rolling a position into the next expiry is not permitted. How the rule was enforced
+changed twice, and the changes matter for the results:
+\begin{itemize}
+\item \emph{Until 22 March 2020}, violations were judged on end-of-day positions, so positions opened and closed within a
+day were not breaches.
+\item \emph{From 23 March 2020}, after SEBI's press release 18/2020, the clearing corporations judged violations on peak
+intraday positions; this was kept ``till further directions'' when the other March 2020 measures were withdrawn in November 2020.
+\item \emph{From 1 October 2025}, under SEBI's circular of 29 May 2025 and NSE Clearing circular 119/2025, an entity's
+end-of-day futures-equivalent position must fall relative to its position when the ban began. This is more permissive
+than the earlier rule of trading only through offsetting positions: new contracts that lower the delta (for example a long
+put against a long future) are allowed. The package as a whole was not a relaxation: every stock's MWPL fell, and
+intraday monitoring of MWPL utilisation began on 3 November 2025.
+\end{itemize}
+Increases in a banned stock are penalised (from October 2025: 1\% of the value of the increase, minimum Rs 5,000 and
+maximum Rs 1 lakh per entity per stock per day).
+
+\section{Costs}
+The STT on the sale of futures was 0.01\% from June 2013, 0.0125\% from 1 April 2023, 0.02\% from 1 October 2024 and
+0.05\% from 1 April 2026. Delivery trades in the cash market pay 0.1\% on each side, and physical settlement of stock
+derivatives pays 0.1\%. Stamp duty on purchases has been uniform since July 2020 (0.015\% for delivery, 0.002\% for futures).
+Exchange transaction charges were revised on 1 October 2024.
+
+\section{Arbitrage capital}
+Arbitrage mutual funds hold long cash, short futures positions and are taxed as equity funds. When the taxation of debt
+funds changed on 1 April 2023 (the same day as an STT increase), arbitrage funds became the tax-efficient home for
+short-term money. Their net assets were Rs 56,218 crore in April 2018, Rs 71,106 crore in April 2023, Rs 1.99 lakh crore in
+October 2024 and Rs 2.98 lakh crore in September 2026 (Figure~\ref{fig:aum}).
+
+\begin{figure}[t]
+\caption[Net assets of arbitrage mutual funds, 2018 to 2026]{Arbitrage-fund assets quadrupled after debt funds lost their tax advantage}\label{fig:aum}
+\exsub{Monthly net assets of the arbitrage-fund category, April 2018 to September 2026}
+\centering\includegraphics[width=\linewidth]{fig_arb_aum}
+\exsource{Source: AMFI monthly reports; author's calculations.}
+\end{figure}
+
+\section{Prices}
+NSE sets a stock future's daily settlement price at a theoretical cost-of-carry value when the contract does not trade in
+the last half hour. A settlement-price basis would therefore shrink mechanically on thin days, including ban days; all
+measures in this thesis use traded prices. From 3 August 2026 the closing price of F\&O stocks comes from a closing
+auction.

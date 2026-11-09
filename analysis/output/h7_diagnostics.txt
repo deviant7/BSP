@@ -1,0 +1,86 @@
+EXPLORATORY diagnostics for H7 (not pre-specified). Units bp.
+
+(1) both days >= 50 contracts: n=480248, stocks 360, ban observations 8013
+    x_up    -0.7109  (se 0.0103, t -69.31)
+    x_mid   -0.3938  (se 0.0260, t -15.14)
+    x_lo    -0.2034  (se 0.0096, t -21.27)
+    xb_up   -0.0878  (se 0.0419, t -2.10)
+    xb_mid  +0.1185  (se 0.0551, t +2.15)
+    xb_lo   +0.0970  (se 0.0257, t +3.78)
+    delta_up - delta_lo = -0.1849 (se 0.0478); one-sided p(delta_up>0) = 0.982; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+(1) both days >= 200 contracts: n=470866, stocks 360, ban observations 6167
+    x_up    -0.7102  (se 0.0103, t -69.07)
+    x_mid   -0.3962  (se 0.0255, t -15.51)
+    x_lo    -0.2034  (se 0.0096, t -21.09)
+    xb_up   -0.1202  (se 0.0473, t -2.54)
+    xb_mid  +0.1379  (se 0.0441, t +3.13)
+    xb_lo   +0.1130  (se 0.0230, t +4.90)
+    delta_up - delta_lo = -0.2331 (se 0.0522); one-sided p(delta_up>0) = 0.994; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+(1) both days >= 1000 contracts: n=374971, stocks 360, ban observations 2112
+    x_up    -0.7138  (se 0.0110, t -64.61)
+    x_mid   -0.4098  (se 0.0276, t -14.82)
+    x_lo    -0.2035  (se 0.0104, t -19.64)
+    xb_up   -0.1543  (se 0.0492, t -3.13)
+    xb_mid  +0.1316  (se 0.0763, t +1.72)
+    xb_lo   +0.1302  (se 0.0217, t +5.99)
+    delta_up - delta_lo = -0.2844 (se 0.0548); one-sided p(delta_up>0) = 0.999; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+(3a) end-of-day checks, to 22 Mar 2020: n=210838, stocks 226, ban observations 3796
+    x_up    -0.7565  (se 0.0156, t -48.46)
+    x_mid   -0.3692  (se 0.0405, t -9.11)
+    x_lo    -0.1913  (se 0.0133, t -14.38)
+    xb_up   +0.0163  (se 0.0561, t +0.29)
+    xb_mid  +0.2031  (se 0.0668, t +3.04)
+    xb_lo   +0.1263  (se 0.0183, t +6.90)
+    delta_up - delta_lo = -0.1101 (se 0.0592); one-sided p(delta_up>0) = 0.386; p(delta_up-delta_lo>0) = 0.968; intersection-union p = 0.968
+(3b) peak-intraday checks, 23 Mar 2020 to 30 Sep 2025: n=221744, stocks 284, ban observations 4564
+    x_up    -0.6908  (se 0.0113, t -61.23)
+    x_mid   -0.4568  (se 0.0252, t -18.11)
+    x_lo    -0.2347  (se 0.0115, t -20.35)
+    xb_up   -0.2007  (se 0.0503, t -3.99)
+    xb_mid  +0.0853  (se 0.0657, t +1.30)
+    xb_lo   -0.1204  (se 0.0451, t -2.67)
+    delta_up - delta_lo = -0.0803 (se 0.0666); one-sided p(delta_up>0) = 1; p(delta_up-delta_lo>0) = 0.886; intersection-union p = 1
+(2) dependent variable = dlnF (same regressors; sum of the two legs' coefficients = the dm coefficient): n=481772, stocks 360, ban observations 8662
+    x_up    -0.4755  (se 0.0444, t -10.71)
+    x_mid   -0.3619  (se 0.0325, t -11.13)
+    x_lo    -0.1535  (se 0.0219, t -7.00)
+    xb_up   +0.0791  (se 0.2771, t +0.29)
+    xb_mid  +0.1628  (se 0.2812, t +0.58)
+    xb_lo   +0.2562  (se 0.1101, t +2.33)
+    delta_up - delta_lo = -0.1771 (se 0.2882); one-sided p(delta_up>0) = 0.388; p(delta_up-delta_lo>0) = 0.73; intersection-union p = 0.73
+(2) dependent variable = dlnS (same regressors; sum of the two legs' coefficients = the dm coefficient): n=481772, stocks 360, ban observations 8662
+    x_up    +0.2978  (se 0.0449, t +6.64)
+    x_mid   +0.0400  (se 0.0315, t +1.27)
+    x_lo    +0.0842  (se 0.0178, t +4.74)
+    xb_up   +0.2060  (se 0.2780, t +0.74)
+    xb_mid  +0.0157  (se 0.3139, t +0.05)
+    xb_lo   +0.1708  (se 0.0967, t +1.77)
+    delta_up - delta_lo = +0.0352 (se 0.2877); one-sided p(delta_up>0) = 0.23; p(delta_up-delta_lo>0) = 0.451; intersection-union p = 0.451
+
+(2b) mean daily changes by regime of m_(t-1) and ban status (bp):
+                   n     dm   dlnF   dlnS
+regime ban                               
+lo     False   97412  17.02  11.39  -4.11
+       True     2979  22.03 -22.00 -42.82
+mid    False  280154   0.58  -0.94   0.71
+       True     3723  -3.44 -27.11 -22.37
+up     False   95544 -15.91  -8.39  10.51
+       True     1960 -26.61 -26.11   4.39
+
+(4) ban observations by calendar days since spell start: <=4 days 4978, later 3684
+(4) ban days restricted to first days of spell (<=4 calendar days): n=478088, stocks 360, ban observations 4978
+    x_up    -0.7111  (se 0.0103, t -69.36)
+    x_mid   -0.3935  (se 0.0260, t -15.15)
+    x_lo    -0.2041  (se 0.0096, t -21.28)
+    xb_up   -0.1630  (se 0.0424, t -3.84)
+    xb_mid  +0.1049  (se 0.0643, t +1.63)
+    xb_lo   +0.0908  (se 0.0258, t +3.52)
+    delta_up - delta_lo = -0.2537 (se 0.0502); one-sided p(delta_up>0) = 1; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+(4) ban days restricted to later days of spell: n=476794, stocks 360, ban observations 3684
+    x_up    -0.7131  (se 0.0103, t -69.27)
+    x_mid   -0.3939  (se 0.0260, t -15.16)
+    x_lo    -0.2040  (se 0.0096, t -21.27)
+    xb_up   -0.0081  (se 0.0481, t -0.17)
+    xb_mid  +0.0904  (se 0.0939, t +0.96)
+    xb_lo   +0.0740  (se 0.0359, t +2.06)
+    delta_up - delta_lo = -0.0821 (se 0.0564); one-sided p(delta_up>0) = 0.567; p(delta_up-delta_lo>0) = 0.927; intersection-union p = 0.927

@@ -1,14 +1,37 @@
-# 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026, end of session)
+# 08 — HANDOFF FOR THE NEXT SESSION (written 28 Oct 2026; updated 5 Nov 2026)
+
+> **Superseded as the entry point by `handoff/16_resume_here.md` (rewritten 9 Nov 2026) and `handoff/00_START_HERE.md`.** Kept for the record; `handoff/` is the
+> maintained, complete brief.
 
 Read this file first, then CLAUDE.md and memory/01–07. It states exactly where the project is, what is waiting on whom,
 every artefact, every rule, and how to rebuild everything.
 
 ---------------------------------------------------------------------------------------------------------------------
+## 0b. STATE AS OF 5 Nov 2026 (supersedes §1–§2 where they conflict)
+- Report WAS sent; Prof. Aditi **Chaubal** (spelling confirmed) liked it and gave the go-ahead. → Data audit done and fixed
+  (docs/10_data_quality_audit.md), PAP updated with pre-tag revisions and **tagged `pap-v1` at commit 85dac3a** (5 Nov 2026). The cloud session's git proxy
+  refuses tag pushes (HTTP 403), so the tag exists only locally until the user creates it on GitHub (Releases → new tag
+  `pap-v1` on commit 85dac3a, or `git tag -a pap-v1 85dac3a && git push origin pap-v1`). Commit 85dac3a is pushed. The blind rule is
+  now lifted for tests run AS SPECIFIED in the PAP; any deviation goes into PAP §11 with date and reason.
+- **`docs/`** = final-form documentation for outside readers (README + 13 pages). Keep it updated when anything final changes;
+  no history, no Models A/B, no internal notes there. Add a results page when tests are run.
+- Audit fixes (details memory/05, docs/10): imputed ban lists (6 May 2025; 19 Feb & 25 Aug 2014); r carried forward for
+  Oct 2026 (`r_filled`); results day 0 rebuilt (announcements 'Financial Result Updates' + filings + board meetings + ISIN
+  symbol history) — the old feed had dated 51.5% of F&O events too late; coverage now 98–100% of F&O stock-quarters.
+- New raw folders: data/raw/boardmeetings (312 files), data/raw/resultupdates (1,173 files). Rebuild recipe in docs/12.
+- New numbers: 2015–26 spells **1,788**, ban stock-days **9,416**, 141 stocks; (0.90,0.95] non-ban 2,439/139; clean basis
+  sample 503,170 (median +1.2, p10 −33.0, p90 +26.2 bp); announcements 94,071 events, **8,594 for F&O stocks (180 on ban days)**,
+  timing known 99%, 62% after close. The SENT report used the pre-audit numbers (1,789 / 9,414 / 7,910 / 188 / 63%); tell the
+  guide about the corrected results-date construction when results are presented.
+- Remaining known gap: BSE-only companies traded on NSE (MCX, Abbott India, Nestle India before 2023) have no results events.
+- Next: run the pre-specified tests (H7, H8, H3, H6, then secondary); blind-safe inputs still to collect: AMFI arbitrage AUM,
+  XBRL EPS, SLB.
+
 ## 0. Git / GitHub (the user asked about this)
 - All work is on branch **`claude/compassionate-rubin-s9gny2`** of `deviant7/bsp` (pushed; remote == local at session end).
-- **`main` still has only the "Initial commit"** (a6a8412). GitHub shows `main` by default, so the new files are only visible
-  after switching the branch selector to `claude/compassionate-rubin-s9gny2` (or via a PR/merge). No PR has been created;
-  system rules: create a PR / merge to main ONLY if the user asks. If the user wants the files on main, offer a PR.
+- **PR #1 (https://github.com/deviant7/BSP/pull/1) was opened and merged by the user on 28 Oct 2026** → `main` (merge commit
+  65ef0e3) now contains all work up to 0e78747. The working branch was then restarted from `origin/main`. Later work on the
+  branch needs a new PR to reach `main` (create one only if the user asks).
 - Commit trailers required: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` and
   `Claude-Session: https://claude.ai/code/session_01M6SKm82udXsHf6727aGMNw`. Never put model names in repo files.
 - `data/raw/` (1.2 GB) and `data/processed/basis_panel.csv.gz` (74 MB) are git-ignored → **lost when the container ends**;
@@ -77,6 +100,8 @@ cd models_src/modelC && python3 verify_modelC.py     # all checks PASS
 Report: `cd progress_report_src && pdflatex progress_report_oct2026.tex` (twice) → copy to repo root.
 
 ## 6. Key verified numbers (for any later writing)
+(Numbers as of 28 Oct 2026; the 5 Nov audit revised several of them (spells, ban days, rule checks, basis sample,
+announcements). Current values: §0b above and `handoff/09_key_numbers.md`.)
 - Ban/MWPL panel: 4,120 trading days (Feb 2010–27 Oct 2026), 476 symbols. Flags vs next-day ban list 11,753/11,771 (99.85%).
   Entry rule (ω>0.95 day before) 99.2%; exit rule (ω≤0.80 last ban day) 99.5% of spells.
 - Main sample 2015–2026: 1,789 spells, 9,414 ban stock-days, 141 stocks; median spell 4 days pre-Oct-2025 (mean 5.2), 9 days

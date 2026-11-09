@@ -1,0 +1,16 @@
+EXPLORATORY band checks (not pre-specified; PAP §11.2). Units bp.
+
+(1) Threshold model with x demeaned by the stock's median within each STT period:
+  STT period to Mar 2023             n  320718; gL  -39.1, gU  +23.8 (width  62.9); rho lower/middle/upper -0.082/-0.438/-0.770; shares 0.11/0.76/0.13; F 4703.0
+  STT period Apr 2023 - Sep 2024     n   58386; gL  -30.9, gU  +18.9 (width  49.7); rho lower/middle/upper -0.075/-0.514/-0.550; shares 0.10/0.74/0.16; F 625.2
+  STT period Oct 2024 - Mar 2026     n   68113; gL  -31.5, gU  +23.1 (width  54.7); rho lower/middle/upper -0.068/-0.550/-0.198; shares 0.10/0.79/0.11; F 1070.3
+  STT period from Apr 2026           n   25893; gL  -31.5, gU  +28.9 (width  60.4); rho lower/middle/upper -0.168/-0.580/-0.154; shares 0.12/0.78/0.10; F 205.8
+  year 2020 (period-demeaned)        n   31516; gL  -58.5, gU  +16.1 (width  74.6); rho lower/middle/upper -0.136/-0.306/-0.861; shares 0.10/0.65/0.25; F 306.8
+  year 2025 (period-demeaned)        n   47122; gL  -31.5, gU  +23.3 (width  54.8); rho lower/middle/upper -0.073/-0.554/-0.104; shares 0.10/0.79/0.11; F 746.1
+  year 2026 (period-demeaned)        n   36867; gL  -36.4, gU  +26.8 (width  63.2); rho lower/middle/upper -0.117/-0.568/-0.176; shares 0.10/0.80/0.10; F 372.0
+
+(2) Noise check (linear, pooled, n 468018): OLS slope of Delta m_t on x_(t-1) -0.262; IV with x_(t-2) -0.142; first-order autocorrelation of x 0.744
+    regime by x_(t-2), x_(t-2) below its 12th pct  : OLS -0.174; IV -0.121; n 56163
+    regime by x_(t-2), middle                      : OLS -0.489; IV -0.192; n 355692
+    regime by x_(t-2), x_(t-2) above its 88th pct  : OLS -0.516; IV -0.141; n 56163
+  Reading: with classical noise in m, OLS slopes are biased toward -1 and IV slopes are not; IV slopes much closer to 0 mean that much of the day-to-day reversion is noise.

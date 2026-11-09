@@ -11,3 +11,12 @@ data/processed/basis_panel.csv.gz
 # Python bytecode
 __pycache__/
 *.pyc
+data/processed/cache/
+data/processed/returns_daily.csv.gz
+data/processed/mcap_daily.csv.gz
+# build output of the thesis source (copy committed at repo root as BSP_Thesis_Draft_Nov2026.pdf)
+thesis/main.pdf
+progress_report_src/first_results_nov2026.pdf
+thesis_short/main.pdf
+*.lof
+*.lot

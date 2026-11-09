@@ -77,3 +77,14 @@ Status: **Dropped** (not in current plan) · **Demoted** (kept as optional/robus
   T-bill series was obtainable; T-bill/MIBOR kept as robustness if found. H7 regimes now defined by stock-level 20/80 quantiles
   on non-ban days (TVECM thresholds and ±25 bp as robustness) instead of 'pre-period TVECM thresholds'. H9 and the level effect
   moved from primary to secondary; primary family = {H7, H8, H3, H6}. Draft v0 archived.
+- 5 Nov 2026 (data audit, before tagging `pap-v1`; nothing removed): imputed ban lists for days NSE has none; carried-forward
+  interest rate (flagged) for months not yet published; results day 0 rebuilt from the exchange's "Financial Result Updates"
+  announcements + filings + board meetings with ISIN-based symbol history (the filing feed alone dated half the F&O events
+  too late); rule for events with unknown release time (day 0 = next trading day after the release date). Power counts
+  updated (1,788 spells, 9,416 ban stock-days, 8,594 F&O announcements, 180 on ban days). Then tagged `pap-v1`.
+- 7 Nov 2026 (after the frozen plan; nothing removed): master plan §0 corrected: SLB is not limited to F&O stocks (SEBI widened
+  it to liquid non-F&O stocks in July 2013); short-selling eligibility stays F&O-only. Added, each with a dated PAP §11 entry
+  before running: all secondary tests (C7-C15), the band-estimation chapter (C16; threshold, STAR and observed-transition
+  models, cost band) and the constraint index for all stocks (C17; a published data set). New data: NSE SLB bhavcopies,
+  AMFI monthly arbitrage-fund series. The SLB input of the friction index is measured as activity (eligibility barely
+  varies); it entered with the wrong sign in H1 and is kept, with an index without it reported alongside.

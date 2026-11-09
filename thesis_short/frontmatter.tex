@@ -1,0 +1,77 @@
+%---------------------------------------------------------------- title page
+\begin{titlepage}
+\pagenumbering{gobble}
+\begin{center}
+\singlespacing
+\vspace*{1.2cm}
+{\color{ink}\fontsize{22}{27}\selectfont\bfseries Limits to Arbitrage in the\\[2pt] Indian Equity Market\par}
+\vspace{0.4cm}
+{\large\color{accent} Short version\par}
+\vspace{0.3cm}
+{\color{accent}\rule{0.25\linewidth}{1.2pt}\par}
+\vspace{1.0cm}
+{\large A BS project report submitted in partial fulfilment of the requirements\\ for the award of the degree of\par}
+\vspace{0.3cm}
+{\Large\bfseries Bachelor of Science in Economics\par}
+\vspace{0.9cm}
+{\large by\par}
+\vspace{0.2cm}
+{\Large\bfseries\color{accent} Prince Kumar\par}
+{\large (Roll No. 23B3032)\par}
+\vspace{0.9cm}
+{\large Under the supervision of\par}
+\vspace{0.15cm}
+{\Large\bfseries\color{accent} Prof.\ Aditi Chaubal\par}
+\vspace{1.0cm}
+\includegraphics[width=0.24\linewidth]{iitb_logo.png}\par
+\vspace{0.9cm}
+{\large Department of Economics\par}
+{\large\bfseries INDIAN INSTITUTE OF TECHNOLOGY BOMBAY\par}
+\vspace{0.2cm}
+{\large Mumbai 400076, India\par}
+\vspace{0.6cm}
+{\large November 2026\par}
+\end{center}
+\end{titlepage}
+
+\frontmatter
+\pagestyle{body}
+\setcounter{page}{1}
+
+%---------------------------------------------------------------- about this version
+\chapter*{About this version}
+\addcontentsline{toc}{chapter}{About this version}
+\thispagestyle{plain}
+This is a shorter version of my thesis, for readers who want the question, the method and the results without every
+detail. It keeps all the chapters, the main figures and tables and every pre-specified result. It leaves out the full
+model with its proofs, the description of how each data set was built, several supporting figures and some robustness
+checks. Those are in the full version, which is the version of record.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{plain}
+\input{abstract}
+
+\cleardoublepage
+\tableofcontents
+
+\chapter*{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+\thispagestyle{plain}
+{\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\leavevmode\bfseries\color{accent}}p{2.9cm}L@{}}
+F\&O & Futures and options; the derivatives segment of the National Stock Exchange \\
+MWPL & Market-wide position limit \\
+NSE & National Stock Exchange of India \\
+OI & Open interest \\
+SEBI & Securities and Exchange Board of India \\
+SLB & Securities lending and borrowing \\
+STT & Securities transaction tax \\
+BHAR & Buy-and-hold abnormal return \\
+RD & Regression discontinuity \\
+VWAP & Volume-weighted average price \\
+bp & Basis point (0.01\%) \\
+\end{tabularx}}
+
+\mainmatter
+\pagestyle{body}

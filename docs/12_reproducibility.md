@@ -1,0 +1,151 @@
+# 12. Reproducibility
+
+Every number in the project can be rebuilt from public sources with the scripts in this repository. This page lists the
+files that make up the project, the software needed and the exact sequence of commands.
+
+## 12.1 Repository layout (final-form files)
+
+| Path | Content |
+|---|---|
+| `docs/` | This documentation |
+| `BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models_src/modelC/` | Theoretical framework (PDF, LaTeX source, `verify_modelC.py` numerical checks and their output, figures) |
+| `plan/pre_analysis_plan_v1.md` | The frozen test plan (git tag `pap-v1`) |
+| `data_pipeline/` | Download and build scripts (one per data set), with a README |
+| `data/raw/` | Raw downloads (not committed; about 1.5 GB; rebuilt by the download scripts) |
+| `data/processed/` | Processed data sets and build reports (committed, except the basis panel, daily returns and daily market caps, which are rebuilt); includes the published constraint index `constraint_index_q.csv.gz` |
+| `analysis/` | Shared samples and inference (`samples.py`, `inference.py`), one script per test (primary, secondary, band chapter, constraint index), estimators and their tests on simulated data, data audit scripts (`audit/`), result files (`output/`) |
+| `reports/figs/`, `reports/tables/` | Figures and tables generated from the processed data |
+| `thesis/` | LaTeX source of the final thesis (`main.tex`, `bspstyle.sty` page design, `frontmatter.tex`, `abstract.tex`, chapters, appendices A to C, references); figures in `thesis/figs/` from `analysis/thesis_figures_final.py` |
+| `deck/` | Presentation deck in a consulting format: `build_deck.js` (pptxgenjs) and charts in `deck/figs/` from `analysis/deck_figures.py`; output `BSP_Presentation_Nov2026.pptx` |
+| `thesis_short/` | Short version of the thesis (about 50 pages): trimmed copies of the chapter files, using the style and figures of `thesis/`; output `BSP_Thesis_Short_Nov2026.pdf` |
+| `beamer/` | Academic presentation in LaTeX Beamer: `main.tex` and charts in `beamer/figs/` from `analysis/beamer_figures.py`; output `BSP_Presentation_Academic_Nov2026.pdf` |
+| `references/` | PDFs of the papers and regulatory documents cited, with an index |
+
+## 12.2 Software
+
+- Python 3 with `numpy`, `pandas`, `scipy`, `statsmodels`, `matplotlib`, `openpyxl`, `xlrd`, `pyfixest`, `rddensity`, `rdrobust`
+  (`pip install numpy pandas scipy statsmodels matplotlib openpyxl xlrd pyfixest rddensity rdrobust`).
+- `pdftotext` (poppler) for the AMFI lists.
+- `curl` (the FRED download falls back to it).
+- LaTeX for the PDFs: `texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended lmodern`
+  (the thesis also uses `tgheros`, `sfmath` and TikZ; the academic deck uses Beamer with the Madrid theme and `appendixnumberbeamer`).
+- Node.js with `pptxgenjs` and `jszip` for the consulting deck (`npm install pptxgenjs jszip` in any folder, then run
+  `NODE_PATH=<that folder>/node_modules node deck/build_deck.js`); LibreOffice to render it to PDF.
+- Network access to `nsearchives.nseindia.com`, `www.nseindia.com` and `fred.stlouisfed.org`.
+
+All scripts are run with `python3 -I` (isolated mode), from the repository root.
+
+## 12.3 Rebuild sequence
+
+```bash
+# 1. downloads (raw data; each step is resumable and skips files already present)
+python3 -I data_pipeline/download_nse_mwpl.py data/raw 2010-01-01 2026-10-27
+python3 -I data_pipeline/download_nse_prices.py data/raw/prices 2015-01-01 2026-10-27 3
+python3 -I data_pipeline/download_rates_corpactions.py data/raw 2014 2026
+python3 -I data_pipeline/download_results_filings.py data/raw 2014 2026
+python3 -I data_pipeline/download_results_filings.py data/raw 2025 2026 integrated
+python3 -I data_pipeline/download_results_filings.py data/raw 2014 2026 boardmeetings
+python3 -I data_pipeline/download_results_filings.py data/raw 2014 2026 resultupdates
+python3 -I data_pipeline/download_index_close.py data/raw/indices/nifty50_daily.csv 2015-01-01 2026-10-27
+python3 -I data_pipeline/download_slb.py data/raw/slb 4
+python3 -I data_pipeline/download_amfi_monthly.py data/raw/amfi_monthly data/processed   # also writes the parsed series
+
+# 2. builds (order matters: announcements need the panel and the membership file)
+python3 -I data_pipeline/build_mwpl_panel.py data/raw data/processed
+python3 -I data_pipeline/describe_bans.py data/processed reports/figs
+python3 -I data_pipeline/build_fno_events.py data/raw data/processed
+python3 -I data_pipeline/build_announcements.py data/raw data/processed
+python3 -I data_pipeline/build_basis.py data/raw data/processed
+python3 -I data_pipeline/build_returns.py data/raw data/processed
+python3 -I data_pipeline/build_amfi_mcap.py data/raw data/processed
+python3 -I data_pipeline/build_mcap.py data/processed
+python3 -I data_pipeline/build_slb.py data/raw/slb data/processed
+python3 -I data_pipeline/report_figs.py data/processed reports/figs
+python3 -I data_pipeline/report_tables.py data/processed reports/tables
+
+# 3. tests (frozen plan) and their checks
+python3 -I analysis/test_inference.py
+python3 -I analysis/samples.py
+python3 -I analysis/h8_trading.py
+python3 -I analysis/h7_onesided.py
+python3 -I analysis/h7_diagnostics.py
+python3 -I analysis/h3_costs.py
+python3 -I analysis/h6_outcomes.py
+python3 -I analysis/h6_fno.py
+# secondary tests (plan §6, details in §11.4 to §11.12)
+python3 -I analysis/level_effect.py
+python3 -I analysis/level_effect_buildup.py      # exploratory
+python3 -I analysis/density_test.py
+python3 -I analysis/rd_95.py
+python3 -I analysis/hysteresis.py
+python3 -I analysis/h9_regime.py
+python3 -I analysis/h2_badnews.py
+python3 -I analysis/h1_frictions.py
+python3 -I analysis/h4_capital.py
+python3 -I analysis/h5_anomalies.py
+python3 -I analysis/h7_iv.py                     # exploratory noise check of H7
+# band-estimation chapter (plan §11.13) and the constraint index (plan §11.14)
+python3 -I analysis/band_estimation.py
+python3 -I analysis/band_exploratory.py          # exploratory
+python3 -I analysis/band_costs.py
+python3 -I analysis/constraint_index.py          # writes data/processed/constraint_index_q.csv.gz
+python3 -I analysis/audit/index_size_check.py    # exploratory size control for the index validation
+# remaining items of the master plan (plan §11.15) and the figures
+python3 -I analysis/spurious_bans.py
+python3 -I analysis/placebos.py
+python3 -I analysis/covid_halving.py
+python3 -I analysis/thesis_figures.py
+python3 -I analysis/thesis_figures_final.py       # figures of the final thesis (thesis/figs/)
+(cd thesis && pdflatex main.tex && pdflatex main.tex)   # the thesis PDF
+python3 -I analysis/deck_figures.py                # charts of the consulting deck (deck/figs/)
+NODE_PATH=<folder>/node_modules node deck/build_deck.js   # BSP_Presentation_Nov2026.pptx
+python3 -I analysis/beamer_figures.py              # charts of the academic deck (beamer/figs/)
+(cd beamer && pdflatex main.tex && pdflatex main.tex)   # the academic deck PDF
+(cd thesis_short && pdflatex main.tex && pdflatex main.tex)   # the short thesis PDF
+
+# 4. other checks
+python3 -I analysis/test_setar_simulated.py
+python3 -I analysis/test_cs_att.py                # Callaway-Sant'Anna estimator recovers a known effect
+python3 -I analysis/test_level_effect.py          # level-effect code recovers known in-ban shifts
+python3 -I analysis/audit/audit_coverage.py data/raw
+python3 -I analysis/audit/audit_prices.py data/raw
+python3 -I analysis/audit/audit_oi_alignment.py data/raw
+(cd models_src/modelC && python3 verify_modelC.py)
+```
+
+Step 3 and the estimator checks can be run in one go, from the processed data, with
+`bash analysis/audit/rerun_all.sh LOGDIR` (it clears the analysis caches first and logs every script); on the current
+build every script exits cleanly and reproduces the committed outputs apart from run times and the last digit of one
+p-value. `python3 -I analysis/audit/check_numbers.py` lists every decimal number quoted in the thesis, the results
+report and the results pages of these docs that does not appear, after rounding, in an analysis output; on the current
+build the only items listed are section numbers and one cost input taken from the exchange's fee schedule.
+
+Approximate run times on one machine: the open-interest and ban files about 40 minutes; the price files about
+2.5 hours; each event-list download 10 to 30 minutes; each build a few minutes.
+
+## 12.4 Outputs and their reports
+
+| Output | Rows (current build) | Report |
+|---|---|---|
+| `mwpl_oi_panel.csv.gz` | 752,037 stock-days, 476 symbols, 4,120 trading days | `build_report.txt` |
+| `ban_days.csv.gz` | 11,765 stock-days (2010 to 2026) | `build_report.txt` |
+| `ban_spells.csv.gz` | 2,181 spells (2010 to 2026) | `descriptives.txt` |
+| `fno_membership.csv.gz` | 534,712 stock-days, 374 symbols | `fno_events_report.txt` |
+| `fno_events.csv` | 239 entries, 171 exits | `fno_events_report.txt` |
+| `announcements.csv.gz` | one row per stock and quarter | `announcements_report.txt` |
+| `basis_panel.csv.gz` | 1,066,167 stock-day-contract rows | `basis_report.txt` |
+| `nifty_futures.csv.gz`, `nifty50_daily.csv` | validation series | `basis_report.txt` |
+| `returns_daily.csv.gz` (not committed) | 5,331,373 stock-days, 3,723 stocks | `returns_report.txt` |
+| `amfi_mcap.csv.gz` | 18 half-years, about 3,400 to 5,400 companies each | `amfi_mcap_report.txt` |
+| `mcap_daily.csv.gz` (not committed) | daily market cap, 94.7% of cash stock-days | `mcap_report.txt` |
+| `slb_daily.csv.gz` | 176,062 SLB trade rows, 1,149 symbols, 2015 to 2026 | `slb_report.txt` |
+| `amfi_arbitrage_monthly.csv` | 102 months, April 2018 to September 2026 | (printed by the downloader) |
+| `constraint_index_q.csv.gz` | 80,042 stock-quarters, 3,310 stocks, 2015 Q1 to 2026 Q3 | `analysis/output/constraint_index.txt` |
+
+## 12.5 Things that change if the data are rebuilt later
+
+- NSE occasionally revises or removes archive files and changes its web endpoints. The build reports record the counts
+  of the current build, so a rebuild can be compared line by line.
+- The interest-rate series is extended monthly; a later rebuild replaces the carried-forward rate for October 2026 with
+  the published value (`r_filled` becomes False).
+- Event lists (corporate actions, results, board meetings) can gain late filings.

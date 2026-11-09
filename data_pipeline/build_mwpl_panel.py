@@ -157,6 +157,28 @@ def main(raw, out):
     rep.append(f"secban files: {len(sb)}; misdated: {bact}")
     ban = ban[okb][["date", "symbol"]].drop_duplicates()
     ban = ban[ban["date"].isin(panel["date"].unique())]
+    ban["source"] = "list"
+    # Trading days with no ban list at NSE (e.g. 6 May 2025 returns 404): impute the list as
+    #   stocks flagged 'No Fresh Positions' in the previous day's combineoi file (they enter the ban today)
+    #   plus stocks in the ban on both the previous and the next trading day (spell continues).
+    pdays = sorted(pd.to_datetime(panel["date"].unique()))
+    sb_files = sorted(glob.glob(os.path.join(raw, "secban", "*.csv")))
+    misdated = {pd.Timestamp(fd) for fd, _ in bmis.itertuples(index=False)}
+    have = ({pd.Timestamp(file_date(f)) for f in sb_files} - misdated) | {pd.Timestamp(x) for x in bcovered}
+    imp = []
+    for j in range(1, len(pdays) - 1):
+        d = pdays[j]
+        if d in have:
+            continue
+        prev, nxt_d = pdays[j - 1], pdays[j + 1]
+        enter = set(panel.loc[(panel["date"] == prev) & panel["no_fresh_next_day"], "symbol"])
+        cont = set(ban.loc[ban["date"] == prev, "symbol"]) & set(ban.loc[ban["date"] == nxt_d, "symbol"])
+        for s in sorted(enter | cont):
+            imp.append((d, s, "imputed"))
+    if imp:
+        ban = pd.concat([ban, pd.DataFrame(imp, columns=["date", "symbol", "source"])], ignore_index=True)
+    rep.append(f"trading days without a ban list, imputed: {sorted({str(d.date()) for d, _, _ in imp})} "
+               f"({len(imp)} stock-days: {[s for _, s, _ in imp]})")
     rep.append(f"ban stock-days on panel trading days: {len(ban)}")
 
     # consistency: stocks flagged 'No Fresh Positions' on day t should be in the ban list on the next trading day
@@ -166,8 +188,9 @@ def main(raw, out):
     flag["date"] = pd.to_datetime(flag["date"]).map(nxt)
     flag = flag.dropna()
     key = lambda df: set(zip(pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d"), df["symbol"]))
+    flag = flag[flag["date"].isin(have)]          # skip days without an official list (imputed days)
     a = key(flag)
-    b = key(ban[ban["date"].isin(flag["date"].unique())])
+    b = key(ban[ban["date"].isin(flag["date"].unique()) & (ban["source"] == "list")])
     rep.append(f"flag(t) -> ban list(t+1): flagged {len(a)}, listed {len(b)}, both {len(a & b)}, "
                f"flag-only {len(a - b)}, list-only {len(b - a)}")
     if a - b:

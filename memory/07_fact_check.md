@@ -129,3 +129,24 @@ Primary PDFs in `references/` (SEBI 2024/132, SEBI 2025/79, SEBI PR 22/2024, all
 | Cash delivery STT 0.1% on buy and sell; physically settled derivatives 0.1% | ✔S | Zerodha, ClearTax, Business Standard 2018 |
 | NSE: futures not traded in last half hour → settlement = theoretical price F = S·e^{rt} | ✔P (NSE page via search) | nseindia.com equity-derivatives settlement-price page → settlement-basis ≈ 0 mechanically on no-trade days |
 | Full texts of Saurav–Srivastava–Agarwalla (2026), Gagnon (2018), Brennan–Schwartz (1990) | ? | Blocked (SSRN/Wiley/JSTOR 403). Abstracts only. Need IITB library download |
+
+## K. Fourth pass (5 Nov 2026, while interpreting H8)
+| Item | Status | Evidence |
+|---|---|---|
+| Intraday (peak) monitoring of positions in banned stocks from 23 Mar 2020 | ✔P NEW | SEBI PR 18/2020 Annex A 1(i) (via taxguru reproduction); ICCL/BSE notice 20200322-2 (saved `references/24_...txt`); PR 59/2020 (saved `references/23_...pdf`) keeps it till further directions |
+| Pre-2020 ban penalty assessed on end-of-day positions | ✔S | NSE penalty text quoted on tradingqna (2017); Zerodha (Nithin, 2017) said exchanges' circulars meant nothing new even intraday, but other brokers allowed intraday |
+| From 1 Oct 2025 entity monitoring is end-of-day FutEq vs base position | ✔P | NSE Clearing 119/2025 §2.2 (references/19) |
+| "FutEq ban from 8 Dec 2025" (Angel One notice) | ? | Our data show the market-level FutEq trigger from 1 Oct 2025; 8 Dec likely broker-side entity checks |
+| Academic study of ban effects | still none found | searches 5 Nov 2026 (web): only broker explainers |
+
+## L. Fifth pass (7 Nov 2026, re-verifying the 7 Nov correction boxes against primary texts)
+| Item | Status | Evidence |
+|---|---|---|
+| Pre-Oct-2025 MWPL = 20% of non-promoter shares | ✔P | SEBI 2025/79 §5.2.1 (quotes Master Circular 30 Dec 2024 cl. 3.3.2.1.1); SEBI/DNPD/Cir-51/2010 says the Cir-31/2006 method "shall remain unchanged"; data: FF = MWPL/0.20 reproduces the 85 15%-FF limits exactly |
+| "30× volume leg from Cir-26/2004, ended 2006" | ✔S (origin) | 2006 change ("henceforth linked to free float") confirmed (Oneindia, 23 Sep 2006); the 2004 circular's MWPL text was not retrievable on 7 Nov (cited only in later circulars); the 28 Oct ✔P could not be re-done |
+| ADDV in quantity | ✔P | NSE Clearing 119/2025 §1.1.1 and FAQ: "[in terms of quantity]"; SEBI's own name is "Average Daily Delivery Value" |
+| **In-ban trading rule from 1 Oct 2025 is looser** | ✔P ✎ | SEBI 2025/79 §5.3.1 (old: "trade only to decrease their positions through offsetting positions") vs §5.3.2 + Table 2 (new: any trade allowed if end-of-day FutEq falls; adding a long put or short call to a long future is permissible). Corrects the 28 Oct reference-index note ("ban-period relaxation wording inaccurate"): the *package* is not a relaxation (MWPL cut for all stocks; intraday MWPL monitoring 3 Nov 2025, §5.4, surveillance actions), but the in-ban rule is. Consistent with the higher post-reform ban-day R in H8 |
+| Short-selling framework | ✔P | SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/1 (5 Jan 2024; `references/25`): all investors may short sell; naked shorting barred (delivery at settlement); institutions may not day trade; F&O-segment securities eligible for short selling. SLB eligibility = F&O securities (+ some ETFs): ✔S only (NSE page 503) |
+| "8 Dec 2025" | ? | still unresolved; a search result (7 Nov) describes Dec 2025 as moving ban-period MWPL checks to intraday snapshots, which may instead be the 3 Nov 2025 §5.4 monitoring |
+| **SLB eligibility = F&O only** | ✎ (7 Nov 2026) | WRONG for 2013 on: SEBI extended SLB to liquid non-F&O securities from 1 Jul 2013 (Business Standard 30 May 2013, secondary); NSE SLB bhavcopies (2015-2026, `data/processed/slb_daily.csv.gz`) show non-F&O stocks in 0.5-2% of trade rows 2015-17 and 6-23% from 2019. Short-selling eligibility (F&O securities) stands (references/25). Corrected in docs 01/02/03, handoff 01/10, plan v2 §0, notes batch 1. Sent documents (progress report, model PDF) keep the old wording; fix in the next guide-facing document |
+| Arbitrage-fund AUM figures | ✔P (7 Nov 2026) | AMFI monthly Excel (`data/processed/amfi_arbitrage_monthly.csv`): Apr 2023 71,106 cr and Oct 2024 1,98,981 cr match exactly; 59,538 cr is **Nov** 2018 in AMFI's file (the Oct 2018 attribution in §I came from a secondary source) |

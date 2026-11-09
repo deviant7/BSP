@@ -2,6 +2,20 @@
 
 Covers references 16–18, read directly from the SEBI circulars. These give the **exact rules and dates** our identification depends on. Everything below is quotable primary-source fact.
 
+> **Corrections (added 7 Nov 2026, checked against the primary texts in `references/17`, `19`, `22`).** (1) Before
+> 1 Oct 2025 the MWPL was 20% of the shares held by non-promoters only (SEBI 2025/79 §5.2.1, quoting the Dec 2024 Master
+> Circular; SEBI/DNPD/Cir-31/2006 linked it to free float "henceforth"); the "30× prior-month volume" leg in §18 below
+> belongs to the pre-2006 rule. Our data agree: free float = old MWPL/0.20 reproduces NSE's new 15%-of-free-float limits
+> exactly for all 85 stocks on that leg. (2) SEBI calls it Average Daily Delivery *Value*, but NSE Clearing computes it
+> "[in terms of quantity]" (circular 119/2025 §1.1.1; FAQ), so the MWPL leg is 65 × average daily delivered shares, not a
+> rupee value. (3) The ban-period wording in (c) below is right for the trading rule itself: from 1 Oct 2025 an entity may
+> open new contracts if its end-of-day FutEq delta falls (SEBI 2025/79 Table 2: adding a long put or a short call to a
+> long future is permissible), which is looser than the old "only to decrease their positions through offsetting
+> positions". What is wrong is calling the 2025 package as a whole a relaxation: the MWPL fell for every F&O stock and
+> intraday MWPL monitoring was added from 3 Nov 2025 (§5.4). (4) The "cleaner instrument for ban status" argument is
+> superseded: in the model a change in the MWPL moves the basis even without a ban (anticipation and entity caps), so it
+> fails the exclusion restriction (Model C, Prop. "MWPL is not a clean instrument"). The text below is kept as written.
+
 ---
 
 ## 16. SEBI Circular 2024/132 (1 Oct 2024) — "Measures to Strengthen Equity Index Derivatives Framework"

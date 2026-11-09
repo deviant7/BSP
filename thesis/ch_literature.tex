@@ -1,0 +1,128 @@
+\chapter{Related literature}\label{ch:lit}
+\chapterlead{Four strands of work frame the thesis: the theory of why arbitrage is limited, the econometrics of the band
+within which a futures basis moves, the evidence on short-sale constraints and prices, and the evidence from India. The
+chapter ends with what is new here.}
+
+\section{Why arbitrage is limited}
+Shleifer and Vishny (1997) start from the fact that arbitrage is done by specialists who invest other people's money.
+Investors judge them by past returns, so when a mispricing widens and the arbitrageur loses money, funds are withdrawn
+exactly when the opportunity is best. In their three-period model the price can fall by more than one for one with a
+deepening shock, because arbitrageurs are forced to sell into the fall. Two of their points matter here. Arbitrage
+capital is limited and depends on the state of the market, and specialised arbitrageurs avoid positions whose returns are
+volatile, so mispricing survives longest where idiosyncratic volatility is high.
+
+De Long, Shleifer, Summers and Waldmann (1990) show that risk created by noise traders is enough to keep prices away from
+fundamentals, even when the fundamental value is certain. Arbitrageurs with short horizons must sell at a price that
+depends on future sentiment, and this risk deters them. The result needs the noise to be market-wide: misperceptions
+that are specific to one asset can be diversified away by arbitrageurs who hold many such positions, so the model gives a
+weaker reason to expect stock-level mispricing to rise with idiosyncratic volatility than Shleifer and Vishny do.
+Loewenstein and Willard (2006) also show that the model's violation of the law of one price is not robust to changes in
+its assumptions.
+
+Gromb and Vayanos (2010) survey the theory and nest its main mechanisms in one model. A demand shock moves a price by an
+amount that rises with the arbitrageurs' risk aversion and with the part of the asset's risk that cannot be hedged. A
+cost of short selling adds a wedge only when arbitrageurs must be short, so the band around fair value becomes one-sided.
+Margin requirements make capital a constraint, and the gap between two identical assets closes only when arbitrageurs
+have enough of it. The model of Chapter~\ref{ch:theory} follows this structure and adds the feature that makes India
+unusual: a position limit that, once reached, lets every participant only reduce positions.
+
+Two classic papers explain why short-sale constraints matter for prices. Miller (1977) argues that when opinions differ
+and pessimists cannot sell short, prices reflect the optimists and stocks are overpriced. Diamond and Verrecchia (1987)
+show that with rational traders constraints do not bias prices on average but slow their adjustment to private
+information, especially to bad news. Both predictions are tested in Chapter~\ref{ch:elig}.
+
+\section{The no-arbitrage band in futures markets}
+A futures contract and the underlying stock bought with borrowed money give the same payoff, so the futures price should
+equal the cost of carry. Trading costs create a band around this value within which arbitrage does not pay. Brennan and
+Schwartz (1990) add that an arbitrage position carries an option to close it before expiry if the gap reverses; the
+model of this thesis uses the same idea.
+
+Inside a band the basis should wander and outside it should revert, which calls for a threshold model. Dwyer, Locke and Yu (1996) estimate a three-regime
+threshold error-correction model of index futures and cash. Using minute data on the S\&P 500 from 1982 to 1990, they find thresholds of about half a round-trip cost, faster
+reversion outside the band than inside, and no asymmetry between the two sides. Tse (2001) argues that arbitrageurs differ
+in their costs, so the aggregate response should rise smoothly with the deviation; his smooth-transition model of Dow
+Jones futures fits well, and reversion survives when observations outside the band are removed, so it is not an artefact
+of stale prices. Ters and Urban (2020) extend the threshold vector error-correction model of Hansen and Seo (2002) to three
+regimes with an unknown cointegrating vector and a constant. They show that the threshold and the constant are each poorly
+identified but their sum, which is the arbitrage cost, is estimated precisely, and they propose comparing the band before
+and after regulatory changes. Chapter~\ref{ch:band} uses threshold and smooth-transition models in this tradition, on a
+daily panel of stocks rather than on one index pair.
+
+\section{Short-sale constraints and prices}
+Ofek, Richardson and Whitelaw (2004) price stocks twice, once directly and once through put-call parity. Violations point
+in the direction that short-sale costs predict: after shorting and trading costs, 13.6\% of their observations lie above
+the upper bound and far fewer below it, violations are larger where borrowing is more expensive, and stocks that are expensive
+relative to their options later earn low returns. Stambaugh, Yu and Yuan (2015) use the asymmetry of arbitrage to explain why
+stocks with high idiosyncratic volatility earn low returns. With a mispricing score built from eleven anomalies, they show
+in double-sorted portfolios that idiosyncratic volatility goes with lower returns among the most overpriced stocks
+($-1.77\%$ a month for high minus low) and with higher returns among the most underpriced ($+0.52\%$), the first effect
+being larger. The anomaly test of Chapter~\ref{ch:elig} follows their design with anomalies that can be built from public
+Indian data.
+
+Constraints can also be loosened. Gagnon (2018) studies about 1,300 introductions of single-stock futures in the United States and reports
+that they lowered the use and the fees of securities lending, a sign of looser short-sale constraints. For the speed of price adjustment I use the price-delay measure of Hou and
+Moskowitz (2005), which compares how much of a stock's response to market returns comes with a lag.
+
+\section{Evidence from India}
+The Indian basis has been studied mostly at the index level or in short intraday samples. Nandan, Agrawal and Bhargava
+(2014) find that Nifty futures closed below their cost-of-carry value on 71\% of days from 2003 to 2012, with the gap
+shrinking over the decade; they do not account for trading costs. Shankar, Sankar and Kiran Kumar (2019) estimate weekly
+three-regime threshold models for 102 stock futures with five-minute data from 2007 to 2009. Both of their thresholds are
+negative ($-39$ and $-10$\bp), the band is about 28\bp\ wide, it narrowed slightly when securities lending was introduced
+in 2008, and the lower edge moves about twice as much as the upper with volatility, which points to a constraint on the
+short side. Aggarwal (2015) estimates threshold models per stock and per day for 141 stock futures with one-second order
+book data from March to August 2013. The average band runs from about $-15$ to $+3$\bp, it is wider and more asymmetric for
+less liquid stocks, a common factor explains about 17\% of the variation in daily band widths, and that factor moved with
+funding liquidity, for example when the Reserve Bank of India tightened liquidity in July 2013. Slivka, Shah and Wu (2011)
+compute the full cost of arbitrage between a stock and its future and find a band about twice as wide as in mature
+markets, with most arbitrage done within the day.
+
+\begin{table}[t]
+\caption[Earlier estimates of the futures-cash band in India]{Earlier Indian estimates describe intraday bands; this thesis measures the overnight band}\label{tab:litbands}
+\exsub{Studies of single-stock futures against their underlying stocks on the National Stock Exchange}
+\small\begin{tabularx}{\linewidth}{@{}K{3.4cm}P{2.9cm}P{2.4cm}L@{}}
+\toprule
+\thd{Study} & \thd{Sample} & \thd{Data} & \thd{Band} \\
+\midrule
+Aggarwal (2015) & 141 stocks, Mar to Aug 2013 & One-second order book & About $-15$ to $+3$\bp, per stock and day \\ \rowrule
+Shankar, Sankar and Kiran Kumar (2019) & 102 stocks, 2007 to 2009 & Five-minute prices & $-39$ to $-10$\bp, weekly \\ \rowrule
+Slivka, Shah and Wu (2011) & Cost calculation & Fee schedules & About twice the width in mature markets \\ \rowrule
+This thesis & 360 stocks, 2015 to 2026 & Daily volume-weighted prices & $-34.5$ to $+23.9$\bp\ around each stock's median \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: the studies cited; Chapter~\ref{ch:band} for this thesis.}
+\end{table}
+
+These bands are intraday objects for traders who close positions within minutes. The daily basis studied here measures the
+part of mispricing that lasts overnight, where an arbitrageur must carry a position and pay delivery-based taxes, and so
+is wider. Roy and Chakraborty (2023), using daily data for ten stocks from 2011 to 2017, find that stock and futures prices
+are cointegrated and that the cash market does most of the correction of short-run deviations. Saurav, Srivastava and
+Agarwalla (2026) study the stock-futures basis around earnings announcements. According to their abstract, the basis
+turns negative before announcements and reverses afterwards, most strongly when disagreement is high and short-sale
+constraints are tight; Chapter~\ref{ch:ban} finds the same pre-announcement pattern outside bans.
+
+Two Indian studies of the cross-section bear on the anomaly tests. Harshita, Singh and Yadav (2018) find drift after
+earnings announcements for Nifty 500 stocks from 2002 to 2017, measured with buy-and-hold returns from the second to the
+sixty-fourth day after the announcement; the drift is not related to idiosyncratic volatility or illiquidity. Sehgal,
+Vasishth and Deisting (2024) find that a stock's maximum daily return over the last five trading days of a month predicts low
+returns the next month, but that high idiosyncratic volatility goes with \emph{higher} returns in India, the opposite of the United
+States. Results from the United States therefore cannot be carried over to India without checking.
+
+\section{Investors and regulation}
+The demand that pushes stocks towards their position limits comes largely from speculation. Kumar (2009) shows that
+individual investors in the United States prefer lottery-like stocks, which are cheap, volatile and positively skewed, and
+that these stocks underperform. Barber and Odean (2000) show that the households that trade most earn the least: the most
+active fifth earned 11.4\% a year net of costs against 17.9\% for the market. In India, SEBI's study of individual traders
+in equity derivatives (SEBI, 2024a) found that 93\% of more than one crore individual traders lost money over the three
+years to March 2024. SEBI changed the rules for index derivatives in October 2024, citing the rise in retail participation
+and in speculative volumes (SEBI, 2024b), and changed the measurement of open interest and the position limits of single
+stocks in May 2025 (SEBI, 2025); the second change is studied in Chapters~\ref{ch:band} and~\ref{ch:ban}.
+
+\section{What this thesis adds}
+The theory of limited arbitrage is mature, the band econometrics is standard, and Indian studies show that wide and
+asymmetric bands exist. To my knowledge no study has estimated the effects of the F\&O ban, the rule under which every
+participant may only reduce positions. The thesis models this rule, derives what it implies for the correction and the
+level of the basis, and tests the predictions with a plan fixed in advance. It also estimates the band over a long daily
+panel of stocks rather than an index or a short intraday sample, relates it to dated changes in costs, capital and
+position limits, and uses entry into the F\&O segment and a constraint index for all listed stocks to study short-sale
+constraints across the whole cash market.

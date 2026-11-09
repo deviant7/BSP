@@ -1,0 +1,52 @@
+Regression discontinuity at the 95% trigger (PAP §11.6 C9). Supporting only.
+Units: stock-days not in a ban on t-1, omega_(t-1) in [0.60, 1.30], 2015 to Sep 2025: n = 49029, stocks 210
+Share in a ban on t: omega_(t-1) in [0.90, 0.95): 0.0006; [0.95, 1.00): 0.9973
+Local linear, triangular kernel, MSE-optimal h, conventional estimate with robust bias-corrected CI, SE clustered by stock.
+
+Basis outcomes:
+  basis level m_t (bp) [MAIN]                      -12.948 (se 5.184); robust 95% CI [-25.844, -2.213], p = 0.02; h 0.074; n 3414/944
+  Delta m_t, same contract (bp)                     -2.804 (se 4.144); robust 95% CI [-11.141, +8.049], p = 0.752; h 0.073; n 3270/928
+  close-based basis (bp)                           -11.936 (se 4.979); robust 95% CI [-24.498, -2.487], p = 0.0163; h 0.067; n 2825/878
+  relative implied repo (bp, annual rate)         -376.135 (se 121.733); robust 95% CI [-684.300, -133.736], p = 0.00359; h 0.067; n 2643/813
+Mechanism outcomes (expiry days excluded):
+  log(1 + futures contracts)                        -1.527 (se 0.144); robust 95% CI [-1.800, -1.184], p = 2.46e-21; h 0.080; n 3812/993
+  R = (dOI + V)/V                                   -0.655 (se 0.055); robust 95% CI [-0.771, -0.541], p = 3.54e-29; h 0.085; n 4228/1028
+  log(1 + cash shares)                              +0.043 (se 0.346); robust 95% CI [-0.651, +0.806], p = 0.835; h 0.086; n 4348/1037
+  delivery share                                    +0.051 (se 0.015); robust 95% CI [+0.025, +0.089], p = 0.000555; h 0.072; n 3166/917
+Validity checks:
+  placebo: m_(t-2) (bp)                             -6.692 (se 4.946); robust 95% CI [-19.099, +3.442], p = 0.173; h 0.070; n 3107/910
+  placebo: log futures contracts on t-2             +0.170 (se 0.138); robust 95% CI [-0.089, +0.510], p = 0.169; h 0.075; n 3655/1005
+  crossing day: m_(t-1) (bp)                       -11.334 (se 5.688); robust 95% CI [-25.753, -0.093], p = 0.0484; h 0.060; n 2355/799
+  selection: valid basis on t (share)               +0.016 (se 0.021); robust 95% CI [-0.031, +0.063], p = 0.507; h 0.080; n 4097/1049
+Fuzzy RD (treatment = in a ban on t):
+  basis level m_t                                   -9.450 (se 7.038); robust 95% CI [-23.661, +4.892], p = 0.198; h 0.028; n 663/440
+  log(1 + futures contracts)                        -1.429 (se 0.199); robust 95% CI [-1.825, -1.020], p = 4.18e-12; h 0.022; n 459/347
+
+Robustness (main outcome m_t; and log futures contracts):
+  m_t: half bandwidth                              -10.977 (se 6.395); robust 95% CI [-22.522, +9.653], p = 0.433; h 0.037; n 1072/552
+  futures: half bandwidth                           -1.453 (se 0.173); robust 95% CI [-1.828, -1.000], p = 2.2e-11; h 0.037; n 1065/539
+  m_t: double bandwidth                            -10.706 (se 3.882); robust 95% CI [-23.420, -2.675], p = 0.0137; h 0.148; n 10719/1354
+  futures: double bandwidth                         -1.579 (se 0.130); robust 95% CI [-1.827, -1.239], p = 1.48e-24; h 0.148; n 10631/1375
+  m_t: local quadratic                             -13.613 (se 6.216); robust 95% CI [-27.355, -0.035], p = 0.0494; h 0.105; n 6118/1178
+  futures: local quadratic                          -1.461 (se 0.161); robust 95% CI [-1.763, -1.089], p = 1.13e-16; h 0.101; n 5633/1163
+  m_t: donut |omega - 0.95| >= 0.005               -14.931 (se 6.325); robust 95% CI [-30.655, -2.178], p = 0.0238; h 0.067; n 2771/793
+  futures: donut |omega - 0.95| >= 0.005            -1.615 (se 0.150); robust 95% CI [-1.947, -1.311], p = 1.05e-23; h 0.094; n 4891/1027
+  m_t: no MWPL change on t-1                       -13.584 (se 5.245); robust 95% CI [-26.732, -2.907], p = 0.0148; h 0.072; n 3252/920
+  futures: no MWPL change on t-1                    -1.535 (se 0.144); robust 95% CI [-1.812, -1.193], p = 1.86e-21; h 0.081; n 3916/993
+  m_t: end-of-day enforcement (to 22 Mar 2020)     -12.095 (se 9.027); robust 95% CI [-34.058, +6.607], p = 0.186; h 0.087; n 2013/475
+  futures: end-of-day enforcement (to 22 Mar 2020)    -0.570 (se 0.192); robust 95% CI [-0.947, -0.091], p = 0.0174; h 0.077; n 1527/425
+  m_t: peak-intraday enforcement (from 23 Mar 2020)   -13.370 (se 4.753); robust 95% CI [-25.406, -3.758], p = 0.00828; h 0.074; n 1900/505
+  futures: peak-intraday enforcement (from 23 Mar 2020)    -2.286 (se 0.125); robust 95% CI [-2.537, -2.003], p = 1.99e-62; h 0.083; n 2348/573
+
+Placebo cutoffs (main outcome m_t; futures contracts):
+  m_t at 0.85                                       -1.642 (se 3.095); robust 95% CI [-9.112, +4.537], p = 0.511; h 0.031; n 3106/2653
+  futures at 0.85                                   +0.030 (se 0.107); robust 95% CI [-0.193, +0.260], p = 0.771; h 0.053; n 5668/3999
+  m_t at 0.90                                      +24.298 (se 7.613); robust 95% CI [+11.336, +43.962], p = 0.000894; h 0.008; n 504/423
+  futures at 0.90                                   +0.010 (se 0.134); robust 95% CI [-0.302, +0.275], p = 0.927; h 0.025; n 1740/1140
+  m_t at 1.00                                       +5.086 (se 10.623); robust 95% CI [-19.191, +29.355], p = 0.682; h 0.018; n 194/193
+  futures at 1.00                                   +0.169 (se 0.210); robust 95% CI [-0.251, +0.708], p = 0.351; h 0.016; n 183/179
+
+After 1 Oct 2025 (FutEq utilisation; descriptive): n = 3710, n in [0.95, 1.00) 37
+
+  basis level m_t                                  -31.048 (se 34.835); robust 95% CI [-110.603, +48.733], p = 0.447; h 0.051; n 133/36
+  log(1 + futures contracts)                        -1.715 (se 0.256); robust 95% CI [-2.154, -1.103], p = 1.26e-09; h 0.032; n 79/31

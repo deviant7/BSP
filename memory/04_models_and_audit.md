@@ -38,7 +38,7 @@ Prop "bridge": inner random walk + outer mean reversion = 3-regime TAR/TVECM. Pr
 ## Model C — Constrained arbitrage under India's limits (CURRENT; replaces A & B) — 28 Oct 2026
 Files: `models_src/modelC/ModelC_constrained_arbitrage_india.tex` (15 pp) → `BSP_Model_C_Constrained_Arbitrage_India.pdf`;
 `models_src/modelC/verify_modelC.py` (brute-force checks of every closed form + simulations; output in `verify_output.txt`; figs/).
-Not yet shown to the guide; no 3-pp guide version yet.
+Shown to the guide as the appendix of the October 2026 progress report (sent; she liked it). Its SLB wording needs a fix in the next guide-facing version (memory/04 end).
 - Environment: outside demand in cash (D_S − ψ_S s) and futures (D_F − ψ_F f); arbitrage a = long cash/short futures.
   Clearing m = (u − a)/Φ, 1/Φ = 1/ψ_F + 1/ψ_S, u = Φ(D_F/ψ_F − D_S/ψ_S). Arbitrage objective a m − (γ/2)a² − c₊a⁺ − c₋a⁻, γ = ασ².
   c₊ = τ₊ + (r_A − r_b)(T−t); c₋ = τ₋ + (ℓ_s + r_b − r_L)(T−t). Each Indian limit is a parameter (table in §2.4).
@@ -62,3 +62,17 @@ Not yet shown to the guide; no 3-pp guide version yet.
 - Numerical results (illustrative params): reversion slope above p80 −0.18 → −0.13 in ban, below p20 −0.12 → −0.16; level effect
   +4.9 bp (no new inflow) vs −3.1/−10.8/−26.0 bp with 1/2/4 bp/day new inflow. A first version of the level check FAILED because
   mean-zero spillover shocks cannot move the mean — the proposition was corrected to depend on the *inflow* of new demand.
+
+## Empirical status of Model C (7 Nov 2026; full table in handoff/06 §6.7)
+- Supported: P7 (trading in a ban; identity under intraday enforcement), P8 (smooth density; upper tail widens toward 95%),
+  P1-P2 partly (H3 on the pre-specified test, weak once placebo-calibrated; H1 across stocks), P11 partly (H6 delay).
+- Contradicted: P4 as tested by H7 (opposite sign); P11's bad-news drift after F&O entry (H6 drift); H5 asymmetry (VW).
+- Signs as predicted but weak: P6 level effect by composition; P9-based reform design (H9 B) n.s.; H4 capital.
+- Untestable here: P10 in bans (55 bad-news events).
+- Model text to correct in the next guide-facing version: the short-sale table, the cash-only section and the F&O-
+  inclusion test say F&O inclusion brings "short-selling and SLB eligibility"; SLB has covered liquid non-F&O stocks since
+  2013 (short selling remains F&O-only). The sent PDF is unchanged.
+
+## 9 Nov 2026
+Model C is now also native Appendix C of the final thesis. The literature-review errors are fixed in the thesis's
+literature chapter; the internal review PDF itself is unchanged and not used.

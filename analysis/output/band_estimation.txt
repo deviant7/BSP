@@ -1,0 +1,54 @@
+Band-estimation chapter (PAP §11.13 C16). Non-ban days; x = m_(t-1) - stock median (bp); d = Delta m_t (bp).
+Observations 473110, stocks 360, 2015-01-02 to 2026-10-27; x percentiles p5/p25/p50/p75/p95: -71.7/-16.6/-0.1/14.1/34.0
+
+1. Pooled 3-regime threshold model
+  POOLED, full sample                n  473110; gL  -34.5, gU  +23.9 (width  58.4); rho lower/middle/upper -0.084/-0.468/-0.809; shares 0.12/0.76/0.12; F 7471.3
+     intercepts lower/middle/upper +13.48/+0.14/+8.43; half-lives (days) 7.89/1.10/0.42
+  linearity test: sup-F 7471.3; wild-bootstrap (date clusters, 199 draws) p = 0.000; 95% critical value 30.7
+  stock-cluster bootstrap (199 draws), 2.5/97.5 percentiles: gL [-37.21, -32.15]; gU [+20.28, +26.06]; rho_lower [-0.10, -0.07]; rho_middle [-0.48, -0.46]; rho_upper [-0.90, -0.72]
+
+2. Threshold model by period and state
+  year 2015                          n   33873; gL  -38.1, gU  +20.8 (width  58.9); rho lower/middle/upper -0.069/-0.444/-0.802; shares 0.14/0.73/0.13; F 575.4
+  year 2016                          n   38075; gL  -46.2, gU  +19.9 (width  66.1); rho lower/middle/upper -0.039/-0.423/-1.048; shares 0.10/0.75/0.15; F 828.0
+  year 2017                          n   43194; gL  -32.6, gU  +17.1 (width  49.7); rho lower/middle/upper -0.047/-0.484/-0.808; shares 0.10/0.70/0.20; F 796.1
+  year 2018                          n   45979; gL  -46.8, gU  +20.2 (width  67.0); rho lower/middle/upper -0.067/-0.453/-1.051; shares 0.10/0.79/0.11; F 723.3
+  year 2019                          n   39012; gL  -24.9, gU  +26.3 (width  51.3); rho lower/middle/upper -0.072/-0.453/-0.833; shares 0.21/0.69/0.10; F 550.8
+  year 2020                          n   31516; gL  -59.2, gU  +15.1 (width  74.3); rho lower/middle/upper -0.134/-0.298/-0.887; shares 0.10/0.64/0.26; F 320.1
+  year 2021                          n   34860; gL  -17.8, gU  +34.2 (width  52.0); rho lower/middle/upper -0.231/-0.500/-0.870; shares 0.10/0.80/0.10; F 112.6
+  year 2022                          n   43443; gL  -35.1, gU  +27.2 (width  62.3); rho lower/middle/upper -0.083/-0.431/-0.722; shares 0.13/0.77/0.10; F 492.3
+  year 2023                          n   40550; gL  -26.5, gU  +16.6 (width  43.1); rho lower/middle/upper -0.083/-0.482/-0.640; shares 0.13/0.68/0.19; F 531.8
+  year 2024                          n   38619; gL  -31.2, gU  +24.7 (width  55.9); rho lower/middle/upper -0.058/-0.539/-0.943; shares 0.10/0.80/0.10; F 686.6
+  year 2025                          n   47122; gL  -30.7, gU  +24.2 (width  54.9); rho lower/middle/upper -0.069/-0.545/-0.457; shares 0.11/0.79/0.10; F 847.2
+  year 2026                          n   36867; gL  -26.8, gU   -1.4 (width  25.5); rho lower/middle/upper -0.114/-0.454/-0.557; shares 0.15/0.32/0.53; F 475.5
+  STT period to Mar 2023             n  320718; gL  -36.9, gU  +25.4 (width  62.4); rho lower/middle/upper -0.083/-0.441/-0.897; shares 0.12/0.77/0.11; F 5055.5
+  STT period Apr 2023 - Sep 2024     n   58386; gL  -32.9, gU  +23.8 (width  56.8); rho lower/middle/upper -0.068/-0.502/-0.786; shares 0.10/0.80/0.10; F 829.3
+  STT period Oct 2024 - Mar 2026     n   68113; gL  -33.4, gU  +23.9 (width  57.4); rho lower/middle/upper -0.059/-0.540/-0.640; shares 0.10/0.80/0.10; F 1290.8
+  STT period from Apr 2026           n   25893; gL  -28.6, gU   -2.3 (width  26.3); rho lower/middle/upper -0.140/-0.418/-0.550; shares 0.14/0.28/0.58; F 288.7
+  days to expiry: near expiry (0-10) n  157704; gL  -28.2, gU  +22.1 (width  50.4); rho lower/middle/upper -0.135/-0.496/-0.740; shares 0.10/0.76/0.14; F 1942.2
+  days to expiry: middle (10-17)     n  157703; gL  -28.6, gU  +23.1 (width  51.7); rho lower/middle/upper -0.089/-0.475/-0.779; shares 0.14/0.74/0.12; F 2448.6
+  days to expiry: far from expiry (17-28) n  157703; gL  -40.4, gU  +22.6 (width  63.0); rho lower/middle/upper -0.067/-0.436/-0.858; shares 0.15/0.71/0.14; F 2523.8
+  utilisation tercile: low (0.00-0.15) n  157702; gL  -33.6, gU  +25.9 (width  59.5); rho lower/middle/upper -0.115/-0.449/-0.913; shares 0.13/0.77/0.10; F 1909.5
+  utilisation tercile: middle (0.15-0.32) n  157702; gL  -29.2, gU  +25.9 (width  55.1); rho lower/middle/upper -0.105/-0.473/-0.832; shares 0.14/0.76/0.10; F 2186.7
+  utilisation tercile: high (0.32-1.22) n  157702; gL  -37.0, gU  +19.8 (width  56.8); rho lower/middle/upper -0.057/-0.496/-0.722; shares 0.11/0.72/0.17; F 3152.0
+  arbitrage-fund assets: low (descriptive; orders time) n  114494; gL  -42.9, gU  +28.4 (width  71.3); rho lower/middle/upper -0.100/-0.399/-0.978; shares 0.12/0.78/0.10; F 1391.2
+  arbitrage-fund assets: middle (descriptive; orders time) n  114493; gL  -34.8, gU  +26.2 (width  60.9); rho lower/middle/upper -0.059/-0.462/-0.788; shares 0.10/0.80/0.10; F 1956.3
+  arbitrage-fund assets: high (descriptive; orders time) n  114494; gL  -31.8, gU  +25.1 (width  57.0); rho lower/middle/upper -0.083/-0.538/-0.604; shares 0.11/0.79/0.10; F 1818.7
+
+3. Smooth-transition models (pooled, full sample)
+  linear: SSR 2.8866e+08, BIC 3034393.6
+  3-regime threshold: SSR 2.7151e+08, BIC 3005492.6
+  ESTAR: gamma 0.158, centre +11.07; rho inner -0.533, outer -0.133; SSR 2.7302e+08, BIC 3008091.7
+  LSTAR in x: gamma 0.667, location +5.44; rho below -0.117, above -0.884; SSR 2.7156e+08, BIC 3005544.5
+  auxiliary nonlinearity test (d on x, x^2/100, x^3/1e4, stock and date FE, two-way clustered): x2 -0.2966 (0.0079), x3 -0.04909 (0.00247); Wald chi2(2) 2065.7, p = 0
+
+4. Observed-transition models: d = a + [rho0 + rho1 G(s)] x, logistic G (stock and date FE; two-way clustered SE)
+  transition utilisation omega_(t-1)            gamma   1.0, location (s) +0.074; rho0 -0.449 (0.038); rho1 +0.225 (0.053, t +4.23); n 473106
+  transition trading days to expiry             gamma   2.0, location (s) +7.000; rho0 -0.474 (0.026); rho1 +0.221 (0.023, t +9.43); n 473110
+  transition log arbitrage-fund assets (from Apr 2018) gamma  25.0, location (s) +11.464; rho0 -0.258 (0.015); rho1 -0.077 (0.019, t -4.00); n 343481
+
+5. Per-stock threshold models (non-ban days, >= 500 obs): stocks 258
+  percentiles p10/p25/p50/p75/p90: gL -61.5/-39.8/-26.4/-17.2/-7.7; gU -4.9/+5.6/+16.5/+22.7/+26.1; width +18.5/+27.1/+40.9/+55.2/+75.5
+  regime slopes (median): lower -0.224, middle -0.479, upper -0.876
+  width on stock-mean friction index (HC1): +2.24 bp per unit (se 1.86); n 258; corr 0.07
+
+(run time 31 s)

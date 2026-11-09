@@ -1,0 +1,14 @@
+H3: costs set the band edges (PAP §5, §11 C4). Changes in stock-level percentiles of the basis (bp), post minus pre,
+40 trading days each side. Prediction: the 80th percentile (upper edge) rises; size ordered 2026 > 2024 > 2023.
+
+2023 (event day 2023-04-03, futures STT +0.25 bp per sale): stocks 181; mean d80 -2.12 (se 0.87), median -1.65; mean d20 +0.24; mean d50 +0.27; pooled threshold model upper edge pre +24.7 -> post +24.3, lower -26.9 -> -25.4
+2024 (event day 2024-10-01, futures STT +0.75 bp per sale): stocks 172; mean d80 +6.42 (se 0.70), median +8.01; mean d20 +4.55; mean d50 +5.39; pooled threshold model upper edge pre +3.8 -> post +32.4, lower -25.0 -> -20.8
+2026 (event day 2026-04-01, futures STT +3.0 bp per sale): stocks 192; mean d80 +7.44 (se 0.98), median +7.43; mean d20 +2.10; mean d50 +6.30; pooled threshold model upper edge pre +15.7 -> post +32.3, lower -31.6 -> -32.5
+
+Family test statistic (C4 d): mean d80 over 364 stock-events (2024, 2026) = +6.962 bp (se 0.613, clustered by stock); one-sided p_H3 = 1.84e-24
+Ordering of mean d80: 2026 +7.44, 2024 +6.42, 2023 -2.12 -> predicted 2026 > 2024 > 2023: YES
+
+Placebo (C4 f): 30 pseudo-events every 80 trading days, windows not overlapping true dates; mean d80 across placebos: mean -1.02, sd 7.40, min -18.57, max +16.10
+  2023: mean d80 -2.12; share of placebos with a value at least as large: 0.667
+  2024: mean d80 +6.42; share of placebos with a value at least as large: 0.100
+  2026: mean d80 +7.44; share of placebos with a value at least as large: 0.067

@@ -1,0 +1,28 @@
+Source: https://www.bseindia.com/markets/MarketInfo/DispNewNoticesCirculars.aspx?page=20200322-2 (retrieved 5 Nov 2026; text extracted from the HTML page)
+
+Notice No.
+20200322-2 Notice Date 22 Mar 2020 Category Settlement/RMS Segment Derivatives Subject Regulatory measures taken by SEBI in view of ongoing market volatility Attachments Annexure.zip ; Content To All Members/Participants, We draw your attention to SEBI press release no.
+18/2020 regarding regulatory measures taken by SEBI in view of ongoing market volatility.
+Accordingly, the following modifications shall be introduced with effect from March 23, 2020 for a period of one month till April 22, 2020.
+1.
+For stocks in F&O segment meeting the following criteria, MWPL may be revised to 50% of the existing levels: a.
+Average Daily Price High Low variation percentage (during last 5 trading days) should be more than or equal to 15%, OR b.
+Average MWPL utilization percentage (during last 5 trading days) should be more than or equal to 40%.
+For stocks identified in point 1 the revised MWPL, TM, FPI & MF Limits shall be as per Annexure I .
+2.
+The revised client level limit for stocks identified in point 1 shall be higher of 0.5% of the free float market capitalization (in terms of number of shares) or 5% of the open interest in all derivative contracts in the same underlying stock (in terms of number of shares) whichever is higher 3.
+In case of End-of-day positions as on date are more than the revised position limits shall not be considered as violation.
+However, TM/FPI/MF/Client shall be permitted to be hold the existing position till expiry or close-out, whichever is earlier 4.
+List of Securities which shall move into Ban Period from Monday March 23, 2020 due to revision in limits shall be as per - Annexure II.
+5.
+Monitoring of Market Wide Position Limit (MWPL) violation · Clearing Corporation, a t the end of each day during which the ban on fresh positions is in force for any security, shall identify client including proprietary account who have increased the existing positions or has created a new position in that security based on the monitoring of peak intraday positions.
+(refer scenarios as per Annexure III ) · In the event of violation, the following penalty would be charged to the clearing members for every day of violation: a.
+1% of the value of the quantity in violation (i.e., excess quantity over the allowed quantity, valued at the closing price of the security in the normal market of the Capital Market segment of the Exchange) per client or b.
+Rs.5,00,000 per client, whichever is lower, subject to a minimum penalty of Rs.50,000/- per violation / per client.
+6.
+The minimum total margin in Cash Market Segment for stocks identified in point 1 shall be revised as a.
+20% to be effective from March 23, 2020 b.
+30% to be effective from March 26, 2020 c.
+40% to be effective from March 30, 2020 Members / Participants are requested to kindly take note.
+For and on behalf of Indian Clearing Corporation Ltd.
+Piyush Chourasia Chief Risk Officer & Head – Strategy Risk Department Email risk.monitoring@icclindia.com Contact No: +91-22-22728759/5186/9967598758 

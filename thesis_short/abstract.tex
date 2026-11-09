@@ -1,0 +1,31 @@
+In theory, a share and a future on that share should be priced consistently, and arbitrage should close any gap. In
+practice costs, short-sale constraints, limited capital and position limits allow gaps to persist. I study how strongly
+these limits bind in Indian equities, where most of them change on known dates. A model of constrained arbitrage, in
+which India's F\&O ban is a rule that lets every participant only reduce positions, gives predictions and the results
+that would contradict them; the tests were written down and frozen before any outcome was related to any treatment. The
+data are built from public exchange files for 2015 to 2026.
+
+Bans bind hard on trading: futures volume falls by about two log points, and when the rule is enforced on intraday
+positions every futures trade closes positions. Correction of the futures-cash basis does not become one-sided in the
+way the model predicts: rich futures revert faster in a ban, mostly at the start of a spell. The basis falls by about six
+basis points when a ban begins, more when open interest was building fast, and there is no bunching of utilisation below
+the trigger. Neither result appears at false ban dates. The basis follows a wide, asymmetric band of about $-35$ to
+$+24$ basis points around each stock's median, and the full cost of a new cash-and-carry position lies in its outer
+tail. Measured against the old rule, the October 2025 reform cut ban days by about three quarters. Entry into the F\&O
+segment speeds up the response of prices to market news but does not weaken drift after bad news. A constraint index
+built only from frictions predicts slower price adjustment across the whole market, also within stocks and after
+controlling for size.
+
+\vspace{10pt}
+\begin{statstrip}{3}
+\stattile{Ban spells, 2015 to 2026}{1,788} &
+\stattile{Futures volume in a ban}{$-2.0$ log points} &
+\stattile{Basis when a ban starts}{$-6.3$ bp} \\[8pt]
+\stattile{Band around the median}{$-35$ to $+24$ bp} &
+\stattile{Ban days, new vs old rule}{$-73\%$} &
+\stattile{Delay after F\&O entry}{$-0.11$} \\
+\end{statstrip}
+{\scriptsize\color{faint} Ban spells: 2015 to October 2026. Volume: effect of a ban on log futures contracts traded.
+Basis: change at the start of a ban against matched controls. Band: pooled threshold estimates. Reform: ban days in the
+first year of the new rule against the old rule applied to the same stocks. Delay: change in price delay after entry
+into the F\&O segment (median before entry 0.24).\par}

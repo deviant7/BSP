@@ -1,0 +1,28 @@
+Placebo checks (PAP §11.15 C19). Exploratory.
+
+(a) Fake ban spells: 871 of the pre-reform spells shifted 60 trading days later without touching a real ban
+  H7 specification with the fake ban indicator (real ban days dropped): n=423390, stocks 332, ban observations 3194
+    x_up    -0.7134  (se 0.0109, t -65.70)
+    x_mid   -0.3922  (se 0.0268, t -14.64)
+    x_lo    -0.2027  (se 0.0103, t -19.77)
+    xb_up   +0.0372  (se 0.0474, t +0.79)
+    xb_mid  -0.0139  (se 0.0503, t -0.28)
+    xb_lo   -0.0284  (se 0.0377, t -0.75)
+    delta_up - delta_lo = +0.0657 (se 0.0540); one-sided p(delta_up>0) = 0.216; p(delta_up-delta_lo>0) = 0.112; intersection-union p = 0.216
+  Real H7 for comparison: delta_up -0.089 (0.037), delta_lo +0.081 (0.030).
+  Level-effect design with fake entries: events with D: 510 (stocks 118); C <= 0: 189, C > 0: 321
+  all events: mean D +0.98 bp, median +0.36
+  pre-specified split: mean D, C <= 0 (closing): +1.16 (se 2.35, t +0.49); C > 0 (new exposure): +0.88 (se 1.87, t +0.47)
+    difference (C > 0) - (C <= 0): -0.28 (se 3.03, t -0.09); one-sided p (difference < 0) = 0.463
+  median split (median C 0.009): low C +1.77 (se 2.07, t +0.86); high C +0.21 (se 2.16); difference -1.56 (se 3.06, t -0.51); one-sided p = 0.305
+  slope on standardised C: -0.32 (se 1.69, t -0.19); one-sided p (slope < 0) = 0.426; intercept (D at mean C) +0.99 (se 1.46, t +0.68)
+  Real level effect for comparison: mean D -6.3; C<=0 +8.4, C>0 -6.8; difference -15.2.
+
+(b), (c) Dated placebos, H3 statistic (mean change in stock 80th percentile, bp); reference: 30 H3 placebo dates, mean -1.02, sd 7.40
+  index reform: contract size, weekly expiries, ELM (20 Nov 2024) (event day 2024-11-21): stocks 164, mean d80 -4.08, mean d20 -2.67, median d50 -2.59; share of placebos with |value| >= |this| 0.67; window overlaps STT event ['2024']
+  index reform: upfront premium, calendar spread (1 Feb 2025)    (event day 2025-02-03): stocks 194, mean d80 -0.31, mean d20 -4.80, median d50 -0.33; share of placebos with |value| >= |this| 0.87
+  index reform: intraday index position monitoring (1 Apr 2025)  (event day 2025-04-01): stocks 192, mean d80 +1.85, mean d20 +4.18, median d50 +3.56; share of placebos with |value| >= |this| 0.67
+  peak margin 25% (1 Dec 2020)                                   (event day 2020-12-01): stocks 130, mean d80 +3.30, mean d20 +5.96, median d50 +3.65; share of placebos with |value| >= |this| 0.57
+  peak margin 50% (1 Mar 2021)                                   (event day 2021-03-01): stocks 135, mean d80 +9.61, mean d20 +5.63, median d50 +7.86; share of placebos with |value| >= |this| 0.13
+  peak margin 75% (1 Jun 2021)                                   (event day 2021-06-01): stocks 139, mean d80 -9.92, mean d20 -6.56, median d50 -8.88; share of placebos with |value| >= |this| 0.20
+  peak margin 100% (1 Sep 2021)                                  (event day 2021-09-01): stocks 153, mean d80 +3.45, mean d20 +4.74, median d50 +4.56; share of placebos with |value| >= |this| 0.53

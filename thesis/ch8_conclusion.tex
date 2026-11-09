@@ -1,0 +1,82 @@
+\chapter{Conclusion and policy}\label{ch:concl}
+\chapterlead{What the tests say about which limits bind, what the results imply for the regulation of position limits and
+short selling, and what the data cannot show.}
+
+\section{What binds}
+\begin{table}[t]
+\caption[The pre-specified tests]{Three of four primary hypotheses are supported on the pre-specified statistic; one is rejected with the opposite sign}\label{tab:summary}
+\exsub{All pre-specified tests, with the result and the main qualification}
+\small\begin{tabularx}{\textwidth}{@{}K{4.2cm}>{\raggedright\arraybackslash}p{3.2cm}L@{}}
+\toprule
+\thd{Hypothesis} & \thd{Pre-specified result} & \thd{Comment} \\
+\midrule
+\multicolumn{3}{@{}l}{\thd{Primary family (Holm correction at 5\%)}} \\
+H8: trading leaves futures in a ban & Supported ($p<10^{-10}$) & Identity holds under intraday enforcement \\
+H3: costs set the band edges & Supported ($p<10^{-10}$) & Placebo-calibrated evidence weak; mostly a common shift \\
+H6: short-sale access & Supported ($p=5\times10^{-6}$) & Through price delay; drift goes the other way \\
+H7: one-sided correction & Rejected, opposite sign & Survives a noise correction \\
+\midrule
+\multicolumn{3}{@{}l}{\thd{Secondary (unadjusted)}} \\
+Level effect by composition & $p=0.083$ & Signs as predicted; median split $p=0.025$ \\
+Density at 95\% & No discontinuity & No bunching \\
+Regression discontinuity & Basis $-12.9$\bp, $p=0.02$ & Gap present before the ban \\
+Hysteresis & $+0.4$\bp, $p=0.64$ & No extra level shift \\
+H9 anticipation & $p=0.019$ & Upper tail grows toward 95\% \\
+H9 reform & $p=0.11$ & Right direction \\
+H2 bad news in bans & $p=0.59$ & No power \\
+H1 frictions and band & $p=0.002$ & Across stocks only \\
+H4 capital & $p=0.11$ & Clearer in differences \\
+H5 anomalies & $p=0.57$ & Not supported value-weighted \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: Chapters~\ref{ch:band} to~\ref{ch:elig}.}
+\end{table}
+
+The answer to the question this thesis asks is uneven across the limits. Position limits bind hard on trading: the ban
+moves trading out of futures as soon as it is enforced on intraday positions. Their effect on prices is real but not the
+one the reduce-only arbitrage channel predicts; the evidence points instead to the blocking of new demand at the start of
+a ban. Short-sale access matters for how fast prices adjust to market news, both when a stock enters the F\&O segment and
+across all stocks, but less clearly for overpricing. Trading costs shape the band, which is wide and asymmetric, but its
+edges do not move one-for-one with the tax: the full cost of a new position lies in the outer tail of the basis, and the
+cost of keeping arbitrage capital in place is small. Arbitrage capital leaves weak traces in the predicted direction.
+
+With ten secondary statistics reported without adjustment, one or two values below 0.05 would be expected by chance. The
+secondary results should be read as a pattern, not one by one.
+
+\section{Policy}
+Position limits and the ban exist to contain concentrated positions and manipulation in a market where speculative
+demand is large. SEBI's study of individual traders in equity derivatives (SEBI, 2024a) shows how large: over the three
+years to March 2024, 93\% of more than one crore individual traders lost money, on average about Rs 2 lakh each including
+transaction costs, and their aggregate losses exceeded Rs 1.8 lakh crore. In the last of those years proprietary traders and
+foreign portfolio investors earned gross profits, 96 to 97\% of them from algorithmic trading. SEBI's measures of October 2024 for index
+derivatives cite the rise in retail participation and speculative volumes (SEBI, 2024b), and its measures of May 2025
+changed how open interest is measured and how position limits are set (SEBI, 2025). Most of that
+activity is in index options, not in the single-stock futures studied here, but the same pressure of new speculative
+demand is what pushes a stock towards its limit.
+
+The results bear on the trade-off in four ways. First, the ban is costly for liquidity: futures trading falls by almost
+90\% in a ban, while cash trading rises a little. Second, its main price effect appears at the start of a ban, where it
+fits the blocking of new demand, and fades within about a week; once a stock is in the ban, staying in it does not move
+the basis further. If that reading is right, a ban restrains the demand it is designed to restrain, but at the cost of the
+arbitrage that would otherwise keep futures and cash prices together. Third, enforcement matters: the rule changes trading in the way it
+is meant to only when positions are checked during the day. The October 2025 rule, which allows any trade that lowers an
+entity's end-of-day delta, has visibly loosened the link between volume and open interest in banned stocks.
+
+Fourth, the 2025 reform met its stated aim of fewer ``spurious'' bans (SEBI, 2025, para.\ 4.2). Before the reform, bans
+were not caused by falls in the limit: almost every entry came from rising open interest. What made many of them avoidable
+was the measure of open interest, which counted every option at its full notional value. Measuring positions in delta terms
+removes almost all of these bans, the new and lower limits add some back, and the combination cut ban days by about three
+quarters in the first year. Whether the new formula has changed the cost of each ban needs more post-reform data than the
+44 spells that began after the reform. The 2020 restoration of the limit adds one more lesson: a looser limit lowered
+utilisation and bans and made a rich basis less common, so the level of the limit affects prices even before a ban starts.
+
+The SLB market remains thin. Because only F\&O stocks may be sold short and the overnight short is in practice a stock
+future, entry into and exit from the F\&O segment change the short-sale constraint of a stock at once. The faster price
+adjustment after entry is one measurable benefit of that access.
+
+\section{Limitations and further work}
+The data are daily, so intraday arbitrage and the exact timing of trades within the day are outside the scope, and noise
+in daily prices inflates measured reversion. Arbitrage inventory is not observed. The post-reform period is short. Three
+papers relevant to positioning (Saurav, Srivastava and Agarwalla, 2026; Gagnon, 2018; Brennan and Schwartz, 1990) could
+not be read in full. Intraday data would allow sharper tests of the ban's effect on correction, and a longer post-reform
+sample would allow a proper test of the 2025 formula.

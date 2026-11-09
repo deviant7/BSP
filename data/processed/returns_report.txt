@@ -1,0 +1,29 @@
+ETF-like symbols dropped (ETF/BEES in the symbol): 165
+rights-entitlement rows ('-RE' symbols) dropped: 1600
+cash stock-days 5331373, symbols 3723, 2015-01-01 to 2026-10-27
+first trading days after sample start (return set to NaN): 2239
+split/bonus ex-dates matched to a price row: 769; factor consistent with the price jump (within 25%): 0.996
+  mismatches (first 15):
+      date     symbol   k  implied                                                                    subject
+2021-08-05        DVL 1.5 1.070094           Bonus 1:2 |  Annual General Meeting/Dividend - Rs 2.50 Per Share
+2020-06-19 MOTOGENFIN 2.0 0.954167  Face Value Split (Sub-Division) - From Rs 10 Per Share To Rs 5  Per Share
+2023-07-24    NDRAUTO 2.0 1.020360                                                                  Bonus 1:1
+jumps whose price ratio is a standard split/bonus ratio (likely missing corporate action; return NaN): 424
+rights/demerger/scheme ex-dates set to NaN: 386
+unexplained jumps |log return| > log 1.5 (kept, flagged): 448 (0.84 per 10,000 stock-days)
+  examples:
+      date     symbol series  prevclose  close       ret
+2017-03-16  ABMINTLTD     BE     213.60  37.35 -0.825140
+2026-04-06    AHLWEST     BE      10.00 143.85 13.385000
+2016-12-15    ALANKIT     EQ      64.35  36.10 -0.439005
+2015-09-11  AMTEKAUTO     EQ      30.50  46.95  0.539344
+2026-04-20    ARIHANT     EQ      39.65 907.55 21.889029
+2024-12-27 ATLASCYCLE     BE       5.00  66.15 12.230000
+2018-10-24   ATNINTER     BE       0.05   0.10  1.000000
+2019-01-28   ATNINTER     BE       0.05   0.10  1.000000
+2019-02-11   ATNINTER     BE       0.05   0.10  1.000000
+2019-03-11   ATNINTER     BE       0.05   0.10  1.000000
+2019-03-18   ATNINTER     BE       0.05   0.10  1.000000
+2019-04-08   ATNINTER     BE       0.05   0.10  1.000000
+dividend ex-dates with a price row: 14298
+daily return quantiles p0.1/p1/p50/p99/p99.9: -0.1509/-0.0715/-0.0008/0.0999/0.2000

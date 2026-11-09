@@ -132,7 +132,7 @@ proceeds. Section~\ref{sec:map} maps each Indian limit to these parameters.
 Limit & Indian institution (dated shocks) & Parameter \\
 \midrule
 Trading costs & STT on futures (sell side): 0.01\% from 1 Jun 2013; 0.0125\% from 1 Apr 2023; 0.02\% from 1 Oct 2024; 0.05\% from 1 Apr 2026. Cash delivery STT 0.1\% each side; 0.1\% on physically settled derivatives & $\tau_+,\tau_-$ \\
-Short-sale cost & Naked shorting barred; only F\&O-segment securities are eligible for short selling and SLB; SLB thin; the overnight short is the future & $c_-$ via $\ell_s$; $c_-=\infty$ for cash-only stocks \\
+Short-sale cost & Naked shorting barred; only F\&O-segment securities are eligible for short selling; SLB (which also covers other liquid stocks) thin; the overnight short is the future & $c_-$ via $\ell_s$; $c_-=\infty$ for cash-only stocks \\
 Arbitrage capital & Arbitrage-fund AUM (tax-advantaged since the 1 Apr 2023 debt-fund tax change); funding rates; peak-margin phase-in (Dec 2020--Sep 2021) & $\alpha$ (so $\gamma$), $r_A$ \\
 Arbitrage risk & Basis volatility, idiosyncratic volatility & $\sigma^2$ (so $\gamma$) \\
 Position limits & Entity limits (10/20/30\% of MWPL from 1 Oct 2025); MWPL; the F\&O ban (95\% entry, 80\% exit) & caps on $a$; reduce-only rule (Sec.~\ref{sec:ban}) \\
@@ -411,8 +411,8 @@ bad news should grow.
 \end{remark}
 
 \subsection{Cash-only stocks and F\&O inclusion}
-Stocks outside the F\&O segment have no single-stock futures and are not eligible for short selling or SLB under SEBI's
-framework, so $c_-$ is effectively infinite for overnight positions. A Miller (1977) mechanism then applies.
+Stocks outside the F\&O segment have no single-stock futures and are not eligible for short selling under SEBI's
+framework; stock lending, where it exists, is thin. So $c_-$ is effectively infinite for overnight positions. A Miller (1977) mechanism then applies.
 
 \begin{proposition}[Overpricing without a short channel]\label{prop:miller}
 A continuum of investors has valuations $v_i\sim U[v-\delta,v+\delta]$ and demands $k(v_i-p)$ if long; shorting costs $c_s$
@@ -429,7 +429,7 @@ overpricing is $\big(\sqrt{\delta}-\sqrt{Q/k}\big)^2$, increasing in dispersion 
 valid when $p\ge v-\delta$, i.e.\ $\delta\ge Q/k$. Subtract; the derivative in $\delta$ is $1-\sqrt{Q/(k\delta)}>0$.
 \end{proof}
 \begin{test}
-F\&O inclusion lowers $c_s$ (futures, options, short-selling and SLB eligibility arrive together). It should lower
+F\&O inclusion lowers $c_s$ (futures, options and short-selling eligibility arrive together). It should lower
 prices of high-dispersion stocks at inclusion and reduce their subsequent underperformance; exclusion should do the
 reverse. Diamond and Verrecchia (1987) imply that, even without a level bias, short constraints slow the incorporation of
 bad news, which points in the same direction as Proposition~\ref{prop:news}.

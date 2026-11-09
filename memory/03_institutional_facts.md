@@ -57,3 +57,40 @@ gross-OI monitoring discontinued; entity check vs base position using 2 PM SPAN 
 ## Data files (from project doc §8)
 sec_bhavdata_full (delivery), UDiFF bhavcopy (ISIN-keyed, 2024+), F&O bhavcopy (settle/OI), combined OI/MWPL (with FutEq post-2025),
 securities-in-ban CSV, shareholding pattern, results calendar, India VIX, F&O eligibility lists. Wrappers: R `nser`, Python scrapers.
+
+## Added 5 Nov 2026: ban enforcement regimes (primary sources: references/23, references/24, references/19)
+- To 22 Mar 2020: increases checked on END-OF-DAY positions only (NSE penalty text "at the end of each day ... increased
+  his existing positions"); intraday round trips not violations (some brokers allowed them; Zerodha blocked them).
+- 23 Mar 2020 →: SEBI PR 18/2020 (20 Mar 2020) Annex A 1(i): exchanges/CCs "shall check on an intra-day basis (monitoring of
+  Peak intraday OI or Periodic intraday monitoring of OI)"; ICCL/BSE notice 20200322-2: violations "based on the monitoring
+  of peak intraday positions"; penalty lower of 1% of value in violation or Rs 5 lakh per client, min Rs 50,000. Kept
+  "till further directions" by PR 59/2020 (25 Nov 2020) although the MWPL halving was withdrawn.
+- 1 Oct 2025 →: NSE Clearing 119/2025 §2.2: entity EOD FutEq vs base position (2 PM SPAN delta); penalty 1%, min 5,000,
+  max 1 lakh. Broker notices date "delta-based exposure limits in ban period" to 8 Dec 2025 (unresolved).
+- Data confirm: ban-day (ΔOI+V)/V median 0.871 (to 22 Mar 2020), 0.011 (23 Mar 2020–Sep 2025), 0.193 (Oct–7 Dec 2025),
+  0.357 (8 Dec 2025 →).
+
+## Added 7 Nov 2026 (re-verified against primary texts)
+- **In-ban trading rule from 1 Oct 2025 is LOOSER than before** (SEBI 2025/79 §5.3.1 vs §5.3.2 + Table 2): old rule "trade
+  only to decrease their positions through offsetting positions"; new rule: any trade allowed if the entity's end-of-day
+  FutEq OI falls (e.g. adding a long put or a short call to a long future is permissible). The 2025 PACKAGE is not a
+  relaxation (every MWPL fell; intraday MWPL monitoring with surveillance actions from 3 Nov 2025, §5.4).
+- **Short selling** (SEBI circular SEBI/HO/MRD/MRD-PoD-3/P/CIR/2024/1, 5 Jan 2024, references/25, restating the 2007
+  framework): all classes of investors may short; naked short selling not permitted (delivery at settlement mandatory);
+  institutional investors may not day trade; securities traded in the F&O segment are eligible for short selling.
+- **SLB is NOT limited to F&O stocks**: SEBI widened SLB to liquid non-F&O securities from 1 Jul 2013 (Business Standard,
+  30 May 2013; secondary). NSE SLB bhavcopies: non-F&O stocks 0.5-2% of trade records 2015-17, 6-23% from 2019.
+- NSE SLB bhavcopy URL: nsearchives.nseindia.com/archives/slbs/bhavcopy/SLBM_BC_DDMMYYYY.DAT (2015 → present).
+- AMFI monthly report URL: portal.amfiindia.com/spages/am{mon}{yyyy}repo.xls; arbitrage funds a separate category from
+  Apr 2018 (older layout to Mar 2019). AUM Apr 2018 56,218 cr → Sep 2026 2,97,632 cr.
+- 30× volume MWPL leg: 2006 change to free float confirmed (Oneindia, 23 Sep 2006; SEBI 2010 circular keeps the 2006 method);
+  the 2004 circular's text was not retrievable on 7 Nov.
+
+## Added 9 Nov 2026
+- COVID halving: 60 stocks halved in the 20 to 27 March 2020 files plus 1 on 29 April 2020 (61 in all); 70 restored in the
+  26 November 2020 file (rule applied dynamically, so more stocks were halved at the end than in March).
+- SEBI 2025/79 para 4.2 states the aim "Reduce instances of spurious F&O ban periods in single stocks"; para 5.2.5 ties
+  the MWPL to delivery volume "to reduce the potential manipulation". SEBI 2024/132 para 2 cites increased retail
+  participation and speculative expiry-day volumes.
+- SEBI PR 22/2024 (23 Sep 2024): 93% of >1 crore individual F&O traders lost money FY22-FY24 (avg ~Rs 2 lakh incl. costs),
+  aggregate >Rs 1.8 lakh crore; FY24 prop +Rs 33,000 cr, FPI +Rs 28,000 cr gross; 96-97% of their profits algorithmic.

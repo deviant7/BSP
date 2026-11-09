@@ -2,59 +2,51 @@
 
 This repository is Prince Kumar's (Roll 23B3032, BS Economics, IIT Bombay, 2023–27) Bachelor's thesis project
 (EC 495 Stage I, 6 cr, Sem 7 → EC 497 Stage II, 12 cr, Sem 8). Guide: **Prof. Aditi Chaubal** (Economics; non-linear time series).
-Topic: **Limits to Arbitrage in the Indian Equity Market** — does India's MWPL "F&O ban" (fresh single-stock derivative
-positions barred once market-wide OI > 95% of MWPL) widen/prolong mispricing? Uses public NSE data, 2015–2026, ~220 F&O stocks.
-
-## Standing instruction from the user (durable)
-- **Save to memory regularly.** After any meaningful step (a decision, a new document, a finding, a user correction),
-  update the files in `memory/` and append to `memory/05_session_log.md`, then commit and push to the session branch.
-  The container is ephemeral; only what is committed to this repo survives.
-- The user wants thorough, unbiased, academically rigorous work; read primary sources, not just notes. Flag errors honestly.
+Topic: **Limits to Arbitrage in the Indian Equity Market** — how strongly do trading costs, short-sale constraints, arbitrage
+capital, arbitrage risk and position limits bind in Indian equities, with India's MWPL "F&O ban" (reduce-only trading for
+everyone once market-wide OI > 95% of MWPL, until 80%) as the sharpest lens. Public NSE data; bans 2010–2026, prices 2015–2026.
 
 ## START HERE
-`memory/08_handoff_next_session.md` — exact state at the end of the last session, what is waiting on whom, rebuild recipe,
-key numbers, data errors already fixed, artefact map. Work lives on branch `claude/compassionate-rubin-s9gny2` (main = initial
-commit only). Blind rule: nothing outcome-vs-treatment until `pap-v1` is tagged (waiting for the guide's reply).
+**Resuming? Read `handoff/16_resume_here.md` first** (where the last session stopped, rebuild list, next steps), then
+**`handoff/00_START_HERE.md`** — the complete continuity brief (reading order, rules, current state, next steps, theory,
+test plan, data pipeline, numbers, facts, literature, repo map, environment, open issues, maintenance protocol).
+Read all of `handoff/` in the order it gives before doing substantive work.
 
-## Read these before answering anything substantive
-1. `memory/01_project_context.md` — the research design, chapters, hypotheses, data, timeline, decision history.
-2. `memory/02_literature_digest.md` — verified facts/numbers from all 21 papers (read from the PDFs).
-3. `memory/03_institutional_facts.md` — SEBI/NSE rules and exact dates (verified vs unverified).
-4. `memory/04_models_and_audit.md` — Models A and B, and the audit of their (and the docs') errors.
-5. `memory/05_session_log.md` — chronological log of what was done, decided, and what is open.
-6. `memory/06_user_working_style.md` — how the user likes to work.
-7. `memory/07_fact_check.md` — internet verification of every rule/date/citation (28 Oct 2026), with corrections.
-8. `memory/08_handoff_next_session.md` — end-of-session handoff (read first).
+## Standing instructions from the user (durable)
+- **Keep continuity in two layers, regularly.** After any meaningful step (a decision, a new document, a finding, a user
+  correction, a result): (1) update `memory/` and append to `memory/05_session_log.md` (the assistant's own notes);
+  (2) update the relevant files in `handoff/` and add a line to `handoff/CHANGELOG.md` (the brief any new chat/model can be
+  pointed to); then commit and push to `claude/compassionate-rubin-s9gny2`. The container is ephemeral; only what is
+  committed survives. Protocol: `handoff/15_maintenance_protocol.md`.
+- Thorough, unbiased, academically rigorous work; read primary sources, not just notes; flag errors honestly.
+- No timelines; project = limits to arbitrage broadly (the ban is one lens); keep every past plan and deletion
+  (`plan/archive/`, `REMOVED_ITEMS_REGISTER.md`); guide-facing documents have no internal references, no em dashes, no
+  AI-sounding phrases; `docs/` documents the final form only (no history). Full list: `handoff/02_people_rules_and_working_style.md`.
 
-## Current master plan
-- `plan/BSP_Research_Plan_v2.md` — how the project proceeds (supersedes the project doc's §7 methods ordering and §12 timeline;
-  the doc's goals stand). The guide has seen only the project document. **No time pressure — ignore timelines.**
-- `plan/archive/` — every earlier plan version (v1 = project doc, v2.0, v2.1) + `REMOVED_ITEMS_REGISTER.md` listing every item
-  dropped/demoted/changed, why, and how to reintroduce it. **User wants all past plans and deletions kept; update the register
-  whenever the plan changes.**
+## State in one paragraph (9 Nov 2026)
+Theory done and verified (`BSP_Model_C_Constrained_Arbitrage_India.pdf`, `models_src/modelC/`). Data built and audited
+(`data_pipeline/`, `data/processed/`, `docs/10_data_quality_audit.md`); SLB and AMFI arbitrage-fund series added 7 Nov.
+The guide received the October progress report, liked it and gave the go-ahead. Pre-analysis plan `plan/pre_analysis_plan_v1.md`
+frozen as git tag **`pap-v1` at 85dac3a** (on GitHub). Tests run exactly as the plan specifies; every open detail was
+written into its §11 before each run (C1-C15), exploratory additions in §11.2. **All primary tests (+ Holm) and all
+secondary tests are done** (results: `docs/14_results.md`, summary §14.16; `handoff/04_current_state.md` §4.7-4.10).
+Band-estimation chapter (`docs/15`) and constraint index (`docs/16`) done 7 Nov. **Write-ups done 7 Nov:** thesis draft
+(`thesis/`, `BSP_Thesis_Draft_Nov2026.pdf`) and first-results report for the guide (`BSP_First_Results_Nov2026.pdf`,
+**not sent**; send only on the user's go-ahead). Digest of all findings: `memory/09_findings_digest.md`. **8 Nov:** remaining master-plan items done (spurious bans, placebos, COVID restoration; PAP §11.15, `docs/14` §14.17) and a deep audit of the whole project (`handoff/04_current_state.md` §4.15: full rerun reproduces every output; the constraint index's bad-news asymmetry is a size effect, all write-ups corrected). **9 Nov:** final thesis built: `BSP_Thesis_Final_Nov2026.pdf` (source `thesis/`, design `thesis/bspstyle.sty`, figures `analysis/thesis_figures_final.py`). Presentation deck `BSP_Presentation_Nov2026.pptx` (37 slides, consulting format of the user's reference decks; `deck/build_deck.js`, `analysis/deck_figures.py`). Academic backup deck (Beamer): `BSP_Presentation_Academic_Nov2026.pdf` (`beamer/main.tex`, `analysis/beamer_figures.py`). Short thesis for quick readers: `BSP_Thesis_Short_Nov2026.pdf` (50 pp; `thesis_short/`, reuses the main thesis style and figures; the full thesis stays the version of record). Next: the user's review of thesis and both decks. All work up to 28 Oct 2026 is on `main` (PR #1); later work reaches `main` only through a new PR
+when the user asks.
 
-- `plan/pre_analysis_plan_v1.md` — the test plan (samples, outcomes, treatments, primary H7/H8/H3/H6, secondary tests,
-  inference, power, falsifiers). **Blind rule: no outcome may be related to any treatment until it is tagged `pap-v1`.**
-- `data_pipeline/` (+ README) builds everything from NSE archives into `data/processed/` (raw data git-ignored).
-- `BSP_Progress_Report_Oct2026.pdf` + `progress_report_src/progress_report_oct2026.tex` — guide-facing report (final, not yet sent;
-  guidance-questions section removed at user's request, kept in `progress_report_src/removed_guidance_questions.tex`).
-
-## File map (repo root)
-- `BSP_Project_Document.docx` / `.pdf` — the detailed study plan (Sep 2026); identical content. The user's master plan.
-- `BSP_Literature_Review.pdf` + `litreview_src/` — 29-pp math-level review (LaTeX, compiles).
-- **`BSP_Model_C_Constrained_Arbitrage_India.pdf` + `models_src/modelC/` — CURRENT theoretical framework (replaces A & B);
-  `verify_modelC.py` checks every closed form numerically.**
-- `BSP_Model_A_Constrained_Arbitrage.pdf`, `BSP_Model_B_Band_of_Inaction.pdf` + `models_src/` — the two earlier candidate models (superseded; kept).
-- `BSP_Model_A_for_guide.pdf`, `BSP_Model_B_for_guide.pdf` — 3-pp plain-language versions sent/for guide.
-- `BSP_Progress_Report.pdf` + `progress_report_src/` — 4-pp progress note to the guide (Sep 28 2026).
-- `Claude outputs/` — byte-identical duplicates (NB: `Claude outputs/BSP_Model_A_Constrained_Arbitrage.pdf` is actually the 3-pp guide version).
-- `references/` — 21 PDFs (`1_…` to `18_…`), plus `19_nse_clearing_circ119_2025_mwpl_sop.pdf` (primary source for new MWPL,
-  80% exit, ban penalties), `20_…` Shankar–Sankar–Kiran Kumar 2015 NSE WP (SSF SETAR bands), `21_…` Nandan–Agrawal–Jindal 2015,
-  `22_…` NSE Clearing FAQ (Oct 2025), `00_reference_index.md`, `notes_batch1..6_*.md` (batch 6 = papers 19–22 + related work).
-- `Very old conversation.txt`, `Recent Conversation.txt` — logs of earlier chat sessions (project origin → models).
-- Not in repo (referenced in old chats): original `BSP Proposal.docx` sent to the guide; earlier assistant memory notes.
+## Folders
+- `handoff/` continuity brief · `docs/` final-form documentation · `memory/` assistant notes (05 = session log)
+- `plan/` master plan v2, frozen PAP, archive + removed-items register
+- `data_pipeline/` scripts + README · `data/processed/` outputs (raw data and basis panel git-ignored; rebuild per `docs/12`)
+- `analysis/` estimators, simulated-data tests, audit scripts · `models_src/` model sources · `references/` papers + notes
+- Root PDFs: **final thesis `BSP_Thesis_Final_Nov2026.pdf`** (+ short version `BSP_Thesis_Short_Nov2026.pdf`), **decks `BSP_Presentation_Nov2026.pptx`/.pdf (consulting) and
+  `BSP_Presentation_Academic_Nov2026.pdf` (Beamer)**, project document (guide has it), Oct 2026 progress report (sent),
+  current model, earlier thesis draft, first-results report (not sent, not maintained); superseded Models A/B, Sep 28 note
+  and literature review are internal and kept. User-supplied templates and design references are also in the root.
+- `thesis/` final thesis LaTeX (`bspstyle.sty` design); `thesis_short/` 50-page short version; `deck/` consulting deck generator; `beamer/` academic deck;
+  `memory/09_findings_digest.md` = every result in one place; `memory/10_reread_findings.md` = last full re-read.
 
 ## Tooling notes
-- `pdftotext` works for most PDFs; `1_shleifer_vishny_limits.pdf` has a garbled font layer → OCR with tesseract
-  (`apt-get install -y tesseract-ocr`, then `pdftoppm -r 200 -gray` + `tesseract`). `pandoc` reads the .docx.
-- LaTeX sources exist for all generated PDFs; rebuild rather than hand-edit PDFs.
+- `pdftotext` for most PDFs; `1_shleifer_vishny_limits.pdf` needs OCR (tesseract). `pandoc` reads the .docx.
+- LaTeX sources exist for all generated PDFs; rebuild rather than hand-edit PDFs. More in `handoff/13_environment_and_tooling.md`.

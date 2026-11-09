@@ -107,8 +107,15 @@ def main(raw, out):
     rt = pd.read_csv(os.path.join(raw, "rates", "INDIR3TIB01STM.csv"))
     rt.columns = ["month", "r"]; rt["month"] = pd.to_datetime(rt["month"]).dt.to_period("M")
     rt["r"] = pd.to_numeric(rt["r"], errors="coerce") / 100
+    # The OECD series is published with a lag of about one month. Months after the last published value take the last
+    # value, at most 2 months forward; such rows are flagged (r_filled) so they can be dropped in a robustness check.
+    rt = rt.dropna(subset=["r"]).set_index("month")
+    last = rt.index.max()
+    fill = pd.DataFrame({"r": rt["r"].iloc[-1]}, index=pd.period_range(last + 1, last + 2, freq="M"))
+    rt = pd.concat([rt.assign(r_filled=False), fill.assign(r_filled=True)]).rename_axis("month").reset_index()
     stf["month"] = stf["date"].dt.to_period("M")
     stf = stf.merge(rt, on="month", how="left")
+    rep.append(f"rate: last published month {last}; rows using a carried-forward rate {stf['r_filled'].fillna(False).sum()}")
     stf["tau"] = (stf["expiry"] - stf["date"]).dt.days / 365.0
 
     # dividends going ex in (t, expiry]
@@ -141,7 +148,7 @@ def main(raw, out):
     stf["rel_repo"] = stf["r_implied"] - stf["r_med"]
 
     keep = ["date", "symbol", "expiry", "k", "tau", "F_vwap", "S_vwap", "close", "S_close", "n_contracts", "lot_used",
-            "value_rs", "oi", "chg_oi", "S_qty", "S_value", "S_trades", "r", "pv", "div_yield_in_life", "m_vwap", "m_close",
+            "value_rs", "oi", "chg_oi", "S_qty", "S_value", "S_trades", "r", "r_filled", "pv", "div_yield_in_life", "m_vwap", "m_close",
             "theoretical_settle", "r_implied", "rel_repo", "lot_snapped", "event_in_life", "src"]
     stf[keep].to_csv(os.path.join(out, "basis_panel.csv.gz"), index=False, compression="gzip", float_format="%.8g")
 

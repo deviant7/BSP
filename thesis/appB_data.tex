@@ -1,0 +1,51 @@
+\chapter{Data construction}\label{app:data}
+
+\section{Ban and position-limit panel}
+Daily combined open interest files give the MWPL, open interest, futures-equivalent open interest (from October 2025) and
+the next-day status of each stock from February 2010. About a hundred files write the year in two digits, a few carry
+another day's data under their own date, and some archives bundle several days; the parser takes dates from the file
+names, reassigns misdated files and reads every member of bundled archives. Thirteen files from June 2012 are corrupt at
+the source (before the main sample). Placeholder symbols in some files are restored through the security's identifier
+(ISIN). The official ban lists are parsed with their trailing punctuation removed; on three days the list is missing at the
+exchange and is imputed.
+
+\section{F\&O membership}
+A stock is in the F\&O segment on a day if stock futures on it are listed that day. Entries and exits are the first and last
+days of each membership spell; symbol changes are linked through the ISIN so that they are not counted as events. The F\&O
+file of 30 March 2021 is missing at the exchange and is bridged.
+
+\section{Prices and the basis}
+Futures and cash prices, traded value and quantity, contracts, open interest and delivery quantities come from the daily
+bhavcopies, in the older and the newer (UDiFF, from July 2024) formats. The older futures files do not report lot sizes;
+they are recovered from open interest and checked against the day's price range (the futures average price lies inside
+the day's high and low for 99.8\% of contracts). The futures volume-weighted price is traded value divided by contracts
+times lot size; the cash price is traded value divided by quantity. Dividends going ex before expiry are subtracted at
+their present value; contracts with a dividend or another corporate event in their life are flagged and excluded from the
+main sample, because adjusting with actual ex-dates over-corrects slightly (some dividends were not yet announced). The
+rate is the three-month interbank rate; the last published value is carried forward at most two months and flagged.
+
+\section{Returns and market capitalisation}
+Daily returns for all stocks use the close and the exchange's previous close, which is not adjusted for corporate actions;
+splits and bonuses (multiplied when they fall on the same day) and dividends are applied from the corporate-actions feed,
+missing splits are inferred from price ratios at standard split ratios, and listing days and other event days are set to
+missing. Market capitalisation comes from AMFI's half-yearly average market-capitalisation lists (from July 2017), turned
+into share counts and applied to split-adjusted prices; before July 2017 share counts are carried back.
+
+\section{Results announcements}
+The release time of each quarterly result is the earliest of the exchange's ``financial result updates'' announcement and
+the results filing; board-meeting dates fill gaps and replace filing times that are more than a day after the meeting; each
+record is mapped to the symbol trading on the event date through the ISIN history. Day 0 is the release day for releases
+before 15:30 and the next trading day otherwise.
+
+\section{Securities lending and arbitrage funds}
+The daily SLB files list each lending trade's stock, tenure, expiry, fee, quantity and value (2015 to 2026; two days missing
+at the exchange). AMFI's monthly reports give the arbitrage-fund category's flows and assets from April 2018, in two
+layouts.
+
+\section{Reproducibility}
+Every data set is rebuilt from the raw files by scripts, each with a report of counts and checks; the repository's
+documentation lists the sources, the construction rules, the checks run on the data and the exact rebuild sequence.
+From the processed data, every estimate in this thesis is produced by one sequence of analysis scripts; a complete rerun reproduced every reported number. Each estimator was first run on data
+simulated with a known effect (the threshold model, the Callaway and Sant'Anna estimator and the matched level-effect
+design all recover the effect they were given), and a separate check compares every number quoted in the text with the
+analysis output.

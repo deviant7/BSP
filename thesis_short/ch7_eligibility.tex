@@ -1,0 +1,76 @@
+\chapter{F\&O eligibility and the cross-section}\label{ch:elig}
+\chapterlead{Short-sale constraints across the whole cash market: what entry into and exit from the F\&O segment do to
+price adjustment and drift, whether anomalies are stronger where shorting is hardest, and how drift and price delay vary
+across all stocks.}
+
+\section{Entry into and exit from the F\&O segment (H6)}
+Entry gives a stock futures, options and formal short-selling eligibility at once; an eligibility exit removes them while
+the stock keeps trading in the cash market. This changes the short-sale constraint for many more stocks than the ban
+does, and against the whole cash market as a control group.
+
+\paragraph{Design.} Stocks by calendar year, 2015 to 2025. A stock's cohort is the first year fully after its event; the
+event year is a transition year. For price delay I use the Callaway and Sant'Anna (2021) estimator with never-treated and
+not-yet-treated controls and base-year covariates (log market capitalisation, log traded value, volatility), with a
+stock-cluster bootstrap. Drift exists only at announcements, so for drift after bad news I use a stacked
+difference-in-differences at the announcement level. The family statistic is a Bonferroni combination of the four
+components.
+
+\begin{table}[t]
+\caption[Effects of F\&O entry and exit]{Entry speeds price adjustment; drift after bad news does not weaken}\label{tab:h6}
+\exsub{Pre-specified components of the H6 test}
+\small\begin{tabular}{@{}>{\bfseries\color{accent}}lcccc@{}}
+\toprule
+\thd{Component} & \thd{Prediction} & \thd{Estimate} & \thd{s.e.} & \thd{One-sided $p$} \\
+\midrule
+Entry: price delay & $<0$ & $-0.109$ & 0.023 & $1.3\times10^{-6}$ \\
+Entry: drift after bad news & $>0$ & $-0.040$ & 0.018 & 0.99 \\
+Exit: price delay & $>0$ & $+0.053$ & 0.040 & 0.091 \\
+Exit: drift after bad news & $<0$ & $+0.014$ & 0.020 & 0.77 \\
+\bottomrule
+\end{tabular}
+\exsource{Price delay: Callaway and Sant'Anna estimator, stock-cluster bootstrap. Drift: stacked difference-in-differences at the announcement level. Source: author's calculations.}
+\end{table}
+
+Prices of stocks that enter the segment respond much faster to market-wide news (median delay 0.24 before entry), and those
+of stocks that leave somewhat more slowly. The Sun and Abraham (2021) estimator gives $-0.063$ (s.e.\ 0.019) for entries,
+leads three and four years before entry are close to zero, and the result holds without the large November 2024 batch and
+without back-cast market capitalisations. The drift components go the other way: after entry the drift that follows bad
+news is stronger, not weaker. H6 is supported through price delay and contradicted through drift. Entry requires a stock
+to have grown in size and liquidity, which by itself speeds price adjustment; the covariates and the flat leads limit,
+but cannot rule out, selection on growth (Figure~\ref{fig:h6es}).
+
+\begin{figure}[t]
+\caption[Price delay around F\&O entry and exit]{Price delay falls after entry and rises a little after exit, with no clear trend before either}\label{fig:h6es}
+\exsub{Callaway and Sant'Anna estimates of the change in price delay by year relative to the first full year after the event (cells with at least 19 treated stocks)}
+\centering\includegraphics[width=\linewidth]{fig_h6_es}
+\exsource{Point estimates; the aggregate post-event effects and their standard errors are in Table~\ref{tab:h6}. Source: author's calculations.}
+\end{figure}
+
+\section{Anomalies and short-sale constraints (H5)}
+Each month I sort stocks within three constraint groups (F\&O stocks; cash-only stocks with SLB trades in the last three
+months; cash-only stocks without) into terciles of a composite mispricing score built from momentum, short-term reversal,
+maximum daily return, idiosyncratic volatility, illiquidity and turnover, and measure the most overpriced and most
+underpriced terciles against the group's value-weighted return. The model predicts that the overpriced side does worse
+where shorting is hardest, while the underpriced side does not differ.
+
+Value-weighted, it does not: the short-leg difference between the most constrained group and F\&O stocks is $+0.04\%$ a
+month (s.e.\ 0.20). Equal-weighted, anomalies are far stronger among small cash-only stocks, but on both sides (short leg
+$-0.49\%$, long leg $+0.46\%$ a month relative to F\&O stocks), which is a small-stock effect rather than the one-sided
+pattern of a short-sale constraint. Momentum alone fits the prediction: losers among constrained stocks do worse ($-0.51\%$
+a month, s.e.\ 0.22). The groups differ greatly in size (median market capitalisation Rs 43,513 crore for F\&O stocks
+against Rs 770 crore for cash-only stocks without SLB trades), which limits what this comparison can show.
+
+
+\section{Drift and price delay across all stocks}
+Two further comparisons use the whole cash market. First, relative to F\&O stocks of the same size decile, cash-only stocks
+drift $-0.67\%$ more after bad news (s.e.\ 0.42) and $+2.40\%$ more after good news (s.e.\ 0.43): they under-react in both
+directions. Second, the constraint index of Chapter~\ref{ch:data}, which combines the lack of a short channel with SLB
+scarcity, spreads, illiquidity and idiosyncratic volatility, predicts slower price adjustment the next year, also within a
+stock over time and after controlling for size. It also predicts more drift after bad news than after good news, but that
+asymmetry disappears once size is controlled for, in line with the symmetric under-reaction of cash-only stocks.
+
+\section{Summary}
+Short-sale access matters for how fast prices adjust: entry into the F\&O segment speeds the response to market news, and
+more constrained stocks adjust more slowly. The evidence on overpricing and on drift after bad news is mixed: entry does
+not weaken bad-news drift, value-weighted anomaly returns do not show the predicted asymmetry, and the link between the
+broader constraint index and drift after bad news disappears once size is controlled for.

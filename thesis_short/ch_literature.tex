@@ -1,0 +1,55 @@
+\chapter{Related literature}\label{ch:lit}
+\chapterlead{The theory of why arbitrage is limited, how the band of a futures basis is estimated, what short-sale
+constraints do to prices, and what earlier work found in India.}
+
+\section{Why arbitrage is limited}
+Shleifer and Vishny (1997) start from the fact that arbitrage is done by specialists who invest other people's money.
+When a gap widens, the arbitrageur loses money and investors withdraw funds, exactly when the opportunity is best; and
+specialised arbitrageurs avoid positions whose returns are volatile. De Long, Shleifer, Summers and Waldmann (1990) show
+that risk created by noise traders can keep prices from fundamentals, although the result needs that risk to be
+market-wide and is not robust to changes in the model (Loewenstein and Willard, 2006). Gromb and Vayanos (2010) bring the
+main mechanisms into one model: a cost of short selling adds a wedge only when arbitrageurs must be short, so the band
+around fair value is one-sided, and margins make capital a binding constraint. The model of Chapter~\ref{ch:theory}
+follows this structure and adds a position limit under which every participant may only reduce positions.
+
+Two classic papers explain why short-sale constraints matter. Miller (1977) argues that when opinions differ and
+pessimists cannot sell short, prices reflect the optimists. Diamond and Verrecchia (1987) show that with rational
+traders constraints slow the incorporation of private information, especially bad news. Ofek, Richardson and Whitelaw
+(2004) find put-call parity violations in the direction short-sale costs predict, and Stambaugh, Yu and Yuan (2015) show
+that the low returns of volatile stocks come from the overpriced side, where arbitrage is hardest.
+
+\section{The band and the evidence from India}
+Trading costs create a band around the cost-of-carry price within which arbitrage does not pay. Dwyer, Locke and Yu
+(1996) estimate it with a three-regime threshold model of S\&P 500 futures and cash; Tse (2001) argues that arbitrageurs
+with different costs make the response smooth; Ters and Urban (2020) show that the arbitrage cost itself can be estimated
+precisely and propose comparing bands before and after regulatory changes.
+
+Indian studies (Table~\ref{tab:litbands}) estimate intraday bands over short samples. Aggarwal (2015) finds a band of
+about $-15$ to $+3$\bp\ that moved with funding liquidity; Shankar, Sankar and Kiran Kumar (2019) find thresholds of $-39$
+and $-10$\bp\ and a lower edge that reacts more to volatility, a sign of a constraint on the short side. Saurav, Srivastava
+and Agarwalla (2026) report, in their abstract, that the basis turns negative before earnings announcements where
+short-sale constraints are tight. In the cross-section, Sehgal, Vasishth and Deisting (2024) find that volatile stocks
+earn \emph{higher} returns in India, the opposite of the United States, so results from elsewhere need checking here.
+
+\begin{table}[t]
+\caption[Earlier estimates of the futures-cash band in India]{Earlier Indian estimates describe intraday bands; this thesis measures the overnight band}\label{tab:litbands}
+\exsub{Studies of single-stock futures against their underlying stocks on the National Stock Exchange}
+\small\begin{tabularx}{\linewidth}{@{}K{3.4cm}P{2.9cm}P{2.4cm}L@{}}
+\toprule
+\thd{Study} & \thd{Sample} & \thd{Data} & \thd{Band} \\
+\midrule
+Aggarwal (2015) & 141 stocks, Mar to Aug 2013 & One-second order book & About $-15$ to $+3$\bp, per stock and day \\ \rowrule
+Shankar, Sankar and Kiran Kumar (2019) & 102 stocks, 2007 to 2009 & Five-minute prices & $-39$ to $-10$\bp, weekly \\ \rowrule
+Slivka, Shah and Wu (2011) & Cost calculation & Fee schedules & About twice the width in mature markets \\ \rowrule
+This thesis & 360 stocks, 2015 to 2026 & Daily volume-weighted prices & $-34.5$ to $+23.9$\bp\ around each stock's median \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: the studies cited; Chapter~\ref{ch:band} for this thesis.}
+\end{table}
+
+\section{What this thesis adds}
+To my knowledge no study has estimated the effects of India's F\&O ban. I model it as a reduce-only rule for every
+participant, test its predictions with a plan fixed in advance, estimate the band over a long daily panel of stocks
+rather than a short intraday sample, relate it to dated changes in costs, capital and position limits, and study
+short-sale constraints across the whole cash market through entry into the F\&O segment and a constraint index for every
+listed stock.

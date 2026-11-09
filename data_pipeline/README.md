@@ -24,6 +24,27 @@ Processed, compact outputs go to `data/processed/` (committed when small).
 - `download_nse_prices.py OUT START END [workers]` — per-day compact files: futures rows (stock + index), options summary per
   underlying, cash EQ/BE/BZ series, delivery. Raw zips not kept.
 
+- `download_rates_corpactions.py RAW Y0 Y1` — FRED interbank and call-money rates; NSE corporate actions (monthly).
+- `download_results_filings.py RAW Y0 Y1 [integrated|boardmeetings|resultupdates]` — results filings (legacy, Integrated
+  Filing from the Mar-2025 quarter), the board-meeting calendar, and the 'Financial Result Updates' announcements (first
+  release time of every result).
+- `download_index_close.py OUT START END` — Nifty 50 close and dividend yield.
+- `build_fno_events.py RAW OUT` — F&O membership (STF listed that day), entries and exits, renames linked by ISIN.
+- `build_announcements.py RAW OUT` — results events: earliest release across announcements and filings, board meetings fill
+  gaps and override late re-filing times, records mapped to the symbol trading on the event date (ISIN history).
+- `build_basis.py RAW OUT` — basis panel from daily VWAPs (outcome side only).
+- `build_returns.py RAW OUT` — daily total returns for all EQ/BE/BZ stocks, adjusted for splits, bonuses and dividends
+  (NSE's prevclose is not adjusted); flags rights/demerger days, listing days, likely missing corporate actions, jumps.
+- `build_amfi_mcap.py RAW OUT` — downloads and parses AMFI's half-yearly average market-cap lists (Jul 2017 onward).
+- `build_mcap.py OUT` — daily market capitalisation from AMFI share counts and split-adjusted prices (back-cast before
+  Jul 2017).
+- `download_slb.py OUT [threads]` — NSE SLBS daily bhavcopies (`SLBM_BC_DDMMYYYY.DAT`), 2015 onward (added 7 Nov 2026).
+- `build_slb.py RAW OUT` — parses them into `slb_daily.csv.gz` (fee, quantity, value, trades, tenure, expiry) + report.
+- `download_amfi_monthly.py RAW OUT` — AMFI monthly reports (Excel, Apr 2018 onward) and the arbitrage-fund category row
+  → `amfi_arbitrage_monthly.csv` (two layouts; needs `xlrd`).
+- Full documentation of every source, rule and check: `docs/06_data_sources.md`, `docs/07_data_construction.md`,
+  `docs/10_data_quality_audit.md`.
+
 ## Measurement notes (from the model and NSE rules)
 - NSE sets the futures settlement price at a **theoretical cost-of-carry value when a contract is not traded in the last half
   hour**, so a settlement-price basis is ≈ 0 by construction on such days. Use trade-based prices: daily VWAP of futures
@@ -33,5 +54,5 @@ Processed, compact outputs go to `data/processed/` (committed when small).
   NSE lot-size files.
 
 ## Blind protocol
-Until the pre-analysis plan is written and tagged, no table or figure may relate an outcome (basis, returns, drift) to ban
-status, utilisation or reforms. Treatment-side descriptives and outcome distributions on their own are allowed.
+Until the pre-analysis plan was tagged (`pap-v1`, 5 Nov 2026), no table or figure related an outcome (basis, returns, drift)
+to ban status, utilisation or reforms. Treatment-side descriptives and outcome distributions on their own were allowed.

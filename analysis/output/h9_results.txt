@@ -1,0 +1,54 @@
+H9: anticipation and position-limit regime (PAP §11.8 C11). Secondary; p-values unadjusted. SE two-way clustered (stock, date).
+
+PART A: anticipation on non-ban days, 2015 to Sep 2025 (thresholds from each stock's days with omega < 0.60)
+  stock-days 423104, stocks 319; by bin: ref 380016, 0.60 9683, 0.65 8454, 0.70 7518, 0.75 7368, 0.80 4892, 0.85 3589, 0.90 1584
+  Descriptive percentiles of m - q50_i (bp) by omega_(t-1) bin:
+            0.2   0.5    0.8  share U  share L
+    bin                                       
+    ref  -21.01  0.00  17.36    0.200    0.200
+    0.60 -17.60  1.89  18.14    0.218    0.168
+    0.65 -17.20  1.96  18.42    0.221    0.165
+    0.70 -16.86  2.35  18.58    0.226    0.158
+    0.75 -16.43  4.07  20.90    0.261    0.160
+    0.80 -15.44  4.33  21.06    0.260    0.149
+    0.85 -15.45  4.37  21.95    0.272    0.142
+    0.90 -16.47  4.88  22.98    0.267    0.141
+  upper exceedance U: bin coefficients vs omega < 0.60 (stock and date FE): [0.60) +0.0087 (0.0062); [0.65) +0.0121 (0.0066); [0.70) +0.0124 (0.0082); [0.75) +0.0403 (0.0093); [0.80) +0.0340 (0.0100); [0.85) +0.0399 (0.0114); [0.90) +0.0306 (0.0131)
+  lower exceedance L: bin coefficients vs omega < 0.60 (stock and date FE): [0.60) +0.0006 (0.0077); [0.65) -0.0042 (0.0079); [0.70) +0.0001 (0.0092); [0.75) +0.0059 (0.0105); [0.80) +0.0008 (0.0106); [0.85) +0.0010 (0.0113); [0.90) +0.0076 (0.0132)
+  level m - q50 (bp): bin coefficients vs omega < 0.60 (stock and date FE): [0.60) -1.0583 (1.1587); [0.65) -0.2736 (1.2567); [0.70) -1.3530 (1.5272); [0.75) -0.5732 (1.9516); [0.80) +1.2548 (1.8989); [0.85) +1.2095 (1.8599); [0.90) +1.9639 (2.1891)
+  slope of U on omega_(t-1) in [0.60, 0.95): +0.0787 (se 0.0377); one-sided p(> 0) = 0.0191; n 43088
+  slope of L on omega_(t-1) in [0.60, 0.95): +0.0220 (se 0.0480); one-sided p(> 0) = 0.324; n 43088
+  slope of lev on omega_(t-1) in [0.60, 0.95): +0.6359 (se 7.8580); one-sided p(> 0) = 0.468; n 43088
+  TEST STATISTIC A: one-sided p (slope of U > 0) = 0.0191
+
+PART B: 1 Oct 2025 MWPL formula. Stocks 208; I = -ln(new/old): median 0.316, range 0.240 to 0.693; predicted d ln(util) P: median 0.041, sd 0.222; corr(I, P) 0.827
+  window 1 Jul to 31 Dec 2025: basis stock-days 20729 (stocks 182); treatment-side stock-days 26039
+  utilisation omega_t (first stage)    Post x I: +0.2764 (se 0.0302, t +9.15); one-sided p(> 0) = 6.66e-16
+  in a ban                             Post x I: +0.0229 (se 0.0186, t +1.23); one-sided p(> 0) = 0.111
+  upper exceedance U                   Post x I: +0.0612 (se 0.0499, t +1.23); one-sided p(> 0) = 0.111
+  lower exceedance L                   Post x I: -0.0377 (se 0.0537, t -0.70); one-sided p(> 0) = 0.758
+  level m - q50 (bp)                   Post x I: +4.7910 (se 4.8451, t +0.99); one-sided p(> 0) = 0.162
+  TEST STATISTIC B: one-sided p (Post x I > 0 for U) = 0.111
+  Robustness:
+    U with predicted utilisation P     +0.0080 (se 0.0406, t +0.20)
+    ban with P                         +0.0173 (se 0.0109, t +1.58)
+    U non-ban days only                +0.0670 (se 0.0500, t +1.34)
+    level non-ban days only            +5.5359 (se 4.8331, t +1.15)
+    U, window to 31 Mar 2026           +0.0512 (se 0.0427, t +1.20)
+    level, window to 31 Mar 2026       +3.4202 (se 5.5917, t +0.61)
+    ban, window to 31 Mar 2026         +0.0186 (se 0.0227, t +0.82)
+    monthly event study U      (x I; Sep = 0): 7: +0.076 (0.090); 8: -0.005 (0.082); 10: +0.076 (0.073); 11: +0.079 (0.097); 12: +0.098 (0.092)
+    monthly event study ban    (x I; Sep = 0): 7: -0.004 (0.013); 8: -0.016 (0.024); 10: +0.014 (0.017); 11: +0.025 (0.027); 12: +0.012 (0.028)
+    monthly event study level  (x I; Sep = 0): 7: +15.469 (8.005); 8: +2.493 (6.140); 10: +10.815 (6.117); 11: +11.919 (7.411); 12: +9.365 (7.541)
+
+PART C: stacked quarterly MWPL resets (1 Jan, 1 Apr, 1 Jul 2026), window +/-30 trading days; intensity -ln(after/before)
+  2026-01-01: stocks 208, intensity median -0.001, p10 -0.181, p90 +0.110
+  2026-04-01: stocks 205, intensity median -0.000, p10 -0.175, p90 +0.109
+  2026-07-01: stocks 210, intensity median -0.000, p10 -0.235, p90 +0.086
+  utilisation (first stage)      Post x intensity: +0.2417 (se 0.0504, t +4.80)
+  in a ban                       Post x intensity: -0.0017 (se 0.0015, t -1.15)
+  upper exceedance U             Post x intensity: +0.0514 (se 0.0521, t +0.99)
+  lower exceedance L             Post x intensity: -0.0367 (se 0.0569, t -0.64)
+  level m - q50 (bp)             Post x intensity: +3.8895 (se 4.7920, t +0.81)
+
+Summary: test A p = 0.0191; test B p = 0.111

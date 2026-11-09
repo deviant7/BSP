@@ -1,0 +1,112 @@
+H7: one-sided correction in bans (PAP §5, §11 C1-C2). Units: basis points; dm on (m_(t-1) - mu_i) by regime.
+Coefficients: x_r = normal reversion slope in regime r (negative = reversion); xb_r = change in a ban (delta_r).
+Prediction: delta_up (xb_up) > 0, delta_lo (xb_lo) <= 0. Two-way FE (stock, date); SE clustered by stock and date.
+
+MAIN (pooled 2015-2026, stock 20/80 percentiles on non-ban days, winsorised): n=481772, stocks 360, ban observations 8662
+    x_up    -0.7115  (se 0.0103, t -69.40)
+    x_mid   -0.3931  (se 0.0260, t -15.13)
+    x_lo    -0.2038  (se 0.0096, t -21.24)
+    xb_up   -0.0893  (se 0.0368, t -2.43)
+    xb_mid  +0.0991  (se 0.0618, t +1.60)
+    xb_lo   +0.0805  (se 0.0301, t +2.68)
+    delta_up - delta_lo = -0.1698 (se 0.0462); one-sided p(delta_up>0) = 0.992; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  share of observations by regime (non-ban): up 0.202, lo 0.206; ban obs in up 1960, lo 2979, mid 3723
+
+Family test statistic p_H7 (C2 d) = 1
+
+SPEC 2: with expiry-inside-spell interaction: n=481772, stocks 360, ban observations 8662
+    x_up    -0.7115  (se 0.0103, t -69.40)
+    x_mid   -0.3931  (se 0.0260, t -15.13)
+    x_lo    -0.2038  (se 0.0096, t -21.24)
+    xb_up   -0.0876  (se 0.0370, t -2.37)
+    xb_mid  +0.1002  (se 0.0619, t +1.62)
+    xb_lo   +0.0813  (se 0.0298, t +2.72)
+    xbe_up  -0.1173  (se 0.1215, t -0.96)
+    xbe_mid -0.5997  (se 0.3103, t -1.93)
+    xbe_lo  -0.9082  (se 0.0949, t -9.57)
+    delta_up - delta_lo = -0.1688 (se 0.0462); one-sided p(delta_up>0) = 0.991; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+    delta_lo after an expiry inside the spell (delta_lo + delta_lo_exp) = -0.8269 (se 0.0888)
+
+Splits (C2 e):
+  pre 1 Oct 2025: n=432582, stocks 348, ban observations 8360
+    x_up    -0.7200  (se 0.0105, t -68.60)
+    x_mid   -0.4072  (se 0.0267, t -15.27)
+    x_lo    -0.2031  (se 0.0102, t -19.95)
+    xb_up   -0.0911  (se 0.0383, t -2.38)
+    xb_mid  +0.1252  (se 0.0614, t +2.04)
+    xb_lo   +0.0805  (se 0.0304, t +2.65)
+    delta_up - delta_lo = -0.1716 (se 0.0482); one-sided p(delta_up>0) = 0.991; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  post 1 Oct 2025 (44 spells; low power): n=49190, stocks 222, ban observations 302
+    x_up    -0.6666  (se 0.0265, t -25.20)
+    x_mid   -0.3383  (se 0.0696, t -4.86)
+    x_lo    -0.2486  (se 0.0194, t -12.79)
+    xb_up   -0.0374  (se 0.1239, t -0.30)
+    xb_mid  -0.6040  (se 0.2062, t -2.93)
+    xb_lo   +0.0734  (se 0.1036, t +0.71)
+    delta_up - delta_lo = -0.1107 (se 0.1368); one-sided p(delta_up>0) = 0.618; p(delta_up-delta_lo>0) = 0.79; intersection-union p = 0.79
+
+Robustness (C2 f and PAP):
+  fixed +/-25 bp: n=481772, stocks 360, ban observations 8662
+    x_up    -0.7123  (se 0.0109, t -65.06)
+    x_mid   -0.5563  (se 0.0064, t -87.14)
+    x_lo    -0.1997  (se 0.0097, t -20.54)
+    xb_up   -0.0744  (se 0.0370, t -2.01)
+    xb_mid  +0.0524  (se 0.0406, t +1.29)
+    xb_lo   +0.0748  (se 0.0303, t +2.47)
+    delta_up - delta_lo = -0.1492 (se 0.0461); one-sided p(delta_up>0) = 0.977; p(delta_up-delta_lo>0) = 0.999; intersection-union p = 0.999
+  per-stock threshold model (SETAR) on non-ban days: n=481772, stocks 360, ban observations 8662
+    x_up    -0.7089  (se 0.0106, t -66.86)
+    x_mid   -0.3943  (se 0.0198, t -19.88)
+    x_lo    -0.1993  (se 0.0096, t -20.82)
+    xb_up   -0.0879  (se 0.0374, t -2.35)
+    xb_mid  +0.0500  (se 0.0639, t +0.78)
+    xb_lo   +0.0765  (se 0.0304, t +2.51)
+    delta_up - delta_lo = -0.1644 (se 0.0486); one-sided p(delta_up>0) = 0.99; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  state-dependent: percentiles within omega_(t-1) terciles: n=481768, stocks 360, ban observations 8662
+    x_up    -0.7110  (se 0.0099, t -71.61)
+    x_mid   -0.3258  (se 0.0227, t -14.38)
+    x_lo    -0.2066  (se 0.0097, t -21.36)
+    xb_up   -0.0830  (se 0.0355, t -2.34)
+    xb_mid  -0.0399  (se 0.0811, t -0.49)
+    xb_lo   +0.0826  (se 0.0301, t +2.74)
+    delta_up - delta_lo = -0.1656 (se 0.0458); one-sided p(delta_up>0) = 0.99; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  unwinsorised basis: n=481772, stocks 360, ban observations 8662
+    x_up    -0.7827  (se 0.0147, t -53.26)
+    x_mid   -0.3889  (se 0.0291, t -13.38)
+    x_lo    -0.1707  (se 0.0198, t -8.63)
+    xb_up   +0.0768  (se 0.0468, t +1.64)
+    xb_mid  +0.1193  (se 0.0642, t +1.86)
+    xb_lo   +0.1098  (se 0.0328, t +3.35)
+    delta_up - delta_lo = -0.0330 (se 0.0594); one-sided p(delta_up>0) = 0.0508; p(delta_up-delta_lo>0) = 0.711; intersection-union p = 0.711
+  excluding imputed ban days: n=481771, stocks 360, ban observations 8661
+    x_up    -0.7115  (se 0.0103, t -69.40)
+    x_mid   -0.3931  (se 0.0260, t -15.13)
+    x_lo    -0.2038  (se 0.0096, t -21.24)
+    xb_up   -0.0895  (se 0.0367, t -2.44)
+    xb_mid  +0.0991  (se 0.0618, t +1.60)
+    xb_lo   +0.0805  (se 0.0301, t +2.68)
+    delta_up - delta_lo = -0.1700 (se 0.0462); one-sided p(delta_up>0) = 0.992; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  excluding carried-forward-rate rows: n=478445, stocks 360, ban observations 8611
+    x_up    -0.7120  (se 0.0102, t -69.70)
+    x_mid   -0.3933  (se 0.0257, t -15.30)
+    x_lo    -0.2037  (se 0.0096, t -21.18)
+    xb_up   -0.0936  (se 0.0370, t -2.53)
+    xb_mid  +0.0982  (se 0.0618, t +1.59)
+    xb_lo   +0.0810  (se 0.0299, t +2.71)
+    delta_up - delta_lo = -0.1746 (se 0.0465); one-sided p(delta_up>0) = 0.994; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  close-based basis: n=481772, stocks 360, ban observations 8662
+    x_up    -0.6544  (se 0.0138, t -47.38)
+    x_mid   -0.4755  (se 0.0277, t -17.18)
+    x_lo    -0.2512  (se 0.0106, t -23.63)
+    xb_up   -0.0095  (se 0.0305, t -0.31)
+    xb_mid  +0.0988  (se 0.0697, t +1.42)
+    xb_lo   +0.1315  (se 0.0272, t +4.84)
+    delta_up - delta_lo = -0.1410 (se 0.0381); one-sided p(delta_up>0) = 0.622; p(delta_up-delta_lo>0) = 1; intersection-union p = 1
+  relative implied repo (tau >= 7 days; units 1e-4 per year): n=439516, stocks 358, ban observations 7420
+    x_up    -0.7553  (se 0.0107, t -70.26)
+    x_mid   -0.3184  (se 0.0280, t -11.37)
+    x_lo    -0.1614  (se 0.0097, t -16.67)
+    xb_up   -0.1027  (se 0.0507, t -2.03)
+    xb_mid  +0.0637  (se 0.0803, t +0.79)
+    xb_lo   +0.0640  (se 0.0275, t +2.33)
+    delta_up - delta_lo = -0.1667 (se 0.0551); one-sided p(delta_up>0) = 0.978; p(delta_up-delta_lo>0) = 0.999; intersection-union p = 0.999

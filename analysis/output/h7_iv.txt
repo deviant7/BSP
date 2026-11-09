@@ -1,0 +1,36 @@
+EXPLORATORY: H7 with regimes defined by x_(t-2) and x_(t-1) instrumented by x_(t-2) (PAP §11.2). Units bp.
+Observations 456344, stocks 360, ban days 8027; regime shares (by x_(t-2)): up 0.203, mid 0.586, lo 0.212
+
+OLS (same sample, regimes by x_(t-2)):
+    x_up    -0.5706 (se 0.0123, t -46.24)
+    x_mid   -0.5466 (se 0.0175, t -31.19)
+    x_lo    -0.1952 (se 0.0084, t -23.26)
+    xb_up   -0.0850 (se 0.0328, t -2.60)
+    xb_mid  -0.0624 (se 0.0402, t -1.55)
+    xb_lo   +0.1023 (se 0.0222, t +4.61)
+    delta_up - delta_lo = -0.1874 (se 0.0397); one-sided p(delta_up > 0) = 0.995; p(delta_up - delta_lo > 0) = 1; intersection-union p = 1
+2SLS (x_(t-1) terms instrumented by x_(t-2) terms):
+    x_up    -0.2442 (se 0.0115, t -21.18)
+    x_mid   -0.1728 (se 0.0117, t -14.77)
+    x_lo    -0.1432 (se 0.0063, t -22.65)
+    xb_up   -0.1903 (se 0.0774, t -2.46)
+    xb_mid  +0.0680 (se 0.0589, t +1.15)
+    xb_lo   +0.0882 (se 0.0145, t +6.09)
+    delta_up - delta_lo = -0.2786 (se 0.0788); one-sided p(delta_up > 0) = 0.993; p(delta_up - delta_lo > 0) = 1; intersection-union p = 1
+    first-stage R2 (within, indicative): x_up 0.182, x_mid 0.130, x_lo 0.733, xb_up 0.074, xb_mid 0.080, xb_lo 0.836
+2SLS, end-of-day enforcement (to 22 Mar 2020):
+    x_up    -0.2667 (se 0.0227, t -11.76)
+    x_mid   -0.1689 (se 0.0184, t -9.20)
+    x_lo    -0.1257 (se 0.0082, t -15.25)
+    xb_up   -0.1527 (se 0.0882, t -1.73)
+    xb_mid  +0.1112 (se 0.0682, t +1.63)
+    xb_lo   +0.0901 (se 0.0127, t +7.11)
+    delta_up - delta_lo = -0.2428 (se 0.0880); one-sided p(delta_up > 0) = 0.958; p(delta_up - delta_lo > 0) = 0.997; intersection-union p = 0.997
+2SLS, peak-intraday enforcement (23 Mar 2020 to 30 Sep 2025):
+    x_up    -0.2364 (se 0.0139, t -17.02)
+    x_mid   -0.1930 (se 0.0185, t -10.45)
+    x_lo    -0.1703 (se 0.0077, t -22.09)
+    xb_up   -0.3806 (se 0.2361, t -1.61)
+    xb_mid  +0.0035 (se 0.0917, t +0.04)
+    xb_lo   +0.0119 (se 0.0313, t +0.38)
+    delta_up - delta_lo = -0.3925 (se 0.2427); one-sided p(delta_up > 0) = 0.947; p(delta_up - delta_lo > 0) = 0.947; intersection-union p = 0.947
