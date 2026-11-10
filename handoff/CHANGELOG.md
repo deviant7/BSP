@@ -40,3 +40,4 @@
 - 9 Nov 2026 END OF SESSION: in-depth update of memory (01-06, 08, 09), handoff (00-07, 09, 11-14, 16 rewritten), docs (README, 12), CLAUDE.md, master-plan status.
 - 9 Nov 2026: short thesis BSP_Thesis_Short_Nov2026.pdf (50 pp, thesis_short/); 00, 04, 12, 16; docs README, 12; CLAUDE.md; memory/05, 09.
 - 10 Nov 2026: guide's comments on the short thesis; BSP1/BSP2 split decided (BSP1/README.md); memory/05.
+- 10 Nov 2026: Stage I deliverables in BSP1/ (paper-style report 39 pp, consulting deck 37 slides, Beamer 49 pp; README with split, design, rebuild); handoff 00, 02 §2.8, 03 Phase 8, 04 §4.17, 05, 12, 16 §16.0; memory 01, 05, 06, 09; docs README, 12; CLAUDE.md.

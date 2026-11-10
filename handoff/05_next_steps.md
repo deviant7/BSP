@@ -4,7 +4,13 @@ Order is by dependency, not by date (no timelines). Everything must follow the f
 `plan/pre_analysis_plan_v1.md`; read `07_test_plan.md` for interpretation notes. Any departure, however small, is logged
 in PAP §11 with date and reason before results are reported, and the original specification is always reported too.
 
-## CURRENT NEXT STEPS (9 Nov 2026; everything below this box is the original plan, all done)
+## CURRENT NEXT STEPS (10 Nov 2026)
+1. The user reviews the Stage I files in `BSP1/` (report, consulting deck, Beamer deck); apply changes there only.
+2. Stage I is what goes to the guide and the EC 495 evaluation; send only on the user's go-ahead.
+3. Stage II (EC 497): write up the BSP2 part (list in `BSP1/README.md`) in the same paper style when the user asks;
+   plus new work (intraday data, longer post-reform sample, model extension for blocked new demand).
+
+## PREVIOUS NEXT STEPS (9 Nov 2026; superseded by the box above)
 1. The user reviews `BSP_Thesis_Final_Nov2026.pdf`, `BSP_Presentation_Nov2026.pptx` and
    `BSP_Presentation_Academic_Nov2026.pdf` and sends cosmetic changes; apply them in `thesis/`, `deck/build_deck.js`,
    `beamer/main.tex` (and the chart scripts), rebuild, re-run the style scan and `analysis/audit/check_numbers.py`.

@@ -1,4 +1,26 @@
-# 16. RESUME HERE (updated 9 November 2026, end of session)
+# 16. RESUME HERE (updated 10 November 2026)
+
+This card supersedes everything below it. The older cards are kept, unedited, as a record.
+
+## 16.0 Latest (10 Nov 2026): Stage I (BSP1) version built
+- **What happened:** the user showed the guide the short thesis. Her comments: make it look like a paper, not a report
+  (keep design, font, theme, sectioning, title page); rewrite the language for an unknown reader (context first, drop
+  small decisions and side findings, keep question, problem, method, literature, main results; undergraduate voice);
+  do not call the model's derivations "results"; restrict thesis and presentations to Stage I (BSP1, EC 495), a little
+  more than half the work, the rest to Stage II (BSP2); remove the Report Approval page.
+- **Done, all in `BSP1/` (earlier deliverables untouched):** `BSP1_Report_Nov2026.pdf` (39 pp, source `BSP1/paper/`,
+  style `bsp1style.sty`), `BSP1_Presentation_Nov2026.pptx` + `.pdf` (37 slides, `BSP1/deck/build_deck_bsp1.js`),
+  `BSP1_Presentation_Academic_Nov2026.pdf` (49 pp, `BSP1/beamer/main.tex`). Split, design notes and rebuild commands:
+  **`BSP1/README.md`**.
+- **The split:** BSP1 = question, institutions, literature, full model (Props 1 to 6), design and frozen plan, data,
+  the band (threshold/STAR, noise, years, expiry, per-stock), costs (H3 + cost band), frictions (H1), trading in a ban
+  (H8, enforcement regimes, density, RD trading jumps), 2025 reform ban counts. BSP2 = H7, level effect, RD basis,
+  hysteresis, placebos, H2, H9, COVID restoration, H4, H6, H5, constraint index, policy, new work.
+- **Guide has now seen:** project document, October report, and the short thesis (shown by the user in a meeting).
+- **Waiting on the user:** review of the three BSP1 files; whether the certificate text (shortened for Stage I) and the
+  acknowledgements suit; send decision.
+
+# 16. (Previous card) RESUME HERE (9 November 2026, end of session)
 
 This card supersedes everything below it. The older cards are kept, unedited, as a record.
 

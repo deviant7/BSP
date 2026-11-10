@@ -87,6 +87,16 @@
 - Numbers must come from the current data build; regenerate tables rather than typing numbers by hand.
 - Build PDFs from LaTeX (`pdflatex` twice); keep sources; never hand-edit PDFs.
 
+## 2.8 Added 10 Nov 2026 (the guide's preferences, from her comments on the short thesis)
+- Write-ups should read as **papers**, not reports: continuous sections, a title block with the abstract, no chapter
+  pages; keep the thesis design (font, colours, section heads, exhibit captions, title page).
+- Language for an **unknown reader**: give context before results; leave out small decisions and side findings that do
+  not bear on the question, method or main results (or put them in a footnote); undergraduate author voice.
+- Theoretical derivations are **Propositions**, never "results".
+- Thesis and presentations for a stage contain **only that stage's work** (Stage I = BSP1, Stage II = BSP2).
+- No "Report Approval" page.
+- New deliverables go in a **separate folder**; never overwrite earlier ones.
+
 ## 2.7 Added 9 Nov 2026 (write-up and presentation preferences)
 - "Write-up" means the **final thesis** only; the first-results report is not updated unless asked.
 - The user supplies design references and expects them followed closely, with creative licence: the IIT Bombay BTP

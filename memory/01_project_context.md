@@ -61,3 +61,6 @@ Deliverables 9 Nov: final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp, `thesis/
 `BSP_Presentation_Nov2026.pptx` (37 slides, `deck/`), academic Beamer deck `BSP_Presentation_Academic_Nov2026.pdf`
 (`beamer/`). Guide has seen only the project document and the October report. Next: user's review and cosmetic changes.
 Still pending with the user: go-ahead to fix the project document's errors (short-selling line, 30x leg, timeline).
+**10 Nov 2026:** the user showed the guide the short thesis; she asked for a paper (not report) look, reader-focused
+language, no "results" for theory, and to restrict thesis and decks to Stage I (BSP1). Stage I deliverables are in
+`BSP1/` (report, consulting deck, Beamer deck); the split is in `BSP1/README.md`. Earlier full deliverables unchanged.

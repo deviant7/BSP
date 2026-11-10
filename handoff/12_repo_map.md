@@ -5,8 +5,9 @@ Legend: **C** current; **S** superseded (kept on purpose; never delete); **G** h
 ## Root
 | File | What it is | Status |
 |---|---|---|
+| `BSP1/` | **Stage I (EC 495) deliverables** (10 Nov 2026): `BSP1_Report_Nov2026.pdf` (paper style, 39 pp; source `paper/`), `BSP1_Presentation_Nov2026.pptx`/`.pdf` (37 slides; `deck/build_deck_bsp1.js`), `BSP1_Presentation_Academic_Nov2026.pdf` (49 pp; `beamer/main.tex`), `scripts/` (two new figures), `README.md` (guide's comments, split, design, rebuild) | C |
 | `BSP_Thesis_Final_Nov2026.pdf` | **Final thesis** (78 pp) compiled from `thesis/` (9 Nov 2026) | C |
-| `BSP_Thesis_Short_Nov2026.pdf` | Short version of the thesis (50 pp) compiled from `thesis_short/` (9 Nov 2026) | C |
+| `BSP_Thesis_Short_Nov2026.pdf` | Short version of the thesis (50 pp) compiled from `thesis_short/` (9 Nov 2026) | C, G (shown 10 Nov) |
 | `BSP_Thesis_Draft_Nov2026.pdf` | Earlier thesis draft (9 Nov content build, before the redesign) | S, I |
 | `BSP_Presentation_Nov2026.pptx` / `.pdf` | Presentation deck, consulting format, 37 slides (from `deck/`) | C |
 | `BSP_Presentation_Academic_Nov2026.pdf` | Presentation, academic Beamer, 56 pages (from `beamer/`) | C |

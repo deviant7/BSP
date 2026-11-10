@@ -548,3 +548,13 @@
   enforcement, trigger density and RD trading jumps, 2025 reform ban counts). BSP2 = ban price effects (H7, level,
   RD basis, hysteresis, placebos, H2), H9 and COVID restoration, H4 capital, short-sale constraints (H6, H5, index),
   policy, new work.
+- **10 Nov: Stage I (BSP1) deliverables built**, all in `BSP1/` (nothing outside changed): paper-style report
+  `BSP1_Report_Nov2026.pdf` (39 pp; `paper/`, style `bsp1style.sty`), consulting deck `BSP1_Presentation_Nov2026.pptx`
+  (+ .pdf, 37 slides; `deck/build_deck_bsp1.js`), Beamer deck `BSP1_Presentation_Academic_Nov2026.pdf` (49 pp;
+  `beamer/main.tex`). Text rewritten from scratch for an outside reader (context first, fewer numbers, side details in
+  footnotes, analyses added after results labelled in one clause); model statements are Propositions 1 to 6 (band,
+  what moves it, existing book, one-sided correction, level effect, trading), with Assumption 1 (ban); predictions table
+  marks Stage I vs Stage II. Two new figures: `fig_h1_bins` (band width and mean |basis| by friction-index decile:
+  33.0 -> 45.6 bp, mostly between deciles 1 and 4) and `fig_rd_trading` (futures and R at 95%), scripts in
+  `BSP1/scripts/`. Number check: 0 unmatched decimals. Report Approval page removed; certificate trimmed for Stage I
+  (the "reached the standards ... award of the degree" sentence dropped). The guide has now SEEN the short thesis.

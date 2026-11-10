@@ -1,4 +1,4 @@
-# 04. Current state (updated 9 November 2026: final thesis built; earlier sections below kept as written)
+# 04. Current state (updated 10 November 2026: Stage I (BSP1) deliverables built; earlier sections below kept as written)
 
 Resume card with first actions: `16_resume_here.md`. Results for outside readers: `docs/14_results.md`.
 
@@ -21,9 +21,10 @@ Resume card with first actions: `16_resume_here.md`. Results for outside readers
 | Further checks | Spurious bans, placebos, COVID halving and restoration (8 Nov) | `docs/14_results.md` §14.17; §4.14 |
 | Deep audit | Full rerun reproduces every output; fixes applied (8 Nov) | §4.15; `analysis/audit/` |
 | Final thesis | 78 pp, template front pages, report design, 26 figures (9 Nov) | `BSP_Thesis_Final_Nov2026.pdf`, `thesis/`; §4.16 |
-| Short thesis | 50 pp short version for quick readers (9 Nov) | `BSP_Thesis_Short_Nov2026.pdf`; `thesis_short/` |
+| **Stage I (BSP1)** | Paper-style report 39 pp, consulting deck 37 slides, Beamer deck 49 pp (10 Nov), after the guide's comments | `BSP1/` (see `BSP1/README.md`) |
+| Short thesis | 50 pp short version for quick readers (9 Nov); **seen by the guide** | `BSP_Thesis_Short_Nov2026.pdf`; `thesis_short/` |
 | Presentation decks | Consulting deck 37 slides; academic Beamer deck 56 pages (9 Nov) | `BSP_Presentation_Nov2026.pptx`, `BSP_Presentation_Academic_Nov2026.pdf`; `deck/`, `beamer/` |
-| Guide | Has the project document and the Oct 2026 progress report; approved continuing | |
+| Guide | Has the project document, the Oct 2026 progress report and (10 Nov) the short thesis; asked for a Stage I paper version | |
 | Library papers | Not obtained: Saurav et al. 2026 (most useful), Gagnon 2018, Brennan and Schwartz 1990 | user can fetch via IITB library |
 
 ## 4.2 The blind rule
@@ -226,3 +227,13 @@ check clean except futures volume. Halving confounded by the crash. To fold into
   pre-specified result; drops the model and data appendices, formal front pages, 10 supporting figures and some robustness
   paragraphs; literature condensed. Details: `16_resume_here.md` §16.A.
 
+
+## 4.17 Stage I (BSP1) version (10 Nov 2026)
+The guide read the short thesis and asked for a paper-style, reader-focused Stage I version (comments in `16` §16.0 and
+`BSP1/README.md`). Built in `BSP1/`: report `BSP1_Report_Nov2026.pdf` (39 pp; title page, certificate, declaration,
+acknowledgements, contents; then a 32-page paper with title block, abstract, keywords, JEL codes and key-number tiles on
+page 1; sections Introduction, Indian setting, Literature, Model (Props 1 to 6, Assumption 1, predictions table with
+Stage I / II column), Research design and data, The no-arbitrage band, What sets the band (H3, cost band, H1), Does the
+ban bind on trading (H8, enforcement, trigger, 2025 rules), Conclusion and Stage II; Appendix A proofs, B plan and
+data), consulting deck (37 slides) and Beamer deck (49 pp). New figures `fig_h1_bins`, `fig_rd_trading`
+(`BSP1/scripts/`). Number check clean; style scan clean.

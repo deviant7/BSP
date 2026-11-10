@@ -99,3 +99,8 @@ the predicted direction. Ten secondary tests unadjusted: read as a pattern.
   (56 pages); same numbers as the thesis.
 - Short thesis `BSP_Thesis_Short_Nov2026.pdf` (50 pp, `thesis_short/`): same results, fewer figures and robustness details.
 
+
+## Stage I deliverables (10 Nov 2026)
+`BSP1/`: report (paper style, 39 pp), consulting deck (37 slides), Beamer deck (49 pp). Contents: model (Props 1-6),
+design, data, band estimation, H3 + cost band, H1 (+ new decile figure), H8 + enforcement, density + RD trading jumps,
+2025 reform ban counts. Everything else is Stage II (list in `BSP1/README.md`).

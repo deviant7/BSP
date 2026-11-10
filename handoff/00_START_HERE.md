@@ -23,7 +23,7 @@ before doing anything. Last full update: **9 November 2026, end of session** (fi
    secondary and further checks run; band chapter; constraint index; deep audit with a full reproduction). Deliverables:
    final thesis `BSP_Thesis_Final_Nov2026.pdf` (78 pp, source `thesis/`), consulting-format deck
    `BSP_Presentation_Nov2026.pptx` (37 slides, source `deck/`), academic Beamer deck `BSP_Presentation_Academic_Nov2026.pdf`
-   (source `beamer/`), short thesis `BSP_Thesis_Short_Nov2026.pdf` (50 pp, source `thesis_short/`). Nothing has been sent to the guide since the October report. Every finding with its numbers:
+   (source `beamer/`), short thesis `BSP_Thesis_Short_Nov2026.pdf` (50 pp, source `thesis_short/`), which the user showed the guide on 10 Nov. Following her comments, the **Stage I (BSP1) version** is in `BSP1/` (paper-style report and two decks; see `BSP1/README.md`). Every finding with its numbers:
    `memory/09_findings_digest.md`. Next: the user's review and cosmetic changes (see `16_resume_here.md`).
 
 ## 2. Reading order (do not skip)

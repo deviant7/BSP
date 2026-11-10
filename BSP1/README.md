@@ -36,3 +36,29 @@ spurious bans); new work (intraday data, a longer post-reform sample, extensions
 - `beamer/`: academic Beamer deck for Stage I (`main.tex`, `figs/`).
 - Outputs: `BSP1_Report_Nov2026.pdf`, `BSP1_Presentation_Nov2026.pptx` (+ `.pdf`),
   `BSP1_Presentation_Academic_Nov2026.pdf`.
+
+## Outputs (10 November 2026)
+- `BSP1_Report_Nov2026.pdf`: 39 pages (title page, certificate, declaration, acknowledgements, contents; 32-page paper
+  with a title block and abstract on page 1; 19 figures, 9 tables; appendices A proofs, B test plan and data). No Report
+  Approval page.
+- `BSP1_Presentation_Nov2026.pptx` and `.pdf`: 37 slides, consulting format, with speaker notes.
+- `BSP1_Presentation_Academic_Nov2026.pdf`: 49 pages, Beamer (Madrid, blue), with outline frames and backup frames.
+
+## Design of the paper (`paper/bsp1style.sty`, derived from `thesis/bspstyle.sty`)
+Same fonts (TeX Gyre Heros + sfmath), colours, ruled numbered section heads, exhibit captions (`\exsub`, `\exsource`),
+tables and key-number tiles as the thesis. Changed to read as a paper: `article` class with sections and subsections
+flowing continuously (no chapter pages, no chapter leads); a title block with the abstract, keywords and JEL codes on
+page 1 (`\papertitle`, `paperabstract`, `\keywords`); footnotes for side details; propositions in boxes with a blue
+left rule; continuous figure and table numbering; contents on one page; no lists of figures/tables, abbreviations or
+symbols. The model's derived statements are "Propositions", never "Results".
+
+## Rebuild
+- New figures: `python3 -I BSP1/scripts/bsp1_figures.py` (paper, PDF) and `python3 -I BSP1/scripts/bsp1_variants.py deck`
+  / `beamer` (deck PNG, Beamer PDF). Needs the analysis caches. Other figures are copies from `thesis/figs`,
+  `deck/figs`, `beamer/figs` (copied, so later changes there do not reach BSP1).
+- Paper: `cd BSP1/paper && pdflatex main.tex` twice; copy `main.pdf` to `../BSP1_Report_Nov2026.pdf`; delete aux files.
+- Consulting deck: `NODE_PATH=<scratch>/node_modules node BSP1/deck/build_deck_bsp1.js`, then
+  `cd BSP1 && soffice --headless --convert-to pdf BSP1_Presentation_Nov2026.pptx`.
+- Beamer deck: `cd BSP1/beamer && pdflatex main.tex` twice; copy `main.pdf` to `../BSP1_Presentation_Academic_Nov2026.pdf`.
+- Checks: style scan (no em/en dashes, AI words, internal labels); number check (every decimal matched an analysis
+  output on 10 Nov).

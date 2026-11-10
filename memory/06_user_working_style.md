@@ -43,3 +43,10 @@
   Beamer templates. Likes blue as the theme; figures may use any fitting colours. Wants many figures. Asks for a full
   context re-read (including the thesis PDF) before big steps, and a full update of memory, handoff and docs at session
   end. Acknowledgements and other personal texts: draft neutrally and flag for the user.
+- **10 Nov 2026 (guide's comments on the short thesis, relayed):** write as a paper, not a report (keep the design,
+  fonts, theme, sectioning and title page); language for an unknown reader: give context, do not report every small
+  decision or side finding, focus on question, problem, method, literature and main results; undergraduate voice; do
+  not call theoretical derivations "results" (use Propositions); restrict to Stage I; no Report Approval page. The user
+  wants new work in a separate folder so earlier deliverables are never overwritten. The user leaves design decisions
+  such as the Stage I / II split to the assistant, and wants a full context re-read (memory, handoff, docs, thesis PDFs,
+  decks, templates) before big steps.

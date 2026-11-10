@@ -132,6 +132,12 @@ Phase 7, continued (9 Nov 2026): the user committed two consulting decks and ask
 Beamer templates and a request for an academic backup deck: `BSP_Presentation_Academic_Nov2026.pdf` (Beamer, Madrid
 recoloured blue, 56 pages). End of session: all memory, handoff and docs files updated.
 
+## Phase 8: sixth cloud session (10 November 2026)
+The user showed the guide the short thesis. She asked for a paper look, reader-focused language, no "results" for
+theory, Stage I content only, and no approval page. After a full context re-read, the split was decided (BSP1:
+foundations, the band, costs and frictions, trading in a ban; BSP2: price effects of the ban and position limits,
+capital, short-sale constraints, policy) and the Stage I report and both decks were built in `BSP1/`.
+
 ## Decisions and their reasons (quick reference)
 
 | Decision | Reason |
@@ -168,4 +174,6 @@ recoloured blue, 56 pages). End of session: all memory, handoff and docs files u
 | Consulting deck charts as images, not native PowerPoint charts | Matches the reference decks' chart style; same data as the thesis |
 | Academic deck in Beamer, not .pptx | Both supplied templates are Beamer sources |
 | Literature chapter built from the verified digest, not the old review | The old review has known errors (11 §11.6) |
+| Stage I = foundations + band + costs/frictions + trading in a ban | Coherent first half: measure the object and check the sharpest limit binds on quantities; price effects (the novel, more fragile results) need Stage II's space; both primary tests here (H3, H8) are the two smallest p-values, so their Holm values do not depend on Stage II |
+| Full model shown in Stage I, with Stage II predictions marked | The model was Stage I work and frames both stages |
 
