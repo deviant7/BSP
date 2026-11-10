@@ -1,0 +1,154 @@
+\section{Does the ban bind on trading?}\label{sec:ban}
+
+Before asking what a ban does to prices, which is the subject of the second stage, I first ask whether the rule
+changes trading at all. A rule that lets traders only reduce positions should have three visible effects
+(\cref{prop:trade}): futures trading should fall, some of the blocked demand should move to the cash market, and every
+futures trade should close existing positions. This section tests these effects, looks at what happens at the 95\%
+trigger itself, and measures how the October 2025 rules changed the number of bans.
+
+\subsection{Trading on ban days (pre-specified test H8)}
+A simple comparison of ban days with other days would mix the effect of the ban with the effect of the heavy trading
+that pushed the stock into it. The plan therefore compares each stock's ban days with its own non-ban days at a similar
+level of utilisation the day before. Between 80\% and 95\% both kinds of days occur: a stock that crossed 95\% stays in
+the ban until it falls to 80\%, while a stock that has not crossed is free. The regression is
+\begin{equation}\label{eq:h8}
+y_{it}=\beta\,\mathrm{Ban}_{it}+\alpha_{i,b(\omega_{i,t-1})}+\lambda_t+\varepsilon_{it},
+\end{equation}
+where $\mathrm{Ban}_{it}$ marks ban days, $\alpha_{i,b}$ is a fixed effect for each stock and each 0.05-wide bin of
+yesterday's utilisation $\omega_{i,t-1}$, and $\lambda_t$ is a fixed effect for each day, which absorbs market-wide
+news. Standard errors are clustered by stock and by day. The sample covers stock-days before October 2025 with
+utilisation between 80\% and 95\% the day before, excluding expiry days, when open interest falls mechanically.
+
+In a ban, futures trading falls by 2.0 log points, or about 87\%. Cash-market volume rises by about 7.5\%, and the share of
+cash trading that ends in delivery rises by 4.1 percentage points from an average of 26\% (\cref{tab:h8}). All three
+effects have the predicted sign. H8 is supported, also after the Holm correction for the four primary hypotheses.
+
+\begin{table}[t]
+\caption{In a ban, futures trading collapses and cash trading moves toward delivery}\label{tab:h8}
+\exsub{Ban days against the same stock's non-ban days at utilisation of 80\% to 95\% the day before, January 2015 to September 2025}
+\small\begin{tabular}{@{}>{\raggedright\arraybackslash\bfseries\color{accent}}p{6.6cm}cc@{}}
+\toprule
+\thd{Outcome} & \thd{Effect of a ban (s.e.)} & \thd{Mean on non-ban days} \\
+\midrule
+log(1 + futures contracts traded) & $-2.00$ (0.11) & 8.50 \\
+log(1 + cash shares traded) & $+0.073$ (0.027) & 15.80 \\
+Delivery share of cash volume & $+0.041$ (0.005) & 0.26 \\
+\bottomrule
+\end{tabular}
+
+\exsource{Equation \eqref{eq:h8}: stock-by-utilisation-bin and date fixed effects; standard errors clustered by stock and date;
+expiry days excluded. 16,270 stock-days, 5,441 of them in a ban, 167 stocks. Source: author's calculations.}
+\end{table}
+
+\subsection{Does every trade close a position?}
+If the rule binds on every trade, each futures trade during a ban must close a long position on one side and a short
+position on the other, so open interest falls by exactly the volume traded. The ratio $R=(\Delta OI+V)/V$ is then zero,
+while on a normal day, when most trades open new positions, it is close to one. The plan set the reading in advance: the
+identity holds if the mean ratio on ban days is close to zero. Over the whole period it is not: the mean on ban days is
+0.42.
+
+The reason became clear once the ratio is plotted over time (\cref{fig:banR}). It changed abruptly in March 2020, at
+exactly the point when the enforcement of the rule changed. Until 22 March 2020 violations were judged on end-of-day
+positions, so a trader could open and close a position within the day; the median ratio on ban days was then 0.87, close
+to a normal day. From 23 March 2020 violations were judged on peak intraday positions, and the median fell to 0.011:
+almost every trade closed a position, as the model predicts when the rule binds trade by trade. Under the rule of October
+2025, which allows any trade that lowers an entity's end-of-day delta, the median rose again to between 0.19 and
+0.36. The fall in futures trading itself was also much larger under intraday checks ($-2.72$ log points) than under
+end-of-day checks ($-0.97$; \cref{fig:h8era}). The split by enforcement period was not in the plan; I added it after the
+pooled result to find its cause. It shows that the rule changes trading as designed only when positions are checked
+during the day.
+
+\begin{figure}[t]
+\caption{When intraday checks began in March 2020, every futures trade in a ban started to close positions}\label{fig:banR}
+\exsub{Monthly median of $R=(\Delta OI+V)/V$ on ban days, near and next futures, expiry days excluded}
+\centering\includegraphics[width=\linewidth]{fig_ban_R.pdf}
+\exsource{$R=0$ when every trade closes a long and a short; $R\approx 1$ on normal days. Source: NSE F\&O bhavcopies and ban lists; author's calculations.}
+\end{figure}
+
+\begin{figure}[t]
+\caption{The ban bites as designed only when positions are checked during the day}\label{fig:h8era}
+\exsub{Effect of a ban on log futures contracts (left) and median $R$ on ban days (right), by how violations were judged}
+\centering\includegraphics[width=\linewidth]{fig_h8_era.pdf}
+\exsource{End-of-day checks to 22 March 2020; peak intraday checks from 23 March 2020 to September 2025; delta rule from October 2025 (from 8 December 2025 shown). Source: author's calculations.}
+\end{figure}
+
+\subsection{At the 95\% trigger}
+\paragraph{Do traders hold back?} If traders wanted to avoid a ban, utilisation would pile up just below 95\% and thin out
+just above it. The model does not predict which way this goes (\cref{sec:model-ban}), so the test is descriptive. Its
+population needs care. Among all days on which a stock is not in a ban, utilisation above 95\% is rare by construction,
+since a stock that crosses 95\% is in the ban the next day. I therefore use the days on which a stock was below 95\% the
+day before and ask how its utilisation is distributed today. The density is smooth through the trigger (\cref{fig:density};
+the test of Cattaneo, Jansson and Ma (2020) gives $T=-0.18$, $p=0.86$), and this holds across specifications and
+enforcement periods. Utilisation does not stall near the trigger; it speeds up. The share of stocks that cross 95\% the
+next day rises steadily from about 7\% at a utilisation of 85\% to about one half at 93\% to 95\%. There is no sign that
+traders hold back to avoid a ban.
+
+\begin{figure}[t]
+\caption{Utilisation does not bunch below the trigger}\label{fig:density}
+\exsub{End-of-day utilisation of stocks that were below 95\% the day before, January 2015 to September 2025}
+\centering\includegraphics[width=\linewidth]{fig_density.pdf}
+\exsource{Cattaneo, Jansson and Ma test: $T=-0.18$, $p=0.86$. Source: NSE combined open interest files; author's calculations.}
+\end{figure}
+
+\paragraph{A sharp break in trading.} The trigger can also be read as a regression discontinuity. For stocks not in a ban,
+ending a day above 95\% puts the stock in the ban the next day in 99.7\% of cases, against almost never just below.
+Comparing stocks just above and just below the trigger with local linear regressions, futures trading falls by 1.53 log
+points, $R$ falls by 0.66 and the delivery share rises by 5.1 percentage points, while cash volume does not jump
+(\cref{fig:rdtrading}). These jumps confirm the results of the regression above with a different comparison: stocks that
+differ only in whether they ended the previous day just above or just below the trigger.
+
+\begin{figure}[t]
+\caption{Futures trading drops sharply at the trigger}\label{fig:rdtrading}
+\exsub{Binned means by utilisation at the end of the previous day, stocks not in a ban the day before, expiry days excluded, with linear fits on each side}
+\centering\includegraphics[width=\linewidth]{fig_rd_trading.pdf}
+\exsource{Estimates in the text are local linear with robust bias-corrected inference (Calonico, Cattaneo and Titiunik, 2014). January 2015 to September 2025. Source: author's calculations.}
+\end{figure}
+
+\subsection{How the 2025 rules changed the number of bans}
+SEBI's stated aim in redesigning position limits in 2025 was to reduce ``spurious'' bans. Before the reform, bans came
+from rising open interest rather than from changes in the limit: on the day utilisation crossed 95\%, the limit had
+fallen for only 8 of 1,744 entries, and only 7 of them (0.4\%) would not have crossed at the previous day's limit. The
+reform changed two things at once: open interest came to be measured in delta-adjusted terms, and the new formula cut
+every stock's limit, by a quarter to a half (\cref{fig:mwplcut}).
+
+\begin{figure}[t]
+\caption{The October 2025 formula cut every stock's limit, by a quarter to a half}\label{fig:mwplcut}
+\exsub{Ratio of the new to the old MWPL on 1 October 2025, all 208 F\&O stocks}
+\centering\includegraphics[width=0.9\linewidth]{fig_mwpl_ratio.pdf}
+\exsource{Source: NSE combined open interest files of 30 September and 1 October 2025; author's calculations.}
+\end{figure}
+
+To separate the two parts, I simulate the ban rule (enter the day after utilisation exceeds 95\%, leave the day after it is
+at or below 80\%) for the stocks in the segment on both 30 September and 1 October 2025. Applied to the actual utilisation
+after the reform, the simulation reproduces the official ban lists exactly. I then apply it with open interest measured
+gross or in delta terms, and with the new limit or the limit the old formula would have given.\footnote{The old-formula
+limit is approximated by scaling each stock's new limit by its ratio of old to new limit on 1 October 2025.} Under the old
+rule the same stocks would have spent about 3.7 times as many days in a ban in the first year (\cref{tab:spurious}). The
+two parts of the reform pull in opposite directions. Measuring open interest in delta terms removes almost every ban,
+because options now count only by their delta and offsetting positions of the same client net out; the lower limit on
+its own would have quadrupled them. The combination cut ban days by about three quarters (\cref{fig:spurious}). Whether
+the new rules have also changed what a ban does to prices needs more post-reform data, and is part of the second stage.
+
+\begin{table}[t]
+\caption{The new rule produced about a quarter of the ban days the old rule would have}\label{tab:spurious}
+\exsub{Bans from 1 October 2025 to 27 October 2026 for the stocks in the segment on 30 September and 1 October 2025}
+\small\begin{tabular}{@{}>{\bfseries\color{accent}}lccc@{}}
+\toprule
+\thd{Open interest and limit} & \thd{Ban stock-days} & \thd{Spells} & \thd{Stocks} \\
+\midrule
+Delta-adjusted, new limit (the actual rule) & 412 & 45 & 11 \\
+Gross, old-formula limit (the old rule) & 1,505 & 112 & 36 \\
+Gross, new limit & 6,256 & 296 & 85 \\
+Delta-adjusted, old-formula limit & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+
+\exsource{Simulated ban rule, validated against the official lists. The 45 spells include one that began on 30 September 2025. Source: NSE combined open interest files; author's calculations.}
+\end{table}
+
+\begin{figure}[t]
+\caption{Measuring open interest in delta terms removes almost all bans; the lower limit alone would have multiplied them}\label{fig:spurious}
+\exsub{Ban stock-days, 1 October 2025 to 27 October 2026, under the actual and three counterfactual rules}
+\centering\includegraphics[width=\linewidth]{fig_spurious.pdf}
+\exsource{Source: as for \cref{tab:spurious}.}
+\end{figure}

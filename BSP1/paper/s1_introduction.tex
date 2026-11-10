@@ -1,0 +1,75 @@
+\section{Introduction}\label{sec:intro}
+
+There are two ways to hold a share of a company for the next month. One is to buy the share today. The other is to buy a
+futures contract that delivers the share at the end of the month. Since both end in the same place, their prices should
+be linked: the futures price should equal today's share price, plus the interest one would pay to finance the share,
+minus any dividend paid before delivery. If the future is dearer than this \emph{cost-of-carry} value, a trader can buy
+the share, sell the future and hold both until delivery, earning the difference without any exposure to the share
+price. This is \emph{cash-and-carry arbitrage}. If the future is cheaper, the reverse trade (sell the share, buy the
+future) earns the difference. The gap between the futures price and its cost-of-carry value is called the
+\emph{basis}. In a market where these trades are free and unlimited, the basis should be close to zero at all times.
+
+In real markets arbitrage has limits. Every trade pays taxes and fees. The reverse trade needs a short sale, which may be
+costly or not allowed. An arbitrage position ties up capital, and the gap can widen before it closes, so the
+arbitrageur bears risk and may be forced to close early (Shleifer and Vishny, 1997; Gromb and Vayanos, 2010).
+Exchanges also cap the positions traders may hold. With such limits, the basis can wander inside a band without anyone
+finding it worth closing, and arbitrage pushes back only when the basis leaves the band. How wide this band is, and
+which limits set its edges, are empirical questions.
+
+India is an unusually good place to answer them, because most of its limits to arbitrage have changed on known dates.
+The securities transaction tax (STT) on the sale of futures was raised in April 2023, October 2024 and April 2026. Only
+stocks with derivatives, the stocks of the futures and options (F\&O) segment, may be sold short, and in practice the
+overnight short position in an Indian stock is a short future. Arbitrage mutual funds, which hold exactly the
+cash-and-carry trade, grew about fourfold after a change in the taxation of debt funds in 2023. And position limits are
+set by formula and were redesigned in October 2025.
+
+India also has a rule that, to my knowledge, has not been studied. Each stock's derivatives have a
+\emph{market-wide position limit} (MWPL). When open interest, the number of contracts outstanding across all traders,
+exceeds 95\% of this limit at the end of a day, the stock enters an \emph{F\&O ban} the next day. During the ban every
+trader, not only arbitrageurs, may only trade to reduce positions, and the ban lasts until open interest falls to 80\%
+of the limit. Between 2015 and October 2026 this happened 1,788 times, to 141 different stocks. A ban suddenly removes the
+possibility of opening new arbitrage positions in a stock, which makes it a sharp test of what position limits do.
+
+The project asks how strongly these limits bind in Indian equities and how much mispricing they explain. It has two
+stages. This report covers the first. It sets out a model of arbitrage under India's limits, fixes the tests in advance,
+builds the data, and answers three questions: how wide is the band within which the basis of Indian stock futures
+moves; do trading costs and other frictions set its edges; and does the F\&O ban actually restrict trading in the way the
+rule intends? The second stage asks what the ban and the other limits do to prices.
+
+I proceed in a fixed order, designed to keep theory and data from being fitted to each other, which was the main advice
+of my supervisor at the start of the project. I first wrote a model in which each limit enters as a parameter. From the
+model I derived predictions, each with the result that would contradict it. I then wrote these tests into a
+pre-analysis plan and froze it with a time stamp before I related any outcome to any treatment. The data, built from
+public files of the National Stock Exchange (NSE), cover 486,040 stock-days of the futures-cash basis for 371 stocks.
+
+The findings of this stage are the following.
+
+\begin{enumerate}[leftmargin=1.4em,itemsep=3pt]
+\item \textbf{The basis moves in a wide, asymmetric band.} A three-regime threshold model places the edges of the band
+about 35 basis points (bp) below and 24\bp\ above each stock's typical basis. Inside the band the basis drifts; outside
+it, it moves back. The lower edge is further away, as expected when the reverse trade, which needs a short sale, is
+costlier. A test of the linear model against the threshold model rejects linearity decisively. Part of the day-to-day
+reversion that the model measures is, however, noise in daily prices rather than arbitrage.
+\item \textbf{Costs shape the band, but loosely.} The full cost of opening a new cash-and-carry position and holding it
+to delivery is 27 to 31\bp, which places it in the outer tail of the basis, while rolling an existing position costs
+only 4 to 8\bp. The upper part of the basis distribution rose after the 2024 and 2026 tax increases, as the model
+predicts, and the test fixed in advance supports this. But the rise was larger than the change in costs and was not
+unusual compared with the same statistic on other dates, so I read the evidence as weak. Across stocks, the band is
+wider where trading frictions are higher.
+\item \textbf{The ban binds hard on trading.} On ban days futures trading falls by about 87\% relative to the same
+stock's days at similar levels of open interest, and cash-market trading moves toward delivery. How the rule was
+enforced matters: once violations were judged on intraday rather than end-of-day positions, from March 2020, every
+futures trade during a ban closed an existing position. There is no sign that traders hold back to avoid the trigger.
+\item \textbf{The 2025 rules cut the number of bans.} Measured against the old rule applied to the same stocks, the
+October 2025 rules produced about a quarter of the ban days in their first year.
+\end{enumerate}
+
+The closest earlier studies of Indian stock futures estimate no-arbitrage bands from intraday data over a few months
+or years (Aggarwal, 2015; Shankar, Sankar and Kiran Kumar, 2019). This report adds a model of arbitrage that includes
+India's position limits and the ban, estimates the band over twelve years of daily data for every stock with futures,
+relates it to dated changes in costs, and gives the first evidence on how the F\&O ban affects trading.
+
+\Cref{sec:setting} describes the Indian rules. \Cref{sec:lit} reviews the related literature. \Cref{sec:model} presents
+the model and its predictions. \Cref{sec:data} describes the research design and the data. \Cref{sec:band} estimates the
+band, \cref{sec:costs} asks what sets it, and \cref{sec:ban} studies trading in a ban. \Cref{sec:conclusion} concludes
+and sets out the second stage. The appendices give the proofs and the details of the test plan and the data.

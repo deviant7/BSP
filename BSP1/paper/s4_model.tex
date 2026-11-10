@@ -1,0 +1,180 @@
+\section{A model of arbitrage under India's limits}\label{sec:model}
+
+Before looking at any data I wrote a model in which each Indian limit to arbitrage enters as a parameter. Its purpose is
+to say in advance what each limit should do, and what result would contradict it. This section presents the model and
+the propositions it implies; \cref{app:proofs} gives the proofs.
+
+\subsection{Set-up}
+Let $S$ be the price of a stock and $F$ the price of its future, which expires at $T$. With an interest rate $r$ and
+dividends whose present value is $\mathrm{PV}(D)$, the cost-of-carry value of the future is
+$F^*=(S-\mathrm{PV}(D))\,e^{r(T-t)}$, and the basis is
+\begin{equation}\label{eq:basis}
+m=\ln F-\ln F^* ,
+\end{equation}
+measured in basis points of the stock price. A positive basis means the future is rich relative to the stock.
+
+Two groups trade. \emph{Outside traders}, such as speculators and hedgers, trade for their own reasons. Their net demand
+in the cash market is $D_S-\psi_S s$ and in the futures market $D_F-\psi_F f$, where $s$ and $f$ are the deviations of
+the stock and futures prices from fundamental value (so $m\approx f-s$), $D_S$ and $D_F$ shift demand, and $\psi_S$ and
+$\psi_F$ measure how deep each market is. An \emph{arbitrage sector}, standing for arbitrage funds and proprietary
+desks, holds $a$ units of the cash-and-carry trade: long the stock and short the future ($a<0$ would be the reverse
+trade). Market clearing in both markets gives
+\begin{equation}\label{eq:clear}
+m=\frac{u-a}{\Phi},\qquad \frac{1}{\Phi}=\frac{1}{\psi_F}+\frac{1}{\psi_S},\qquad
+u=\Phi\Big(\frac{D_F}{\psi_F}-\frac{D_S}{\psi_S}\Big).
+\end{equation}
+The variable $u$ is the \emph{relative demand pressure} of outside traders toward the future: it is high when they want
+more exposure through futures than through the stock, for example when speculators seek leverage. Without arbitrage
+the basis would be $u/\Phi$; every unit of cash-and-carry lowers it by $1/\Phi$.
+
+The arbitrage sector chooses $a$ to maximise
+\begin{equation}\label{eq:objective}
+a\,m-\frac{\gamma}{2}a^2-c_+a^+-c_-a^-,\qquad \gamma=\alpha\sigma^2 ,
+\end{equation}
+where $a^\pm=\max(\pm a,0)$. The first term is what the position earns when the basis closes at expiry. The second is
+the cost of risk: $\alpha$ is risk aversion per unit of capital, which is higher when arbitrage capital is scarce, and
+$\sigma^2$ is the risk that the basis widens before it closes. The last two terms are the costs of each trade: $c_+$
+for cash-and-carry (taxes, fees, price impact, and any gap between the return arbitrage capital requires and the rate
+used to compute the basis) and $c_-$ for the reverse trade, which also pays for borrowing the stock and which is very
+high in India because overnight short sales are hard. \Cref{tab:params} lists how each Indian limit enters.
+
+\begin{table}[t]
+\caption{Each Indian limit to arbitrage enters the model as a parameter}\label{tab:params}
+\exsub{Limits, their Indian form, and where they appear in the model}
+\small\begin{tabularx}{\linewidth}{@{}K{3.0cm}L>{\raggedright\arraybackslash}p{3.3cm}@{}}
+\toprule
+\thd{Limit} & \thd{Indian form} & \thd{Parameter} \\
+\midrule
+Trading costs & STT on futures and on delivery, stamp duty, fees, brokerage & Costs $c_+$, $c_-$ \\ \rowrule
+Short-sale constraints & Shorting only in F\&O stocks; thin stock lending; the overnight short is a future & Cost of reverse trade $c_-$ \\ \rowrule
+Arbitrage capital & Arbitrage-fund assets; funding rates; margin rules & Risk aversion $\alpha$, so $\gamma$ \\ \rowrule
+Arbitrage risk & Volatility of the basis before it closes & Risk $\sigma^2$, so $\gamma$ \\ \rowrule
+Position limits & MWPL; the F\&O ban (enter above 95\%, leave at 80\%) & Reduce-only rule (\cref{sec:model-ban}) \\ \rowrule
+Market depth & Liquidity of outside traders in each market & $\psi_S$, $\psi_F$, so $\Phi$ \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: the model of this section.}
+\end{table}
+
+\subsection{The no-arbitrage band}
+\begin{proposition}[An asymmetric band]\label{prop:band}
+The equilibrium basis is unique and equals
+\begin{equation}\label{eq:band}
+m(u)=\begin{cases}
+\dfrac{\gamma u + c_+}{\gamma\Phi+1}, & u>\Phi c_+,\\[2mm]
+\dfrac{u}{\Phi}, & -\Phi c_-\le u\le \Phi c_+,\\[2mm]
+\dfrac{\gamma u - c_-}{\gamma\Phi+1}, & u<-\Phi c_- .
+\end{cases}
+\end{equation}
+\end{proposition}
+In words: as long as the basis lies between $-c_-$ and $c_+$, no arbitrage pays, and the basis simply follows the demand
+of outside traders. Once it moves beyond an edge, arbitrage starts and absorbs part of each further push, so the basis
+moves less (\cref{fig:modelband}). Because the reverse trade is costlier, the band reaches further below zero than above
+it.
+
+\begin{figure}[t]
+\caption{Inside the band the basis follows demand one for one; outside it arbitrage absorbs part of each push}\label{fig:modelband}
+\exsub{Equilibrium basis against the demand pressure of outside traders, with illustrative costs $c_+=15$\bp\ and $c_-=60$\bp}
+\centering\includegraphics[width=0.82\linewidth]{model_band.pdf}
+\exsource{Source: \cref{prop:band}; illustrative parameters, not estimates.}
+\end{figure}
+
+\begin{proposition}[What moves the band]\label{prop:cs}
+(i) The edges of the band are $c_+$ and $-c_-$: costs set the edges, and a change in a tax moves the corresponding edge
+one for one. (ii) Capital and risk do not move the edges; they set how far the basis travels beyond them, since the
+slope $\gamma/(\gamma\Phi+1)$ rises with $\gamma$. (iii) The carrying part of the costs is proportional to the time left
+to expiry, so the band narrows as expiry approaches. (iv) The band is centred at $(c_+-c_-)/2$, below zero whenever the
+reverse trade costs more than cash-and-carry.
+\end{proposition}
+Part (i) gives a direct test. When the STT on futures was raised, the cost of cash-and-carry rose, so the upper edge of
+the band should have risen, and by more for larger increases.
+
+\subsection{Existing positions}
+Arbitrageurs do not start each day from zero. Suppose the sector enters the day holding $a_{t-1}$ units and pays $c_u$ per
+unit to unwind them.
+
+\begin{proposition}[The band moves with the existing book]\label{prop:inv}
+The sector adds to its position only if $m_t>\gamma a_{t-1}+c_+$, unwinds only if $m_t<\gamma a_{t-1}-c_u$, and otherwise
+holds its position. The band within which it does not trade is $[\gamma a_{t-1}-c_u,\ \gamma a_{t-1}+c_+]$.
+\end{proposition}
+The edges of the band are therefore not fixed: they shift with the size of the existing book. A threshold model with fixed
+thresholds, the standard tool, will estimate an average position of the edges rather than the costs themselves. I
+checked this before using real data: when I simulated the basis from this model with costs of 15\bp\ to add and 10\bp\
+to unwind, the threshold model placed the thresholds at about $-10$ and $0$\bp, so the estimated upper threshold lay well
+below the 15\bp\ cost of adding to a position. This is why my test of costs compares how
+the edges \emph{change} around tax increases rather than comparing their level with the costs.
+
+\subsection{The F\&O ban}\label{sec:model-ban}
+The ban acts on everyone in the market, so the model represents it with two restrictions.
+
+\begin{assumption}[The ban]\label{as:ban}
+During a ban, (B1) the arbitrage sector may only reduce its position, $0\le a_t\le a_{t-1}$; and (B2) outside traders
+cannot open new futures positions. A share $\chi$ of this blocked demand moves to the stock (a trader who cannot buy the
+future buys the share instead) and the rest is withdrawn. Outside traders can still close existing positions.
+\end{assumption}
+
+\begin{proposition}[One-sided correction]\label{prop:onesided}
+During a ban, rich futures are no longer corrected: since nobody may open new cash-and-carry positions, any further
+pressure toward the future passes through to the basis in full. Cheap futures are still corrected, by arbitrageurs
+unwinding their positions, as long as they have positions left to unwind. This correction weakens as positions run
+down, and an expiry inside the ban removes the expiring positions, since they cannot be rolled.
+\end{proposition}
+
+\begin{proposition}[The level effect has no fixed sign]\label{prop:level}
+Compared with normal times, a ban raises the basis when the pressure on a stock comes mainly from traders closing
+positions, and lowers it when new demand keeps arriving, because part of the blocked demand for futures moves to the
+stock. Which case applies depends on the composition of trading before the ban.
+\end{proposition}
+
+\begin{proposition}[Trading in a ban]\label{prop:trade}
+If the rule binds on every trade, each futures trade during a ban closes a long position and a short position. The
+change in open interest then equals minus the volume traded, so the ratio $R=(\Delta OI+V)/V$, which is close to one on
+normal days, is zero, and futures volume falls. Trades that offset positions across instruments, which are allowed from
+October 2025, break this identity.
+\end{proposition}
+
+\Cref{fig:modelpath} shows a simulated ban. When the ban starts, the arbitrage book can only shrink, and the basis follows
+demand upward without resistance. One further implication concerns the days before a ban. If closing a position is
+costlier during a ban, an arbitrageur who opens a position when utilisation is already high must allow for the chance
+of being caught in one, so the upper edge of the band should rise as utilisation approaches 95\%. The model does not,
+however, say whether utilisation should bunch just below the trigger: arbitrageurs holding back would make it thinner
+there, while speculators rushing in before a ban would do the opposite.
+
+\begin{figure}[t]
+\caption{In a ban the arbitrage book can only shrink, so upward pressure on the basis passes through in full}\label{fig:modelpath}
+\exsub{One simulated path with and without a ban on days 120 to 159, same shocks; basis (top) and arbitrage position (bottom)}
+\centering\includegraphics[width=0.86\linewidth]{model_path.pdf}
+\exsource{Source: the model of this section, simulated; illustrative parameters, not estimates.}
+\end{figure}
+
+\subsection{From the model to the tests}
+\Cref{tab:predictions} lists the predictions, the result that would contradict each, and where it is tested. The
+predictions about the band, about costs and frictions, and about trading in a ban are tested in this report. The
+predictions about what the ban does to the level and the correction of the basis, and the model's predictions about
+capital and short-sale constraints, are tested in the second stage. The labels in the last column are those of the
+pre-analysis plan, which names four primary hypotheses (H3, H6, H7, H8) and corrects them jointly for multiple testing.
+
+\begin{table}[t]
+\caption{Every prediction comes with the result that would contradict it}\label{tab:predictions}
+\exsub{Predictions of the model, and where each is tested; primary hypotheses of the test plan in bold}
+\small\begin{tabularx}{\linewidth}{@{}P{5.2cm}P{3.4cm}P{2.6cm}L@{}}
+\toprule
+\thd{Prediction} & \thd{Contradicted if} & \thd{Tested in} & \thd{Plan label} \\
+\midrule
+\multicolumn{4}{@{}l}{\thd{This report}} \\
+The basis moves in an asymmetric band, wider below zero (Props.\ 1, 2) & No band; a symmetric band & \Cref{sec:band} & Band estimation \\ \rowrule
+Tax increases raise the upper edge, more for larger increases (Prop.\ 2) & Edges unrelated to cost changes & \Cref{sec:costs} & \textbf{H3} \\ \rowrule
+Bands are wider where frictions are higher (Props.\ 1 to 3) & No relation & \Cref{sec:costs} & H1 \\ \rowrule
+In a ban futures volume falls and $\Delta OI\approx -V$ (Prop.\ 6) & Futures activity unchanged & \Cref{sec:ban} & \textbf{H8} \\ \rowrule
+Utilisation near the 95\% trigger (not signed) & (descriptive) & \Cref{sec:ban} & Density test \\
+\midrule
+\multicolumn{4}{@{}l}{\thd{Second stage}} \\
+In a ban rich futures revert more slowly (Prop.\ 4) & No asymmetry, or the opposite & Stage II & \textbf{H7} \\ \rowrule
+The level effect follows the composition of trading (Prop.\ 5) & Sign unrelated to composition & Stage II & Level effect \\ \rowrule
+The upper tail rises as utilisation nears 95\% & A jump only at 95\% & Stage II & H9 \\ \rowrule
+Scarcer capital lets the basis travel further (Prop.\ 2) & No relation & Stage II & H4 \\ \rowrule
+Access to short selling speeds price adjustment and lowers overpricing & No change, or the opposite & Stage II & \textbf{H6}, H5, H2 \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: the model of this section; the pre-analysis plan (\cref{app:plan}).}
+\end{table}

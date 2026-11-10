@@ -1,0 +1,103 @@
+\section{The no-arbitrage band}\label{sec:band}
+
+\Cref{prop:band} says that the basis should behave differently inside and outside a band: inside, it follows the
+demand of outside traders and nothing pulls it back; outside, arbitrage pushes it toward the band. This section
+estimates where the band lies, using days on which the stock is not in a ban.
+
+\subsection{A threshold model}
+Let $x_{t-1}$ be yesterday's basis minus the stock's median basis on non-ban days, in basis points, and $\Delta m_t$ the
+change in the basis of the same contract from yesterday to today. Measuring the basis relative to each stock's own median
+removes permanent differences between stocks, such as a stock that always trades slightly rich. The three-regime
+threshold model is
+\begin{equation}\label{eq:setar}
+\Delta m_t=a_r+\rho_r\,x_{t-1}+e_t,\qquad
+r=\begin{cases}\text{lower} & x_{t-1}<g_L,\\ \text{middle} & g_L\le x_{t-1}\le g_U,\\ \text{upper} & x_{t-1}>g_U.\end{cases}
+\end{equation}
+The thresholds $g_L$ and $g_U$ are the estimated edges of the band, and $\rho_r$ measures how strongly the basis moves
+back in each regime: $\rho_r=0$ means no pull at all and $\rho_r=-1$ means that a deviation disappears within a day.
+The model predicts $\rho$ close to zero in the middle regime and clearly negative outside it. I choose the two
+thresholds by least squares over a grid of percentiles of $x$, keeping at least 10\% of the observations in each outer
+regime and 20\% in the middle. Because the thresholds are chosen from the data, the usual F-test against a linear model
+is not valid; I compare the largest F-statistic over the grid with its distribution under the linear model, obtained
+by a wild bootstrap clustered by trading day. Confidence intervals for the thresholds come from resampling whole
+stocks.
+
+\subsection{Estimates}
+The sample has 473,110 stock-days for 360 stocks. Linearity is rejected decisively: the test statistic is 7,471 against
+a 95\% critical value of 31. The band runs from $-34.5$\bp\ to $+23.9$\bp\ around each stock's median, about 58\bp\
+wide, and both edges are estimated precisely (\cref{tab:setar}). The basis lies inside the band on 76\% of days and in
+each outer regime on 12\%. As the model predicts, the band is asymmetric: the lower edge lies further from the centre
+than the upper edge. \Cref{fig:bandscatter} shows the pattern directly: the further the basis is from the stock's
+median yesterday, the more it moves back today, with the strongest pull above the upper edge.
+
+\begin{table}[t]
+\caption{The basis moves in a wide, asymmetric band, but much of the daily reversion is noise}\label{tab:setar}
+\exsub{Pooled three-regime threshold model, non-ban days, 2015 to 2026 (473,110 observations, 360 stocks)}
+\small\begin{tabular}{@{}>{\raggedright\arraybackslash\bfseries\color{accent}}p{6.4cm}ccc@{}}
+\toprule
+& \thd{Lower regime} & \thd{Middle regime} & \thd{Upper regime} \\
+\midrule
+Threshold (bp, relative to the stock's median) & below $-34.5$ & & above $+23.9$ \\
+95\% interval (stock bootstrap) & $[-37.2,\,-32.2]$ & & $[+20.3,\,+26.1]$ \\
+Share of observations & 0.12 & 0.76 & 0.12 \\
+Slope $\rho_r$ & $-0.084$ & $-0.468$ & $-0.809$ \\
+Slope, yesterday's deviation instrumented & $-0.121$ & $-0.192$ & $-0.141$ \\
+\bottomrule
+\end{tabular}
+\exsource{Thresholds chosen by least squares over a grid of percentiles; intervals from resampling whole stocks. In the last row
+yesterday's deviation is instrumented by the deviation two days earlier, and regimes are defined on that deviation. Source:
+author's calculations.}
+\end{table}
+
+\begin{figure}[t]
+\caption{The further the basis moves from the stock's median, the more it moves back the next day}\label{fig:bandscatter}
+\exsub{Mean change in the basis today by yesterday's deviation from the stock's median (5\bp\ bins), non-ban days; shaded: the estimated band}
+\centering\includegraphics[width=\linewidth]{fig_band_scatter.pdf}
+\exsource{Source: author's calculations.}
+\end{figure}
+
+\subsection{How much of the reversion is noise}
+The slopes need care. Inside the band the model predicts almost no pull, yet the middle slope of $-0.47$ implies that
+half of a deviation disappears within about a day. The likely reason is measurement noise. The daily volume-weighted
+prices of the future and the stock are averages over slightly different trades, so the measured basis contains an error
+that does not persist. An error in yesterday's basis appears in $x_{t-1}$ with one sign and in $\Delta m_t$ with the
+other, which pushes the estimated slope toward $-1$ even if the true basis does not move back at all. A standard remedy
+is to instrument yesterday's deviation with the deviation two days earlier, whose error is unrelated to yesterday's. With
+this correction all three slopes become small and similar ($-0.12$, $-0.19$ and $-0.14$, last row of \cref{tab:setar}).
+Much of the day-to-day reversion is therefore noise, and the faster pull above the upper edge in the uncorrected model is
+not a robust finding. The thresholds, which describe where the basis spends its time rather than how fast it returns, are
+the more reliable part of the estimates.
+
+\subsection{Smooth adjustment}
+Arbitrageurs differ in their costs, so the market's response may strengthen gradually rather than switch on at one
+threshold (Tse, 2001). I therefore also estimate smooth-transition models of the form
+\begin{equation}\label{eq:star}
+\Delta m_t=a+\big[\rho_1+\rho_2\,G(x_{t-1})\big]x_{t-1}+e_t ,
+\end{equation}
+where $G$ moves smoothly from 0 to 1. With an exponential $G$, which is symmetric around a centre, deviations in either
+direction are treated alike; with a logistic $G$ the pull can differ on the two sides. By the Bayesian information
+criterion the threshold model fits best, the logistic model almost as well (with weak reversion below about $+5$\bp\
+and strong reversion above), and the symmetric exponential model clearly worse. A symmetric model does not suit an
+asymmetric band.
+
+\subsection{The band over time and over the life of a contract}
+Estimated year by year, the band is stable (\cref{fig:bandyears}). The exception is 2020, when the market dislocation
+of March pushed the lower edge to $-59$\bp. The band also depends on the time left to expiry, as \cref{prop:cs} (iii)
+predicts: the lower edge is at $-40$\bp\ when 17 or more trading days remain and at $-28$\bp\ in the last ten days. In a
+smooth-transition model in which the strength of reversion depends on the days left to expiry, reversion is stronger in
+the last week of a contract.
+
+\begin{figure}[t]
+\caption{The band is stable from year to year, apart from the dislocation of March 2020}\label{fig:bandyears}
+\exsub{Thresholds of the pooled threshold model by calendar year, 2015 to 2025, non-ban days, basis relative to each stock's median}
+\centering\includegraphics[width=\linewidth]{fig_band_years.pdf}
+\exsource{Years with a change in the tax are examined in \cref{sec:costs}. Source: author's calculations.}
+\end{figure}
+
+\subsection{Bands of individual stocks}
+Estimating the model separately for each of the 258 stocks with at least 500 non-ban days gives a median band of $-26$ to
+$+17$\bp, about 41\bp\ wide, with large differences between stocks: the middle 80\% of stocks have widths between
+about 18 and 76\bp. These bands are much wider than the intraday bands of earlier Indian studies (\cref{tab:litbands}), which is
+expected: an arbitrageur who holds a position overnight pays the taxes on delivery and bears the risk of carrying it,
+while an intraday trader does neither. \Cref{sec:costs} asks which costs and frictions explain the location of the band
+and its differences across stocks.

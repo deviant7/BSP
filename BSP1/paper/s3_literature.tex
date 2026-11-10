@@ -1,0 +1,60 @@
+\section{Related literature}\label{sec:lit}
+
+\subsection{Why arbitrage is limited}
+The idea that arbitrage keeps prices in line rests on the arbitrageur being able to trade without limit and without
+risk. Shleifer and Vishny (1997) point out that arbitrage is done by specialists who invest other people's money. When a
+mispricing widens, the arbitrageur shows losses and investors withdraw funds, so capital leaves exactly when the
+opportunity is best. De Long, Shleifer, Summers and Waldmann (1990) show that the risk created by noise traders can by
+itself keep prices away from fundamentals, because an arbitrageur with a short horizon may have to close at a worse
+price. Gromb and Vayanos (2010) bring these mechanisms into one framework. Their account has three features that the
+model of this report shares: a demand shock moves the price by more when arbitrageurs are more risk averse or have less
+capital; a cost of short selling matters only when arbitrageurs need to be short, so the band around fair value is
+asymmetric; and margin requirements make capital a binding constraint. Short-sale constraints have a separate literature.
+Miller (1977) argues that when opinions differ and pessimists cannot sell short, prices reflect the optimists and are
+too high, and Diamond and Verrecchia (1987) show that such constraints slow the response of prices to bad news. These
+predictions are the subject of the second stage of the project.
+
+\subsection{The no-arbitrage band}
+A future and the stock bought with borrowed money give the same payoff at expiry, so the futures price should equal the
+cost of carry, and trading costs create a band around it within which arbitrage does not pay. Inside the band the basis
+should wander; outside, it should be pushed back. This calls for a threshold model. Dwyer, Locke and Yu (1996) estimate a
+three-regime threshold model for S\&P 500 index futures with minute data and find thresholds of about half a round-trip
+cost and faster reversion outside the band than inside. Tse (2001) argues that arbitrageurs differ in their costs, so
+the market's response should strengthen smoothly with the size of the gap, and fits a smooth-transition model to Dow
+Jones futures. Ters and Urban (2020) show that in a threshold error-correction model the arbitrage cost is estimated
+precisely even when its components are not, and suggest comparing the band before and after regulatory changes. I use
+threshold and smooth-transition models from this tradition, applied to a daily panel of stocks rather than to a single
+index.
+
+\subsection{Evidence from India}
+Indian studies of the stock futures basis are few and use short intraday samples (\cref{tab:litbands}). Aggarwal (2015)
+estimates threshold models for 141 stock futures with one-second order-book data over six months of 2013 and finds an
+average band of about $-15$ to $+3$\bp, wider for less liquid stocks, and moving with funding conditions. Shankar,
+Sankar and Kiran Kumar (2019) estimate weekly threshold models for 102 stock futures with five-minute data from 2007 to
+2009 and find that both thresholds are negative, at about $-39$ and $-10$\bp, with the lower edge more sensitive to
+volatility, a sign of a constraint on the short side. Slivka, Shah and Wu (2011) add up the costs of arbitrage between a
+stock and its future and find a band about twice as wide as in mature markets. At the index level, Nandan, Agrawal and
+Bhargava (2014) find that Nifty futures traded below their cost-of-carry value on most days from 2003 to 2012. Saurav,
+Srivastava and Agarwalla (2026) study the stock futures basis around earnings announcements and short-sale constraints.
+
+\begin{table}[t]
+\caption{Earlier Indian estimates describe intraday bands; this report measures the overnight band}\label{tab:litbands}
+\exsub{Studies of single-stock futures against their underlying stocks on the National Stock Exchange}
+\small\begin{tabularx}{\linewidth}{@{}K{3.4cm}P{2.9cm}P{2.4cm}L@{}}
+\toprule
+\thd{Study} & \thd{Sample} & \thd{Data} & \thd{Band} \\
+\midrule
+Aggarwal (2015) & 141 stocks, Mar to Aug 2013 & One-second order book & About $-15$ to $+3$\bp, per stock and day \\ \rowrule
+Shankar, Sankar and Kiran Kumar (2019) & 102 stocks, 2007 to 2009 & Five-minute prices & $-39$ to $-10$\bp, weekly \\ \rowrule
+Slivka, Shah and Wu (2011) & Cost calculation & Fee schedules & About twice the width in mature markets \\ \rowrule
+This report & 360 stocks, 2015 to 2026 & Daily volume-weighted prices & $-34.5$ to $+23.9$\bp\ around each stock's median \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: the studies cited; \cref{sec:band} for this report.}
+\end{table}
+
+The intraday bands describe traders who open and close within minutes. The daily basis studied here measures the part of
+the gap that lasts overnight, where an arbitrageur must carry the position and pay the taxes on delivery, so it should
+be wider. To my knowledge no study has examined the F\&O ban or modelled a position limit that, once reached, lets every
+participant only reduce positions. That is the gap this project fills, and this report lays the ground for it by
+measuring the band and the ban's effect on trading.

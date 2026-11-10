@@ -1,0 +1,112 @@
+\section{Research design and data}\label{sec:data}
+
+\subsection{How the work was organised}
+A common risk in empirical work is that the hypotheses, the specification and the data are adjusted to each other after
+the results are seen. To limit this, the work followed a fixed sequence (\cref{fig:design}). The model came first. Its
+predictions, the samples, the variable definitions, the estimating equations and the results that would count against
+each prediction were then written into a pre-analysis plan, which I froze with a time-stamped tag in the project's
+version control on 5 November 2026. Until then I had looked only at the data on bans and position limits and at the
+basis on its own, never at how one related to the other. Where the plan left a detail open, I wrote the choice into a
+dated log before running the test that needed it. Each estimator was first run on data simulated with a known effect, to
+check that it recovers that effect. Every pre-specified test is reported, including those that go against the model.
+
+\begin{figure}[t]
+\caption{Theory and tests were fixed before any outcome was related to any treatment}\label{fig:design}
+\exsub{The sequence of the work, from model to results}
+\centering
+\begin{tikzpicture}[node distance=4mm,
+  box/.style={draw=accent,line width=0.7pt,rounded corners=2pt,text width=2.35cm,minimum height=1.45cm,align=center,font=\footnotesize},
+  arr/.style={-{Stealth[length=2.2mm]},line width=0.8pt,color=accent}]
+\node[box] (a) {\textbf{Model}\\ every limit a parameter; predictions and falsifiers};
+\node[box,right=of a] (b) {\textbf{Frozen plan}\\ samples, tests and signs fixed with a time stamp};
+\node[box,right=of b] (c) {\textbf{Data}\\ built from exchange files, checked against the rules};
+\node[box,right=of c] (d) {\textbf{Estimators}\\ tested on data simulated with known effects};
+\node[box,right=of d,fill=tilebg] (e) {\textbf{Results}\\ all reported, including those against the model};
+\foreach \x/\y in {a/b,b/c,c/d,d/e} \draw[arr] (\x) -- (\y);
+\end{tikzpicture}
+\exsource{The plan and its log are described in \cref{app:plan}.}
+\end{figure}
+
+The plan names four primary hypotheses: that costs set the edges of the band (H3), that trading leaves futures in a ban
+(H8), that correction becomes one-sided in a ban (H7), and that access to short selling speeds price adjustment (H6).
+Their p-values are corrected jointly by Holm's method at the 5\% level. The other tests are secondary and are reported
+without adjustment. This report presents H3 and H8 together with the secondary tests that belong to the same questions;
+H6 and H7 belong to the second stage.
+
+\subsection{Data}
+All data come from public archives of the NSE and are downloaded and processed by scripts, so every step can be repeated
+(\cref{tab:sources}). The main files are the daily combined open-interest files, which give each stock's MWPL and open
+interest from February 2010; the daily lists of stocks in the ban; and the daily price files (bhavcopies) of the
+futures and cash markets from 2015 to October 2026.
+
+\begin{table}[t]
+\caption{Every series comes from a public archive}\label{tab:sources}
+\exsub{Sources, content and coverage of the data used in this report}
+\small\begin{tabularx}{\textwidth}{@{}K{4.3cm}L>{\raggedright\arraybackslash}p{2.9cm}@{}}
+\toprule
+\thd{Source} & \thd{Content} & \thd{Coverage} \\
+\midrule
+NSE combined open interest files & MWPL, open interest, futures-equivalent open interest (from Oct 2025) & Feb 2010 to Oct 2026 \\ \rowrule
+NSE securities-in-ban lists & Official daily list of stocks in the ban & Feb 2010 to Oct 2026 \\ \rowrule
+NSE F\&O and cash bhavcopies, delivery files & Prices, traded value and quantity, contracts, open interest, delivery & 2015 to Oct 2026 \\ \rowrule
+NSE corporate actions & Dividends, splits, bonuses and other events with ex-dates & 2014 to 2026 \\ \rowrule
+NSE SLB bhavcopies & Daily stock-lending trades & 2015 to Oct 2026 \\ \rowrule
+OECD via FRED & Three-month interbank rate (monthly) & 2011 to 2026 \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: National Stock Exchange of India archives; OECD Main Economic Indicators via FRED.}
+\end{table}
+
+\paragraph{Measuring the basis.} For each stock and day I compute the basis \eqref{eq:basis} from the volume-weighted
+average prices of the future and of the stock, so that both prices come from trades over the same day:
+\begin{equation}\label{eq:basis-data}
+m_{it}=\ln\bar F_{it}-\ln\!\big(\bar S_{it}-\mathrm{PV}_{it}(D)\big)-r_t\tau_{it},
+\end{equation}
+where $\tau_{it}$ is the time to expiry in years and $r_t$ the three-month interbank rate. I use the nearest contract
+and switch to the next one when three or fewer trading days remain, require at least five contracts traded, and drop
+contracts with a dividend or other corporate event during their life (where the adjustment is uncertain) and the first
+20 trading days after a stock enters the F\&O segment. To limit the influence of data errors, the basis is winsorised at
+the 1st and 99th percentiles within each year. The final sample has 486,040 stock-days for 371 stocks, 8,851 of them
+in a ban.\footnote{The data were checked against the exchange's own rules before use. The ``no fresh positions'' flags
+in the open-interest files match the next day's official ban list for 11,753 of 11,764 flags; utilisation was above
+95\% on the day before 99.4\% of ban spells began and at or below 80\% on the last day of 99.7\%; and the futures
+volume-weighted price lies within the day's high and low for 99.8\% of contracts. \Cref{app:data} gives more detail.}
+
+\subsection{What the data show}
+\paragraph{Bans.} From 2015 to October 2026 there were 1,788 ban spells, covering 9,416 stock-days and 141 stocks
+(\cref{tab:bans}). Bans are concentrated in a few stocks and come in waves (\cref{fig:banmonth}). A typical spell lasted
+four trading days before the October 2025 reform; the 44 spells that began after it have a median of nine.
+
+\begin{table}[t]
+\caption{Bans are frequent, concentrated in a few stocks, and longer under the new rule}\label{tab:bans}
+\exsub{F\&O stocks, banned stocks, ban spells and ban stock-days by year}
+\centering{\footnotesize\setlength{\tabcolsep}{4pt}\input{tab_ban_by_year.tex}}
+\exsource{$^{a}$ January to 27 October 2026. Spells are counted in the year they start. Source: NSE securities-in-ban lists and F\&O bhavcopies; author's calculations.}
+\end{table}
+
+\begin{figure}[t]
+\caption{Bans come in waves and became rarer under the new rule}\label{fig:banmonth}
+\exsub{Number of stock-days in the ban per month, February 2010 to October 2026}
+\centering\includegraphics[width=\linewidth]{fig_ban_month.pdf}
+\exsource{Source: NSE securities-in-ban lists; author's calculations.}
+\end{figure}
+
+\paragraph{The basis.} The median basis is $+1.1$\bp, so on a typical day futures are priced very close to their
+cost-of-carry value. The distribution is skewed: the 10th percentile is $-39.1$\bp\ and the 90th $+26.8$\bp\
+(\cref{fig:basisdist}). Cheap futures are thus more common and further from zero than rich ones, which is what one
+expects when the trade that would correct cheap futures, short selling the stock, is the costlier one. The basis also
+narrows as expiry approaches (\cref{fig:basisexp}), as the carrying part of the costs shrinks with the time left.
+
+\begin{figure}[t]
+\caption{The basis is centred near zero with a long lower tail}\label{fig:basisdist}
+\exsub{Basis of the analysis sample, 2015 to 2026, in basis points (3.1\% of stock-days lie beyond 100\bp\ from zero and are not drawn)}
+\centering\includegraphics[width=\linewidth]{fig_basis_dist.pdf}
+\exsource{Source: NSE F\&O and cash bhavcopies, corporate actions, three-month interbank rate; author's calculations.}
+\end{figure}
+
+\begin{figure}[t]
+\caption{The basis narrows as expiry approaches}\label{fig:basisexp}
+\exsub{Median absolute basis of the near-month contract by trading days to expiry (in the last three days the sample uses the next contract)}
+\centering\includegraphics[width=0.86\linewidth]{fig_basis_expiry.pdf}
+\exsource{Source: as for \cref{fig:basisdist}.}
+\end{figure}

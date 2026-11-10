@@ -1,0 +1,107 @@
+\section{What sets the band}\label{sec:costs}
+
+\Cref{prop:cs} says that trading costs set the edges of the band. This section tests that prediction in two ways: over
+time, using the three increases in the tax on futures, and in levels, by adding up what an arbitrage position actually
+costs. It then asks whether the band is wider for stocks that are harder to trade.
+
+\subsection{Tax increases (pre-specified test H3)}
+The STT on the sale of futures rose on 3 April 2023 (the first trading day after the 1 April change), 1 October 2024 and
+1 April 2026, by 0.25, 0.75 and 3.0\bp\ of the futures sale. Each increase raises the cost of cash-and-carry, so the
+upper edge of the band should rise, and by more for larger increases. Because \cref{prop:inv} implies that fixed
+thresholds measure an average edge rather than the cost, the plan tests the \emph{change} in the upper part of each
+stock's basis distribution. For stock $i$ and event $e$, let $q^{80}_{ie,\text{pre}}$ and $q^{80}_{ie,\text{post}}$ be
+the 80th percentiles of its basis in the 40 trading days before and the 40 from the event. The test statistic is the
+average change
+\begin{equation}\label{eq:h3}
+\overline{\Delta q}^{80}=\frac{1}{N}\sum_{i,e}\big(q^{80}_{ie,\text{post}}-q^{80}_{ie,\text{pre}}\big),
+\end{equation}
+over the 2024 and 2026 events, with standard errors clustered by stock. The 2023 event is reported but not used as
+evidence, because the taxation of debt funds changed on the same day, which may have moved arbitrage capital at the
+same time.
+
+The upper percentile rose after both later increases, by 6.4\bp\ in 2024 and 7.4\bp\ in 2026, and fell slightly in
+2023 (\cref{tab:h3}). The pooled change is $+6.96$\bp\ (standard error 0.61), and the three events are ordered as the
+cost changes are. On the test fixed in advance, H3 is supported, and it remains significant after the Holm correction for
+the four primary hypotheses.
+
+\begin{table}[t]
+\caption{The upper part of the basis rose after the 2024 and 2026 tax increases}\label{tab:h3}
+\exsub{Mean change in each stock's percentiles of the basis, 40 trading days after the event against 40 before (bp)}
+\small\begin{tabular}{@{}>{\bfseries\color{accent}}lccccc@{}}
+\toprule
+\thd{Event} & \thd{STT change} & \thd{Stocks} & \thd{80th percentile} & \thd{20th} & \thd{Median} \\
+\midrule
+3 Apr 2023$^{a}$ & $+0.25$ & 181 & $-2.12$ (0.87) & $+0.24$ & $+0.27$ \\
+1 Oct 2024 & $+0.75$ & 172 & $+6.42$ (0.70) & $+4.55$ & $+5.39$ \\
+1 Apr 2026 & $+3.0$ & 192 & $+7.44$ (0.98) & $+2.10$ & $+6.30$ \\
+\bottomrule
+\end{tabular}
+
+\exsource{Standard errors in brackets. STT change in bp of the futures sale. $^{a}$ Same day as the change in the taxation of debt
+funds; reported, not used as evidence. Source: author's calculations.}
+\end{table}
+
+Two features of the result call for caution. First, the rises are larger than the cost changes: an increase of 0.75\bp\
+in tax went with a 6.4\bp\ rise in the upper percentile. Second, the median and the 20th percentile also rose in 2024 and
+2026, so the whole distribution shifted rather than just its upper edge. Such shifts can come from anything that affects
+all stocks at once, and a standard error clustered only by stock does not allow for them, because every stock shares the
+same event date (Kolari and Pynn\"onen, 2010). The plan therefore also specified a placebo check: the same statistic at
+30 dates away from the true events. Across these dates it has a mean of $-1.0$\bp\ and a standard deviation of 7.4\bp,
+and 10\% of placebo dates show a rise at least as large as in 2024, 7\% one as large as in 2026 (\cref{fig:h3placebo}).
+Judged against what happens on ordinary dates, the rises after the tax increases are large but not exceptional. My
+reading is that costs push the band in the predicted direction but do not set its edges as tightly as the model
+implies.\footnote{The same statistic at the three dates of SEBI's 2024 to 2025 reforms of index derivatives, which did not
+change the cost of single-stock arbitrage, gives $-4.1$, $-0.3$ and $+1.9$\bp, all within the placebo range.}
+
+\begin{figure}[t]
+\caption{Against placebo dates, the rise after the tax increases is large but not exceptional}\label{fig:h3placebo}
+\exsub{Mean change in stocks' 80th percentile of the basis at the three STT dates and at 30 placebo dates (bp)}
+\centering\includegraphics[width=\linewidth]{fig_h3_placebo.pdf}
+\exsource{Placebo dates every 80 trading days, away from the true events. Source: author's calculations.}
+\end{figure}
+
+\subsection{What an arbitrage position costs}
+A second way to compare the band with costs is to add up the cost of an actual position. An overnight cash-and-carry
+position held to delivery pays STT of 0.1\% on the purchase of the stock and again on delivery at expiry, the STT on the
+futures sale, stamp duty, exchange charges, the SEBI fee, goods and services tax on fees, and brokerage. With an
+institutional brokerage of 0.01\% per leg, the full round trip costs 27.1, 27.3, 28.0 and 31.0\bp\ in the four tax
+periods (\cref{fig:costband}), or 25 to 38\bp\ for brokerage between 0.005\% and 0.03\% per leg. Rolling an existing
+position for one more month is far cheaper, 4 to 8\bp, because the delivery taxes are paid only once.
+
+\begin{figure}[t]
+\caption{The full cost of a new position lies above the estimated upper edge}\label{fig:costband}
+\exsub{Round trip of an overnight cash-and-carry position held to delivery, by STT period (bp of notional); triangles: estimated upper threshold in levels}
+\centering\includegraphics[width=\linewidth]{fig_cost_band.pdf}
+\exsource{Institutional brokerage of 0.01\% per leg; GST of 18\% on fees and brokerage. Source: NSE circulars on STT and transaction charges; author's calculations.}
+\end{figure}
+
+The estimated upper threshold of the basis, measured in levels rather than relative to each stock's median, lies between
+$+22$ and $+28$\bp\ in the four periods, below the full cost of a new position, which falls between the 90th and 95th
+percentiles of the basis. This is what \cref{prop:inv} implies when arbitrageurs already hold positions. New capital
+enters only when the gap is large enough to pay the full round trip, while funds that keep their capital in place and
+roll it from month to month can lean against much smaller gaps. The edge measured in the data is a mixture of the two.
+
+\subsection{Frictions across stocks (H1)}
+The band should also be wider for stocks in which arbitrage is harder. For each F\&O stock and quarter I build a
+friction index from five measures taken in the previous quarter: the bid-ask spread estimated from daily high and low
+prices (Corwin and Schultz, 2012), illiquidity (Amihud, 2002), idiosyncratic volatility, utilisation of the position
+limit, and the share of days with no stock lending. The index is the first principal component of these measures,
+standardised within each quarter. I then regress the width of each stock's band in the quarter (the 80th minus the 20th
+percentile of its basis on non-ban days) on the index, with quarter fixed effects and standard errors clustered by stock
+and quarter.
+
+A stock with an index one standard deviation higher has a band 3.5\bp\ wider (standard error 1.1, one-sided $p=0.002$;
+the mean width is 40.8\bp) and a mean absolute basis 2.5\bp\ larger (\cref{fig:h1bins}). Most of the difference is
+between the least frictional stocks and the rest. The relation holds across stocks, not within a stock over time: with
+stock fixed effects it disappears, so it reflects persistent differences between stocks rather than changes in a
+stock's frictions. The index also does not predict how fast the basis returns to the band, which is consistent with the
+finding above that daily reversion is mostly noise. One component enters with the opposite sign: stocks with fewer
+lending days have narrower bands, which suggests that lending activity measures demand to borrow more than the ease of
+borrowing.
+
+\begin{figure}[t]
+\caption{Bands are wider in stocks that are harder to trade}\label{fig:h1bins}
+\exsub{Band width and mean absolute basis by decile of the friction index of the previous quarter, F\&O stocks, 2015 to 2025 (quarter means removed)}
+\centering\includegraphics[width=\linewidth]{fig_h1_bins.pdf}
+\exsource{Index: first principal component of spread, illiquidity, idiosyncratic volatility, utilisation of the position limit and lack of stock lending. 7,398 stock-quarters, 347 stocks. Source: author's calculations.}
+\end{figure}

@@ -1,0 +1,78 @@
+\section{The Indian setting}\label{sec:setting}
+
+This section describes the rules that shape each limit to arbitrage in Indian stock futures. \Cref{fig:timeline} places
+the dated changes on one time line.
+
+\begin{figure}[t]
+\caption{Almost every limit to arbitrage changed on a known date during the sample}\label{fig:timeline}
+\exsub{Futures STT, enforcement of the ban, the position-limit rule and arbitrage capital, 2015 to 2026}
+\centering\includegraphics[width=\linewidth]{fig_timeline.pdf}
+\exsource{Source: SEBI circulars and press releases; NSE circulars (listed in the references).}
+\end{figure}
+
+\subsection{Stock futures}
+Single-stock futures trade on the NSE for about two hundred large and liquid stocks, the members of the F\&O segment. A
+stock enters the segment when it meets eligibility criteria set by the Securities and Exchange Board of India (SEBI),
+based on market capitalisation, traded value and delivery, and leaves it when it fails them. Contracts expire monthly,
+three months are listed at a time, and most trading is in the nearest month. Since October 2019 stock derivatives are
+settled by delivery of the shares. One detail of the exchange's prices matters for measurement: when a future does not
+trade in the last half hour of a day, the exchange sets its settlement price at a theoretical cost-of-carry value. A
+basis computed from settlement prices would therefore look small on thin days for purely mechanical reasons, so I use
+prices from actual trades throughout.
+
+\subsection{Short selling}
+SEBI's framework allows all investors to sell short, but only in securities of the F\&O segment, and it forbids naked
+short selling: every short sale must be delivered at settlement, so an overnight short needs borrowed shares. Shares can
+be borrowed through the exchange's securities lending and borrowing (SLB) segment, but it is thin: on a typical day only
+a few dozen stocks are lent. In practice the overnight short position in an Indian stock is a short future. This is why
+the reverse arbitrage trade (short the stock, buy the future) is much costlier than cash-and-carry, and why F\&O
+membership defines which stocks can be shorted at all.
+
+\subsection{The position limit and the ban}
+The MWPL caps the total open interest that all traders together may hold in a stock's futures and options. Until
+September 2025 it was 20\% of the shares held by non-promoters (the free float), and open interest was counted gross,
+with every option at its full notional value. From 1 October 2025 the limit is the lower of 15\% of the free float and
+65 times the average daily delivery volume, with a floor of 10\% of the free float, recomputed every quarter, and open
+interest is counted in delta-adjusted (futures-equivalent) terms (\cref{tab:mwpl}). The new formula lowered every
+stock's limit, to a median of 73\% of its old value.
+
+\begin{table}[t]
+\caption{The limit was cut and open interest redefined in October 2025}\label{tab:mwpl}
+\exsub{Market-wide position limit (MWPL) and the open interest tested against it}
+\small\begin{tabularx}{\textwidth}{@{}K{3.2cm}LL@{}}
+\toprule
+\thd{Period} & \thd{MWPL} & \thd{Open interest tested} \\
+\midrule
+To 30 Sep 2025 & 20\% of shares held by non-promoters (free float) & Gross open interest, futures and options \\ \rowrule
+23 Mar to 26 Nov 2020 & Halved for volatile or heavily used stocks & Gross open interest \\ \rowrule
+From 1 Oct 2025 & Lower of 15\% of free float and 65 times average daily delivery (in shares), floor 10\% of free float; recomputed quarterly & Futures-equivalent (delta-adjusted) open interest \\
+\bottomrule
+\end{tabularx}
+\exsource{Source: SEBI circulars of 22 September 2006 and 29 May 2025; SEBI press release 18/2020; NSE Clearing circular 119/2025.}
+\end{table}
+
+The ratio of open interest to the limit is the stock's \emph{utilisation}. When utilisation exceeds 95\% at the end of a
+day, the stock is in the ban from the next day; the ban ends after utilisation falls to 80\%. During the ban every
+participant may only reduce positions, in all expiries and in both futures and options, and rolling a position into the
+next month counts as a new position. \Cref{fig:sail} shows the rule at work for SAIL, the stock banned most often.
+
+\begin{figure}[t]
+\caption{A stock enters the ban when open interest crosses 95\% of its limit and leaves at 80\%}\label{fig:sail}
+\exsub{Utilisation of the market-wide position limit for SAIL, January to June 2024; shaded days are ban days}
+\centering\includegraphics[width=\linewidth]{fig_util_example.pdf}
+\exsource{Source: NSE combined open interest files and securities-in-ban lists; author's calculations.}
+\end{figure}
+
+How violations were detected changed twice, and this turns out to matter. Until 22 March 2020 an increase was judged on
+end-of-day positions, so a position opened and closed within the day was not a breach. From 23 March 2020, following
+SEBI's press release 18/2020, the clearing corporations judged violations on peak intraday positions. From 1 October
+2025 each entity's end-of-day delta-adjusted position must fall relative to its position when the ban began, which
+allows new contracts that lower the delta, such as a put bought against a long future.
+
+\subsection{Trading costs and arbitrage capital}
+The STT on the sale of futures was 0.01\% of the traded value from June 2013, 0.0125\% from 1 April 2023, 0.02\% from 1
+October 2024 and 0.05\% from 1 April 2026. A cash-and-carry position pays much more on the stock: 0.1\% STT on the
+purchase and 0.1\% on delivery at expiry, plus stamp duty, exchange charges and brokerage. The main holders of
+cash-and-carry positions are arbitrage mutual funds, which are taxed as equity funds. When debt funds lost their tax
+advantage on 1 April 2023, short-term money moved into arbitrage funds, and their assets grew from Rs 71,106 crore in
+April 2023 to Rs 2.98 lakh crore in September 2026.

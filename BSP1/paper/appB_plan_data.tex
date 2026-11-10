@@ -1,0 +1,37 @@
+\section{The test plan and the data}\label{app:plan}
+
+\subsection{The pre-analysis plan}
+Before relating any outcome (the basis, trading, returns) to any treatment (ban status, utilisation, changes in the
+limit, tax dates), I wrote a plan that fixes the samples, the definitions of outcomes and treatments, the estimating
+equations, the predicted signs, the results that would contradict each prediction, and the method of inference. It was
+frozen with a time-stamped tag in the project's version control on 5 November 2026, after my supervisor's go-ahead and
+a full set of checks on the data. The plan has four primary hypotheses (H3, H6, H7 and H8), corrected jointly by Holm's
+method at 5\%, and a set of secondary tests reported without adjustment. Standard errors are clustered by stock and by
+date unless stated otherwise, and the basis is winsorised at 1\% and 99\% within each year.
+
+Where the plan left a detail open (for example, the bins of utilisation in the trading test, the windows and placebo
+dates of the cost test, or the population for the density test), I wrote the choice into a dated log and committed it
+before running the test. Analyses added after a result was seen, such as the split of the trading test by enforcement
+period and the noise correction of the threshold model, are identified as such in the text.
+
+\subsection{Data construction}\label{app:data}
+\paragraph{Bans and position limits.} The daily combined open-interest files give each stock's MWPL, its open interest,
+its futures-equivalent open interest from October 2025, and a flag for stocks in which no fresh positions may be opened
+the next day. Some files carry the year in two digits, a few carry another day's data under their own date, and some
+archives bundle several days; dates are therefore taken from the file names and checked. The official ban lists are
+missing at the exchange on three days; the lists for those days are imputed from the previous day's flags and continuing
+spells, and marked.
+
+\paragraph{F\&O membership.} A stock is in the F\&O segment on a day if its futures are listed that day. Symbol changes are
+linked through each security's identifier (ISIN), so that a renamed stock is not counted as an exit and an entry.
+
+\paragraph{Prices and the basis.} Prices, traded value and quantity, contracts and open interest come from the daily
+futures and cash bhavcopies, which changed format in July 2024. The older futures files do not report lot sizes; I
+recover them from open interest and check them against the day's price range. The futures volume-weighted price is
+traded value divided by contracts times lot size, and the cash price is traded value divided by quantity. Dividends going
+ex before expiry are subtracted at their present value. The interest rate is the monthly three-month interbank rate,
+carried forward for at most two months when the latest value is not yet published.
+
+\paragraph{Reproducibility.} Every data set is rebuilt from the raw files by scripts that report counts and checks, and
+every estimate in this report is produced by one sequence of analysis scripts. A complete rerun from the processed data
+reproduced every reported number.

@@ -1,0 +1,53 @@
+\section{Proofs}\label{app:proofs}
+
+This appendix proves the propositions of \cref{sec:model}. Notation is as in the text: market clearing gives
+$m=(u-a)/\Phi$ \eqref{eq:clear}, and the arbitrage sector maximises \eqref{eq:objective}.
+
+\paragraph{Proposition 1.} The objective \eqref{eq:objective} is strictly concave in $a$, with a kink at zero. Its best
+response to a basis $m$ is $a=(m-c_+)/\gamma$ if $m>c_+$, $a=(m+c_-)/\gamma$ if $m<-c_-$, and $a=0$ otherwise. In
+equilibrium $m=(u-a)/\Phi$. The map $a\mapsto \mathrm{BR}\big((u-a)/\Phi\big)-a$ is strictly decreasing, so the fixed point
+is unique. Substituting the clearing condition into each branch of the best response gives \eqref{eq:band}. For the
+upper branch, $m\Phi=u-(m-c_+)/\gamma$, so $m=(\gamma u+c_+)/(\gamma\Phi+1)$, which equals $c_+$ at $u=\Phi c_+$, so the
+basis is continuous at the edge. The lower branch is symmetric. Inside the band $a=0$ and $m=u/\Phi$.
+
+\paragraph{Proposition 2.} (i) and (ii) follow from \eqref{eq:band}: the edges, $c_+$ and $-c_-$, do not contain
+$\gamma$, and the slope outside the band, $\gamma/(\gamma\Phi+1)$, is increasing in $\gamma$. (iii) The costs can be
+written as $c_+=\tau_++(r_A-r)(T-t)$ and $c_-=\tau_-+(\ell_s+r-r_L)(T-t)$, where $\tau_\pm$ are the transaction costs of
+each trade, $r_A$ is the return required on arbitrage capital, $\ell_s$ is the fee for borrowing the stock and $r_L$ the
+interest earned on the proceeds of a short sale. Both edges are therefore linear in the time to expiry $T-t$ and converge
+to the transaction costs at expiry. (iv) The midpoint of $[-c_-,c_+]$ is $(c_+-c_-)/2$, which is negative when $c_->c_+$.
+
+\paragraph{Proposition 3.} With an existing position $a_{t-1}\ge 0$, the sector maximises
+$a_tm_t-\tfrac{\gamma}{2}a_t^2-c_+(a_t-a_{t-1})^+-c_u(a_{t-1}-a_t)^+$. This is strictly concave with a kink at
+$a_{t-1}$. The marginal value of holding one more unit is $m_t-\gamma a_t$, so adding pays only if
+$m_t-\gamma a_{t-1}>c_+$ and unwinding only if $m_t-\gamma a_{t-1}<-c_u$; otherwise the sector holds $a_{t-1}$. When it
+adds, the interior solution is $a_t=(m_t-c_+)/\gamma$; when it unwinds, $a_t=\max\{0,(m_t+c_u)/\gamma\}$. Combining each
+case with the clearing condition gives a unique equilibrium, as in Proposition 1.
+
+\paragraph{Proposition 4.} In a ban, restriction (B1) removes the option to add. Starting from $a_{t-1}>0$, the sector
+holds its position as long as $m_t\ge\gamma a_{t-1}-c_u$. In this region $m_t=(u_t-a_{t-1})/\Phi$, so every increase
+in $u_t$ passes through to the basis at the rate $1/\Phi$, instead of the smaller rate $\gamma/(\gamma\Phi+1)$ that
+applies above the upper edge in normal times: rich futures are not corrected. If $u_t$ is low enough that the sector
+unwinds, then $a_t=(m_t+c_u)/\gamma$ when interior, so $m_t=\gamma a_t-c_u$: cheap futures are corrected, at a floor that
+falls as the position shrinks. When $a_t$ reaches zero, the floor disappears and $m_t=u_t/\Phi$. Positions that reach
+expiry during a ban are delivered and cannot be opened again in the next contract, so they leave the book for the rest of
+the ban.
+
+\paragraph{Proposition 5.} Split outside traders' demand shocks into closing demand $\varepsilon^c$ and demand for new
+futures exposure $\varepsilon^n\ge 0$. In normal times both enter $u$ one for one. In a ban, by (B2), new demand
+cannot be executed in futures; a share $\chi$ of it buys the stock instead, which in the units of \eqref{eq:clear} enters
+$u$ as $-\lambda\varepsilon^n$ with $\lambda=\chi\psi_F/\psi_S\ge0$. Compare the basis with and without a ban for the same
+starting position, the same initial pressure $u^0$ and the same shocks: $m^N=m(u^0+\varepsilon^c+\varepsilon^n)$ and
+$m^B=m^{\text{ban}}(u^0+\varepsilon^c-\lambda\varepsilon^n)$. Since $m^N$ is non-decreasing and $m^B$ non-increasing in
+$\varepsilon^n$, the difference $m^B-m^N$ is non-increasing in $\varepsilon^n$. At $\varepsilon^n=0$ the two inputs are
+equal, and since (B1) only removes the option to add, which lowers the basis when used, $m^B\ge m^N$. As $\varepsilon^n$
+grows, $m^N$ rises without bound (its slope is at least $\gamma/(\gamma\Phi+1)>0$) while $m^B$ does not rise, so
+$m^B<m^N$ for large enough $\varepsilon^n$. The sign of the ban's effect on the level therefore depends on how much of the
+pressure is new demand rather than closing demand.
+
+\paragraph{Proposition 6.} If every trader may only reduce positions in each contract, a buyer can only be closing a
+short and a seller only closing a long, so every trade lowers open interest by its size: $\Delta OI=-V$ outside expiry
+days, and $R=(\Delta OI+V)/V=0$. Trades require that some holders of long positions and some holders of short positions
+both want to close at the same price, so volume falls. If an entity may instead lower its overall delta by opening an
+offsetting contract in another instrument, as allowed from October 2025, a trade can open a position in one contract,
+and the identity no longer holds.
