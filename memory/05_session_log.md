@@ -531,3 +531,20 @@
   chapter figures (numbers kept in the text), ch5 "Capital as a state" and "Peak margins" paragraphs, shorter ch6 caveats and ch4
   validation paragraph; literature condensed to three sections + band table; references pruned to the 29 cited. Added an
   "About this version" page. Style scan clean. Text edits to the full thesis must be copied into `thesis_short/` by hand.
+
+## Session 10 Nov 2026 (new session; full context re-read)
+- User asked for a full re-read (memory, handoff, docs, both thesis PDFs, both decks, templates) before work. Done:
+  memory 01-10, handoff 00-07 and 16, docs README/02/05, the full thesis text (ch1-9, appendices A, B, C in part),
+  the short thesis (front pages, contents, design via contact sheet), both decks (text + contact sheets), the formatting
+  PDF, template zip listings, bspstyle.sty, and the analysis outputs used for Stage I.
+- **Guide's comments on the short thesis (relayed by the user):** (1) looks like a report, not a paper: keep design,
+  structure, sectioning, font, theme, title page, but make it a paper; (2) language not paper-like, written for the
+  author, not readable, too many small details: rewrite for an unknown reader, keep question, problem, method,
+  literature, main results; undergraduate voice; (3) Section 4.2 called theoretical derivations "results": do not;
+  (4) restrict thesis and presentations to BSP1 (Stage I), a little more than half of the work; rest goes to BSP2;
+  (5) remove the Report Approval page. Everything new goes in a separate folder; earlier deliverables untouched.
+- **Split decided (user left it to me):** see `BSP1/README.md`. BSP1 = foundations (question, institutions, literature,
+  model, design and frozen plan, data) + the band (estimation; costs H3; frictions H1) + the ban on trading (H8,
+  enforcement, trigger density and RD trading jumps, 2025 reform ban counts). BSP2 = ban price effects (H7, level,
+  RD basis, hysteresis, placebos, H2), H9 and COVID restoration, H4 capital, short-sale constraints (H6, H5, index),
+  policy, new work.
